@@ -1,0 +1,1169 @@
+{
+  "format_version": 1,
+  "task_policy": "one ready task per local calendar day, owner milestone gates",
+  "tasks": [
+    {
+      "id": "T001",
+      "phase": "P0",
+      "title": "Bootstrap Makefile tool discovery and smoke CI entrypoints",
+      "depends_on": [],
+      "status": "todo",
+      "deliverables": [
+        "Makefile",
+        "docs/TOOLCHAIN.md"
+      ],
+      "checks": [
+        [
+          "make",
+          "preflight"
+        ],
+        [
+          "python3",
+          "scripts/harness.py",
+          "validate"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "Makefile",
+        "CI",
+        "reproducibility"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T002",
+      "phase": "P0",
+      "title": "Architecture freeze and review of interfaces/reset/ISA gaps",
+      "depends_on": [
+        "T001"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "docs/ARCH_SPEC.md",
+        "docs/DECISIONS.md"
+      ],
+      "checks": [
+        [
+          "python3",
+          "scripts/harness.py",
+          "validate"
+        ]
+      ],
+      "review_gate": true,
+      "keywords": [
+        "architecture",
+        "interface specification"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T003",
+      "phase": "P0",
+      "title": "GitHub Actions lint and harness CI with stable tool versions",
+      "depends_on": [
+        "T002"
+      ],
+      "status": "todo",
+      "deliverables": [
+        ".github/workflows/rtl.yml",
+        "docs/TOOLCHAIN.md"
+      ],
+      "checks": [
+        [
+          "make",
+          "preflight"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "GitHub Actions",
+        "CI"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T004",
+      "phase": "P1",
+      "title": "SystemVerilog core package opcode and immediate decode",
+      "depends_on": [
+        "T003"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "rtl/core/rv32_pkg.sv",
+        "rtl/core/decoder.sv",
+        "dv/unit/test_decoder.py"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-decode"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "SV",
+        "RV32I",
+        "decode"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T005",
+      "phase": "P1",
+      "title": "ALU ops with exhaustive small domains and signed edge vectors",
+      "depends_on": [
+        "T004"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "rtl/core/alu.sv",
+        "dv/unit/test_alu.py"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-alu"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "ALU",
+        "signed arithmetic"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T006",
+      "phase": "P1",
+      "title": "Register file x0 invariance/read-write bypass and owner gate",
+      "depends_on": [
+        "T005"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "rtl/core/regfile.sv",
+        "dv/unit/test_regfile.py"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-regfile"
+        ]
+      ],
+      "review_gate": true,
+      "keywords": [
+        "register file",
+        "RTL validation"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T007",
+      "phase": "P1",
+      "title": "Branch comparator, target math, and JALR bit clearing",
+      "depends_on": [
+        "T006"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "rtl/core/branch_unit.sv",
+        "dv/unit/test_branch.py"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-branch"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "branch",
+        "JALR"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T008",
+      "phase": "P1",
+      "title": "Load/store byte lane and sign extension unit",
+      "depends_on": [
+        "T007"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "rtl/core/lsu.sv",
+        "dv/unit/test_lsu.py"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-lsu"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "byte enables",
+        "load store"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T009",
+      "phase": "P1",
+      "title": "Instruction/data memory behavioral models with fixed latency",
+      "depends_on": [
+        "T008"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "dv/models/memory.py",
+        "dv/integration/test_memory.py"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-memory"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "BRAM",
+        "memory model"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T010",
+      "phase": "P1",
+      "title": "Simple nonpipelined instruction execution reference DUT",
+      "depends_on": [
+        "T009"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "rtl/core/reference_core.sv",
+        "dv/integration/test_core_smoke.py"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-core"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "datapath",
+        "control"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T011",
+      "phase": "P1",
+      "title": "Independent Python ISA oracle plus retirement comparison",
+      "depends_on": [
+        "T010"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "dv/reference/rv32_iss.py",
+        "dv/integration/test_retire.py"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-retire"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "ISS",
+        "scoreboard",
+        "retirement"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T012",
+      "phase": "P1",
+      "title": "Instruction family directed smoke and L1 baseline gate",
+      "depends_on": [
+        "T011"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "dv/integration/test_isa_directed.py",
+        "docs/VERIFICATION_REPORT.md"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-core"
+        ],
+        [
+          "make",
+          "test-retire"
+        ]
+      ],
+      "review_gate": true,
+      "keywords": [
+        "directed tests",
+        "regression"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T013",
+      "phase": "P2",
+      "title": "Pipeline registers/valid bits for IF ID EX MEM WB",
+      "depends_on": [
+        "T012"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "rtl/core/pipeline_core.sv",
+        "dv/integration/test_pipeline_base.py"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-pipeline"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "pipeline",
+        "valid bits"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T014",
+      "phase": "P2",
+      "title": "Bypass/forwarding EX and WB hazards",
+      "depends_on": [
+        "T013"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "rtl/core/forwarding_unit.sv",
+        "dv/integration/test_forwarding.py"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-forwarding"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "RAW hazards",
+        "forwarding"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T015",
+      "phase": "P2",
+      "title": "Load-use hazard detection and deterministic stall",
+      "depends_on": [
+        "T014"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "rtl/core/hazard_unit.sv",
+        "dv/integration/test_load_use.py"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-hazards"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "hazard detection",
+        "stall"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T016",
+      "phase": "P2",
+      "title": "Taken branch/JAL/JALR redirect flush and no wrong path retire",
+      "depends_on": [
+        "T015"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "dv/integration/test_flush.py"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-control"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "control hazard",
+        "flush"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T017",
+      "phase": "P2",
+      "title": "Memory wait-state ready-valid stall and no duplicate request",
+      "depends_on": [
+        "T016"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "dv/integration/test_backpressure.py"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-backpressure"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "handshake",
+        "backpressure"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T018",
+      "phase": "P2",
+      "title": "Pipeline vs oracle regression and owner milestone review",
+      "depends_on": [
+        "T017"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "dv/integration/test_pipeline_iss.py",
+        "docs/PIPELINE_REVIEW.md"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-pipeline"
+        ],
+        [
+          "make",
+          "test-retire"
+        ],
+        [
+          "make",
+          "regress"
+        ]
+      ],
+      "review_gate": true,
+      "keywords": [
+        "pipeline verification",
+        "CPI"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T019",
+      "phase": "P3",
+      "title": "Scoreboard and replayable randomized instruction generation",
+      "depends_on": [
+        "T018"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "dv/reference/scoreboard.py",
+        "dv/random/test_random_programs.py"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-random"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "constrained random",
+        "scoreboard"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T020",
+      "phase": "P3",
+      "title": "SystemVerilog assertions for invariants and handshake",
+      "depends_on": [
+        "T019"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "dv/assertions/core_properties.sv",
+        "docs/ASSERTION_PLAN.md"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-sva"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "SVA",
+        "assertions"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T021",
+      "phase": "P3",
+      "title": "Functional coverage bins with uncovered-bin reporting",
+      "depends_on": [
+        "T020"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "dv/coverage/coverage_report.py",
+        "docs/COVERAGE_PLAN.md"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "coverage"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "functional coverage",
+        "metrics"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T022",
+      "phase": "P3",
+      "title": "Random memory timing, reset mid-run and stress regression",
+      "depends_on": [
+        "T021"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "dv/random/test_stress.py"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-stress"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "random latency",
+        "reset",
+        "stress"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T023",
+      "phase": "P3",
+      "title": "Formal proof for ALU/x0/handshake bounded properties",
+      "depends_on": [
+        "T022"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "formal/core_properties.sby",
+        "docs/FORMAL_LIMITS.md"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "formal-smoke"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "formal",
+        "SymbiYosys"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T024",
+      "phase": "P3",
+      "title": "Verification closure review with negative fault injection",
+      "depends_on": [
+        "T023"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "docs/DV_CLOSURE.md",
+        "docs/VERIFICATION_REPORT.md"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "regress"
+        ],
+        [
+          "make",
+          "coverage"
+        ]
+      ],
+      "review_gate": true,
+      "keywords": [
+        "DV closure",
+        "fault injection"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T025",
+      "phase": "P4",
+      "title": "Top-level board pinmap/XDC and 100MHz clock constraint",
+      "depends_on": [
+        "T024"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "fpga/basys3/top.sv",
+        "fpga/basys3/basys3.xdc"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-top"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "XDC",
+        "IO constraints"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T026",
+      "phase": "P4",
+      "title": "BRAM images and baremetal RISC-V linker script",
+      "depends_on": [
+        "T025"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "sw/linker.ld",
+        "sw/boot.S",
+        "fpga/basys3/rom_init.mem"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-firmware"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "BRAM",
+        "bare-metal"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T027",
+      "phase": "P4",
+      "title": "UART TX IP plus register tests and memory map",
+      "depends_on": [
+        "T026"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "rtl/peripherals/uart_tx.sv",
+        "dv/unit/test_uart.py"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-uart"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "UART",
+        "MMIO"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T028",
+      "phase": "P4",
+      "title": "GPIO and timer MMIO peripherals",
+      "depends_on": [
+        "T027"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "rtl/peripherals/gpio.sv",
+        "rtl/peripherals/timer.sv",
+        "dv/integration/test_mmio.py"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-mmio"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "timer",
+        "GPIO",
+        "bus integration"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T029",
+      "phase": "P4",
+      "title": "External reset/input synchronization and CDC analysis",
+      "depends_on": [
+        "T028"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "rtl/peripherals/input_sync.sv",
+        "docs/CDC_REPORT.md"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-cdc"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "CDC",
+        "reset synchronizer"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T030",
+      "phase": "P4",
+      "title": "Vivado nonproject Tcl synthesis, placement and timing script",
+      "depends_on": [
+        "T029"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "fpga/basys3/build.tcl",
+        "docs/FPGA_PPA.md"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-tcl"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "Vivado",
+        "STA",
+        "timing closure"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T031",
+      "phase": "P4",
+      "title": "Simulated SoC boots firmware and UART outputs PASS",
+      "depends_on": [
+        "T030"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "dv/integration/test_soc_boot.py",
+        "docs/SOC_BOOT.md"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-soc"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "SoC",
+        "hardware validation"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T032",
+      "phase": "P4",
+      "title": "Basys3 physical bringup user-supervised milestone",
+      "depends_on": [
+        "T031"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "evidence/hardware/README.md",
+        "docs/FPGA_PPA.md"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-soc"
+        ]
+      ],
+      "review_gate": true,
+      "keywords": [
+        "Basys3",
+        "on-board validation"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T033",
+      "phase": "P5",
+      "title": "Minimal AXI4-Lite slave adapter architecture review",
+      "depends_on": [
+        "T032"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "docs/AXIL_BRIDGE_SPEC.md",
+        "docs/DECISIONS.md"
+      ],
+      "checks": [
+        [
+          "python3",
+          "scripts/harness.py",
+          "validate"
+        ]
+      ],
+      "review_gate": true,
+      "keywords": [
+        "AMBA",
+        "AXI4-Lite"
+      ],
+      "optional": true
+    },
+    {
+      "id": "T034",
+      "phase": "P5",
+      "title": "AXI4-Lite slave bridge and protocol SVA/backpressure tests",
+      "depends_on": [
+        "T033"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "rtl/bus/axil_bridge.sv",
+        "dv/integration/test_axil.py"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-axil"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "AXI-Lite",
+        "SVA",
+        "ready valid"
+      ],
+      "optional": true
+    },
+    {
+      "id": "T035",
+      "phase": "P5",
+      "title": "DMA architecture feasibility study, only if needed for role",
+      "depends_on": [
+        "T034"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "docs/DMA_SPEC.md"
+      ],
+      "checks": [
+        [
+          "python3",
+          "scripts/harness.py",
+          "validate"
+        ]
+      ],
+      "review_gate": true,
+      "keywords": [
+        "DMA",
+        "arbiter"
+      ],
+      "optional": true
+    },
+    {
+      "id": "T036",
+      "phase": "P5",
+      "title": "Add optional DMA transfer with arbitration and scoreboard",
+      "depends_on": [
+        "T035"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "rtl/bus/dma.sv",
+        "dv/integration/test_dma.py"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "test-dma"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "DMA",
+        "arbitration"
+      ],
+      "optional": true
+    },
+    {
+      "id": "T037",
+      "phase": "P5",
+      "title": "ASIC environment and PDK/library compatibility check",
+      "depends_on": [
+        "T032"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "asic/README.md",
+        "docs/ASIC_ASSUMPTIONS.md"
+      ],
+      "checks": [
+        [
+          "python3",
+          "scripts/harness.py",
+          "validate"
+        ]
+      ],
+      "review_gate": true,
+      "keywords": [
+        "PDK",
+        "ASIC toolchain"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T038",
+      "phase": "P5",
+      "title": "Small-unit Yosys synthesis with constraints and report",
+      "depends_on": [
+        "T037"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "asic/synth_unit.ys",
+        "docs/ASIC_PPA.md"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "asic-unit"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "Yosys",
+        "synthesis",
+        "PPA"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T039",
+      "phase": "P5",
+      "title": "Small-block LibreLane/OpenROAD place route exploration",
+      "depends_on": [
+        "T038"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "asic/config.json",
+        "docs/ASIC_PPA.md"
+      ],
+      "checks": [
+        [
+          "make",
+          "lint"
+        ],
+        [
+          "make",
+          "asic-block"
+        ]
+      ],
+      "review_gate": false,
+      "keywords": [
+        "OpenROAD",
+        "GDS",
+        "STA"
+      ],
+      "optional": false
+    },
+    {
+      "id": "T040",
+      "phase": "P5",
+      "title": "Post-flow technical limitations and final human review",
+      "depends_on": [
+        "T039"
+      ],
+      "status": "todo",
+      "deliverables": [
+        "docs/FINAL_REPORT.md"
+      ],
+      "checks": [
+        [
+          "python3",
+          "scripts/harness.py",
+          "validate"
+        ]
+      ],
+      "review_gate": true,
+      "keywords": [
+        "PPA",
+        "design signoff caveats"
+      ],
+      "optional": false
+    }
+  ]
+}
