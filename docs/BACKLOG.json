@@ -1,0 +1,1877 @@
+{
+  "format_version": 2,
+  "task_policy": "One primary task per America/Los_Angeles day; no unattended runs in current unrestricted session.",
+  "status_authority": ".harness/state.json; task status fields are a repairable mirror",
+  "tasks": [
+    {
+      "id": "T001",
+      "phase": "P0",
+      "title": "Bootstrap existing project, portable engineering harness and daily evidence",
+      "description": "Preserve baseline, audit kit, repair Windows harness, migrate backlog and prepare a supervised daily workflow. No CPU RTL.",
+      "engineering_objective": "Windows-native harness self-tests pass; baseline, daily reports, local output paths and unattended refusal have evidence.",
+      "depends_on": [],
+      "required_files": [
+        "AGENTS.md",
+        "Makefile",
+        "scripts/harness.py",
+        "scripts/test_harness.py",
+        "scripts/verify.py",
+        "scripts/preflight.py",
+        "scripts/report.py",
+        "scripts/daily.ps1",
+        "docs/ENVIRONMENT_BOUNDARY.md",
+        "docs/PROJECT_BASELINE.json",
+        "docs/ARCH_SPEC.md",
+        "docs/BACKLOG.json",
+        "docs/VERIFICATION_PLAN.md",
+        "docs/CODEX_LOOP.md",
+        "docs/TOOLCHAIN.md",
+        "prompts/DAILY_RUN.md",
+        ".harness/environment.json"
+      ],
+      "acceptance_criteria": [
+        "Windows-native harness self-tests pass; baseline, daily reports, local output paths and unattended refusal have evidence.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/test_harness.py"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/preflight.py"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/harness.py",
+          "validate"
+        ]
+      ],
+      "priority": 10,
+      "status": "completed",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "Makefile",
+        "CI",
+        "reproducibility"
+      ]
+    },
+    {
+      "id": "T002",
+      "phase": "P0",
+      "title": "Architecture freeze and review of interfaces/reset/ISA gaps",
+      "description": "Implement, verify and document this bounded milestone: Architecture freeze and review of interfaces/reset/ISA gaps.",
+      "engineering_objective": "Owner explicitly reviews exact ports, reset behavior, memory map, stall/flush priorities, ISA traps and physical board before freeze.",
+      "depends_on": [
+        "T001"
+      ],
+      "required_files": [
+        "docs/ARCH_SPEC.md",
+        "docs/DECISIONS.md",
+        "docs/ARCH_REVIEW.md"
+      ],
+      "acceptance_criteria": [
+        "Owner explicitly reviews exact ports, reset behavior, memory map, stall/flush priorities, ISA traps and physical board before freeze.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/harness.py",
+          "validate"
+        ]
+      ],
+      "priority": 20,
+      "status": "pending",
+      "human_approval_required": true,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "architecture",
+        "interface specification"
+      ]
+    },
+    {
+      "id": "T003",
+      "phase": "P0",
+      "title": "GitHub Actions lint and harness CI with stable tool versions",
+      "description": "Implement, verify and document this bounded milestone: GitHub Actions lint and harness CI with stable tool versions.",
+      "engineering_objective": "Local CI configuration and pinned tool manifest execute real lint/test commands; missing dependencies block RTL work; no remote publication.",
+      "depends_on": [
+        "T002"
+      ],
+      "required_files": [
+        ".github/workflows/rtl.yml",
+        "docs/TOOLCHAIN.md"
+      ],
+      "acceptance_criteria": [
+        "Local CI configuration and pinned tool manifest execute real lint/test commands; missing dependencies block RTL work; no remote publication.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/preflight.py"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "toolchain-rtl"
+        ]
+      ],
+      "priority": 30,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "GitHub Actions",
+        "CI"
+      ]
+    },
+    {
+      "id": "T004",
+      "phase": "P1",
+      "title": "SystemVerilog core package opcode and immediate decode",
+      "description": "Implement, verify and document this bounded milestone: SystemVerilog core package opcode and immediate decode.",
+      "engineering_objective": "Every supported opcode and immediate format has independent positive and reserved-encoding negative tests.",
+      "depends_on": [
+        "T003"
+      ],
+      "required_files": [
+        "rtl/core/rv32_pkg.sv",
+        "rtl/core/decoder.sv",
+        "dv/unit/test_decoder.py"
+      ],
+      "acceptance_criteria": [
+        "Every supported opcode and immediate format has independent positive and reserved-encoding negative tests.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-decode"
+        ]
+      ],
+      "priority": 40,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "SV",
+        "RV32I",
+        "decode"
+      ]
+    },
+    {
+      "id": "T005",
+      "phase": "P1",
+      "title": "ALU ops with exhaustive small domains and signed edge vectors",
+      "description": "Implement, verify and document this bounded milestone: ALU ops with exhaustive small domains and signed edge vectors.",
+      "engineering_objective": "ALU checks signed/unsigned edge vectors, shift masks and wraparound with an independent oracle.",
+      "depends_on": [
+        "T004"
+      ],
+      "required_files": [
+        "rtl/core/alu.sv",
+        "dv/unit/test_alu.py"
+      ],
+      "acceptance_criteria": [
+        "ALU checks signed/unsigned edge vectors, shift masks and wraparound with an independent oracle.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-alu"
+        ]
+      ],
+      "priority": 50,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "ALU",
+        "signed arithmetic"
+      ]
+    },
+    {
+      "id": "T006",
+      "phase": "P1",
+      "title": "Register file x0 invariance/read-write bypass and owner gate",
+      "description": "Implement, verify and document this bounded milestone: Register file x0 invariance/read-write bypass and owner gate.",
+      "engineering_objective": "Register file proves x0 invariance and the documented same-cycle read/write behavior.",
+      "depends_on": [
+        "T005"
+      ],
+      "required_files": [
+        "rtl/core/regfile.sv",
+        "dv/unit/test_regfile.py"
+      ],
+      "acceptance_criteria": [
+        "Register file proves x0 invariance and the documented same-cycle read/write behavior.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-regfile"
+        ]
+      ],
+      "priority": 60,
+      "status": "pending",
+      "human_approval_required": true,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "register file",
+        "RTL validation"
+      ]
+    },
+    {
+      "id": "T007",
+      "phase": "P1",
+      "title": "Branch comparator, target math, and JALR bit clearing",
+      "description": "Implement, verify and document this bounded milestone: Branch comparator, target math, and JALR bit clearing.",
+      "engineering_objective": "All six branch comparisons and JAL/JALR targets, including bit-zero clearing, pass edge tests.",
+      "depends_on": [
+        "T006"
+      ],
+      "required_files": [
+        "rtl/core/branch_unit.sv",
+        "dv/unit/test_branch.py"
+      ],
+      "acceptance_criteria": [
+        "All six branch comparisons and JAL/JALR targets, including bit-zero clearing, pass edge tests.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-branch"
+        ]
+      ],
+      "priority": 70,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "branch",
+        "JALR"
+      ]
+    },
+    {
+      "id": "T008",
+      "phase": "P1",
+      "title": "Load/store byte lane and sign extension unit",
+      "description": "Implement, verify and document this bounded milestone: Load/store byte lane and sign extension unit.",
+      "engineering_objective": "Every load/store width and lane verifies byte strobes, extension, alignment policy and neighboring-byte preservation.",
+      "depends_on": [
+        "T007"
+      ],
+      "required_files": [
+        "rtl/core/lsu.sv",
+        "dv/unit/test_lsu.py"
+      ],
+      "acceptance_criteria": [
+        "Every load/store width and lane verifies byte strobes, extension, alignment policy and neighboring-byte preservation.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-lsu"
+        ]
+      ],
+      "priority": 80,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "byte enables",
+        "load store"
+      ]
+    },
+    {
+      "id": "T009",
+      "phase": "P1",
+      "title": "Instruction/data memory behavioral models with fixed latency",
+      "description": "Implement, verify and document this bounded milestone: Instruction/data memory behavioral models with fixed latency.",
+      "engineering_objective": "Request/response backpressure tests prove stability, one outstanding transaction and no duplicate acceptance.",
+      "depends_on": [
+        "T008"
+      ],
+      "required_files": [
+        "dv/models/memory.py",
+        "dv/integration/test_memory.py"
+      ],
+      "acceptance_criteria": [
+        "Request/response backpressure tests prove stability, one outstanding transaction and no duplicate acceptance.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-memory"
+        ]
+      ],
+      "priority": 90,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "BRAM",
+        "memory model"
+      ]
+    },
+    {
+      "id": "T010",
+      "phase": "P1",
+      "title": "Simple nonpipelined instruction execution reference DUT",
+      "description": "Implement, verify and document this bounded milestone: Simple nonpipelined instruction execution reference DUT.",
+      "engineering_objective": "Reference core retires directed programs in order, with reset state and all supported instruction families checked.",
+      "depends_on": [
+        "T009"
+      ],
+      "required_files": [
+        "rtl/core/reference_core.sv",
+        "dv/integration/test_core_smoke.py"
+      ],
+      "acceptance_criteria": [
+        "Reference core retires directed programs in order, with reset state and all supported instruction families checked.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-core"
+        ]
+      ],
+      "priority": 100,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "datapath",
+        "control"
+      ]
+    },
+    {
+      "id": "T011",
+      "phase": "P1",
+      "title": "Independent Python ISA oracle plus retirement comparison",
+      "description": "Implement, verify and document this bounded milestone: Independent Python ISA oracle plus retirement comparison.",
+      "engineering_objective": "Independent Python ISA model compares retirement PC, instruction, register and memory effects; injected mismatch must fail.",
+      "depends_on": [
+        "T010"
+      ],
+      "required_files": [
+        "dv/reference/rv32_iss.py",
+        "dv/integration/test_retire.py"
+      ],
+      "acceptance_criteria": [
+        "Independent Python ISA model compares retirement PC, instruction, register and memory effects; injected mismatch must fail.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-retire"
+        ]
+      ],
+      "priority": 110,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "ISS",
+        "scoreboard",
+        "retirement"
+      ]
+    },
+    {
+      "id": "T012",
+      "phase": "P1",
+      "title": "Instruction family directed smoke and L1 baseline gate",
+      "description": "Implement, verify and document this bounded milestone: Instruction family directed smoke and L1 baseline gate.",
+      "engineering_objective": "Instruction-family requirements map to passing directed tests and an owner-reviewed baseline report.",
+      "depends_on": [
+        "T011"
+      ],
+      "required_files": [
+        "dv/integration/test_isa_directed.py",
+        "docs/VERIFICATION_REPORT.md"
+      ],
+      "acceptance_criteria": [
+        "Instruction-family requirements map to passing directed tests and an owner-reviewed baseline report.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-core"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-retire"
+        ]
+      ],
+      "priority": 120,
+      "status": "pending",
+      "human_approval_required": true,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "directed tests",
+        "regression"
+      ]
+    },
+    {
+      "id": "T013",
+      "phase": "P2",
+      "title": "Pipeline registers/valid bits for IF ID EX MEM WB",
+      "description": "Implement, verify and document this bounded milestone: Pipeline registers/valid bits for IF ID EX MEM WB.",
+      "engineering_objective": "IF/ID/EX/MEM/WB valid bits and pipeline registers pass advance, hold, flush and reset tests.",
+      "depends_on": [
+        "T012"
+      ],
+      "required_files": [
+        "rtl/core/pipeline_core.sv",
+        "dv/integration/test_pipeline_base.py"
+      ],
+      "acceptance_criteria": [
+        "IF/ID/EX/MEM/WB valid bits and pipeline registers pass advance, hold, flush and reset tests.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-pipeline"
+        ]
+      ],
+      "priority": 130,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "pipeline",
+        "valid bits"
+      ]
+    },
+    {
+      "id": "T014",
+      "phase": "P2",
+      "title": "Bypass/forwarding EX and WB hazards",
+      "description": "Implement, verify and document this bounded milestone: Bypass/forwarding EX and WB hazards.",
+      "engineering_objective": "EX/MEM and MEM/WB bypass, source priority, x0 and unavailable load data pass directed hazards.",
+      "depends_on": [
+        "T013"
+      ],
+      "required_files": [
+        "rtl/core/forwarding_unit.sv",
+        "dv/integration/test_forwarding.py"
+      ],
+      "acceptance_criteria": [
+        "EX/MEM and MEM/WB bypass, source priority, x0 and unavailable load data pass directed hazards.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-forwarding"
+        ]
+      ],
+      "priority": 140,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "RAW hazards",
+        "forwarding"
+      ]
+    },
+    {
+      "id": "T015",
+      "phase": "P2",
+      "title": "Load-use hazard detection and deterministic stall",
+      "description": "Implement, verify and document this bounded milestone: Load-use hazard detection and deterministic stall.",
+      "engineering_objective": "Unresolved load-use interlocks preserve dependent operands without duplicate retire events.",
+      "depends_on": [
+        "T014"
+      ],
+      "required_files": [
+        "rtl/core/hazard_unit.sv",
+        "dv/integration/test_load_use.py"
+      ],
+      "acceptance_criteria": [
+        "Unresolved load-use interlocks preserve dependent operands without duplicate retire events.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-hazards"
+        ]
+      ],
+      "priority": 150,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "hazard detection",
+        "stall"
+      ]
+    },
+    {
+      "id": "T016",
+      "phase": "P2",
+      "title": "Taken branch/JAL/JALR redirect flush and no wrong path retire",
+      "description": "Implement, verify and document this bounded milestone: Taken branch/JAL/JALR redirect flush and no wrong path retire.",
+      "engineering_objective": "Taken branch, JAL and JALR squash younger instructions; no wrong-path register or memory effect retires.",
+      "depends_on": [
+        "T015"
+      ],
+      "required_files": [
+        "dv/integration/test_flush.py"
+      ],
+      "acceptance_criteria": [
+        "Taken branch, JAL and JALR squash younger instructions; no wrong-path register or memory effect retires.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-control"
+        ]
+      ],
+      "priority": 160,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "control hazard",
+        "flush"
+      ]
+    },
+    {
+      "id": "T017",
+      "phase": "P2",
+      "title": "Memory wait-state ready-valid stall and no duplicate request",
+      "description": "Implement, verify and document this bounded milestone: Memory wait-state ready-valid stall and no duplicate request.",
+      "engineering_objective": "Random wait states and redirect/stall interactions cause no repeated transactions or lost commits.",
+      "depends_on": [
+        "T016"
+      ],
+      "required_files": [
+        "dv/integration/test_backpressure.py"
+      ],
+      "acceptance_criteria": [
+        "Random wait states and redirect/stall interactions cause no repeated transactions or lost commits.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-backpressure"
+        ]
+      ],
+      "priority": 170,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "handshake",
+        "backpressure"
+      ]
+    },
+    {
+      "id": "T018",
+      "phase": "P2",
+      "title": "Pipeline vs oracle regression and owner milestone review",
+      "description": "Implement, verify and document this bounded milestone: Pipeline vs oracle regression and owner milestone review.",
+      "engineering_objective": "Pipelined core matches the independent ISA oracle across documented deterministic seeds; owner reviews pipeline evidence.",
+      "depends_on": [
+        "T017"
+      ],
+      "required_files": [
+        "dv/integration/test_pipeline_iss.py",
+        "docs/PIPELINE_REVIEW.md"
+      ],
+      "acceptance_criteria": [
+        "Pipelined core matches the independent ISA oracle across documented deterministic seeds; owner reviews pipeline evidence.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-pipeline"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-retire"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "regress"
+        ]
+      ],
+      "priority": 180,
+      "status": "pending",
+      "human_approval_required": true,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "pipeline verification",
+        "CPI"
+      ]
+    },
+    {
+      "id": "T019",
+      "phase": "P3",
+      "title": "Scoreboard and replayable randomized instruction generation",
+      "description": "Implement, verify and document this bounded milestone: Scoreboard and replayable randomized instruction generation.",
+      "engineering_objective": "Generator logs replayable seeds; scoreboard detects an intentionally injected error and compares architectural effects.",
+      "depends_on": [
+        "T018"
+      ],
+      "required_files": [
+        "dv/reference/scoreboard.py",
+        "dv/random/test_random_programs.py"
+      ],
+      "acceptance_criteria": [
+        "Generator logs replayable seeds; scoreboard detects an intentionally injected error and compares architectural effects.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-random"
+        ]
+      ],
+      "priority": 190,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "constrained random",
+        "scoreboard"
+      ]
+    },
+    {
+      "id": "T020",
+      "phase": "P3",
+      "title": "SystemVerilog assertions for invariants and handshake",
+      "description": "Implement, verify and document this bounded milestone: SystemVerilog assertions for invariants and handshake.",
+      "engineering_objective": "Executable assertions check x0, retirement ordering, reset and ready/valid stability; deliberate assertion violation is detected.",
+      "depends_on": [
+        "T019"
+      ],
+      "required_files": [
+        "dv/assertions/core_properties.sv",
+        "docs/ASSERTION_PLAN.md"
+      ],
+      "acceptance_criteria": [
+        "Executable assertions check x0, retirement ordering, reset and ready/valid stability; deliberate assertion violation is detected.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-sva"
+        ]
+      ],
+      "priority": 200,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "SVA",
+        "assertions"
+      ]
+    },
+    {
+      "id": "T021",
+      "phase": "P3",
+      "title": "Functional coverage bins with uncovered-bin reporting",
+      "description": "Implement, verify and document this bounded milestone: Functional coverage bins with uncovered-bin reporting.",
+      "engineering_objective": "Coverage defines reachable bins and exclusions and reports uncovered opcode, hazard and backpressure crosses.",
+      "depends_on": [
+        "T020"
+      ],
+      "required_files": [
+        "dv/coverage/coverage_report.py",
+        "docs/COVERAGE_PLAN.md"
+      ],
+      "acceptance_criteria": [
+        "Coverage defines reachable bins and exclusions and reports uncovered opcode, hazard and backpressure crosses.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "coverage"
+        ]
+      ],
+      "priority": 210,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "functional coverage",
+        "metrics"
+      ]
+    },
+    {
+      "id": "T022",
+      "phase": "P3",
+      "title": "Random memory timing, reset mid-run and stress regression",
+      "description": "Implement, verify and document this bounded milestone: Random memory timing, reset mid-run and stress regression.",
+      "engineering_objective": "Reset mid-stall, randomized memory timing and replayable stress programs pass with seed lists and waveforms.",
+      "depends_on": [
+        "T021"
+      ],
+      "required_files": [
+        "dv/random/test_stress.py"
+      ],
+      "acceptance_criteria": [
+        "Reset mid-stall, randomized memory timing and replayable stress programs pass with seed lists and waveforms.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-stress"
+        ]
+      ],
+      "priority": 220,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "random latency",
+        "reset",
+        "stress"
+      ]
+    },
+    {
+      "id": "T023",
+      "phase": "P3",
+      "title": "Formal proof for ALU/x0/handshake bounded properties",
+      "description": "Implement, verify and document this bounded milestone: Formal proof for ALU/x0/handshake bounded properties.",
+      "engineering_objective": "Selected formal properties execute with stated assumptions and bounds; missing solver/prover is NOT RUN.",
+      "depends_on": [
+        "T022"
+      ],
+      "required_files": [
+        "formal/core_properties.sby",
+        "docs/FORMAL_LIMITS.md"
+      ],
+      "acceptance_criteria": [
+        "Selected formal properties execute with stated assumptions and bounds; missing solver/prover is NOT RUN.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "formal-smoke"
+        ]
+      ],
+      "priority": 230,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "formal",
+        "SymbiYosys"
+      ]
+    },
+    {
+      "id": "T024",
+      "phase": "P3",
+      "title": "Verification closure review with negative fault injection",
+      "description": "Implement, verify and document this bounded milestone: Verification closure review with negative fault injection.",
+      "engineering_objective": "Directed/random/assertion/coverage evidence and negative fault injection are traceable; known failures block owner DV closure.",
+      "depends_on": [
+        "T023",
+        "T041"
+      ],
+      "required_files": [
+        "docs/DV_CLOSURE.md",
+        "docs/VERIFICATION_REPORT.md"
+      ],
+      "acceptance_criteria": [
+        "Directed/random/assertion/coverage evidence and negative fault injection are traceable; known failures block owner DV closure.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "regress"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "coverage"
+        ]
+      ],
+      "priority": 240,
+      "status": "pending",
+      "human_approval_required": true,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "DV closure",
+        "fault injection"
+      ]
+    },
+    {
+      "id": "T025",
+      "phase": "P4",
+      "title": "Top-level board pinmap/XDC and 100MHz clock constraint",
+      "description": "Implement, verify and document this bounded milestone: Top-level board pinmap/XDC and 100MHz clock constraint.",
+      "engineering_objective": "Board is confirmed by owner; pin assignments and clock/reset constraints match that board; no assumed Basys3 pins.",
+      "depends_on": [
+        "T024"
+      ],
+      "required_files": [
+        "fpga/basys3/top.sv",
+        "fpga/basys3/basys3.xdc"
+      ],
+      "acceptance_criteria": [
+        "Board is confirmed by owner; pin assignments and clock/reset constraints match that board; no assumed Basys3 pins.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-top"
+        ]
+      ],
+      "priority": 250,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "XDC",
+        "IO constraints"
+      ]
+    },
+    {
+      "id": "T026",
+      "phase": "P4",
+      "title": "BRAM images and baremetal RISC-V linker script",
+      "description": "Implement, verify and document this bounded milestone: BRAM images and baremetal RISC-V linker script.",
+      "engineering_objective": "BRAM initialization and firmware/linker map match approved architecture; synchronous read latency is verified.",
+      "depends_on": [
+        "T025"
+      ],
+      "required_files": [
+        "sw/linker.ld",
+        "sw/boot.S",
+        "fpga/basys3/rom_init.mem"
+      ],
+      "acceptance_criteria": [
+        "BRAM initialization and firmware/linker map match approved architecture; synchronous read latency is verified.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-firmware"
+        ]
+      ],
+      "priority": 260,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "BRAM",
+        "bare-metal"
+      ]
+    },
+    {
+      "id": "T027",
+      "phase": "P4",
+      "title": "UART TX IP plus register tests and memory map",
+      "description": "Implement, verify and document this bounded milestone: UART TX IP plus register tests and memory map.",
+      "engineering_objective": "UART TX framing, divisor, busy/ready and byte-store MMIO semantics pass waveform-level self-checks.",
+      "depends_on": [
+        "T026"
+      ],
+      "required_files": [
+        "rtl/peripherals/uart_tx.sv",
+        "dv/unit/test_uart.py"
+      ],
+      "acceptance_criteria": [
+        "UART TX framing, divisor, busy/ready and byte-store MMIO semantics pass waveform-level self-checks.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-uart"
+        ]
+      ],
+      "priority": 270,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "UART",
+        "MMIO"
+      ]
+    },
+    {
+      "id": "T028",
+      "phase": "P4",
+      "title": "GPIO and timer MMIO peripherals",
+      "description": "Implement, verify and document this bounded milestone: GPIO and timer MMIO peripherals.",
+      "engineering_objective": "GPIO and timer register behavior, strobes, rollover and invalid access semantics pass independent MMIO tests.",
+      "depends_on": [
+        "T042"
+      ],
+      "required_files": [
+        "rtl/peripherals/gpio.sv",
+        "rtl/peripherals/timer.sv",
+        "dv/integration/test_mmio.py"
+      ],
+      "acceptance_criteria": [
+        "GPIO and timer register behavior, strobes, rollover and invalid access semantics pass independent MMIO tests.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-mmio"
+        ]
+      ],
+      "priority": 280,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "timer",
+        "GPIO",
+        "bus integration"
+      ]
+    },
+    {
+      "id": "T029",
+      "phase": "P4",
+      "title": "External reset/input synchronization and CDC analysis",
+      "description": "Implement, verify and document this bounded milestone: External reset/input synchronization and CDC analysis.",
+      "engineering_objective": "Reset release and external input synchronizers are verified and an actual CDC analysis report is recorded.",
+      "depends_on": [
+        "T028"
+      ],
+      "required_files": [
+        "rtl/peripherals/input_sync.sv",
+        "docs/CDC_REPORT.md"
+      ],
+      "acceptance_criteria": [
+        "Reset release and external input synchronizers are verified and an actual CDC analysis report is recorded.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-cdc"
+        ]
+      ],
+      "priority": 290,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "CDC",
+        "reset synchronizer"
+      ]
+    },
+    {
+      "id": "T030",
+      "phase": "P4",
+      "title": "Vivado nonproject Tcl synthesis, placement and timing script",
+      "description": "Implement, verify and document this bounded milestone: Vivado nonproject Tcl synthesis, placement and timing script.",
+      "engineering_objective": "Reproducible reviewed Tcl scripts direct outputs under build/; this task alone does not claim synthesis or timing closure.",
+      "depends_on": [
+        "T029"
+      ],
+      "required_files": [
+        "fpga/basys3/build.tcl",
+        "docs/FPGA_PPA.md"
+      ],
+      "acceptance_criteria": [
+        "Reproducible reviewed Tcl scripts direct outputs under build/; this task alone does not claim synthesis or timing closure.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-tcl"
+        ]
+      ],
+      "priority": 300,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "Vivado",
+        "STA",
+        "timing closure"
+      ]
+    },
+    {
+      "id": "T031",
+      "phase": "P4",
+      "title": "Simulated SoC boots firmware and UART outputs PASS",
+      "description": "Implement, verify and document this bounded milestone: Simulated SoC boots firmware and UART outputs PASS.",
+      "engineering_objective": "Simulated SoC boots identified firmware and independently decodes UART output; firmware and memory images are hashed.",
+      "depends_on": [
+        "T030"
+      ],
+      "required_files": [
+        "dv/integration/test_soc_boot.py",
+        "docs/SOC_BOOT.md"
+      ],
+      "acceptance_criteria": [
+        "Simulated SoC boots identified firmware and independently decodes UART output; firmware and memory images are hashed.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-soc"
+        ]
+      ],
+      "priority": 310,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "SoC",
+        "hardware validation"
+      ]
+    },
+    {
+      "id": "T032",
+      "phase": "P4",
+      "title": "Basys3 physical bringup user-supervised milestone",
+      "description": "Implement, verify and document this bounded milestone: Basys3 physical bringup user-supervised milestone.",
+      "engineering_objective": "Owner authorizes programming; board identity, bitstream/firmware hashes, physical UART transcript and observations are recorded.",
+      "depends_on": [
+        "T043"
+      ],
+      "required_files": [
+        "evidence/hardware/README.md",
+        "docs/FPGA_PPA.md"
+      ],
+      "acceptance_criteria": [
+        "Owner authorizes programming; board identity, bitstream/firmware hashes, physical UART transcript and observations are recorded.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-soc"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "hardware-evidence"
+        ]
+      ],
+      "priority": 320,
+      "status": "pending",
+      "human_approval_required": true,
+      "start_approval_required": true,
+      "optional": false,
+      "keywords": [
+        "Basys3",
+        "on-board validation"
+      ]
+    },
+    {
+      "id": "T033",
+      "phase": "P5",
+      "title": "Minimal AXI4-Lite slave adapter architecture review",
+      "description": "Implement, verify and document this bounded milestone: Minimal AXI4-Lite slave adapter architecture review.",
+      "engineering_objective": "Owner reviews optional AXI4-Lite adapter channels, ordering, reset and error behavior.",
+      "depends_on": [
+        "T032"
+      ],
+      "required_files": [
+        "docs/AXIL_BRIDGE_SPEC.md",
+        "docs/DECISIONS.md"
+      ],
+      "acceptance_criteria": [
+        "Owner reviews optional AXI4-Lite adapter channels, ordering, reset and error behavior.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/harness.py",
+          "validate"
+        ]
+      ],
+      "priority": 330,
+      "status": "pending",
+      "human_approval_required": true,
+      "start_approval_required": false,
+      "optional": true,
+      "keywords": [
+        "AMBA",
+        "AXI4-Lite"
+      ]
+    },
+    {
+      "id": "T034",
+      "phase": "P5",
+      "title": "AXI4-Lite slave bridge and protocol SVA/backpressure tests",
+      "description": "Implement, verify and document this bounded milestone: AXI4-Lite slave bridge and protocol SVA/backpressure tests.",
+      "engineering_objective": "AXI4-Lite independent channel and backpressure tests and protocol assertions pass.",
+      "depends_on": [
+        "T033"
+      ],
+      "required_files": [
+        "rtl/bus/axil_bridge.sv",
+        "dv/integration/test_axil.py"
+      ],
+      "acceptance_criteria": [
+        "AXI4-Lite independent channel and backpressure tests and protocol assertions pass.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-axil"
+        ]
+      ],
+      "priority": 340,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": true,
+      "keywords": [
+        "AXI-Lite",
+        "SVA",
+        "ready valid"
+      ]
+    },
+    {
+      "id": "T035",
+      "phase": "P5",
+      "title": "DMA architecture feasibility study, only if needed for role",
+      "description": "Implement, verify and document this bounded milestone: DMA architecture feasibility study, only if needed for role.",
+      "engineering_objective": "Owner reviews optional DMA arbitration, transfer limits, coherency assumptions and error semantics.",
+      "depends_on": [
+        "T034"
+      ],
+      "required_files": [
+        "docs/DMA_SPEC.md"
+      ],
+      "acceptance_criteria": [
+        "Owner reviews optional DMA arbitration, transfer limits, coherency assumptions and error semantics.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/harness.py",
+          "validate"
+        ]
+      ],
+      "priority": 350,
+      "status": "pending",
+      "human_approval_required": true,
+      "start_approval_required": false,
+      "optional": true,
+      "keywords": [
+        "DMA",
+        "arbiter"
+      ]
+    },
+    {
+      "id": "T036",
+      "phase": "P5",
+      "title": "Add optional DMA transfer with arbitration and scoreboard",
+      "description": "Implement, verify and document this bounded milestone: Add optional DMA transfer with arbitration and scoreboard.",
+      "engineering_objective": "DMA transfers, arbitration, corner cases and protocol failures pass scoreboard tests.",
+      "depends_on": [
+        "T035"
+      ],
+      "required_files": [
+        "rtl/bus/dma.sv",
+        "dv/integration/test_dma.py"
+      ],
+      "acceptance_criteria": [
+        "DMA transfers, arbitration, corner cases and protocol failures pass scoreboard tests.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-dma"
+        ]
+      ],
+      "priority": 360,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": true,
+      "keywords": [
+        "DMA",
+        "arbitration"
+      ]
+    },
+    {
+      "id": "T037",
+      "phase": "P5",
+      "title": "ASIC environment and PDK/library compatibility check",
+      "description": "Implement, verify and document this bounded milestone: ASIC environment and PDK/library compatibility check.",
+      "engineering_objective": "Owner reviews approved local ASIC tools/library/PDK, licensing, corners and download requirements; no installation is implied.",
+      "depends_on": [
+        "T032"
+      ],
+      "required_files": [
+        "asic/README.md",
+        "docs/ASIC_ASSUMPTIONS.md"
+      ],
+      "acceptance_criteria": [
+        "Owner reviews approved local ASIC tools/library/PDK, licensing, corners and download requirements; no installation is implied.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/harness.py",
+          "validate"
+        ]
+      ],
+      "priority": 370,
+      "status": "pending",
+      "human_approval_required": true,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "PDK",
+        "ASIC toolchain"
+      ]
+    },
+    {
+      "id": "T038",
+      "phase": "P5",
+      "title": "Small-unit Yosys synthesis with constraints and report",
+      "description": "Implement, verify and document this bounded milestone: Small-unit Yosys synthesis with constraints and report.",
+      "engineering_objective": "Actual selected-block Yosys synthesis executes against identified library/constraints; area data is sourced from reports.",
+      "depends_on": [
+        "T037"
+      ],
+      "required_files": [
+        "asic/synth_unit.ys",
+        "docs/ASIC_PPA.md"
+      ],
+      "acceptance_criteria": [
+        "Actual selected-block Yosys synthesis executes against identified library/constraints; area data is sourced from reports.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "asic-unit"
+        ]
+      ],
+      "priority": 380,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": true,
+      "optional": false,
+      "keywords": [
+        "Yosys",
+        "synthesis",
+        "PPA"
+      ]
+    },
+    {
+      "id": "T039",
+      "phase": "P5",
+      "title": "Small-block LibreLane/OpenROAD place route exploration",
+      "description": "Implement, verify and document this bounded milestone: Small-block LibreLane/OpenROAD place route exploration.",
+      "engineering_objective": "Actual block placement/routing, setup/hold and DRC/LVS applicability are documented with violations and limitations.",
+      "depends_on": [
+        "T038"
+      ],
+      "required_files": [
+        "asic/config.json",
+        "docs/ASIC_PPA.md"
+      ],
+      "acceptance_criteria": [
+        "Actual block placement/routing, setup/hold and DRC/LVS applicability are documented with violations and limitations.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "asic-block"
+        ]
+      ],
+      "priority": 390,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": true,
+      "optional": false,
+      "keywords": [
+        "OpenROAD",
+        "GDS",
+        "STA"
+      ]
+    },
+    {
+      "id": "T040",
+      "phase": "P5",
+      "title": "Post-flow technical limitations and final human review",
+      "description": "Implement, verify and document this bounded milestone: Post-flow technical limitations and final human review.",
+      "engineering_objective": "Every mandatory task is completed; reproducible final evidence covers CPU, SoC, FPGA hardware and ASIC; owner gives final approval.",
+      "depends_on": [
+        "T001",
+        "T002",
+        "T003",
+        "T004",
+        "T005",
+        "T006",
+        "T007",
+        "T008",
+        "T009",
+        "T010",
+        "T011",
+        "T012",
+        "T013",
+        "T014",
+        "T015",
+        "T016",
+        "T017",
+        "T018",
+        "T019",
+        "T020",
+        "T021",
+        "T022",
+        "T023",
+        "T024",
+        "T025",
+        "T026",
+        "T027",
+        "T028",
+        "T029",
+        "T030",
+        "T031",
+        "T032",
+        "T037",
+        "T038",
+        "T039",
+        "T041",
+        "T042",
+        "T043"
+      ],
+      "required_files": [
+        "docs/FINAL_REPORT.md",
+        "docs/FINAL_REVIEW_zh-CN.md"
+      ],
+      "acceptance_criteria": [
+        "Every mandatory task is completed; reproducible final evidence covers CPU, SoC, FPGA hardware and ASIC; owner gives final approval.",
+        "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/harness.py",
+          "validate"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "final-evidence"
+        ]
+      ],
+      "priority": 400,
+      "status": "pending",
+      "human_approval_required": true,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "PPA",
+        "design signoff caveats"
+      ]
+    },
+    {
+      "id": "T041",
+      "phase": "P2",
+      "title": "Close complete RV32I behavior and execution-environment specification",
+      "description": "After owner-approved ISA/trap design, verify FENCE, ECALL/EBREAK behavior, illegal encodings and approved misalignment/EEI rules; subset tests cannot imply complete RV32I.",
+      "engineering_objective": "After owner-approved ISA/trap design, verify FENCE, ECALL/EBREAK behavior, illegal encodings and approved misalignment/EEI rules; subset tests cannot imply complete RV32I.",
+      "depends_on": [
+        "T018"
+      ],
+      "required_files": [
+        "docs/ISA_COMPLIANCE_MATRIX.md",
+        "dv/integration/test_isa_complete.py"
+      ],
+      "acceptance_criteria": [
+        "After owner-approved ISA/trap design, verify FENCE, ECALL/EBREAK behavior, illegal encodings and approved misalignment/EEI rules; subset tests cannot imply complete RV32I.",
+        "Commands execute with full logs; missing tools or evidence cannot pass."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-isa-complete"
+        ]
+      ],
+      "priority": 185,
+      "status": "pending",
+      "human_approval_required": true,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": []
+    },
+    {
+      "id": "T042",
+      "phase": "P4",
+      "title": "UART RX synchronization, framing and MMIO integration",
+      "description": "Verify synchronized UART reception, framing errors, overrun, reset and approved MMIO status/data semantics.",
+      "engineering_objective": "Verify synchronized UART reception, framing errors, overrun, reset and approved MMIO status/data semantics.",
+      "depends_on": [
+        "T027"
+      ],
+      "required_files": [
+        "rtl/peripherals/uart_rx.sv",
+        "dv/unit/test_uart_rx.py"
+      ],
+      "acceptance_criteria": [
+        "Verify synchronized UART reception, framing errors, overrun, reset and approved MMIO status/data semantics.",
+        "Commands execute with full logs; missing tools or evidence cannot pass."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-uart-rx"
+        ]
+      ],
+      "priority": 275,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": []
+    },
+    {
+      "id": "T043",
+      "phase": "P4",
+      "title": "Execute FPGA synthesis, implementation and timing/power evidence",
+      "description": "Run reviewed Tcl on the confirmed part; save synthesis and routed utilization, setup/hold, clock/CDC, power and bitstream hashes. Timing failures remain failures.",
+      "engineering_objective": "Run reviewed Tcl on the confirmed part; save synthesis and routed utilization, setup/hold, clock/CDC, power and bitstream hashes. Timing failures remain failures.",
+      "depends_on": [
+        "T031"
+      ],
+      "required_files": [
+        "docs/FPGA_PPA.md",
+        "evidence/fpga/manifest.json"
+      ],
+      "acceptance_criteria": [
+        "Run reviewed Tcl on the confirmed part; save synthesis and routed utilization, setup/hold, clock/CDC, power and bitstream hashes. Timing failures remain failures.",
+        "Commands execute with full logs; missing tools or evidence cannot pass."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "vivado-synth"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "vivado-impl"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "fpga-reports"
+        ]
+      ],
+      "priority": 315,
+      "status": "pending",
+      "human_approval_required": true,
+      "start_approval_required": true,
+      "optional": false,
+      "keywords": []
+    }
+  ],
+  "final_review_task": "T040"
+}

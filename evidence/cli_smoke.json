@@ -1,0 +1,108 @@
+{
+  "checks": [
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/harness.py",
+        "status"
+      ],
+      "started_utc": "2026-10-15T05:26:38.249853+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"tasks\": 43,\n  \"project_status\": \"in_progress\",\n  \"execution_approval_pending\": [\n    \"T032\",\n    \"T038\",\n    \"T039\",\n    \"T043\"\n  ],\n  \"active\": null,\n  \"daily_claim\": \"T001\",\n  \"counts\": {\n    \"awaiting_review\": 0,\n    \"blocked\": 0,\n    \"completed\": 1,\n    \"failed\": 0,\n    \"in_progress\": 0,\n    \"passed\": 0,\n    \"pending\": 42\n  }\n}\n",
+      "stderr": "",
+      "expected_exit_code": 0,
+      "interpretation": "Successful read-only smoke"
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/harness.py",
+        "next"
+      ],
+      "started_utc": "2026-10-15T05:26:38.450322+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"tasks\": 43,\n  \"project_status\": \"in_progress\",\n  \"execution_approval_pending\": [\n    \"T032\",\n    \"T038\",\n    \"T039\",\n    \"T043\"\n  ],\n  \"active\": null,\n  \"daily_claim\": \"T001\",\n  \"next\": {\n    \"id\": \"T002\",\n    \"phase\": \"P0\",\n    \"title\": \"Architecture freeze and review of interfaces/reset/ISA gaps\",\n    \"description\": \"Implement, verify and document this bounded milestone: Architecture freeze and review of interfaces/reset/ISA gaps.\",\n    \"engineering_objective\": \"Owner explicitly reviews exact ports, reset behavior, memory map, stall/flush priorities, ISA traps and physical board before freeze.\",\n    \"depends_on\": [\n      \"T001\"\n    ],\n    \"required_files\": [\n      \"docs/ARCH_SPEC.md\",\n      \"docs/DECISIONS.md\",\n      \"docs/ARCH_REVIEW.md\"\n    ],\n    \"acceptance_criteria\": [\n      \"Owner explicitly reviews exact ports, reset behavior, memory map, stall/flush priorities, ISA traps and physical board before freeze.\",\n      \"Every required command executes successfully with exact argv, output, exit status and tool versions saved.\",\n      \"Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps.\"\n    ],\n    \"verification_commands\": [\n      [\n        \"{python}\",\n        \"-B\",\n        \"scripts/harness.py\",\n        \"validate\"\n      ]\n    ],\n    \"priority\": 20,\n    \"status\": \"pending\",\n    \"human_approval_required\": true,\n    \"start_approval_required\": false,\n    \"optional\": false,\n    \"keywords\": [\n      \"architecture\",\n      \"interface specification\"\n    ]\n  },\n  \"planning_only\": true\n}\n",
+      "stderr": "",
+      "expected_exit_code": 0,
+      "interpretation": "Successful read-only smoke"
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/harness.py",
+        "daily",
+        "--supervised"
+      ],
+      "started_utc": "2026-10-15T05:26:38.647306+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\n  \"mode\": \"SUPERVISED ONLY\",\n  \"latest_handoff\": \"docs\\\\daily\\\\2026-10-14_technical.md\",\n  \"handoff\": \"<!-- entry:c804ab0a8c2f92f56f89e2ad87fb611e2ed00de0fa5e273044b1b4905f18fdd8 -->\\n\\n# Technical engineering handoff — 2026-10-14 (America/Los_Angeles)\\n\\n## 1. Phase and primary task\\n\\nP0 bootstrap, T001: existing-project baseline, portable engineering harness, audited backlog and daily evidence. T001 is reserved for this day; do not begin T002 today. This entry records pre-final-gate facts. Append the final receipt/status after verification.\\n\\n## 2. Overall status\\n\\nNo CPU RTL, pipeline, peripherals, firmware, constraints, FPGA implementation or ASIC results exist. There are 43 planned tasks (39 mandatory, 4 optional). Architecture is a proposal, not an approved freeze. Only attended work is authorized under the current unrestricted session; unattended automation is disabled.\\n\\n## 3. Project configuration and technical decisions\\n\\nOfficial workspace: C:/RV32I_Edge_SoC, explicitly authorized for in-place development by the owner. Existing XPR was inspected as XML without launching Vivado. Part is xc7a35tcpg236-1; BoardPart is empty. All four file sets have no File entries. No top, RTL source, XDC or clock configuration is present. XPR comment identifies Vivado v2025.2; no executable version has been verified. Basys3 and 100 MHz remain candidate assumptions.\\n\\nKeep the existing XPR and original kit unchanged during bootstrap. Root-level kit copies are now the active engineering system. Python 3.9.13 and installed tzdata 2026.2 are sufficient for the standard-library harness. Windows byte-range locking replaces the Linux-only assumption. State is authoritative; backlog statuses are its repairable projection. One task per Los Angeles calendar date, at most three verification attempts, exact argv without a shell, timestamped full-output receipts and append-preserving bilingual reports.\\n\\n## 4. Work completed\\n\\nCreated a recoverable baseline before changing files: Git commit 8f16054b24a9d50021f8a805f7f0d78435206daa plus .baseline/20261015T051119Z/original.zip and SHA-256 manifest. Verified archive-member hashes for all 23 original files. Initialized dedicated branch engineering/bootstrap, preserving the previously non-Git project.\\n\\nAudited the existing kit and repaired its Windows execution assumptions, task states, interrupted recovery, daily quota, evidence gates and final-completion logic. Added explicit owner execution gates and preserved review-only authority. Migrated the original 40 tasks, added full RV32I closure T041, UART RX T042 and actual FPGA execution T043. Final T040 depends directly on every mandatory task. Optional AXI4-Lite and DMA remain disabled and cannot block required completion.\\n\\nCreated preflight, explicit verification registry, bilingual report writer, manual daily entrypoint, local Make aliases and documentation. Registry starts empty intentionally: absent RTL/checks return NOT RUN rather than zero-test success. No dependencies, network downloads, host scheduler, FPGA programming or remote changes occurred.\\n\\n## 5. Exact files added or changed\\n\\nNo original XPR, original kit file or original generated metadata was edited. Root-level additions at this snapshot:\\n\\n- .gitignore\\n- .harness/checks.json\\n- .harness/environment.json\\n- .harness/state.json\\n- AGENTS.md\\n- Makefile\\n- README.md\\n- docs/ARCH_AUDIT.md\\n- docs/ARCH_SPEC.md\\n- docs/BACKLOG.json\\n- docs/CAREER_PORTFOLIO.md\\n- docs/CODEX_LOOP.md\\n- docs/DECISIONS.md\\n- docs/ENVIRONMENT_BOUNDARY.md\\n- docs/GETTING_STARTED_CN.md\\n- docs/PROJECT_BASELINE.json\\n- docs/PROJECT_CHARTER.md\\n- docs/PROJECT_STRUCTURE.md\\n- docs/REFERENCES.md\\n- docs/TOOLCHAIN.md\\n- docs/VERIFICATION_PLAN.md\\n- evidence/daily/README.md\\n- prompts/BOOTSTRAP_PROMPT.md\\n- prompts/DAILY_CODEX_PROMPT.md\\n- prompts/DAILY_RUN.md\\n- prompts/WEEKLY_REVIEW_PROMPT.md\\n- scripts/daily.ps1\\n- scripts/harness.py\\n- scripts/preflight.py\\n- scripts/report.py\\n- scripts/test_harness.py\\n- scripts/verify.py\\n\\nAdditional generated records are evidence/toolchain.json, evidence/daily/T001.md, evidence/report_entries/bootstrap-initial.json and the two docs/daily/2026-10-14 reports. Final timestamped receipt and any later same-day entries are listed in the final addendum. build/ and .tmp/ are ignored local scratch; .baseline/ and .git/ are also local additions.\\n\\n## 6. Interfaces and assumptions\\n\\nNo RTL ports exist. The v0.1 draft proposes IF/ID/EX/MEM/WB, one outstanding ready/valid memory transaction, EX branch resolution, forwarding, load-use stalls and retirement comparison. Exact reset, port timing, memory map, error/trap behavior and stall/flush priority require T002 review. Do not implement tentative interfaces today. The MVP subset cannot satisfy full RV32I completion; FENCE/ECALL/EBREAK and approved EEI behavior need T041.\\n\\nController interface: python -B scripts/harness.py validate|status|next|daily|begin|finish|block. Owner-only approve/reopen/enable/authorize commands require explicit acknowledgment; the agent must not self-approve. These flags are process rules, not authentication or an OS sandbox. Reports use scripts/report.py --entry <project-relative JSON> with technical and zh-CN strings.\\n\\n## 7. Tests and exact commands\\n\\n- python -B riscv_edge_soc_codex_kit/scripts/harness.py validate: exit 1, ModuleNotFoundError: fcntl. This is the preserved original defect; the archived kit remains unchanged.\\n- python --version: exit 0, Python 3.9.13.\\n- git --version: exit 0, Git 2.48.1.windows.1.\\n- python -B scripts/test_harness.py: preliminary suite passed 23 tests, exit 0 (9.021 seconds reported by unittest). Additional tests/guards were subsequently added; final finish must rerun the complete suite.\\n- python -B scripts/harness.py validate and status: exit 0; 43 tasks, T001 active, current date claimed.\\n- python -B scripts/preflight.py: exit 0; metadata/Python/Git readiness PASS only. evidence/toolchain.json contains exact commands, versions, paths and observed package metadata.\\n- git diff --check: exit 0 during preparation. Newly added files must also be staged and checked with git diff --cached --check before commit.\\n- Initial git status checks returned not-a-repository before baseline creation. No prior commits or uncommitted Git work existed to overwrite.\\n- A read-only Windows PowerShell Get-Date -AsUTC diagnostic failed because that switch is unavailable; subsequent timestamps used Python aware datetime and installed timezone data.\\n\\nFinal required command execution and exit codes will be captured by finish T001; do not infer them from this preliminary entry.\\n\\n## 8. Verification coverage and gaps\\n\\nController tests cover dependencies/priority, failed and missing-tool gates, dirty-tree protection, interrupted recovery, daily duplication, idempotent reruns, same-task cross-day recovery, owner review, bounded retries, concurrency, output preservation, reports and terminal behavior. Later additions cover optional enable, registry/input absence, runtime dependency corruption and prior-date preservation.\\n\\nThese are Python controller tests, not CPU simulation or HDL functional coverage. The harness cannot establish semantic correctness from file existence or command exit codes; independent RTL oracles and human review remain necessary. No RTL functional coverage, formal proof, ISA test, waveform, timing or hardware observation exists.\\n\\n## 9. Timing, FPGA and ASIC results\\n\\nAll NOT RUN. No WNS/TNS/Fmax, setup/hold, area, power, resource, CDC signoff or board result is available. No build was attempted on an empty design. Docker's executable was found but no daemon/container operation was run.\\n\\n## 10. Bugs and root causes\\n\\nOriginal harness imported fcntl unconditionally, failing immediately on Windows. It also assumed make/python3, used todo/done rather than required states, blocked rather than resumed interrupted tasks, wrote temporary self-test repositories outside the project, truncated command output and did not implement the complete required daily reporting/terminal gates. These issues were addressed in root tooling while preserving original files for provenance.\\n\\nBacklog omissions could have allowed apparent project completion without RX, complete RV32I behavior or actual FPGA run evidence. New mandatory tasks and final dependency validation close those planning gaps without asserting any implementation.\\n\\n## 11. Unresolved issues\\n\\nUnrestricted filesystem/network access is a real residual risk. No prompt, environment observation file or virtual environment enforces isolation. The owner authorized attended bootstrap but prohibited unattended work until suitable actual permissions are configured.\\n\\nVivado, Verilator, Icarus/vvp, Yosys, SBY, Make and RISC-V GCC were not found on PATH; cocotb and pytest are not available in the interpreter. This is discovery evidence only, not proof that no alternate installation exists. Board identity and Vivado executable path have been requested from the owner.\\n\\n## 12. Dependencies and blockers\\n\\nBootstrap final gate is still pending at this entry. T002 can prepare architecture details on the next eligible date; owner must review before implementation depends on its completion. T003 must establish approved local tools before CPU work. No external installation or download is authorized. Physical programming, disruptive EDA and ASIC execution retain explicit owner gates. No daily scheduling time/days or actual sandbox change has been authorized/configured.\\n\\n## 13. Git history\\n\\nBranch: engineering/bootstrap. Baseline commit: 8f16054b24a9d50021f8a805f7f0d78435206daa. No remote/push exists. Only local core.autocrlf was configured; commit identity is supplied per command, without changing global Git configuration. Final engineering commit identifier will be recorded in a same-day addendum after verification/commit; a report cannot include its own containing commit hash before that commit exists.\\n\\n## 14. Next recommended task\\n\\nT002: produce precise architecture/reset/port/ISA-gap proposal and owner review checklist, including board confirmation. It must not start while today's T001 daily claim is in effect. After T002 verification, stop at awaiting_review until the owner approves.\\n\\n## 15. Exact next-session instructions\\n\\nRun python -B scripts/harness.py daily --supervised from the project root. Read this entire report including appended final results, AGENTS, boundary, specs, plan and state. Inspect actual sandbox and Git status. If T001 is still active/failed, resume T001 with begin T001; preserve unknown diffs. If it completed, do not start T002 on 2026-10-14. On a new eligible day with a clean baseline, select only T002. Review pending owner board/tool answers. Never run approve/authorize/reopen/enable for the owner. Generate both reports even on a blocked day. No unattended scheduler, installation, hardware programming or second task today.\\n\\n\\n---\\n\\n<!-- entry:3a1e00389cde12a56f7bbd93456cac5331827dcab7d4db7a6b5b2afa1250789c -->\\n\\n# Bootstrap gate attempt 1 — failure retained\\n\\nThe full controller suite passed 26 tests in 10.365s (exit 0). Preflight, backlog validation and unstaged diff checks passed. The staged whitespace check failed with exit 2 because some newly created root files used CRLF while core.autocrlf was false, and generated additions had extra blank lines at EOF. T001 remained failed/active with attempt count 1. Full original output is preserved in evidence/runs/T001/attempt-1-20261015T052429061951Z.json.\\n\\nCorrection: normalized line endings and EOF formatting only in newly added root files (12 files). Original XPR, original kit and original generated metadata were excluded. No test/assertion/expected behavior was weakened. The next gate will rerun the complete required suite and both whitespace checks. No new backlog task was selected.\\n\",\n  \"active_task\": null,\n  \"project_status\": \"in_progress\",\n  \"daily_claim\": \"T001\",\n  \"next\": {\n    \"id\": \"T002\",\n    \"phase\": \"P0\",\n    \"title\": \"Architecture freeze and review of interfaces/reset/ISA gaps\",\n    \"description\": \"Implement, verify and document this bounded milestone: Architecture freeze and review of interfaces/reset/ISA gaps.\",\n    \"engineering_objective\": \"Owner explicitly reviews exact ports, reset behavior, memory map, stall/flush priorities, ISA traps and physical board before freeze.\",\n    \"depends_on\": [\n      \"T001\"\n    ],\n    \"required_files\": [\n      \"docs/ARCH_SPEC.md\",\n      \"docs/DECISIONS.md\",\n      \"docs/ARCH_REVIEW.md\"\n    ],\n    \"acceptance_criteria\": [\n      \"Owner explicitly reviews exact ports, reset behavior, memory map, stall/flush priorities, ISA traps and physical board before freeze.\",\n      \"Every required command executes successfully with exact argv, output, exit status and tool versions saved.\",\n      \"Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps.\"\n    ],\n    \"verification_commands\": [\n      [\n        \"{python}\",\n        \"-B\",\n        \"scripts/harness.py\",\n        \"validate\"\n      ]\n    ],\n    \"priority\": 20,\n    \"status\": \"pending\",\n    \"human_approval_required\": true,\n    \"start_approval_required\": false,\n    \"optional\": false,\n    \"keywords\": [\n      \"architecture\",\n      \"interface specification\"\n    ]\n  },\n  \"instruction\": \"Read the handoff and prompts/DAILY_RUN.md; inspect Git status. Recover active work; do not start a second daily task.\"\n}\n",
+      "stderr": "",
+      "expected_exit_code": 0,
+      "interpretation": "Successful read-only smoke"
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/harness.py",
+        "daily"
+      ],
+      "started_utc": "2026-10-15T05:26:38.847496+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "FAIL",
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "STOP: Unattended execution disabled. Configure actual sandbox controls first; --supervised is only for an attended session\n",
+      "expected_exit_code": 2,
+      "interpretation": "Expected refusal/NOT RUN"
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/harness.py",
+        "begin",
+        "T002"
+      ],
+      "started_utc": "2026-10-15T05:26:39.008365+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "FAIL",
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "STOP: Daily quota already used by T001\n",
+      "expected_exit_code": 2,
+      "interpretation": "Expected refusal/NOT RUN"
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "lint"
+      ],
+      "started_utc": "2026-10-15T05:26:39.203663+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "NOT RUN",
+      "exit_code": 125,
+      "stdout": "NOT RUN: no implemented check with explicit inputs: lint\n",
+      "stderr": "",
+      "expected_exit_code": 125,
+      "interpretation": "Expected refusal/NOT RUN"
+    }
+  ]
+}

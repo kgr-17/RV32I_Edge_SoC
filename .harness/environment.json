@@ -1,0 +1,7 @@
+{
+  "observed_date": "2026-10-14",
+  "sandbox_mode": "danger-full-access",
+  "approval_policy": "never",
+  "unattended_enabled": false,
+  "note": "Observation only, not enforcement. Inspect actual runtime permissions each session."
+}

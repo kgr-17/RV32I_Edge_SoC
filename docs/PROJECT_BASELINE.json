@@ -1,0 +1,21 @@
+{
+  "baseline_commit": "8f16054b24a9d50021f8a805f7f0d78435206daa",
+  "backup_directory": ".baseline/20261015T051119Z",
+  "backup_manifest": ".baseline/20261015T051119Z/manifest.json",
+  "xpr_sha256": "c94b0e09ce2ea5e694f50e073d2ff9ae86f1908d4f80e5613fc0a432d6539cc4",
+  "fpga_part": "xc7a35tcpg236-1",
+  "vivado_project_version": "2025.2 (from XPR comment; executable not verified)",
+  "board": null,
+  "top": null,
+  "rtl_sources": [],
+  "xdc_sources": [],
+  "clock_configuration": null,
+  "reused": [
+    "Existing Vivado project configuration",
+    "Architecture draft and verification plan",
+    "40-task kit plan and workflow concepts"
+  ],
+  "original_files_count": 23,
+  "original_git_repository": false,
+  "external_project_sources": []
+}

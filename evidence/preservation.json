@@ -1,0 +1,13 @@
+{
+  "task": "T001",
+  "status": "completed",
+  "attempts": 2,
+  "all_23_original_files_unchanged": true,
+  "archive_hashes_verified": true,
+  "dated_reports": 2,
+  "final_receipt": "evidence/runs/T001/attempt-2-20261015T052535290129Z.json",
+  "selftest_summary": [
+    "26",
+    "10.445"
+  ]
+}

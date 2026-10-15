@@ -1,0 +1,26 @@
+{
+  "original_git_repository": false,
+  "original_harness": {
+    "argv": [
+      "python",
+      "-B",
+      "riscv_edge_soc_codex_kit/scripts/harness.py",
+      "validate"
+    ],
+    "exit_code": 1,
+    "stderr": "ModuleNotFoundError: No module named 'fcntl'"
+  },
+  "preliminary_selftest": {
+    "argv": [
+      "python",
+      "-B",
+      "scripts/test_harness.py"
+    ],
+    "exit_code": 0,
+    "tests": 23,
+    "reported_seconds": 9.021
+  },
+  "network_downloads": false,
+  "system_changes": false,
+  "hardware_programmed": false
+}

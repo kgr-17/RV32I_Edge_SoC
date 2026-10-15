@@ -1,0 +1,126 @@
+# Bounded daily engineering loop
+
+The harness selects and verifies work; Codex performs the engineering in an
+attended session. Nothing here installs or invokes a scheduler or a model loop.
+
+## Start and recover
+
+Run from the official workspace:
+
+```powershell
+python -B scripts/harness.py daily --supervised
+python -B scripts/harness.py validate
+python -B scripts/harness.py status
+python -B scripts/harness.py next
+git status --short --branch
+```
+
+Read the latest technical handoff, AGENTS.md, architecture, verification plan,
+backlog, boundary document and persistent state. The daily command loads and
+prints the handoff; an agent must actually read it before touching RTL/testbenches.
+Inspect all existing diffs. New tasks require a clean Git baseline. An interrupted
+active task is resumed with `begin SAME_ID`, including on a later day; do not
+discard its changes or skip to another task. Resume claims that day's single quota.
+
+If no active task exists, begin only the first dependency-ready task:
+
+```powershell
+python -B scripts/harness.py begin T002
+```
+
+Priority then ID determines selection. Dependencies must be completed. A required
+blocked/review task conservatively holds other work. Disabled optional tasks do
+not block the mandatory project. The daily quota uses America/Los_Angeles, never
+the host's implicit timezone. No production date override exists.
+
+## Implement, verify, report, stop
+
+Implement only the selected task and its directly required tests/documentation.
+Preserve independent oracles, assertions, seeds and requirements. Never lower a
+gate to make it pass. Run each specified command and save substantive evidence in
+`evidence/daily/ID.md`, including acceptance evidence and limitations.
+
+Prepare both dated reports before finish. `scripts/report.py --entry PATH` accepts
+a project-local JSON object with substantive `technical` and `zh-CN` strings.
+It appends same-day findings, preserves prior entries/dates and skips duplicate
+entries. Exactly two files are created under `docs/daily/` per report date.
+
+```powershell
+python -B scripts/report.py --entry evidence/report_entries/your-entry.json
+python -B scripts/harness.py finish T002 --evidence evidence/daily/T002.md
+```
+
+Finish checks required files and both reports, reserves an attempt BEFORE running
+commands, and records full exact argv/stdout/stderr/exit codes in timestamped JSON
+receipts under `evidence/runs/ID/`. Each completed command is persisted immediately.
+A crash leaves an active task and a running journal rather than a false pass.
+The receipt records Python version, starting Git commit, seed/waveform fields;
+task evidence must include applicable tool versions, actual seed and waveforms.
+Preflight records current tool discovery and available version output.
+
+Required command exits must all be zero, including diff whitespace checks. Exit
+125/127 or an unavailable executable is NOT RUN, never PASS. There are at most
+three verification executions per task, conservatively bounding correction
+attempts even across days. Logs survive retries and owner reopen. Failure remains
+active (`failed`) until corrected or explicitly blocked; the third failure blocks.
+
+```powershell
+python -B scripts/harness.py block T002 --reason 'Concrete diagnosis and required owner action'
+```
+
+After gates, append final results to the same two reports, review/stage only task
+files, run `git diff --cached --check`, make a local commit and stop. Record the
+commit identifier in the handoff. A post-commit report update may require a small
+documentation commit; do not amend/reset user history or start another task.
+
+## State and approvals
+
+Task states: pending, in_progress, passed, failed, blocked, awaiting_review,
+completed. `passed` is reserved for recoverable pre-finalization states; ordinary
+success transitions to completed or awaiting_review. The authoritative atomic
+file is `.harness/state.json`; BACKLOG statuses are its repairable mirror. A crash
+between writes cannot promote a task based on stale backlog data. State updates
+are guarded by an exclusive Windows/POSIX lock. They do not constrain arbitrary
+programs or authenticate human identities.
+
+Only the owner may run these acknowledgments after inspecting evidence:
+
+```powershell
+python -B scripts/harness.py approve T002 --confirm-owner-review
+python -B scripts/harness.py authorize T043 --confirm-owner-review
+python -B scripts/harness.py reopen TASK_ID --confirm-owner-review
+python -B scripts/harness.py enable OPTIONAL_ID --confirm-owner-review
+```
+
+Approve closes a verified review gate. Authorize grants a task-specific execution
+gate before significant Vivado/ASIC operations or physical programming. Reopen
+requires diagnosis, resets the attempt budget and preserves the current daily
+claim and old receipts. It must not be used to loop around daily limits. These
+flags are process rules; human review is still essential for semantic correctness.
+
+The final T040 owner gate depends directly on EVERY mandatory task. The project
+becomes completed only after all mandatory tasks and final review complete.
+Completed projects refuse new implementation, including optional work; no infinite
+in-process loop exists. Daily reporting/status may continue without implementation.
+
+## Scheduling readiness
+
+The manual daily entrypoint is ready:
+
+```powershell
+Set-Location C:\RV32I_Edge_SoC
+python -B scripts/harness.py daily --supervised
+```
+
+`scripts/daily.ps1` additionally prints the daily prompt and Git status. Both are
+for operator-attended use. `daily` without `--supervised` refuses execution. This
+is a deliberate guard, not proof that a caller is a human.
+
+No host scheduler or Codex automation has been installed or enabled. This session
+has unrestricted permissions; unattended operation is not authorized until actual
+sandbox and approval controls are configured. After that, the owner must choose
+working days/time/timezone and explicitly authorize scheduling. A future adapter
+must run exactly one task in this persistent project, preserve state across runs,
+respect review/terminal holds, produce both reports even when blocked, and stop.
+Do not assume availability of a particular Codex scheduling feature or launch a
+full-access CLI to bypass restrictions. Use the manual workflow until verified.
