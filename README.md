@@ -4,8 +4,9 @@ Status: engineering bootstrap implemented and self-tested. No CPU RTL, FPGA
 implementation, hardware validation or ASIC results exist yet.
 
 The existing `RV32I_Edge_SoC.xpr` is the active Vivado project. Its configured part
-is `xc7a35tcpg236-1`; physical board, top module, RTL and constraints are not yet
-configured. Do not infer a board from the part alone.
+is `xc7a35tcpg236-1`. The owner confirmed a Digilent Basys 3. Top module, RTL and
+constraints are not yet configured. Vivado 2025.2 was located and its batch
+startup/target-part catalog verified; local paths are in `.harness/toolchain.json`.
 
 From PowerShell in `C:\RV32I_Edge_SoC`:
 

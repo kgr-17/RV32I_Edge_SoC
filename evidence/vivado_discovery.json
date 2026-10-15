@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "cmd.exe",
+    "/d",
+    "/c",
+    "C:\\AMDDesignTools\\2025.2\\Vivado\\bin\\vivado.bat",
+    "-version",
+    "-nolog",
+    "-nojournal"
+  ],
+  "cwd": "C:\\RV32I_Edge_SoC\\build\\vivado_discovery",
+  "started_utc": "2026-10-15T05:35:30.815342+00:00",
+  "exit_code": 1,
+  "stdout": "vivado v2025.2 (64-bit)\nTool Version Limit: 2025.11\nSW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\nIP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\nSharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n",
+  "stderr": "",
+  "status": "FAIL",
+  "scope": "Version query only; no project opened or build executed",
+  "discovered_from": {
+    "running_process_id": 5448,
+    "executable": "C:\\AMDDesignTools\\2025.2\\Vivado\\bin\\unwrapped\\win64.o\\vivado.exe"
+  },
+  "owner_confirmed_board": "Digilent Basys 3",
+  "fpga_part": "xc7a35tcpg236-1"
+}

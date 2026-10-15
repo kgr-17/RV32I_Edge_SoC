@@ -1,7 +1,8 @@
 # Active-workspace audit notice (2026-10-14)
 
 This v0.1 proposal is NOT frozen or implemented. See ARCH_AUDIT.md. The actual
-XPR confirms only xc7a35tcpg236-1; Basys3, pins and 100 MHz remain unconfirmed.
+XPR confirms xc7a35tcpg236-1; the owner confirmed Basys 3 on 2026-10-14.
+Pins and the proposed 100 MHz constraint still require review.
 Full RV32I closure (T041), UART RX (T042), selected formal checks and actual FPGA
 implementation evidence (T043) are mandatory owner requirements, superseding
 any narrower MVP/stretch labels below. Ports, reset and map require T002 review.

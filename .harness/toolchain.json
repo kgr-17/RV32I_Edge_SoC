@@ -1,0 +1,17 @@
+{
+  "board": {
+    "name": "Digilent Basys 3",
+    "fpga_part": "xc7a35tcpg236-1",
+    "confirmation_source": "Owner confirmed in chat on 2026-10-14",
+    "physical_validation": "NOT RUN"
+  },
+  "tools": {
+    "vivado": "C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat",
+    "xvlog": "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+    "xelab": "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+    "xsim": "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat"
+  },
+  "vivado_version": "2025.2",
+  "vivado_version_evidence": "evidence/vivado_probe.json",
+  "note": "Project-local paths only; no global PATH or system configuration change. XSim tools located but not executed."
+}

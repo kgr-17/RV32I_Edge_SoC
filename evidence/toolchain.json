@@ -6,40 +6,64 @@
   "python": "3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)]",
   "tools": {
     "vivado": {
-      "path": null,
-      "status": "NOT FOUND ON PATH"
+      "path": "C:\\AMDDesignTools\\2025.2\\Vivado\\bin\\vivado.bat",
+      "status": "FOUND",
+      "found_via": "project configuration"
+    },
+    "xvlog": {
+      "path": "C:\\AMDDesignTools\\2025.2\\Vivado\\bin\\xvlog.bat",
+      "status": "FOUND",
+      "found_via": "project configuration"
+    },
+    "xelab": {
+      "path": "C:\\AMDDesignTools\\2025.2\\Vivado\\bin\\xelab.bat",
+      "status": "FOUND",
+      "found_via": "project configuration"
+    },
+    "xsim": {
+      "path": "C:\\AMDDesignTools\\2025.2\\Vivado\\bin\\xsim.bat",
+      "status": "FOUND",
+      "found_via": "project configuration"
     },
     "verilator": {
       "path": null,
-      "status": "NOT FOUND ON PATH"
+      "status": "NOT FOUND",
+      "found_via": "PATH"
     },
     "iverilog": {
       "path": null,
-      "status": "NOT FOUND ON PATH"
+      "status": "NOT FOUND",
+      "found_via": "PATH"
     },
     "vvp": {
       "path": null,
-      "status": "NOT FOUND ON PATH"
+      "status": "NOT FOUND",
+      "found_via": "PATH"
     },
     "yosys": {
       "path": null,
-      "status": "NOT FOUND ON PATH"
+      "status": "NOT FOUND",
+      "found_via": "PATH"
     },
     "sby": {
       "path": null,
-      "status": "NOT FOUND ON PATH"
+      "status": "NOT FOUND",
+      "found_via": "PATH"
     },
     "make": {
       "path": null,
-      "status": "NOT FOUND ON PATH"
+      "status": "NOT FOUND",
+      "found_via": "PATH"
     },
     "git": {
       "path": "C:\\Program Files\\Git\\cmd\\git.EXE",
-      "status": "FOUND"
+      "status": "FOUND",
+      "found_via": "PATH"
     },
     "docker": {
       "path": "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.EXE",
-      "status": "FOUND"
+      "status": "FOUND",
+      "found_via": "PATH"
     }
   },
   "packages": {
@@ -53,7 +77,7 @@
         "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
         "--version"
       ],
-      "started_utc": "2026-10-15T05:25:46.446216+00:00",
+      "started_utc": "2026-10-15T05:37:18.539790+00:00",
       "cwd": "C:\\RV32I_Edge_SoC",
       "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
       "status": "PASS",
@@ -66,7 +90,7 @@
         "git",
         "--version"
       ],
-      "started_utc": "2026-10-15T05:25:46.455053+00:00",
+      "started_utc": "2026-10-15T05:37:18.557254+00:00",
       "cwd": "C:\\RV32I_Edge_SoC",
       "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
       "status": "PASS",
@@ -76,13 +100,21 @@
     }
   ],
   "fpga_part": "xc7a35tcpg236-1",
-  "board": "UNCONFIRMED",
+  "board": "Digilent Basys 3",
+  "board_confirmation": {
+    "name": "Digilent Basys 3",
+    "fpga_part": "xc7a35tcpg236-1",
+    "confirmation_source": "Owner confirmed in chat on 2026-10-14",
+    "physical_validation": "NOT RUN"
+  },
   "filesets": {
     "sources_1": [],
     "constrs_1": [],
     "sim_1": [],
     "utils_1": []
   },
+  "configured_vivado_version": "2025.2",
+  "vivado_version_evidence": "evidence/vivado_probe.json",
   "xpr_sha256": "c94b0e09ce2ea5e694f50e073d2ff9ae86f1908d4f80e5613fc0a432d6539cc4",
   "xpr_matches_bootstrap": true,
   "tasks": 43,

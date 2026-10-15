@@ -1,0 +1,35 @@
+{
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/preflight.py"
+      ],
+      "started_utc": "2026-10-15T05:37:18.267553+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"scope\": \"metadata and Python/Git readiness ONLY\",\n  \"report_date\": \"2026-10-14\",\n  \"platform\": \"Windows-10-10.0.26200-SP0\",\n  \"python\": \"3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)]\",\n  \"tools\": {\n    \"vivado\": {\n      \"path\": \"C:\\\\AMDDesignTools\\\\2025.2\\\\Vivado\\\\bin\\\\vivado.bat\",\n      \"status\": \"FOUND\",\n      \"found_via\": \"project configuration\"\n    },\n    \"xvlog\": {\n      \"path\": \"C:\\\\AMDDesignTools\\\\2025.2\\\\Vivado\\\\bin\\\\xvlog.bat\",\n      \"status\": \"FOUND\",\n      \"found_via\": \"project configuration\"\n    },\n    \"xelab\": {\n      \"path\": \"C:\\\\AMDDesignTools\\\\2025.2\\\\Vivado\\\\bin\\\\xelab.bat\",\n      \"status\": \"FOUND\",\n      \"found_via\": \"project configuration\"\n    },\n    \"xsim\": {\n      \"path\": \"C:\\\\AMDDesignTools\\\\2025.2\\\\Vivado\\\\bin\\\\xsim.bat\",\n      \"status\": \"FOUND\",\n      \"found_via\": \"project configuration\"\n    },\n    \"verilator\": {\n      \"path\": null,\n      \"status\": \"NOT FOUND\",\n      \"found_via\": \"PATH\"\n    },\n    \"iverilog\": {\n      \"path\": null,\n      \"status\": \"NOT FOUND\",\n      \"found_via\": \"PATH\"\n    },\n    \"vvp\": {\n      \"path\": null,\n      \"status\": \"NOT FOUND\",\n      \"found_via\": \"PATH\"\n    },\n    \"yosys\": {\n      \"path\": null,\n      \"status\": \"NOT FOUND\",\n      \"found_via\": \"PATH\"\n    },\n    \"sby\": {\n      \"path\": null,\n      \"status\": \"NOT FOUND\",\n      \"found_via\": \"PATH\"\n    },\n    \"make\": {\n      \"path\": null,\n      \"status\": \"NOT FOUND\",\n      \"found_via\": \"PATH\"\n    },\n    \"git\": {\n      \"path\": \"C:\\\\Program Files\\\\Git\\\\cmd\\\\git.EXE\",\n      \"status\": \"FOUND\",\n      \"found_via\": \"PATH\"\n    },\n    \"docker\": {\n      \"path\": \"C:\\\\Program Files\\\\Docker\\\\Docker\\\\resources\\\\bin\\\\docker.EXE\",\n      \"status\": \"FOUND\",\n      \"found_via\": \"PATH\"\n    }\n  },\n  \"packages\": {\n    \"cocotb\": \"NOT AVAILABLE\",\n    \"pytest\": \"NOT AVAILABLE\",\n    \"tzdata\": \"2026.2\"\n  },\n  \"versions\": [\n    {\n      \"argv\": [\n        \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\",\n        \"--version\"\n      ],\n      \"started_utc\": \"2026-10-15T05:37:18.539790+00:00\",\n      \"cwd\": \"C:\\\\RV32I_Edge_SoC\",\n      \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\",\n      \"status\": \"PASS\",\n      \"exit_code\": 0,\n      \"stdout\": \"Python 3.9.13\\n\",\n      \"stderr\": \"\"\n    },\n    {\n      \"argv\": [\n        \"git\",\n        \"--version\"\n      ],\n      \"started_utc\": \"2026-10-15T05:37:18.557254+00:00\",\n      \"cwd\": \"C:\\\\RV32I_Edge_SoC\",\n      \"executable\": \"C:\\\\Program Files\\\\Git\\\\cmd\\\\git.EXE\",\n      \"status\": \"PASS\",\n      \"exit_code\": 0,\n      \"stdout\": \"git version 2.48.1.windows.1\\n\",\n      \"stderr\": \"\"\n    }\n  ],\n  \"fpga_part\": \"xc7a35tcpg236-1\",\n  \"board\": \"Digilent Basys 3\",\n  \"board_confirmation\": {\n    \"name\": \"Digilent Basys 3\",\n    \"fpga_part\": \"xc7a35tcpg236-1\",\n    \"confirmation_source\": \"Owner confirmed in chat on 2026-10-14\",\n    \"physical_validation\": \"NOT RUN\"\n  },\n  \"filesets\": {\n    \"sources_1\": [],\n    \"constrs_1\": [],\n    \"sim_1\": [],\n    \"utils_1\": []\n  },\n  \"configured_vivado_version\": \"2025.2\",\n  \"vivado_version_evidence\": \"evidence/vivado_probe.json\",\n  \"xpr_sha256\": \"c94b0e09ce2ea5e694f50e073d2ff9ae86f1908d4f80e5613fc0a432d6539cc4\",\n  \"xpr_matches_bootstrap\": true,\n  \"tasks\": 43,\n  \"rtl_simulation\": \"NOT RUN\",\n  \"vivado_build\": \"NOT RUN\",\n  \"sandbox\": {\n    \"observed_date\": \"2026-10-14\",\n    \"sandbox_mode\": \"danger-full-access\",\n    \"approval_policy\": \"never\",\n    \"unattended_enabled\": false,\n    \"note\": \"Observation only, not enforcement. Inspect actual runtime permissions each session.\"\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/harness.py",
+        "validate"
+      ],
+      "started_utc": "2026-10-15T05:37:18.664432+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"tasks\": 43,\n  \"project_status\": \"in_progress\",\n  \"execution_approval_pending\": [\n    \"T032\",\n    \"T038\",\n    \"T039\",\n    \"T043\"\n  ]\n}\n",
+      "stderr": ""
+    }
+  ],
+  "original_23_files_unchanged": true,
+  "daily_quota_unchanged": true
+}

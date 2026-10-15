@@ -233,3 +233,41 @@ The 44 added engineering files in that commit are exactly:
 This addendum also creates evidence/report_entries/bootstrap-delivery.json and updates the same two dated reports. It changes no source, state, backlog, acceptance criterion or verification result. Only documentation whitespace checks are necessary after this addition. No second primary task began. All earlier failed-gate findings remain in this handoff and the Chinese report.
 
 Manual next-session command from C:/RV32I_Edge_SoC: python -B scripts/harness.py daily --supervised. T002 is next, subject to the existing 2026-10-14 quota and owner architecture review. Unattended scheduling remains disabled. Owner actions still needed: board model, Vivado executable location, later actual sandbox configuration and any dependency/scheduling authorization.
+
+
+---
+
+<!-- entry:64c36a59653bb46c2c35dae5b6932ab3afdd422e0657a6e0fe61673c6c64c6cd -->
+
+# Owner clarification and Vivado discovery follow-up — 2026-10-14
+
+## Scope, phase and persistent facts
+
+Supplemental T001/bootstrap environment follow-up in response to the owner's explicit clarification. No second primary task was selected. T001 stays completed, active is null, 2026-10-14 quota stays T001, and T002 stays pending. The owner confirmed the physical board is Digilent Basys 3 with xc7a35tcpg236-1. This resolves owner identification, not physical board validation, pin constraints or architecture approval.
+
+## Discovery and actual execution evidence
+
+Get-Process -Name vivado identified PID 5448 at C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/vivado.exe. The supported launcher is C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat. xvlog.bat, xelab.bat and xsim.bat are also present.
+
+The first command, cmd.exe /d /c C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat -version -nolog -nojournal, printed Vivado 2025.2 / SW Build 6299465 but returned exit 1 with no stderr. Preserve evidence/vivado_discovery.json as a nonzero command; its cause is not established.
+
+A bounded read-only batch probe then returned exit 0:
+cmd.exe /d /c C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat -mode batch -nolog -nojournal -notrace -source C:/RV32I_Edge_SoC/scripts/vivado_probe.tcl
+
+The Tcl reads version -short and get_parts -quiet xc7a35tcpg236-1 and exits 0. It reported RV32I_VIVADO_VERSION=2025.2 and RV32I_TARGET_PART_AVAILABLE=xc7a35tcpg236-1. Full output/argv/cwd are in evidence/vivado_probe.json. Working directory, child temp and profile locations were under build/vivado_discovery and .tmp. No project was opened, no existing GUI was operated and no synthesis, implementation or hardware command was executed.
+
+## Exact modifications and verification
+
+Added .harness/toolchain.json with owner-confirmed board and local Vivado/XSim paths. Updated scripts/preflight.py to resolve configured tools without changing PATH and to validate configured board part against the active XPR. Updated README.md, docs/ARCH_AUDIT.md, docs/ARCH_SPEC.md, docs/ENVIRONMENT_BOUNDARY.md, docs/PROJECT_STRUCTURE.md and docs/TOOLCHAIN.md to distinguish the now-known board/tool from still-unverified design assumptions.
+
+Added scripts/vivado_probe.tcl, evidence/vivado_discovery.json, evidence/vivado_probe.json, evidence/vivado_followup_checks.json and evidence/report_entries/vivado-discovery.json. Regenerated evidence/toolchain.json and appended both existing dated reports. docs/PROJECT_BASELINE.json remains an unchanged historical record of the original discovery, where the board had not yet been confirmed.
+
+python -B scripts/preflight.py and python -B scripts/harness.py validate both exited 0. The actual preflight result was checked for owner board name, all four configured tool paths, and discovery via project configuration. SHA-256 checks again verified all 23 original files unchanged. No harness-controller source or test was changed; the earlier 26-test result remains its recorded evidence. XSim launchers were located but no compile/elaborate/simulate run was performed. Final staged/unstaged whitespace checks are required before the local follow-up commit.
+
+## Results, blockers and next session
+
+Version/startup/part-catalog availability are verified. License-dependent design builds, RTL lint/simulation, formal work, synthesis/timing/power, hardware and ASIC remain NOT RUN. Tool installation is unnecessary merely to locate this existing Vivado installation. Other simulators/formal/ASIC tools remain unavailable or unverified. No global PATH/configuration, installed tool, original XPR/source, scheduler, remote or physical FPGA was changed.
+
+Git branch: engineering/bootstrap; pre-follow-up handoff commit f977972, bootstrap implementation 049e3f93b2a6d1225971ccf95f6e380cf935558b. Resolve the commit containing this update with git log -1 --format=%H -- scripts/preflight.py. All earlier same-day findings are retained chronologically, but board/Vivado-path uncertainty is now superseded by this addendum.
+
+Next session: read this addendum and .harness/toolchain.json; do not ask the owner to locate Vivado again. Use the full launcher path or project-local configuration, not a global PATH change. T002 is next on the next eligible day and must define/reset/interfaces/ISA gaps before owner review. Do not begin another task today. Unattended execution still requires actual sandbox configuration and explicit scheduling authorization.

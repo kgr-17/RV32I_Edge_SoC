@@ -4,7 +4,8 @@ Inspected the XML and filesystem without opening or saving Vivado.
 
 - XPR: `RV32I_Edge_SoC.xpr`, created by Vivado v2025.2 according to its comment.
 - Part: `xc7a35tcpg236-1` in project, synthesis and implementation settings.
-- BoardPart is empty; no physical board has been verified.
+- BoardPart is empty. The owner later confirmed Digilent Basys 3 on 2026-10-14;
+  this is owner identification, not physical hardware validation.
 - `sources_1`, `constrs_1`, `sim_1` and `utils_1` have no File entries.
 - No top module is specified; automatic top selection is enabled.
 - No RTL, testbench, XDC, create_clock constraint or external source references exist.

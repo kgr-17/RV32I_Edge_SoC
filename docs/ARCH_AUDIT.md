@@ -3,8 +3,9 @@
 The original kit's v0.1 design is a useful starting proposal, not implemented or
 owner-approved hardware. Preserve it while resolving T002. No RTL exists.
 
-1. FPGA part is known from XPR; board and oscillator/pin assignments are not.
-   Basys3 and 100 MHz are candidate assumptions only.
+1. FPGA part is known from XPR; the owner confirmed Digilent Basys 3 on
+   2026-10-14. Oscillator and pin constraints still require reviewed board
+   documentation/XDC; confirmation does not validate hardware or freeze timing.
 2. Specify precise core reset polarity/synchrony, reset PC, cleared valid bits,
    register-file initialization policy and reset during outstanding transactions.
 3. Freeze instruction/data request-response ports and timing, transaction

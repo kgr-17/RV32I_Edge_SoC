@@ -48,7 +48,8 @@ paths for verification subprocesses. It uses exact argv without a shell, an
 exclusive Windows byte-range lock, atomic state replacement and project-local
 self-test repositories. These are workflow protections, not security enforcement.
 Future EDA launchers must also explicitly set their working/output/cache paths
-inside `build/`; no EDA tool was launched during bootstrap.
+inside `build/`. A later authorized follow-up launched only a read-only Vivado
+version/part-catalog probe in `build/vivado_discovery`; no project or build opened.
 
 ## Protected work and recovery
 
@@ -70,7 +71,9 @@ provides America/Los_Angeles date handling. No virtual environment is necessary
 for the current standard-library harness, and no package was installed.
 Vivado, Verilator, Icarus/vvp, Yosys, SBY and Make were not found on PATH.
 Cocotb and pytest are unavailable in the selected interpreter. This does not
-prove the EDA executables are absent elsewhere; request owner-supplied paths.
+prove the EDA executables are absent elsewhere. A later owner-authorized local
+discovery found Vivado under `C:\AMDDesignTools\2025.2\Vivado`; the version/part
+probe passed and project-local tool paths are saved in `.harness/toolchain.json`.
 Docker's command was found, but the daemon was not queried or started.
 
 No external downloads, paid/cloud EDA, publication, remote pushes, physical board
@@ -81,5 +84,6 @@ Do not use privileged containers, Docker socket mounts or global package install
 Residual risks: unrestricted processes can reach outside the project and use the
 network; inherited environment variables and installed tools are not isolated;
 future third-party tools may ignore cache settings or spawn surviving child
-processes. Missing licenses/tools, an unknown physical board and unreviewed
-architecture remain technical blockers for later milestones, not bootstrap passes.
+processes. Missing or unverified tools/licenses and unreviewed architecture remain
+technical blockers for later milestones. The owner confirmed Digilent Basys 3;
+physical validation, constraints and actual synthesis/implementation are pending.
