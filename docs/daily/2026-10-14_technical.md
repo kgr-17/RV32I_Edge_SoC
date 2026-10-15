@@ -173,3 +173,63 @@ Root source/docs listed earlier, the report entry JSON and both dated report fil
 ## Handoff instruction after success
 
 Do not resume T001 as unfinished and do not begin T002 on 2026-10-14. On the next eligible day, read all entries in this report and inspect the clean Git baseline. Run the attended daily command, then begin T002 only when eligible. Prepare exact architecture/reset/bus/ISA/board decisions and stop at owner review. Board identity and Vivado executable path are still requested from the owner. Actual sandbox setup and explicit scheduling authorization remain prerequisites to unattended work. All CPU, RTL simulation, formal, FPGA timing/hardware and ASIC results are NOT RUN.
+
+
+---
+
+<!-- entry:0f3a18dd2762f5b03dea0835f254020777eccf793e341d72d529e601cc528fc8 -->
+
+# Committed delivery and exact file manifest
+
+Engineering implementation/evidence commit: 049e3f93b2a6d1225971ccf95f6e380cf935558b, branch engineering/bootstrap. Parent/baseline: 8f16054b24a9d50021f8a805f7f0d78435206daa. The implementation commit passed gates before commit; Git working tree was clean immediately afterward. This addendum records the already-existing engineering commit and therefore lives in a later documentation-only commit. Obtain the final documentation commit with git log -1 --format=%H -- docs/daily/2026-10-14_technical.md. No history was amended and no remote was configured or pushed.
+
+The 44 added engineering files in that commit are exactly:
+
+- .gitignore
+- .harness/checks.json
+- .harness/environment.json
+- .harness/state.json
+- AGENTS.md
+- Makefile
+- README.md
+- docs/ARCH_AUDIT.md
+- docs/ARCH_SPEC.md
+- docs/BACKLOG.json
+- docs/CAREER_PORTFOLIO.md
+- docs/CODEX_LOOP.md
+- docs/DECISIONS.md
+- docs/ENVIRONMENT_BOUNDARY.md
+- docs/GETTING_STARTED_CN.md
+- docs/PROJECT_BASELINE.json
+- docs/PROJECT_CHARTER.md
+- docs/PROJECT_STRUCTURE.md
+- docs/REFERENCES.md
+- docs/TOOLCHAIN.md
+- docs/VERIFICATION_PLAN.md
+- docs/daily/2026-10-14_technical.md
+- docs/daily/2026-10-14_zh-CN.md
+- evidence/bootstrap_inspection.json
+- evidence/cli_smoke.json
+- evidence/daily/README.md
+- evidence/daily/T001.md
+- evidence/preservation.json
+- evidence/report_entries/bootstrap-completed.json
+- evidence/report_entries/bootstrap-correction.json
+- evidence/report_entries/bootstrap-initial.json
+- evidence/runs/T001/attempt-1-20261015T052429061951Z.json
+- evidence/runs/T001/attempt-2-20261015T052535290129Z.json
+- evidence/toolchain.json
+- prompts/BOOTSTRAP_PROMPT.md
+- prompts/DAILY_CODEX_PROMPT.md
+- prompts/DAILY_RUN.md
+- prompts/WEEKLY_REVIEW_PROMPT.md
+- scripts/daily.ps1
+- scripts/harness.py
+- scripts/preflight.py
+- scripts/report.py
+- scripts/test_harness.py
+- scripts/verify.py
+
+This addendum also creates evidence/report_entries/bootstrap-delivery.json and updates the same two dated reports. It changes no source, state, backlog, acceptance criterion or verification result. Only documentation whitespace checks are necessary after this addition. No second primary task began. All earlier failed-gate findings remain in this handoff and the Chinese report.
+
+Manual next-session command from C:/RV32I_Edge_SoC: python -B scripts/harness.py daily --supervised. T002 is next, subject to the existing 2026-10-14 quota and owner architecture review. Unattended scheduling remains disabled. Owner actions still needed: board model, Vivado executable location, later actual sandbox configuration and any dependency/scheduling authorization.
