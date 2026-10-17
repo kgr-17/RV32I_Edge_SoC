@@ -152,3 +152,44 @@ python -B scripts/harness.py approve T002 --confirm-owner-review
 No such command was executed by this session. Do not start T003 today or implement RTL pending review. Tool/package installation, scheduling, programming, new domains and external publication were not authorized. Actual unattended execution remains disabled. RTL/ISA simulation, formal, FPGA implementation/timing/hardware and ASIC are NOT RUN.
 
 Next step is the owner review, not another implementation task. The proposal/evidence will now be committed, and the actual delivery commit recorded in a separate same-day documentation entry. The verification base remains c3035b977a5eb7178bd58a8683a8ffe42cfb8493.
+
+
+---
+
+<!-- entry:3b9cb8eb9496e118721641b2d9f0b1f1e25849a8bb0066e4a5a4ffe3307b8356 -->
+
+# Committed T002 delivery and next owner action
+
+Architecture proposal, checker/tests, updated backlog, T002 awaiting_review state and all engineering evidence are committed at b56a76222c80aebff89b175299f6659e75707760 on engineering/bootstrap. Parent is c3035b977a5eb7178bd58a8683a8ffe42cfb8493. Required checks passed before commit, and Git status was clean after commit. This final documentation-only entry records that existing delivery SHA; obtain its own containing commit with git log -1 --format=%H -- docs/daily/2026-10-16_technical.md.
+
+Exact 25-file delivery manifest:
+
+- .harness/state.json
+- AGENTS.md
+- README.md
+- docs/ARCH_AUDIT.md
+- docs/ARCH_CONTRACT.json
+- docs/ARCH_REVIEW.md
+- docs/ARCH_SPEC.md
+- docs/BACKLOG.json
+- docs/DECISIONS.md
+- docs/ENVIRONMENT_BOUNDARY.md
+- docs/REFERENCES.md
+- docs/VERIFICATION_PLAN.md
+- docs/daily/2026-10-16_technical.md
+- docs/daily/2026-10-16_zh-CN.md
+- evidence/arch_contract_check.json
+- evidence/daily/T002.md
+- evidence/day2_start.json
+- evidence/report_entries/day2-final.json
+- evidence/report_entries/day2-initial.json
+- evidence/runs/T002/attempt-1-20261017T034202692993Z.json
+- evidence/t002_final_state.json
+- evidence/t002_inspection.json
+- evidence/t002_sources.json
+- scripts/check_arch_spec.py
+- scripts/test_arch_spec.py
+
+This addendum adds evidence/report_entries/day2-delivery.json and appends the same two dated reports. No source/contract/gate/state changes occur after the verified delivery. The exact contract digest remains 403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03. Documentation diff whitespace is checked before its separate commit; controller and architecture tests are not needlessly rerun for this text-only addition.
+
+Next action is owner review of docs/ARCH_REVIEW.md A1-A10 and the b56a762 diff/receipt, not another task. T002 is awaiting_review, no owner approval exists, T003 remains dependency-held, and October 16's quota is used. The initial fatal EEI and later mandatory IRQ revision are explicit choices for the owner, not quietly accepted implementation. No RTL, synthesis, hardware or ASIC result is claimed. No scheduler, installation, push or sandbox modification occurred.
