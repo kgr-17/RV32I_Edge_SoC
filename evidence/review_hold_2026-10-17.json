@@ -1,0 +1,393 @@
+{
+  "recorded_utc": "2026-10-17T22:32:30.170188+00:00",
+  "report_date": "2026-10-17",
+  "timezone": "America/Los_Angeles",
+  "scope": "Attended review-hold status and local CLI readiness; no new primary task selected or architecture implementation",
+  "state": {
+    "project_status": "in_progress",
+    "active": null,
+    "T002": "awaiting_review",
+    "T003": "pending",
+    "daily_claims": {
+      "2026-10-14": "T001",
+      "2026-10-16": "T002"
+    },
+    "owner_reviews": {},
+    "attempts": {
+      "T001": 2,
+      "T002": 1
+    }
+  },
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "--version"
+      ],
+      "started_utc": "2026-10-17T22:32:29.446298+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "Python 3.9.13\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "started_utc": "2026-10-17T22:32:29.453310+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "git version 2.48.1.windows.1\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "started_utc": "2026-10-17T22:32:29.484663+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "7b17ce0207838677066468409fea7a48602efd75\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/harness.py",
+        "validate"
+      ],
+      "started_utc": "2026-10-17T22:32:29.514975+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"tasks\": 45,\n  \"project_status\": \"in_progress\",\n  \"execution_approval_pending\": [\n    \"T032\",\n    \"T038\",\n    \"T039\",\n    \"T043\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/harness.py",
+        "status"
+      ],
+      "started_utc": "2026-10-17T22:32:29.685666+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"tasks\": 45,\n  \"project_status\": \"in_progress\",\n  \"execution_approval_pending\": [\n    \"T032\",\n    \"T038\",\n    \"T039\",\n    \"T043\"\n  ],\n  \"active\": null,\n  \"daily_claim\": null,\n  \"counts\": {\n    \"awaiting_review\": 1,\n    \"blocked\": 0,\n    \"completed\": 1,\n    \"failed\": 0,\n    \"in_progress\": 0,\n    \"passed\": 0,\n    \"pending\": 43\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/harness.py",
+        "next"
+      ],
+      "started_utc": "2026-10-17T22:32:29.879666+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"tasks\": 45,\n  \"project_status\": \"in_progress\",\n  \"execution_approval_pending\": [\n    \"T032\",\n    \"T038\",\n    \"T039\",\n    \"T043\"\n  ],\n  \"active\": null,\n  \"daily_claim\": null,\n  \"next\": null,\n  \"planning_only\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "status",
+        "--short"
+      ],
+      "started_utc": "2026-10-17T22:32:30.070005+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_utc": "2026-10-17T22:32:30.103525+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "started_utc": "2026-10-17T22:32:30.136845+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "previously_executed_tests_this_session": [
+    {
+      "argv": [
+        "python",
+        "-B",
+        "scripts/test_harness.py"
+      ],
+      "exit_code": 0,
+      "tests": 26,
+      "duration_seconds": 9.237,
+      "output_storage": "Result transcribed from current attended tool transcript; full stdout/stderr not saved to disk"
+    },
+    {
+      "argv": [
+        "python",
+        "-B",
+        "scripts/test_arch_spec.py"
+      ],
+      "exit_code": 0,
+      "tests": 16,
+      "duration_seconds": 0.02,
+      "output_storage": "Result transcribed from current attended tool transcript; full stdout/stderr not saved to disk"
+    }
+  ],
+  "local_help_probes": [
+    {
+      "tool": "xvlog",
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "-help"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\review_hold_2026-10-17\\xvlog",
+      "started_utc": "2026-10-17T22:32:00.853724+00:00",
+      "exit_code": 0,
+      "stdout": "Usage: xvlog [options] file...\n(Switches with double dash '--' can also be used with a single dash '-')\n\nVivado Simulator xvlog options:\n  -f [ --file ] arg          Read additional options from the specified file\n  -h [ --help ]              Print this help message\n  --version                  Print the compiler version\n  --initfile arg             Use user defined simulator init file to add to or \n                             override the settings provided by the default \n                             xsim.ini file\n  -L [ --lib ] arg           Specify search libraries for the instantiated \n                             design units in a Verilog or Mixed language \n                             design. Use -L|--lib for each search library. The \n                             format of the argument is <name>[=<dir>] where \n                             <name> is the logical name of the library and \n                             <dir> is an optional physical directory of the \n                             library\n  --nolog                    Suppress log file generation\n  --log arg                  Specify the log file name. Default is <application\n                             name>.log\n  --prj arg                  Specify Vivado Simulator  project file containing \n                             one or more entries of 'vhdl|verilog <work lib> \n                             <HDL file name>'\n  --relax                    Relax strict HDL language checking rules\n  -v [ --verbose ] arg       Specify verbosity level for printing messages. \n                             Allowed values are: 0, 1, 2 (Default:0)\n  --incr                     Enable incremental parsing and compilation check \n                             point\n  -i [ --include ] arg       Specify directories to be searched for files \n                             included using Verilog `include. Use -i|--include \n                             for each specified search directory\n  -d [ --define ] arg        Define Verilog macros. Use -d|--define for each \n                             Verilog macro. The format of the macro is \n                             <name>[=<val>] where <name> is name of the macro \n                             and <value> is an optional value of the macro\n  --sourcelibdir arg         Directory for Verilog source files of uncompiled \n                             modules. Use -sourcelibdir|--sourcelibdir \n                             <dirname> for each source directory.\n  --sourcelibext arg         File extension for Verilog source files of \n                             uncompiled modules. Use -sourcelibext|--sourcelibe\n                             xt <file extension> for source file extension.\n  --sourcelibfile arg        Filename of a Verilog source file which has \n                             uncompiled modules. Use -sourcelibfile|--sourcelib\n                             file <filename>.\n  --noname_unnamed_generate  Generate name for an unnamed generate block\n  --uvm_version arg          Specify the uvm version(default: 1.2)\n  --work arg                 Specify the work library. The format of the \n                             argument is <name>[=<dir>] where <name> is the \n                             logical name of the library and <dir> is an \n                             optional physical directory of the library\n  --sv                       Compile input files in System Verilog mode\n\nExamples:\n  xvlog file1.v file2.v\n  xvlog -work worklib file1.v file2.v\n  xvlog -prj files.prj\n",
+      "stderr": "",
+      "scope": "Local CLI help only; no compilation/elaboration/simulation"
+    },
+    {
+      "tool": "xelab",
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "-help"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\review_hold_2026-10-17\\xelab",
+      "started_utc": "2026-10-17T22:32:00.853724+00:00",
+      "exit_code": 0,
+      "stdout": "Usage: xelab [options] [libname.]unitname...\n(Switches with double dash '--' can also be used with a single dash '-')\n\nVivado Simulator xelab options:\n******************************:\n  -a [ --standalone ]                   Generates a standalone non-interactive \n                                        simulation executable that performs \n                                        run-all.\n  -d [ --define ] arg                   Define Verilog macros. Use -d|--define \n                                        for each Verilog macro. The format of \n                                        the macro is <name>[=<val>] where \n                                        <name> is name of the macro and <value>\n                                        is an optional value of the macro\n  --debug arg                           Compile with specified HDL debugging \n                                        ability turned on. Choices are:\n                                          line: HDL breakpoint\n                                          wave: waveform generation, \n                                                conditional execution, force \n                                                value\n                                          drivers: signal driver value probing\n                                          readers: signal reader (load) probing\n                                          xlibs: visibility into libraries \n                                                 precompiled by xilinx\n                                          all: all the above\n                                          typical: line, wave and drivers\n                                          subprogram: subprogram variable value\n                                                      probing\n                                          off: turn off all debugging abilities\n                                        (Default: off)\n  -f [ --file ] arg                     Read additional options from the \n                                        specified file\n  -h [ --help ]                         Print this help message\n  --incr                                Enable incremental parsing and \n                                        compilation check point\n  -i [ --include ] arg                  Specify directories to be searched for \n                                        files included using Verilog `include. \n                                        Use -i|--include for each specified \n                                        search directory\n  --initfile arg                        Use user defined simulator init file to\n                                        add to or override the settings \n                                        provided by the default xsim.ini file\n  --log arg                             Specify the log file name. Default is \n                                        <application name>.log\n  -L [ --lib ] arg                      Specify search libraries for the \n                                        instantiated design units in a Verilog \n                                        or Mixed language design. Use -L|--lib \n                                        for each search library. The format of \n                                        the argument is <name>[=<dir>] where \n                                        <name> is the logical name of the \n                                        library and <dir> is an optional \n                                        physical directory of the library\n  --nolog                               Suppress log file generation\n  --override_timeunit                   Override timeunit for all Verilog \n                                        modules, with the specified time unit \n                                        in -timescale option\n  --prj arg                             Specify Vivado Simulator  project file \n                                        containing one or more entries of \n                                        'vhdl|verilog <work lib> <HDL file \n                                        name>'\n  --ccExclusionFile arg                 Specify Vivado SimulatorElaboration \n                                        time code coverage exclusion file\n  -r [ --run ]                          Run the generated executable\n  --relax                               Relax strict HDL language checking \n                                        rules\n  -R [ --runall ]                       Run the generated executable till end \n                                        of simulation (xsim -runall)\n  -s [ --snapshot ] arg                 Specify the name of design snapshot\n  --timescale arg                       Specify default timescale for Verilog \n                                        modules( Default: 1ns/1ps )\n  --version                             Print the compiler version\n  -v [ --verbose ] arg                  Specify verbosity level for printing \n                                        messages. Allowed values are: 0, 1, 2 \n                                        (Default:0)\n  --uvm_version arg                     Specify the uvm version(default: 1.2)\n  --vhdl arg                            Specify VHDL input files. Use --vhdl \n                                        for each input file specified\n  --vhdl2008 arg                        Specify VHDL-2008 input files. Use \n                                        --vhdl2008 for each input file \n                                        specified\n  --vhdl2019 arg                        Specify VHDL-2019 input files. Use \n                                        --vhdl2019 for each input file \n                                        specified\n  --vlog arg                            Specify Verilog input files. Use --vlog\n                                        for each input file specified\n  --svlog arg                           Specify System Verilog input files. Use\n                                        --svlog for each input file specified\n\n Advance options:\n ***************:\n  --driver_display_limit arg            Set the maximum number of elements a \n                                        signal may contain for driver \n                                        information to be recorded for the \n                                        signal (Default: arg = 65536 elements)\n  --generic_top arg                     Override generic or parameter of a top \n                                        level design unit with specified value(\n                                        Example: -generic_top \"P1=10\" \n  --ignore_assertions                   Ignore System Verilog Concurrent \n                                        Assertions\n  --report_assertion_pass               Report System Verilog Concurrent \n                                        Assertions Pass, even if there is no \n                                        pass action block\n  --ignore_coverage                     Ignore System Verilog Functional \n                                        Coverage\n  --maxarraysize arg                    Set the maximum VHDL array size, beyond\n                                        which an array declaration will \n                                        generate an error, to be 2**arg \n                                        elements (Default: arg = 28, which is \n                                        2**28 elements)\n  --mt arg (=auto)                      Specifies the number of sub-compilation\n                                        jobs which can be run in parallel. \n                                        Choices are:\n                                          auto: automatic\n                                          n: where n is an integer greater than\n                                             1\n                                          off: turn off multi-threading\n                                        (Default:auto)\n  --maxdesigndepth arg                  Override maximum design hierarchy depth\n                                        allowed by the elaborator (Default: \n                                        5000)\n  --noname_unnamed_generate             Generate name for an unnamed generate \n                                        block\n  --override_timeprecision              Override time precision for all Verilog\n                                        modules, with the specified time \n                                        precision in -timescale option\n  --rangecheck                          Enable runtime value range check for \n                                        VHDL\n  --sourcelibdir arg                    Directory for Verilog source files of \n                                        uncompiled modules. Use \n                                        -sourcelibdir|--sourcelibdir <dirname> \n                                        for each source directory.\n  --sourcelibext arg                    File extension for Verilog source files\n                                        of uncompiled modules. Use \n                                        -sourcelibext|--sourcelibext <file \n                                        extension> for source file extension.\n  --sourcelibfile arg                   Filename of a Verilog source file which\n                                        has uncompiled modules. Use \n                                        -sourcelibfile|--sourcelibfile \n                                        <filename>.\n  --stats                               Print tool CPU and memory usages, and \n                                        design statistics\n  --timeprecision_vhdl arg (=1ps)       Specify time precision for vhdl \n                                        designs( Default: 1ps)\n  --transform_timing_checkers           Transform timing checkers to Verilog \n                                        processes\n  --suppress_localparam_override_error  Suppress error due to override of \n                                        localparam during module instantiation,\n                                        the override will be ignored\n\n timing simulation:\n *****************:\n  --maxdelay                            Compile Verilog design units with \n                                        maximum delays\n  --mindelay                            Compile Verilog design units with \n                                        minimum delays\n  --nosdfinterconnectdelays             Ignore SDF port and interconnect delay \n                                        constructs in SDF\n  --nospecify                           Ignore Verilog path delays and timing \n                                        checks\n  --notimingchecks                      Ignore timing check constructs in \n                                        Verilog specify block(s)\n  --pulse_int_e arg                     Interconnect pulse error limit as \n                                        percentage of  delay. Allowed values \n                                        are 0 to 100 (Default: 100)\n  --pulse_int_r arg                     Interconnect pulse reject limit as \n                                        percentage of  delay. Allowed values \n                                        are 0 to 100 (Default: 100)\n  --pulse_e arg                         Path pulse error limit as percentage of\n                                        path delay. Allowed values are 0 to 100\n                                        (Default: 100)\n  --pulse_r arg                         Path pulse reject limit as percentage \n                                        of path delay. Allowed values are 0 to \n                                        100 (Default: 100)\n  --pulse_e_style arg (=onevent)        Specify when error about pulse being \n                                        shorter than module path delay should \n                                        be handled. Choices are:\n                                          ondetect: report error right when \n                                                    violation is detected\n                                          onevent:  report error after the \n                                                    module path delay\n                                        (Default: onevent)\n  --sdfmax arg                          <root=file> Sdf annotate <file> at \n                                        <root> with maximum delay\n  --sdfmin arg                          <root=file> Sdf annotate <file> at \n                                        <root> with minimum delay\n  --sdfnoerror                          Treat errors found in sdf file as \n                                        warning\n  --sdfnowarn                           Do not emit sdf warnings\n  --sdfroot arg                         <root_path> Default design hierarchy at\n                                        which sdf annotation is applied\n  --sdftyp arg                          <root=file> Sdf annotate <file> at \n                                        <root> with typical delay\n  --transport_int_delays                Use transport model for interconnect \n                                        delays\n  --typdelay                            Compile Verilog design units with \n                                        typical delays (Default)\n\n Optimization:\n ************:\n  --O0                                  Disable all optimizations\n\n Mixed Language:\n ************:\n  --dup_entity_as_module                Enable support for hierarchical \n                                        references inside the Verilog hierarchy\n                                        in mixed language designs. Warning: \n                                        this may cause significant slow down of\n                                        compilation\n\n SystemC/DPI options:\n *******************:\n  --dpi_absolute                        Use absolute paths instead of \n                                        LD_LIBRARY_PATH on Linux for DPI \n                                        libraries that are formatted as \n                                        lib<libname>.so\n  --dpiheader arg                       Header filename for the exported and \n                                        imported functions.\n  --dpi_stacksize arg                   User-defined stack size for DPI tasks\n  --sc_lib arg                          Shared library name for SystemC \n                                        functions; (.dll/.so) without the file \n                                        extension \n  --sv_lib arg                          Shared library name for DPI imported \n                                        functions; (.dll/.so) without the file \n                                        extension \n  --sv_liblist arg                      Bootstrap file pointing to DPI shared \n                                        libraries.\n  --sc_root arg                         Root directory off which SystemC \n                                        libraries are to be found. Default: \n                                        <current_directory>/xsim.dir/work/xsc\n  --sv_root arg                         Root directory off which DPI libraries \n                                        are to be found. Default: \n                                        <current_directory>/xsim.dir/work/xsc\n\n Coverage options:\n *******************:\n  --cov_db_dir arg                      Directory where the Functional/Code \n                                        Coverage database will be saved. The \n                                        functional coverage data will be \n                                        present under <cov_db_dir_argvalue>/xsi\n                                        m.covdb/<cov_db_name_argvalue> \n                                        directory. Code coverage data will be \n                                        present under <cov_db_dir_argvalue>/xsi\n                                        m.codecov/<cov_db_argvalue>.  Default \n                                        is ./ \n  --cov_db_name arg                     Database name under which \n                                        Functional/Code Coverage database will \n                                        be saved. The functional coverage data \n                                        will be present under \n                                        <cov_db_dir_argvalue>/xsim.covdb/<cov_d\n                                        b_name_argvalue> directory. Code \n                                        coverage data will be present under \n                                        <cov_db_dir_argvalue>/xsim.codecov/<cov\n                                        _db_argvalue>. Default is snapshot name\n\n Code Coverage options:\n *******************:\n  --cc_celldefines                      Specify if code coverage information \n                                        needs to be captured for libs/modules \n                                        with cell define attribute set. OFF by \n                                        default.\n  --cc_libs                             Specify if code coverage information \n                                        needs to be captured for all the \n                                        libraries specified. OFF by default.\n  --cc_type arg                         Specify options for generating Code \n                                        Coverage Statistics -sbct. \n                                        (s)Statement, (b)Branch, (c)Condition \n                                        and (t)Toggle are supported \n\nExamples:\n  xelab top1 top2\n  xelab lib1.top1 lib2.top2\n  xelab top1 top2 -prj files.prj\n  xelab lib1.top1 lib2.top2 -prj files.prj\n",
+      "stderr": "",
+      "scope": "Local CLI help only; no compilation/elaboration/simulation"
+    },
+    {
+      "tool": "xsim",
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "-help"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\review_hold_2026-10-17\\xsim",
+      "started_utc": "2026-10-17T22:32:00.853724+00:00",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "\n****** Vivado Simulator v2025.2\n  **** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n  **** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nUsage: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xsim.exe [options]\n(Switches with double dash '--' can also be used with a single dash '-')\n    --R                  : Run simulation till end i.e. do 'run all;quit'\n    --autoloadwcfg       : Load already saved waveform configuration file\n    --clear_child_on_exit : Clear child processes upon exiting simulation (only applicable to Linux).\n    --cov_db_dir         : Directory where the Functional Coverage database will be saved. The functional coverage data will be present under <cov_db_dir_argvalue>/xsim.covdb/<cov_db_name_argvalue> directory. Default is ./ or inherits value set in xelab.\n    --cov_db_name        : Database name under which Functional Coverage database will be saved. The functional coverage data will be present under <cov_db_dir_argvalue>/xsim.covdb/<cov_db_name_argvalue> directory. Default is snapshot name or inherits value set in xelab.\n    --disable_circular_dependency_check : Disable runtime error for cyclic/circular dependency in constraint randomization.\n    --disable_multi_driver_resolution_scheduling : Revert to original multi driver resolution flow during scheduling the processes\n    --downgrade_error2info : Downgrade severity level of HDL messages from Error to Info.\n    --downgrade_error2warning : Downgrade severity level of HDL messages from Error to Warning.\n    --downgrade_fatal2info : Downgrade severity level of HDL messages from Fatal to Info.\n    --downgrade_fatal2warning : Downgrade severity level of HDL messages from Fatal to Warning.\n    --downgrade_severity : Downgrade severity level of HDL messages. Choices are:error2warning|error2info|fatal2warning|fatal2info\n    --f                  : Take command line options from a file\n    --file               : Take command line options from a file\n    --g                  : Run with interactive GUI\n    --gui                : Run with interactive GUI\n    --h                  : Print help message and exit\n    --help               : Print help message and exit\n    --ieeewarnings       : Enable warnings from VHDL IEEE functions\n    --ignore_assertions  : Ignore System Verilog Concurrent Assertions.\n    --ignore_coverage    : Ignore System Verilog Functional Coverage.\n    --ignore_feature     : Ignore effect of specific HDL feature or construct. Choices are: assertion\n    --log                : Specify the log file name\n    --maxdeltaid         : Specify the maximum delta number. Will report error if it exceeds maximum simulation loops at the same time\n    --maxlogsize         : Set the maximum size a log file can reach in MB. The default setting is unlimited\n    --nolog              : Suppress log file generation\n    --nosignalhandlers   : Run with no signal handlers to avoid conflict with security software.\n    --onerror            : Specify behavior upon simulation run-time error: quit|stop\n    --onfinish           : Specify behavior at end of simulation: quit|stop\n    --protoinst          : Specify a .protoinst file for protocol analysis\n    --runall             : Run simulation till end i.e. do 'run all;quit'\n    --stats              : Display memory and cpu stats upon exiting\n    --sv_seed            : seed for sv constraint random\n    --t                  : Specify the TCL file for batch mode execution\n    --tclbatch           : Specify the TCL file for batch mode execution\n    --tempDir            : Specify the temporary directory name\n    --testplusarg        : Specify plus args to be used by $test$plusargs and $value$plusargs system functions\n    --tl                 : Enable printing of file name and line number of statements being executed.\n    --tp                 : Enable printing of hierarchical names of process being executed.\n    --version            : Print the simulator version and quit.\n    --view               : Open a wave configuration file. This switch should be used together with -gui switch\n    --wdb                : Specify the waveform database output file.\n    --xsimdir            : Location of xsim.dir directory. Default location is \".\" i.e. current run directory.\n",
+      "scope": "Local CLI help only; no compilation/elaboration/simulation"
+    }
+  ],
+  "tool_execution_interpretation": "Help exited 0 only. Compile, elaboration, RTL simulation, lint, formal, synthesis, timing, hardware and ASIC NOT RUN.",
+  "original_files": [
+    {
+      "path": "riscv_edge_soc_codex_kit/.gitignore",
+      "expected_sha256": "a67584af0711b488f82ab306158348756b050e6d6fbe6c49f178fc61c64204d1",
+      "actual_sha256": "a67584af0711b488f82ab306158348756b050e6d6fbe6c49f178fc61c64204d1",
+      "unchanged": true
+    },
+    {
+      "path": "riscv_edge_soc_codex_kit/.harness/state.json",
+      "expected_sha256": "6d470e0ef13d3226fd36d36d9e5e708a16a6717d829d970e21a2144d8c4cf189",
+      "actual_sha256": "6d470e0ef13d3226fd36d36d9e5e708a16a6717d829d970e21a2144d8c4cf189",
+      "unchanged": true
+    },
+    {
+      "path": "riscv_edge_soc_codex_kit/AGENTS.md",
+      "expected_sha256": "a9512a9971aa195c8986c11556964c4205171b2b34cabc248e2ffc77ea55784d",
+      "actual_sha256": "a9512a9971aa195c8986c11556964c4205171b2b34cabc248e2ffc77ea55784d",
+      "unchanged": true
+    },
+    {
+      "path": "riscv_edge_soc_codex_kit/docs/ARCH_SPEC.md",
+      "expected_sha256": "ac5bebb19710e92a3ca3e7f42fe1e6ab1ee5896d3b1294ff0b2261e83ef62868",
+      "actual_sha256": "ac5bebb19710e92a3ca3e7f42fe1e6ab1ee5896d3b1294ff0b2261e83ef62868",
+      "unchanged": true
+    },
+    {
+      "path": "riscv_edge_soc_codex_kit/docs/BACKLOG.json",
+      "expected_sha256": "ebd69b7d3393fb18b7e18adf91e61b655e5a0172b6c3ead2e7f6f4e9ac89b401",
+      "actual_sha256": "ebd69b7d3393fb18b7e18adf91e61b655e5a0172b6c3ead2e7f6f4e9ac89b401",
+      "unchanged": true
+    },
+    {
+      "path": "riscv_edge_soc_codex_kit/docs/CAREER_PORTFOLIO.md",
+      "expected_sha256": "d0b0050d550d13c3e74b92d3645a815b2c00d95d2f516f42f244877b539711be",
+      "actual_sha256": "d0b0050d550d13c3e74b92d3645a815b2c00d95d2f516f42f244877b539711be",
+      "unchanged": true
+    },
+    {
+      "path": "riscv_edge_soc_codex_kit/docs/CODEX_LOOP.md",
+      "expected_sha256": "c8f266cd8d61ab3b02727b8553629375b2597d03b79c03b94324269be626f246",
+      "actual_sha256": "c8f266cd8d61ab3b02727b8553629375b2597d03b79c03b94324269be626f246",
+      "unchanged": true
+    },
+    {
+      "path": "riscv_edge_soc_codex_kit/docs/DECISIONS.md",
+      "expected_sha256": "a946a94bdbebccd6e591882d3aa726e1aa5cce0f0169f8f5e9c69c84f74c7c16",
+      "actual_sha256": "a946a94bdbebccd6e591882d3aa726e1aa5cce0f0169f8f5e9c69c84f74c7c16",
+      "unchanged": true
+    },
+    {
+      "path": "riscv_edge_soc_codex_kit/docs/GETTING_STARTED_CN.md",
+      "expected_sha256": "9b1d526834623faee497abc459a3f138c29fdec3c5965d19b02c0f05159987c7",
+      "actual_sha256": "9b1d526834623faee497abc459a3f138c29fdec3c5965d19b02c0f05159987c7",
+      "unchanged": true
+    },
+    {
+      "path": "riscv_edge_soc_codex_kit/docs/PROJECT_CHARTER.md",
+      "expected_sha256": "290c66f919b2b0f7f2d9f2572ab01352511b6fdd4fe680f7e630ccc149ca8020",
+      "actual_sha256": "290c66f919b2b0f7f2d9f2572ab01352511b6fdd4fe680f7e630ccc149ca8020",
+      "unchanged": true
+    },
+    {
+      "path": "riscv_edge_soc_codex_kit/docs/REFERENCES.md",
+      "expected_sha256": "9ec081fbb4646f331c20009c347ea07dcd5ba7f36612fa3ee8b29faa8753a9e2",
+      "actual_sha256": "9ec081fbb4646f331c20009c347ea07dcd5ba7f36612fa3ee8b29faa8753a9e2",
+      "unchanged": true
+    },
+    {
+      "path": "riscv_edge_soc_codex_kit/docs/TOOLCHAIN.md",
+      "expected_sha256": "6e4907886fcc6f57bd16a02ab714a7065b9f72e710e1391e47bd79b972100745",
+      "actual_sha256": "6e4907886fcc6f57bd16a02ab714a7065b9f72e710e1391e47bd79b972100745",
+      "unchanged": true
+    },
+    {
+      "path": "riscv_edge_soc_codex_kit/docs/VERIFICATION_PLAN.md",
+      "expected_sha256": "42ec66ab7678c5e00f6c37edd0d123b53e44411f305e978d29e5ceaaa9bc902d",
+      "actual_sha256": "42ec66ab7678c5e00f6c37edd0d123b53e44411f305e978d29e5ceaaa9bc902d",
+      "unchanged": true
+    },
+    {
+      "path": "riscv_edge_soc_codex_kit/evidence/daily/README.md",
+      "expected_sha256": "41bfd2218c2c0a39b6812888b06f0284769b707b594bbb0a5a7a06e5050946a9",
+      "actual_sha256": "41bfd2218c2c0a39b6812888b06f0284769b707b594bbb0a5a7a06e5050946a9",
+      "unchanged": true
+    },
+    {
+      "path": "riscv_edge_soc_codex_kit/prompts/BOOTSTRAP_PROMPT.md",
+      "expected_sha256": "71147364da0bdff22a939486b224ac14a73e967ad430a2fb3117ed2052a01646",
+      "actual_sha256": "71147364da0bdff22a939486b224ac14a73e967ad430a2fb3117ed2052a01646",
+      "unchanged": true
+    },
+    {
+      "path": "riscv_edge_soc_codex_kit/prompts/DAILY_CODEX_PROMPT.md",
+      "expected_sha256": "4056e8b3fe18ac01732f2933c95a225b8fe11bfd8a291ec377b38aad5de02a84",
+      "actual_sha256": "4056e8b3fe18ac01732f2933c95a225b8fe11bfd8a291ec377b38aad5de02a84",
+      "unchanged": true
+    },
+    {
+      "path": "riscv_edge_soc_codex_kit/prompts/WEEKLY_REVIEW_PROMPT.md",
+      "expected_sha256": "f4ecd110e5f4ce8bed0dc72ee65c5e557f275fa1967ebcf2cdf5afcf0ab78600",
+      "actual_sha256": "f4ecd110e5f4ce8bed0dc72ee65c5e557f275fa1967ebcf2cdf5afcf0ab78600",
+      "unchanged": true
+    },
+    {
+      "path": "riscv_edge_soc_codex_kit/README.md",
+      "expected_sha256": "6aebd77edc57bb0096016b9ac602f481d846b7e5619fd6e4d8154e0de5c71450",
+      "actual_sha256": "6aebd77edc57bb0096016b9ac602f481d846b7e5619fd6e4d8154e0de5c71450",
+      "unchanged": true
+    },
+    {
+      "path": "riscv_edge_soc_codex_kit/scripts/harness.py",
+      "expected_sha256": "7ea717bbb2d4dd636cd7ce35bb61f744671aaf08250365922d3c0e4750ea7603",
+      "actual_sha256": "7ea717bbb2d4dd636cd7ce35bb61f744671aaf08250365922d3c0e4750ea7603",
+      "unchanged": true
+    },
+    {
+      "path": "riscv_edge_soc_codex_kit/scripts/test_harness.py",
+      "expected_sha256": "43faa6b78704f7c4c4c5b40218340e8d795e24f01a4cb5683d6d322ce73714fa",
+      "actual_sha256": "43faa6b78704f7c4c4c5b40218340e8d795e24f01a4cb5683d6d322ce73714fa",
+      "unchanged": true
+    },
+    {
+      "path": "RV32I_Edge_SoC.cache/wt/project.wpc",
+      "expected_sha256": "868826f37ffb4c6f5b92e253c7d473f0effa236e823a5923a3691677b870cadb",
+      "actual_sha256": "868826f37ffb4c6f5b92e253c7d473f0effa236e823a5923a3691677b870cadb",
+      "unchanged": true
+    },
+    {
+      "path": "RV32I_Edge_SoC.hw/RV32I_Edge_SoC.lpr",
+      "expected_sha256": "b373cf9663fa8b6acdd3cceeb201aea1c7fbbee5cf7c6d675bf0c6ccd52f4c69",
+      "actual_sha256": "b373cf9663fa8b6acdd3cceeb201aea1c7fbbee5cf7c6d675bf0c6ccd52f4c69",
+      "unchanged": true
+    },
+    {
+      "path": "RV32I_Edge_SoC.xpr",
+      "expected_sha256": "c94b0e09ce2ea5e694f50e073d2ff9ae86f1908d4f80e5613fc0a432d6539cc4",
+      "actual_sha256": "c94b0e09ce2ea5e694f50e073d2ff9ae86f1908d4f80e5613fc0a432d6539cc4",
+      "unchanged": true
+    }
+  ],
+  "protected_sha256": {
+    ".harness/state.json": "5bae92de1b9f18de72deb065d980c51f99c8c2777224b21bb09968884cd97d27",
+    "docs/BACKLOG.json": "f89141805d379ed7ed233d225f00a8270ba37d99850cc9cea6f7cae783a4b170",
+    "AGENTS.md": "88024f18ed2d34ec7d0e093f71874cedaa042e53998fe07f6a4413e589025463",
+    "docs/ARCH_SPEC.md": "0838aa5a8108a3f9cded3c69b4f0194e9e13d587f87f450c7792cc0f052db052",
+    "docs/ARCH_CONTRACT.json": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03",
+    "docs/ARCH_REVIEW.md": "2b6d7787d92041a386ac98e213d0e7f317f2fbd88490b7fe1dba131d0cbf58e8",
+    "scripts/harness.py": "17ffb7aa0e1a5139a47d782f199e1544cdce77e3f5153ba9b685323e8a422207",
+    "scripts/test_harness.py": "67c82cf3d7af702248bc7c65b00f19c4af201b4b6866011a7cb83180bd01da2f",
+    "scripts/check_arch_spec.py": "7ebe55dcc35485beb43ffc43f52a6a76e976dda74bd329f3f5b0412003eb02f9",
+    "scripts/test_arch_spec.py": "7bddfcc5788b6ffd7f549580e3b9dd88299e992356ca95ff0df4c4003e516f61",
+    "docs/daily/2026-10-14_technical.md": "d18bd0fd21c9fa2790d6cb50ba83f185fb864e8b944713d52b2ae21dc6bd688b",
+    "docs/daily/2026-10-14_zh-CN.md": "fa505822a5d5628dbd3ba0dd021800fa294a2d53a5b58ec2d71ab63cdbe42df8",
+    "docs/daily/2026-10-16_technical.md": "d50d5567ffa46e145aaa96e624e53ed59407d78c32283746ed9555fe24b983d5",
+    "docs/daily/2026-10-16_zh-CN.md": "d57f5e8dc588a9ef8f6cabd3c86f4a923b105a205410edcbd60e498abd4eab5b"
+  },
+  "authorization": {
+    "attended_work": "Owner said keep working and gave permission today",
+    "architecture_review": "No explicit acceptance of v0.2 or owner override of approve restriction recorded",
+    "approval_question": "Pending specific owner decision; no approve/reopen/enable/authorize run",
+    "runtime": "danger-full-access / never; no enforced workspace sandbox; unattended disabled"
+  },
+  "unexpected_read_failure": {
+    "path": "docs/ARCH_DECISIONS.md",
+    "outcome": "File absent; correct existing path found as docs/DECISIONS.md. No gate or task failed."
+  },
+  "next_action": "Owner decision on ARCH_REVIEW.md A1-A10 and exact contract, then clean Git and begin T003 if approval is valid and date quota permits."
+}
