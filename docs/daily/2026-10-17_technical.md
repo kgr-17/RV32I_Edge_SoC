@@ -164,3 +164,18 @@ Owner must inspect all three receipts and the prepared repair before deciding wh
 After authorized reopen and a clean committed baseline: run daily --supervised, validate, status, next, begin T003. Generate/update that actual day's two reports, then finish T003 --evidence evidence/daily/T003.md to rerun the complete gate, including the new argument-transport test and all real EDA positives/negatives. If the repair fails, diagnose from the preserved new receipt within the new bounded budget; never weaken checks or fabricate simulation success. No CPU RTL before T003 passes. Do not start a second primary task on the recovery date.
 
 The runtime remains unrestricted danger-full-access / never; Job Objects are cleanup, not a security boundary. No tool/package/IP download, installation, global change, remote operation, runner/scheduler setup or FPGA programming occurred. Unattended operation remains disabled.
+
+
+---
+
+<!-- entry:c8744eda4bad48a09a3342deb899f8f1489b1eb68d437a8cec7df6660ecde150 -->
+
+# Committed T003 blocked checkpoint and owner recovery decision
+
+T003 delivery/checkpoint is committed at 2da233dc62611c2f88aa216a34fa5779b9f39382 on engineering/bootstrap, parent f869a5fcab6c5cb5a78100637433c70fb06b9491. The 36-file inspected delivery includes the actual toolchain implementation, all three failed receipts, the post-budget argument-file repair and its unexecuted regression test. Git status was clean immediately afterward; both unstaged and staged whitespace checks exited 0 before commit. It is a blocked checkpoint, not completed acceptance.
+
+This closing entry updates the same October 17 technical/Chinese reports, evidence/daily/T003.md and evidence/report_entries/t003-delivery.json. Its containing documentation SHA can be obtained with git log -1 --format=%H -- docs/daily/2026-10-17_technical.md. No functional verification was rerun for the entry.
+
+Final current state remains T002 completed, T003 blocked at 3 attempts, active=null, October 17 claimed by T003 and no next eligible task. All 23 original files, approved architecture digest and prior-date reports remain unchanged. No owner reopen, attempt reset, second task, environment bypass, download/install, remote operation, unattended job or physical programming occurred.
+
+The concrete fix for owner review is Checks.xsim in scripts/rtl_checks.py and its new argument-transport regression in scripts/test_rtl_checks.py. It uses a simulator argument file with forward-slash paths, preserving plusarg key=value tokens and exact file evidence. Both are NOT RUN. Owner must review evidence/daily/T003.md and decide whether to personally reopen or specifically authorize python -B scripts/harness.py reopen T003 --confirm-owner-review. Reopen preserves old receipts and daily claims; actual execution resumes only on the next eligible LA date, October 18 or later, under the existing daily guard. Do not execute the command or mutate state without that explicit decision.
