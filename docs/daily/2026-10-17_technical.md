@@ -55,3 +55,20 @@ RTL simulation, lint, architectural ISA tests, formal, synthesis, implementation
 The runtime remains danger-full-access with approval policy never; no actual workspace-only sandbox exists. Keep automation attended. Documentation reads previously authorized for RISC-V and Digilent do not authorize tools/packages/IP, FPGA programming, global changes or scheduling.
 
 Read this latest handoff first on resume, then the required contract/state files and Git status. If approval is still absent, preserve the review hold. The owner can review and personally run python -B scripts/harness.py approve T002 --confirm-owner-review. An explicit owner exception authorizing the agent to record that specific acceptance would need to be preserved as provenance before using that command. After approval, commit the state/evidence first so begin T003 sees clean Git, check the actual LA date and daily_claims, and select only the dependency-ready task. If revisions are requested instead, preserve the old proposal and receipt: the current reopen command only accepts blocked tasks, so an explicit revision/reverification workflow is needed rather than editing state to bypass review.
+
+
+---
+
+<!-- entry:3e3f5c79bdfced74ad72b2c4d677488bd0ee552bcaac5ef58f433229c0403724 -->
+
+# Committed review-hold follow-up
+
+Delivery commit: ba27b9b8b022f0b75628745312c2b547f9029b37 on engineering/bootstrap; parent 7b17ce0207838677066468409fea7a48602efd75. Git status was clean immediately after commit. The four inspected delivery files are the two October 17 daily reports, evidence/review_hold_2026-10-17.json and evidence/report_entries/review-hold-2026-10-17.json.
+
+Before commit: harness validate exited 0 for 45 tasks; both git diff --check and git diff --cached --check exited 0. A separate project-local consistency assertion verified valid evidence/report-entry JSON, intact Chinese UTF-8, exactly two reports for today's LA date, and unchanged hashes for all previously recorded protected files (state/backlog/contract/review/harness/tests and all previous daily reports). No RTL, task-state or architecture changes occurred. No additional verification attempt was consumed.
+
+This closing entry appends to the same two reports and adds evidence/report_entries/review-hold-2026-10-17-delivery.json. Its own containing documentation commit can be obtained using git log -1 --format=%H -- docs/daily/2026-10-17_technical.md. Do not rerun already-passing controller/checker tests for this text-only addendum; review its diff and whitespace instead.
+
+T002 remains awaiting_review, owner_reviews remains empty, active=null and no task is eligible. October 17's daily claim remains unused. The specific owner decision requested earlier is still pending at this entry. No approve/reopen/enable/authorize, task begin/finish, scheduler, software install, global change, remote operation or FPGA programming occurred.
+
+Resume from this handoff, inspect Git/state and the precise A1-A10 review. Record a valid owner acceptance only through the authorized process, commit the resulting state first, then begin T003 if the actual daily quota permits. The observed XSim CLI helps are preparation evidence only: all RTL/lint/formal/synthesis/timing/hardware/ASIC acceptance still remains NOT RUN.
