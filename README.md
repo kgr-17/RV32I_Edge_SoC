@@ -1,6 +1,9 @@
 # RV32I Edge SoC
 
-Status: engineering bootstrap implemented and self-tested. No CPU RTL, FPGA
+Status: T002 architecture v0.2 approved by the owner; T003 toolchain acceptance
+blocked after its three-attempt budget. Fixture synthesis lint, compilation and
+elaboration passed, but XSim rejected arguments before the bench ran. A repair
+is prepared and unverified; see evidence/daily/T003.md. No CPU RTL, FPGA
 implementation, hardware validation or ASIC results exist yet.
 
 The existing `RV32I_Edge_SoC.xpr` is the active Vivado project. Its configured part
@@ -27,8 +30,10 @@ aliases and were not executed because Make is not on PATH.
 Read `docs/ENVIRONMENT_BOUNDARY.md`, `docs/CODEX_LOOP.md`, the latest technical
 handoff under `docs/daily/`, and `docs/BACKLOG.json`. The v0.2 architecture proposal
 and explicit decisions are in `docs/ARCH_SPEC.md` and `docs/ARCH_REVIEW.md`; the
-companion `docs/ARCH_CONTRACT.json` has consistency/mutation checks. They remain
-proposed until T002 owner review. The backlog has 45 tasks: 41 mandatory, 4 optional,
+companion `docs/ARCH_CONTRACT.json` has consistency/mutation checks. Their proposal
+fields are preserved as the reviewed submission; owner acceptance is recorded in
+`.harness/state.json` and `evidence/owner_reviews/T002-2026-10-17.json`.
+The backlog has 45 tasks: 41 mandatory, 4 optional,
 including the required later interrupt architecture and verification milestones.
 
 Original work is recoverable from baseline Git commit
@@ -37,5 +42,6 @@ documented in `docs/PROJECT_BASELINE.json`. The original engineering kit remains
 unchanged in `riscv_edge_soc_codex_kit/`; root-level files are the active versions.
 
 This bootstrap session has unrestricted filesystem access. Unattended execution
-is disabled pending actual sandbox/approval configuration. No dependencies were
-installed, no network downloads were made, and no FPGA was programmed.
+is disabled pending actual sandbox/approval configuration. No tools, packages or
+IP were downloaded/installed and no FPGA was programmed. Previously authorized
+official documentation reads are recorded in evidence/t002_sources.json.

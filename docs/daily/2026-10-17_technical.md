@@ -72,3 +72,95 @@ This closing entry appends to the same two reports and adds evidence/report_entr
 T002 remains awaiting_review, owner_reviews remains empty, active=null and no task is eligible. October 17's daily claim remains unused. The specific owner decision requested earlier is still pending at this entry. No approve/reopen/enable/authorize, task begin/finish, scheduler, software install, global change, remote operation or FPGA programming occurred.
 
 Resume from this handoff, inspect Git/state and the precise A1-A10 review. Record a valid owner acceptance only through the authorized process, commit the resulting state first, then begin T003 if the actual daily quota permits. The observed XSim CLI helps are preparation evidence only: all RTL/lint/formal/synthesis/timing/hardware/ASIC acceptance still remains NOT RUN.
+
+
+---
+
+<!-- entry:7d28ab0eb0a5c12907310d1375e73d5a4abf5f256d6f89b9bc406a312af4d343 -->
+
+# T003 started after explicit owner approval
+
+This entry supersedes the earlier review-hold status without erasing it. The owner answered "Approve v0.2 and authorize that command" to the specific T002 question. The authorized approve command exited 0, recorded T002 completed, and preserved the approved contract digest 403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03. Provenance and exact output are in evidence/owner_reviews/T002-2026-10-17.json. Approval/state/backlog were committed at f869a5fcab6c5cb5a78100637433c70fb06b9491. No other owner-only action was authorized or performed.
+
+After a clean baseline, daily --supervised, validate, next and begin T003 all exited 0. evidence/t003_start.json records the commands. The October 17 daily claim is now T003, the only primary task begun today. The architecture artifact retains its historical submission fields; authoritative approval is in state/owner evidence.
+
+T003 implementation: config/rtl_checks.json pins Python 3.9.13, Git 2.48.1.windows.1, tzdata 2026.2, Vivado/XSim 2025.2 and Vivado SW build 6299465. .harness/checks.json now registers real toolchain-rtl/lint/regress commands. scripts/tool_runner.py plus tool_child.py provide project-local profiles and gated Windows Job Object process-tree cleanup. All three XSim --version commands actually ran, exit 0/v2025.2 (evidence/t003_version_probe.json). Six initial runner tests passed in 2.502 seconds; final gate execution is still pending.
+
+The only RTL is a verification infrastructure register fixture under dv/toolchain, not CPU RTL: clk_i/rst_i/enable_i and 32-bit data_i/data_o. Its always_comb next value and synchronous always_ff state exercise real synthesis/compilation. The bench consumes a separate Python history-based vector oracle, drives falling edges and checks after rising edges. Each of seeds 1 and 20261017 has 134 reset/enable/hold/corner/random rows. Positive simulation requires one exact seed/count marker, exit 0, no errors/warnings and a nonempty WDB. Negative modes test fatal, normal exit without success, timeout, syntax errors and inferred latches.
+
+scripts/vivado_lint.tcl performs non-project out-of-context synthesis lint only on explicit sources, rejects latch primitives/black boxes and runs LUTLP-1/MDRV-1 DRC. Synthesis reports are fixture evidence, not CPU utilization, timing or formal proof. scripts/rtl_checks.py saves incremental full command receipts and vector/wave hashes under evidence/toolchain_runs and unique build/T003 directories; unregistered production RTL blocks checks.
+
+New files: .github/workflows/rtl.yml, config/rtl_checks.json, dv/toolchain/{register_fixture,tb_toolchain,negative_latch,negative_syntax}.sv, scripts/{tool_runner,tool_child,rtl_checks,test_tool_runner,test_rtl_checks}.py, scripts/{vivado_lint,xsim_run}.tcl, evidence/daily/T003.md, evidence/t003_start.json, evidence/t003_version_probe.json and this report entry. Modified .harness/checks.json, docs/TOOLCHAIN.md, state/backlog task projection and the same two daily reports. The original XPR/kit and approved architecture remain unchanged.
+
+The GitHub Actions YAML is manual-only preparation, with no external actions/install/download steps. It requires a pre-staged clean exact commit and owner-reviewed self-hosted runner environment. No remote, runner service, scheduling or actual Actions execution was configured. The dispatch checkbox is an acknowledgment, not sandbox enforcement.
+
+Next action is finish T003 --evidence evidence/daily/T003.md, which must execute preflight and the complete registered toolchain-rtl checks plus whitespace gates. Attempt budget currently 0/3. Preserve any failure and repair its cause without weakening gates; append exact final outcomes and receipt paths before committing. Runtime remains danger-full-access / never, attended only. Formal, CPU ISA, production FPGA timing/hardware and ASIC remain NOT RUN. Do not begin T004 before T003 succeeds, and do not start a second task on October 17.
+
+
+---
+
+<!-- entry:4719e45c860bab194b810f7a7b58a46a0817c6efcc04e18220c4a2bf716365f4 -->
+
+# T003 attempt 1 failure and correction
+
+Receipt evidence/runs/T003/attempt-1-20261017T233538438180Z.json records preflight PASS, toolchain-rtl FAIL, both whitespace checks PASS. Full EDA receipt: evidence/toolchain_runs/all-20261017T233552408768Z.json. All Python subchecks passed: 6 runner, 12 gate-policy, 26 controller and 16 architecture tests. Vivado exited 1 in fixture synthesis after 12.609 seconds. Synth 8-6735 requires explicit net kind for input ports under default_nettype none. This is a real compatibility failure; no RTL simulation completed.
+
+Corrected the positive and latch-negative fixture inputs to input wire logic, preserving explicit widths and default_nettype none. No gate was weakened and no warning suppression was added. Strengthened the timeout injection to require a TB-written hang-entry marker as well as a timed-out process tree, so unrelated tool startup hangs cannot count as intended negative-test success.
+
+T003 remains active/failed with attempts=1 of 3, preserving all failure logs. Retry the full finish command after this correction. Current tests are infrastructure evidence only; CPU RTL, formal, timing, hardware and ASIC remain NOT RUN. Today's two reports retain all earlier findings, including the owner approval provenance.
+
+
+---
+
+<!-- entry:2bf2d62ffe0d73f028c57431ed653a276f7135913d913d1b32aca789964a73dc -->
+
+# T003 attempt 2: synthesis passed, incomplete DRC rejected
+
+Receipt evidence/runs/T003/attempt-2-20261017T233705785077Z.json records toolchain-rtl exit 1 while preflight and both whitespace checks exit 0. All 60 Python subtests passed. EDA evidence/toolchain_runs/all-20261017T233719426593Z.json contains Vivado exit 0 after 18.016 seconds, fixture synthesis with zero synthesis errors/warnings and 32 FDRE cells. Those cells are fixture-only evidence, not CPU resources.
+
+The gate deliberately rejected DRC 23-814: the out-of-context design caused some connectivity checks to be skipped. Completion marker plus exit 0 did not override the warning policy. No XSim design simulation ran because lint failed first. The input-net-kind correction from attempt 1 worked.
+
+For attempt 3, removed out-of-context mode and retained ordinary top-level non-project synthesis. Require both LUTLP-1 and MDRV-1 rules to exist; keep warnings/errors, latch and black-box checks strict. No DRC warning is suppressed. Also added fixture timescale consistency and selected hardware signals for WDB logging, avoiding unsupported testbench bookkeeping types. No approved architecture or production RTL changed.
+
+This is the last permitted verification attempt: attempts=2 of 3 before retry. Preserve both failure receipts. If the final run fails or is NOT RUN, the controller must hold/block T003 and no CPU RTL may begin; do not reset budgets or issue owner-only reopen commands without a new explicit authorization.
+
+
+---
+
+<!-- entry:344a070ea401b076143ce544c9ba01ae44ab02e37ad4fe9c051883c5b1ea4c6d -->
+
+# Final T003 state: blocked after three attempts; prepared repair is unverified
+
+## Final evidence and acceptance
+
+T002 remains completed with the owner's explicit v0.2 acceptance in f869a5f and evidence/owner_reviews/T002-2026-10-17.json. The architecture/contract bytes and original XPR are unchanged. T003 is BLOCKED, active=null, attempts=3. The October 17 claim remains T003; next=null and T004 cannot start. Project progress is 2/41 mandatory tasks completed, one blocked, 38 mandatory pending, four optional disabled.
+
+Latest receipt: evidence/runs/T003/attempt-3-20261017T233828751183Z.json. Detailed command evidence: evidence/toolchain_runs/all-20261017T233842507262Z.json. preflight exited 0; toolchain-rtl exited 1; both Git whitespace checks exited 0. All 60 Python subtests in that receipt passed (6 runner, 12 policy, 26 harness, 16 architecture), and document consistency passed. This result predates the prepared post-budget repair and new test.
+
+Actual fixture evidence on attempt 3: Vivado top-level synthesis plus selected structural lint PASS, exit 0, 17.703 seconds; xvlog compile PASS, exit 0, 0.656 seconds; xelab snapshot/elaboration PASS, exit 0, 2.547 seconds. Both LUTLP-1/MDRV-1 rules were present and DRC completed without the earlier out-of-context warning. Version pins matched Python 3.9.13, Git 2.48.1.windows.1, tzdata 2026.2, Vivado/XSim 2025.2, Vivado SW build 6299465.
+
+XSim then exited 1 in 0.515 seconds with "Expected a switch but found 1" before bench execution. Accepted simulations=0; no vector count, seed result or waveform has been accepted. Runtime fatal/no-marker/timeout injections, syntax-negative and latch-negative remain NOT RUN. Fixture synthesis/compile/elaboration do not satisfy T003's complete gate. GitHub Actions execution, CPU ISA tests, formal, production synthesis/timing, hardware and ASIC remain NOT RUN.
+
+## Diagnosis and concrete unverified repair
+
+Read installed xsim.bat, loader.bat and rdiArgs.bat without changing them. rdiArgs reconstructs arguments via %1/shift. Unquoted key=value plusargs such as SEED=1 are the suspected batch-tokenization cause of the stray 1; this is an inference pending execution, not a confirmed passing fix.
+
+Prepared scripts/rtl_checks.py Checks.xsim to pass only snapshot/--file/path through the batch launcher and let XSim parse its own project-local options file. Capture exact file content, SHA-256 and intended argv in command evidence. The installed help documents --file. Added a thirteenth policy regression test that checks key=value arguments never reach the batch-token boundary and remain intact in the file. No new Python/EDA verification has been executed after exhaustion: this source patch and new test are explicitly NOT RUN.
+
+README and docs/TOOLCHAIN now show the actual blocked state. .harness/toolchain.json's descriptive note was corrected; launcher paths and versions did not change. Evidence/daily/T003.md maps all acceptance criteria, all three failures and the next recovery procedure. evidence/t003_final_state.json records current state, receipts, prepared-source hashes and the installed wrapper hash. All 23 original file hashes and every prior-date daily report remain unchanged; approved contract digest remains 403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03.
+
+## Complete T003 delivery scope
+
+Task files are .harness/{checks,state,toolchain}.json, docs/{BACKLOG.json,TOOLCHAIN.md}, README.md, config/rtl_checks.json, .github/workflows/rtl.yml, four dv/toolchain fixtures, scripts/{tool_runner,tool_child,rtl_checks,test_tool_runner,test_rtl_checks}.py and scripts/{vivado_lint,xsim_run}.tcl. Evidence includes daily/T003.md, t003_start.json, t003_version_probe.json, t003_final_state.json, updated metadata inventory toolchain.json, three timestamped harness receipts, three detailed EDA receipts and report-entry JSON inputs. The same two October 17 reports are appended, preserving every prior entry. Ignored build/T003 contains snapshots, synthesis/DRC reports, vectors and tool/profile outputs. No RTL/XDC/XPR source integration was made in the existing Vivado project.
+
+Review the entire diff, run documentation/whitespace checks, commit these inspected task files locally even though the task is blocked, and record the resulting delivery commit. Do not relabel it successful or rerun functional checks outside the exhausted budget.
+
+## Exact next-session recovery and approvals
+
+Read this final handoff, AGENTS, boundary, architecture/verification/backlog/state and inspect Git first. AGENTS requires "At most three verification attempts per task" and "Never call approve, reopen, or enable on the owner's behalf." The previous explicit exception applied only to approving T002. No reopen or counter reset has been executed.
+
+Owner must inspect all three receipts and the prepared repair before deciding whether to reopen T003. If accepted, the owner can run python -B scripts/harness.py reopen T003 --confirm-owner-review or specifically authorize that command. Preserve old logs and the October 17 claim. The current controller refuses begin on any already-claimed date after reopen, so resume on the next actual eligible America/Los_Angeles date (October 18 or later), without date/claim edits or quota bypass.
+
+After authorized reopen and a clean committed baseline: run daily --supervised, validate, status, next, begin T003. Generate/update that actual day's two reports, then finish T003 --evidence evidence/daily/T003.md to rerun the complete gate, including the new argument-transport test and all real EDA positives/negatives. If the repair fails, diagnose from the preserved new receipt within the new bounded budget; never weaken checks or fabricate simulation success. No CPU RTL before T003 passes. Do not start a second primary task on the recovery date.
+
+The runtime remains unrestricted danger-full-access / never; Job Objects are cleanup, not a security boundary. No tool/package/IP download, installation, global change, remote operation, runner/scheduler setup or FPGA programming occurred. Unattended operation remains disabled.

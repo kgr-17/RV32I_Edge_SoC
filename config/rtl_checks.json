@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "python_version": "3.9.13",
+  "git_version": "2.48.1.windows.1",
+  "tzdata_version": "2026.2",
+  "vivado_version": "2025.2",
+  "vivado_sw_build": "6299465",
+  "seeds": [1, 20261017],
+  "designs": [
+    {
+      "name": "toolchain_fixture",
+      "top": "register_fixture",
+      "sources": ["dv/toolchain/register_fixture.sv"],
+      "testbench": "dv/toolchain/tb_toolchain.sv",
+      "test_top": "tb_toolchain"
+    }
+  ]
+}

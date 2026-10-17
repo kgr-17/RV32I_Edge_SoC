@@ -1,0 +1,260 @@
+{
+  "profile": "all",
+  "status": "FAIL",
+  "started_utc": "20261017T233842507262Z",
+  "base_commit": "f869a5fcab6c5cb5a78100637433c70fb06b9491",
+  "scope": "Infrastructure fixture only; no CPU/SoC implementation or hardware",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\all-20261017T233842507262Z\\versions",
+      "started_utc": "2026-10-17T23:38:42.584461+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "git version 2.48.1.windows.1\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.094
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\all-20261017T233842507262Z\\versions\\xvlog",
+      "started_utc": "2026-10-17T23:38:42.702239+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.578
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\all-20261017T233842507262Z\\versions\\xelab",
+      "started_utc": "2026-10-17T23:38:43.288435+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.562
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\all-20261017T233842507262Z\\versions\\xsim",
+      "started_utc": "2026-10-17T23:38:43.868911+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2025 Xilinx, Inc. All Rights Reserved.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.438
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat",
+        "-mode",
+        "batch",
+        "-nolog",
+        "-nojournal",
+        "-notrace",
+        "-source",
+        "C:\\RV32I_Edge_SoC\\scripts\\vivado_lint.tcl",
+        "-tclargs",
+        "C:\\RV32I_Edge_SoC\\build\\T003\\all-20261017T233842507262Z\\lint_register_fixture\\sources.txt",
+        "register_fixture",
+        "xc7a35tcpg236-1",
+        "2025.2"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\all-20261017T233842507262Z\\lint_register_fixture",
+      "started_utc": "2026-10-17T23:38:44.317587+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** Vivado v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Oct 17 16:38:44 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource {C:\\RV32I_Edge_SoC\\scripts\\vivado_lint.tcl} -notrace\nTOOLCHAIN_VIVADO_VERSION=2025.2\nTOOLCHAIN_VIVADO_FULL_VERSION=Vivado v2025.2 (64-bit)\nSW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\nIP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\nTool Version Limit: 2025.11\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nSharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n\nCommand: synth_design -top register_fixture -part xc7a35tcpg236-1 -flatten_hierarchy none\nStarting synth_design\nAttempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'\nINFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'\nINFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.\nINFO: [Synth 8-7078] Launching helper process for spawning children vivado processes\nINFO: [Synth 8-7075] Helper process launched with PID 3128\n---------------------------------------------------------------------------------\nStarting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1077.672 ; gain = 536.406\n---------------------------------------------------------------------------------\nINFO: [Synth 8-6157] synthesizing module 'register_fixture' [C:/RV32I_Edge_SoC/dv/toolchain/register_fixture.sv:3]\nINFO: [Synth 8-6155] done synthesizing module 'register_fixture' (0#1) [C:/RV32I_Edge_SoC/dv/toolchain/register_fixture.sv:3]\n---------------------------------------------------------------------------------\nFinished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1195.059 ; gain = 653.793\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1195.059 ; gain = 653.793\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Loading Part and Timing Information\n---------------------------------------------------------------------------------\nLoading part: xc7a35tcpg236-1\n---------------------------------------------------------------------------------\nINFO: [Device 21-403] Loading part xc7a35tcpg236-1\nFinished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1195.059 ; gain = 653.793\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1195.059 ; gain = 653.793\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart RTL Component Statistics \n---------------------------------------------------------------------------------\nDetailed RTL Component Info : \n+---Registers : \n\t               32 Bit    Registers := 1     \n---------------------------------------------------------------------------------\nFinished RTL Component Statistics \n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Part Resource Summary\n---------------------------------------------------------------------------------\nPart Resources:\nDSPs: 90 (col length:60)\nBRAMs: 100 (col length: RAMB18 60 RAMB36 30)\n---------------------------------------------------------------------------------\nFinished Part Resource Summary\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart Cross Boundary and Area Optimization\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1338.113 ; gain = 796.848\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart Timing Optimization\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Timing Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1362.949 ; gain = 821.684\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Technology Mapping\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Technology Mapping : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1362.949 ; gain = 821.684\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart IO Insertion\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Final Netlist Cleanup\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Final Netlist Cleanup\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished IO Insertion : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1598.582 ; gain = 1057.316\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Renaming Generated Instances\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Renaming Generated Instances : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1598.582 ; gain = 1057.316\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Handling Custom Attributes\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1598.582 ; gain = 1057.316\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Writing Synthesis Report\n---------------------------------------------------------------------------------\n\nReport BlackBoxes: \n+-+--------------+----------+\n| |BlackBox name |Instances |\n+-+--------------+----------+\n+-+--------------+----------+\n\nReport Cell Usage: \n+------+-----+------+\n|      |Cell |Count |\n+------+-----+------+\n|1     |BUFG |     1|\n|2     |FDRE |    32|\n|3     |IBUF |    35|\n|4     |OBUF |    32|\n+------+-----+------+\n\nReport Instance Areas: \n+------+---------+-------+------+\n|      |Instance |Module |Cells |\n+------+---------+-------+------+\n|1     |top      |       |   100|\n+------+---------+-------+------+\n---------------------------------------------------------------------------------\nFinished Writing Synthesis Report : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1598.582 ; gain = 1057.316\n---------------------------------------------------------------------------------\nSynthesis finished with 0 errors, 0 critical warnings and 0 warnings.\nSynthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1598.582 ; gain = 1057.316\nSynthesis Optimization Complete : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1598.582 ; gain = 1057.316\nINFO: [Project 1-571] Translating synthesized netlist\nNetlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1613.691 ; gain = 0.000\nINFO: [Project 1-570] Preparing netlist for logic optimization\nINFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).\nNetlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1726.043 ; gain = 0.000\nINFO: [Project 1-111] Unisim Transformation Summary:\nNo Unisim elements were transformed.\n\nSynth Design complete | Checksum: 30029a1d\nINFO: [Common 17-83] Releasing license: Synthesis\n12 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.\nsynth_design completed successfully\nsynth_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1726.043 ; gain = 1188.723\nCommand: report_drc -checks {LUTLP-1 MDRV-1} -file structural_drc.rpt\nINFO: [DRC 23-27] Running DRC with 2 threads\nINFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/RV32I_Edge_SoC/build/T003/all-20261017T233842507262Z/lint_register_fixture/structural_drc.rpt.\nreport_drc completed successfully\nTOOLCHAIN_LINT_PASS top=register_fixture\nINFO: [Common 17-206] Exiting Vivado at Sat Oct 17 16:39:01 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 17.703
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--sv",
+        "C:\\RV32I_Edge_SoC\\dv\\toolchain\\register_fixture.sv",
+        "C:\\RV32I_Edge_SoC\\dv\\toolchain\\tb_toolchain.sv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\all-20261017T233842507262Z\\sim_toolchain_fixture",
+      "started_utc": "2026-10-17T23:39:02.039472+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "INFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/toolchain/register_fixture.sv\" into library work\nINFO: [VRFC 10-311] analyzing module register_fixture\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/toolchain/tb_toolchain.sv\" into library work\nINFO: [VRFC 10-311] analyzing module tb_toolchain\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.656
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "work.tb_toolchain",
+        "--snapshot",
+        "toolchain_snapshot",
+        "--timescale",
+        "1ns/1ps",
+        "--debug",
+        "typical"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\all-20261017T233842507262Z\\sim_toolchain_fixture",
+      "started_utc": "2026-10-17T23:39:02.706943+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nRunning: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_toolchain --snapshot toolchain_snapshot --timescale 1ns/1ps --debug typical \nMulti-threading is on. Using 26 slave threads.\nStarting static elaboration\nPass Through NonSizing Optimizer\nCompleted static elaboration\nStarting simulation data flow analysis\nCompleted simulation data flow analysis\nTime Resolution for simulation is 1ps\nCompiling module work.register_fixture\nCompiling module work.tb_toolchain\nBuilt simulation snapshot toolchain_snapshot\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.547
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "toolchain_snapshot",
+        "--tclbatch",
+        "C:\\RV32I_Edge_SoC\\scripts\\xsim_run.tcl",
+        "--onerror",
+        "quit",
+        "--onfinish",
+        "quit",
+        "--sv_seed",
+        "1",
+        "--testplusarg",
+        "SEED=1",
+        "--testplusarg",
+        "VECTORS=C:\\RV32I_Edge_SoC\\build\\T003\\all-20261017T233842507262Z\\sim_toolchain_fixture\\vectors_1.txt",
+        "--log",
+        "seed_1.log",
+        "--wdb",
+        "C:\\RV32I_Edge_SoC\\build\\T003\\all-20261017T233842507262Z\\sim_toolchain_fixture\\seed_1.wdb"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\all-20261017T233842507262Z\\sim_toolchain_fixture",
+      "started_utc": "2026-10-17T23:39:05.264534+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 1,
+      "status": "FAIL",
+      "stdout": "",
+      "stderr": "Expected a switch but found 1\n\n****** Vivado Simulator v2025.2\n  **** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n  **** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nUsage: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xsim.exe [options]\n(Switches with double dash '--' can also be used with a single dash '-')\n    --R                  : Run simulation till end i.e. do 'run all;quit'\n    --autoloadwcfg       : Load already saved waveform configuration file\n    --clear_child_on_exit : Clear child processes upon exiting simulation (only applicable to Linux).\n    --cov_db_dir         : Directory where the Functional Coverage database will be saved. The functional coverage data will be present under <cov_db_dir_argvalue>/xsim.covdb/<cov_db_name_argvalue> directory. Default is ./ or inherits value set in xelab.\n    --cov_db_name        : Database name under which Functional Coverage database will be saved. The functional coverage data will be present under <cov_db_dir_argvalue>/xsim.covdb/<cov_db_name_argvalue> directory. Default is snapshot name or inherits value set in xelab.\n    --disable_circular_dependency_check : Disable runtime error for cyclic/circular dependency in constraint randomization.\n    --disable_multi_driver_resolution_scheduling : Revert to original multi driver resolution flow during scheduling the processes\n    --downgrade_error2info : Downgrade severity level of HDL messages from Error to Info.\n    --downgrade_error2warning : Downgrade severity level of HDL messages from Error to Warning.\n    --downgrade_fatal2info : Downgrade severity level of HDL messages from Fatal to Info.\n    --downgrade_fatal2warning : Downgrade severity level of HDL messages from Fatal to Warning.\n    --downgrade_severity : Downgrade severity level of HDL messages. Choices are:error2warning|error2info|fatal2warning|fatal2info\n    --f                  : Take command line options from a file\n    --file               : Take command line options from a file\n    --g                  : Run with interactive GUI\n    --gui                : Run with interactive GUI\n    --h                  : Print help message and exit\n    --help               : Print help message and exit\n    --ieeewarnings       : Enable warnings from VHDL IEEE functions\n    --ignore_assertions  : Ignore System Verilog Concurrent Assertions.\n    --ignore_coverage    : Ignore System Verilog Functional Coverage.\n    --ignore_feature     : Ignore effect of specific HDL feature or construct. Choices are: assertion\n    --log                : Specify the log file name\n    --maxdeltaid         : Specify the maximum delta number. Will report error if it exceeds maximum simulation loops at the same time\n    --maxlogsize         : Set the maximum size a log file can reach in MB. The default setting is unlimited\n    --nolog              : Suppress log file generation\n    --nosignalhandlers   : Run with no signal handlers to avoid conflict with security software.\n    --onerror            : Specify behavior upon simulation run-time error: quit|stop\n    --onfinish           : Specify behavior at end of simulation: quit|stop\n    --protoinst          : Specify a .protoinst file for protocol analysis\n    --runall             : Run simulation till end i.e. do 'run all;quit'\n    --stats              : Display memory and cpu stats upon exiting\n    --sv_seed            : seed for sv constraint random\n    --t                  : Specify the TCL file for batch mode execution\n    --tclbatch           : Specify the TCL file for batch mode execution\n    --tempDir            : Specify the temporary directory name\n    --testplusarg        : Specify plus args to be used by $test$plusargs and $value$plusargs system functions\n    --tl                 : Enable printing of file name and line number of statements being executed.\n    --tp                 : Enable printing of hierarchical names of process being executed.\n    --version            : Print the simulator version and quit.\n    --view               : Open a wave configuration file. This switch should be used together with -gui switch\n    --wdb                : Specify the waveform database output file.\n    --xsimdir            : Location of xsim.dir directory. Default location is \".\" i.e. current run directory.\n",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.515
+    }
+  ],
+  "checks": [
+    {
+      "name": "Pinned Python version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned tzdata version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned Git version",
+      "status": "PASS",
+      "command_index": 0
+    },
+    {
+      "name": "Pinned xvlog version",
+      "status": "PASS",
+      "command_index": 1
+    },
+    {
+      "name": "Pinned xelab version",
+      "status": "PASS",
+      "command_index": 2
+    },
+    {
+      "name": "Pinned xsim version",
+      "status": "PASS",
+      "command_index": 3
+    },
+    {
+      "name": "Synthesis lint register_fixture",
+      "status": "PASS",
+      "command_index": 4
+    },
+    {
+      "name": "Pinned Vivado SW build",
+      "status": "PASS",
+      "command_index": 4
+    },
+    {
+      "name": "SystemVerilog compile toolchain_fixture",
+      "status": "PASS",
+      "command_index": 5
+    },
+    {
+      "name": "Elaboration toolchain_fixture",
+      "status": "PASS",
+      "command_index": 6
+    },
+    {
+      "name": "Independent simulation seed=1",
+      "status": "FAIL",
+      "command_index": 7
+    }
+  ],
+  "simulations": [],
+  "excluded": [
+    "formal",
+    "timing closure",
+    "physical FPGA",
+    "ASIC",
+    "CPU ISA correctness"
+  ],
+  "pins": {
+    "schema_version": 1,
+    "python_version": "3.9.13",
+    "git_version": "2.48.1.windows.1",
+    "tzdata_version": "2026.2",
+    "vivado_version": "2025.2",
+    "vivado_sw_build": "6299465"
+  },
+  "error": "Independent simulation seed=1",
+  "finished_utc": "2026-10-17T23:39:05.781090+00:00"
+}

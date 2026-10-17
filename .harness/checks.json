@@ -1,1 +1,35 @@
-{}
+{
+  "toolchain-rtl": {
+    "inputs": [
+      "config/rtl_checks.json",
+      ".harness/toolchain.json",
+      "scripts/tool_runner.py",
+      "scripts/tool_child.py",
+      "scripts/test_tool_runner.py",
+      "scripts/test_rtl_checks.py",
+      "scripts/rtl_checks.py",
+      "scripts/vivado_lint.tcl",
+      "scripts/xsim_run.tcl",
+      "dv/toolchain/register_fixture.sv",
+      "dv/toolchain/tb_toolchain.sv",
+      "dv/toolchain/negative_latch.sv",
+      "dv/toolchain/negative_syntax.sv"
+    ],
+    "commands": [
+      ["{python}", "-B", "scripts/test_tool_runner.py"],
+      ["{python}", "-B", "scripts/test_rtl_checks.py"],
+      ["{python}", "-B", "scripts/test_harness.py"],
+      ["{python}", "-B", "scripts/test_arch_spec.py"],
+      ["{python}", "-B", "scripts/check_arch_spec.py"],
+      ["{python}", "-B", "scripts/rtl_checks.py", "all"]
+    ]
+  },
+  "lint": {
+    "inputs": ["config/rtl_checks.json", "scripts/rtl_checks.py", "scripts/tool_runner.py", "scripts/tool_child.py", "scripts/vivado_lint.tcl", "dv/toolchain/register_fixture.sv", "dv/toolchain/negative_latch.sv"],
+    "commands": [["{python}", "-B", "scripts/rtl_checks.py", "lint"]]
+  },
+  "regress": {
+    "inputs": ["config/rtl_checks.json", "scripts/rtl_checks.py", "scripts/tool_runner.py", "scripts/tool_child.py", "scripts/xsim_run.tcl", "dv/toolchain/register_fixture.sv", "dv/toolchain/tb_toolchain.sv", "dv/toolchain/negative_syntax.sv"],
+    "commands": [["{python}", "-B", "scripts/rtl_checks.py", "regress"]]
+  }
+}

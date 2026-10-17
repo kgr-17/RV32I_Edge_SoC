@@ -1,0 +1,162 @@
+{
+  "profile": "all",
+  "status": "FAIL",
+  "started_utc": "20261017T233552408768Z",
+  "base_commit": "f869a5fcab6c5cb5a78100637433c70fb06b9491",
+  "scope": "Infrastructure fixture only; no CPU/SoC implementation or hardware",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\all-20261017T233552408768Z\\versions",
+      "started_utc": "2026-10-17T23:35:52.485930+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "git version 2.48.1.windows.1\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.094
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\all-20261017T233552408768Z\\versions\\xvlog",
+      "started_utc": "2026-10-17T23:35:52.601340+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.594
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\all-20261017T233552408768Z\\versions\\xelab",
+      "started_utc": "2026-10-17T23:35:53.204749+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.562
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\all-20261017T233552408768Z\\versions\\xsim",
+      "started_utc": "2026-10-17T23:35:53.785963+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2025 Xilinx, Inc. All Rights Reserved.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.437
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat",
+        "-mode",
+        "batch",
+        "-nolog",
+        "-nojournal",
+        "-notrace",
+        "-source",
+        "C:\\RV32I_Edge_SoC\\scripts\\vivado_lint.tcl",
+        "-tclargs",
+        "C:\\RV32I_Edge_SoC\\build\\T003\\all-20261017T233552408768Z\\lint_register_fixture\\sources.txt",
+        "register_fixture",
+        "xc7a35tcpg236-1",
+        "2025.2"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\all-20261017T233552408768Z\\lint_register_fixture",
+      "started_utc": "2026-10-17T23:35:54.243446+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 1,
+      "status": "FAIL",
+      "stdout": "\n****** Vivado v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Oct 17 16:35:54 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource {C:\\RV32I_Edge_SoC\\scripts\\vivado_lint.tcl} -notrace\nTOOLCHAIN_VIVADO_VERSION=2025.2\nTOOLCHAIN_VIVADO_FULL_VERSION=Vivado v2025.2 (64-bit)\nSW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\nIP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\nTool Version Limit: 2025.11\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nSharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n\nCommand: synth_design -top register_fixture -part xc7a35tcpg236-1 -mode out_of_context -flatten_hierarchy none\nStarting synth_design\nAttempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'\nINFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'\nINFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.\nINFO: [Synth 8-7078] Launching helper process for spawning children vivado processes\nINFO: [Synth 8-7075] Helper process launched with PID 6516\n---------------------------------------------------------------------------------\nStarting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1082.773 ; gain = 537.082\n---------------------------------------------------------------------------------\nINFO: [Synth 8-10285] module 'register_fixture' is ignored due to previous errors [C:/RV32I_Edge_SoC/dv/toolchain/register_fixture.sv:25]\nINFO: [Synth 8-9084] Verilog file 'C:/RV32I_Edge_SoC/dv/toolchain/register_fixture.sv' ignored due to errors\n---------------------------------------------------------------------------------\nFinished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1192.207 ; gain = 646.516\n---------------------------------------------------------------------------------\nsynthesize failed\nINFO: [Common 17-83] Releasing license: Synthesis\n7 Infos, 0 Warnings, 0 Critical Warnings and 6 Errors encountered.\nsynth_design failed\nsynth_design: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1192.207 ; gain = 651.477\nTOOLCHAIN_LINT_FAIL: ERROR: [Common 17-69] Command failed: Vivado Synthesis failed\n\nINFO: [Common 17-206] Exiting Vivado at Sat Oct 17 16:36:06 2026...\n",
+      "stderr": "ERROR: [Synth 8-6735] net type must be explicitly specified for 'clk_i' when default_nettype is none [C:/RV32I_Edge_SoC/dv/toolchain/register_fixture.sv:3]\nERROR: [Synth 8-6735] net type must be explicitly specified for 'rst_i' when default_nettype is none [C:/RV32I_Edge_SoC/dv/toolchain/register_fixture.sv:4]\nERROR: [Synth 8-6735] net type must be explicitly specified for 'enable_i' when default_nettype is none [C:/RV32I_Edge_SoC/dv/toolchain/register_fixture.sv:5]\nERROR: [Synth 8-6735] net type must be explicitly specified for 'data_i' when default_nettype is none [C:/RV32I_Edge_SoC/dv/toolchain/register_fixture.sv:6]\nERROR: [Synth 8-12188] Failed to read verilog 'C:/RV32I_Edge_SoC/dv/toolchain/register_fixture.sv'\n",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 12.609
+    }
+  ],
+  "checks": [
+    {
+      "name": "Pinned Python version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned tzdata version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned Git version",
+      "status": "PASS",
+      "command_index": 0
+    },
+    {
+      "name": "Pinned xvlog version",
+      "status": "PASS",
+      "command_index": 1
+    },
+    {
+      "name": "Pinned xelab version",
+      "status": "PASS",
+      "command_index": 2
+    },
+    {
+      "name": "Pinned xsim version",
+      "status": "PASS",
+      "command_index": 3
+    },
+    {
+      "name": "Synthesis lint register_fixture",
+      "status": "FAIL",
+      "command_index": 4
+    }
+  ],
+  "simulations": [],
+  "excluded": [
+    "formal",
+    "timing closure",
+    "physical FPGA",
+    "ASIC",
+    "CPU ISA correctness"
+  ],
+  "pins": {
+    "schema_version": 1,
+    "python_version": "3.9.13",
+    "git_version": "2.48.1.windows.1",
+    "tzdata_version": "2026.2",
+    "vivado_version": "2025.2",
+    "vivado_sw_build": "6299465"
+  },
+  "error": "Synthesis lint register_fixture",
+  "finished_utc": "2026-10-17T23:36:06.858662+00:00"
+}

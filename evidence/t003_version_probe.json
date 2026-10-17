@@ -1,0 +1,46 @@
+{
+  "commands": [
+    {
+      "tool": "xvlog",
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\version_probe\\xvlog",
+      "exit_code": 0,
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": ""
+    },
+    {
+      "tool": "xelab",
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\version_probe\\xelab",
+      "exit_code": 0,
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": ""
+    },
+    {
+      "tool": "xsim",
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\version_probe\\xsim",
+      "exit_code": 0,
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2025 Xilinx, Inc. All Rights Reserved.\n",
+      "stderr": ""
+    }
+  ]
+}

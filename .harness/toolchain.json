@@ -13,5 +13,5 @@
   },
   "vivado_version": "2025.2",
   "vivado_version_evidence": "evidence/vivado_probe.json",
-  "note": "Project-local paths only; no global PATH or system configuration change. XSim tools located but not executed."
+  "note": "Project-local paths only; no global PATH/system change. T003 verified fixture synthesis lint and XSim version/compile/elaboration, but simulation argument parsing failed before bench execution; acceptance blocked. See evidence/daily/T003.md."
 }

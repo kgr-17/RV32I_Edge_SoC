@@ -1,0 +1,49 @@
+name: Reviewed local RTL toolchain
+
+# Prepared only. No push/PR/schedule trigger or third-party action downloads.
+on:
+  workflow_dispatch:
+    inputs:
+      controls_reviewed:
+        description: Actual runner sandbox and owner approval controls inspected
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: reviewed-rtl-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  rtl:
+    if: ${{ inputs.controls_reviewed }}
+    runs-on: [self-hosted, Windows, X64, rv32i-vivado-2025-2]
+    environment: rtl-owner-review
+    timeout-minutes: 8
+    defaults:
+      run:
+        shell: powershell
+    steps:
+      - name: Verify operator-staged clean exact commit
+        env:
+          EXPECTED_SHA: ${{ github.sha }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          Set-Location -LiteralPath $env:GITHUB_WORKSPACE
+          if ($env:EXPECTED_SHA -notmatch '^[0-9a-f]{40}$') { throw 'Invalid expected commit' }
+          $head = git rev-parse HEAD
+          if ($LASTEXITCODE -ne 0) { throw 'Operator must stage an existing checkout; no automatic download' }
+          if ($head.Trim() -ne $env:EXPECTED_SHA) { throw 'Staged checkout must match dispatched commit' }
+          $changes = git status --porcelain
+          if ($LASTEXITCODE -ne 0 -or $changes) { throw 'Runner checkout must start clean' }
+      - name: Run the same local metadata and engineering gates
+        run: |
+          $ErrorActionPreference = 'Stop'
+          Set-Location -LiteralPath $env:GITHUB_WORKSPACE
+          python -B scripts/preflight.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -B scripts/verify.py toolchain-rtl
+          exit $LASTEXITCODE

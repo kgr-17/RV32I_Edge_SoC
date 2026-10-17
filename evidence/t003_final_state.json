@@ -1,0 +1,188 @@
+{
+  "recorded_utc": "2026-10-17T23:41:34.191061+00:00",
+  "date": "2026-10-17",
+  "state": {
+    "T002": "completed",
+    "T003": "blocked",
+    "active": null,
+    "attempts": 3,
+    "daily_claims": {
+      "2026-10-14": "T001",
+      "2026-10-16": "T002",
+      "2026-10-17": "T003"
+    },
+    "owner_reviews": {
+      "T002": {
+        "date": "2026-10-17",
+        "receipt": "evidence/runs/T002/attempt-1-20261017T034202692993Z.json"
+      }
+    },
+    "blocked_reason": "Three attempts exhausted; inspect evidence/runs/T003/attempt-3-20261017T233828751183Z.json"
+  },
+  "task_counts": {
+    "total": 45,
+    "mandatory": 41,
+    "completed_mandatory": 2
+  },
+  "original_files": 23,
+  "originals_changed": [],
+  "prior_reports_unchanged": {
+    "docs/daily/2026-10-14_technical.md": true,
+    "docs/daily/2026-10-14_zh-CN.md": true,
+    "docs/daily/2026-10-16_technical.md": true,
+    "docs/daily/2026-10-16_zh-CN.md": true
+  },
+  "approved_contract_sha256": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03",
+  "receipts": [
+    {
+      "path": "evidence/runs/T003/attempt-1-20261017T233538438180Z.json",
+      "attempt": 1,
+      "stage": "finished",
+      "commands": [
+        {
+          "argv": [
+            "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+            "-B",
+            "scripts/preflight.py"
+          ],
+          "status": "PASS",
+          "exit_code": 0
+        },
+        {
+          "argv": [
+            "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+            "-B",
+            "scripts/verify.py",
+            "toolchain-rtl"
+          ],
+          "status": "FAIL",
+          "exit_code": 1
+        },
+        {
+          "argv": [
+            "git",
+            "diff",
+            "--check"
+          ],
+          "status": "PASS",
+          "exit_code": 0
+        },
+        {
+          "argv": [
+            "git",
+            "diff",
+            "--cached",
+            "--check"
+          ],
+          "status": "PASS",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "path": "evidence/runs/T003/attempt-2-20261017T233705785077Z.json",
+      "attempt": 2,
+      "stage": "finished",
+      "commands": [
+        {
+          "argv": [
+            "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+            "-B",
+            "scripts/preflight.py"
+          ],
+          "status": "PASS",
+          "exit_code": 0
+        },
+        {
+          "argv": [
+            "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+            "-B",
+            "scripts/verify.py",
+            "toolchain-rtl"
+          ],
+          "status": "FAIL",
+          "exit_code": 1
+        },
+        {
+          "argv": [
+            "git",
+            "diff",
+            "--check"
+          ],
+          "status": "PASS",
+          "exit_code": 0
+        },
+        {
+          "argv": [
+            "git",
+            "diff",
+            "--cached",
+            "--check"
+          ],
+          "status": "PASS",
+          "exit_code": 0
+        }
+      ]
+    },
+    {
+      "path": "evidence/runs/T003/attempt-3-20261017T233828751183Z.json",
+      "attempt": 3,
+      "stage": "finished",
+      "commands": [
+        {
+          "argv": [
+            "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+            "-B",
+            "scripts/preflight.py"
+          ],
+          "status": "PASS",
+          "exit_code": 0
+        },
+        {
+          "argv": [
+            "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+            "-B",
+            "scripts/verify.py",
+            "toolchain-rtl"
+          ],
+          "status": "FAIL",
+          "exit_code": 1
+        },
+        {
+          "argv": [
+            "git",
+            "diff",
+            "--check"
+          ],
+          "status": "PASS",
+          "exit_code": 0
+        },
+        {
+          "argv": [
+            "git",
+            "diff",
+            "--cached",
+            "--check"
+          ],
+          "status": "PASS",
+          "exit_code": 0
+        }
+      ]
+    }
+  ],
+  "accepted_simulations": 0,
+  "unverified_after_final_attempt": {
+    "scripts/rtl_checks.py": "bfb2f83118c03285d22b511b348f868605530db14715ec85afeed0d8983b5e5f",
+    "scripts/test_rtl_checks.py": "a4c34acff0447916d9dc43e3d34735e767dce5c789b0c65812765563a12b7d16"
+  },
+  "diagnosis": {
+    "observed": "XSim exited 1 before bench execution: Expected a switch but found 1",
+    "suspected_cause": "rdiArgs.bat reconstructs unquoted key=value arguments through batch %1/shift",
+    "installed_source": "C:/AMDDesignTools/2025.2/Vivado/bin/rdiArgs.bat",
+    "installed_source_sha256": "0430730fdc64101c8df1f311b10a08967ac9886e3f32070b3f9ee8445b9e8069",
+    "prepared_repair": "Use XSim --file for simulator options/plusargs; record exact file text/hash/intended argv; use forward-slash paths in option-file content",
+    "repair_verification": "NOT RUN; three-attempt budget exhausted"
+  },
+  "remaining_checks": "XSim vectors/waveform, runtime fatal/no-marker/timeout injections, syntax-negative, latch-negative, new argument-transport regression all NOT RUN",
+  "next": "Owner reviews receipts/repair and controls reopen; resume T003 on next eligible LA date. No fourth run or second primary task today."
+}
