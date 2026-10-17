@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-17",
+  "recorded_utc": "2026-10-17T23:29:39.494937+00:00",
+  "task": "T002",
+  "contract_version": "0.2",
+  "contract_sha256": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03",
+  "review_document": "docs/ARCH_REVIEW.md",
+  "review_decisions": "A1-A10",
+  "source": "Explicit owner answer to asynchronous question in this attended chat",
+  "question_item_id": "[\"request_user_input_async\",\"call_9712d81937ff4135a5e722045135751d\",0]",
+  "question": "Do you approve architecture v0.2, including the initial fault-halt EEI and later interrupt milestone, and explicitly authorize me to run python -B scripts/harness.py approve T002 --confirm-owner-review?",
+  "owner_answer": "Approve v0.2 and authorize that command",
+  "scope": "Specific exception to agent approval-command prohibition for this T002 acceptance only; no future approval, installation, scheduling, programming or publication authorized",
+  "before_commit": "8ac00e727b5478b55cefc2c294c1eb8644dd3595",
+  "status": "approval_recorded",
+  "command": {
+    "argv": [
+      "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "-B",
+      "scripts/harness.py",
+      "approve",
+      "T002",
+      "--confirm-owner-review"
+    ],
+    "started_utc": "2026-10-17T23:29:39.540522+00:00",
+    "cwd": "C:\\RV32I_Edge_SoC",
+    "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "status": "PASS",
+    "exit_code": 0,
+    "stdout": "{\n  \"action\": \"APPROVE\",\n  \"task\": \"T002\"\n}\n",
+    "stderr": ""
+  },
+  "after_state": {
+    "T002": {
+      "date": "2026-10-17",
+      "receipt": "evidence/runs/T002/attempt-1-20261017T034202692993Z.json"
+    }
+  }
+}

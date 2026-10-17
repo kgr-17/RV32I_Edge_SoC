@@ -8,7 +8,7 @@
   },
   "task_states": {
     "T001": "completed",
-    "T002": "awaiting_review",
+    "T002": "completed",
     "T003": "pending",
     "T004": "pending",
     "T005": "pending",
@@ -62,7 +62,12 @@
     "T001": "evidence/runs/T001/attempt-2-20261015T052535290129Z.json",
     "T002": "evidence/runs/T002/attempt-1-20261017T034202692993Z.json"
   },
-  "owner_reviews": {},
+  "owner_reviews": {
+    "T002": {
+      "date": "2026-10-17",
+      "receipt": "evidence/runs/T002/attempt-1-20261017T034202692993Z.json"
+    }
+  },
   "start_approvals": {},
   "enabled_optional_ids": [],
   "bootstrap_note": "Owner explicitly authorized bootstrap; reserved before replacement harness became executable."
