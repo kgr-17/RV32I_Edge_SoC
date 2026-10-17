@@ -1,0 +1,41 @@
+{
+  "git_commit": "c3035b977a5eb7178bd58a8683a8ffe42cfb8493",
+  "report_date": "2026-10-16",
+  "tool_versions": [
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "--version"
+      ],
+      "started_utc": "2026-10-17T03:39:30.783962+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "Python 3.9.13\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "started_utc": "2026-10-17T03:39:30.790191+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "git version 2.48.1.windows.1\n",
+      "stderr": ""
+    }
+  ],
+  "original_23_files_unchanged": true,
+  "rtl_changed": false,
+  "xdc_changed": false,
+  "xpr_changed": false,
+  "official_documentation_reads_authorized": true,
+  "packages_or_tools_installed": false,
+  "unattended_enabled": false,
+  "task": "T002",
+  "no_execution_on_2026_10_15_recorded": true
+}

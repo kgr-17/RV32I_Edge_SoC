@@ -1,0 +1,101 @@
+{
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/harness.py",
+        "status"
+      ],
+      "started_utc": "2026-10-17T03:42:32.148512+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"tasks\": 45,\n  \"project_status\": \"in_progress\",\n  \"execution_approval_pending\": [\n    \"T032\",\n    \"T038\",\n    \"T039\",\n    \"T043\"\n  ],\n  \"active\": null,\n  \"daily_claim\": \"T002\",\n  \"counts\": {\n    \"awaiting_review\": 1,\n    \"blocked\": 0,\n    \"completed\": 1,\n    \"failed\": 0,\n    \"in_progress\": 0,\n    \"passed\": 0,\n    \"pending\": 43\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/harness.py",
+        "next"
+      ],
+      "started_utc": "2026-10-17T03:42:32.344178+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"tasks\": 45,\n  \"project_status\": \"in_progress\",\n  \"execution_approval_pending\": [\n    \"T032\",\n    \"T038\",\n    \"T039\",\n    \"T043\"\n  ],\n  \"active\": null,\n  \"daily_claim\": \"T002\",\n  \"next\": null,\n  \"planning_only\": true\n}\n",
+      "stderr": ""
+    }
+  ],
+  "gate_summary": [
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/harness.py",
+        "validate"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "tests": null
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/check_arch_spec.py"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "tests": null
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/test_arch_spec.py"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "tests": [
+        "16",
+        "0.013"
+      ]
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "tests": null
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "tests": null
+    }
+  ],
+  "receipt": "evidence/runs/T002/attempt-1-20261017T034202692993Z.json",
+  "attempts": 1,
+  "owner_approval_recorded": false,
+  "original_23_files_unchanged": true,
+  "previous_daily_reports_unchanged": true,
+  "dated_reports": 2,
+  "status": "awaiting_review",
+  "no_next_eligible_task": true,
+  "task_count": 45,
+  "mandatory_count": 41
+}

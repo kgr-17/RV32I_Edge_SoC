@@ -1,0 +1,84 @@
+{
+  "task": "T002",
+  "attempt": 1,
+  "git_commit": "c3035b977a5eb7178bd58a8683a8ffe42cfb8493",
+  "python": "3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)]",
+  "stage": "finished",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/harness.py",
+        "validate"
+      ],
+      "started_utc": "2026-10-17T03:42:02.729140+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"tasks\": 45,\n  \"project_status\": \"in_progress\",\n  \"execution_approval_pending\": [\n    \"T032\",\n    \"T038\",\n    \"T039\",\n    \"T043\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/check_arch_spec.py"
+      ],
+      "started_utc": "2026-10-17T03:42:02.912549+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"scope\": \"Proposed document consistency ONLY\",\n  \"contract_sha256\": \"403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03\",\n  \"version\": \"0.2-proposed\",\n  \"ports\": 38,\n  \"instructions\": 40,\n  \"requirements\": 22,\n  \"errors\": [],\n  \"rtl_verification\": \"NOT RUN\",\n  \"owner_approval\": \"PENDING\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/test_arch_spec.py"
+      ],
+      "started_utc": "2026-10-17T03:42:03.119339+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_actual_proposal_is_consistent (__main__.ContractChecks) ... ok\ntest_bus_width_mismatch_rejected (__main__.ContractChecks) ... ok\ntest_direction_suffix_rejected (__main__.ContractChecks) ... ok\ntest_fault_code_collision_rejected (__main__.ContractChecks) ... ok\ntest_instruction_missing_or_duplicate (__main__.ContractChecks) ... ok\ntest_missing_required_field_rejected (__main__.ContractChecks) ... ok\ntest_nonexecutable_boot_rejected (__main__.ContractChecks) ... ok\ntest_overlapping_regions_rejected (__main__.ContractChecks) ... ok\ntest_port_documentation_drift_rejected (__main__.ContractChecks) ... ok\ntest_register_outside_region_rejected (__main__.ContractChecks) ... ok\ntest_reset_policy_ambiguity_rejected (__main__.ContractChecks) ... ok\ntest_response_zero_latency_rejected (__main__.ContractChecks) ... ok\ntest_self_approval_rejected (__main__.ContractChecks) ... ok\ntest_unknown_traceability_task_rejected (__main__.ContractChecks) ... ok\ntest_wrong_priority_rejected (__main__.ContractChecks) ... ok\ntest_wrong_target_part_rejected (__main__.ContractChecks) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 0.013s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_utc": "2026-10-17T03:42:03.402731+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "started_utc": "2026-10-17T03:42:03.448624+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "waveform_paths": [],
+  "seed": null,
+  "evidence_sha256": "d1366354864f73643c0c5a77da6d9df63e1f02ecffb4e48133735b855d98500c"
+}

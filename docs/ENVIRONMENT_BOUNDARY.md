@@ -87,3 +87,11 @@ future third-party tools may ignore cache settings or spawn surviving child
 processes. Missing or unverified tools/licenses and unreviewed architecture remain
 technical blockers for later milestones. The owner confirmed Digilent Basys 3;
 physical validation, constraints and actual synthesis/implementation are pending.
+
+## T002 documentation authorization (2026-10-16)
+
+The owner explicitly allowed read-only official RISC-V specification and Digilent
+Basys 3 manual access for this architecture review. Source reads are recorded in
+evidence/t002_sources.json. This does not authorize tool/package/IP installation,
+publication, programming, scheduling or changes outside the project. The current
+attended session still has danger-full-access/never; no enforcement was changed.

@@ -1,0 +1,61 @@
+{
+  "task": "T002",
+  "access_date": "2026-10-16",
+  "authorization": "Owner explicitly allowed official documentation reads in this chat",
+  "tool": "web browser search/open; documentation only",
+  "primary_sources": [
+    {
+      "id": "S-ISA",
+      "url": "https://docs.riscv.org/reference/isa/v20240411/unpriv/rv32.html",
+      "accessed": "2026-10-16",
+      "scope": "RV32I 2.1, alignment, load effects, FENCE and SYSTEM rules"
+    },
+    {
+      "id": "S-EEI",
+      "url": "https://docs.riscv.org/reference/isa/v20240411/unpriv/intro.html",
+      "accessed": "2026-10-16",
+      "scope": "Execution environment and address-space permissions"
+    },
+    {
+      "id": "S-BOARD",
+      "url": "https://digilent.com/reference/_media/reference/programmable-logic/basys-3/basys3_rm.pdf",
+      "accessed": "2026-10-16",
+      "scope": "Sections 4/5, 100 MHz W5, UART, board resource specification"
+    }
+  ],
+  "observations": [
+    {
+      "source": "S-ISA",
+      "sections": [
+        "Base instruction formats",
+        "Load and Store Instructions",
+        "Memory Ordering Instructions",
+        "Environment Call and Breakpoints",
+        "HINT Instructions"
+      ],
+      "use": "Cross-check legal behavior, then label project choices as proposed EEI/microarchitecture"
+    },
+    {
+      "source": "S-EEI",
+      "sections": [
+        "RISC-V Software Execution Environments and Harts",
+        "Memory"
+      ],
+      "use": "Distinguish EEI permissions/fatal traps from privileged support"
+    },
+    {
+      "source": "S-BOARD",
+      "sections": [
+        "4 Oscillators/Clocks",
+        "5 USB-UART Bridge"
+      ],
+      "printed_page": 7,
+      "use": "Clock W5 and UART connection facts, not physical validation"
+    }
+  ],
+  "limitations": [
+    "No tool/package/IP downloads or installations",
+    "No certification, physical pin validation, synthesis or timing claim",
+    "Architecture v0.2 still awaits owner review"
+  ]
+}

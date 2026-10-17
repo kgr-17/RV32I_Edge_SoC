@@ -1,0 +1,691 @@
+{
+  "schema_version": 1,
+  "version": "0.2-proposed",
+  "approval_status": "pending_owner_review",
+  "task": "T002",
+  "target": {
+    "board": "Digilent Basys 3",
+    "fpga_part": "xc7a35tcpg236-1",
+    "clock_hz": 100000000,
+    "clock_period_ns": 10,
+    "clock_pin": "W5",
+    "clock_domains": 1
+  },
+  "isa": {
+    "name": "RV32I",
+    "version": "2.1",
+    "manual_snapshot": "20240411",
+    "xlen": 32,
+    "registers": 32,
+    "ialign_bits": 32,
+    "endianness": "little",
+    "instructions": [
+      "LUI",
+      "AUIPC",
+      "JAL",
+      "JALR",
+      "BEQ",
+      "BNE",
+      "BLT",
+      "BGE",
+      "BLTU",
+      "BGEU",
+      "LB",
+      "LH",
+      "LW",
+      "LBU",
+      "LHU",
+      "SB",
+      "SH",
+      "SW",
+      "ADDI",
+      "SLTI",
+      "SLTIU",
+      "XORI",
+      "ORI",
+      "ANDI",
+      "SLLI",
+      "SRLI",
+      "SRAI",
+      "ADD",
+      "SUB",
+      "SLL",
+      "SLT",
+      "SLTU",
+      "XOR",
+      "SRL",
+      "SRA",
+      "OR",
+      "AND",
+      "FENCE",
+      "ECALL",
+      "EBREAK"
+    ],
+    "excluded_extensions": [
+      "M",
+      "A",
+      "F",
+      "D",
+      "C",
+      "Zicsr",
+      "Zifencei"
+    ],
+    "fence_policy": "conservative_full_drain",
+    "eei_policy": "precise_fatal_fault_halt_until_reset"
+  },
+  "core": {
+    "module": "rv32_core",
+    "stages": [
+      "IF",
+      "ID",
+      "EX",
+      "MEM",
+      "WB"
+    ],
+    "branch_stage": "EX",
+    "retire_stage": "WB",
+    "reset": {
+      "signal": "rst_i",
+      "active_level": 1,
+      "synchronous": true,
+      "pc": 0,
+      "gpr_policy": "all_zero",
+      "memory_contents": "preserved"
+    },
+    "priority": [
+      "reset",
+      "oldest_fault",
+      "memory_hold",
+      "redirect",
+      "load_use",
+      "advance"
+    ],
+    "load_forwarding": "WB_only",
+    "store_effect_point": "successful_response_handshake",
+    "ports": [
+      {
+        "name": "clk_i",
+        "direction": "input",
+        "width": 1
+      },
+      {
+        "name": "rst_i",
+        "direction": "input",
+        "width": 1
+      },
+      {
+        "name": "imem_req_valid_o",
+        "direction": "output",
+        "width": 1
+      },
+      {
+        "name": "imem_req_ready_i",
+        "direction": "input",
+        "width": 1
+      },
+      {
+        "name": "imem_req_addr_o",
+        "direction": "output",
+        "width": 32
+      },
+      {
+        "name": "imem_rsp_valid_i",
+        "direction": "input",
+        "width": 1
+      },
+      {
+        "name": "imem_rsp_ready_o",
+        "direction": "output",
+        "width": 1
+      },
+      {
+        "name": "imem_rsp_rdata_i",
+        "direction": "input",
+        "width": 32
+      },
+      {
+        "name": "imem_rsp_err_i",
+        "direction": "input",
+        "width": 1
+      },
+      {
+        "name": "dmem_req_valid_o",
+        "direction": "output",
+        "width": 1
+      },
+      {
+        "name": "dmem_req_ready_i",
+        "direction": "input",
+        "width": 1
+      },
+      {
+        "name": "dmem_req_addr_o",
+        "direction": "output",
+        "width": 32
+      },
+      {
+        "name": "dmem_req_write_o",
+        "direction": "output",
+        "width": 1
+      },
+      {
+        "name": "dmem_req_wdata_o",
+        "direction": "output",
+        "width": 32
+      },
+      {
+        "name": "dmem_req_be_o",
+        "direction": "output",
+        "width": 4
+      },
+      {
+        "name": "dmem_rsp_valid_i",
+        "direction": "input",
+        "width": 1
+      },
+      {
+        "name": "dmem_rsp_ready_o",
+        "direction": "output",
+        "width": 1
+      },
+      {
+        "name": "dmem_rsp_rdata_i",
+        "direction": "input",
+        "width": 32
+      },
+      {
+        "name": "dmem_rsp_err_i",
+        "direction": "input",
+        "width": 1
+      },
+      {
+        "name": "retire_valid_o",
+        "direction": "output",
+        "width": 1
+      },
+      {
+        "name": "retire_order_o",
+        "direction": "output",
+        "width": 64
+      },
+      {
+        "name": "retire_pc_o",
+        "direction": "output",
+        "width": 32
+      },
+      {
+        "name": "retire_next_pc_o",
+        "direction": "output",
+        "width": 32
+      },
+      {
+        "name": "retire_insn_o",
+        "direction": "output",
+        "width": 32
+      },
+      {
+        "name": "retire_rd_write_o",
+        "direction": "output",
+        "width": 1
+      },
+      {
+        "name": "retire_rd_o",
+        "direction": "output",
+        "width": 5
+      },
+      {
+        "name": "retire_rd_wdata_o",
+        "direction": "output",
+        "width": 32
+      },
+      {
+        "name": "retire_mem_valid_o",
+        "direction": "output",
+        "width": 1
+      },
+      {
+        "name": "retire_mem_write_o",
+        "direction": "output",
+        "width": 1
+      },
+      {
+        "name": "retire_mem_addr_o",
+        "direction": "output",
+        "width": 32
+      },
+      {
+        "name": "retire_mem_be_o",
+        "direction": "output",
+        "width": 4
+      },
+      {
+        "name": "retire_mem_wdata_o",
+        "direction": "output",
+        "width": 32
+      },
+      {
+        "name": "retire_mem_rdata_o",
+        "direction": "output",
+        "width": 32
+      },
+      {
+        "name": "fault_valid_o",
+        "direction": "output",
+        "width": 1
+      },
+      {
+        "name": "fault_pc_o",
+        "direction": "output",
+        "width": 32
+      },
+      {
+        "name": "fault_insn_o",
+        "direction": "output",
+        "width": 32
+      },
+      {
+        "name": "fault_code_o",
+        "direction": "output",
+        "width": 4
+      },
+      {
+        "name": "fault_tval_o",
+        "direction": "output",
+        "width": 32
+      }
+    ]
+  },
+  "bus": {
+    "name": "local_mem_v1",
+    "address_width": 32,
+    "data_width": 32,
+    "byte_enable_width": 4,
+    "max_outstanding_per_bus": 1,
+    "min_response_cycles": 1,
+    "stalled_request_stable": true,
+    "request_address": "original_byte_effective_address",
+    "write_data": "lane_shifted",
+    "read_data": "aligned_32bit_word",
+    "byte_enable": "selected_lanes_for_reads_and_writes",
+    "valid_byte_enables": [
+      1,
+      2,
+      4,
+      8,
+      3,
+      12,
+      15
+    ],
+    "reset_cancels_transactions": true,
+    "write_error_has_no_effect": true
+  },
+  "memory_map": [
+    {
+      "id": "rom",
+      "base": 0,
+      "size": 65536,
+      "read": true,
+      "write": false,
+      "execute": true
+    },
+    {
+      "id": "ram",
+      "base": 65536,
+      "size": 65536,
+      "read": true,
+      "write": true,
+      "execute": false
+    },
+    {
+      "id": "uart",
+      "base": 268435456,
+      "size": 32,
+      "read": true,
+      "write": true,
+      "execute": false
+    },
+    {
+      "id": "gpio",
+      "base": 268435488,
+      "size": 32,
+      "read": true,
+      "write": true,
+      "execute": false
+    },
+    {
+      "id": "timer",
+      "base": 268435712,
+      "size": 16,
+      "read": true,
+      "write": true,
+      "execute": false
+    }
+  ],
+  "fault_codes": {
+    "ILLEGAL_INSN": 1,
+    "INSTR_ADDR_MISALIGNED": 2,
+    "INSTR_ACCESS_FAULT": 3,
+    "LOAD_ADDR_MISALIGNED": 4,
+    "LOAD_ACCESS_FAULT": 5,
+    "STORE_ADDR_MISALIGNED": 6,
+    "STORE_ACCESS_FAULT": 7,
+    "ECALL": 8,
+    "BREAKPOINT": 9
+  },
+  "sources": [
+    {
+      "id": "S-ISA",
+      "url": "https://docs.riscv.org/reference/isa/v20240411/unpriv/rv32.html",
+      "accessed": "2026-10-16",
+      "scope": "RV32I 2.1, alignment, load effects, FENCE and SYSTEM rules"
+    },
+    {
+      "id": "S-EEI",
+      "url": "https://docs.riscv.org/reference/isa/v20240411/unpriv/intro.html",
+      "accessed": "2026-10-16",
+      "scope": "Execution environment and address-space permissions"
+    },
+    {
+      "id": "S-BOARD",
+      "url": "https://digilent.com/reference/_media/reference/programmable-logic/basys-3/basys3_rm.pdf",
+      "accessed": "2026-10-16",
+      "scope": "Sections 4/5, 100 MHz W5, UART, board resource specification"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "R-RESET",
+      "tasks": [
+        "T006",
+        "T022",
+        "T029"
+      ],
+      "text": "Synchronous reset clears architectural/core protocol state; shared reset cancels outstanding local transactions.",
+      "implementation_evidence": "NOT RUN"
+    },
+    {
+      "id": "R-ISA",
+      "tasks": [
+        "T004",
+        "T005",
+        "T007",
+        "T008",
+        "T012",
+        "T041"
+      ],
+      "text": "All 40 base instructions, legal HINTs and chosen EEI behavior are traced to independent tests.",
+      "implementation_evidence": "NOT RUN"
+    },
+    {
+      "id": "R-X0",
+      "tasks": [
+        "T006",
+        "T020",
+        "T023"
+      ],
+      "text": "x0 stays zero; loads targeting x0 still perform access and fault/side effects.",
+      "implementation_evidence": "NOT RUN"
+    },
+    {
+      "id": "R-RF",
+      "tasks": [
+        "T006"
+      ],
+      "text": "Two combinational reads, one retirement-edge write, same-cycle WB-to-ID bypass.",
+      "implementation_evidence": "NOT RUN"
+    },
+    {
+      "id": "R-MEM",
+      "tasks": [
+        "T009",
+        "T017",
+        "T026"
+      ],
+      "text": "One outstanding request per bus, stable stalled payload, no duplicate acceptance, synchronous responses.",
+      "implementation_evidence": "NOT RUN"
+    },
+    {
+      "id": "R-LANES",
+      "tasks": [
+        "T008",
+        "T028"
+      ],
+      "text": "Byte enables and lane shifts match original byte effective address; misalignment faults before request.",
+      "implementation_evidence": "NOT RUN"
+    },
+    {
+      "id": "R-FETCH-KILL",
+      "tasks": [
+        "T016",
+        "T017"
+      ],
+      "text": "Redirect/fault kills stale fetch results while preserving already-offered request stability.",
+      "implementation_evidence": "NOT RUN"
+    },
+    {
+      "id": "R-FWD",
+      "tasks": [
+        "T014"
+      ],
+      "text": "Nearest valid older result wins; no x0/invalid/load-not-ready forwarding.",
+      "implementation_evidence": "NOT RUN"
+    },
+    {
+      "id": "R-LOAD-USE",
+      "tasks": [
+        "T015",
+        "T017"
+      ],
+      "text": "Dependent consumer waits until a legal WB bypass exists; store data and branch/JALR operands included.",
+      "implementation_evidence": "NOT RUN"
+    },
+    {
+      "id": "R-HOLD",
+      "tasks": [
+        "T017",
+        "T022"
+      ],
+      "text": "MEM wait holds younger stages but WB retires at most once; no stale operand after extended stall.",
+      "implementation_evidence": "NOT RUN"
+    },
+    {
+      "id": "R-REDIRECT",
+      "tasks": [
+        "T007",
+        "T016"
+      ],
+      "text": "EX resolves branches and jumps; taken misaligned target faults; wrong-path effects never commit.",
+      "implementation_evidence": "NOT RUN"
+    },
+    {
+      "id": "R-FAULT",
+      "tasks": [
+        "T011",
+        "T020",
+        "T041"
+      ],
+      "text": "Oldest precise fault wins; faulting/younger instructions do not retire or issue memory effects.",
+      "implementation_evidence": "NOT RUN"
+    },
+    {
+      "id": "R-STORE-ORDER",
+      "tasks": [
+        "T017",
+        "T020",
+        "T041"
+      ],
+      "text": "Store/read-side effects occur once at successful response acceptance, only after older faults are excluded.",
+      "implementation_evidence": "NOT RUN"
+    },
+    {
+      "id": "R-RETIRE",
+      "tasks": [
+        "T011",
+        "T018",
+        "T019"
+      ],
+      "text": "One ordered successful retirement event, stable metadata, separate sticky fault observation.",
+      "implementation_evidence": "NOT RUN"
+    },
+    {
+      "id": "R-FENCE",
+      "tasks": [
+        "T041"
+      ],
+      "text": "Conservative full I/O/read/write drain, including ignored future FENCE fields; no younger effect before completion.",
+      "implementation_evidence": "NOT RUN"
+    },
+    {
+      "id": "R-MAP",
+      "tasks": [
+        "T025",
+        "T026",
+        "T028"
+      ],
+      "text": "ROM/RAM/MMIO regions and access permissions agree with linker and fabric; unmapped access errors.",
+      "implementation_evidence": "NOT RUN"
+    },
+    {
+      "id": "R-UART",
+      "tasks": [
+        "T027",
+        "T042"
+      ],
+      "text": "TX/RX 8N1, clock-enable timing, synchronization, backpressure, framing/overrun and partial access semantics.",
+      "implementation_evidence": "NOT RUN"
+    },
+    {
+      "id": "R-CDC",
+      "tasks": [
+        "T029"
+      ],
+      "text": "One core/SoC clock; synchronized reset release and external inputs, documented CDC reports.",
+      "implementation_evidence": "NOT RUN"
+    },
+    {
+      "id": "R-CLOCK",
+      "tasks": [
+        "T025",
+        "T030",
+        "T043"
+      ],
+      "text": "100 MHz board source and 10 ns constraint, with routed setup/hold evidence required separately.",
+      "implementation_evidence": "NOT RUN"
+    },
+    {
+      "id": "R-TOOLCHAIN",
+      "tasks": [
+        "T003"
+      ],
+      "text": "Real executable lint and simulation gates and pinned versions; missing checks cannot pass.",
+      "implementation_evidence": "NOT RUN"
+    },
+    {
+      "id": "R-CLOSURE",
+      "tasks": [
+        "T024",
+        "T032",
+        "T039",
+        "T040"
+      ],
+      "text": "DV, physical FPGA and ASIC evidence remain distinct and final owner review remains mandatory.",
+      "implementation_evidence": "NOT RUN"
+    },
+    {
+      "id": "R-IRQ",
+      "tasks": [
+        "T044",
+        "T045",
+        "T032"
+      ],
+      "text": "Later interrupt support requires a separately approved trap/CSR revision, precise timer interrupt verification and authorized hardware evidence.",
+      "implementation_evidence": "NOT RUN"
+    }
+  ],
+  "registers": [
+    {
+      "region": "uart",
+      "name": "UART_TXDATA",
+      "offset": 0,
+      "access": "write",
+      "reset": 0
+    },
+    {
+      "region": "uart",
+      "name": "UART_STATUS",
+      "offset": 4,
+      "access": "read",
+      "reset": 1
+    },
+    {
+      "region": "uart",
+      "name": "UART_RXDATA",
+      "offset": 8,
+      "access": "read",
+      "reset": 0
+    },
+    {
+      "region": "uart",
+      "name": "UART_CTRL",
+      "offset": 12,
+      "access": "read_write",
+      "reset": 3
+    },
+    {
+      "region": "gpio",
+      "name": "GPIO_OUT",
+      "offset": 0,
+      "access": "read_write",
+      "reset": 0
+    },
+    {
+      "region": "gpio",
+      "name": "GPIO_IN",
+      "offset": 4,
+      "access": "read",
+      "reset": 0
+    },
+    {
+      "region": "gpio",
+      "name": "GPIO_SET",
+      "offset": 8,
+      "access": "write",
+      "reset": 0
+    },
+    {
+      "region": "gpio",
+      "name": "GPIO_CLEAR",
+      "offset": 12,
+      "access": "write",
+      "reset": 0
+    },
+    {
+      "region": "timer",
+      "name": "TIMER_COUNT",
+      "offset": 0,
+      "access": "read_write",
+      "reset": 0
+    },
+    {
+      "region": "timer",
+      "name": "TIMER_COMPARE",
+      "offset": 4,
+      "access": "read_write",
+      "reset": 0
+    },
+    {
+      "region": "timer",
+      "name": "TIMER_CTRL",
+      "offset": 8,
+      "access": "read_write",
+      "reset": 0
+    },
+    {
+      "region": "timer",
+      "name": "TIMER_STATUS",
+      "offset": 12,
+      "access": "read_write",
+      "reset": 0
+    }
+  ]
+}

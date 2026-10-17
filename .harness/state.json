@@ -3,11 +3,12 @@
   "project_status": "in_progress",
   "active": null,
   "daily_claims": {
-    "2026-10-14": "T001"
+    "2026-10-14": "T001",
+    "2026-10-16": "T002"
   },
   "task_states": {
     "T001": "completed",
-    "T002": "pending",
+    "T002": "awaiting_review",
     "T003": "pending",
     "T004": "pending",
     "T005": "pending",
@@ -48,14 +49,18 @@
     "T040": "pending",
     "T041": "pending",
     "T042": "pending",
-    "T043": "pending"
+    "T043": "pending",
+    "T044": "pending",
+    "T045": "pending"
   },
   "attempts": {
-    "T001": 2
+    "T001": 2,
+    "T002": 1
   },
   "blocked_reasons": {},
   "receipts": {
-    "T001": "evidence/runs/T001/attempt-2-20261015T052535290129Z.json"
+    "T001": "evidence/runs/T001/attempt-2-20261015T052535290129Z.json",
+    "T002": "evidence/runs/T002/attempt-1-20261017T034202692993Z.json"
   },
   "owner_reviews": {},
   "start_approvals": {},

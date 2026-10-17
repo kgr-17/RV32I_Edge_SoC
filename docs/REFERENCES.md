@@ -1,4 +1,11 @@
-# Verified resources (checked 2026-10-14)
+# Reference index and source verification status
+
+The links below were imported from the original kit; their presence is not proof
+that all resources were fetched or validated. On 2026-10-16 the owner authorized
+official documentation reads for T002. The RV32I 2.1 chapter and EEI introduction
+at the pinned 20240411 snapshot, plus Digilent's Basys 3 manual, were read.
+See ARCH_CONTRACT.json and evidence/t002_sources.json for exact URLs and scope.
+Other links remain reference candidates and were not revalidated by this task.
 
 ## RISC-V / verification
 

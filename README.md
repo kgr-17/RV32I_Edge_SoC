@@ -25,8 +25,11 @@ Python is the supported native Windows interface; Make targets are optional
 aliases and were not executed because Make is not on PATH.
 
 Read `docs/ENVIRONMENT_BOUNDARY.md`, `docs/CODEX_LOOP.md`, the latest technical
-handoff under `docs/daily/`, and `docs/BACKLOG.json`. Architecture remains a draft
-until T002 owner review. The backlog has 43 tasks: 39 mandatory, 4 optional.
+handoff under `docs/daily/`, and `docs/BACKLOG.json`. The v0.2 architecture proposal
+and explicit decisions are in `docs/ARCH_SPEC.md` and `docs/ARCH_REVIEW.md`; the
+companion `docs/ARCH_CONTRACT.json` has consistency/mutation checks. They remain
+proposed until T002 owner review. The backlog has 45 tasks: 41 mandatory, 4 optional,
+including the required later interrupt architecture and verification milestones.
 
 Original work is recoverable from baseline Git commit
 `8f16054b24a9d50021f8a805f7f0d78435206daa` and a local hash-verified backup

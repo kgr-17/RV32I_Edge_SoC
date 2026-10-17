@@ -75,7 +75,10 @@
       "required_files": [
         "docs/ARCH_SPEC.md",
         "docs/DECISIONS.md",
-        "docs/ARCH_REVIEW.md"
+        "docs/ARCH_REVIEW.md",
+        "docs/ARCH_CONTRACT.json",
+        "scripts/check_arch_spec.py",
+        "scripts/test_arch_spec.py"
       ],
       "acceptance_criteria": [
         "Owner explicitly reviews exact ports, reset behavior, memory map, stall/flush priorities, ISA traps and physical board before freeze.",
@@ -88,10 +91,20 @@
           "-B",
           "scripts/harness.py",
           "validate"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/check_arch_spec.py"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/test_arch_spec.py"
         ]
       ],
       "priority": 20,
-      "status": "pending",
+      "status": "awaiting_review",
       "human_approval_required": true,
       "start_approval_required": false,
       "optional": false,
@@ -1363,7 +1376,8 @@
       "acceptance_criteria": [
         "Owner authorizes programming; board identity, bitstream/firmware hashes, physical UART transcript and observations are recorded.",
         "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
-        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
+        "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps.",
+        "Authorized physical evidence also exercises the reviewed timer interrupt firmware after T045; simulation alone is insufficient."
       ],
       "verification_commands": [
         [
@@ -1717,7 +1731,9 @@
         "T039",
         "T041",
         "T042",
-        "T043"
+        "T043",
+        "T044",
+        "T045"
       ],
       "required_files": [
         "docs/FINAL_REPORT.md",
@@ -1835,7 +1851,8 @@
       "description": "Run reviewed Tcl on the confirmed part; save synthesis and routed utilization, setup/hold, clock/CDC, power and bitstream hashes. Timing failures remain failures.",
       "engineering_objective": "Run reviewed Tcl on the confirmed part; save synthesis and routed utilization, setup/hold, clock/CDC, power and bitstream hashes. Timing failures remain failures.",
       "depends_on": [
-        "T031"
+        "T031",
+        "T045"
       ],
       "required_files": [
         "docs/FPGA_PPA.md",
@@ -1871,6 +1888,94 @@
       "start_approval_required": true,
       "optional": false,
       "keywords": []
+    },
+    {
+      "id": "T044",
+      "phase": "P4",
+      "title": "Later trap/CSR/interrupt architecture owner review",
+      "description": "Owner reviews a new architecture revision for precise interrupt entry/return, required CSR state, timer source, reset, priority and revised trace/interfaces. No implicit extension of the initial fatal EEI.",
+      "engineering_objective": "Owner reviews a new architecture revision for precise interrupt entry/return, required CSR state, timer source, reset, priority and revised trace/interfaces. No implicit extension of the initial fatal EEI.",
+      "depends_on": [
+        "T031"
+      ],
+      "required_files": [
+        "docs/INTERRUPT_SPEC.md",
+        "docs/DECISIONS.md"
+      ],
+      "acceptance_criteria": [
+        "Owner reviews a new architecture revision for precise interrupt entry/return, required CSR state, timer source, reset, priority and revised trace/interfaces. No implicit extension of the initial fatal EEI.",
+        "Exact commands, versions, outputs, seeds and fault/interrupt evidence are recorded; missing gates are NOT RUN.",
+        "Both daily reports are produced and owner review is respected."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/harness.py",
+          "validate"
+        ]
+      ],
+      "priority": 312,
+      "status": "pending",
+      "human_approval_required": true,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "interrupt",
+        "precise trap",
+        "CSR"
+      ]
+    },
+    {
+      "id": "T045",
+      "phase": "P4",
+      "title": "Implement and verify the reviewed timer interrupt/trap revision",
+      "description": "Implement the approved interrupt/CSR/trap behavior; verify precise entry/return, enable/mask/pending, timer IRQ, memory-wait and branch interactions, reset and no duplicate or lost architectural effects.",
+      "engineering_objective": "Implement the approved interrupt/CSR/trap behavior; verify precise entry/return, enable/mask/pending, timer IRQ, memory-wait and branch interactions, reset and no duplicate or lost architectural effects.",
+      "depends_on": [
+        "T044"
+      ],
+      "required_files": [
+        "rtl/core/csr_file.sv",
+        "rtl/core/trap_control.sv",
+        "dv/integration/test_interrupts.py",
+        "docs/INTERRUPT_REPORT.md"
+      ],
+      "acceptance_criteria": [
+        "Implement the approved interrupt/CSR/trap behavior; verify precise entry/return, enable/mask/pending, timer IRQ, memory-wait and branch interactions, reset and no duplicate or lost architectural effects.",
+        "Exact commands, versions, outputs, seeds and fault/interrupt evidence are recorded; missing gates are NOT RUN.",
+        "Both daily reports are produced and owner review is respected."
+      ],
+      "verification_commands": [
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-interrupts"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "regress"
+        ]
+      ],
+      "priority": 314,
+      "status": "pending",
+      "human_approval_required": false,
+      "start_approval_required": false,
+      "optional": false,
+      "keywords": [
+        "interrupt",
+        "precise trap",
+        "CSR"
+      ]
     }
   ],
   "final_review_task": "T040"

@@ -37,5 +37,6 @@ Before each session read the latest `docs/daily/*_technical.md`, this file,
   locally, then stop. No second task after success.
 - Distinguish simulation, formal, synthesis, timing, hardware and ASIC evidence.
 
-The owner explicitly authorized bootstrap T001, which reserves today's quota.
-No CPU RTL is to be implemented during bootstrap.
+Bootstrap T001 used the quota on 2026-10-14. For later sessions use the actual
+America/Los_Angeles date and persistent daily_claims, not that historical date.
+No CPU RTL is to be implemented before T002 owner review and T003 toolchain gates.

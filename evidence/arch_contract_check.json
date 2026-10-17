@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "scope": "Proposed document consistency ONLY",
+  "contract_sha256": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03",
+  "version": "0.2-proposed",
+  "ports": 38,
+  "instructions": 40,
+  "requirements": 22,
+  "errors": [],
+  "rtl_verification": "NOT RUN",
+  "owner_approval": "PENDING"
+}
