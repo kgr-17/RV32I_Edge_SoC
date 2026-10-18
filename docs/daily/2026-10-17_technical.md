@@ -200,3 +200,14 @@ Updated files for this administrative continuation: .harness/state.json, docs/BA
 Next attended session on the actual next eligible LA date: read this latest addendum and required files, inspect clean Git/state, run daily --supervised, validate/status/next, begin T003, prepare/update exactly that day's technical/Chinese reports, then finish T003 --evidence evidence/daily/T003.md. This must execute the complete registered gate, including the argument transport test, positive seeded XSim vectors/waves and all negative injections. The new owner-authorized budget is already recorded; do not ask for the same reopen approval again. Preserve all historical receipts and stop after this one task. Do not alter dates/claims or start T004 before acceptance.
 
 The session still has danger-full-access / never; the harness and Windows Job Objects are not a filesystem sandbox. No unattended retry is configured. Whitespace and metadata/preservation checks will be reviewed before a local commit, whose identifier will be appended below. No functional revalidation is necessary for these state/documentation changes, and no new engineering acceptance attempt has been consumed.
+
+
+---
+
+<!-- entry:37341062a949b82db73ef3768041cd3506e5afc74c6a5c8258d6a79b5df091f9 -->
+
+# Reopen decision committed
+
+Commit aad27b263b8d2d15bbc108cf4f1df1ada5aa82e0 records the explicit T003 reopen authorization, authoritative pending/attempts=0 state, preserved October 17 claim, current status documentation and the two daily-report updates. Parent is a79fbc1. Git was clean after commit and both whitespace checks passed beforehand. The original three receipt hashes and all 23 original files were verified unchanged; no functional test or EDA command was run.
+
+This final documentation entry adds evidence/report_entries/t003-reopen-delivery.json and appends the same two reports. Its own containing commit is available with git log -1 --format=%H -- docs/daily/2026-10-17_technical.md. Current T003 acceptance remains pending, not passed; the prepared argument-file repair/new test remain NOT RUN. The next attended session may begin T003 on the next unclaimed LA date, October 18 or later, and execute the complete gate using the already-authorized fresh budget. Do not request the same reopen approval again or launch unattended automation.
