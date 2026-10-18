@@ -179,3 +179,24 @@ This closing entry updates the same October 17 technical/Chinese reports, eviden
 Final current state remains T002 completed, T003 blocked at 3 attempts, active=null, October 17 claimed by T003 and no next eligible task. All 23 original files, approved architecture digest and prior-date reports remain unchanged. No owner reopen, attempt reset, second task, environment bypass, download/install, remote operation, unattended job or physical programming occurred.
 
 The concrete fix for owner review is Checks.xsim in scripts/rtl_checks.py and its new argument-transport regression in scripts/test_rtl_checks.py. It uses a simulator argument file with forward-slash paths, preserving plusarg key=value tokens and exact file evidence. Both are NOT RUN. Owner must review evidence/daily/T003.md and decide whether to personally reopen or specifically authorize python -B scripts/harness.py reopen T003 --confirm-owner-review. Reopen preserves old receipts and daily claims; actual execution resumes only on the next eligible LA date, October 18 or later, under the existing daily guard. Do not execute the command or mutate state without that explicit decision.
+
+
+---
+
+<!-- entry:6f074ee9cfc13929ce132f091d4ed7094d3f82cfe2eb22929d7d5d51fc7ce6ab -->
+
+# T003 owner-authorized reopen - 2026-10-17 Los Angeles
+
+The owner explicitly answered "Authorize T003 reopen" to question item ["request_user_input_async","call_8f336e48585d4b41bef389385d97b1e1",0]. This grants the specific exception to AGENTS.md's owner-only reopen rule requested in that question. It preserves all logs/daily claims and permits actual retry only on the next eligible LA date, October 18 or later. No broader architecture, scheduling, installation or programming permission was inferred.
+
+Read the latest technical handoff, AGENTS, boundary, architecture, verification plan, backlog/state and loop. Starting commit a79fbc1; Git clean. daily --supervised succeeded. Executed python -B scripts/harness.py reopen T003 --confirm-owner-review exactly once, exit 0. Full authorization provenance, argv/stdout/stderr/timestamp and state transition are in evidence/owner_reviews/T003-reopen-2026-10-17.json. validate, status and next also exited 0.
+
+Current authoritative state: T002 completed, T003 pending, active=null, T003 attempts=0 (fresh maximum three); blocked reason cleared. The pointer to the last failed receipt remains for history. SHA-256 checks confirm all three original T003 receipts unchanged. daily_claims remains October 14:T001, October 16:T002, October 17:T003. Candidate T003 is dependency-ready, but today's claim prevents a new begin.
+
+The command timestamp 2026-10-18T00:21:26.930439+00:00 is UTC; the actual America/Los_Angeles date is still October 17. Therefore no begin, finish, EDA process, new functional test, new task or scheduler was run. The prepared argument-file fix and new thirteenth policy test remain NOT RUN. No verification success or simulation pass is implied by reopening. Existing pins remain Python 3.9.13/Git 2.48.1.windows.1/tzdata 2026.2/Vivado-XSim 2025.2 build 6299465; no version probes or installations were repeated.
+
+Updated files for this administrative continuation: .harness/state.json, docs/BACKLOG.json, the descriptive .harness/toolchain.json note, README.md, docs/TOOLCHAIN.md, evidence/daily/T003.md, the owner reopen record, this report-entry JSON and these same two October 17 reports. The source/RTL repair, approved architecture, original XPR/kit and prior-date reports are unchanged. No CPU RTL was implemented. Project remains in_progress with only T001/T002 completed.
+
+Next attended session on the actual next eligible LA date: read this latest addendum and required files, inspect clean Git/state, run daily --supervised, validate/status/next, begin T003, prepare/update exactly that day's technical/Chinese reports, then finish T003 --evidence evidence/daily/T003.md. This must execute the complete registered gate, including the argument transport test, positive seeded XSim vectors/waves and all negative injections. The new owner-authorized budget is already recorded; do not ask for the same reopen approval again. Preserve all historical receipts and stop after this one task. Do not alter dates/claims or start T004 before acceptance.
+
+The session still has danger-full-access / never; the harness and Windows Job Objects are not a filesystem sandbox. No unattended retry is configured. Whitespace and metadata/preservation checks will be reviewed before a local commit, whose identifier will be appended below. No functional revalidation is necessary for these state/documentation changes, and no new engineering acceptance attempt has been consumed.

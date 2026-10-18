@@ -145,7 +145,7 @@
         ]
       ],
       "priority": 30,
-      "status": "blocked",
+      "status": "pending",
       "human_approval_required": false,
       "start_approval_required": false,
       "optional": false,

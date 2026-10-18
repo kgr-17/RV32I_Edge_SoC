@@ -10,7 +10,7 @@
   "task_states": {
     "T001": "completed",
     "T002": "completed",
-    "T003": "blocked",
+    "T003": "pending",
     "T004": "pending",
     "T005": "pending",
     "T006": "pending",
@@ -57,11 +57,9 @@
   "attempts": {
     "T001": 2,
     "T002": 1,
-    "T003": 3
+    "T003": 0
   },
-  "blocked_reasons": {
-    "T003": "Three attempts exhausted; inspect evidence/runs/T003/attempt-3-20261017T233828751183Z.json"
-  },
+  "blocked_reasons": {},
   "receipts": {
     "T001": "evidence/runs/T001/attempt-2-20261015T052535290129Z.json",
     "T002": "evidence/runs/T002/attempt-1-20261017T034202692993Z.json",

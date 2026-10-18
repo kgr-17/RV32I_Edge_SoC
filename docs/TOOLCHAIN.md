@@ -7,12 +7,14 @@ config/rtl_checks.json, separate from machine-specific launcher paths in
 2026.2 and Vivado/XSim 2025.2, Vivado SW build 6299465. A mismatch fails the gate;
 missing sources/tools are NOT RUN (125).
 
-Current T003 acceptance is BLOCKED after three failed attempts on October 17.
+Current T003 acceptance is PENDING after an explicitly authorized owner reopen.
+The three failed October 17 attempts are preserved; the new budget is unused.
+October 17's daily claim remains in force, so retry on October 18 or later.
 The final attempt passed fixture synthesis/structural lint, compile and
 elaboration, then XSim rejected its arguments before executing the bench.
 The argument-file repair and its regression test are prepared but NOT RUN.
 See evidence/daily/T003.md and today's handoff. Do not infer simulation success
-from compiler/elaborator success or bypass the exhausted attempt budget.
+from compiler/elaborator success or bypass the daily claim or bounded budget.
 
 Run from C:\RV32I_Edge_SoC:
 
