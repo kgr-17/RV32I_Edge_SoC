@@ -1,11 +1,11 @@
 # RV32I Edge SoC
 
-Status: T002 architecture v0.2 approved by the owner; T003 reopened by explicit
-owner authorization and pending with a fresh three-attempt budget. October 17's
-claim is preserved; retry on the next eligible LA date (October 18 or later).
-Fixture synthesis lint, compilation and elaboration passed, but XSim rejected
-arguments before the bench ran. A repair is prepared and unverified; see
-evidence/daily/T003.md. No CPU RTL, FPGA
+Status: T002 architecture v0.2 approved by the owner; T003 toolchain gates passed
+on October 23 after the authorized reopen. The argument-file repair passed:
+61 Python tests, two seeded fixture simulations (268 vector checks), fixture
+synthesis/structural lint and all five injected failure checks. Exact evidence is
+in evidence/daily/T003.md. T004 opcode/immediate decoding is the next eligible
+day's task. No CPU RTL, FPGA
 implementation, hardware validation or ASIC results exist yet.
 
 The existing `RV32I_Edge_SoC.xpr` is the active Vivado project. Its configured part

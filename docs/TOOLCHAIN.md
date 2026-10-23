@@ -7,14 +7,14 @@ config/rtl_checks.json, separate from machine-specific launcher paths in
 2026.2 and Vivado/XSim 2025.2, Vivado SW build 6299465. A mismatch fails the gate;
 missing sources/tools are NOT RUN (125).
 
-Current T003 acceptance is PENDING after an explicitly authorized owner reopen.
-The three failed October 17 attempts are preserved; the new budget is unused.
-October 17's daily claim remains in force, so retry on October 18 or later.
-The final attempt passed fixture synthesis/structural lint, compile and
-elaboration, then XSim rejected its arguments before executing the bench.
-The argument-file repair and its regression test are prepared but NOT RUN.
-See evidence/daily/T003.md and today's handoff. Do not infer simulation success
-from compiler/elaborator success or bypass the daily claim or bounded budget.
+T003 completed on October 23, attempt 1 of the owner-authorized fresh budget.
+The full gate passed 61 Python tests, actual fixture synthesis/structural lint,
+XSim compile/elaboration, two 134-vector seeded simulations with waveforms, and
+all five intentional failure checks. The three failed October 17 receipts and
+their daily claim remain preserved. Final receipt:
+evidence/runs/T003/attempt-1-20261023T182351910210Z.json. Detailed EDA evidence:
+evidence/toolchain_runs/all-20261023T182408034597Z.json. This is fixture/toolchain
+acceptance, not CPU ISA, production implementation, formal or hardware evidence.
 
 Run from C:\RV32I_Edge_SoC:
 
@@ -59,6 +59,12 @@ failure is observed and the positive evidence rules reject it. A missing license
 unrelated error or missing tool cannot count as a successful defect injection.
 Intentional negative fixtures are not synthesis design sources.
 
+In the verified run, XSim returned process exit 0 for the injected $fatal and for
+the no-completion-marker case. The terminated hang also had raw exit 0, while its
+runner status remained TIMEOUT. These were all rejected by semantic completion,
+diagnostic and timeout checks. Do not replace the gate with an exit-code-only
+wrapper or mistake a process-status PASS in the JSON for bench acceptance.
+
 All production rtl/**/*.sv and rtl/**/*.v files must be registered in the
 manifest; an unregistered file blocks the check. Each future module needs its own
 sources, top, independent bench and test acceptance; the current fixture cannot
@@ -74,14 +80,15 @@ seeds, checked-vector counts and hashes. Failed runs are retained. WDB/log/repor
 files stay under build; compact JSON is committed. Replay the same profile and
 manifest seeds to reproduce vectors; a new run directory preserves older failures.
 
-The prepared XSim repair passes only snapshot/--file/path through the Windows
+The verified XSim repair passes only snapshot/--file/path through the Windows
 batch launcher, placing simulator options/plusargs in a project-local argument
 file. Paths use forward slashes to avoid option-file backslash escaping. Its exact
 contents, intended argv and SHA-256 are captured in evidence.
 Installed rdiArgs.bat reconstructs arguments with %1/shift; unquoted key=value
 plusargs are the suspected source of the observed "Expected a switch but found 1"
-failure. The --file option is documented by installed XSim help. This diagnosis
-and repair still require execution after an authorized reopen on an eligible day.
+failure. The --file option is documented by installed XSim help. The repaired
+transport, its thirteenth policy test and all five XSim invocations passed their
+intended acceptance checks on October 23; exact response files are in the evidence.
 
 scripts/tool_runner.py starts a gated child before releasing the EDA command.
 On Windows it attaches a kill-on-close Job Object before sending GO; on timeout

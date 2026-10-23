@@ -13,5 +13,5 @@
   },
   "vivado_version": "2025.2",
   "vivado_version_evidence": "evidence/vivado_probe.json",
-  "note": "Project-local paths only; no global PATH/system change. T003 verified fixture synthesis lint and XSim version/compile/elaboration, but simulation argument parsing failed before bench execution. Owner-authorized reopen recorded; pending new verification on the next eligible LA date. See evidence/daily/T003.md."
+  "note": "Project-local paths only; no global PATH/system change. T003 completed 2026-10-23: fixture synthesis lint, XSim compile/elaboration, 2 seeded simulations and 5 intentional failure checks passed. Scope is infrastructure fixture only; see evidence/daily/T003.md."
 }
