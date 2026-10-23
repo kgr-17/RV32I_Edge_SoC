@@ -165,3 +165,16 @@ Runtime is still danger-full-access/never, with no enforced sandbox. Attended on
 After the inspected local delivery commit, stop. Project remains in_progress: 4/41 mandatory tasks completed, 37 pending, four optional disabled. No third October 23 task. On the next actual eligible LA date, October 24 or later, read this complete handoff plus AGENTS.md, ENVIRONMENT_BOUNDARY.md, ARCH_SPEC.md, VERIFICATION_PLAN.md, BACKLOG.json, state.json and CODEX_LOOP.md. Inspect actual permissions and git status; run python -B scripts/harness.py daily --supervised, validate, status and next. If active work exists, recover it first. Otherwise begin T005 without any exception flag.
 
 T005 scope is rtl/core/alu.sv and dv/unit/test_alu.py: reuse the approved operation enum, implement only ALU arithmetic/logical/compare/shift behavior, use independent signed/unsigned edge vectors, small-domain exhaustive cases, shift masks and wraparound tests. Extend lint registration and add a real test-alu target. Keep decoder gate in regress, explicit widths and no latches. Do not reuse the register fixture protocol for ALU results. Required finish gates are lint and test-alu; use evidence/daily/T005.md and exactly two reports for that actual date. No new architecture, dependency or physical-programming approval is implied. Do not re-request the already confirmed board, Vivado path, T002 review, T003 reopen or consumed T004 exception.
+
+
+---
+
+<!-- entry:8805c46dd4dc664daff6480e953e402d71d92dafacd006d9a037ade23d940a44 -->
+
+# Committed T004 delivery and final resume point
+
+Implementation/evidence commit 069d6024c21d5c2bb51a86204c778b86dd13e057 on engineering/bootstrap contains 24 inspected files. Its parent is the owner exception/controller checkpoint abbbb80bcdc57b013a44035f089d44d19518418f. All 12 source/config SHA-256 values in evidence/t004-complete-2026-10-23.json matched the staged blobs. Both whitespace checks passed and git status was clean after commit. The closing documentation commit adds this entry, evidence/daily/T004.md's delivery note and evidence/report_entries/t004-2026-10-23-delivery.json; obtain its SHA with git log -1 --format=%H -- docs/daily/2026-10-23_technical.md. No functional source or gate changed after acceptance.
+
+Final results remain attempt 1 PASS: 287,618 decoder vector comparisons across seeds 1/20261023, all 40 mnemonics, 51 preparation/acceptance Python tests, actual decoder synthesis with zero warnings/errors, and all deliberate failure checks correctly rejected. This is decoder-unit evidence only. T004 completed, active=null, project in_progress. Original October 23 claim remains T003, with the consumed T004-only exception separately recorded; all prior evidence survives.
+
+Stop now. Next eligible attended LA date is October 24 or later; task T005 ALU needs no new owner review under the unchanged architecture. Read the full handoff and required files, inspect actual runtime permissions and clean Git, run daily --supervised/validate/status/next, then begin T005 without an exception flag. Preserve the package interface, add independent ALU tests and a real test-alu registry, run lint/test-alu through finish, append exactly two reports for that actual date and stop. No unattended automation, publication or FPGA programming is authorized by this delivery.
