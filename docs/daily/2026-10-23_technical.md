@@ -205,3 +205,14 @@ Evidence/workflow-policy-2026-10-23-checks.json stores exact argv/stdout/stderr/
 After committing this policy change, T005 may begin immediately on October 23 or any later attended date; no daily exception or new approval is needed. Run daily --supervised, inspect Git/state, then begin T005. Implement ALU and independent signed/unsigned, shift-mask and wraparound tests, register lint/test-alu, finish with evidence/daily/T005.md, append to the actual date's same two reports and commit. Then continue to the next dependency-ready task while the attended session has budget, stopping at actual gates rather than a calendar cap. Keep older entries as history and follow this newer revision.
 
 Runtime remains danger-full-access/never and is not a filesystem sandbox. Unattended automation stays disabled until actual controls and explicit authorization exist. No new download/install, global configuration, push, scheduling, destructive Git, source deletion or FPGA programming authorization is implied. Original kit/XPR/constraints/approved architecture and existing RTL remain unchanged. The local delivery SHA and preservation audit follow below.
+
+
+---
+
+<!-- entry:225ede0338486bc2e6567de4acc5b7d8ba78d1ccb899f3d20c9687ecbb49a23c -->
+
+# Committed multi-task policy - current resume instructions
+
+Policy delivery commit 24b5090bdb374ae6d6418347dc8e355134469524 on engineering/bootstrap contains 16 inspected workflow/state/documentation/evidence files. Both whitespace checks passed; all ten audited policy/state source hashes matched staged blobs; Git was clean after commit. Preservation audit evidence/workflow-policy-2026-10-23-audit.json confirms 23 original files, 85 existing RTL/DV/config/architecture/evidence/prior-report files and both same-day report prefixes retained. Existing task statuses, attempts, receipts, reviews and backlog definitions are unchanged. The closing documentation commit only appends these same two reports and adds this report-entry input. No functional source changes or repeat test run.
+
+Current rule is multiple sequential tasks per attended day, with one active task and verify/report/commit before the next. Thirty-five controller tests plus sixteen architecture tests passed, with all eight recorded commands exit 0. There is no calendar hold: T005 ALU is ready now, including October 23, planning_only=false. The prior October 24/one-task/stop-after-success instructions are historical and superseded. Begin T005 from the clean baseline without an exception flag; preserve its required lint/test-alu gates. After its verified local commit, continue with the next ready task while the attended session has budget, respecting review/authorization and failure holds. Exactly two dated reports, project-local writes and all existing permission boundaries remain. This rule change does not enable unattended operation or modify RTL/hardware acceptance evidence.
