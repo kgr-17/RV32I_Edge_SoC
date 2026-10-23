@@ -161,6 +161,69 @@ class HarnessTests(unittest.TestCase):
         self.assertEqual(self.finish()['action'], 'ALREADY_VERIFIED')
         self.assertEqual(before, (self.root / '.harness/state.json').read_bytes())
 
+    def prepare_day_exception(self):
+        # Use the exact owner-authorized task/date, never a generic quota bypass.
+        self.date.return_value = '2026-10-23'
+        rename = {'A': 'T003', 'B': 'T004'}
+        for task in self.tasks:
+            task['id'] = rename.get(task['id'], task['id'])
+            task['depends_on'] = [rename.get(tid, tid) for tid in task['depends_on']]
+        self.state['task_states'] = {t['id']: 'pending' for t in self.tasks}
+        self.state['task_states']['T003'] = 'completed'
+        self.state['daily_claims']['2026-10-23'] = 'T003'
+        h.atomic(self.root / 'docs/BACKLOG.json', self.plan)
+        h.atomic(self.root / '.harness/state.json', self.state)
+        self.evidence = 'evidence/exception.json'
+        h.atomic(self.root / self.evidence, {
+            'schema_version': 1, 'date': '2026-10-23', 'task': 'T004', 'previous_task': 'T003',
+            'owner_answer': 'Yes—start T004 today',
+            'question_item_id': '["request_user_input_async","call_db6019c10ff8475da53c07dfb0dd2c37",0]'})
+        h.atomic_text(self.root / 'evidence/daily/T004.md', 'Explicit exception acceptance evidence.\n' * 8)
+        self.next_day('2026-10-23')
+
+    def test_exact_owner_exception_preserves_claim_through_resume_and_finish(self):
+        self.prepare_day_exception()
+        h.begin('T004', self.evidence)
+        self.assertEqual(h.begin('T004')['action'], 'RESUME')
+        self.finish('T004')
+        state = h.load()[1]
+        self.assertEqual(state['daily_claims']['2026-10-23'], 'T003')
+        self.assertEqual(state['daily_exceptions']['2026-10-23']['task'], 'T004')
+        self.assertEqual(state['attempts']['T004'], 1)
+        with self.assertRaises(h.Stop):
+            h.begin('F', self.evidence)
+
+    def test_owner_exception_rejects_wrong_binding_and_missing_evidence(self):
+        self.prepare_day_exception()
+        original = h.read(self.root / self.evidence)
+        for key, value in (('date', '2026-10-24'), ('task', 'F'), ('previous_task', 'F'),
+                           ('owner_answer', 'assumed'), ('question_item_id', 'unrelated')):
+            with self.subTest(key=key):
+                h.atomic(self.root / self.evidence, {**original, key: value})
+                self.commit()
+                with self.assertRaises(h.Stop):
+                    h.begin('T004', self.evidence)
+        with self.assertRaises(OSError):
+            h.begin('T004', 'evidence/missing.json')
+        self.assertIsNone(h.load()[1]['active'])
+
+    def test_exception_evidence_tampering_detected(self):
+        self.prepare_day_exception()
+        h.begin('T004', self.evidence)
+        value = h.read(self.root / self.evidence)
+        h.atomic(self.root / self.evidence, {**value, 'extra': 'changed'})
+        with self.assertRaises(h.Stop):
+            h.load()
+
+    def test_exception_does_not_extend_to_next_day(self):
+        self.prepare_day_exception()
+        self.next_day('2026-10-24')
+        with self.assertRaises(h.Stop):
+            h.begin('T004', self.evidence)
+        h.begin('T004')
+        self.finish('T004')
+        self.assertEqual(h.load()[1]['daily_claims']['2026-10-24'], 'T004')
+
     def test_resume_across_day_claims_new_day(self):
         h.begin('A')
         self.next_day()

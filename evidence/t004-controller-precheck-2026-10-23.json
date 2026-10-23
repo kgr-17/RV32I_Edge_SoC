@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "-B",
+    "scripts/test_harness.py"
+  ],
+  "started_utc": "2026-10-23T18:54:35.988771+00:00",
+  "cwd": "C:\\RV32I_Edge_SoC",
+  "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+  "status": "PASS",
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_both_reports_required (__main__.HarnessTests) ... ok\ntest_concurrent_controller_rejected (__main__.HarnessTests) ... ok\ntest_daily_limit_and_no_duplicate_work (__main__.HarnessTests) ... ok\ntest_dependency_cycle_rejected (__main__.HarnessTests) ... ok\ntest_dependency_enforcement (__main__.HarnessTests) ... ok\ntest_dirty_worktree_protected (__main__.HarnessTests) ... ok\ntest_exact_owner_exception_preserves_claim_through_resume_and_finish (__main__.HarnessTests) ... ok\ntest_exception_does_not_extend_to_next_day (__main__.HarnessTests) ... ok\ntest_exception_evidence_tampering_detected (__main__.HarnessTests) ... ok\ntest_failed_verification_blocks_completion (__main__.HarnessTests) ... ok\ntest_final_review_cannot_skip_mandatory_work (__main__.HarnessTests) ... ok\ntest_full_output_preserved_and_command_not_shell (__main__.HarnessTests) ... ok\ntest_idempotent_begin_and_finish (__main__.HarnessTests) ... ok\ntest_interrupted_execution_recovery (__main__.HarnessTests) ... ok\ntest_missing_input_cannot_finish (__main__.HarnessTests) ... ok\ntest_missing_tool_is_not_run (__main__.HarnessTests) ... ok\ntest_optional_enable_and_terminal_review (__main__.HarnessTests) ... ok\ntest_owner_exception_rejects_wrong_binding_and_missing_evidence (__main__.HarnessTests) ... ok\ntest_owner_review_gate (__main__.HarnessTests) ... ok\ntest_path_escape_and_link_rejected (__main__.HarnessTests) ... ok\ntest_preexecution_authorization (__main__.HarnessTests) ... ok\ntest_priority_selection (__main__.HarnessTests) ... ok\ntest_report_append_idempotence_and_date_preservation (__main__.HarnessTests) ... ok\ntest_resume_across_day_claims_new_day (__main__.HarnessTests) ... ok\ntest_runtime_cannot_bypass_dependencies (__main__.HarnessTests) ... ok\ntest_state_recovers_stale_backlog_projection (__main__.HarnessTests) ... ok\ntest_terminal_completion_ignores_disabled_optional (__main__.HarnessTests) ... ok\ntest_three_attempt_budget_and_failure_preservation (__main__.HarnessTests) ... ok\ntest_unattended_refused_and_handoff_loaded (__main__.HarnessTests) ... ok\ntest_unregistered_checks_and_missing_inputs_not_run (__main__.HarnessTests) ... ok\n\n----------------------------------------------------------------------\nRan 30 tests in 13.736s\n\nOK\n"
+}

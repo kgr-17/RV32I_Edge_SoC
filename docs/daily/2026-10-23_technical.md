@@ -100,3 +100,18 @@ This closing entry updates evidence/daily/T003.md, appends the same two dated re
 Final T003 evidence: 61 Python tests, 268 fixture vector checks across two seeds, all five injected failure cases correctly rejected, 19 EDA acceptance checks and all four required outer gates PASS. T003 is completed on reopened attempt 1; project remains in_progress, active=null and October 23 claimed by T003. Read the actual receipt and scope limits in the preceding entry rather than treating these fixture results as CPU, formal, timing, hardware or ASIC evidence.
 
 Next attended eligible day's task is T004, with its package/decoder/independent unit tests and real lint/test-decode targets. Read this handoff first, inspect Git/state, honor the daily claim and preserve the approved v0.2 contract. No additional T002 approval/T003 reopen authorization is needed. No unattended scheduler or external publication is configured.
+
+
+---
+
+<!-- entry:4bba5923f571735f67066041673df77f6ae28f892524e1fc3f419f6eb1d8f480 -->
+
+# T004 same-day owner exception and recoverable start
+
+The owner explicitly answered ‘Yes—start T004 today’ to question call_db6019c10ff8475da53c07dfb0dd2c37. This supersedes the earlier T003 stop instruction only for T004 on October 23. Preserve daily_claims[2026-10-23]=T003 and all historical receipts. Provenance: evidence/owner_reviews/T004-day-exception-2026-10-23.json. Starting clean commit bbbd0f1, branch engineering/bootstrap. No existing user changes were present.
+
+Updated scripts/harness.py and scripts/test_harness.py, plus docs/CODEX_LOOP.md: an explicit begin --owner-day-exception PATH accepts only this exact owner question, task and date. A separate hash-bound daily_exceptions record allows resume/finish without overwriting the original claim. Default quota, clean baseline, dependencies, review, attempt budget and unattended refusal remain enforced. This is workflow acknowledgment, not authentication or sandboxing. Controller precheck python -B scripts/test_harness.py passed 30 tests in 13.736 seconds, exit 0; full output in evidence/t004-controller-precheck-2026-10-23.json. Four new behavioral tests exercise preservation through finish, wrong binding, evidence tampering and no next-day extension.
+
+Commit this inspected controller/provenance checkpoint, then run python -B scripts/harness.py begin T004 --owner-day-exception evidence/owner_reviews/T004-day-exception-2026-10-23.json. Implement only the internal RV32I package/decoder and independent verification, register lint and test-decode, then finish with evidence/daily/T004.md. T002 review and T003 gates are completed; approved architecture remains unchanged. Append actual results to these same two reports. No second extra task today.
+
+Runtime remains danger-full-access/never; no filesystem sandbox exists. Attended only. No download, install, global change, scheduler, push or FPGA programming. No decoder implementation or simulation result is claimed at this checkpoint. Original kit, XPR and constraints remain untouched.

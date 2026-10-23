@@ -144,6 +144,10 @@ def load():
         raise Stop('Inconsistent active task: recover from Git, never skip it')
     if any(tid not in byid for tid in state['daily_claims'].values()):
         raise Stop('Unknown daily claim')
+    for date, exception in state.get('daily_exceptions', {}).items():
+        validate_day_exception(exception['evidence'], date, exception['task'], state, byid)
+        if exception['sha256'] != hashlib.sha256(inside(exception['evidence']).read_bytes()).hexdigest():
+            raise Stop('Daily exception evidence changed')
     if any(tid not in byid or type(n) is not int or not 0 <= n <= 3
            for tid, n in state['attempts'].items()):
         raise Stop('Invalid attempt count')
@@ -223,7 +227,30 @@ def clean():
         raise Stop('New work requires a clean Git baseline; inspect and preserve existing changes')
 
 
-def begin(tid):
+def validate_day_exception(evidence, date, tid, state, byid):
+    """Bind an explicitly supplied owner record to one date/task; not authentication."""
+    record = read(inside(evidence))
+    previous = state['daily_claims'].get(date)
+    if (record.get('schema_version') != 1 or record.get('date') != date or
+            record.get('task') != tid or record.get('previous_task') != previous or
+            previous == tid or previous not in byid or tid not in byid or
+            status(state, byid[previous]) != 'completed' or
+            record.get('owner_answer') != 'Yes—start T004 today' or
+            record.get('question_item_id') !=
+            '["request_user_input_async","call_db6019c10ff8475da53c07dfb0dd2c37",0]' or
+            tid != 'T004' or date != '2026-10-23'):
+        raise Stop('Invalid one-time owner daily exception')
+
+
+def claim_day(state, date, tid):
+    effective = state.get('daily_exceptions', {}).get(date, {}).get('task',
+                    state['daily_claims'].get(date, tid))
+    if effective != tid:
+        raise Stop('Daily quota belongs to another task')
+    state['daily_claims'].setdefault(date, tid)
+
+
+def begin(tid, owner_day_exception=None):
     with lock():
         plan, state = load()
         date = today()
@@ -232,19 +259,28 @@ def begin(tid):
         if state['active']:
             if state['active'] != tid:
                 raise Stop('Recover active task ' + state['active'])
-            if state['daily_claims'].get(date, tid) != tid:
-                raise Stop('Daily quota belongs to another task')
-            state['daily_claims'][date] = tid
+            if owner_day_exception:
+                raise Stop('Exception already consumed; resume without the flag')
+            claim_day(state, date, tid)
             save(plan, state)
             return {'action': 'RESUME', 'task': tid, 'attempts': state['attempts'].get(tid, 0)}
         if date in state['daily_claims']:
-            raise Stop('Daily quota already used by ' + state['daily_claims'][date])
+            if not owner_day_exception or date in state.get('daily_exceptions', {}):
+                raise Stop('Daily quota already used by ' + state['daily_claims'][date])
+            validate_day_exception(owner_day_exception, date, tid, state,
+                                   {t['id']: t for t in plan['tasks']})
+        elif owner_day_exception:
+            raise Stop('Exception requires an existing daily claim')
         ready = candidates(plan, state)
         if not ready or ready[0]['id'] != tid:
             raise Stop('Not the first eligible task; dependencies/review may block it')
         clean()
+        if owner_day_exception:
+            state.setdefault('daily_exceptions', {})[date] = {
+                'task': tid, 'evidence': owner_day_exception,
+                'sha256': hashlib.sha256(inside(owner_day_exception).read_bytes()).hexdigest()}
         state['active'] = tid
-        state['daily_claims'][date] = tid
+        claim_day(state, date, tid)
         state['task_states'][tid] = 'in_progress'
         state['attempts'].setdefault(tid, 0)
         save(plan, state)
@@ -262,9 +298,7 @@ def finish(tid, evidence):
         if state['active'] != tid:
             raise Stop('Only the active task can finish')
         date = today()
-        if state['daily_claims'].get(date, tid) != tid:
-            raise Stop('Daily quota belongs to another task')
-        state['daily_claims'][date] = tid
+        claim_day(state, date, tid)
         path = inside(evidence)
         if path != inside('evidence/daily/' + tid + '.md') or not path.is_file():
             raise Stop('Evidence must exist at evidence/daily/' + tid + '.md')
@@ -369,6 +403,7 @@ def daily(supervised):
     return {'mode': 'SUPERVISED ONLY', 'latest_handoff': str(reports[-1].relative_to(ROOT)),
             'handoff': reports[-1].read_text(encoding='utf-8'), 'active_task': state['active'],
             'project_status': state['project_status'], 'daily_claim': state['daily_claims'].get(today()),
+            'daily_exception': state.get('daily_exceptions', {}).get(today()),
             'next': ready[0] if ready else None,
             'instruction': 'Read the handoff and prompts/DAILY_RUN.md; inspect Git status. '
                            'Recover active work; do not start a second daily task.'}
@@ -381,6 +416,7 @@ def main():
         sub.add_parser(name)
     p = sub.add_parser('daily'); p.add_argument('--supervised', action='store_true')
     p = sub.add_parser('begin'); p.add_argument('task_id')
+    p.add_argument('--owner-day-exception', help='Explicit recorded one-time owner exception')
     p = sub.add_parser('finish'); p.add_argument('task_id'); p.add_argument('--evidence', required=True)
     p = sub.add_parser('block'); p.add_argument('task_id'); p.add_argument('--reason', required=True)
     for name in ('approve', 'reopen', 'enable', 'authorize'):
@@ -388,7 +424,7 @@ def main():
     args = parser.parse_args()
     try:
         if args.command == 'begin':
-            result = begin(args.task_id)
+            result = begin(args.task_id, args.owner_day_exception)
         elif args.command == 'finish':
             result = finish(args.task_id, args.evidence)
         elif args.command in ('approve', 'reopen', 'enable', 'authorize'):
@@ -411,6 +447,7 @@ def main():
             plan, state = load()
             ready = candidates(plan, state)
             result = {'valid': True, 'tasks': len(plan['tasks']), 'project_status': state['project_status']}
+            result['daily_exception'] = state.get('daily_exceptions', {}).get(today())
             result['execution_approval_pending'] = [t['id'] for t in plan['tasks']
                 if t.get('start_approval_required') and status(state, t) == 'pending'
                 and t['id'] not in state.get('start_approvals', {})]

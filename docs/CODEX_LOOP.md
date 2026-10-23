@@ -3,6 +3,15 @@
 The harness selects and verifies work; Codex performs the engineering in an
 attended session. Nothing here installs or invokes a scheduler or a model loop.
 
+The owner explicitly authorized a single extra task, T004 on 2026-10-23.
+Its recorded answer is `evidence/owner_reviews/T004-day-exception-2026-10-23.json`.
+Only the initial `begin T004 --owner-day-exception PATH` consumes this record;
+resume uses ordinary `begin T004`. The original T003 daily claim is retained,
+with a separate hash-bound `daily_exceptions` entry. The controller accepts only
+this exact date/task/question binding, rejects reuse and preserves all other
+dependency, review, clean-baseline and three-attempt checks. This explicit
+session exception does not change the default daily rule or provide authentication.
+
 ## Start and recover
 
 Run from the official workspace:

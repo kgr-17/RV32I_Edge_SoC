@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-23",
+  "task": "T004",
+  "previous_task": "T003",
+  "question_item_id": "[\"request_user_input_async\",\"call_db6019c10ff8475da53c07dfb0dd2c37\",0]",
+  "question": "T004 is ready, but T003 already used October 23’s slot. Your AGENTS.md and harness enforce one primary task per Los Angeles day. Does ‘do next’ authorize a one-time exception to start T004 today, while preserving T003’s claim and verification history?",
+  "owner_answer": "Yes—start T004 today",
+  "scope": "Start and complete T004 on this date only. Preserve T003 claim and history; no third task, future quota waiver, architecture change or unattended authorization.",
+  "baseline_commit": "bbbd0f1",
+  "prior_receipt": "evidence/runs/T003/attempt-1-20261023T182351910210Z.json"
+}
