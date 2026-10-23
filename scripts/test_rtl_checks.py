@@ -77,6 +77,20 @@ class CheckPolicyTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     rtl_checks.load_manifest()
 
+    def test_production_lint_only_designs_registered_without_fixture_protocol(self):
+        manifest = rtl_checks.load_manifest()
+        self.assertTrue(any('rtl/core/decoder.sv' in design['sources']
+                            for design in manifest['lint_designs']))
+        self.assertTrue(all('rtl/core/decoder.sv' not in design['sources']
+                            for design in manifest['designs']))
+
+    def test_missing_lint_only_source_is_not_run(self):
+        manifest = rtl_checks.load_manifest()
+        manifest['lint_designs'][0]['sources'] = ['rtl/missing_decoder.sv']
+        with mock.patch.object(rtl_checks.harness, 'read', return_value=manifest):
+            with self.assertRaises(rtl_checks.NotRun):
+                rtl_checks.load_manifest()
+
     def test_xsim_batch_does_not_receive_equals_arguments(self):
         root = rtl_checks.harness.inside('build/argument_transport_tests')
         root.mkdir(parents=True, exist_ok=True)

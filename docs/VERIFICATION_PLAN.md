@@ -102,3 +102,22 @@ Future negative tests must include:
 
 Toolchain compatibility and simulator execution are T003 and later work. Do not
 substitute the current contract tests for a missing lint/simulation gate.
+
+## T004 decoder unit evidence (2026-10-23)
+
+T002 was approved in the recorded owner review; its historical proposal fields
+remain intact. T003 passed earlier today. Under an explicit T004-only same-day
+exception, T004 passed required lint and test-decode on attempt 1. Decoder
+synthesis had zero errors/warnings and passed latch/black-box/structural checks.
+The independent mask-table oracle and encoder drove 143,809 vectors per seed
+(1 and 20261023), 287,618 total; all 57 metadata bits were compared. Fifteen
+acceptance-policy tests and six oracle tests passed, in addition to thirty
+controller tests at the exception checkpoint. Wrong-expected-bit and empty-file
+negative simulations were rejected. No scoped functional defect was found.
+
+See DECODER.md and evidence/daily/T004.md for the unit interface, exact receipts,
+coverage group definitions and replay commands. R-ISA decode classification is
+tested; R-X0/R-FENCE execution, retirement, precise faults, full ISA compliance,
+formal, timing, physical hardware and ASIC results remain future evidence.
+The composite regress command now routes to both fixture and decoder checks;
+this combined entrypoint has not been rerun solely for its routing addition.

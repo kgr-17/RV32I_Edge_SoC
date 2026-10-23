@@ -115,3 +115,53 @@ Updated scripts/harness.py and scripts/test_harness.py, plus docs/CODEX_LOOP.md:
 Commit this inspected controller/provenance checkpoint, then run python -B scripts/harness.py begin T004 --owner-day-exception evidence/owner_reviews/T004-day-exception-2026-10-23.json. Implement only the internal RV32I package/decoder and independent verification, register lint and test-decode, then finish with evidence/daily/T004.md. T002 review and T003 gates are completed; approved architecture remains unchanged. Append actual results to these same two reports. No second extra task today.
 
 Runtime remains danger-full-access/never; no filesystem sandbox exists. Attended only. No download, install, global change, scheduler, push or FPGA programming. No decoder implementation or simulation result is claimed at this checkpoint. Original kit, XPR and constraints remain untouched.
+
+
+---
+
+<!-- entry:a556d46e2cb5ff4eb3931aec028ba744e68f61bf143e3120500dcae0c1fd5bfc -->
+
+# T004 implementation prepared for acceptance
+
+Started T004 with the explicitly authorized one-time flag after clean checkpoint abbbb80. Added rtl/core/rv32_pkg.sv and decoder.sv: explicit six-bit enum with illegal=0 and 40 supported operations; purely combinational insn_i[31:0] to packed decode_o[56:0]. Fields are op[56:51], imm[50:19], rs1[18:14], rs2[13:9], rd[8:4], uses_rs1/uses_rs2/writes_rd/illegal[3:0]. I/S/B/J sign extension, U upper placement, shifts zero-extended shamt. Illegal outputs have all other fields zero. Legal x0 instructions retain their op, especially loads; writes_rd describes only a nonzero GPR write. FENCE ignores reviewed fields; SYSTEM accepts exact ECALL/EBREAK only. No clock/reset/architecture change. Interface and consumer obligations are in docs/DECODER.md.
+
+Independent dv/unit/test_decoder.py uses flat mask/value rules and original encoder inputs, with fixed-word oracle tests. dv/unit/tb_decoder.sv checks all 57 bits and exact nonzero count. scripts/decode_checks.py plus xsim_decode.tcl run the actual decoder using replay seeds 1/20261023 and save vector/WDB hashes, group/operation counts and full command evidence. Actual negative simulations must reject a corrupt expected bit and an empty vector file. Updated config/rtl_checks.json, scripts/rtl_checks.py, scripts/test_rtl_checks.py and .harness/checks.json to register production synthesis lint separately from fixture simulation and add test-decode to regress. XPR/XDC/original kit remain unchanged; no usable board top exists yet.
+
+Next command: python -B scripts/harness.py finish T004 --evidence evidence/daily/T004.md. Required lint and test-decode gates plus both whitespace checks will reserve attempt 1 of 3 and record actual results. No decoder result is claimed before that execution. Unit evidence does not establish execution/retirement, formal, timing, hardware or ASIC correctness. Official pinned RISC-V manual was read under existing authorization; no tool/IP/package was downloaded. Runtime remains unrestricted, attended only. Append final outcome and commits below; retain T003 findings and stop after T004, with no third task today.
+
+
+---
+
+<!-- entry:5f86656f318f67bef6fedfd6780900a918779d54467dba859c69fd51c733da33 -->
+
+# T004 final acceptance - completed on attempt 1
+
+## Results and exact evidence
+
+All four finish gates PASS / exit 0: python -B scripts/verify.py lint; python -B scripts/verify.py test-decode; git diff --check; git diff --cached --check. Receipt: evidence/runs/T004/attempt-1-20261023T185858736019Z.json. T004 completed, active=null, attempt count 1/3. No functional defect, retry, suppressed warning or weakened gate was needed. The source was the inspected working tree based on abbbb80bcdc57b013a44035f089d44d19518418f; the delivery commit below captures it. evidence/t004-complete-2026-10-23.json binds source hashes to this verified delivery.
+
+Lint evidence: evidence/toolchain_runs/lint-20261023T185859142234Z.json, 11 passing acceptance checks / 7 commands. Actual decoder synthesis 24.047 s, zero warnings/errors; no latches or black boxes; no LUTLP-1/MDRV-1 violations. Register fixture synthesis remained passing, 23.485 s. Intentional latch defect was correctly rejected, raw exit 1. This is scoped non-project synthesis/structural lint, not comprehensive lint, routed timing or a complete CPU build. Its historical generic artifact parent is build/T003/lint-20261023T185859142234Z; the receipt explicitly names the decoder and scope.
+
+Decoder evidence: evidence/toolchain_runs/decode-20261023T190012553493Z.json, 16 passing checks / 10 commands. Compile 0.735 s; elaboration 1.016 s. Both seed 1 and seed 20261023 checked exactly 143,809 vectors and saved nonempty WDBs; total 287,618 full 57-bit comparisons. Simulation wall times 2.843 s and 2.812 s. Every one of 40 operation bins was hit; illegal cases 43,443 and 43,460. Vector/WDB/argument files are in build/T004/decode-20261023T190012553493Z/sim_decoder. Both deliberate decoder failures were correctly rejected despite raw XSim exit 0: DECODE_MISMATCH for a corrupt expected bit and Wrong count for an empty file. Diagnostics/exact completion, rather than raw return code alone, enforced failure. These are passing rejection tests, not passing defective DUT runs.
+
+Python: scripts/test_rtl_checks.py 15 tests / 0.024 s and dv/unit/test_decoder.py 6 tests / 0.006 s, exit 0. Controller checkpoint earlier passed 30 tests / 13.736 s. T004 total 51 Python tests, distinct from T003's earlier 61 tests. Pins matched Python 3.9.13, Git 2.48.1.windows.1, tzdata 2026.2, Vivado/XSim 2025.2, Vivado SW build 6299465.
+
+## Coverage and implementation
+
+Per seed, encoder-driven tests included all 49,152 I, 12,288 S and 24,576 B immediate cases across relevant operations; 96 supported shift-amount cases; walking/boundary U/J inputs; 3,840 register patterns; 2,560 random legal inputs. Additional groups: 8,192 OP/OP-IMM funct7/funct3 combinations, 8,192 shift-reserved cases, 2,048 major/funct3 cases, 4,096 SYSTEM immediate encodings, 16,384 SYSTEM register/funct3 encodings, 4,096 ignored-field FENCE cases, 8,192 random words and 16 explicit illegal words. These defined stimulus counts are not code/branch coverage or whole-CPU ISA compliance.
+
+New production files: rtl/core/rv32_pkg.sv and decoder.sv. New DV/tool files: dv/unit/test_decoder.py, tb_decoder.sv, scripts/decode_checks.py and xsim_decode.tcl. Modified registry/manifest/lint integration: .harness/checks.json, config/rtl_checks.json, scripts/rtl_checks.py and test_rtl_checks.py. Added docs/DECODER.md, evidence/daily/T004.md, timestamped gate/EDA receipts, completion audit and report-entry inputs. Updated README.md, VERIFICATION_PLAN.md and controller-projected state/backlog; appended these same two dated reports. Earlier checkpoint abbbb80 also contains the owner exception, harness/tests and CODEX_LOOP changes. Full interface and consumer obligations are in DECODER.md and the preceding implementation entry. No source integration into XPR was needed for this standalone unit; a usable top and board constraints are future work.
+
+## Preservation and limits
+
+Audit rechecked all 23 original files, 19 historical receipt/review/prior-report files, both same-day T003 report byte prefixes and eight vector/WDB/argument-file hashes. All matched. Original XPR, kit and approved architecture are unchanged; ARCH_CONTRACT SHA-256 remains 403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03. T003 claims, attempts, receipt, owner-review history and old failures remain intact. Original daily_claims[2026-10-23] is T003; the separate hash-bound exception is T004.
+
+No implementation defect was observed by this decoder suite. The combined regress entrypoint now includes decoder DV but was not rerun solely for routing; its decoder component passed here and unchanged register simulation component passed in T003 earlier today. Full execution/retirement, pipeline, bus/fault ordering, FENCE drain, formal, routed implementation/timing, physical hardware and ASIC evidence remain NOT RUN. No certification/coverage percentage/Fmax/power claim.
+
+Runtime is still danger-full-access/never, with no enforced sandbox. Attended only; no scheduler, host configuration, tool/package/IP download/install, remote push or FPGA programming. Only the pinned official RISC-V manual was read online under existing authorization.
+
+## Exact next session
+
+After the inspected local delivery commit, stop. Project remains in_progress: 4/41 mandatory tasks completed, 37 pending, four optional disabled. No third October 23 task. On the next actual eligible LA date, October 24 or later, read this complete handoff plus AGENTS.md, ENVIRONMENT_BOUNDARY.md, ARCH_SPEC.md, VERIFICATION_PLAN.md, BACKLOG.json, state.json and CODEX_LOOP.md. Inspect actual permissions and git status; run python -B scripts/harness.py daily --supervised, validate, status and next. If active work exists, recover it first. Otherwise begin T005 without any exception flag.
+
+T005 scope is rtl/core/alu.sv and dv/unit/test_alu.py: reuse the approved operation enum, implement only ALU arithmetic/logical/compare/shift behavior, use independent signed/unsigned edge vectors, small-domain exhaustive cases, shift masks and wraparound tests. Extend lint registration and add a real test-alu target. Keep decoder gate in regress, explicit widths and no latches. Do not reuse the register fixture protocol for ALU results. Required finish gates are lint and test-alu; use evidence/daily/T005.md and exactly two reports for that actual date. No new architecture, dependency or physical-programming approval is implied. Do not re-request the already confirmed board, Vivado path, T002 review, T003 reopen or consumed T004 exception.

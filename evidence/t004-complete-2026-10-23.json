@@ -1,0 +1,179 @@
+{
+  "task": "T004",
+  "date": "2026-10-23",
+  "recorded_utc": "2026-10-23T19:01:37.001669+00:00",
+  "state": "completed",
+  "attempt": 1,
+  "verification_base_commit": "abbbb80bcdc57b013a44035f089d44d19518418f",
+  "verification_tree": "Working tree subsequently committed; source hashes below",
+  "receipt": "evidence/runs/T004/attempt-1-20261023T185858736019Z.json",
+  "lint_receipt": "evidence/toolchain_runs/lint-20261023T185859142234Z.json",
+  "decoder_receipt": "evidence/toolchain_runs/decode-20261023T190012553493Z.json",
+  "outer_checks": [
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "lint"
+      ],
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "test-decode"
+      ],
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "status": "PASS",
+      "exit_code": 0
+    }
+  ],
+  "source_sha256": {
+    "rtl/core/rv32_pkg.sv": "a64532c6e1a92232680b4cff5871aa98cdf3694b348e700fc4aa36d7ac948069",
+    "rtl/core/decoder.sv": "1c50bfd7b1fe87c34ca618e854cfce90890df7765092a542ccbb132dcd88f808",
+    "dv/unit/tb_decoder.sv": "e84207ebe81c4383f470830c26edb7f0e40616f06a92e18905108b494c06f189",
+    "dv/unit/test_decoder.py": "d31461fff1afd84adee74bff14df173562422b9e087c03a6faccf69451d0b192",
+    "scripts/decode_checks.py": "f48d84f6e80bb0ad5b9bb0a32229d5d945feefe828247d9da3685e79708faa67",
+    "scripts/xsim_decode.tcl": "694b2cd13ca422d56e5643288d226926e95871a8a69b32687f3c5da87cdf61ac",
+    "scripts/rtl_checks.py": "023973b6f320cd4baa7936ff6844eff5bf34348e63a2db0819029e90e04c18f7",
+    "scripts/test_rtl_checks.py": "9cd93cacccf2a42bf1eddfc8361de6e5411c9b4376f4a1a460c8b0f87340b0c8",
+    "config/rtl_checks.json": "0209e514a514b0102f110b474b2c9ec997d38cdd5f5c15264b09ea2e657d6a40",
+    ".harness/checks.json": "e43a453f31fbcf1ce598607818b944e3a2863b6c8e0727459e041ef507db38a4",
+    "scripts/harness.py": "102e98cd6b714b0d2aad77d156ec1a938bcfa0c717d7671a563eab2d45f8bc4c",
+    "scripts/test_harness.py": "fbdd94db9282538132fcdd69af3772d30c6fe9556ab759fa772107d8dee44c8f"
+  },
+  "architecture_sha256": {
+    "docs/ARCH_SPEC.md": "0838aa5a8108a3f9cded3c69b4f0194e9e13d587f87f450c7792cc0f052db052",
+    "docs/ARCH_CONTRACT.json": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03"
+  },
+  "original_file_match": {
+    "riscv_edge_soc_codex_kit/.gitignore": true,
+    "riscv_edge_soc_codex_kit/.harness/state.json": true,
+    "riscv_edge_soc_codex_kit/AGENTS.md": true,
+    "riscv_edge_soc_codex_kit/docs/ARCH_SPEC.md": true,
+    "riscv_edge_soc_codex_kit/docs/BACKLOG.json": true,
+    "riscv_edge_soc_codex_kit/docs/CAREER_PORTFOLIO.md": true,
+    "riscv_edge_soc_codex_kit/docs/CODEX_LOOP.md": true,
+    "riscv_edge_soc_codex_kit/docs/DECISIONS.md": true,
+    "riscv_edge_soc_codex_kit/docs/GETTING_STARTED_CN.md": true,
+    "riscv_edge_soc_codex_kit/docs/PROJECT_CHARTER.md": true,
+    "riscv_edge_soc_codex_kit/docs/REFERENCES.md": true,
+    "riscv_edge_soc_codex_kit/docs/TOOLCHAIN.md": true,
+    "riscv_edge_soc_codex_kit/docs/VERIFICATION_PLAN.md": true,
+    "riscv_edge_soc_codex_kit/evidence/daily/README.md": true,
+    "riscv_edge_soc_codex_kit/prompts/BOOTSTRAP_PROMPT.md": true,
+    "riscv_edge_soc_codex_kit/prompts/DAILY_CODEX_PROMPT.md": true,
+    "riscv_edge_soc_codex_kit/prompts/WEEKLY_REVIEW_PROMPT.md": true,
+    "riscv_edge_soc_codex_kit/README.md": true,
+    "riscv_edge_soc_codex_kit/scripts/harness.py": true,
+    "riscv_edge_soc_codex_kit/scripts/test_harness.py": true,
+    "RV32I_Edge_SoC.cache/wt/project.wpc": true,
+    "RV32I_Edge_SoC.hw/RV32I_Edge_SoC.lpr": true,
+    "RV32I_Edge_SoC.xpr": true
+  },
+  "historical_files_unchanged": {
+    "docs/daily/2026-10-14_technical.md": true,
+    "docs/daily/2026-10-14_zh-CN.md": true,
+    "docs/daily/2026-10-16_technical.md": true,
+    "docs/daily/2026-10-16_zh-CN.md": true,
+    "docs/daily/2026-10-17_technical.md": true,
+    "docs/daily/2026-10-17_zh-CN.md": true,
+    "evidence/owner_reviews/T002-2026-10-17.json": true,
+    "evidence/owner_reviews/T003-reopen-2026-10-17.json": true,
+    "evidence/runs/T001/attempt-1-20261015T052429061951Z.json": true,
+    "evidence/runs/T001/attempt-2-20261015T052535290129Z.json": true,
+    "evidence/runs/T002/attempt-1-20261017T034202692993Z.json": true,
+    "evidence/runs/T003/attempt-1-20261017T233538438180Z.json": true,
+    "evidence/runs/T003/attempt-1-20261023T182351910210Z.json": true,
+    "evidence/runs/T003/attempt-2-20261017T233705785077Z.json": true,
+    "evidence/runs/T003/attempt-3-20261017T233828751183Z.json": true,
+    "evidence/toolchain_runs/all-20261017T233552408768Z.json": true,
+    "evidence/toolchain_runs/all-20261017T233719426593Z.json": true,
+    "evidence/toolchain_runs/all-20261017T233842507262Z.json": true,
+    "evidence/toolchain_runs/all-20261023T182408034597Z.json": true
+  },
+  "same_day_T003_report_prefix_preserved": {
+    "docs/daily/2026-10-23_technical.md": true,
+    "docs/daily/2026-10-23_zh-CN.md": true
+  },
+  "original_claims_preserved": {
+    "2026-10-14": "T001",
+    "2026-10-16": "T002",
+    "2026-10-17": "T003",
+    "2026-10-23": "T003"
+  },
+  "owner_day_exception": {
+    "2026-10-23": {
+      "task": "T004",
+      "evidence": "evidence/owner_reviews/T004-day-exception-2026-10-23.json",
+      "sha256": "a26dd6eb921bf9dfdb1b45cc7b492090b3a8de01972887cec4afa564fbab49bb"
+    }
+  },
+  "verified_artifact_sha256": {
+    "build/T004/decode-20261023T190012553493Z/sim_decoder/vectors_1.txt": "7a1ba9b2474d7dd30b141f29f6e192ae3e50784c291fe433dc948368e5860ff6",
+    "build/T004/decode-20261023T190012553493Z/sim_decoder/seed_1.wdb": "43ca83392d6e6fffc6e576a20aaf0d90d13681bb904684b6ae7aeb7c18876676",
+    "build/T004/decode-20261023T190012553493Z/sim_decoder/vectors_20261023.txt": "b8c533d0f25b48efb1a51d8ad962142e3ab8088bc23528f20c7907253201683b",
+    "build/T004/decode-20261023T190012553493Z/sim_decoder/seed_20261023.wdb": "ea1b075a577e8c423ef5e13cfcb92a185849ab415ce92b617007daa0f7feb860",
+    "build/T004/decode-20261023T190012553493Z/sim_decoder/seed_1.args": "bd09f4e87cc7640ba9cf602e185aa57217c5096a410201c31470028fd2ff6d5f",
+    "build/T004/decode-20261023T190012553493Z/sim_decoder/seed_20261023.args": "d55e9ad5742039bd7867d26f6295086233aeb1d5a0682b099f058832c03d4ad5",
+    "build/T004/decode-20261023T190012553493Z/sim_decoder/corrupt_expected.args": "e1fcbf40f10922ea87a01621c8bd5135052ee1eecfa0f9508de15b70ccfa0276",
+    "build/T004/decode-20261023T190012553493Z/sim_decoder/empty_vectors.args": "491651c45ac08c82c7fea929f1dc642dbe8c6e87ec93445deeee01b294508a93"
+  },
+  "simulation_summary": [
+    {
+      "design": "decoder",
+      "seed": 1,
+      "checked_vectors": 143809,
+      "vector_path": "build/T004/decode-20261023T190012553493Z/sim_decoder/vectors_1.txt",
+      "vector_sha256": "7a1ba9b2474d7dd30b141f29f6e192ae3e50784c291fe433dc948368e5860ff6",
+      "waveform": "build/T004/decode-20261023T190012553493Z/sim_decoder/seed_1.wdb",
+      "waveform_sha256": "43ca83392d6e6fffc6e576a20aaf0d90d13681bb904684b6ae7aeb7c18876676"
+    },
+    {
+      "design": "decoder",
+      "seed": 20261023,
+      "checked_vectors": 143809,
+      "vector_path": "build/T004/decode-20261023T190012553493Z/sim_decoder/vectors_20261023.txt",
+      "vector_sha256": "b8c533d0f25b48efb1a51d8ad962142e3ab8088bc23528f20c7907253201683b",
+      "waveform": "build/T004/decode-20261023T190012553493Z/sim_decoder/seed_20261023.wdb",
+      "waveform_sha256": "ea1b075a577e8c423ef5e13cfcb92a185849ab415ce92b617007daa0f7feb860"
+    }
+  ],
+  "python_tests": {
+    "controller_precheck": 30,
+    "acceptance_policy": 15,
+    "independent_oracle": 6
+  },
+  "excluded": [
+    "full CPU execution/retirement",
+    "formal",
+    "timing closure",
+    "physical hardware",
+    "ASIC",
+    "composite regress rerun"
+  ],
+  "unattended_enabled": false,
+  "runtime_sandbox": "danger-full-access; none"
+}

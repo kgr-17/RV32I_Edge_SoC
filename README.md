@@ -4,13 +4,17 @@ Status: T002 architecture v0.2 approved by the owner; T003 toolchain gates passe
 on October 23 after the authorized reopen. The argument-file repair passed:
 61 Python tests, two seeded fixture simulations (268 vector checks), fixture
 synthesis/structural lint and all five injected failure checks. Exact evidence is
-in evidence/daily/T003.md. T004 opcode/immediate decoding is the next eligible
-day's task. No CPU RTL, FPGA
-implementation, hardware validation or ASIC results exist yet.
+in evidence/daily/T003.md. T004 decoder/package also passed on October 23 under
+an explicit one-time owner exception: all 40 mnemonics, 287,618 vector checks
+across two seeds, independent oracle tests and real decoder synthesis lint.
+See [decoder interface and reproduction](docs/DECODER.md) and evidence/daily/T004.md.
+T005 ALU is the next eligible day's task. Complete CPU execution, FPGA
+implementation, hardware validation and ASIC results remain future milestones.
 
 The existing `RV32I_Edge_SoC.xpr` is the active Vivado project. Its configured part
 is `xc7a35tcpg236-1`. The owner confirmed a Digilent Basys 3. Top module, RTL and
-constraints are not yet configured. Vivado 2025.2 was located and its batch
+constraints are not yet configured in the XPR; the decoder unit is verified with
+reproducible non-project scripts. Vivado 2025.2 was located and its batch
 startup/target-part catalog verified; local paths are in `.harness/toolchain.json`.
 
 From PowerShell in `C:\RV32I_Edge_SoC`:

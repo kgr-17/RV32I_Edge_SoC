@@ -26,14 +26,15 @@ def load_manifest():
         raise ValueError('Seeds must be positive 31-bit integers')
     registered = set()
     names = set()
-    for design in manifest['designs']:
-        for key in ('name', 'top', 'test_top'):
+    for design in manifest['designs'] + manifest.get('lint_designs', []):
+        simulation = design in manifest['designs']
+        for key in (('name', 'top', 'test_top') if simulation else ('name', 'top')):
             if not re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', design[key]):
                 raise ValueError('Invalid design identifier')
         if design['name'] in names or not design['sources']:
             raise ValueError('Duplicate/empty design')
         names.add(design['name'])
-        for name in design['sources'] + [design['testbench']]:
+        for name in design['sources'] + ([design['testbench']] if simulation else []):
             if not harness.inside(name).is_file():
                 raise NotRun('Missing source: ' + name)
         registered.update(design['sources'])
@@ -66,14 +67,14 @@ def successful(record, marker=None):
 
 
 class Checks:
-    def __init__(self, profile):
+    def __init__(self, profile, task='T003', scope=None):
         stamp = dt.datetime.now(dt.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
         self.path = harness.inside('evidence/toolchain_runs/' + profile + '-' + stamp + '.json')
-        self.base = harness.inside('build/T003/' + profile + '-' + stamp)
+        self.base = harness.inside('build/' + task + '/' + profile + '-' + stamp)
         self.base.mkdir(parents=True)
         self.result = {'profile': profile, 'status': 'RUNNING', 'started_utc': stamp,
                        'base_commit': harness.run(['git', 'rev-parse', 'HEAD'])['stdout'].strip(),
-                       'scope': 'Infrastructure fixture only; no CPU/SoC implementation or hardware',
+                       'scope': scope or 'Infrastructure fixture only; no CPU/SoC implementation or hardware',
                        'commands': [], 'checks': [], 'simulations': [],
                        'excluded': ['formal', 'timing closure', 'physical FPGA', 'ASIC', 'CPU ISA correctness']}
         self.save()
@@ -196,6 +197,10 @@ def main():
     try:
         manifest = load_manifest()
         checks.versions(manifest)
+        if manifest.get('lint_designs') and args.profile in ('all', 'lint'):
+            checks.result['scope'] = 'Manifest RTL synthesis lint plus infrastructure fixture DV; no complete CPU/SoC or hardware'
+            for design in manifest['lint_designs']:
+                checks.lint(design['sources'], design['top'], manifest)
         for design in manifest['designs']:
             if args.profile in ('all', 'lint'):
                 checks.lint(design['sources'], design['top'], manifest)

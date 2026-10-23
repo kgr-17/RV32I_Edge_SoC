@@ -6,6 +6,14 @@
   "vivado_version": "2025.2",
   "vivado_sw_build": "6299465",
   "seeds": [1, 20261017],
+  "decode_seeds": [1, 20261023],
+  "lint_designs": [
+    {
+      "name": "rv32_decoder",
+      "top": "decoder",
+      "sources": ["rtl/core/rv32_pkg.sv", "rtl/core/decoder.sv"]
+    }
+  ],
   "designs": [
     {
       "name": "toolchain_fixture",
