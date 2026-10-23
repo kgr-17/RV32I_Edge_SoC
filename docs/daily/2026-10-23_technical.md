@@ -85,3 +85,18 @@ On the next actual eligible attended LA date (October 24 or later), read this co
 T004 must extend lint source registration and register real test-decode inputs/commands. Use a decoder-specific oracle/test driver; do not feed decoder tests through the register fixture's history protocol or call fixture success CPU verification. Required gates are python -B scripts/verify.py lint and python -B scripts/verify.py test-decode. Existing XSim is available; do not require uninstalled cocotb/pytest or download tools without authorization. Do not ask again for the already-recorded board/Vivado location, T002 approval or T003 reopen.
 
 Branch engineering/bootstrap; starting/source commit f2edc2a. Earlier delivery/approval commits are 2da233d, aad27b2 and f869a5f. Review the final diff, run whitespace checks, commit only today's inspected files locally, then append the actual delivery SHA in these same two reports. Gate/fixture results above remain the final functional evidence; text-only closing changes do not require repeating the passed suite.
+
+
+---
+
+<!-- entry:0565c2cae8a93c5bc46978ef0ea97ba2ec4363d6c15926c53b30bd2364b0f810 -->
+
+# Committed T003 completion and final resume point
+
+Delivery commit 0027a971b611e12cd5ae1279473915711587e7bf on engineering/bootstrap contains the 15 inspected October 23 state/documentation/evidence files. Parent and functional verification source is f2edc2a2250c4c68795fefacbaaaf8e7ccb7ede1. Both Git whitespace checks passed before commit; Git status was clean after commit. Earlier October 17 failures and reopen provenance remain recoverable and unchanged.
+
+This closing entry updates evidence/daily/T003.md, appends the same two dated reports and adds evidence/report_entries/t003-2026-10-23-delivery.json. Obtain its containing documentation SHA with git log -1 --format=%H -- docs/daily/2026-10-23_technical.md. No source/RTL or functional gate changed after the successful run, so no passing test was repeated for this text-only addition.
+
+Final T003 evidence: 61 Python tests, 268 fixture vector checks across two seeds, all five injected failure cases correctly rejected, 19 EDA acceptance checks and all four required outer gates PASS. T003 is completed on reopened attempt 1; project remains in_progress, active=null and October 23 claimed by T003. Read the actual receipt and scope limits in the preceding entry rather than treating these fixture results as CPU, formal, timing, hardware or ASIC evidence.
+
+Next attended eligible day's task is T004, with its package/decoder/independent unit tests and real lint/test-decode targets. Read this handoff first, inspect Git/state, honor the daily claim and preserve the approved v0.2 contract. No additional T002 approval/T003 reopen authorization is needed. No unattended scheduler or external publication is configured.
