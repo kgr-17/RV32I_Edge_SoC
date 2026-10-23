@@ -10,7 +10,8 @@ Before each session read the latest `docs/daily/*_technical.md`, this file,
 
 - Run `python -B scripts/harness.py daily --supervised` for an attended session.
   Inspect Git status and recover the active task before choosing another one.
-- Select exactly one dependency-ready task per America/Los_Angeles calendar day.
+- Multiple dependency-ready tasks may be completed per day in an attended session.
+  Work on exactly one active task at a time; recover it before choosing another.
   Use `begin ID`, implement its scope, then `finish ID --evidence PATH`.
   At most three verification attempts per task; preserve failures and never weaken
   checks. Missing tools/checks are NOT RUN and cannot pass a task.
@@ -34,9 +35,13 @@ Before each session read the latest `docs/daily/*_technical.md`, this file,
   earlier findings. Record commands, exit codes, versions, commits, gaps and next
   session instructions. Never erase prior-day reports.
 - Review the diff, run gates and `git diff --check`, commit inspected task files
-  locally, then stop. No second task after success.
+  locally, then continue with the next dependency-ready task while the attended
+  session has budget. Stop for owner review/authorization, a genuine blocker,
+  exhausted verification budget, project completion, or the owner's stop request.
 - Distinguish simulation, formal, synthesis, timing, hardware and ASIC evidence.
 
-Bootstrap T001 used the quota on 2026-10-14. For later sessions use the actual
-America/Los_Angeles date and persistent daily_claims, not that historical date.
+Owner policy revision 2026-10-23 removes the former one-task-per-day quota and
+stop-after-success rule. Use the actual America/Los_Angeles date for reports and
+daily_tasks participation history. Preserve legacy daily_claims/daily_exceptions
+as historical provenance; they no longer restrict how many tasks can run today.
 No CPU RTL is to be implemented before T002 owner review and T003 toolchain gates.

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-23",
+  "source": "Explicit owner request in the current attended conversation",
+  "owner_request": "can you change this rule? because right now, the developed step is so slow. each day only do one task. it is possible to speed. and not only allaw one day to finish one task",
+  "policy": "Allow multiple tasks per attended day, with one active task at a time. After verification, daily report update and local commit, continue with the next dependency-ready task without a calendar wait.",
+  "preserved_controls": ["dependency and priority selection", "recover active work", "clean Git baseline before a new task", "three verification attempts per task", "owner review and execution authorization", "exactly two dated reports with append-only findings", "no unattended automation without enforced runtime controls", "no new authority to install, push, schedule, delete sources or program FPGA"],
+  "history": "Preserve legacy daily_claims and daily_exceptions, all receipts/attempts/reviews, prior report content and original kit. Add daily_tasks date-to-task-list history.",
+  "baseline_commit": "fd6f7c2"
+}

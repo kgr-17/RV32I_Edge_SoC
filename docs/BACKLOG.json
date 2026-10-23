@@ -1,6 +1,6 @@
 {
   "format_version": 2,
-  "task_policy": "One primary task per America/Los_Angeles day; no unattended runs in current unrestricted session.",
+  "task_policy": "Multiple tasks per attended day; one active task at a time. Verify, report and commit each task before the next. Preserve review gates and three-attempt limits; no unattended runs in the current unrestricted session.",
   "status_authority": ".harness/state.json; task status fields are a repairable mirror",
   "tasks": [
     {

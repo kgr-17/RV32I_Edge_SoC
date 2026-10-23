@@ -1,7 +1,8 @@
 # Attended daily engineering session
 
 Continue the existing project at `C:\RV32I_Edge_SoC`. Do not create a separate
-Vivado project or rely on chat memory. Work on exactly one primary task.
+Vivado project or rely on chat memory. Multiple tasks may be completed per day;
+work on one active task at a time, verifying and committing before the next.
 
 1. Read AGENTS.md, the latest technical handoff, docs/ENVIRONMENT_BOUNDARY.md,
    docs/ARCH_SPEC.md, docs/VERIFICATION_PLAN.md, docs/BACKLOG.json, and state.
@@ -11,7 +12,7 @@ Vivado project or rely on chat memory. Work on exactly one primary task.
    `next`, and `git status --short --branch`. Read the returned handoff content.
 4. Recover an active task with `begin SAME_ID`. Do not skip interrupted work or
    overwrite unknown diffs. Otherwise start only the first eligible task and
-   only if today's quota is unused and the baseline is clean.
+   only if its dependencies/reviews are satisfied and the baseline is clean.
 5. Inspect specifications and task acceptance. Implement only the selected task
    and its required independent tests/docs. Do not self-approve owner gates.
 6. Run real required gates. Save exact commands, outputs, exit codes, versions,
@@ -26,7 +27,11 @@ Vivado project or rely on chat memory. Work on exactly one primary task.
    diagnosis with `block`; do not claim pass. Update the two reports with results.
 9. Inspect/stage only task files; run `git diff --cached --check`; commit locally
    and record the commit hash. Never push or alter original functionality without
-   inspection and recoverability. Stop after this task; no second implementation.
+   inspection and recoverability. Then inspect status/next and continue with the
+   next eligible task in the attended session. No daily quota or exception flag.
+10. Stop for review/authorization, a genuine blocker, exhausted verification or
+    session budget, project completion, or the owner's stop request. Save a clear
+    handoff whenever stopping. Do not start unattended or background automation.
 
 If review or execution authorization is pending, show the concrete decision and
 evidence to the owner. No source deletion, downloads/installations, hardware

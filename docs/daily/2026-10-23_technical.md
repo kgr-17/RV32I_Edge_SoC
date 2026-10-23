@@ -178,3 +178,30 @@ Implementation/evidence commit 069d6024c21d5c2bb51a86204c778b86dd13e057 on engin
 Final results remain attempt 1 PASS: 287,618 decoder vector comparisons across seeds 1/20261023, all 40 mnemonics, 51 preparation/acceptance Python tests, actual decoder synthesis with zero warnings/errors, and all deliberate failure checks correctly rejected. This is decoder-unit evidence only. T004 completed, active=null, project in_progress. Original October 23 claim remains T003, with the consumed T004-only exception separately recorded; all prior evidence survives.
 
 Stop now. Next eligible attended LA date is October 24 or later; task T005 ALU needs no new owner review under the unchanged architecture. Read the full handoff and required files, inspect actual runtime permissions and clean Git, run daily --supervised/validate/status/next, then begin T005 without an exception flag. Preserve the package interface, add independent ALU tests and a real test-alu registry, run lint/test-alu through finish, append exactly two reports for that actual date and stop. No unattended automation, publication or FPGA programming is authorized by this delivery.
+
+
+---
+
+<!-- entry:aefd2aa2a282ee1074ce450245240364d5547a59b15b9de51b75138d280f3d02 -->
+
+# Owner policy revision: multiple sequential tasks per attended day
+
+This entry supersedes all earlier handoff instructions to wait until October 24, stop after one task, or request a same-day exception. The owner explicitly requested removal of the one-task-per-day rule because it slows development. Provenance: evidence/owner_reviews/workflow-policy-2026-10-23.json. Clean starting commit fd6f7c2 on engineering/bootstrap preserves the prior contract. This is a workflow maintenance change requested directly by the owner, not a new CPU milestone; no backlog task was begun or falsely credited.
+
+## New execution rule
+
+There is no per-calendar-day task cap for attended sessions. Recover the active task first; otherwise choose the first dependency-ready task. Implement its bounded scope, run its actual acceptance gates, append outcomes to the same two daily reports, inspect/commit its files, then continue with the next ready task without another date wait or quota approval. Keep one active task at a time. Three verification attempts per task, missing-check NOT RUN behavior, clean Git before each new task, owner reviews/execution approvals and terminal project holds remain. Stop for required review/authorization, a genuine blocker, exhausted verification/session budget, project completion or the owner's stop request.
+
+AGENTS.md, docs/CODEX_LOOP.md, docs/BACKLOG.json task_policy, README.md and all three active prompt entrypoints now agree. Removed the obsolete --owner-day-exception begin flag and calendar claim rejection from scripts/harness.py. daily/status/next expose daily_task_limit=null and tasks_today; next no longer becomes planning-only because an earlier task used today's date. No model loop, scheduler or background agent was added.
+
+## State and verification
+
+State schema 3 adds daily_tasks, an ordered list of distinct task IDs per America/Los_Angeles date. Migration copies prior schema-2 claims and the old T004 exception into participation history. Legacy daily_claims/daily_exceptions are retained unchanged as provenance and are no longer scheduling gates. New begin/resume/finish operations record participation without duplicating task IDs. Historical exception evidence remains hash-checked. Task states, attempts, receipts and owner reviews are preserved. Current October 23 history is [T003,T004], active=null, T005 next and planning_only=false. No T005 RTL has been implemented by this policy change.
+
+Evidence/workflow-policy-2026-10-23-checks.json stores exact argv/stdout/stderr/exits from eight checks, all PASS/exit 0: python -B scripts/test_harness.py (35 tests, 16.056 s); python -B scripts/test_arch_spec.py (16 tests, 0.015 s); python -B scripts/check_arch_spec.py; harness validate/status/next/daily --supervised; git diff --check. New controller behavior covers several same-day tasks, active/failed work recovery, commit before the next begin, schema migration, no duplicate history, review and completion holds, missing checks, unchanged three-attempt recovery and legacy provenance integrity. Total 51 Python tests for this separate workflow change; these are not additional RTL simulations. No EDA rerun was needed because no RTL, DV driver or EDA configuration changed. Prior T004 acceptance remains in its original receipts.
+
+## Next session and boundary
+
+After committing this policy change, T005 may begin immediately on October 23 or any later attended date; no daily exception or new approval is needed. Run daily --supervised, inspect Git/state, then begin T005. Implement ALU and independent signed/unsigned, shift-mask and wraparound tests, register lint/test-alu, finish with evidence/daily/T005.md, append to the actual date's same two reports and commit. Then continue to the next dependency-ready task while the attended session has budget, stopping at actual gates rather than a calendar cap. Keep older entries as history and follow this newer revision.
+
+Runtime remains danger-full-access/never and is not a filesystem sandbox. Unattended automation stays disabled until actual controls and explicit authorization exist. No new download/install, global configuration, push, scheduling, destructive Git, source deletion or FPGA programming authorization is implied. Original kit/XPR/constraints/approved architecture and existing RTL remain unchanged. The local delivery SHA and preservation audit follow below.

@@ -1,16 +1,23 @@
-# Bounded daily engineering loop
+# Sequential attended engineering loop
 
 The harness selects and verifies work; Codex performs the engineering in an
 attended session. Nothing here installs or invokes a scheduler or a model loop.
 
-The owner explicitly authorized a single extra task, T004 on 2026-10-23.
-Its recorded answer is `evidence/owner_reviews/T004-day-exception-2026-10-23.json`.
-Only the initial `begin T004 --owner-day-exception PATH` consumes this record;
-resume uses ordinary `begin T004`. The original T003 daily claim is retained,
-with a separate hash-bound `daily_exceptions` entry. The controller accepts only
-this exact date/task/question binding, rejects reuse and preserves all other
-dependency, review, clean-baseline and three-attempt checks. This explicit
-session exception does not change the default daily rule or provide authentication.
+On 2026-10-23 the owner removed the daily task quota and stop-after-success rule.
+An attended session may complete multiple tasks sequentially. Keep exactly one
+active task, verify/report/commit it, then continue with the first dependency-ready
+task without waiting for a new calendar day or asking for a daily exception.
+Stop for owner review/authorization, a genuine blocker, exhausted verification
+budget, project completion, the owner's stop request or session budget limits.
+Provenance: `evidence/owner_reviews/workflow-policy-2026-10-23.json`.
+
+The earlier T004 exception and original claims remain historical evidence in
+`daily_exceptions`/`daily_claims`. They are no longer quota gates. State schema 3
+adds `daily_tasks`, an ordered list of distinct tasks worked per date. Older
+schema-2 state can be read; the next state save copies its claims/exceptions into
+that history without changing them. The retired `--owner-day-exception` begin
+flag is no longer needed or accepted. All task dependencies, review gates,
+clean-baseline protection and three-attempt checks remain enforced.
 
 ## Start and recover
 
@@ -29,7 +36,8 @@ backlog, boundary document and persistent state. The daily command loads and
 prints the handoff; an agent must actually read it before touching RTL/testbenches.
 Inspect all existing diffs. New tasks require a clean Git baseline. An interrupted
 active task is resumed with `begin SAME_ID`, including on a later day; do not
-discard its changes or skip to another task. Resume claims that day's single quota.
+discard its changes or skip to another task. Resume adds that task to today's
+participation list once; repeated resumes do not create duplicate entries.
 
 If no active task exists, begin only the first dependency-ready task:
 
@@ -39,10 +47,11 @@ python -B scripts/harness.py begin T002
 
 Priority then ID determines selection. Dependencies must be completed. A required
 blocked/review task conservatively holds other work. Disabled optional tasks do
-not block the mandatory project. The daily quota uses America/Los_Angeles, never
-the host's implicit timezone. No production date override exists.
+not block the mandatory project. Report/history dates use America/Los_Angeles,
+never the host's implicit timezone. There is no calendar task cap and no
+production date override.
 
-## Implement, verify, report, stop
+## Implement, verify, report, commit, continue
 
 Implement only the selected task and its directly required tests/documentation.
 Preserve independent oracles, assertions, seeds and requirements. Never lower a
@@ -78,9 +87,14 @@ python -B scripts/harness.py block T002 --reason 'Concrete diagnosis and require
 ```
 
 After gates, append final results to the same two reports, review/stage only task
-files, run `git diff --cached --check`, make a local commit and stop. Record the
+files, run `git diff --cached --check` and make a local commit. Record the
 commit identifier in the handoff. A post-commit report update may require a small
-documentation commit; do not amend/reset user history or start another task.
+documentation commit; do not amend/reset user history. Inspect status/next and
+continue with the next ready task from a clean Git baseline. Do not start work
+across a pending review/execution gate or leave failed active work behind.
+Append each task's outcome to the same two dated reports; do not create another
+pair for each task. The daily entrypoint still prepares a single attended session,
+not an autonomous process that runs itself in the background.
 
 ## State and approvals
 
@@ -104,7 +118,7 @@ python -B scripts/harness.py enable OPTIONAL_ID --confirm-owner-review
 Approve closes a verified review gate. Authorize grants a task-specific execution
 gate before significant Vivado/ASIC operations or physical programming. Reopen
 requires diagnosis, resets the attempt budget and preserves the current daily
-claim and old receipts. It must not be used to loop around daily limits. These
+history and old receipts. It must not be used to evade verification limits. These
 flags are process rules; human review is still essential for semantic correctness.
 
 The final T040 owner gate depends directly on EVERY mandatory task. The project
@@ -129,7 +143,9 @@ No host scheduler or Codex automation has been installed or enabled. This sessio
 has unrestricted permissions; unattended operation is not authorized until actual
 sandbox and approval controls are configured. After that, the owner must choose
 working days/time/timezone and explicitly authorize scheduling. A future adapter
-must run exactly one task in this persistent project, preserve state across runs,
-respect review/terminal holds, produce both reports even when blocked, and stop.
+must use this persistent project, preserve state across runs, execute one active
+task at a time, respect review/terminal holds and explicit run budgets, and produce
+both reports even when blocked. Removing the calendar quota does not authorize
+such an adapter or unlimited unattended execution.
 Do not assume availability of a particular Codex scheduling feature or launch a
 full-access CLI to bypass restrictions. Use the manual workflow until verified.

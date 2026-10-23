@@ -1,10 +1,8 @@
-# Current bootstrap instruction
+# Existing-project entrypoint
 
-The active project is C:/RV32I_Edge_SoC. Bootstrap T001 is already reserved; read
-root AGENTS.md and the latest technical handoff. Do not bootstrap the original
-kit again, create a second project, or start a second task today. The old prompt
-below is retained only for background.
-
-# Paste into Codex once
-
-You are starting the RV32I Edge SoC portfolio project in this repository. Read AGENTS.md and all listed project contract documents. FIRST run `python3 scripts/harness.py validate` and `status`, inspect docs/BACKLOG.json and git status. Summarize the frozen scope, major risks and tool availability without changing architecture. Then implement exactly ONE eligible task using `prompts/DAILY_CODEX_PROMPT.md`. Follow single-task daily budget, use a self-checking test, record evidence, and stop. If prerequisites/tools/decisions block the task, report BLOCKED with concrete steps; do not bypass any gate, assert passing tests not run, or implement future tasks.
+Bootstrap T001 is complete. Continue in C:/RV32I_Edge_SoC using root AGENTS.md,
+the latest technical handoff and prompts/DAILY_RUN.md. Do not create a second
+Vivado project or bootstrap the original kit again. The owner removed the
+one-task-per-day cap on 2026-10-23; verify/report/commit each task before the
+next, with one active task and all dependency/review/attempt gates intact.
+Use attended sessions only under the current unrestricted runtime.

@@ -8,7 +8,7 @@ in evidence/daily/T003.md. T004 decoder/package also passed on October 23 under
 an explicit one-time owner exception: all 40 mnemonics, 287,618 vector checks
 across two seeds, independent oracle tests and real decoder synthesis lint.
 See [decoder interface and reproduction](docs/DECODER.md) and evidence/daily/T004.md.
-T005 ALU is the next eligible day's task. Complete CPU execution, FPGA
+T005 ALU is the next task and may start today. Complete CPU execution, FPGA
 implementation, hardware validation and ASIC results remain future milestones.
 
 The existing `RV32I_Edge_SoC.xpr` is the active Vivado project. Its configured part
@@ -27,7 +27,9 @@ python -B scripts/harness.py daily --supervised
 ```
 
 The last command prepares an attended Codex session. Read the returned handoff
-and `prompts/DAILY_RUN.md`, then perform exactly one eligible task. It does not
+and `prompts/DAILY_RUN.md`, then work through ready tasks sequentially. The owner
+removed the one-task-per-day cap on October 23. Verify, report and commit each
+task before the next; keep one active task and honor all review gates. It does not
 start a model, run an infinite loop, install a scheduler, or run RTL by itself.
 `scripts/daily.ps1` is a PowerShell convenience entrypoint with the same purpose.
 Python is the supported native Windows interface; Make targets are optional

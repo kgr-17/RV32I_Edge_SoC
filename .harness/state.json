@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "project_status": "in_progress",
   "active": null,
   "daily_claims": {
@@ -83,5 +83,20 @@
       "evidence": "evidence/owner_reviews/T004-day-exception-2026-10-23.json",
       "sha256": "a26dd6eb921bf9dfdb1b45cc7b492090b3a8de01972887cec4afa564fbab49bb"
     }
+  },
+  "daily_tasks": {
+    "2026-10-14": [
+      "T001"
+    ],
+    "2026-10-16": [
+      "T002"
+    ],
+    "2026-10-17": [
+      "T003"
+    ],
+    "2026-10-23": [
+      "T003",
+      "T004"
+    ]
   }
 }

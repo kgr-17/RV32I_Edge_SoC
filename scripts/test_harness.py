@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Behavioral controller tests. Fixtures and disposable Git repos stay project-local."""
 import contextlib
+import hashlib
 import io
 import json
 from pathlib import Path
@@ -147,11 +148,44 @@ class HarnessTests(unittest.TestCase):
         self.finish()
         self.assertEqual(h.load()[1]['attempts']['A'], 2)
 
-    def test_daily_limit_and_no_duplicate_work(self):
+    def test_multiple_tasks_same_day_preserve_order_and_no_duplicate_work(self):
         self.complete_a()
-        with self.assertRaises(h.Stop):
+        h.begin('B')
+        self.assertEqual(h.begin('B')['action'], 'RESUME')
+        self.finish('B')
+        self.assertEqual(h.load()[1]['daily_tasks']['2026-10-14'], ['A', 'B'])
+        self.assertEqual(h.load()[1]['attempts'], {'A': 1, 'B': 1})
+        self.assertEqual(len(list((self.root / 'docs/daily').glob('2026-10-14_*.md'))), 2)
+        self.assertEqual(self.finish('B')['action'], 'ALREADY_VERIFIED')
+
+    def test_next_task_requires_previous_task_commit(self):
+        h.begin('A')
+        self.finish()
+        with self.assertRaisesRegex(h.Stop, 'clean Git baseline'):
             h.begin('B')
-        self.assertEqual(h.load()[1]['daily_claims']['2026-10-14'], 'A')
+        self.commit()
+        self.assertEqual(h.begin('B')['action'], 'BEGIN')
+
+    def test_active_task_cannot_be_skipped_on_same_date(self):
+        h.begin('A')
+        with self.assertRaisesRegex(h.Stop, 'Recover active task A'):
+            h.begin('B')
+
+    def test_three_tasks_can_complete_same_day_with_reviews_and_commits(self):
+        self.complete_a()
+        h.begin('B')
+        self.finish('B')
+        self.assertEqual(h.candidates(*h.load()), [])
+        with self.assertRaises(h.Stop):
+            h.begin('F')
+        h.owner_action('approve', 'B', True)  # Fixture owner, never production approval.
+        self.commit()
+        h.begin('F')
+        self.finish('F')
+        self.assertEqual(h.load()[1]['daily_tasks']['2026-10-14'], ['A', 'B', 'F'])
+        self.assertEqual(h.load()[1]['task_states']['F'], 'awaiting_review')
+        h.owner_action('approve', 'F', True)  # Fixture final review.
+        self.assertEqual(h.load()[1]['project_status'], 'completed')
 
     def test_idempotent_begin_and_finish(self):
         h.begin('A')
@@ -162,7 +196,7 @@ class HarnessTests(unittest.TestCase):
         self.assertEqual(before, (self.root / '.harness/state.json').read_bytes())
 
     def prepare_day_exception(self):
-        # Use the exact owner-authorized task/date, never a generic quota bypass.
+        # Preserve the actual old one-time exception as immutable provenance.
         self.date.return_value = '2026-10-23'
         rename = {'A': 'T003', 'B': 'T004'}
         for task in self.tasks:
@@ -178,22 +212,26 @@ class HarnessTests(unittest.TestCase):
             'schema_version': 1, 'date': '2026-10-23', 'task': 'T004', 'previous_task': 'T003',
             'owner_answer': 'Yes—start T004 today',
             'question_item_id': '["request_user_input_async","call_db6019c10ff8475da53c07dfb0dd2c37",0]'})
+        self.state['daily_exceptions'] = {'2026-10-23': {
+            'task': 'T004', 'evidence': self.evidence,
+            'sha256': hashlib.sha256((self.root / self.evidence).read_bytes()).hexdigest()}}
+        h.atomic(self.root / '.harness/state.json', self.state)
         h.atomic_text(self.root / 'evidence/daily/T004.md', 'Explicit exception acceptance evidence.\n' * 8)
         self.next_day('2026-10-23')
 
-    def test_exact_owner_exception_preserves_claim_through_resume_and_finish(self):
+    def test_legacy_claim_and_exception_preserved_through_resume_and_finish(self):
         self.prepare_day_exception()
-        h.begin('T004', self.evidence)
+        h.begin('T004')
         self.assertEqual(h.begin('T004')['action'], 'RESUME')
         self.finish('T004')
         state = h.load()[1]
         self.assertEqual(state['daily_claims']['2026-10-23'], 'T003')
         self.assertEqual(state['daily_exceptions']['2026-10-23']['task'], 'T004')
         self.assertEqual(state['attempts']['T004'], 1)
-        with self.assertRaises(h.Stop):
-            h.begin('F', self.evidence)
+        self.assertEqual(state['schema_version'], 3)
+        self.assertEqual(state['daily_tasks']['2026-10-23'], ['T003', 'T004'])
 
-    def test_owner_exception_rejects_wrong_binding_and_missing_evidence(self):
+    def test_legacy_exception_wrong_binding_and_missing_evidence_rejected(self):
         self.prepare_day_exception()
         original = h.read(self.root / self.evidence)
         for key, value in (('date', '2026-10-24'), ('task', 'F'), ('previous_task', 'F'),
@@ -202,36 +240,58 @@ class HarnessTests(unittest.TestCase):
                 h.atomic(self.root / self.evidence, {**original, key: value})
                 self.commit()
                 with self.assertRaises(h.Stop):
-                    h.begin('T004', self.evidence)
+                    h.load()
+        h.atomic(self.root / self.evidence, original)
+        (self.root / self.evidence).unlink()
         with self.assertRaises(OSError):
-            h.begin('T004', 'evidence/missing.json')
-        self.assertIsNone(h.load()[1]['active'])
+            h.load()
 
     def test_exception_evidence_tampering_detected(self):
         self.prepare_day_exception()
-        h.begin('T004', self.evidence)
+        h.begin('T004')
         value = h.read(self.root / self.evidence)
         h.atomic(self.root / self.evidence, {**value, 'extra': 'changed'})
         with self.assertRaises(h.Stop):
             h.load()
 
-    def test_exception_does_not_extend_to_next_day(self):
+    def test_legacy_exception_does_not_restrict_later_days(self):
         self.prepare_day_exception()
         self.next_day('2026-10-24')
-        with self.assertRaises(h.Stop):
-            h.begin('T004', self.evidence)
         h.begin('T004')
         self.finish('T004')
-        self.assertEqual(h.load()[1]['daily_claims']['2026-10-24'], 'T004')
+        state = h.load()[1]
+        self.assertEqual(state['daily_tasks']['2026-10-24'], ['T004'])
+        self.assertEqual(state['daily_claims'], {'2026-10-23': 'T003'})
 
-    def test_resume_across_day_claims_new_day(self):
+    def test_resume_across_day_records_history_without_blocking_next_task(self):
         h.begin('A')
         self.next_day()
         h.begin('A')
         self.finish()
-        with self.assertRaises(h.Stop):
-            h.begin('B')
-        self.assertEqual(h.load()[1]['daily_claims']['2026-10-15'], 'A')
+        self.commit()
+        h.begin('B')
+        state = h.load()[1]
+        self.assertEqual(state['daily_tasks']['2026-10-14'], ['A'])
+        self.assertEqual(state['daily_tasks']['2026-10-15'], ['A', 'B'])
+
+    def test_invalid_history_and_lost_legacy_claim_rejected(self):
+        self.prepare_day_exception()
+        h.begin('T004')
+        original = h.read(self.root / '.harness/state.json')
+        for value in ({'2026-10-23': ['T004']}, {'2026-10-23': ['T003', 'T004', 'T004']},
+                      {'2026-10-23': ['T003', 'T004', 'UNKNOWN']},
+                      {'2026-10-23': 'T003'}, {'bad-date': ['T003']}):
+            with self.subTest(value=value):
+                h.atomic(self.root / '.harness/state.json', {**original, 'daily_tasks': value})
+                with self.assertRaises((h.Stop, ValueError)):
+                    h.load()
+
+    def test_readiness_not_blocked_by_legacy_date_claim(self):
+        self.prepare_day_exception()
+        result = h.daily(True)
+        self.assertIsNone(result['daily_task_limit'])
+        self.assertEqual(result['tasks_today'], ['T003', 'T004'])
+        self.assertEqual(result['next']['id'], 'T004')
 
     def test_owner_review_gate(self):
         self.complete_a()
