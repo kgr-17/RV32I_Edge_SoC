@@ -192,6 +192,12 @@
         "-B",
         "scripts/verify.py",
         "test-memory"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/verify.py",
+        "test-core"
       ]
     ]
   },
@@ -280,6 +286,40 @@
         "{python}",
         "-B",
         "dv/integration/test_memory.py"
+      ]
+    ]
+  },
+  "test-core": {
+    "inputs": [
+      "rtl/core/rv32_pkg.sv",
+      "rtl/core/decoder.sv",
+      "rtl/core/alu.sv",
+      "rtl/core/regfile.sv",
+      "rtl/core/branch_unit.sv",
+      "rtl/core/lsu.sv",
+      "rtl/core/reference_core.sv",
+      "config/rtl_checks.json",
+      "scripts/unit_checks.py",
+      "scripts/test_unit_checks.py",
+      "dv/integration/test_core_smoke.py",
+      "dv/integration/tb_reference_core.sv"
+    ],
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "scripts/test_unit_checks.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "dv/integration/test_core_smoke.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/unit_checks.py",
+        "core"
       ]
     ]
   }

@@ -11,11 +11,12 @@ See [decoder interface and reproduction](docs/DECODER.md) and evidence/daily/T00
 T005 ALU passed on October 25 with 234,804 vector checks. T006 register-file
 automation passed on attempt 2 and was explicitly approved by the owner:
 [interface and review checklist](docs/REGFILE.md). Expanded unit regression passed
-887,108 vectors across fixture, decoder, ALU, register file, branch and LSU. T007 branch and
-jump unit passed 253,936 vectors; T008 load/store formatting passed 89,744.
+887,108 vectors across fixture, decoder, ALU, register file, branch and LSU.
+T007 branch/jump unit passed 253,936 vectors; T008 load/store formatting passed 89,744.
 T009 memory behavior models passed 49,276 seeded edges and 11 tests;
-T010 nonpipelined reference CPU execution is next. Complete CPU execution, FPGA
-implementation, hardware validation and ASIC results remain future milestones.
+T010 nonpipelined reference CPU passed 324 directed retirements in 22 scenarios.
+T011 independent ISA/retirement comparison is next. Pipeline execution, full
+ISA/EEI closure, FPGA implementation, hardware and ASIC results remain future milestones.
 
 The existing `RV32I_Edge_SoC.xpr` is the active Vivado project. Its configured part
 is `xc7a35tcpg236-1`. The owner confirmed a Digilent Basys 3. Top module, RTL and

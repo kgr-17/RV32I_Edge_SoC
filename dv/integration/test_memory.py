@@ -411,7 +411,7 @@ def main():
                 'failure_details': [(str(test), detail) for test, detail in result.failures + result.errors],
                 'stress': STRESS_RESULTS}
     path = ROOT / 'evidence' / 'toolchain_runs' / ('memory-' + stamp + '.json')
-    path.write_text(json.dumps(evidence, indent=2) + '\n', encoding='utf-8')
+    path.write_bytes((json.dumps(evidence, indent=2) + '\n').encode('utf-8'))
     print(json.dumps({'status': evidence['status'], 'evidence': str(path.relative_to(ROOT)),
                       'tests': result.testsRun, 'stress_edges': sum(row['edges'] for row in STRESS_RESULTS)}))
     return evidence['exit_code']

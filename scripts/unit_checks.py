@@ -40,6 +40,16 @@ def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def corrupt_expected(content, full_program=False):
+    lines = content.splitlines()
+    if not lines:
+        raise ValueError('Cannot corrupt empty test input')
+    first = lines[0].split()
+    first[-1] = '%x' % (int(first[-1], 16) ^ 1)
+    lines[0] = ' '.join(first)
+    return '\n'.join(lines if full_program else lines[:1]) + '\n'
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('unit')
@@ -95,14 +105,14 @@ def main():
                 'waveform': wave.relative_to(harness.ROOT).as_posix(), 'waveform_sha256': digest(wave),
                 'coverage': coverage})
             checks.save()
-        first = content.splitlines()[0].split()
-        first[-1] = '%x' % (int(first[-1], 16) ^ 1)
         bad = cwd / 'corrupt_expected.txt'
-        harness.atomic_text(bad, ' '.join(first) + '\n')
+        bad_content = corrupt_expected(content, getattr(reference, 'NEGATIVE_FULL_PROGRAM', False))
+        harness.atomic_text(bad, bad_content)
+        bad_count = len(bad_content.splitlines())
         seed = spec['seeds'][-1]
-        marker = '%s_SIM_PASS seed=%d checked=1' % (prefix, seed)
-        record, _ = simulate(bad, 1, seed, 'corrupt_expected')
-        checks.require(prefix + '_MISMATCH' in record['stdout'] + record['stderr'] and
+        marker = '%s_SIM_PASS seed=%d checked=%d' % (prefix, seed, bad_count)
+        record, _ = simulate(bad, bad_count, seed, 'corrupt_expected')
+        checks.require(getattr(reference, 'NEGATIVE_DIAGNOSTIC', prefix + '_MISMATCH') in record['stdout'] + record['stderr'] and
                        not rtl_checks.successful(record, marker), unit + ' rejects corrupt expected bit', record)
         empty = cwd / 'empty_vectors.txt'
         harness.atomic_text(empty, '')

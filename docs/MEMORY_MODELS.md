@@ -68,3 +68,8 @@ No model behavior, assertion, seed or coverage requirement changed. Both
 attempt receipts and the exact first inputs ZIP are preserved. RTL lint passed
 19 checks/11 commands; both Git whitespace gates passed after restoring LF
 registry bytes. See evidence/daily/T009.md for receipts and replay details.
+
+T010 integration follow-up changes only receipt serialization to explicit UTF-8
+bytes with LF, avoiding Windows text translation. The full regression executes
+the unchanged model assertions/seeds again and checks the new receipt format;
+T009's original raw/normalized receipts and tested-source snapshots remain intact.

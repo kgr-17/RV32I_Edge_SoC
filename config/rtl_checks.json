@@ -107,6 +107,38 @@
         "/tb_lsu/be",
         "/tb_lsu/bad"
       ]
+    },
+    "core": {
+      "task": "T010",
+      "sources": [
+        "rtl/core/rv32_pkg.sv",
+        "rtl/core/decoder.sv",
+        "rtl/core/alu.sv",
+        "rtl/core/regfile.sv",
+        "rtl/core/branch_unit.sv",
+        "rtl/core/lsu.sv",
+        "rtl/core/reference_core.sv"
+      ],
+      "testbench": "dv/integration/tb_reference_core.sv",
+      "test_top": "tb_reference_core",
+      "reference": "dv/integration/test_core_smoke.py",
+      "seeds": [
+        1,
+        20261026
+      ],
+      "waves": [
+        "/tb_reference_core/clk_i",
+        "/tb_reference_core/rst_i",
+        "/tb_reference_core/imem_req_valid_o",
+        "/tb_reference_core/imem_req_addr_o",
+        "/tb_reference_core/dmem_req_valid_o",
+        "/tb_reference_core/dmem_req_addr_o",
+        "/tb_reference_core/retire_valid_o",
+        "/tb_reference_core/retire_pc_o",
+        "/tb_reference_core/retire_rd_wdata_o",
+        "/tb_reference_core/fault_valid_o",
+        "/tb_reference_core/fault_code_o"
+      ]
     }
   },
   "lint_designs": [
@@ -150,6 +182,20 @@
         "rtl/core/rv32_pkg.sv",
         "rtl/core/lsu.sv",
         "dv/lint/lsu_lint_top.sv"
+      ]
+    },
+    {
+      "name": "rv32_reference_core",
+      "top": "reference_core_lint_top",
+      "sources": [
+        "rtl/core/rv32_pkg.sv",
+        "rtl/core/decoder.sv",
+        "rtl/core/alu.sv",
+        "rtl/core/regfile.sv",
+        "rtl/core/branch_unit.sv",
+        "rtl/core/lsu.sv",
+        "rtl/core/reference_core.sv",
+        "dv/lint/reference_core_lint_top.sv"
       ]
     }
   ],

@@ -12,6 +12,14 @@ class UnitPolicyTests(unittest.TestCase):
     def test_actual_spec(self):
         self.assertEqual(u.unit_spec(self.manifest, 'alu')['task'], 'T005')
 
+    def test_corrupt_expected_keeps_program_for_core_and_row_for_units(self):
+        content = '00 00000000\n01 12345678\n04 00000000\n'
+        self.assertEqual(u.corrupt_expected(content), '00 1\n')
+        self.assertEqual(u.corrupt_expected(content, True), '00 1\n01 12345678\n04 00000000\n')
+
+    def test_corrupt_empty_input_rejected(self):
+        with self.assertRaises(ValueError): u.corrupt_expected('')
+
     def test_missing_unit_not_run(self):
         with self.assertRaises(u.rtl_checks.NotRun): u.unit_spec(self.manifest, 'absent')
 
