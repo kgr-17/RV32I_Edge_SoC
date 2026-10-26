@@ -174,6 +174,12 @@
         "-B",
         "scripts/verify.py",
         "test-regfile"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/verify.py",
+        "test-branch"
       ]
     ]
   },
@@ -200,6 +206,30 @@
         "-B",
         "scripts/unit_checks.py",
         "regfile"
+      ]
+    ]
+  },
+  "test-branch": {
+    "inputs": [
+      "config/rtl_checks.json",
+      ".harness/toolchain.json",
+      "scripts/unit_checks.py",
+      "rtl/core/rv32_pkg.sv",
+      "rtl/core/branch_unit.sv",
+      "dv/unit/tb_branch.sv",
+      "dv/unit/test_branch.py"
+    ],
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "dv/unit/test_branch.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/unit_checks.py",
+        "branch"
       ]
     ]
   }

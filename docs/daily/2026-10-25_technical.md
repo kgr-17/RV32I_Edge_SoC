@@ -124,3 +124,33 @@ Owner action is review docs/REGFILE.md and evidence/daily/T006.md, then the owne
 The owner answered ‘Reviewed: approve T006 and authorize the command’ to question call_ab2669f837ed4a1ebe438fcf87a79810, after the concrete delivery 4f67b3c/handoff 9babc92. This is an explicit exception to the agent's prohibition for this exact command only: python -B scripts/harness.py approve T006 --confirm-owner-review. Provenance is evidence/owner_reviews/T006-2026-10-25.json; execution result is evidence/owner_reviews/T006-2026-10-25-command.json. Applied the authorized owner action, which promotes T006 from awaiting_review to completed and records the reviewed final receipt; it does not rerun tests, reset attempts or change evidence.
 
 T006's automated acceptance remains attempt 2; first failure and all prior logs stay intact. The project now has 6/41 mandatory completed, no active task, and T007 is first dependency-ready. Review and commit this approval state/provenance/report checkpoint from clean baseline 9babc92, then begin T007. Implement only branch comparisons and target math against the unchanged reviewed architecture, including JALR bit-zero clearing followed by target alignment and not-taken branch behavior. No new architecture/ISA/clock/reset proposal, blanket approval, installation or hardware authorization is implied. Continue sequential attended tasks within the session budget, respecting later owner gates.
+
+
+---
+
+<!-- entry:26477f14f8dd4a5f9d7fa38606589334b80c610ea48144b7f2b817f3f7b88cca -->
+
+# T007 implementation prepared after committed owner review
+
+T006's explicit owner approval/provenance was applied and committed as 4339813, then T007 began from clean Git. Added rtl/core/branch_unit.sv and dv/unit/test_branch.py/tb_branch.sv, docs/BRANCH.md and dv/lint/branch_lint_top.sv. Updated only unit manifest/registry and controller state/backlog; existing package/decoder/ALU/RF/architecture/XPR/constraints are unchanged.
+
+The combinational interface accepts op_t, PC, rs1, rs2, immediate and returns target[31:0], taken, misaligned, supported. All six predicates, PC-relative branches/JAL, rs1-relative JALR, modulo wrapping and bit-zero clearing-before-alignment are implemented. Untaken branches expose zero target/bad flag; taken bad targets retain condition/target for caller fault handling. Caller must gate bad redirects and construct precise age-ordered faults; this unit does not halt or retire.
+
+Independent tests use predicate tables, integer modulo/division and original decoded inputs. All 12-bit JALR offsets, signed small domains, full-width edges, both branch outcomes/alignment bins, JAL boundaries, wraparound, irrelevant operands and all unsupported IDs are replayable with seeds 1/20261025. Six oracle tests and actual wrong-answer/empty-file simulations are required. The synthesis probe independently captures operand words, reducing physical probe ports while the direct combinational DUT is fully simulated. No new clock domain or architectural state.
+
+Run finish T007 --evidence evidence/daily/T007.md to reserve attempt 1 and execute lint/test-branch plus whitespace checks. Outcome pending. Append final results, preservation and commit here; then continue to the next ready task within the attended budget. Current unrestricted permissions do not authorize unattended operation, downloads/installs, global changes, pushes or FPGA programming. Formal, full CPU, timing and physical evidence remain separate.
+
+
+---
+
+<!-- entry:2398395b06cedf7819c5ba2bbbb3216f25eb5827ea1197b7b4a7603e02a5f69e -->
+
+# T007 completed on first acceptance attempt
+
+All four outer commands passed, exit 0. Receipt evidence/runs/T007/attempt-1-20261026T042652163468Z.json. Lint receipt evidence/toolchain_runs/lint-20261026T042652619549Z.json has 17 checks/10 commands: branch synthesis probe 25.000 s, warning/error/latch/black-box free with selected structural checks passing; retained decoder/ALU/RF/fixture syntheses pass and the intentional latch remains rejected. No test weakening, retry or scoped DUT bug.
+
+Unit receipt evidence/toolchain_runs/branch-20261026T042926105469Z.json has 17 checks/10 commands. Seeds 1/20261025 each compared 126,968 complete target/taken/misaligned/supported vectors, total 253,936; times 3.078/3.016 s. Per seed: 6,144 exhaustive signed small-domain, 46,080 edge-cross, 65,536 JALR full-immediate/base pairs, 120 JAL walking/boundary, 8,192 random and 896 unsupported cases. Every one of 39 declared operation/condition/alignment/wrap/JALR-odd bins hit. Six anchored oracle tests and both actual wrong-answer/empty-vector rejection checks pass. Source hashes stayed fixed; exact argv/status/output/exits and source/vector/WDB/Tcl/argument hashes are retained. Pins unchanged: Python 3.9.13, Git 2.48.1.windows.1, tzdata 2026.2 and Vivado/XSim 2025.2/SW build 6299465.
+
+Files: new rtl/core/branch_unit.sv, dv/lint/branch_lint_top.sv, dv/unit/test_branch.py and tb_branch.sv, docs/BRANCH.md, evidence/daily/T007.md and receipts/audit/report entries; updated manifest/registry/state/backlog, README and today's same two reports. Updated REGFILE.md and appended T006 evidence to reflect the already-authorized approval commit 4339813; older review entries remain historical. No existing production RTL/architecture/XPR/constraints/kit changed. Completion audit is evidence/t007-complete-2026-10-25.json. Branch is routed into regress, but the combined route after this addition has not yet been rerun; the earlier 543,428-vector review-boundary regression covers only its recorded four units.
+
+Project has 7/41 mandatory completed and no active task. Review/diff-check/commit T007, then begin T008 load/store byte formatting in the same attended session; record the T007 SHA in the next entry. Implement all load/store widths, little-endian byte strobes for reads/writes, extension and misalignment gating with independent byte-array/neighbor-preservation tests. Keep original-byte address ownership in the caller, no split/misaligned requests, no early memory effect. No architecture/permission change. Formal, complete CPU/pipeline/fault ordering, routed timing, hardware and ASIC remain NOT RUN. Continue sequential ready work within attended budget, no calendar hold.

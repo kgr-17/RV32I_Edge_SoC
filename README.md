@@ -9,10 +9,10 @@ an explicit one-time owner exception: all 40 mnemonics, 287,618 vector checks
 across two seeds, independent oracle tests and real decoder synthesis lint.
 See [decoder interface and reproduction](docs/DECODER.md) and evidence/daily/T004.md.
 T005 ALU passed on October 25 with 234,804 vector checks. T006 register-file
-automation passed on attempt 2 and is **awaiting owner review**:
+automation passed on attempt 2 and was explicitly approved by the owner:
 [interface and review checklist](docs/REGFILE.md). Full unit regression passed
-543,428 vectors across fixture, decoder, ALU and register file. T007 waits for
-T006 review. Complete CPU execution, FPGA
+543,428 vectors across fixture, decoder, ALU and register file. T007 branch and
+jump unit passed 253,936 vectors; T008 load/store formatting is next. Complete CPU execution, FPGA
 implementation, hardware validation and ASIC results remain future milestones.
 
 The existing `RV32I_Edge_SoC.xpr` is the active Vivado project. Its configured part

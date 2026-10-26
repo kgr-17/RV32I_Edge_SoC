@@ -59,6 +59,30 @@
         "/tb_regfile/data_a",
         "/tb_regfile/data_b"
       ]
+    },
+    "branch": {
+      "task": "T007",
+      "sources": [
+        "rtl/core/rv32_pkg.sv",
+        "rtl/core/branch_unit.sv"
+      ],
+      "testbench": "dv/unit/tb_branch.sv",
+      "test_top": "tb_branch",
+      "reference": "dv/unit/test_branch.py",
+      "seeds": [
+        1,
+        20261025
+      ],
+      "waves": [
+        "/tb_branch/op",
+        "/tb_branch/pc",
+        "/tb_branch/rs1",
+        "/tb_branch/rs2",
+        "/tb_branch/imm",
+        "/tb_branch/target",
+        "/tb_branch/taken",
+        "/tb_branch/bad"
+      ]
     }
   },
   "lint_designs": [
@@ -84,6 +108,15 @@
       "sources": [
         "rtl/core/regfile.sv",
         "dv/lint/regfile_lint_top.sv"
+      ]
+    },
+    {
+      "name": "rv32_branch",
+      "top": "branch_lint_top",
+      "sources": [
+        "rtl/core/rv32_pkg.sv",
+        "rtl/core/branch_unit.sv",
+        "dv/lint/branch_lint_top.sv"
       ]
     }
   ],

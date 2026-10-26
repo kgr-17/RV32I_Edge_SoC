@@ -1,7 +1,9 @@
 # T006 register file and owner review
 
-Status: automated acceptance PASS on attempt 2; awaiting owner review.
-No agent may self-approve this gate or begin T007 before review completes.
+Status: automated acceptance PASS on attempt 2; owner reviewed and approved
+on 2026-10-25. Explicit command authorization/provenance is recorded in
+evidence/owner_reviews/T006-2026-10-25.json and approval commit 4339813.
+This completed review permits T007; it does not authorize future self-approval.
 
 The module `regfile` implements the approved v0.2 register interface internally:
 

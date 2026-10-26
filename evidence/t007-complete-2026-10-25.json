@@ -1,0 +1,35 @@
+{
+  "task": "T007",
+  "date": "2026-10-25",
+  "baseline_commit": "4339813e37efe16f46b0313fef7f8738fde3ad90",
+  "receipt": "evidence/runs/T007/attempt-1-20261026T042652163468Z.json",
+  "status": "completed",
+  "attempt": 1,
+  "historical_files_unchanged": 146,
+  "prefixes_preserved": [
+    "docs/daily/2026-10-25_technical.md",
+    "docs/daily/2026-10-25_zh-CN.md",
+    "evidence/daily/T006.md"
+  ],
+  "source_sha256": {
+    "rtl/core/branch_unit.sv": "df42e9881113c91b3c5a07af32d7116aa673ef39d24f728dafc4e88fde41f63e",
+    "dv/lint/branch_lint_top.sv": "00d450a523d3511e22c93d52d192f4f5feb495225ad779ba9f838636ae94b08a",
+    "dv/unit/test_branch.py": "d7448985b546f81cc946e01ab098da8b6b846c17826aa451203e7c52864d927e",
+    "dv/unit/tb_branch.sv": "75836127fcb75b6962848f49a79aa96b0d78fb42dc745dd3d88ff02bc0f4c963",
+    "config/rtl_checks.json": "be7c9e3962275ef63d754faead2db691dd39e3df11d3ae8201c73735b0fb4cc9",
+    ".harness/checks.json": "96b34cec1bf53ea9592a797f1453b2c3830d166d1b28f9cfb1fb83ddcf145401"
+  },
+  "verified_artifacts": {
+    "build/units/branch-20261026T042926105469Z/sim_branch/vectors_1.txt": "1a9ffc0e4db3e1cb1458fc907bda01ea9498816c38040ae241a010b35ac261ec",
+    "build/units/branch-20261026T042926105469Z/sim_branch/seed_1.wdb": "625175bc5b40e7835ee5f493b53c56679cacbb0d4e044892c57868bf85a09593",
+    "build/units/branch-20261026T042926105469Z/sim_branch/vectors_20261025.txt": "2ee139dc258a7cb000899cc7c9f282fcf466729ab23312bc7e11c5dfd8728f3d",
+    "build/units/branch-20261026T042926105469Z/sim_branch/seed_20261025.wdb": "94f85a69452649d619d25c205a9eb7dab6abde040c1791b36ba371bb52cfd9fc",
+    "build\\units\\branch-20261026T042926105469Z\\sim_branch\\seed_1.args": "644db0587496d64768dd53e5f0904673f61f02bbd291d95051424072d6f96cf3",
+    "build\\units\\branch-20261026T042926105469Z\\sim_branch\\seed_20261025.args": "8e0d6d9f350a373dd404a6dc702089fc3d9dc43b1759c1623030e266495caca6",
+    "build\\units\\branch-20261026T042926105469Z\\sim_branch\\corrupt_expected.args": "09c9eca0d4c8337b1cded8edaf33186cbd6a0fb594ab20b27cfcef053afdc503",
+    "build\\units\\branch-20261026T042926105469Z\\sim_branch\\empty_vectors.args": "657140f99833b217528c6b8c3a21d068944ab31f70b12cf76639a5968635296f",
+    "build/units/branch-20261026T042926105469Z/sim_branch/run.tcl": "ec50b078bcb49cd4c3d62c619d370859990947410237da3e05cc1af9bcdd3aee"
+  },
+  "vector_checks": 253936,
+  "documentation_audit_note": "Owner-review note relocated to the end of T006 evidence after insertion-only comparison; original bytes retained."
+}
