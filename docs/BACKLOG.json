@@ -270,10 +270,16 @@
           "-B",
           "scripts/verify.py",
           "test-regfile"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "regress"
         ]
       ],
       "priority": 60,
-      "status": "pending",
+      "status": "awaiting_review",
       "human_approval_required": true,
       "start_approval_required": false,
       "optional": false,

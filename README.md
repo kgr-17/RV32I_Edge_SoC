@@ -8,12 +8,16 @@ in evidence/daily/T003.md. T004 decoder/package also passed on October 23 under
 an explicit one-time owner exception: all 40 mnemonics, 287,618 vector checks
 across two seeds, independent oracle tests and real decoder synthesis lint.
 See [decoder interface and reproduction](docs/DECODER.md) and evidence/daily/T004.md.
-T005 ALU is the next task and may start today. Complete CPU execution, FPGA
+T005 ALU passed on October 25 with 234,804 vector checks. T006 register-file
+automation passed on attempt 2 and is **awaiting owner review**:
+[interface and review checklist](docs/REGFILE.md). Full unit regression passed
+543,428 vectors across fixture, decoder, ALU and register file. T007 waits for
+T006 review. Complete CPU execution, FPGA
 implementation, hardware validation and ASIC results remain future milestones.
 
 The existing `RV32I_Edge_SoC.xpr` is the active Vivado project. Its configured part
 is `xc7a35tcpg236-1`. The owner confirmed a Digilent Basys 3. Top module, RTL and
-constraints are not yet configured in the XPR; the decoder unit is verified with
+constraints are not yet configured in the XPR; the core units are verified with
 reproducible non-project scripts. Vivado 2025.2 was located and its batch
 startup/target-part catalog verified; local paths are in `.harness/toolchain.json`.
 

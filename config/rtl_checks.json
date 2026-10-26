@@ -5,36 +5,95 @@
   "tzdata_version": "2026.2",
   "vivado_version": "2025.2",
   "vivado_sw_build": "6299465",
-  "seeds": [1, 20261017],
-  "decode_seeds": [1, 20261023],
+  "seeds": [
+    1,
+    20261017
+  ],
+  "decode_seeds": [
+    1,
+    20261023
+  ],
   "unit_sims": {
     "alu": {
       "task": "T005",
-      "sources": ["rtl/core/rv32_pkg.sv", "rtl/core/alu.sv"],
+      "sources": [
+        "rtl/core/rv32_pkg.sv",
+        "rtl/core/alu.sv"
+      ],
       "testbench": "dv/unit/tb_alu.sv",
       "test_top": "tb_alu",
       "reference": "dv/unit/test_alu.py",
-      "seeds": [1, 20261025],
-      "waves": ["/tb_alu/op", "/tb_alu/a", "/tb_alu/b", "/tb_alu/result", "/tb_alu/supported", "/tb_alu/expected"]
+      "seeds": [
+        1,
+        20261025
+      ],
+      "waves": [
+        "/tb_alu/op",
+        "/tb_alu/a",
+        "/tb_alu/b",
+        "/tb_alu/result",
+        "/tb_alu/supported",
+        "/tb_alu/expected"
+      ]
+    },
+    "regfile": {
+      "task": "T006",
+      "sources": [
+        "rtl/core/regfile.sv"
+      ],
+      "testbench": "dv/unit/tb_regfile.sv",
+      "test_top": "tb_regfile",
+      "reference": "dv/unit/test_regfile.py",
+      "seeds": [
+        1,
+        20261025
+      ],
+      "waves": [
+        "/tb_regfile/clk",
+        "/tb_regfile/rst",
+        "/tb_regfile/write_en",
+        "/tb_regfile/write_addr",
+        "/tb_regfile/write_data",
+        "/tb_regfile/read_a",
+        "/tb_regfile/read_b",
+        "/tb_regfile/data_a",
+        "/tb_regfile/data_b"
+      ]
     }
   },
   "lint_designs": [
     {
       "name": "rv32_decoder",
       "top": "decoder",
-      "sources": ["rtl/core/rv32_pkg.sv", "rtl/core/decoder.sv"]
+      "sources": [
+        "rtl/core/rv32_pkg.sv",
+        "rtl/core/decoder.sv"
+      ]
     },
     {
       "name": "rv32_alu",
       "top": "alu",
-      "sources": ["rtl/core/rv32_pkg.sv", "rtl/core/alu.sv"]
+      "sources": [
+        "rtl/core/rv32_pkg.sv",
+        "rtl/core/alu.sv"
+      ]
+    },
+    {
+      "name": "rv32_regfile",
+      "top": "regfile_lint_top",
+      "sources": [
+        "rtl/core/regfile.sv",
+        "dv/lint/regfile_lint_top.sv"
+      ]
     }
   ],
   "designs": [
     {
       "name": "toolchain_fixture",
       "top": "register_fixture",
-      "sources": ["dv/toolchain/register_fixture.sv"],
+      "sources": [
+        "dv/toolchain/register_fixture.sv"
+      ],
       "testbench": "dv/toolchain/tb_toolchain.sv",
       "test_top": "tb_toolchain"
     }

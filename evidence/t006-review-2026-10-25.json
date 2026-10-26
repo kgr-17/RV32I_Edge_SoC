@@ -1,0 +1,236 @@
+{
+  "task": "T006",
+  "report_date": "2026-10-25",
+  "recorded_utc": "2026-10-26T04:20:59.649846+00:00",
+  "baseline_commit": "0b89a04a0336af843b37c8623880d819a2c97050",
+  "state": "awaiting_review",
+  "attempt": 2,
+  "receipt": "evidence/runs/T006/attempt-2-20261026T041624015172Z.json",
+  "first_receipt": "evidence/runs/T006/attempt-1-20261026T041216038008Z.json",
+  "failed_source": {
+    "path": "evidence/failed_sources/T006/attempt-1/regfile.sv",
+    "sha256": "d1b753957a9881e977ee96fc21be4d8756c6ef33c93082a75ae1c1c7995234c8"
+  },
+  "source_sha256": {
+    "rtl/core/regfile.sv": "b237b622b105509dfeefefe6add04e12dd9fc5b878e6e1133e5fe0a3e3ad2bec",
+    "dv/lint/regfile_lint_top.sv": "59fdf57805d568b0cb2abffbda9477223a8e9aecbf3dffd8a9175880155f9656",
+    "dv/unit/test_regfile.py": "e6b7910e9229b599d7ee6966090cca07cd0cbbcf59bd95f28d1557503f668993",
+    "dv/unit/tb_regfile.sv": "fc6e9c21a19f2f1945ac0f942d9ae27d69492c05700c5a122f8511b5428ac2cd",
+    "config/rtl_checks.json": "b3804b2651d20e04d7d0a6d9b928f20d41cd8a341785120b3443138a899837f1",
+    ".harness/checks.json": "932df2c5f8682f6e11f63b01bb24ecf39da4651dab624fe3cf1600597a7ea1ae",
+    "scripts/unit_checks.py": "5d0e55eb1272f8bfc69f94f8e5f79ed0f2b12fd9e48d42cf658b59e493f4e969"
+  },
+  "original_files_preserved": 23,
+  "historical_files_unchanged": 119,
+  "same_day_report_prefixes": {
+    "docs/daily/2026-10-25_technical.md": true,
+    "docs/daily/2026-10-25_zh-CN.md": true
+  },
+  "eda_receipts": [
+    {
+      "path": "evidence/toolchain_runs/alu-20261026T041911924439Z.json",
+      "sha256": "95dc49159e1326e1498ecad6d4a8e1341ca107ad6228c5b100f9409292ed0758",
+      "checks": 17,
+      "simulations": [
+        {
+          "design": "alu",
+          "seed": 1,
+          "checked_vectors": 117402,
+          "vector_path": "build/units/alu-20261026T041911924439Z/sim_alu/vectors_1.txt",
+          "vector_sha256": "4766366232958480ee43911f7ba48678cacf11688290935f7ea8315b090bd2e0",
+          "waveform": "build/units/alu-20261026T041911924439Z/sim_alu/seed_1.wdb",
+          "waveform_sha256": "45616c2bedc13d728d1aa17f37b0d50a16e2cdf116765ee143f2ff311053d2d5"
+        },
+        {
+          "design": "alu",
+          "seed": 20261025,
+          "checked_vectors": 117402,
+          "vector_path": "build/units/alu-20261026T041911924439Z/sim_alu/vectors_20261025.txt",
+          "vector_sha256": "c239cd940f8041c0bf8cd13f33efb2698d57e64d9f9d1f62b51418fd2459e884",
+          "waveform": "build/units/alu-20261026T041911924439Z/sim_alu/seed_20261025.wdb",
+          "waveform_sha256": "13d90f3414566b84d458735b6475a180e939acb91582694827e10983c09ae2eb"
+        }
+      ]
+    },
+    {
+      "path": "evidence/toolchain_runs/decode-20261026T041854703067Z.json",
+      "sha256": "307ec1fc67a4905cf95679cab3f8cbd273aba578937269ac5c4e9fab7bf8a5b2",
+      "checks": 16,
+      "simulations": [
+        {
+          "design": "decoder",
+          "seed": 1,
+          "checked_vectors": 143809,
+          "vector_path": "build/T004/decode-20261026T041854703067Z/sim_decoder/vectors_1.txt",
+          "vector_sha256": "7a1ba9b2474d7dd30b141f29f6e192ae3e50784c291fe433dc948368e5860ff6",
+          "waveform": "build/T004/decode-20261026T041854703067Z/sim_decoder/seed_1.wdb",
+          "waveform_sha256": "99b39723c8eed09cb71dba24501b4088931e7d569fa6bdb3bc3e50c5a0aad8e9"
+        },
+        {
+          "design": "decoder",
+          "seed": 20261023,
+          "checked_vectors": 143809,
+          "vector_path": "build/T004/decode-20261026T041854703067Z/sim_decoder/vectors_20261023.txt",
+          "vector_sha256": "b8c533d0f25b48efb1a51d8ad962142e3ab8088bc23528f20c7907253201683b",
+          "waveform": "build/T004/decode-20261026T041854703067Z/sim_decoder/seed_20261023.wdb",
+          "waveform_sha256": "7bf6de7ada1847751bd93aa55983bc0e85f710684f52023fa40eb2bf709f314a"
+        }
+      ]
+    },
+    {
+      "path": "evidence/toolchain_runs/lint-20261026T041624412017Z.json",
+      "sha256": "179cc2f91c7b366bc67b0b717acc7ed0cdba852e23afdde31757498bc0c86b84",
+      "checks": 15,
+      "simulations": []
+    },
+    {
+      "path": "evidence/toolchain_runs/regfile-20261026T041823227812Z.json",
+      "sha256": "8bd81692391567d4a30d8cdaa891a15effa105308e1f4c24b34daecad200eeda",
+      "checks": 17,
+      "simulations": [
+        {
+          "design": "regfile",
+          "seed": 1,
+          "checked_vectors": 10369,
+          "vector_path": "build/units/regfile-20261026T041823227812Z/sim_regfile/vectors_1.txt",
+          "vector_sha256": "1099f55db67c5a710a61c61c89f973d3bbe590d485eb5cd66dc80d7ab90b9f77",
+          "waveform": "build/units/regfile-20261026T041823227812Z/sim_regfile/seed_1.wdb",
+          "waveform_sha256": "f755f709875d0896d66b17ab4976dfa268fcb5446865df7066f78eebbc1763ab"
+        },
+        {
+          "design": "regfile",
+          "seed": 20261025,
+          "checked_vectors": 10369,
+          "vector_path": "build/units/regfile-20261026T041823227812Z/sim_regfile/vectors_20261025.txt",
+          "vector_sha256": "130e1de954aa4abe8f8d244bab7c392b1c85807b23378f021268c1659f74db10",
+          "waveform": "build/units/regfile-20261026T041823227812Z/sim_regfile/seed_20261025.wdb",
+          "waveform_sha256": "b59ebbbf6b0fd41f1e36561d7e43fdfd3635523c41d089dfff3f12e038304d22"
+        }
+      ]
+    },
+    {
+      "path": "evidence/toolchain_runs/regfile-20261026T041926641095Z.json",
+      "sha256": "80d966157ec754142447789ef09b4891c16406c09c17a96afb092a564deec44d",
+      "checks": 17,
+      "simulations": [
+        {
+          "design": "regfile",
+          "seed": 1,
+          "checked_vectors": 10369,
+          "vector_path": "build/units/regfile-20261026T041926641095Z/sim_regfile/vectors_1.txt",
+          "vector_sha256": "1099f55db67c5a710a61c61c89f973d3bbe590d485eb5cd66dc80d7ab90b9f77",
+          "waveform": "build/units/regfile-20261026T041926641095Z/sim_regfile/seed_1.wdb",
+          "waveform_sha256": "fe6a1e5929c14ec620e4d763c328257f090f4db1bff4a4c1fdd0b99d00721cee"
+        },
+        {
+          "design": "regfile",
+          "seed": 20261025,
+          "checked_vectors": 10369,
+          "vector_path": "build/units/regfile-20261026T041926641095Z/sim_regfile/vectors_20261025.txt",
+          "vector_sha256": "130e1de954aa4abe8f8d244bab7c392b1c85807b23378f021268c1659f74db10",
+          "waveform": "build/units/regfile-20261026T041926641095Z/sim_regfile/seed_20261025.wdb",
+          "waveform_sha256": "8abda503189ca9aa68e53a5a5920ae73d9a82d57d038b89c291cad97cc47e3db"
+        }
+      ]
+    },
+    {
+      "path": "evidence/toolchain_runs/regress-20261026T041837780332Z.json",
+      "sha256": "936376d7bb91defbb71c31534d231846f0de9a4d00f2e9565bafb34eea36686c",
+      "checks": 16,
+      "simulations": [
+        {
+          "design": "toolchain_fixture",
+          "seed": 1,
+          "checked_vectors": 134,
+          "vector_path": "build\\T003\\regress-20261026T041837780332Z\\sim_toolchain_fixture\\vectors_1.txt",
+          "vector_sha256": "0fd5e1f18a068ad88233f2eecc8c53d232578bc9b406783267b173032f591757",
+          "waveform": "build\\T003\\regress-20261026T041837780332Z\\sim_toolchain_fixture\\seed_1.wdb",
+          "waveform_sha256": "6e598413db8d0bf29a5398058493c82d4563b4041cc6db80f21e82e7f6cc04e1"
+        },
+        {
+          "design": "toolchain_fixture",
+          "seed": 20261017,
+          "checked_vectors": 134,
+          "vector_path": "build\\T003\\regress-20261026T041837780332Z\\sim_toolchain_fixture\\vectors_20261017.txt",
+          "vector_sha256": "1963ac701563f2bd948325764615a85354416ad5ab69b69b6e8c81628f70dee1",
+          "waveform": "build\\T003\\regress-20261026T041837780332Z\\sim_toolchain_fixture\\seed_20261017.wdb",
+          "waveform_sha256": "8e91ed1980bbc947a9f5f4fbec51d5869310bb42b696a16612b672c18df9100a"
+        }
+      ]
+    }
+  ],
+  "artifacts_hash_verified": {
+    "build/units/alu-20261026T041911924439Z/sim_alu/vectors_1.txt": "4766366232958480ee43911f7ba48678cacf11688290935f7ea8315b090bd2e0",
+    "build/units/alu-20261026T041911924439Z/sim_alu/seed_1.wdb": "45616c2bedc13d728d1aa17f37b0d50a16e2cdf116765ee143f2ff311053d2d5",
+    "build/units/alu-20261026T041911924439Z/sim_alu/vectors_20261025.txt": "c239cd940f8041c0bf8cd13f33efb2698d57e64d9f9d1f62b51418fd2459e884",
+    "build/units/alu-20261026T041911924439Z/sim_alu/seed_20261025.wdb": "13d90f3414566b84d458735b6475a180e939acb91582694827e10983c09ae2eb",
+    "build\\units\\alu-20261026T041911924439Z\\sim_alu\\seed_1.args": "cad34e26557ed36496900986c0780e75b99e8108fbf5109e8a4bc7e8b78f0f07",
+    "build\\units\\alu-20261026T041911924439Z\\sim_alu\\seed_20261025.args": "a9231cf9c8993264e4c85e2ac978ea9a85bab019c6617aeaf079af2b292ff48b",
+    "build\\units\\alu-20261026T041911924439Z\\sim_alu\\corrupt_expected.args": "e6f518666a3f0c7e74b34069804ada7d89c67d75a015ec943438cd310c3414a4",
+    "build\\units\\alu-20261026T041911924439Z\\sim_alu\\empty_vectors.args": "61eab262357c13f58fcddd89942ab8c59cf5d8a8616e8f1d87a7562049200c07",
+    "build/units/alu-20261026T041911924439Z/sim_alu/run.tcl": "338148ac32c36d4701bb7708cf9ac860395fa125a26b4999b076385dc8f33133",
+    "build/T004/decode-20261026T041854703067Z/sim_decoder/vectors_1.txt": "7a1ba9b2474d7dd30b141f29f6e192ae3e50784c291fe433dc948368e5860ff6",
+    "build/T004/decode-20261026T041854703067Z/sim_decoder/seed_1.wdb": "99b39723c8eed09cb71dba24501b4088931e7d569fa6bdb3bc3e50c5a0aad8e9",
+    "build/T004/decode-20261026T041854703067Z/sim_decoder/vectors_20261023.txt": "b8c533d0f25b48efb1a51d8ad962142e3ab8088bc23528f20c7907253201683b",
+    "build/T004/decode-20261026T041854703067Z/sim_decoder/seed_20261023.wdb": "7bf6de7ada1847751bd93aa55983bc0e85f710684f52023fa40eb2bf709f314a",
+    "build\\T004\\decode-20261026T041854703067Z\\sim_decoder\\seed_1.args": "ef03d0e9031309537b3781114e741d14c9587be5567a6b377f200a4d77e540f9",
+    "build\\T004\\decode-20261026T041854703067Z\\sim_decoder\\seed_20261023.args": "0ad1328ef3499528adfe17961445edf0db3666739c9d49ee0ec1f1afaf024dec",
+    "build\\T004\\decode-20261026T041854703067Z\\sim_decoder\\corrupt_expected.args": "3a1adc46152928d3da2f97105a488c4a02f65e2b4774f159cdd9d6ceca8f4c75",
+    "build\\T004\\decode-20261026T041854703067Z\\sim_decoder\\empty_vectors.args": "d141502080691320a6c4a68ba81f4ef721485eb27412760a7685d50da718f770",
+    "build/units/regfile-20261026T041823227812Z/sim_regfile/vectors_1.txt": "1099f55db67c5a710a61c61c89f973d3bbe590d485eb5cd66dc80d7ab90b9f77",
+    "build/units/regfile-20261026T041823227812Z/sim_regfile/seed_1.wdb": "f755f709875d0896d66b17ab4976dfa268fcb5446865df7066f78eebbc1763ab",
+    "build/units/regfile-20261026T041823227812Z/sim_regfile/vectors_20261025.txt": "130e1de954aa4abe8f8d244bab7c392b1c85807b23378f021268c1659f74db10",
+    "build/units/regfile-20261026T041823227812Z/sim_regfile/seed_20261025.wdb": "b59ebbbf6b0fd41f1e36561d7e43fdfd3635523c41d089dfff3f12e038304d22",
+    "build\\units\\regfile-20261026T041823227812Z\\sim_regfile\\seed_1.args": "82d98f21fd8418b263c422eb003471285e9252ac1a26eea788f0fef3eb8f680f",
+    "build\\units\\regfile-20261026T041823227812Z\\sim_regfile\\seed_20261025.args": "6ff1f448631beb306be3a17126e8f75465caf78e93392870b70c3006288b13e7",
+    "build\\units\\regfile-20261026T041823227812Z\\sim_regfile\\corrupt_expected.args": "58b516921a511401712dd4b18cc0b96704bce4302087ba402f5d0493d12f230a",
+    "build\\units\\regfile-20261026T041823227812Z\\sim_regfile\\empty_vectors.args": "4ecbca7b3385189ba23193232e9371d9446374b8d193e48d7f0e9cbb81286a5b",
+    "build/units/regfile-20261026T041823227812Z/sim_regfile/run.tcl": "8a6df8e9c472d0d973c96df24591bfc06a2c93fab58fcf713b25e554ecadba5f",
+    "build/units/regfile-20261026T041926641095Z/sim_regfile/vectors_1.txt": "1099f55db67c5a710a61c61c89f973d3bbe590d485eb5cd66dc80d7ab90b9f77",
+    "build/units/regfile-20261026T041926641095Z/sim_regfile/seed_1.wdb": "fe6a1e5929c14ec620e4d763c328257f090f4db1bff4a4c1fdd0b99d00721cee",
+    "build/units/regfile-20261026T041926641095Z/sim_regfile/vectors_20261025.txt": "130e1de954aa4abe8f8d244bab7c392b1c85807b23378f021268c1659f74db10",
+    "build/units/regfile-20261026T041926641095Z/sim_regfile/seed_20261025.wdb": "8abda503189ca9aa68e53a5a5920ae73d9a82d57d038b89c291cad97cc47e3db",
+    "build\\units\\regfile-20261026T041926641095Z\\sim_regfile\\seed_1.args": "fdc324ca46fea0d56d4733823b918569d7a2d762f010cde58140221b841eb5dc",
+    "build\\units\\regfile-20261026T041926641095Z\\sim_regfile\\seed_20261025.args": "e60333d61115b6ca735377ce3943ed698d5361ec8d22f530482a38f0b97021ef",
+    "build\\units\\regfile-20261026T041926641095Z\\sim_regfile\\corrupt_expected.args": "3dcbe78993b2b499b1f0bbb049b6c6e3487f17f5414357b4f0923104ea65b418",
+    "build\\units\\regfile-20261026T041926641095Z\\sim_regfile\\empty_vectors.args": "7aff73b76b5977e386640d7a509f114f995684853a7b4ddce2013fadeb3d3c85",
+    "build/units/regfile-20261026T041926641095Z/sim_regfile/run.tcl": "8a6df8e9c472d0d973c96df24591bfc06a2c93fab58fcf713b25e554ecadba5f",
+    "build\\T003\\regress-20261026T041837780332Z\\sim_toolchain_fixture\\vectors_1.txt": "0fd5e1f18a068ad88233f2eecc8c53d232578bc9b406783267b173032f591757",
+    "build\\T003\\regress-20261026T041837780332Z\\sim_toolchain_fixture\\seed_1.wdb": "6e598413db8d0bf29a5398058493c82d4563b4041cc6db80f21e82e7f6cc04e1",
+    "build\\T003\\regress-20261026T041837780332Z\\sim_toolchain_fixture\\vectors_20261017.txt": "1963ac701563f2bd948325764615a85354416ad5ab69b69b6e8c81628f70dee1",
+    "build\\T003\\regress-20261026T041837780332Z\\sim_toolchain_fixture\\seed_20261017.wdb": "8e91ed1980bbc947a9f5f4fbec51d5869310bb42b696a16612b672c18df9100a",
+    "build\\T003\\regress-20261026T041837780332Z\\sim_toolchain_fixture\\seed_1.args": "dcd5ce75fd7fd68e110619d780bc250cc71310838dbcd7f0b22d3983a659f3cd",
+    "build\\T003\\regress-20261026T041837780332Z\\sim_toolchain_fixture\\seed_20261017.args": "d5ade263fa21c04d8053ad9684fa3afb343b17a620920037088ec36cea565688",
+    "build\\T003\\regress-20261026T041837780332Z\\sim_toolchain_fixture\\inject_fatal.args": "2b2edaf4d7c98a398c059c156f4b377db9dff475f2c268c2578d003b801319e7",
+    "build\\T003\\regress-20261026T041837780332Z\\sim_toolchain_fixture\\omit_pass.args": "68212816881e2f63d1a147267de904604ff3ae914e6e827d37f6f0163a5e6c76",
+    "build\\T003\\regress-20261026T041837780332Z\\sim_toolchain_fixture\\hang.args": "46b7718efdf6a0d024139d63701549ecd5cdddac33ccae701c108899f7bdd4f2"
+  },
+  "daily_tasks": {
+    "2026-10-14": [
+      "T001"
+    ],
+    "2026-10-16": [
+      "T002"
+    ],
+    "2026-10-17": [
+      "T003"
+    ],
+    "2026-10-23": [
+      "T003",
+      "T004"
+    ],
+    "2026-10-25": [
+      "T005",
+      "T006"
+    ]
+  },
+  "next": null,
+  "owner_approval_invoked": false,
+  "excluded": [
+    "formal",
+    "CPU execution/retirement",
+    "routed timing",
+    "physical hardware",
+    "ASIC"
+  ]
+}

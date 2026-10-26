@@ -121,3 +121,22 @@ tested; R-X0/R-FENCE execution, retirement, precise faults, full ISA compliance,
 formal, timing, physical hardware and ASIC results remain future evidence.
 The composite regress command now routes to both fixture and decoder checks;
 this combined entrypoint has not been rerun solely for its routing addition.
+
+## T005/T006 unit review boundary (2026-10-25)
+
+T005 completed on attempt 1: 234,804 ALU comparisons across two seeds plus
+26 Python policy/oracle tests, with real warning-free unit synthesis lint.
+T006 passed automated gates on attempt 2 and awaits owner review. Each seed
+checked 10,369 clocked vectors, comparing both read ports before the edge and
+after disabling bypass after the edge. Between-edge reset pulses verify state
+reset is synchronous. Explicit word/read hierarchy repaired the attempt-1
+Netlist 29-101 warning without changing tests, warnings or synthesis flags.
+The failed source and complete failure logs remain hash-bound and recoverable.
+
+The composite regress entrypoint is now executed and passing: fixture 268,
+decoder 287,618, ALU 234,804 and RF 20,738 vectors, total 543,428 across eight
+seeded simulations. Rechecks repeat existing seeds, not new unique coverage.
+Actual fatal/missing-marker/hang/syntax/empty/wrong-answer gates reject their
+intended defects. See evidence/daily/T005.md and T006.md, ALU.md and REGFILE.md.
+These are unit simulations/structural synthesis checks, not integrated CPU
+execution, formal proof, routed timing, physical hardware or ASIC signoff.
