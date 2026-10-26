@@ -198,6 +198,12 @@
         "-B",
         "scripts/verify.py",
         "test-core"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/verify.py",
+        "test-retire"
       ]
     ]
   },
@@ -320,6 +326,30 @@
         "-B",
         "scripts/unit_checks.py",
         "core"
+      ]
+    ]
+  },
+  "test-retire": {
+    "inputs": [
+      "dv/reference/rv32_iss.py",
+      "dv/reference/retire.py",
+      "dv/integration/test_retire.py",
+      "dv/integration/tb_reference_core.sv",
+      "scripts/retire_checks.py",
+      "scripts/unit_checks.py",
+      "config/rtl_checks.json",
+      "docs/ARCH_CONTRACT.json"
+    ],
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "dv/integration/test_retire.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/retire_checks.py"
       ]
     ]
   }

@@ -15,7 +15,8 @@ automation passed on attempt 2 and was explicitly approved by the owner:
 T007 branch/jump unit passed 253,936 vectors; T008 load/store formatting passed 89,744.
 T009 memory behavior models passed 49,276 seeded edges and 11 tests;
 T010 nonpipelined reference CPU passed 324 directed retirements in 22 scenarios.
-T011 independent ISA/retirement comparison is next. Pipeline execution, full
+T011 independent ISA comparison matched those retirements and terminal GPR/RAM
+samples. T012 L1 baseline review is next. Pipeline execution, full
 ISA/EEI closure, FPGA implementation, hardware and ASIC results remain future milestones.
 
 The existing `RV32I_Edge_SoC.xpr` is the active Vivado project. Its configured part

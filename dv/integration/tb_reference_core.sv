@@ -199,6 +199,10 @@ module tb_reference_core;
                             if (retire_mem_be_o[lane]) expected_ram[(retire_mem_addr_o-32'h00010000)/4][lane*8 +: 8]=retire_mem_wdata_o[lane*8 +: 8];
                     end
                 end
+                $display("CORE_RETIRE %0d %016h %08h %08h %08h %h %h %08h %h %h %08h %h %08h %08h",
+                    scenario,retire_order_o,retire_pc_o,retire_insn_o,retire_next_pc_o,retire_rd_write_o,retire_rd_o,
+                    retire_rd_wdata_o,retire_mem_valid_o,retire_mem_write_o,retire_mem_addr_o,retire_mem_be_o,
+                    retire_mem_wdata_o,retire_mem_rdata_o);
                 retired=retired+1;
             end
             if (fault_valid_o) begin
@@ -207,6 +211,11 @@ module tb_reference_core;
                     drequests!=memretires+int'(fault_code==4'd5 || fault_code==4'd7)) fail("termination accounting");
                 for (int word_index=0;word_index<16384;word_index=word_index+1)
                     if (ram[word_index]!==expected_ram[word_index]) fail("final RAM bytes");
+                $display("CORE_FAULT %0d %08h %08h %h %08h",scenario,fault_pc_o,fault_insn_o,fault_code_o,fault_tval_o);
+                for (int reg_index=1;reg_index<32;reg_index=reg_index+1)
+                    $display("CORE_GPR %0d %0d %08h",scenario,reg_index,dut.registers.registers[reg_index]);
+                for (int word_index=0;word_index<32;word_index=word_index+1)
+                    $display("CORE_RAM %0d %0d %08h",scenario,word_index,ram[word_index]);
                 repeat (8) begin
                     @(negedge clk_i);
                     imem_rsp_valid_i=0; dmem_rsp_valid_i=0; imem_req_ready_i=1; dmem_req_ready_i=1;

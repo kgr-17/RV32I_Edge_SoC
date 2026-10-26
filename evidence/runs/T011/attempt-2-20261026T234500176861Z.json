@@ -1,0 +1,71 @@
+{
+  "task": "T011",
+  "attempt": 2,
+  "git_commit": "3af9a1a5e1795e5e172080e19b3892aebf629030",
+  "python": "3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)]",
+  "stage": "finished",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "lint"
+      ],
+      "started_utc": "2026-10-26T23:45:00.213933+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/rtl_checks.py\", \"lint\"], \"started_utc\": \"2026-10-26T23:45:00.370072+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\n  \\\"status\\\": \\\"PASS\\\",\\n  \\\"evidence\\\": \\\"evidence\\\\\\\\toolchain_runs\\\\\\\\lint-20261026T234500556123Z.json\\\",\\n  \\\"checks\\\": 21,\\n  \\\"simulations\\\": [],\\n  \\\"error\\\": null\\n}\\n\", \"stderr\": \"\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "test-retire"
+      ],
+      "started_utc": "2026-10-26T23:47:50.546322+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"dv/integration/test_retire.py\"], \"started_utc\": \"2026-10-26T23:47:50.700141+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"\", \"stderr\": \"test_observed_parser_and_real_mismatch_rejection (__main__.ComparisonTests) ... ok\\ntest_reordering_fault_and_terminal_state_mutation_rejected (__main__.ComparisonTests) ... ok\\ntest_stimulus_ignores_hand_expected_fields (__main__.ComparisonTests) ... ok\\ntest_bad_target_is_fault_before_link_and_jalr_clear (__main__.IssTests) ... ok\\ntest_byte_store_extension_full_word_and_load_x0_effect (__main__.IssTests) ... ok\\ntest_fault_priority_error_effects_and_x0_access_fault (__main__.IssTests) ... ok\\ntest_instruction_access_error_and_bound (__main__.IssTests) ... ok\\ntest_literal_arithmetic_and_signed_shift (__main__.IssTests) ... ok\\ntest_reserved_extensions_and_fence_fields (__main__.IssTests) ... ok\\ntest_reset_retains_committed_memory_and_sticky_fault (__main__.IssTests) ... ok\\n\\n----------------------------------------------------------------------\\nRan 10 tests in 0.001s\\n\\nOK\\n\"}\n{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/retire_checks.py\"], \"started_utc\": \"2026-10-26T23:47:50.872030+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\\"status\\\": \\\"PASS\\\", \\\"evidence\\\": \\\"evidence\\\\\\\\toolchain_runs\\\\\\\\retire-20261026T234751079298Z.json\\\", \\\"comparisons\\\": 2, \\\"error\\\": null}\\n\", \"stderr\": \"\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_utc": "2026-10-26T23:48:07.942748+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "started_utc": "2026-10-26T23:48:07.987484+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "waveform_paths": [],
+  "seed": null,
+  "evidence_sha256": "4844c22305756e6acb93c252684f6ed5c538d373b062f59059165278514e4f26"
+}

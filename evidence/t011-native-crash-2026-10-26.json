@@ -1,0 +1,13 @@
+{
+  "task": "T011",
+  "attempt": 1,
+  "failure": "Vivado native exit crash after completed branch synthesis/DRC",
+  "raw_exit_code": 4294967295,
+  "crash_log": "build/T003/lint-20261026T234243883906Z/lint_branch_lint_top/hs_err_pid15488.log",
+  "crash_log_sha256": "56867003ffe4329f75e1c0c57c49327bd32d993927d770f6f36aaaa2d7765f73",
+  "crash_log_bytes": 143,
+  "lint_receipt": "evidence/toolchain_runs/lint-20261026T234243883906Z.json",
+  "sources_changed_for_retry": false,
+  "checks_changed_for_retry": false,
+  "crash_log_text": "#\r\n# An unexpected error has occurred (EXCEPTION_ACCESS_VIOLATION)\r\n#\r\nStack:\r\nno stack trace available, please use hs_err_<pid>.dmp instead.\r\n"
+}

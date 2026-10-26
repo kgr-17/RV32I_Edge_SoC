@@ -73,3 +73,9 @@ XSim runs each parsed 716 input records and matched 162 retirements/11 faults
 plus separate reset/halt checks. Simulations took 2.500/2.469 s. All 64 declared
 bins hit. Actual wrong fault tval and empty input were rejected. The source,
 wave/input/Tcl/argument hashes and exact results are in evidence/daily/T010.md.
+
+T011 adds actual retirement/fault and terminal GPR/RAM trace export to this
+bench, without production RTL or protocol-monitor changes. The separate ISS
+ignores these directed expected rows and independently compares execution and
+terminal samples; see ISS.md and evidence/daily/T011.md. Full RAM still has the
+original SV scoreboard. This strengthens directed evidence, not ISA certification.

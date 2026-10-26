@@ -68,3 +68,40 @@ Attempt 1 receipt evidence/runs/T010/attempt-1-20261026T233242878399Z.json: lint
 Expanded regression also PASS/exit 0, full nested record evidence/t010-regression-2026-10-26.json. All eight subtargets pass: six retained RTL components total 887,108 vectors, CPU 324 retirements/22 scenarios separately, memory model 49,276 edges/11 tests separately. Shared unit negative-driver behavior remains checked for old row-based units. T010's SV fabric varies delay 1..4 per transaction; T009 separately uses fixed N=1/3/7. Replays are not additional unique coverage. Serialization-only follow-up to test_memory.py now writes explicit UTF-8/LF bytes; this regression executed the unchanged model assertions and generated the new receipt without CRLF, byte-verified. Original raw receipts and T009 snapshots remain intact. Pins unchanged: Python3.9.13/Git2.48.1.windows.1/tzdata2026.2/Vivado-XSim2025.2 SW6299465.
 
 Changed new core, SV bench/hand-program generator, synthesis probe, common driver/two policy tests, registry/manifest/state/backlog, core documentation/README, memory serializer/docs, evidence and today's same two appended reports. Old execution-unit RTL, approved architecture, XPR/XDC, original kit and previous-date reports are unchanged; current report prefixes preserved. Audit evidence/t010-complete-2026-10-26.json records source/artifact hashes and recovery. Mandatory progress 10/41, T010 complete and no active task. Commit reviewed files, record SHA, then begin T011 independent Python ISS plus actual retirement comparison. Directed reference-core simulation is achieved; pipelining, full ISA/EEI closure, formal, routed timing, hardware, IRQ and ASIC remain future mandatory evidence.
+
+
+---
+
+<!-- entry:10bcb0eeb17c494525426a699730a9931e7091a998068dba79b8ed11261452ff -->
+
+# T011 independent ISS comparison prepared
+
+T010 committed 3af9a1a with clean status and preserved baseline; began T011 through the harness. Added standalone rv32_iss.py, independent stimulus/trace helpers, ten anchored tests, real XSim comparison driver and ISS.md. ISA semantics are derived directly from program bytes using independent arithmetic/byte operations; no RTL enums, decoder tables, directed expected records or execution/bus-model helpers are imported. Full forty instructions and the reviewed fault/permission/align/x0/FENCE semantics are modeled. No production RTL or architecture change.
+
+SV bench instrumentation exports actual retirement/fault events and terminal x1..x31 plus 32 RAM words in the touched 128-byte window; existing full-64-KiB directed RAM scoreboard remains enabled. x0 has no physical stored word and retains its existing unit/program checks. Comparison input loads only ROM/RAM initialization and ignores all T010 hand-authored expectations, preventing circular expected-value generation. Driver reruns actual XSim, compares complete ordered events/state, saves hashes and rejects actual bit-flip/empty/extra-event mutations per seed. Required independent coverage includes all forty mnemonics and all nine fault codes. Existing stimulus scenarios are reused, not new unique program coverage.
+
+Registered real test-retire and regression routing. Next finish T011 --evidence evidence/daily/T011.md reserves attempt 1/3 for real retained lint, ten Python tests, actual simulator/ISS comparison and both whitespace gates. Results pending, no pass asserted. Record any discrepancy and preserve failure budget/logs. Append outcomes to today's same two reports; do not erase old entries. The ISS models architectural atomic effects; fabric response-before-retire timing remains separately checked by SV. Pipeline, random closure, full ISA certification, formal, routed timing, physical board, IRQ and ASIC are future mandatory work.
+
+
+---
+
+<!-- entry:14f4c15d0504bd6595a6d4e7dcce1909f1da35de261b9d7eab3c695be63b5b3e -->
+
+# T011 first attempt: independent comparison PASS, native EDA exit FAIL
+
+Receipt evidence/runs/T011/attempt-1-20261026T234243508897Z.json records lint FAIL, test-retire and both whitespace checks PASS. Ten anchored Python tests passed. retire-20261026T234405481884Z.json compares 866 ordered events per seed: 162 actual retirements, 11 faults, 341 terminal x1..x31 values and 352 terminal RAM words. Both seeds matched the independent ISS, all 49 operation/fault bins hit, and actual-bit/empty/extra-event mutations were rejected. Backend actual XSim evidence is core-20261026T234407631301Z.json. No model/RTL mismatch was observed.
+
+Lint failed on the unchanged branch probe because Vivado crashed AFTER printing zero warnings/errors, completing DRC and emitting TOOLCHAIN_LINT_PASS. Raw exit 4294967295 and EXCEPTION_ACCESS_VIOLATION correctly prevent a pass. The project-local native crash log remains retained, with exact path/hash/size in evidence/t011-native-crash-2026-10-26.json and full stdout in lint-20261026T234243883906Z.json. A marker never overrides process failure. Retry uses attempt 2/3 with identical source/check/Tcl/filter/timeout/tool configuration. No tool reinstall, global change or unbounded loop. Keep all first evidence; T011 stays active until every required gate actually passes.
+
+
+---
+
+<!-- entry:b40c524f8a95b76e6f995eb755fd769d3ee995d7982bc66e465c550266e36968 -->
+
+# T011 completed and nine-target regression passed
+
+Attempt 2 receipt evidence/runs/T011/attempt-2-20261026T234500176861Z.json: all four gates PASS/exit 0. Lint lint-20261026T234500556123Z.json passed 21 checks/12 commands. Native exit crash did not recur; no source/check/tool-setting changes and the first/second ISS source hash maps are identical. Exact 143-byte crash text/path/hash remains in evidence/t011-native-crash-2026-10-26.json. Root cause is undetermined; retain it for recurrence diagnosis. Ten Python tests pass. Retire receipt retire-20261026T234751079298Z.json has 17 checks/5 commands; actual backend core-20261026T234753279106Z.json has 17 checks/10 commands, 14.843 s. Both seeds match 866 ordered events each: 162 retirements, 11 faults, 341 GPR and 352 RAM words, totals 324/22/682/704. All 49 independent instruction/fault bins and per-seed actual-bit/empty/extra-event mutations pass. The original full-RAM SV scoreboard and actual backend negative comparisons remain enabled.
+
+Full regression PASS/exit 0, evidence/t011-regression-2026-10-26.json. Nine subtargets pass. Retained six RTL units compare 887,108 vectors. Core direct target compares 324 retirements/22 scenarios; the ISS target independently replays those same programs and terminal samples, not new unique instruction coverage. Python memory model separately repeats 49,276 edges/11 tests. Unit, model and retirement counts are never conflated. Pins remain Python3.9.13/Git2.48.1.windows.1/tzdata2026.2/Vivado-XSim2025.2 SW6299465. No installs or external changes.
+
+Changes: new standalone ISS/comparison helpers, anchored tests, actual simulator comparison driver, bench-only trace/state export, ISS.md and reference documentation, registry/state/backlog/README, preserved crash/run/audit evidence and today's two appended reports. Production RTL, architecture, XPR/XDC/kit and earlier reports remain unchanged. Audit evidence/t011-complete-2026-10-26.json binds sources, traces, WDB/vector hashes and preservation. T011 complete, mandatory 11/41, no active task. Commit inspected files and record SHA, then prepare T012 instruction-family traceability and L1 baseline report for required owner review. Do not self-approve that gate. Randomized program closure, pipeline, full ISA/EEI certification, formal, routed FPGA timing, physical hardware, IRQ and ASIC remain future mandatory evidence.
