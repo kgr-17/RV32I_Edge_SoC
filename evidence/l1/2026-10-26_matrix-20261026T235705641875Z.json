@@ -1,0 +1,399 @@
+{
+  "instructions": [
+    {
+      "instruction": "LUI",
+      "hits": {
+        "1": 14,
+        "20261026": 14
+      }
+    },
+    {
+      "instruction": "AUIPC",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "instruction": "JAL",
+      "hits": {
+        "1": 3,
+        "20261026": 3
+      }
+    },
+    {
+      "instruction": "JALR",
+      "hits": {
+        "1": 2,
+        "20261026": 2
+      }
+    },
+    {
+      "instruction": "BEQ",
+      "hits": {
+        "1": 2,
+        "20261026": 2
+      }
+    },
+    {
+      "instruction": "BNE",
+      "hits": {
+        "1": 2,
+        "20261026": 2
+      }
+    },
+    {
+      "instruction": "BLT",
+      "hits": {
+        "1": 2,
+        "20261026": 2
+      }
+    },
+    {
+      "instruction": "BGE",
+      "hits": {
+        "1": 2,
+        "20261026": 2
+      }
+    },
+    {
+      "instruction": "BLTU",
+      "hits": {
+        "1": 2,
+        "20261026": 2
+      }
+    },
+    {
+      "instruction": "BGEU",
+      "hits": {
+        "1": 2,
+        "20261026": 2
+      }
+    },
+    {
+      "instruction": "LB",
+      "hits": {
+        "1": 12,
+        "20261026": 12
+      }
+    },
+    {
+      "instruction": "LH",
+      "hits": {
+        "1": 7,
+        "20261026": 7
+      }
+    },
+    {
+      "instruction": "LW",
+      "hits": {
+        "1": 5,
+        "20261026": 5
+      }
+    },
+    {
+      "instruction": "LBU",
+      "hits": {
+        "1": 4,
+        "20261026": 4
+      }
+    },
+    {
+      "instruction": "LHU",
+      "hits": {
+        "1": 2,
+        "20261026": 2
+      }
+    },
+    {
+      "instruction": "SB",
+      "hits": {
+        "1": 8,
+        "20261026": 8
+      }
+    },
+    {
+      "instruction": "SH",
+      "hits": {
+        "1": 4,
+        "20261026": 4
+      }
+    },
+    {
+      "instruction": "SW",
+      "hits": {
+        "1": 4,
+        "20261026": 4
+      }
+    },
+    {
+      "instruction": "ADDI",
+      "hits": {
+        "1": 71,
+        "20261026": 71
+      }
+    },
+    {
+      "instruction": "SLTI",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "instruction": "SLTIU",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "instruction": "XORI",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "instruction": "ORI",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "instruction": "ANDI",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "instruction": "SLLI",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "instruction": "SRLI",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "instruction": "SRAI",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "instruction": "ADD",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "instruction": "SUB",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "instruction": "SLL",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "instruction": "SLT",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "instruction": "SLTU",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "instruction": "XOR",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "instruction": "SRL",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "instruction": "SRA",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "instruction": "OR",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "instruction": "AND",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "instruction": "FENCE",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "instruction": "ECALL",
+      "hits": {
+        "1": 2,
+        "20261026": 2
+      }
+    },
+    {
+      "instruction": "EBREAK",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    }
+  ],
+  "faults": [
+    {
+      "code": 1,
+      "name": "ILLEGAL_INSN",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "code": 2,
+      "name": "INSTR_ADDR_MISALIGNED",
+      "hits": {
+        "1": 2,
+        "20261026": 2
+      }
+    },
+    {
+      "code": 3,
+      "name": "INSTR_ACCESS_FAULT",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "code": 4,
+      "name": "LOAD_ADDR_MISALIGNED",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "code": 5,
+      "name": "LOAD_ACCESS_FAULT",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "code": 6,
+      "name": "STORE_ADDR_MISALIGNED",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "code": 7,
+      "name": "STORE_ACCESS_FAULT",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    },
+    {
+      "code": 8,
+      "name": "ECALL",
+      "hits": {
+        "1": 2,
+        "20261026": 2
+      }
+    },
+    {
+      "code": 9,
+      "name": "BREAKPOINT",
+      "hits": {
+        "1": 1,
+        "20261026": 1
+      }
+    }
+  ],
+  "retirements": 324,
+  "fault_events": 22,
+  "gpr_words": 682,
+  "ram_words": 704,
+  "scope": "L1 directed nonpipelined reference core; owner review pending",
+  "architecture_sha256": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03",
+  "independent_receipt": "evidence\\toolchain_runs\\retire-20261026T235648507780Z.json",
+  "independent_receipt_sha256": "368c3df24a9fdd53de96445837b0816d2af15bff40c7bc3bc271e6291c230bdf",
+  "backend": {
+    "path": "evidence/toolchain_runs/core-20261026T235650639871Z.json",
+    "sha256": "a9936077c988997bb0c23e89d8a2da90b73cb65255a689c34fb9b720c4b2fd6a"
+  },
+  "seeds": [
+    1,
+    20261026
+  ],
+  "source_sha256": {
+    "rtl/core/rv32_pkg.sv": "a64532c6e1a92232680b4cff5871aa98cdf3694b348e700fc4aa36d7ac948069",
+    "rtl/core/decoder.sv": "1c50bfd7b1fe87c34ca618e854cfce90890df7765092a542ccbb132dcd88f808",
+    "rtl/core/alu.sv": "bff51163e8c202d806a9a3343d82df0d46f4ae34717f48711595a91b72a93b99",
+    "rtl/core/regfile.sv": "b237b622b105509dfeefefe6add04e12dd9fc5b878e6e1133e5fe0a3e3ad2bec",
+    "rtl/core/branch_unit.sv": "df42e9881113c91b3c5a07af32d7116aa673ef39d24f728dafc4e88fde41f63e",
+    "rtl/core/lsu.sv": "3aec50b3fb07044048da457f3ca59a01a21a256a817c806497d04585f69609e6",
+    "rtl/core/reference_core.sv": "8f6db0234fa0a5446a842a5483f81e81c6ba7fd91e748f131e2fc473547475b5",
+    "dv/integration/tb_reference_core.sv": "a9d260b5347cd2cceab7277d4805777c1fa77f0fb3cb53b2eaf6822e653a0b37",
+    "scripts/unit_checks.py": "b465aa88c28c52325ce618d5b2fc9f331733ee8e374c3848c6d19905282af9f9",
+    "config/rtl_checks.json": "4c7942f789debfb352b9db224e7a3c4976545e6db64c747302a7bbfa8eee0819",
+    "scripts/retire_checks.py": "813ef53ed54cae8414048c1e59b542facc1cc2cb595ccad511c95d094b80d375",
+    "dv/reference/rv32_iss.py": "3bea09d666445514edbff6a4d433bdc2e18eec0b416b6780e617efcc91ab856c",
+    "dv/reference/retire.py": "ce9db2f982d3d02c9dba1a97d833480c6497977210dad0b08398d8b10eca62d5",
+    "dv/integration/test_retire.py": "2a266a4762a9852498529be0e307ab9793d7b8dc5cb5408a206b583b336af59e"
+  },
+  "pins": {
+    "schema_version": 1,
+    "python_version": "3.9.13",
+    "git_version": "2.48.1.windows.1",
+    "tzdata_version": "2026.2",
+    "vivado_version": "2025.2",
+    "vivado_sw_build": "6299465"
+  },
+  "no_zero_or_missing_check_pass": true
+}

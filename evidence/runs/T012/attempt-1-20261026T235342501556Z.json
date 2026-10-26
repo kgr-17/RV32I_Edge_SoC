@@ -1,0 +1,101 @@
+{
+  "task": "T012",
+  "attempt": 1,
+  "git_commit": "58147683483850c907291287edeeb86864d59209",
+  "python": "3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)]",
+  "stage": "finished",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "lint"
+      ],
+      "started_utc": "2026-10-26T23:53:42.545450+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/rtl_checks.py\", \"lint\"], \"started_utc\": \"2026-10-26T23:53:42.695003+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\n  \\\"status\\\": \\\"PASS\\\",\\n  \\\"evidence\\\": \\\"evidence\\\\\\\\toolchain_runs\\\\\\\\lint-20261026T235342875952Z.json\\\",\\n  \\\"checks\\\": 21,\\n  \\\"simulations\\\": [],\\n  \\\"error\\\": null\\n}\\n\", \"stderr\": \"\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "test-core"
+      ],
+      "started_utc": "2026-10-26T23:56:32.650085+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/test_unit_checks.py\"], \"started_utc\": \"2026-10-26T23:56:32.807724+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"\", \"stderr\": \"test_actual_spec (__main__.UnitPolicyTests) ... ok\\ntest_corrupt_empty_input_rejected (__main__.UnitPolicyTests) ... ok\\ntest_corrupt_expected_keeps_program_for_core_and_row_for_units (__main__.UnitPolicyTests) ... ok\\ntest_invalid_seeds (__main__.UnitPolicyTests) ... ok\\ntest_missing_reference_not_run (__main__.UnitPolicyTests) ... ok\\ntest_missing_unit_not_run (__main__.UnitPolicyTests) ... ok\\ntest_wave_and_identifier_injection_rejected (__main__.UnitPolicyTests) ... ok\\n\\n----------------------------------------------------------------------\\nRan 7 tests in 0.039s\\n\\nOK\\n\"}\n{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"dv/integration/test_core_smoke.py\"], \"started_utc\": \"2026-10-26T23:56:33.070363+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"\", \"stderr\": \"test_first_row_corruption_targets_checked_fault_value (__main__.CoreProgramTests) ... ok\\ntest_known_machine_encodings (__main__.CoreProgramTests) ... ok\\ntest_replay_and_nonempty_full_family_coverage (__main__.CoreProgramTests) ... ok\\n\\n----------------------------------------------------------------------\\nRan 3 tests in 0.006s\\n\\nOK\\n\"}\n{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/unit_checks.py\", \"core\"], \"started_utc\": \"2026-10-26T23:56:33.207793+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\n  \\\"status\\\": \\\"PASS\\\",\\n  \\\"evidence\\\": \\\"evidence/toolchain_runs/core-20261026T235633405759Z.json\\\",\\n  \\\"checks\\\": 17,\\n  \\\"counts\\\": [\\n    716,\\n    716\\n  ],\\n  \\\"error\\\": null\\n}\\n\", \"stderr\": \"\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "test-retire"
+      ],
+      "started_utc": "2026-10-26T23:56:47.966698+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"dv/integration/test_retire.py\"], \"started_utc\": \"2026-10-26T23:56:48.119794+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"\", \"stderr\": \"test_observed_parser_and_real_mismatch_rejection (__main__.ComparisonTests) ... ok\\ntest_reordering_fault_and_terminal_state_mutation_rejected (__main__.ComparisonTests) ... ok\\ntest_stimulus_ignores_hand_expected_fields (__main__.ComparisonTests) ... ok\\ntest_bad_target_is_fault_before_link_and_jalr_clear (__main__.IssTests) ... ok\\ntest_byte_store_extension_full_word_and_load_x0_effect (__main__.IssTests) ... ok\\ntest_fault_priority_error_effects_and_x0_access_fault (__main__.IssTests) ... ok\\ntest_instruction_access_error_and_bound (__main__.IssTests) ... ok\\ntest_literal_arithmetic_and_signed_shift (__main__.IssTests) ... ok\\ntest_reserved_extensions_and_fence_fields (__main__.IssTests) ... ok\\ntest_reset_retains_committed_memory_and_sticky_fault (__main__.IssTests) ... ok\\n\\n----------------------------------------------------------------------\\nRan 10 tests in 0.001s\\n\\nOK\\n\"}\n{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/retire_checks.py\"], \"started_utc\": \"2026-10-26T23:56:48.299549+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\\"status\\\": \\\"PASS\\\", \\\"evidence\\\": \\\"evidence\\\\\\\\toolchain_runs\\\\\\\\retire-20261026T235648507780Z.json\\\", \\\"comparisons\\\": 2, \\\"error\\\": null}\\n\", \"stderr\": \"\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "test-isa-directed"
+      ],
+      "started_utc": "2026-10-26T23:57:05.307655+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"dv/integration/test_isa_directed.py\"], \"started_utc\": \"2026-10-26T23:57:05.454940+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\\"task\\\": \\\"T012\\\", \\\"profile\\\": \\\"isa-directed\\\", \\\"status\\\": \\\"PASS\\\", \\\"tests\\\": 6, \\\"python\\\": \\\"3.9.13\\\", \\\"argv\\\": [\\\"C:\\\\\\\\Users\\\\\\\\Yixu\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Programs\\\\\\\\Python\\\\\\\\Python39\\\\\\\\python.exe\\\", \\\"-B\\\", \\\"dv/integration/test_isa_directed.py\\\"], \\\"source_sha256\\\": {\\\"dv/integration/test_isa_directed.py\\\": \\\"cd87fff30093edc94696264382b2f3f7c9425320140926ca2063c4ba90e9d261\\\"}, \\\"matrix_path\\\": \\\"evidence\\\\\\\\l1\\\\\\\\2026-10-26_matrix-20261026T235705641875Z.json\\\", \\\"matrix_sha256\\\": \\\"2fda6c37ec650a36e29161c0fccc7c0730fd884f47d6ca2a79aa98a76ff31b70\\\", \\\"instruction_rows\\\": 40, \\\"fault_rows\\\": 9, \\\"exit_code\\\": 0}\\n\", \"stderr\": \"test_complete_nonempty_matrix (__main__.BaselinePolicyTests) ... ok\\ntest_missing_family_or_fault_rejected (__main__.BaselinePolicyTests) ... ok\\ntest_mutation_rejection_gap_rejected (__main__.BaselinePolicyTests) ... ok\\ntest_seed_gap_rejected (__main__.BaselinePolicyTests) ... ok\\ntest_stale_or_failed_evidence_rejected (__main__.BaselinePolicyTests) ... ok\\ntest_state_or_event_accounting_gap_rejected (__main__.BaselinePolicyTests) ... ok\\n\\n----------------------------------------------------------------------\\nRan 6 tests in 0.002s\\n\\nOK\\n\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_utc": "2026-10-26T23:57:05.701780+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "started_utc": "2026-10-26T23:57:05.746664+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "waveform_paths": [],
+  "seed": null,
+  "evidence_sha256": "6ddf4e7bff1aa6c7cceb0fddb2631782908837f29307a874f4d4fa6c6e4d9ce6"
+}

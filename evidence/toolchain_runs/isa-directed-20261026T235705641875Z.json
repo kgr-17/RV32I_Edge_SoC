@@ -1,0 +1,20 @@
+{
+  "task": "T012",
+  "profile": "isa-directed",
+  "status": "PASS",
+  "tests": 6,
+  "python": "3.9.13",
+  "argv": [
+    "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "-B",
+    "dv/integration/test_isa_directed.py"
+  ],
+  "source_sha256": {
+    "dv/integration/test_isa_directed.py": "cd87fff30093edc94696264382b2f3f7c9425320140926ca2063c4ba90e9d261"
+  },
+  "matrix_path": "evidence\\l1\\2026-10-26_matrix-20261026T235705641875Z.json",
+  "matrix_sha256": "2fda6c37ec650a36e29161c0fccc7c0730fd884f47d6ca2a79aa98a76ff31b70",
+  "instruction_rows": 40,
+  "fault_rows": 9,
+  "exit_code": 0
+}

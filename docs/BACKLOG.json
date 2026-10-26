@@ -535,10 +535,16 @@
           "-B",
           "scripts/verify.py",
           "test-retire"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-isa-directed"
         ]
       ],
       "priority": 120,
-      "status": "pending",
+      "status": "awaiting_review",
       "human_approval_required": true,
       "start_approval_required": false,
       "optional": false,

@@ -352,5 +352,21 @@
         "scripts/retire_checks.py"
       ]
     ]
+  },
+  "test-isa-directed": {
+    "inputs": [
+      "dv/integration/test_isa_directed.py",
+      "dv/reference/retire.py",
+      "dv/reference/rv32_iss.py",
+      "docs/ARCH_CONTRACT.json",
+      "docs/VERIFICATION_REPORT.md"
+    ],
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "dv/integration/test_isa_directed.py"
+      ]
+    ]
   }
 }
