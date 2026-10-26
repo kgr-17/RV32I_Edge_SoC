@@ -1,0 +1,278 @@
+{
+  "profile": "lint",
+  "status": "PASS",
+  "started_utc": "20261026T040605428543Z",
+  "base_commit": "92a4fce0b54bdc4a940c3f81098f10956b8fb220",
+  "scope": "Manifest RTL synthesis lint plus infrastructure fixture DV; no complete CPU/SoC or hardware",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\lint-20261026T040605428543Z\\versions",
+      "started_utc": "2026-10-26T04:06:05.520526+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "git version 2.48.1.windows.1\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.11
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\lint-20261026T040605428543Z\\versions\\xvlog",
+      "started_utc": "2026-10-26T04:06:05.642335+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.641
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\lint-20261026T040605428543Z\\versions\\xelab",
+      "started_utc": "2026-10-26T04:06:06.303534+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.609
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\lint-20261026T040605428543Z\\versions\\xsim",
+      "started_utc": "2026-10-26T04:06:06.917146+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2025 Xilinx, Inc. All Rights Reserved.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.469
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat",
+        "-mode",
+        "batch",
+        "-nolog",
+        "-nojournal",
+        "-notrace",
+        "-source",
+        "C:\\RV32I_Edge_SoC\\scripts\\vivado_lint.tcl",
+        "-tclargs",
+        "C:\\RV32I_Edge_SoC\\build\\T003\\lint-20261026T040605428543Z\\lint_decoder\\sources.txt",
+        "decoder",
+        "xc7a35tcpg236-1",
+        "2025.2"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\lint-20261026T040605428543Z\\lint_decoder",
+      "started_utc": "2026-10-26T04:06:07.386845+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** Vivado v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Oct 25 21:06:08 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource {C:\\RV32I_Edge_SoC\\scripts\\vivado_lint.tcl} -notrace\nTOOLCHAIN_VIVADO_VERSION=2025.2\nTOOLCHAIN_VIVADO_FULL_VERSION=Vivado v2025.2 (64-bit)\nSW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\nIP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\nTool Version Limit: 2025.11\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nSharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n\nread_verilog: Time (s): cpu = 00:00:07 ; elapsed = 00:00:05 . Memory (MB): peak = 538.191 ; gain = 220.652\nCommand: synth_design -top decoder -part xc7a35tcpg236-1 -flatten_hierarchy none\nStarting synth_design\nAttempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'\nINFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'\nINFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.\nINFO: [Synth 8-7078] Launching helper process for spawning children vivado processes\nINFO: [Synth 8-7075] Helper process launched with PID 10852\n---------------------------------------------------------------------------------\nStarting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1079.258 ; gain = 536.090\n---------------------------------------------------------------------------------\nINFO: [Synth 8-6157] synthesizing module 'decoder' [C:/RV32I_Edge_SoC/rtl/core/decoder.sv:2]\nINFO: [Synth 8-226] default block is never used [C:/RV32I_Edge_SoC/rtl/core/decoder.sv:46]\nINFO: [Synth 8-6155] done synthesizing module 'decoder' (0#1) [C:/RV32I_Edge_SoC/rtl/core/decoder.sv:2]\n---------------------------------------------------------------------------------\nFinished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1197.809 ; gain = 654.641\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1197.809 ; gain = 654.641\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Loading Part and Timing Information\n---------------------------------------------------------------------------------\nLoading part: xc7a35tcpg236-1\n---------------------------------------------------------------------------------\nINFO: [Device 21-403] Loading part xc7a35tcpg236-1\nFinished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1197.809 ; gain = 654.641\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1197.809 ; gain = 654.641\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart RTL Component Statistics \n---------------------------------------------------------------------------------\nDetailed RTL Component Info : \n+---Muxes : \n\t   2 Input   32 Bit        Muxes := 1     \n\t   2 Input    6 Bit        Muxes := 3     \n\t   2 Input    5 Bit        Muxes := 4     \n\t   4 Input    5 Bit        Muxes := 1     \n\t   7 Input    4 Bit        Muxes := 1     \n\t   6 Input    4 Bit        Muxes := 1     \n\t   2 Input    3 Bit        Muxes := 1     \n\t   7 Input    1 Bit        Muxes := 2     \n---------------------------------------------------------------------------------\nFinished RTL Component Statistics \n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Part Resource Summary\n---------------------------------------------------------------------------------\nPart Resources:\nDSPs: 90 (col length:60)\nBRAMs: 100 (col length: RAMB18 60 RAMB36 30)\n---------------------------------------------------------------------------------\nFinished Part Resource Summary\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart Cross Boundary and Area Optimization\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1392.156 ; gain = 848.988\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart Timing Optimization\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1399.914 ; gain = 856.746\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Technology Mapping\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1399.914 ; gain = 856.746\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart IO Insertion\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Final Netlist Cleanup\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Final Netlist Cleanup\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1628.285 ; gain = 1085.117\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Renaming Generated Instances\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1628.285 ; gain = 1085.117\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Handling Custom Attributes\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1628.285 ; gain = 1085.117\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Writing Synthesis Report\n---------------------------------------------------------------------------------\n\nReport BlackBoxes: \n+-+--------------+----------+\n| |BlackBox name |Instances |\n+-+--------------+----------+\n+-+--------------+----------+\n\nReport Cell Usage: \n+------+-----+------+\n|      |Cell |Count |\n+------+-----+------+\n|1     |LUT2 |    20|\n|2     |LUT3 |    10|\n|3     |LUT4 |    14|\n|4     |LUT5 |    17|\n|5     |LUT6 |   110|\n|6     |IBUF |    32|\n|7     |OBUF |    57|\n+------+-----+------+\n\nReport Instance Areas: \n+------+---------+-------+------+\n|      |Instance |Module |Cells |\n+------+---------+-------+------+\n|1     |top      |       |   260|\n+------+---------+-------+------+\n---------------------------------------------------------------------------------\nFinished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1628.285 ; gain = 1085.117\n---------------------------------------------------------------------------------\nSynthesis finished with 0 errors, 0 critical warnings and 0 warnings.\nSynthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1628.285 ; gain = 1085.117\nSynthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1628.285 ; gain = 1085.117\nINFO: [Project 1-571] Translating synthesized netlist\nNetlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1643.363 ; gain = 0.000\nINFO: [Project 1-570] Preparing netlist for logic optimization\nINFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).\nNetlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1755.281 ; gain = 0.000\nINFO: [Project 1-111] Unisim Transformation Summary:\nNo Unisim elements were transformed.\n\nSynth Design complete | Checksum: ad6a35f5\nINFO: [Common 17-83] Releasing license: Synthesis\n13 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.\nsynth_design completed successfully\nsynth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 1755.281 ; gain = 1217.090\nCommand: report_drc -checks {LUTLP-1 MDRV-1} -file structural_drc.rpt\nINFO: [DRC 23-27] Running DRC with 2 threads\nINFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/RV32I_Edge_SoC/build/T003/lint-20261026T040605428543Z/lint_decoder/structural_drc.rpt.\nreport_drc completed successfully\nTOOLCHAIN_LINT_PASS top=decoder\nINFO: [Common 17-206] Exiting Vivado at Sun Oct 25 21:06:35 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 27.968
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat",
+        "-mode",
+        "batch",
+        "-nolog",
+        "-nojournal",
+        "-notrace",
+        "-source",
+        "C:\\RV32I_Edge_SoC\\scripts\\vivado_lint.tcl",
+        "-tclargs",
+        "C:\\RV32I_Edge_SoC\\build\\T003\\lint-20261026T040605428543Z\\lint_alu\\sources.txt",
+        "alu",
+        "xc7a35tcpg236-1",
+        "2025.2"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\lint-20261026T040605428543Z\\lint_alu",
+      "started_utc": "2026-10-26T04:06:35.386617+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** Vivado v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Oct 25 21:06:36 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource {C:\\RV32I_Edge_SoC\\scripts\\vivado_lint.tcl} -notrace\nTOOLCHAIN_VIVADO_VERSION=2025.2\nTOOLCHAIN_VIVADO_FULL_VERSION=Vivado v2025.2 (64-bit)\nSW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\nIP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\nTool Version Limit: 2025.11\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nSharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n\nread_verilog: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 538.613 ; gain = 224.801\nCommand: synth_design -top alu -part xc7a35tcpg236-1 -flatten_hierarchy none\nStarting synth_design\nAttempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'\nINFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'\nINFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.\nINFO: [Synth 8-7078] Launching helper process for spawning children vivado processes\nINFO: [Synth 8-7075] Helper process launched with PID 14100\n---------------------------------------------------------------------------------\nStarting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1077.652 ; gain = 535.047\n---------------------------------------------------------------------------------\nINFO: [Synth 8-6157] synthesizing module 'alu' [C:/RV32I_Edge_SoC/rtl/core/alu.sv:2]\nINFO: [Synth 8-6155] done synthesizing module 'alu' (0#1) [C:/RV32I_Edge_SoC/rtl/core/alu.sv:2]\n---------------------------------------------------------------------------------\nFinished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1195.605 ; gain = 653.000\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1195.605 ; gain = 653.000\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Loading Part and Timing Information\n---------------------------------------------------------------------------------\nLoading part: xc7a35tcpg236-1\n---------------------------------------------------------------------------------\nINFO: [Device 21-403] Loading part xc7a35tcpg236-1\nFinished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1195.605 ; gain = 653.000\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1195.605 ; gain = 653.000\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart RTL Component Statistics \n---------------------------------------------------------------------------------\nDetailed RTL Component Info : \n+---Adders : \n\t   2 Input   32 Bit       Adders := 1     \n\t   3 Input   32 Bit       Adders := 1     \n+---XORs : \n\t   2 Input     32 Bit         XORs := 1     \n+---Muxes : \n\t  11 Input    1 Bit        Muxes := 1     \n---------------------------------------------------------------------------------\nFinished RTL Component Statistics \n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Part Resource Summary\n---------------------------------------------------------------------------------\nPart Resources:\nDSPs: 90 (col length:60)\nBRAMs: 100 (col length: RAMB18 60 RAMB36 30)\n---------------------------------------------------------------------------------\nFinished Part Resource Summary\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart Cross Boundary and Area Optimization\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1440.254 ; gain = 897.648\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart Timing Optimization\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1449.137 ; gain = 906.531\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Technology Mapping\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1449.137 ; gain = 906.531\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart IO Insertion\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Final Netlist Cleanup\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Final Netlist Cleanup\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1627.609 ; gain = 1085.004\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Renaming Generated Instances\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1627.609 ; gain = 1085.004\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Handling Custom Attributes\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1627.609 ; gain = 1085.004\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Writing Synthesis Report\n---------------------------------------------------------------------------------\n\nReport BlackBoxes: \n+-+--------------+----------+\n| |BlackBox name |Instances |\n+-+--------------+----------+\n+-+--------------+----------+\n\nReport Cell Usage: \n+------+-------+------+\n|      |Cell   |Count |\n+------+-------+------+\n|1     |CARRY4 |    24|\n|2     |LUT2   |    66|\n|3     |LUT3   |    27|\n|4     |LUT4   |   113|\n|5     |LUT5   |    45|\n|6     |LUT6   |   241|\n|7     |IBUF   |    70|\n|8     |OBUF   |    33|\n+------+-------+------+\n\nReport Instance Areas: \n+------+---------+-------+------+\n|      |Instance |Module |Cells |\n+------+---------+-------+------+\n|1     |top      |       |   619|\n+------+---------+-------+------+\n---------------------------------------------------------------------------------\nFinished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1627.609 ; gain = 1085.004\n---------------------------------------------------------------------------------\nSynthesis finished with 0 errors, 0 critical warnings and 0 warnings.\nSynthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1627.609 ; gain = 1085.004\nSynthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1627.609 ; gain = 1085.004\nINFO: [Project 1-571] Translating synthesized netlist\nNetlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1640.621 ; gain = 0.000\nINFO: [Netlist 29-17] Analyzing 24 Unisim elements for replacement\nINFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds\nINFO: [Project 1-570] Preparing netlist for logic optimization\nINFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).\nNetlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1752.129 ; gain = 0.000\nINFO: [Project 1-111] Unisim Transformation Summary:\nNo Unisim elements were transformed.\n\nSynth Design complete | Checksum: 79964665\nINFO: [Common 17-83] Releasing license: Synthesis\n14 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.\nsynth_design completed successfully\nsynth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 1752.129 ; gain = 1213.516\nCommand: report_drc -checks {LUTLP-1 MDRV-1} -file structural_drc.rpt\nINFO: [DRC 23-27] Running DRC with 2 threads\nINFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/RV32I_Edge_SoC/build/T003/lint-20261026T040605428543Z/lint_alu/structural_drc.rpt.\nreport_drc completed successfully\nTOOLCHAIN_LINT_PASS top=alu\nINFO: [Common 17-206] Exiting Vivado at Sun Oct 25 21:07:02 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 27.234
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat",
+        "-mode",
+        "batch",
+        "-nolog",
+        "-nojournal",
+        "-notrace",
+        "-source",
+        "C:\\RV32I_Edge_SoC\\scripts\\vivado_lint.tcl",
+        "-tclargs",
+        "C:\\RV32I_Edge_SoC\\build\\T003\\lint-20261026T040605428543Z\\lint_register_fixture\\sources.txt",
+        "register_fixture",
+        "xc7a35tcpg236-1",
+        "2025.2"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\lint-20261026T040605428543Z\\lint_register_fixture",
+      "started_utc": "2026-10-26T04:07:02.649033+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** Vivado v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Oct 25 21:07:03 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource {C:\\RV32I_Edge_SoC\\scripts\\vivado_lint.tcl} -notrace\nTOOLCHAIN_VIVADO_VERSION=2025.2\nTOOLCHAIN_VIVADO_FULL_VERSION=Vivado v2025.2 (64-bit)\nSW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\nIP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\nTool Version Limit: 2025.11\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nSharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n\nCommand: synth_design -top register_fixture -part xc7a35tcpg236-1 -flatten_hierarchy none\nStarting synth_design\nAttempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'\nINFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'\nINFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.\nINFO: [Synth 8-7078] Launching helper process for spawning children vivado processes\nINFO: [Synth 8-7075] Helper process launched with PID 21600\n---------------------------------------------------------------------------------\nStarting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1076.852 ; gain = 535.688\n---------------------------------------------------------------------------------\nINFO: [Synth 8-6157] synthesizing module 'register_fixture' [C:/RV32I_Edge_SoC/dv/toolchain/register_fixture.sv:3]\nINFO: [Synth 8-6155] done synthesizing module 'register_fixture' (0#1) [C:/RV32I_Edge_SoC/dv/toolchain/register_fixture.sv:3]\n---------------------------------------------------------------------------------\nFinished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1194.449 ; gain = 653.285\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1194.449 ; gain = 653.285\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Loading Part and Timing Information\n---------------------------------------------------------------------------------\nLoading part: xc7a35tcpg236-1\n---------------------------------------------------------------------------------\nINFO: [Device 21-403] Loading part xc7a35tcpg236-1\nFinished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1194.449 ; gain = 653.285\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1194.449 ; gain = 653.285\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart RTL Component Statistics \n---------------------------------------------------------------------------------\nDetailed RTL Component Info : \n+---Registers : \n\t               32 Bit    Registers := 1     \n---------------------------------------------------------------------------------\nFinished RTL Component Statistics \n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Part Resource Summary\n---------------------------------------------------------------------------------\nPart Resources:\nDSPs: 90 (col length:60)\nBRAMs: 100 (col length: RAMB18 60 RAMB36 30)\n---------------------------------------------------------------------------------\nFinished Part Resource Summary\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart Cross Boundary and Area Optimization\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1343.562 ; gain = 802.398\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart Timing Optimization\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1368.582 ; gain = 827.418\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Technology Mapping\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1368.582 ; gain = 827.418\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart IO Insertion\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Final Netlist Cleanup\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Final Netlist Cleanup\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1604.246 ; gain = 1063.082\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Renaming Generated Instances\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1604.246 ; gain = 1063.082\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Handling Custom Attributes\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1604.246 ; gain = 1063.082\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Writing Synthesis Report\n---------------------------------------------------------------------------------\n\nReport BlackBoxes: \n+-+--------------+----------+\n| |BlackBox name |Instances |\n+-+--------------+----------+\n+-+--------------+----------+\n\nReport Cell Usage: \n+------+-----+------+\n|      |Cell |Count |\n+------+-----+------+\n|1     |BUFG |     1|\n|2     |FDRE |    32|\n|3     |IBUF |    35|\n|4     |OBUF |    32|\n+------+-----+------+\n\nReport Instance Areas: \n+------+---------+-------+------+\n|      |Instance |Module |Cells |\n+------+---------+-------+------+\n|1     |top      |       |   100|\n+------+---------+-------+------+\n---------------------------------------------------------------------------------\nFinished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1604.246 ; gain = 1063.082\n---------------------------------------------------------------------------------\nSynthesis finished with 0 errors, 0 critical warnings and 0 warnings.\nSynthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1604.246 ; gain = 1063.082\nSynthesis Optimization Complete : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1604.246 ; gain = 1063.082\nINFO: [Project 1-571] Translating synthesized netlist\nNetlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1619.273 ; gain = 0.000\nINFO: [Project 1-570] Preparing netlist for logic optimization\nINFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).\nNetlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1729.734 ; gain = 0.000\nINFO: [Project 1-111] Unisim Transformation Summary:\nNo Unisim elements were transformed.\n\nSynth Design complete | Checksum: 30029a1d\nINFO: [Common 17-83] Releasing license: Synthesis\n12 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.\nsynth_design completed successfully\nsynth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1729.734 ; gain = 1193.535\nCommand: report_drc -checks {LUTLP-1 MDRV-1} -file structural_drc.rpt\nINFO: [DRC 23-27] Running DRC with 2 threads\nINFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/RV32I_Edge_SoC/build/T003/lint-20261026T040605428543Z/lint_register_fixture/structural_drc.rpt.\nreport_drc completed successfully\nTOOLCHAIN_LINT_PASS top=register_fixture\nINFO: [Common 17-206] Exiting Vivado at Sun Oct 25 21:07:27 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 25.047
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat",
+        "-mode",
+        "batch",
+        "-nolog",
+        "-nojournal",
+        "-notrace",
+        "-source",
+        "C:\\RV32I_Edge_SoC\\scripts\\vivado_lint.tcl",
+        "-tclargs",
+        "C:\\RV32I_Edge_SoC\\build\\T003\\lint-20261026T040605428543Z\\negative_latch\\sources.txt",
+        "negative_latch",
+        "xc7a35tcpg236-1",
+        "2025.2"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\lint-20261026T040605428543Z\\negative_latch",
+      "started_utc": "2026-10-26T04:07:27.710737+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 1,
+      "status": "FAIL",
+      "stdout": "\n****** Vivado v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Oct 25 21:07:28 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource {C:\\RV32I_Edge_SoC\\scripts\\vivado_lint.tcl} -notrace\nTOOLCHAIN_VIVADO_VERSION=2025.2\nTOOLCHAIN_VIVADO_FULL_VERSION=Vivado v2025.2 (64-bit)\nSW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\nIP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\nTool Version Limit: 2025.11\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nSharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n\nread_verilog: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 537.777 ; gain = 219.656\nCommand: synth_design -top negative_latch -part xc7a35tcpg236-1 -flatten_hierarchy none\nStarting synth_design\nAttempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'\nINFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'\nINFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.\nINFO: [Synth 8-7078] Launching helper process for spawning children vivado processes\nINFO: [Synth 8-7075] Helper process launched with PID 28952\n---------------------------------------------------------------------------------\nStarting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1078.281 ; gain = 535.543\n---------------------------------------------------------------------------------\nINFO: [Synth 8-6157] synthesizing module 'negative_latch' [C:/RV32I_Edge_SoC/dv/toolchain/negative_latch.sv:3]\nINFO: [Synth 8-6155] done synthesizing module 'negative_latch' (0#1) [C:/RV32I_Edge_SoC/dv/toolchain/negative_latch.sv:3]\n---------------------------------------------------------------------------------\nFinished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1195.375 ; gain = 652.637\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1195.375 ; gain = 652.637\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Loading Part and Timing Information\n---------------------------------------------------------------------------------\nLoading part: xc7a35tcpg236-1\nINFO: [Device 21-403] Loading part xc7a35tcpg236-1\n---------------------------------------------------------------------------------\nFinished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1195.375 ; gain = 652.637\n---------------------------------------------------------------------------------\nWARNING: [Synth 8-327] inferring latch for variable 'data_o_reg' [C:/RV32I_Edge_SoC/dv/toolchain/negative_latch.sv:9]\n---------------------------------------------------------------------------------\nFinished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1195.375 ; gain = 652.637\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart RTL Component Statistics \n---------------------------------------------------------------------------------\nDetailed RTL Component Info : \n---------------------------------------------------------------------------------\nFinished RTL Component Statistics \n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Part Resource Summary\n---------------------------------------------------------------------------------\nPart Resources:\nDSPs: 90 (col length:60)\nBRAMs: 100 (col length: RAMB18 60 RAMB36 30)\n---------------------------------------------------------------------------------\nFinished Part Resource Summary\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart Cross Boundary and Area Optimization\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1344.609 ; gain = 801.871\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart Timing Optimization\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1369.500 ; gain = 826.762\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Technology Mapping\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1369.500 ; gain = 826.762\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart IO Insertion\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Final Netlist Cleanup\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Final Netlist Cleanup\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1605.086 ; gain = 1062.348\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Renaming Generated Instances\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1605.086 ; gain = 1062.348\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Handling Custom Attributes\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1605.086 ; gain = 1062.348\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Writing Synthesis Report\n---------------------------------------------------------------------------------\n\nReport BlackBoxes: \n+-+--------------+----------+\n| |BlackBox name |Instances |\n+-+--------------+----------+\n+-+--------------+----------+\n\nReport Cell Usage: \n+------+-----+------+\n|      |Cell |Count |\n+------+-----+------+\n|1     |BUFG |     1|\n|2     |LD   |     8|\n|3     |IBUF |     9|\n|4     |OBUF |     8|\n+------+-----+------+\n\nReport Instance Areas: \n+------+---------+-------+------+\n|      |Instance |Module |Cells |\n+------+---------+-------+------+\n|1     |top      |       |    26|\n+------+---------+-------+------+\n---------------------------------------------------------------------------------\nFinished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1605.086 ; gain = 1062.348\n---------------------------------------------------------------------------------\nSynthesis finished with 0 errors, 0 critical warnings and 1 warnings.\nSynthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1605.086 ; gain = 1062.348\nSynthesis Optimization Complete : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1605.086 ; gain = 1062.348\nINFO: [Project 1-571] Translating synthesized netlist\nNetlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1620.125 ; gain = 0.000\nINFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement\nINFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds\nINFO: [Project 1-570] Preparing netlist for logic optimization\nINFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).\nNetlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1732.066 ; gain = 0.000\nINFO: [Project 1-111] Unisim Transformation Summary:\n  A total of 8 instances were transformed.\n  LD => LDCE: 8 instances\n\nSynth Design complete | Checksum: 96da3d8b\nINFO: [Common 17-83] Releasing license: Synthesis\n14 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.\nsynth_design completed successfully\nsynth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1732.066 ; gain = 1194.289\nTOOLCHAIN_LINT_FAIL: LATCH_DETECTED: data_o_reg[0] data_o_reg[1] data_o_reg[2] data_o_reg[3] data_o_reg[4] data_o_reg[5] data_o_reg[6] data_o_reg[7]\nINFO: [Common 17-206] Exiting Vivado at Sun Oct 25 21:07:52 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 24.547
+    }
+  ],
+  "checks": [
+    {
+      "name": "Pinned Python version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned tzdata version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned Git version",
+      "status": "PASS",
+      "command_index": 0
+    },
+    {
+      "name": "Pinned xvlog version",
+      "status": "PASS",
+      "command_index": 1
+    },
+    {
+      "name": "Pinned xelab version",
+      "status": "PASS",
+      "command_index": 2
+    },
+    {
+      "name": "Pinned xsim version",
+      "status": "PASS",
+      "command_index": 3
+    },
+    {
+      "name": "Synthesis lint decoder",
+      "status": "PASS",
+      "command_index": 4
+    },
+    {
+      "name": "Pinned Vivado SW build",
+      "status": "PASS",
+      "command_index": 4
+    },
+    {
+      "name": "Synthesis lint alu",
+      "status": "PASS",
+      "command_index": 5
+    },
+    {
+      "name": "Pinned Vivado SW build",
+      "status": "PASS",
+      "command_index": 5
+    },
+    {
+      "name": "Synthesis lint register_fixture",
+      "status": "PASS",
+      "command_index": 6
+    },
+    {
+      "name": "Pinned Vivado SW build",
+      "status": "PASS",
+      "command_index": 6
+    },
+    {
+      "name": "Inferred latch explicitly rejected",
+      "status": "PASS",
+      "command_index": 7
+    }
+  ],
+  "simulations": [],
+  "excluded": [
+    "formal",
+    "timing closure",
+    "physical FPGA",
+    "ASIC",
+    "CPU ISA correctness"
+  ],
+  "pins": {
+    "schema_version": 1,
+    "python_version": "3.9.13",
+    "git_version": "2.48.1.windows.1",
+    "tzdata_version": "2026.2",
+    "vivado_version": "2025.2",
+    "vivado_sw_build": "6299465"
+  },
+  "finished_utc": "2026-10-26T04:07:52.262999+00:00"
+}

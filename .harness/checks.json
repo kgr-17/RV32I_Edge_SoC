@@ -36,11 +36,21 @@
       ["{python}", "-B", "scripts/decode_checks.py"]
     ]
   },
+  "test-alu": {
+    "inputs": ["config/rtl_checks.json", ".harness/toolchain.json", "scripts/unit_checks.py", "scripts/test_unit_checks.py", "scripts/rtl_checks.py", "scripts/tool_runner.py", "scripts/tool_child.py", "rtl/core/rv32_pkg.sv", "rtl/core/alu.sv", "dv/unit/tb_alu.sv", "dv/unit/test_alu.py"],
+    "commands": [
+      ["{python}", "-B", "scripts/test_rtl_checks.py"],
+      ["{python}", "-B", "scripts/test_unit_checks.py"],
+      ["{python}", "-B", "dv/unit/test_alu.py"],
+      ["{python}", "-B", "scripts/unit_checks.py", "alu"]
+    ]
+  },
   "regress": {
     "inputs": ["config/rtl_checks.json", "scripts/rtl_checks.py", "scripts/tool_runner.py", "scripts/tool_child.py", "scripts/xsim_run.tcl", "dv/toolchain/register_fixture.sv", "dv/toolchain/tb_toolchain.sv", "dv/toolchain/negative_syntax.sv"],
     "commands": [
       ["{python}", "-B", "scripts/rtl_checks.py", "regress"],
-      ["{python}", "-B", "scripts/verify.py", "test-decode"]
+      ["{python}", "-B", "scripts/verify.py", "test-decode"],
+      ["{python}", "-B", "scripts/verify.py", "test-alu"]
     ]
   }
 }

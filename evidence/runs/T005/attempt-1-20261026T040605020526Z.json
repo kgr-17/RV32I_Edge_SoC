@@ -1,0 +1,71 @@
+{
+  "task": "T005",
+  "attempt": 1,
+  "git_commit": "92a4fce0b54bdc4a940c3f81098f10956b8fb220",
+  "python": "3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)]",
+  "stage": "finished",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "lint"
+      ],
+      "started_utc": "2026-10-26T04:06:05.056571+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/rtl_checks.py\", \"lint\"], \"started_utc\": \"2026-10-26T04:06:05.226458+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\n  \\\"status\\\": \\\"PASS\\\",\\n  \\\"evidence\\\": \\\"evidence\\\\\\\\toolchain_runs\\\\\\\\lint-20261026T040605428543Z.json\\\",\\n  \\\"checks\\\": 13,\\n  \\\"simulations\\\": [],\\n  \\\"error\\\": null\\n}\\n\", \"stderr\": \"\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "test-alu"
+      ],
+      "started_utc": "2026-10-26T04:07:52.284764+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/test_rtl_checks.py\"], \"started_utc\": \"2026-10-26T04:07:52.436055+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"\", \"stderr\": \"test_duplicate_completion_rejected (__main__.CheckPolicyTests) ... ok\\ntest_empty_manifest_rejected (__main__.CheckPolicyTests) ... ok\\ntest_error_despite_exit_zero_rejected (__main__.CheckPolicyTests) ... ok\\ntest_invalid_seed_rejected (__main__.CheckPolicyTests) ... ok\\ntest_missing_lint_only_source_is_not_run (__main__.CheckPolicyTests) ... ok\\ntest_missing_source_not_run (__main__.CheckPolicyTests) ... ok\\ntest_nonzero_cannot_be_accepted_as_pass (__main__.CheckPolicyTests) ... ok\\ntest_oracle_reset_wins_and_hold (__main__.CheckPolicyTests) ... ok\\ntest_positive_completion (__main__.CheckPolicyTests) ... ok\\ntest_production_lint_only_designs_registered_without_fixture_protocol (__main__.CheckPolicyTests) ... ok\\ntest_replay_and_seed_variation (__main__.CheckPolicyTests) ... ok\\ntest_timeout_or_nonzero_rejected (__main__.CheckPolicyTests) ... ok\\ntest_unregistered_production_source_not_run (__main__.CheckPolicyTests) ... ok\\ntest_xsim_batch_does_not_receive_equals_arguments (__main__.CheckPolicyTests) ... ok\\ntest_zero_tests_or_missing_completion_rejected (__main__.CheckPolicyTests) ... ok\\n\\n----------------------------------------------------------------------\\nRan 15 tests in 0.023s\\n\\nOK\\n\"}\n{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/test_unit_checks.py\"], \"started_utc\": \"2026-10-26T04:07:52.794380+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"\", \"stderr\": \"test_actual_spec (__main__.UnitPolicyTests) ... ok\\ntest_invalid_seeds (__main__.UnitPolicyTests) ... ok\\ntest_missing_reference_not_run (__main__.UnitPolicyTests) ... ok\\ntest_missing_unit_not_run (__main__.UnitPolicyTests) ... ok\\ntest_wave_and_identifier_injection_rejected (__main__.UnitPolicyTests) ... ok\\n\\n----------------------------------------------------------------------\\nRan 5 tests in 0.012s\\n\\nOK\\n\"}\n{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"dv/unit/test_alu.py\"], \"started_utc\": \"2026-10-26T04:07:53.028809+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"\", \"stderr\": \"test_add_sub_wraparound (__main__.AluOracleTests) ... ok\\ntest_bitwise_truths (__main__.AluOracleTests) ... ok\\ntest_register_and_immediate_aliases (__main__.AluOracleTests) ... ok\\ntest_shift_mask_and_floor_sign_fill (__main__.AluOracleTests) ... ok\\ntest_signed_and_unsigned_comparisons (__main__.AluOracleTests) ... ok\\ntest_unused_selectors_are_explicitly_unsupported (__main__.AluOracleTests) ... ok\\n\\n----------------------------------------------------------------------\\nRan 6 tests in 0.003s\\n\\nOK\\n\"}\n{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/unit_checks.py\", \"alu\"], \"started_utc\": \"2026-10-26T04:07:53.172495+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\n  \\\"status\\\": \\\"PASS\\\",\\n  \\\"evidence\\\": \\\"evidence/toolchain_runs/alu-20261026T040753354907Z.json\\\",\\n  \\\"checks\\\": 17,\\n  \\\"counts\\\": [\\n    117402,\\n    117402\\n  ],\\n  \\\"error\\\": null\\n}\\n\", \"stderr\": \"\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_utc": "2026-10-26T04:08:07.834734+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "started_utc": "2026-10-26T04:08:07.876861+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "waveform_paths": [],
+  "seed": null,
+  "evidence_sha256": "93434b65aae10d178b129acbc999433a74e62eb42c8314568cfb3b9397b05151"
+}

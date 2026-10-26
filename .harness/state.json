@@ -13,7 +13,7 @@
     "T002": "completed",
     "T003": "completed",
     "T004": "completed",
-    "T005": "pending",
+    "T005": "completed",
     "T006": "pending",
     "T007": "pending",
     "T008": "pending",
@@ -59,14 +59,16 @@
     "T001": 2,
     "T002": 1,
     "T003": 1,
-    "T004": 1
+    "T004": 1,
+    "T005": 1
   },
   "blocked_reasons": {},
   "receipts": {
     "T001": "evidence/runs/T001/attempt-2-20261015T052535290129Z.json",
     "T002": "evidence/runs/T002/attempt-1-20261017T034202692993Z.json",
     "T003": "evidence/runs/T003/attempt-1-20261023T182351910210Z.json",
-    "T004": "evidence/runs/T004/attempt-1-20261023T185858736019Z.json"
+    "T004": "evidence/runs/T004/attempt-1-20261023T185858736019Z.json",
+    "T005": "evidence/runs/T005/attempt-1-20261026T040605020526Z.json"
   },
   "owner_reviews": {
     "T002": {
@@ -97,6 +99,9 @@
     "2026-10-23": [
       "T003",
       "T004"
+    ],
+    "2026-10-25": [
+      "T005"
     ]
   }
 }

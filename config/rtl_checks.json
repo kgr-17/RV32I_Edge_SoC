@@ -7,11 +7,27 @@
   "vivado_sw_build": "6299465",
   "seeds": [1, 20261017],
   "decode_seeds": [1, 20261023],
+  "unit_sims": {
+    "alu": {
+      "task": "T005",
+      "sources": ["rtl/core/rv32_pkg.sv", "rtl/core/alu.sv"],
+      "testbench": "dv/unit/tb_alu.sv",
+      "test_top": "tb_alu",
+      "reference": "dv/unit/test_alu.py",
+      "seeds": [1, 20261025],
+      "waves": ["/tb_alu/op", "/tb_alu/a", "/tb_alu/b", "/tb_alu/result", "/tb_alu/supported", "/tb_alu/expected"]
+    }
+  },
   "lint_designs": [
     {
       "name": "rv32_decoder",
       "top": "decoder",
       "sources": ["rtl/core/rv32_pkg.sv", "rtl/core/decoder.sv"]
+    },
+    {
+      "name": "rv32_alu",
+      "top": "alu",
+      "sources": ["rtl/core/rv32_pkg.sv", "rtl/core/alu.sv"]
     }
   ],
   "designs": [

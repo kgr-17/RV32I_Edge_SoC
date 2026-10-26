@@ -1,0 +1,40 @@
+{
+  "task": "T005",
+  "report_date": "2026-10-25",
+  "baseline_commit": "92a4fce0b54bdc4a940c3f81098f10956b8fb220",
+  "completed_utc": "2026-10-26T04:09:17.385199+00:00",
+  "receipt": "evidence/runs/T005/attempt-1-20261026T040605020526Z.json",
+  "status": "completed",
+  "attempt": 1,
+  "original_files_preserved": 23,
+  "historical_files_unchanged": 89,
+  "source_sha256": {
+    "rtl/core/alu.sv": "bff51163e8c202d806a9a3343d82df0d46f4ae34717f48711595a91b72a93b99",
+    "dv/unit/test_alu.py": "0e24c2f7606b7985f405cd3d991aba23f67dd0a0de5ceb1cfbe5172719620942",
+    "dv/unit/tb_alu.sv": "88f55270787444e1e1f43686947169abcc851559a7bfa7897c7f35d9504236ad",
+    "scripts/unit_checks.py": "5d0e55eb1272f8bfc69f94f8e5f79ed0f2b12fd9e48d42cf658b59e493f4e969",
+    "scripts/test_unit_checks.py": "f0898f33ebf60de6f762a298518e86624ac14f596ec99a8d74ac98d2381ac194",
+    "config/rtl_checks.json": "545f21b5d63aa570e146736f1226d08910d255631a156af9bd6db09e747839f1",
+    ".harness/checks.json": "ff0152959879af848d8564f172546fa07cf66892c33d985abbd6d7804026cb20"
+  },
+  "verified_artifacts": {
+    "build/units/alu-20261026T040753354907Z/sim_alu/vectors_1.txt": "4766366232958480ee43911f7ba48678cacf11688290935f7ea8315b090bd2e0",
+    "build/units/alu-20261026T040753354907Z/sim_alu/seed_1.wdb": "7b639db9991852d4cbe551c161aa20c230db0a8e7e4774313724f2b82d5cccd6",
+    "build/units/alu-20261026T040753354907Z/sim_alu/vectors_20261025.txt": "c239cd940f8041c0bf8cd13f33efb2698d57e64d9f9d1f62b51418fd2459e884",
+    "build/units/alu-20261026T040753354907Z/sim_alu/seed_20261025.wdb": "87a8303730b1ab5eee7375f3af8fe35c4bf28c049d83baeef39664864f009810",
+    "build\\units\\alu-20261026T040753354907Z\\sim_alu\\seed_1.args": "438d55038fa3aba41abf9c7cc3262e6b5a690e2e9256c1c5ebcbef06d0a9eba4",
+    "build\\units\\alu-20261026T040753354907Z\\sim_alu\\seed_20261025.args": "a13c863a1b5192de1d013382993504d3c192aadf0ad61b6e2362a02ed040f74d",
+    "build\\units\\alu-20261026T040753354907Z\\sim_alu\\corrupt_expected.args": "8e29ad8db0c095a6000668f31bcd41d25615c723f9e1e1bdceb0cf00d4bc67a8",
+    "build\\units\\alu-20261026T040753354907Z\\sim_alu\\empty_vectors.args": "11390b9ef492c04da60e0182c52533503d743caaec470c681f8a2e36b2829268"
+  },
+  "source_snapshot": {
+    "rtl/core/rv32_pkg.sv": "a64532c6e1a92232680b4cff5871aa98cdf3694b348e700fc4aa36d7ac948069",
+    "rtl/core/alu.sv": "bff51163e8c202d806a9a3343d82df0d46f4ae34717f48711595a91b72a93b99",
+    "dv/unit/tb_alu.sv": "88f55270787444e1e1f43686947169abcc851559a7bfa7897c7f35d9504236ad",
+    "dv/unit/test_alu.py": "0e24c2f7606b7985f405cd3d991aba23f67dd0a0de5ceb1cfbe5172719620942",
+    "config/rtl_checks.json": "545f21b5d63aa570e146736f1226d08910d255631a156af9bd6db09e747839f1",
+    "scripts/unit_checks.py": "5d0e55eb1272f8bfc69f94f8e5f79ed0f2b12fd9e48d42cf658b59e493f4e969",
+    "scripts/rtl_checks.py": "023973b6f320cd4baa7936ff6844eff5bf34348e63a2db0819029e90e04c18f7"
+  },
+  "total_vectors": 234804
+}
