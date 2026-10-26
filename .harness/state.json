@@ -14,7 +14,7 @@
     "T003": "completed",
     "T004": "completed",
     "T005": "completed",
-    "T006": "awaiting_review",
+    "T006": "completed",
     "T007": "pending",
     "T008": "pending",
     "T009": "pending",
@@ -76,6 +76,10 @@
     "T002": {
       "date": "2026-10-17",
       "receipt": "evidence/runs/T002/attempt-1-20261017T034202692993Z.json"
+    },
+    "T006": {
+      "date": "2026-10-25",
+      "receipt": "evidence/runs/T006/attempt-2-20261026T041624015172Z.json"
     }
   },
   "start_approvals": {},

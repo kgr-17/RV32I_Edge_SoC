@@ -113,3 +113,14 @@ T005 ALU delivery is 0b89a04a0336af843b37c8623880d819a2c97050 (19 inspected file
 Actual final state: project in_progress, active=null, completed mandatory=5, T006 awaiting_review, next=null because of the owner gate, daily_tasks[2026-10-25]=[T005,T006]. First T006 failure, exact failed source and all rerun/negative evidence remain intact. Final combined unit regression passed 543,428 vectors, separate ALU acceptance 234,804 and RF acceptance 20,738 rows; repeated seeds are not extra unique coverage. No formal, full CPU, routed timing, physical hardware or ASIC acceptance.
 
 Owner action is review docs/REGFILE.md and evidence/daily/T006.md, then the owner may run python -B scripts/harness.py approve T006 --confirm-owner-review. BACKLOG marks T006 human_approval_required and AGENTS.md reserves approval; the agent has not invoked it or started T007. Generic continuation is not approval. After persisted owner review, read this latest handoff and required files, inspect actual runtime controls/clean Git, run daily --supervised and next, then begin T007 branch comparison/target math/JALR masking. Continue sequential tasks in the attended session while budget permits, respecting future gates; no calendar wait or quota exception. Unattended automation remains disabled under unrestricted runtime. Do not re-request the confirmed Basys 3/Vivado path or previously recorded T002/T003 approvals.
+
+
+---
+
+<!-- entry:72b4af0ce78145b3d4d399d57506550d9a2a05d671ad96be8d1b0302a98bbfbc -->
+
+# Owner reviewed T006 and authorized its approval command
+
+The owner answered ‘Reviewed: approve T006 and authorize the command’ to question call_ab2669f837ed4a1ebe438fcf87a79810, after the concrete delivery 4f67b3c/handoff 9babc92. This is an explicit exception to the agent's prohibition for this exact command only: python -B scripts/harness.py approve T006 --confirm-owner-review. Provenance is evidence/owner_reviews/T006-2026-10-25.json; execution result is evidence/owner_reviews/T006-2026-10-25-command.json. Applied the authorized owner action, which promotes T006 from awaiting_review to completed and records the reviewed final receipt; it does not rerun tests, reset attempts or change evidence.
+
+T006's automated acceptance remains attempt 2; first failure and all prior logs stay intact. The project now has 6/41 mandatory completed, no active task, and T007 is first dependency-ready. Review and commit this approval state/provenance/report checkpoint from clean baseline 9babc92, then begin T007. Implement only branch comparisons and target math against the unchanged reviewed architecture, including JALR bit-zero clearing followed by target alignment and not-taken branch behavior. No new architecture/ISA/clock/reset proposal, blanket approval, installation or hardware authorization is implied. Continue sequential attended tasks within the session budget, respecting later owner gates.
