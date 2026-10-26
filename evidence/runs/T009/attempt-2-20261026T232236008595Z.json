@@ -1,0 +1,71 @@
+{
+  "task": "T009",
+  "attempt": 2,
+  "git_commit": "075d73847c30c007a2bc30c6626a882e0e4a958f",
+  "python": "3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)]",
+  "stage": "finished",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "lint"
+      ],
+      "started_utc": "2026-10-26T23:22:36.049503+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/rtl_checks.py\", \"lint\"], \"started_utc\": \"2026-10-26T23:22:36.204767+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\n  \\\"status\\\": \\\"PASS\\\",\\n  \\\"evidence\\\": \\\"evidence\\\\\\\\toolchain_runs\\\\\\\\lint-20261026T232236393311Z.json\\\",\\n  \\\"checks\\\": 19,\\n  \\\"simulations\\\": [],\\n  \\\"error\\\": null\\n}\\n\", \"stderr\": \"\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "test-memory"
+      ],
+      "started_utc": "2026-10-26T23:24:51.174195+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"dv/integration/test_memory.py\"], \"started_utc\": \"2026-10-26T23:24:51.321685+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\\"status\\\": \\\"PASS\\\", \\\"evidence\\\": \\\"evidence\\\\\\\\toolchain_runs\\\\\\\\memory-20261026T232451515660Z.json\\\", \\\"tests\\\": 11, \\\"stress_edges\\\": 49276}\\n\", \"stderr\": \"test_configuration_and_explicit_initialization (__main__.MemoryTests) ... ok\\ntest_deferred_store_and_each_lane_neighbor (__main__.MemoryTests) ... ok\\ntest_deliberate_model_defects_are_rejected (__main__.MemoryTests) ... ok\\ntest_fixed_latency_minimum_and_no_duplicate (__main__.MemoryTests) ... ok\\ntest_instruction_and_data_have_independent_outstanding_slots (__main__.MemoryTests) ... ok\\ntest_invalid_requests_fail_before_bus_acceptance (__main__.MemoryTests) ... ok\\ntest_map_permissions_boundaries_and_errors_have_no_effect (__main__.MemoryTests) ... ok\\ntest_request_stability_and_producer_violations (__main__.MemoryTests) ... ok\\ntest_reset_offered_waiting_stalled_and_committed (__main__.MemoryTests) ... ok\\ntest_seeded_independent_event_ledger (__main__.MemoryTests) ... ok\\ntest_stalled_response_snapshot_and_no_replacement (__main__.MemoryTests) ... ok\\n\\n----------------------------------------------------------------------\\nRan 11 tests in 0.722s\\n\\nOK\\n\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_utc": "2026-10-26T23:24:52.274913+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "started_utc": "2026-10-26T23:24:52.317127+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "waveform_paths": [],
+  "seed": null,
+  "evidence_sha256": "3f515602122175233572aadcaec31888e8227bffb8c041a50d26c742bcdd01ce"
+}

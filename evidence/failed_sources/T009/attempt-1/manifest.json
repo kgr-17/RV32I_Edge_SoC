@@ -1,0 +1,9 @@
+{
+  "source_sha256": {
+    "dv/models/memory.py": "49e1b3d49547c654c7078a09b00c7dc2de87a0bcf8bdf934e0af7e2623e9836f",
+    "dv/integration/test_memory.py": "b15c9806aac1ca406ad36f29c9b47599062faaa33d4887728484a353e56d0d5b",
+    ".harness/checks.json": "8803bbe90705bfe6d3e42a6d044920642198af46d75087071228d84a63384c17"
+  },
+  "zip_sha256": "4640af71f54030b863d04a78ecbe40cb839ba931368dab9693a1a2c7e2cfcb41",
+  "receipt": "evidence/toolchain_runs/memory-20261026T232141538434Z.json"
+}

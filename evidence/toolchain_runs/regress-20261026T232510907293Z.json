@@ -1,0 +1,476 @@
+{
+  "profile": "regress",
+  "status": "PASS",
+  "started_utc": "20261026T232510907293Z",
+  "base_commit": "075d73847c30c007a2bc30c6626a882e0e4a958f",
+  "scope": "Infrastructure fixture only; no CPU/SoC implementation or hardware",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\regress-20261026T232510907293Z\\versions",
+      "started_utc": "2026-10-26T23:25:10.994848+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "git version 2.48.1.windows.1\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.109
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\regress-20261026T232510907293Z\\versions\\xvlog",
+      "started_utc": "2026-10-26T23:25:11.107425+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.61
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\regress-20261026T232510907293Z\\versions\\xelab",
+      "started_utc": "2026-10-26T23:25:11.707371+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.609
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\regress-20261026T232510907293Z\\versions\\xsim",
+      "started_utc": "2026-10-26T23:25:12.325691+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2025 Xilinx, Inc. All Rights Reserved.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.5
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--sv",
+        "C:\\RV32I_Edge_SoC\\dv\\toolchain\\register_fixture.sv",
+        "C:\\RV32I_Edge_SoC\\dv\\toolchain\\tb_toolchain.sv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\regress-20261026T232510907293Z\\sim_toolchain_fixture",
+      "started_utc": "2026-10-26T23:25:12.826472+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "INFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/toolchain/register_fixture.sv\" into library work\nINFO: [VRFC 10-311] analyzing module register_fixture\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/toolchain/tb_toolchain.sv\" into library work\nINFO: [VRFC 10-311] analyzing module tb_toolchain\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.75
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "work.tb_toolchain",
+        "--snapshot",
+        "toolchain_snapshot",
+        "--timescale",
+        "1ns/1ps",
+        "--debug",
+        "typical"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\regress-20261026T232510907293Z\\sim_toolchain_fixture",
+      "started_utc": "2026-10-26T23:25:13.586698+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nRunning: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_toolchain --snapshot toolchain_snapshot --timescale 1ns/1ps --debug typical \nMulti-threading is on. Using 26 slave threads.\nStarting static elaboration\nPass Through NonSizing Optimizer\nCompleted static elaboration\nStarting simulation data flow analysis\nCompleted simulation data flow analysis\nTime Resolution for simulation is 1ps\nCompiling module work.register_fixture\nCompiling module work.tb_toolchain\nBuilt simulation snapshot toolchain_snapshot\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.906
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "toolchain_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T003\\regress-20261026T232510907293Z\\sim_toolchain_fixture\\seed_1.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\regress-20261026T232510907293Z\\sim_toolchain_fixture",
+      "started_utc": "2026-10-26T23:25:14.510870+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Mon Oct 26 16:25:15 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/toolchain_snapshot/xsim_script.tcl\n# xsim {toolchain_snapshot} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T003/regress-20261026T232510907293Z/sim_toolchain_fixture/vectors_1.txt -wdb {C:/RV32I_Edge_SoC/build/T003/regress-20261026T232510907293Z/sim_toolchain_fixture/seed_1.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/scripts/xsim_run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/scripts/xsim_run.tcl\n## log_wave /tb_toolchain/clk /tb_toolchain/rst /tb_toolchain/enable /tb_toolchain/data_in /tb_toolchain/data_out\n## run all\nTOOLCHAIN_SIM_PASS seed=1 checked=134\n$finish called at time : 1346 ns : File \"C:/RV32I_Edge_SoC/dv/toolchain/tb_toolchain.sv\" Line 55\nexit 0\nINFO: [Common 17-206] Exiting xsim at Mon Oct 26 16:25:16 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.515,
+      "argument_file": {
+        "path": "build\\T003\\regress-20261026T232510907293Z\\sim_toolchain_fixture\\seed_1.args",
+        "sha256": "9e364a1f8b89563de2d8222f4476aba26bbc53055cd442537288b73c307504cb",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/scripts/xsim_run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T003/regress-20261026T232510907293Z/sim_toolchain_fixture/vectors_1.txt\n--log\nseed_1.log\n--wdb\nC:/RV32I_Edge_SoC/build/T003/regress-20261026T232510907293Z/sim_toolchain_fixture/seed_1.wdb\n",
+        "intended_argv": [
+          "toolchain_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/scripts/xsim_run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T003/regress-20261026T232510907293Z/sim_toolchain_fixture/vectors_1.txt",
+          "--log",
+          "seed_1.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T003/regress-20261026T232510907293Z/sim_toolchain_fixture/seed_1.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "toolchain_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T003\\regress-20261026T232510907293Z\\sim_toolchain_fixture\\seed_20261017.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\regress-20261026T232510907293Z\\sim_toolchain_fixture",
+      "started_utc": "2026-10-26T23:25:17.040741+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Mon Oct 26 16:25:17 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/toolchain_snapshot/xsim_script.tcl\n# xsim {toolchain_snapshot} -testplusarg SEED=20261017 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T003/regress-20261026T232510907293Z/sim_toolchain_fixture/vectors_20261017.txt -wdb {C:/RV32I_Edge_SoC/build/T003/regress-20261026T232510907293Z/sim_toolchain_fixture/seed_20261017.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/scripts/xsim_run.tcl} -onfinish quit -onerror quit -sv_seed 20261017\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/scripts/xsim_run.tcl\n## log_wave /tb_toolchain/clk /tb_toolchain/rst /tb_toolchain/enable /tb_toolchain/data_in /tb_toolchain/data_out\n## run all\nTOOLCHAIN_SIM_PASS seed=20261017 checked=134\n$finish called at time : 1346 ns : File \"C:/RV32I_Edge_SoC/dv/toolchain/tb_toolchain.sv\" Line 55\nexit 0\nINFO: [Common 17-206] Exiting xsim at Mon Oct 26 16:25:19 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.484,
+      "argument_file": {
+        "path": "build\\T003\\regress-20261026T232510907293Z\\sim_toolchain_fixture\\seed_20261017.args",
+        "sha256": "81cdcd9142e42999ec110d17ae91cd3f90e4f2442ef4989f0525e1b8abc17bd9",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/scripts/xsim_run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n20261017\n--testplusarg\nSEED=20261017\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T003/regress-20261026T232510907293Z/sim_toolchain_fixture/vectors_20261017.txt\n--log\nseed_20261017.log\n--wdb\nC:/RV32I_Edge_SoC/build/T003/regress-20261026T232510907293Z/sim_toolchain_fixture/seed_20261017.wdb\n",
+        "intended_argv": [
+          "toolchain_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/scripts/xsim_run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "20261017",
+          "--testplusarg",
+          "SEED=20261017",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T003/regress-20261026T232510907293Z/sim_toolchain_fixture/vectors_20261017.txt",
+          "--log",
+          "seed_20261017.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T003/regress-20261026T232510907293Z/sim_toolchain_fixture/seed_20261017.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "toolchain_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T003\\regress-20261026T232510907293Z\\sim_toolchain_fixture\\inject_fatal.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\regress-20261026T232510907293Z\\sim_toolchain_fixture",
+      "started_utc": "2026-10-26T23:25:19.538109+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Mon Oct 26 16:25:20 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/toolchain_snapshot/xsim_script.tcl\n# xsim {toolchain_snapshot} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T003/regress-20261026T232510907293Z/sim_toolchain_fixture/vectors_1.txt -testplusarg INJECT_FATAL -wdb {inject_fatal.wdb} -autoloadwcfg -runall -onfinish quit -onerror quit\nTime resolution is 1 ps\nrun -all\nFatal: TOOLCHAIN_EXPECTED_FATAL\nTime: 0 ps  Iteration: 0  Process: /tb_toolchain/Initial23_3  Scope: tb_toolchain  File: C:/RV32I_Edge_SoC/dv/toolchain/tb_toolchain.sv Line: 26\n$finish called at time : 0 fs\nexit 0\nINFO: [Common 17-206] Exiting xsim at Mon Oct 26 16:25:21 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.437,
+      "argument_file": {
+        "path": "build\\T003\\regress-20261026T232510907293Z\\sim_toolchain_fixture\\inject_fatal.args",
+        "sha256": "f3ddc27c2f51d0d245742002c97bd36f32dfd27c41e97dc00d449c33122af226",
+        "content": "--runall\n--onerror\nquit\n--onfinish\nquit\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T003/regress-20261026T232510907293Z/sim_toolchain_fixture/vectors_1.txt\n--testplusarg\nINJECT_FATAL\n--log\ninject_fatal.log\n--wdb\ninject_fatal.wdb\n",
+        "intended_argv": [
+          "toolchain_snapshot",
+          "--runall",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T003/regress-20261026T232510907293Z/sim_toolchain_fixture/vectors_1.txt",
+          "--testplusarg",
+          "INJECT_FATAL",
+          "--log",
+          "inject_fatal.log",
+          "--wdb",
+          "inject_fatal.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "toolchain_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T003\\regress-20261026T232510907293Z\\sim_toolchain_fixture\\omit_pass.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\regress-20261026T232510907293Z\\sim_toolchain_fixture",
+      "started_utc": "2026-10-26T23:25:21.982455+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Mon Oct 26 16:25:22 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/toolchain_snapshot/xsim_script.tcl\n# xsim {toolchain_snapshot} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T003/regress-20261026T232510907293Z/sim_toolchain_fixture/vectors_1.txt -testplusarg OMIT_PASS -wdb {omit_pass.wdb} -autoloadwcfg -runall -onfinish quit -onerror quit\nTime resolution is 1 ps\nrun -all\n$finish called at time : 1346 ns : File \"C:/RV32I_Edge_SoC/dv/toolchain/tb_toolchain.sv\" Line 55\nexit 0\nINFO: [Common 17-206] Exiting xsim at Mon Oct 26 16:25:24 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.469,
+      "argument_file": {
+        "path": "build\\T003\\regress-20261026T232510907293Z\\sim_toolchain_fixture\\omit_pass.args",
+        "sha256": "6a8ce65dccddecd904369f572483257c661f9e7ff8246e6c649869a94462e902",
+        "content": "--runall\n--onerror\nquit\n--onfinish\nquit\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T003/regress-20261026T232510907293Z/sim_toolchain_fixture/vectors_1.txt\n--testplusarg\nOMIT_PASS\n--log\nomit_pass.log\n--wdb\nomit_pass.wdb\n",
+        "intended_argv": [
+          "toolchain_snapshot",
+          "--runall",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T003/regress-20261026T232510907293Z/sim_toolchain_fixture/vectors_1.txt",
+          "--testplusarg",
+          "OMIT_PASS",
+          "--log",
+          "omit_pass.log",
+          "--wdb",
+          "omit_pass.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "toolchain_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T003\\regress-20261026T232510907293Z\\sim_toolchain_fixture\\hang.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\regress-20261026T232510907293Z\\sim_toolchain_fixture",
+      "started_utc": "2026-10-26T23:25:24.457742+00:00",
+      "timeout_seconds": 2,
+      "exit_code": 0,
+      "status": "TIMEOUT",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Mon Oct 26 16:25:25 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/toolchain_snapshot/xsim_script.tcl\n# xsim {toolchain_snapshot} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T003/regress-20261026T232510907293Z/sim_toolchain_fixture/vectors_1.txt -testplusarg HANG -wdb {hang.wdb} -autoloadwcfg -runall -onfinish quit -onerror quit\nTime resolution is 1 ps\nrun -all\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.015,
+      "argument_file": {
+        "path": "build\\T003\\regress-20261026T232510907293Z\\sim_toolchain_fixture\\hang.args",
+        "sha256": "8ae3edc31791815093168cf2bfbed1eabe7ad5275c15d6078c8974c0986e44f7",
+        "content": "--runall\n--onerror\nquit\n--onfinish\nquit\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T003/regress-20261026T232510907293Z/sim_toolchain_fixture/vectors_1.txt\n--testplusarg\nHANG\n--log\nhang.log\n--wdb\nhang.wdb\n",
+        "intended_argv": [
+          "toolchain_snapshot",
+          "--runall",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T003/regress-20261026T232510907293Z/sim_toolchain_fixture/vectors_1.txt",
+          "--testplusarg",
+          "HANG",
+          "--log",
+          "hang.log",
+          "--wdb",
+          "hang.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--sv",
+        "C:\\RV32I_Edge_SoC\\dv\\toolchain\\negative_syntax.sv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T003\\regress-20261026T232510907293Z\\negative_syntax",
+      "started_utc": "2026-10-26T23:25:26.482849+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 1,
+      "status": "FAIL",
+      "stdout": "INFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/toolchain/negative_syntax.sv\" into library work\nINFO: [VRFC 10-311] analyzing module negative_syntax\nERROR: [VRFC 10-4982] syntax error near ';' [C:/RV32I_Edge_SoC/dv/toolchain/negative_syntax.sv:3]\nERROR: [VRFC 10-8530] module 'negative_syntax' is ignored due to previous errors [C:/RV32I_Edge_SoC/dv/toolchain/negative_syntax.sv:2]\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.657
+    }
+  ],
+  "checks": [
+    {
+      "name": "Pinned Python version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned tzdata version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned Git version",
+      "status": "PASS",
+      "command_index": 0
+    },
+    {
+      "name": "Pinned xvlog version",
+      "status": "PASS",
+      "command_index": 1
+    },
+    {
+      "name": "Pinned xelab version",
+      "status": "PASS",
+      "command_index": 2
+    },
+    {
+      "name": "Pinned xsim version",
+      "status": "PASS",
+      "command_index": 3
+    },
+    {
+      "name": "SystemVerilog compile toolchain_fixture",
+      "status": "PASS",
+      "command_index": 4
+    },
+    {
+      "name": "Elaboration toolchain_fixture",
+      "status": "PASS",
+      "command_index": 5
+    },
+    {
+      "name": "Independent simulation seed=1",
+      "status": "PASS",
+      "command_index": 6
+    },
+    {
+      "name": "Waveform saved seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Independent simulation seed=20261017",
+      "status": "PASS",
+      "command_index": 7
+    },
+    {
+      "name": "Waveform saved seed=20261017",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Negative simulation gate rejects INJECT_FATAL",
+      "status": "PASS",
+      "command_index": 8
+    },
+    {
+      "name": "Negative simulation gate rejects OMIT_PASS",
+      "status": "PASS",
+      "command_index": 9
+    },
+    {
+      "name": "Negative simulation gate rejects HANG",
+      "status": "PASS",
+      "command_index": 10
+    },
+    {
+      "name": "Syntax error explicitly rejected",
+      "status": "PASS",
+      "command_index": 11
+    }
+  ],
+  "simulations": [
+    {
+      "design": "toolchain_fixture",
+      "seed": 1,
+      "checked_vectors": 134,
+      "vector_path": "build\\T003\\regress-20261026T232510907293Z\\sim_toolchain_fixture\\vectors_1.txt",
+      "vector_sha256": "0fd5e1f18a068ad88233f2eecc8c53d232578bc9b406783267b173032f591757",
+      "waveform": "build\\T003\\regress-20261026T232510907293Z\\sim_toolchain_fixture\\seed_1.wdb",
+      "waveform_sha256": "cc384ab713010824088ab2a793d3b768105c9413140c2df6ce643228e9a296e6"
+    },
+    {
+      "design": "toolchain_fixture",
+      "seed": 20261017,
+      "checked_vectors": 134,
+      "vector_path": "build\\T003\\regress-20261026T232510907293Z\\sim_toolchain_fixture\\vectors_20261017.txt",
+      "vector_sha256": "1963ac701563f2bd948325764615a85354416ad5ab69b69b6e8c81628f70dee1",
+      "waveform": "build\\T003\\regress-20261026T232510907293Z\\sim_toolchain_fixture\\seed_20261017.wdb",
+      "waveform_sha256": "65f883cf083b9082ca0b2d78f7013fcea08253cb078bfb26868f694a523de5fa"
+    }
+  ],
+  "excluded": [
+    "formal",
+    "timing closure",
+    "physical FPGA",
+    "ASIC",
+    "CPU ISA correctness"
+  ],
+  "pins": {
+    "schema_version": 1,
+    "python_version": "3.9.13",
+    "git_version": "2.48.1.windows.1",
+    "tzdata_version": "2026.2",
+    "vivado_version": "2025.2",
+    "vivado_sw_build": "6299465"
+  },
+  "finished_utc": "2026-10-26T23:25:27.138099+00:00"
+}

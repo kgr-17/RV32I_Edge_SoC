@@ -186,6 +186,12 @@
         "-B",
         "scripts/verify.py",
         "test-lsu"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/verify.py",
+        "test-memory"
       ]
     ]
   },
@@ -260,6 +266,20 @@
         "-B",
         "scripts/unit_checks.py",
         "lsu"
+      ]
+    ]
+  },
+  "test-memory": {
+    "inputs": [
+      "dv/models/memory.py",
+      "dv/integration/test_memory.py",
+      "docs/ARCH_CONTRACT.json"
+    ],
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "dv/integration/test_memory.py"
       ]
     ]
   }
