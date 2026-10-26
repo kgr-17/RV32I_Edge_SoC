@@ -12,7 +12,8 @@ T005 ALU passed on October 25 with 234,804 vector checks. T006 register-file
 automation passed on attempt 2 and was explicitly approved by the owner:
 [interface and review checklist](docs/REGFILE.md). Full unit regression passed
 543,428 vectors across fixture, decoder, ALU and register file. T007 branch and
-jump unit passed 253,936 vectors; T008 load/store formatting is next. Complete CPU execution, FPGA
+jump unit passed 253,936 vectors; T008 load/store formatting passed 89,744.
+T009 memory behavior models are next. Complete CPU execution, FPGA
 implementation, hardware validation and ASIC results remain future milestones.
 
 The existing `RV32I_Edge_SoC.xpr` is the active Vivado project. Its configured part

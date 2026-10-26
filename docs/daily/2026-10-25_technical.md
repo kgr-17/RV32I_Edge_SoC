@@ -154,3 +154,44 @@ Unit receipt evidence/toolchain_runs/branch-20261026T042926105469Z.json has 17 c
 Files: new rtl/core/branch_unit.sv, dv/lint/branch_lint_top.sv, dv/unit/test_branch.py and tb_branch.sv, docs/BRANCH.md, evidence/daily/T007.md and receipts/audit/report entries; updated manifest/registry/state/backlog, README and today's same two reports. Updated REGFILE.md and appended T006 evidence to reflect the already-authorized approval commit 4339813; older review entries remain historical. No existing production RTL/architecture/XPR/constraints/kit changed. Completion audit is evidence/t007-complete-2026-10-25.json. Branch is routed into regress, but the combined route after this addition has not yet been rerun; the earlier 543,428-vector review-boundary regression covers only its recorded four units.
 
 Project has 7/41 mandatory completed and no active task. Review/diff-check/commit T007, then begin T008 load/store byte formatting in the same attended session; record the T007 SHA in the next entry. Implement all load/store widths, little-endian byte strobes for reads/writes, extension and misalignment gating with independent byte-array/neighbor-preservation tests. Keep original-byte address ownership in the caller, no split/misaligned requests, no early memory effect. No architecture/permission change. Formal, complete CPU/pipeline/fault ordering, routed timing, hardware and ASIC remain NOT RUN. Continue sequential ready work within attended budget, no calendar hold.
+
+
+---
+
+<!-- entry:1869d808262f361acac142b4a35b3e40056566e9ba77b2453b8d478f06e8a6f0 -->
+
+# T007 delivered; T008 formatter prepared
+
+T007 delivery c4619b176c2eb1c899f4d33b2002c833492d3910 passed its functional/EDA acceptance and T008 began from a clean worktree. The closing T006 evidence note inadvertently introduced a trailing blank line; the shell continued past that post-test whitespace error. Corrected immediately in documentation-only commit a239409, reran both whitespace checks successfully, and changed subsequent commit orchestration to subprocess check=True so failure stops it. No verified RTL changed and no Git history was rewritten. T008 remains the sole active task.
+
+Added rtl/core/lsu.sv: op_t + byte_offset[1:0] + store_data/read_word[31:0] -> load/store data[31:0], byte enables[3:0], write/misaligned/supported. Handles all five loads/three stores, little-endian lanes, sign/zero extension and natural alignment. Both read and write byte enables are defined; misaligned operations retain supported but suppress all effect metadata. The caller retains the full ORIGINAL byte address and creates age-ordered faults before any request. No bus timing or memory effect is implemented here. No existing production RTL, ISA/EEI, clock/reset or memory map changed.
+
+New dv/unit/test_lsu.py uses byte arrays and signed byte conversion; tb_lsu.sv compares every output and independently applies DUT byte strobes to verify neighbor preservation. Six fixed tests plus all byte values/lane patterns, halfword sign/walking cases, word walking/complements, edge crosses, random inputs and unsupported IDs are seeded 1/20261025. Wrong-answer/empty-file actual runs remain mandatory. Added docs/LSU.md and dv/lint/lsu_lint_top.sv capture/multiplex probe, plus manifest/registry/regress route.
+
+Next finish T008 --evidence evidence/daily/T008.md reserves attempt 1 and executes lint/test-lsu plus whitespace gates. No pass claimed yet. Append exact results and commit, then continue dependency-ready work only within attended session budget. Runtime remains unrestricted, unattended disabled, with no new tool installs, global changes, scheduling, pushes, deletion or FPGA programming. Formal, CPU/pipeline, actual bus effect ordering, timing, physical hardware and ASIC remain separate.
+
+
+---
+
+<!-- entry:a31e3e80c65ad751f9ac68ad3660c8c674530c4d286ecb7ad5d9e76b256ed2c6 -->
+
+# T008 first-attempt failure retained; explicit-width repair
+
+Receipt evidence/runs/T008/attempt-1-20261026T043415368034Z.json recorded lint FAIL, test-lsu PASS and both whitespace checks PASS. Vivado raw synthesis exit 0 was correctly rejected for WARNING Synth 8-3936: internal shifted signal trimmed from 32 to 16 bits. All functional comparisons already passed, 44,872 vectors per seed, but that cannot override warning-sensitive lint. Full first lint/unit JSON and exact source are preserved; evidence/failed_sources/T008/attempt-1/lsu.sv matches the original unit-run source SHA.
+
+Repair narrows shifted to 16 bits and selects explicit slices for all four byte offsets. Halfword legal paths and byte lanes retain exactly the same behavior; no oracle/test/check, severity filter, Tcl/timeout or architecture change. Next finish uses attempt 2 of 3 and reruns every required gate. The task stays active/failed until those actual results pass. Keep both October 25 reports and all failure evidence; no reset/reopen or unbounded budget. Runtime remains attended, no tool installs or hardware action.
+
+
+---
+
+<!-- entry:4462d5fa2d30eb930b297cd8701b244f155ec2e32984397879ed3a0dbc8f3a2b -->
+
+# T008 completed on second acceptance attempt
+
+Final receipt evidence/runs/T008/attempt-2-20261026T043734414814Z.json: lint, test-lsu and both whitespace gates PASS/exit 0. First failed receipt/source remain intact; no test or warning suppression. Explicit 16-bit slice selection removed Synth 8-3936. Lint receipt evidence/toolchain_runs/lint-20261026T043734800085Z.json has 19 checks/11 commands, LSU synthesis 25.313 s with zero warnings/errors, no latches/black boxes/selected structural violations. Other units and intentional latch rejection pass.
+
+Unit receipt evidence/toolchain_runs/lsu-20261026T044012923687Z.json has 17 checks/10 commands. Seeds 1/20261025 each checked 44,872 full output/merged-neighbor vectors, total 89,744; times 2.734/2.719 s. All 33 defined lane/misalignment/unsupported bins hit. Per seed: 6,272 edge crosses, 32,768 random, 3,072 all-byte values, 456 halfword patterns, 512 word walking/complements and 1,792 unsupported inputs. Six fixed byte-array oracle tests and both actual wrong-answer/empty-file gates pass. Exact source/vector/WDB/Tcl/argument hashes and full command evidence retained; source drift guard passed. Pins unchanged (Python 3.9.13, Git 2.48.1.windows.1, tzdata 2026.2, Vivado/XSim 2025.2/SW build 6299465).
+
+Changes: new lsu.sv, direct unit bench/oracle, synthesis probe and LSU.md; manifest/registry/state/backlog, README, task evidence, source archive, run records, audit and today's same two report files. No prior production RTL/architecture/XPR/constraints/kit changed. Audit evidence/t008-complete-2026-10-25.json binds delivery sources and preservation. The full regress route includes branch/LSU but its combined execution after these additions is NOT RUN; only the recorded T006 four-component suite has that full regression result. New branch/LSU required unit gates have actually passed. No CPU/bus sequencing, formal, routed timing, hardware or ASIC result follows.
+
+Current mandatory completion is 8/41 with no active task. Inspect diff and commit using fail-fast whitespace checks, record its SHA, then next ready task is T009: Python instruction/data memory behavior models, fixed latency >=1, one outstanding request, stable stalled payloads and effects only on successful response acceptance. Reset cancels transactions but retains memory. Any tests of these models must be labeled model behavior, not integrated CPU/RTL bus validation. Continue only as the attended session budget permits; preserve exact handoff if stopping. No new install, global change, unattended automation, push or programming authorization.

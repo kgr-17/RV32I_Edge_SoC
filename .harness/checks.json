@@ -180,6 +180,12 @@
         "-B",
         "scripts/verify.py",
         "test-branch"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/verify.py",
+        "test-lsu"
       ]
     ]
   },
@@ -230,6 +236,30 @@
         "-B",
         "scripts/unit_checks.py",
         "branch"
+      ]
+    ]
+  },
+  "test-lsu": {
+    "inputs": [
+      "config/rtl_checks.json",
+      ".harness/toolchain.json",
+      "scripts/unit_checks.py",
+      "rtl/core/rv32_pkg.sv",
+      "rtl/core/lsu.sv",
+      "dv/unit/tb_lsu.sv",
+      "dv/unit/test_lsu.py"
+    ],
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "dv/unit/test_lsu.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/unit_checks.py",
+        "lsu"
       ]
     ]
   }

@@ -83,6 +83,30 @@
         "/tb_branch/taken",
         "/tb_branch/bad"
       ]
+    },
+    "lsu": {
+      "task": "T008",
+      "sources": [
+        "rtl/core/rv32_pkg.sv",
+        "rtl/core/lsu.sv"
+      ],
+      "testbench": "dv/unit/tb_lsu.sv",
+      "test_top": "tb_lsu",
+      "reference": "dv/unit/test_lsu.py",
+      "seeds": [
+        1,
+        20261025
+      ],
+      "waves": [
+        "/tb_lsu/op",
+        "/tb_lsu/addr",
+        "/tb_lsu/data",
+        "/tb_lsu/word_data",
+        "/tb_lsu/load_data",
+        "/tb_lsu/store_word",
+        "/tb_lsu/be",
+        "/tb_lsu/bad"
+      ]
     }
   },
   "lint_designs": [
@@ -117,6 +141,15 @@
         "rtl/core/rv32_pkg.sv",
         "rtl/core/branch_unit.sv",
         "dv/lint/branch_lint_top.sv"
+      ]
+    },
+    {
+      "name": "rv32_lsu",
+      "top": "lsu_lint_top",
+      "sources": [
+        "rtl/core/rv32_pkg.sv",
+        "rtl/core/lsu.sv",
+        "dv/lint/lsu_lint_top.sv"
       ]
     }
   ],

@@ -1,0 +1,34 @@
+{
+  "task": "T008",
+  "date": "2026-10-25",
+  "baseline_commit": "a2394092dc919f2de56a9406acfbb5dc18cb53de",
+  "receipt": "evidence/runs/T008/attempt-2-20261026T043734414814Z.json",
+  "status": "completed",
+  "attempt": 2,
+  "historical_files_unchanged": 158,
+  "prefixes_preserved": [
+    "docs/daily/2026-10-25_technical.md",
+    "docs/daily/2026-10-25_zh-CN.md"
+  ],
+  "source_sha256": {
+    "rtl/core/lsu.sv": "3aec50b3fb07044048da457f3ca59a01a21a256a817c806497d04585f69609e6",
+    "dv/lint/lsu_lint_top.sv": "a08e86b234e110d17f7fc0fd88dca603430099a45ae43ef59d110c07972218cf",
+    "dv/unit/test_lsu.py": "eb6a1425c2668b187971ebaeaf16c5da80e0d504d8faad4c8ca311f96f75589e",
+    "dv/unit/tb_lsu.sv": "3210ab2fbc03f7a64210ae8eea42abe746d1ca21f8a0a7fc4a86474ba769f4c1",
+    "config/rtl_checks.json": "41cb05e9851d5acff6a2f412f115fd3864510fa5deefcdaa9d52c906f28e1bd7",
+    ".harness/checks.json": "980013266d70ca40d57a9b3fb11ed23fb4e885ef422070bc9832f8504b8c1613"
+  },
+  "verified_artifacts": {
+    "build/units/lsu-20261026T044012923687Z/sim_lsu/vectors_1.txt": "c73ba4fc81c9c7fa88032c4fd648a52eec7c3c324d52c59c3978deadba2fdbaa",
+    "build/units/lsu-20261026T044012923687Z/sim_lsu/seed_1.wdb": "005108010bc3328765879cdcea782b0e41d71a40fd4e6e33561c7812fa0267d4",
+    "build/units/lsu-20261026T044012923687Z/sim_lsu/vectors_20261025.txt": "77157d566a8e2fa4b8fef789028b3f86646664c9a563e97cd745122c215ac113",
+    "build/units/lsu-20261026T044012923687Z/sim_lsu/seed_20261025.wdb": "c77d890cd87154b8ea855c61e22f849f7e686e620f25237849dff2cd00599041",
+    "build\\units\\lsu-20261026T044012923687Z\\sim_lsu\\seed_1.args": "1d242bcf82cfd309c937fa4ed9a7b9fea24cb4c68e49011ef1ad6bc668c4de62",
+    "build\\units\\lsu-20261026T044012923687Z\\sim_lsu\\seed_20261025.args": "b61bd644a60ad0322edd8426d8a6432dfd0b195cae90d05115696a90395e4506",
+    "build\\units\\lsu-20261026T044012923687Z\\sim_lsu\\corrupt_expected.args": "f7198de809c278c7aa1ed35dbd67351ce2b4254aa76a51e634b9eae957d69348",
+    "build\\units\\lsu-20261026T044012923687Z\\sim_lsu\\empty_vectors.args": "ee392245568c3858916701ac69031a1b563ba9a37255a0e638ef63cd44eadc2e",
+    "build/units/lsu-20261026T044012923687Z/sim_lsu/run.tcl": "708657f3154df08dcccc213c2a2c221f706aa3fc1db7ab71f1532668f9897225"
+  },
+  "failed_source_sha256": "dee42bf23b37c9b3931f7224ae910a8c4f669efc8b09b146719a6ae7a2431775",
+  "vector_checks": 89744
+}
