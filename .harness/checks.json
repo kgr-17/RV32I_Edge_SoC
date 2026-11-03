@@ -408,7 +408,29 @@
       "scripts/unit_checks.py",
       "rtl/core/pipeline_core.sv",
       "dv/integration/test_pipeline_base.py",
-      "dv/integration/tb_pipeline_base.sv"
+      "dv/integration/tb_pipeline_base.sv",
+      "rtl/core/rv32_pkg.sv",
+      "rtl/core/decoder.sv",
+      "rtl/core/alu.sv",
+      "rtl/core/regfile.sv",
+      "rtl/core/branch_unit.sv",
+      "rtl/core/lsu.sv",
+      "rtl/core/forwarding_unit.sv",
+      "rtl/core/hazard_unit.sv",
+      "rtl/core/pipeline_cpu.sv",
+      "dv/integration/tb_backpressure.sv",
+      "dv/integration/test_backpressure.py",
+      "dv/integration/test_core_smoke.py",
+      "dv/integration/test_load_use.py",
+      "dv/integration/test_flush.py",
+      "dv/reference/rv32_iss.py",
+      "dv/reference/retire.py",
+      "dv/integration/test_retire.py",
+      "dv/integration/tb_reference_core.sv",
+      "scripts/retire_checks.py",
+      "docs/ARCH_CONTRACT.json",
+      "dv/integration/test_pipeline_iss.py",
+      ".harness/checks.json"
     ],
     "commands": [
       [
@@ -421,6 +443,18 @@
         "-B",
         "scripts/unit_checks.py",
         "pipeline"
+      ],
+      [
+        "{python}",
+        "-B",
+        "dv/integration/test_pipeline_iss.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/retire_checks.py",
+        "--unit",
+        "backpressure"
       ]
     ]
   },

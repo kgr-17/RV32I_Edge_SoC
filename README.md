@@ -24,9 +24,12 @@ T015 pipeline dependency integration matched 128 retirements; T016 control match
 502 retirements across 42 scenarios. T017 randomized bus waits passed four seeds,
 2,008 retirements across 168 scenarios, with IF/data request stalls and 32-edge
 data waits observed. The first attempt's native Vivado exit crash is retained;
-the identical second attempt passed. T018 independent pipeline ISA review is next.
-Full pipeline ISA/control closure,
-ISA/EEI closure, FPGA implementation, hardware and ASIC results remain future milestones.
+the identical second attempt passed. T018's independent pipeline ISS comparison
+and all six gates passed on attempt1; the [pipeline review](docs/PIPELINE_REVIEW.md)
+is awaiting owner acceptance. Across four seeds,12,760 ordered retirement/fault/
+GPR/RAM sample events matched, including2,008 successful retirements. Random
+instruction/reset/formal and final ISA/EEI closure, FPGA implementation, hardware
+and ASIC results remain future milestones.
 
 The existing `RV32I_Edge_SoC.xpr` is the active Vivado project. Its configured part
 is `xc7a35tcpg236-1`. The owner confirmed a Digilent Basys 3. Top module, RTL and

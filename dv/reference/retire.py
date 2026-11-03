@@ -60,22 +60,26 @@ def expected_trace(cases):
     return result, dict(sorted(coverage.items())), summaries
 
 
-def observed_trace(output):
+def observed_trace(output, prefix='CORE'):
+    if prefix not in ('CORE', 'BACKPRESSURE'):
+        raise ValueError('Unregistered observed trace prefix')
+    tags = {prefix + '_' + name: (kind, length) for name, kind, length in
+            (('RETIRE', 'R', 15), ('FAULT', 'F', 6), ('GPR', 'G', 4), ('RAM', 'M', 4))}
     events = []
     for line in output.splitlines():
         parts = line.split()
-        if not parts or parts[0] not in ('CORE_RETIRE', 'CORE_FAULT', 'CORE_GPR', 'CORE_RAM'):
+        if not parts or parts[0] not in tags:
             continue
         tag = parts[0]
-        expected_length = {'CORE_RETIRE': 15, 'CORE_FAULT': 6, 'CORE_GPR': 4, 'CORE_RAM': 4}[tag]
+        kind, expected_length = tags[tag]
         if len(parts) != expected_length:
             raise TraceMismatch('malformed observed ' + tag)
         try:
             ident = int(parts[1], 10)
-            if tag in ('CORE_GPR', 'CORE_RAM'):
-                events.append(('G' if tag == 'CORE_GPR' else 'M', ident, int(parts[2], 10), int(parts[3], 16)))
+            if kind in ('G', 'M'):
+                events.append((kind, ident, int(parts[2], 10), int(parts[3], 16)))
             else:
-                events.append(('R' if tag == 'CORE_RETIRE' else 'F', ident, *(int(token, 16) for token in parts[2:])))
+                events.append((kind, ident, *(int(token, 16) for token in parts[2:])))
         except ValueError as exc:
             raise TraceMismatch('invalid/X-valued observed trace: ' + line) from exc
     if not events:

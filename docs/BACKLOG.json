@@ -806,7 +806,7 @@
         ]
       ],
       "priority": 180,
-      "status": "pending",
+      "status": "awaiting_review",
       "human_approval_required": true,
       "start_approval_required": false,
       "optional": false,
