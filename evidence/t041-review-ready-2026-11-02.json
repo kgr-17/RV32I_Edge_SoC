@@ -1,0 +1,37 @@
+{
+  "task": "T041",
+  "date": "2026-11-02",
+  "recorded_utc": "2026-11-03T05:19:48.387318+00:00",
+  "status": "awaiting_review",
+  "review_package_commit": "9f37135daba0b19cd8caf10929b03dbd761bc92c",
+  "files_sha256": {
+    "docs/ISA_COMPLIANCE_MATRIX.md": "cba59ddc6c18257e7b3f7c52640e57dfec0c36f7f82db9c90733c00c850478c2",
+    "evidence/daily/T041.md": "bb13f8dd5aaa45b68fb736810000aa303361bbcb1fd155db835f5c5e4f8ed472",
+    "evidence/t041-review-audit-2026-11-02.json": "af6f573ec01f6d104cbc12685486ca794c728a49e0875489e7830c27307411bc",
+    "evidence/runs/T041/attempt-2-20261103T050224175926Z.json": "af97a5eb0936bda7a0b76886c925103414a7f9faa026b284d4f40734a89b0cf1",
+    "docs/ARCH_CONTRACT.json": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03",
+    "docs/BACKLOG.json": "a52bc14acef0d6ac580e97390a37edffafe022f9bcbe38d2445ab3d8a463f848",
+    ".harness/state.json": "40ad54f962fb86e7e23bb5edacd0f5e969f489bd36e78b3187124fcff968fc34",
+    "evidence/failed_sources/T041/attempt-1/manifest.json": "cd6f76f48c8af7602d028975f234d1fb51ac4758c40520b5a1224ddd5d1a35a7",
+    "evidence/isa/2026-11-02_matrix-20261103T051220312513Z.json": "62d477f3e6b9a1a565881be8c93d996bb4af619e5a784a8fc75ac9fc689c7fd8"
+  },
+  "all_five_gates": "PASS exit0",
+  "verification_attempt": 2,
+  "retained_failed_attempt": 1,
+  "retirements": 6364,
+  "scenario_runs": 632,
+  "ordered_events": 46812,
+  "source_audit": "evidence/t041-review-audit-2026-11-02.json",
+  "owner_authorization_received": false,
+  "requested_command": [
+    "python",
+    "-B",
+    "scripts/harness.py",
+    "approve",
+    "T041",
+    "--confirm-owner-review"
+  ],
+  "expected_next_after_approval": "T019",
+  "must_query_first_eligible_before_begin": true,
+  "runtime": "unrestricted, attended only"
+}
