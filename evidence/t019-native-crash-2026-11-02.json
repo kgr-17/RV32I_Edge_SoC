@@ -1,0 +1,18 @@
+{
+  "task": "T019",
+  "date": "2026-11-02",
+  "attempt": 1,
+  "status": "FAIL",
+  "lint_receipt": "evidence/toolchain_runs/lint-20261103T055320666500Z.json",
+  "command_index": 6,
+  "exit_code": 4294967295,
+  "probe": "regfile_lint_top",
+  "crash_log": {
+    "path": "build/T003/lint-20261103T055320666500Z/lint_regfile_lint_top/hs_err_pid16820.log",
+    "sha256": "56867003ffe4329f75e1c0c57c49327bd32d993927d770f6f36aaaa2d7765f73",
+    "text": "#\n# An unexpected error has occurred (EXCEPTION_ACCESS_VIOLATION)\n#\nStack:\nno stack trace available, please use hs_err_<pid>.dmp instead.\n"
+  },
+  "observation": "Successful warning-free synthesis/DRC and completion marker followed by EXCEPTION_ACCESS_VIOLATION during Vivado exit; marker does not override process failure.",
+  "cause": "undetermined",
+  "repair": "No source/check/filter/tool-setting/timeout change planned. Preserve failure, wait formal execution completion, retry identical gates within3-attempt budget. No .dmp contents inspected."
+}

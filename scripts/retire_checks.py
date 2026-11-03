@@ -24,12 +24,14 @@ def profile_for(unit):
         return 'pipeline-iss', 'T018', 'BACKPRESSURE', 'executable pipeline'
     if unit == 'isa_complete':
         return 'isa-complete', 'T041', 'ISA_COMPLETE', 'executable pipeline ISA/EEI'
+    if unit == 'random':
+        return 'random-iss', 'T019', 'RANDOM', 'executable pipeline random instructions'
     raise ValueError('Unregistered ISS backend: ' + str(unit))
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--unit', choices=('core', 'backpressure', 'isa_complete'), default='core')
+    parser.add_argument('--unit', choices=('core', 'backpressure', 'isa_complete', 'random'), default='core')
     args = parser.parse_args()
     profile, task, prefix, label = profile_for(args.unit)
     checks = rtl_checks.Checks(profile, task=task, scope='Independent ISS vs actual ' + label + ' retirement/fault and terminal-state trace')
@@ -41,6 +43,9 @@ def main():
         checks.result['excluded'] = ['formal', 'routed timing', 'physical FPGA', 'ASIC',
                                      'RISC-V certification', 'SoC/MMIO peripheral verification',
                                      'random instruction closure', 'in-flight reset closure', 'privileged ISA/interrupts']
+    if args.unit == 'random':
+        checks.result['excluded'] = ['exhaustive ISA/state coverage', 'formal', 'routed timing', 'physical FPGA',
+                                     'ASIC', 'SoC/MMIO', 'in-flight reset closure', 'privileged ISA/interrupts']
     checks.result['comparisons'] = []
     exit_code = 1
     try:
@@ -54,11 +59,13 @@ def main():
             sources.append('dv/integration/test_pipeline_iss.py')
         if args.unit == 'isa_complete':
             sources += ['scripts/isa_complete_checks.py', 'dv/integration/test_isa_directed.py']
+        if args.unit == 'random':
+            sources += ['dv/reference/scoreboard.py', 'dv/random/test_scoreboard.py']
         sources = list(dict.fromkeys(sources))
         checks.result['source_sha256'] = {name: digest(harness.inside(name)) for name in sources}
         checks.versions(manifest)
         record = checks.command([sys.executable, '-B', str(harness.inside('scripts/unit_checks.py')), args.unit],
-                                checks.base, 120 if args.unit == 'isa_complete' else 60)
+                                checks.base, 120 if args.unit in ('isa_complete','random') else 60)
         # unit_checks.py uses ROOT-relative local manifests and sources; its
         # process working directory can be the isolated evidence build folder.
         checks.require(rtl_checks.successful(record), 'Actual ' + args.unit + ' unit backend passes', record)
@@ -104,6 +111,27 @@ def main():
                 else:
                     raise RuntimeError('Comparator accepted injected defect: ' + label)
             checks.require(len(rejected) == 3, 'Actual trace mutations rejected seed=' + str(seed))
+            scoreboard_result = {}
+            scoreboard_path = None
+            if args.unit == 'random':
+                from dv.reference.scoreboard import check_trace, inject_actual_errors
+                from collections import Counter
+                cases = stimulus_images(vector_path.read_text(encoding='utf-8'))
+                summary = check_trace(cases, actual)
+                negatives = inject_actual_errors(cases, actual)
+                random_cases = [row for row in summary['cases'] if row['scenario']>=42]
+                random_hits = Counter()
+                for row in random_cases: random_hits.update(row['operation_hits'])
+                names = harness.read(harness.inside('docs/ARCH_CONTRACT.json'))['isa']['instructions']
+                checks.require(len(random_cases)==8 and all(random_hits.get(name,0)>0 for name in names),
+                               'Actual random-only forty-family coverage seed='+str(seed))
+                checks.require(len(negatives)==6, 'Streaming scoreboard rejects six actual errors seed='+str(seed))
+                scoreboard_result = {'summary': summary, 'negative_rejections': negatives,
+                    'random_only': {'scenarios': len(random_cases),
+                                    'retirements': sum(row['retirements'] for row in random_cases),
+                                    'operation_hits': dict(sorted(random_hits.items()))}}
+                scoreboard_path = checks.base / ('scoreboard_'+str(seed)+'.json')
+                harness.atomic(scoreboard_path, scoreboard_result)
             checks.result['comparisons'].append({'seed': seed, 'events': len(actual),
                 'backend_command_index': check['command_index'],
                 'retirements': sum(event[0] == 'R' for event in actual),
@@ -113,6 +141,9 @@ def main():
                 'coverage': coverage, 'required_bins': required, 'scenarios': scenarios,
                 'artifacts': {str(path.relative_to(harness.ROOT)): digest(path) for path in (trace_path, expected_path, corrupt_path)},
                 'negative_rejections': rejected})
+            if scoreboard_path is not None:
+                checks.result['comparisons'][-1]['scoreboard'] = scoreboard_result['random_only']
+                checks.result['comparisons'][-1]['artifacts'][str(scoreboard_path.relative_to(harness.ROOT))] = digest(scoreboard_path)
             checks.save()
         checks.require(all(digest(harness.inside(name)) == value for name, value in checks.result['source_sha256'].items()),
                        'ISS and simulated sources unchanged')

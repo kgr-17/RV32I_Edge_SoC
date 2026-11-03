@@ -845,10 +845,16 @@
           "-B",
           "scripts/verify.py",
           "test-random"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "regress"
         ]
       ],
       "priority": 190,
-      "status": "pending",
+      "status": "in_progress",
       "human_approval_required": false,
       "start_approval_required": false,
       "optional": false,

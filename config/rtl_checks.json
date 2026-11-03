@@ -389,6 +389,54 @@
           65536
         ]
       }
+    },
+    "random": {
+      "task": "T019",
+      "sources": [
+        "rtl/core/rv32_pkg.sv",
+        "rtl/core/decoder.sv",
+        "rtl/core/alu.sv",
+        "rtl/core/regfile.sv",
+        "rtl/core/branch_unit.sv",
+        "rtl/core/lsu.sv",
+        "rtl/core/pipeline_core.sv",
+        "rtl/core/forwarding_unit.sv",
+        "rtl/core/hazard_unit.sv",
+        "rtl/core/pipeline_cpu.sv"
+      ],
+      "testbench": "dv/random/tb_random.sv",
+      "test_top": "tb_random",
+      "reference": "dv/random/test_random_programs.py",
+      "extra_inputs": [
+        "dv/integration/test_core_smoke.py",
+        "dv/integration/test_load_use.py",
+        "dv/integration/test_flush.py",
+        "dv/integration/test_backpressure.py",
+        "dv/reference/rv32_iss.py"
+      ],
+      "seeds": [
+        1,
+        7,
+        101,
+        20261102,
+        314159,
+        271828
+      ],
+      "waves": [
+        "/tb_random/clk_i",
+        "/tb_random/rst_i",
+        "/tb_random/retire_valid_o",
+        "/tb_random/retire_pc_o",
+        "/tb_random/retire_rd_wdata_o",
+        "/tb_random/dmem_req_valid_o",
+        "/tb_random/dmem_rsp_valid_i",
+        "/tb_random/dut/dependency",
+        "/tb_random/dut/front_hold",
+        "/tb_random/dut/e_valid",
+        "/tb_random/dut/redirect",
+        "/tb_random/dut/fetch_killed_q",
+        "/tb_random/dut/wb_fault"
+      ]
     }
   },
   "lint_designs": [

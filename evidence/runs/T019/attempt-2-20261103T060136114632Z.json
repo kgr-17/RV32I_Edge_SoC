@@ -1,0 +1,11 @@
+{
+  "task": "T019",
+  "attempt": 2,
+  "git_commit": "9415b4bcd052352c1b1bcbab7dacce312a668a3a",
+  "python": "3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)]",
+  "stage": "running",
+  "commands": [],
+  "waveform_paths": [],
+  "seed": null,
+  "evidence_sha256": "9e143ab13be3226c5b7979186091c9de688273ffdbc3e8acda89ed8127a5bdf8"
+}

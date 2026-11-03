@@ -1,0 +1,774 @@
+{
+  "profile": "retire",
+  "status": "PASS",
+  "started_utc": "20261103T055648684589Z",
+  "base_commit": "9415b4bcd052352c1b1bcbab7dacce312a668a3a",
+  "scope": "Independent ISS vs actual reference core retirement/fault and terminal-state trace",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T011\\retire-20261103T055648684589Z\\versions",
+      "started_utc": "2026-11-03T05:56:48.779292+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "git version 2.48.1.windows.1\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.11
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T011\\retire-20261103T055648684589Z\\versions\\xvlog",
+      "started_utc": "2026-11-03T05:56:48.899650+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.578
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T011\\retire-20261103T055648684589Z\\versions\\xelab",
+      "started_utc": "2026-11-03T05:56:49.488005+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.594
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T011\\retire-20261103T055648684589Z\\versions\\xsim",
+      "started_utc": "2026-11-03T05:56:50.100043+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2025 Xilinx, Inc. All Rights Reserved.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.454
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "C:\\RV32I_Edge_SoC\\scripts\\unit_checks.py",
+        "core"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T011\\retire-20261103T055648684589Z",
+      "started_utc": "2026-11-03T05:56:50.566933+00:00",
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"evidence\": \"evidence/toolchain_runs/core-20261103T055650837765Z.json\",\n  \"checks\": 17,\n  \"counts\": [\n    716,\n    716\n  ],\n  \"error\": null\n}\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 15.266
+    }
+  ],
+  "checks": [
+    {
+      "name": "Pinned Python version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned tzdata version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned Git version",
+      "status": "PASS",
+      "command_index": 0
+    },
+    {
+      "name": "Pinned xvlog version",
+      "status": "PASS",
+      "command_index": 1
+    },
+    {
+      "name": "Pinned xelab version",
+      "status": "PASS",
+      "command_index": 2
+    },
+    {
+      "name": "Pinned xsim version",
+      "status": "PASS",
+      "command_index": 3
+    },
+    {
+      "name": "Actual core unit backend passes",
+      "status": "PASS",
+      "command_index": 4
+    },
+    {
+      "name": "Nonempty complete actual core seed set",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Exact ordered configured seed set",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Exact simulated program seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Successful actual trace producer seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Independent ISS family/fault coverage seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual retirement/fault/GPR/RAM equality seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual trace mutations rejected seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Exact simulated program seed=20261026",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Successful actual trace producer seed=20261026",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Independent ISS family/fault coverage seed=20261026",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual retirement/fault/GPR/RAM equality seed=20261026",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual trace mutations rejected seed=20261026",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "ISS and simulated sources unchanged",
+      "status": "PASS",
+      "command_index": null
+    }
+  ],
+  "simulations": [],
+  "excluded": [
+    "formal",
+    "timing closure",
+    "physical FPGA",
+    "ASIC",
+    "CPU ISA correctness"
+  ],
+  "task": "T011",
+  "unit": "core",
+  "trace_prefix": "CORE",
+  "comparisons": [
+    {
+      "seed": 1,
+      "events": 866,
+      "backend_command_index": 6,
+      "retirements": 162,
+      "faults": 11,
+      "gpr_words": 341,
+      "ram_words": 352,
+      "coverage": {
+        "fault:1": 1,
+        "fault:2": 2,
+        "fault:3": 1,
+        "fault:4": 1,
+        "fault:5": 1,
+        "fault:6": 1,
+        "fault:7": 1,
+        "fault:8": 2,
+        "fault:9": 1,
+        "op:ADD": 1,
+        "op:ADDI": 71,
+        "op:AND": 1,
+        "op:ANDI": 1,
+        "op:AUIPC": 1,
+        "op:BEQ": 2,
+        "op:BGE": 2,
+        "op:BGEU": 2,
+        "op:BLT": 2,
+        "op:BLTU": 2,
+        "op:BNE": 2,
+        "op:EBREAK": 1,
+        "op:ECALL": 2,
+        "op:FENCE": 1,
+        "op:JAL": 3,
+        "op:JALR": 2,
+        "op:LB": 12,
+        "op:LBU": 4,
+        "op:LH": 7,
+        "op:LHU": 2,
+        "op:LUI": 14,
+        "op:LW": 5,
+        "op:OR": 1,
+        "op:ORI": 1,
+        "op:SB": 8,
+        "op:SH": 4,
+        "op:SLL": 1,
+        "op:SLLI": 1,
+        "op:SLT": 1,
+        "op:SLTI": 1,
+        "op:SLTIU": 1,
+        "op:SLTU": 1,
+        "op:SRA": 1,
+        "op:SRAI": 1,
+        "op:SRL": 1,
+        "op:SRLI": 1,
+        "op:SUB": 1,
+        "op:SW": 4,
+        "op:XOR": 1,
+        "op:XORI": 1
+      },
+      "required_bins": [
+        "op:LUI",
+        "op:AUIPC",
+        "op:JAL",
+        "op:JALR",
+        "op:BEQ",
+        "op:BNE",
+        "op:BLT",
+        "op:BGE",
+        "op:BLTU",
+        "op:BGEU",
+        "op:LB",
+        "op:LH",
+        "op:LW",
+        "op:LBU",
+        "op:LHU",
+        "op:SB",
+        "op:SH",
+        "op:SW",
+        "op:ADDI",
+        "op:SLTI",
+        "op:SLTIU",
+        "op:XORI",
+        "op:ORI",
+        "op:ANDI",
+        "op:SLLI",
+        "op:SRLI",
+        "op:SRAI",
+        "op:ADD",
+        "op:SUB",
+        "op:SLL",
+        "op:SLT",
+        "op:SLTU",
+        "op:XOR",
+        "op:SRL",
+        "op:SRA",
+        "op:OR",
+        "op:AND",
+        "op:FENCE",
+        "op:ECALL",
+        "op:EBREAK",
+        "fault:1",
+        "fault:2",
+        "fault:3",
+        "fault:4",
+        "fault:5",
+        "fault:6",
+        "fault:7",
+        "fault:8",
+        "fault:9"
+      ],
+      "scenarios": [
+        {
+          "scenario": 0,
+          "retirements": 84,
+          "fault": {
+            "pc": 336,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 1,
+          "retirements": 21,
+          "fault": {
+            "pc": 116,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 2,
+          "retirements": 48,
+          "fault": {
+            "pc": 192,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 3,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 4,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 2098159,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 5,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 33767,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 6,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 1086339,
+            "code": 4,
+            "tval": 65537
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 7,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 41251,
+            "code": 6,
+            "tval": 65538
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 8,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 40963,
+            "code": 5,
+            "tval": 131072
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 9,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 8227,
+            "code": 7,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 10,
+          "retirements": 1,
+          "fault": {
+            "pc": 65536,
+            "insn": 0,
+            "code": 3,
+            "tval": 65536
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        }
+      ],
+      "artifacts": {
+        "build\\T011\\retire-20261103T055648684589Z\\observed_1.json": "e9e537f291334e287f235c988523a66b115827e98b8adcc61e35c56e5a3d936a",
+        "build\\T011\\retire-20261103T055648684589Z\\expected_1.json": "e9e537f291334e287f235c988523a66b115827e98b8adcc61e35c56e5a3d936a",
+        "build\\T011\\retire-20261103T055648684589Z\\corrupt_1.json": "74f5a9476b36507c75f7365a634d10d4464e90750a5a51d4197436b82c59df48"
+      },
+      "negative_rejections": [
+        {
+          "case": "mutated_actual_bit",
+          "diagnostic": "event 0 mismatch: actual=('R', 0, 0, 0, 3859, 4, 1, 30, 0, 0, 0, 0, 0, 0, 1) expected=('R', 0, 0, 0, 3859, 4, 1, 30, 0, 0, 0, 0, 0, 0, 0)"
+        },
+        {
+          "case": "empty_actual",
+          "diagnostic": "zero-test trace comparison"
+        },
+        {
+          "case": "extra_actual_event",
+          "diagnostic": "event count mismatch actual=867 expected=866"
+        }
+      ]
+    },
+    {
+      "seed": 20261026,
+      "events": 866,
+      "backend_command_index": 7,
+      "retirements": 162,
+      "faults": 11,
+      "gpr_words": 341,
+      "ram_words": 352,
+      "coverage": {
+        "fault:1": 1,
+        "fault:2": 2,
+        "fault:3": 1,
+        "fault:4": 1,
+        "fault:5": 1,
+        "fault:6": 1,
+        "fault:7": 1,
+        "fault:8": 2,
+        "fault:9": 1,
+        "op:ADD": 1,
+        "op:ADDI": 71,
+        "op:AND": 1,
+        "op:ANDI": 1,
+        "op:AUIPC": 1,
+        "op:BEQ": 2,
+        "op:BGE": 2,
+        "op:BGEU": 2,
+        "op:BLT": 2,
+        "op:BLTU": 2,
+        "op:BNE": 2,
+        "op:EBREAK": 1,
+        "op:ECALL": 2,
+        "op:FENCE": 1,
+        "op:JAL": 3,
+        "op:JALR": 2,
+        "op:LB": 12,
+        "op:LBU": 4,
+        "op:LH": 7,
+        "op:LHU": 2,
+        "op:LUI": 14,
+        "op:LW": 5,
+        "op:OR": 1,
+        "op:ORI": 1,
+        "op:SB": 8,
+        "op:SH": 4,
+        "op:SLL": 1,
+        "op:SLLI": 1,
+        "op:SLT": 1,
+        "op:SLTI": 1,
+        "op:SLTIU": 1,
+        "op:SLTU": 1,
+        "op:SRA": 1,
+        "op:SRAI": 1,
+        "op:SRL": 1,
+        "op:SRLI": 1,
+        "op:SUB": 1,
+        "op:SW": 4,
+        "op:XOR": 1,
+        "op:XORI": 1
+      },
+      "required_bins": [
+        "op:LUI",
+        "op:AUIPC",
+        "op:JAL",
+        "op:JALR",
+        "op:BEQ",
+        "op:BNE",
+        "op:BLT",
+        "op:BGE",
+        "op:BLTU",
+        "op:BGEU",
+        "op:LB",
+        "op:LH",
+        "op:LW",
+        "op:LBU",
+        "op:LHU",
+        "op:SB",
+        "op:SH",
+        "op:SW",
+        "op:ADDI",
+        "op:SLTI",
+        "op:SLTIU",
+        "op:XORI",
+        "op:ORI",
+        "op:ANDI",
+        "op:SLLI",
+        "op:SRLI",
+        "op:SRAI",
+        "op:ADD",
+        "op:SUB",
+        "op:SLL",
+        "op:SLT",
+        "op:SLTU",
+        "op:XOR",
+        "op:SRL",
+        "op:SRA",
+        "op:OR",
+        "op:AND",
+        "op:FENCE",
+        "op:ECALL",
+        "op:EBREAK",
+        "fault:1",
+        "fault:2",
+        "fault:3",
+        "fault:4",
+        "fault:5",
+        "fault:6",
+        "fault:7",
+        "fault:8",
+        "fault:9"
+      ],
+      "scenarios": [
+        {
+          "scenario": 0,
+          "retirements": 84,
+          "fault": {
+            "pc": 336,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 1,
+          "retirements": 21,
+          "fault": {
+            "pc": 116,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 2,
+          "retirements": 48,
+          "fault": {
+            "pc": 192,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 3,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 4,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 2098159,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 5,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 33767,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 6,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 1086339,
+            "code": 4,
+            "tval": 65537
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 7,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 41251,
+            "code": 6,
+            "tval": 65538
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 8,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 40963,
+            "code": 5,
+            "tval": 131072
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 9,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 8227,
+            "code": 7,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 10,
+          "retirements": 1,
+          "fault": {
+            "pc": 65536,
+            "insn": 0,
+            "code": 3,
+            "tval": 65536
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        }
+      ],
+      "artifacts": {
+        "build\\T011\\retire-20261103T055648684589Z\\observed_20261026.json": "c0701c060a389e610fa39a28f06f55c9490afb7b4946883508bf7ccf88d40bf0",
+        "build\\T011\\retire-20261103T055648684589Z\\expected_20261026.json": "c0701c060a389e610fa39a28f06f55c9490afb7b4946883508bf7ccf88d40bf0",
+        "build\\T011\\retire-20261103T055648684589Z\\corrupt_20261026.json": "1a7b1fe1d5285a76dae2b136d23594cfcbfe97cb9fcab5efcf12c9c0daa160fc"
+      },
+      "negative_rejections": [
+        {
+          "case": "mutated_actual_bit",
+          "diagnostic": "event 0 mismatch: actual=('R', 0, 0, 0, 3859, 4, 1, 30, 0, 0, 0, 0, 0, 0, 1) expected=('R', 0, 0, 0, 3859, 4, 1, 30, 0, 0, 0, 0, 0, 0, 0)"
+        },
+        {
+          "case": "empty_actual",
+          "diagnostic": "zero-test trace comparison"
+        },
+        {
+          "case": "extra_actual_event",
+          "diagnostic": "event count mismatch actual=867 expected=866"
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "rtl/core/rv32_pkg.sv": "a64532c6e1a92232680b4cff5871aa98cdf3694b348e700fc4aa36d7ac948069",
+    "rtl/core/decoder.sv": "1c50bfd7b1fe87c34ca618e854cfce90890df7765092a542ccbb132dcd88f808",
+    "rtl/core/alu.sv": "bff51163e8c202d806a9a3343d82df0d46f4ae34717f48711595a91b72a93b99",
+    "rtl/core/regfile.sv": "b237b622b105509dfeefefe6add04e12dd9fc5b878e6e1133e5fe0a3e3ad2bec",
+    "rtl/core/branch_unit.sv": "df42e9881113c91b3c5a07af32d7116aa673ef39d24f728dafc4e88fde41f63e",
+    "rtl/core/lsu.sv": "3aec50b3fb07044048da457f3ca59a01a21a256a817c806497d04585f69609e6",
+    "rtl/core/reference_core.sv": "8f6db0234fa0a5446a842a5483f81e81c6ba7fd91e748f131e2fc473547475b5",
+    "dv/integration/tb_reference_core.sv": "a9d260b5347cd2cceab7277d4805777c1fa77f0fb3cb53b2eaf6822e653a0b37",
+    "dv/integration/test_core_smoke.py": "e7e81581805d64d2c9a9264b750bb8116c7efca6848522622f83504564ef343d",
+    "scripts/unit_checks.py": "dec178db4844dce3ffde1b159d0df82a843ec74737c7e5cd3f0a8f6c57b30849",
+    "scripts/rtl_checks.py": "b5a7078c247a6500dac6dce3029cdb88df6e9f058aba3c8146b065122f3f5be3",
+    "scripts/tool_runner.py": "2ffc6d2c8d4be6b21f5b836a033b6971f44f9172d22b18378ade58498ec4d5f7",
+    "scripts/tool_child.py": "8a61d7f13507a0d41b838aef00b1488e9ecc0b535ff9a08caca729b0551b62a8",
+    "config/rtl_checks.json": "06e2548e1b982d86d6ea69ecdf48e341df282f926be35294b5974cb71033bc8c",
+    ".harness/checks.json": "f3230b548549f2aad019dba190e680125f2802d89a2e87bafc068dd9537676b4",
+    "docs/ARCH_CONTRACT.json": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03",
+    "scripts/retire_checks.py": "85d0d8efc172340be21a13b0b6cc7b6cab3253c537ab1db2a04c9c6d01046bcf",
+    "dv/reference/rv32_iss.py": "3bea09d666445514edbff6a4d433bdc2e18eec0b416b6780e617efcc91ab856c",
+    "dv/reference/retire.py": "219bd61ae09f0bd430a82e83c013d3766016b92c2038d60efd7849d4c58ecbc4",
+    "dv/integration/test_retire.py": "2a266a4762a9852498529be0e307ab9793d7b8dc5cb5408a206b583b336af59e"
+  },
+  "pins": {
+    "schema_version": 1,
+    "python_version": "3.9.13",
+    "git_version": "2.48.1.windows.1",
+    "tzdata_version": "2026.2",
+    "vivado_version": "2025.2",
+    "vivado_sw_build": "6299465"
+  },
+  "backend": {
+    "path": "evidence/toolchain_runs/core-20261103T055650837765Z.json",
+    "sha256": "d50fe1f1d640e9a4133d753916f77842270cc3cca2745a9c0365ca3d03bc0b22"
+  },
+  "error_words_by_scenario": {},
+  "finished_utc": "2026-11-03T05:57:05.913786+00:00"
+}

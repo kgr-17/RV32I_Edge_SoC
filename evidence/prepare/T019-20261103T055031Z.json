@@ -1,0 +1,32 @@
+[
+  {
+    "argv": [
+      "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "-B",
+      "dv/random/test_scoreboard.py"
+    ],
+    "started_utc": "2026-11-03T05:50:30.988325+00:00",
+    "cwd": "C:\\RV32I_Edge_SoC",
+    "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "status": "PASS",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_all_six_observed_error_injections_rejected (__main__.ScoreboardTests) ... ok\ntest_empty_duplicate_scenarios_and_extra_events_rejected (__main__.ScoreboardTests) ... ok\ntest_failure_cannot_be_resumed_as_a_pass (__main__.ScoreboardTests) ... ok\ntest_fault_payload_and_event_reorder_rejected (__main__.ScoreboardTests) ... ok\ntest_literal_committed_register_and_memory_state (__main__.ScoreboardTests) ... ok\ntest_missing_dump_or_duplicate_word_rejected (__main__.ScoreboardTests) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.002s\n\nOK\n",
+    "timeout_seconds": 300
+  },
+  {
+    "argv": [
+      "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "-B",
+      "dv/random/test_random_programs.py"
+    ],
+    "started_utc": "2026-11-03T05:50:31.187800+00:00",
+    "cwd": "C:\\RV32I_Edge_SoC",
+    "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "status": "PASS",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_complete_random_only_family_and_template_coverage (__main__.RandomProgramTests) ... ok\ntest_exact_replay_and_seed_variation (__main__.RandomProgramTests) ... ok\ntest_initialization_is_not_mutated_by_execution (__main__.RandomProgramTests) ... ok\ntest_original_collision_prefix_preserved (__main__.RandomProgramTests) ... ok\ntest_unique_cases_and_bounded_random_termination (__main__.RandomProgramTests) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.458s\n\nOK\n",
+    "timeout_seconds": 300
+  }
+]
