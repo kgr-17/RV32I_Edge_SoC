@@ -1,0 +1,33 @@
+{
+  "task": "T018",
+  "date": "2026-11-02",
+  "recorded_utc": "2026-11-03T04:29:08.337226+00:00",
+  "status": "awaiting_review",
+  "review_package_commit": "de07a809b7dbb87c0a41c9a51758c15110855b2c",
+  "files_sha256": {
+    "docs/PIPELINE_REVIEW.md": "7146b4d148d8bc32101fa45a7f68d3ba54ecd005cbdaff690a18e84427285a73",
+    "evidence/daily/T018.md": "048de325babf4e76a979395899e85a4bed03643e29a07540430198733987db93",
+    "evidence/t018-review-audit-2026-11-02.json": "f183e6bae0ade5986b986dc70035e75b3812501b51e5c63a18026df1a3bfefea",
+    "evidence/runs/T018/attempt-1-20261103T041420187535Z.json": "a172a8620048fe704b3563fb09c58da73258a3e7eec6d391c0e8616198308c88",
+    "docs/ARCH_CONTRACT.json": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03",
+    "docs/BACKLOG.json": "80f7efc9885f653dbc9b7b74d9bbeafa3eb8f963bc37be1ee44469508aed7b72",
+    ".harness/state.json": "ebe65e4b769bc78b99be21a6bcdbe63cfc576c3440dd0cd30eb2af8bf66acfa9"
+  },
+  "all_six_gates": "PASS exit0",
+  "verification_attempt": 1,
+  "events": 12760,
+  "retirements": 2008,
+  "scenarios": 168,
+  "source_audit": "evidence/t018-review-audit-2026-11-02.json",
+  "owner_authorization_received": false,
+  "requested_command": [
+    "python",
+    "-B",
+    "scripts/harness.py",
+    "approve",
+    "T018",
+    "--confirm-owner-review"
+  ],
+  "next_task_after_explicit_approval": "T019",
+  "runtime": "unrestricted, attended only"
+}
