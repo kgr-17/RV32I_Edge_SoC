@@ -1,0 +1,18 @@
+{
+  "task": "T041",
+  "executed_date": "2026-11-02",
+  "authorization_scope": "Explicit owner approval of reviewed directed RV32I/initial EEI package and this exact approval command only.",
+  "question_item_id": "[\"request_user_input_async\",\"call_12207d63dc1246609f7e372d8d273b81\",0]",
+  "answer": "Approve T041 and authorize that command",
+  "command": [
+    "python",
+    "-B",
+    "scripts/harness.py",
+    "approve",
+    "T041",
+    "--confirm-owner-review"
+  ],
+  "review_commit": "9f37135daba0b19cd8caf10929b03dbd761bc92c",
+  "review_document": "docs/ISA_COMPLIANCE_MATRIX.md",
+  "review_sha256": "cba59ddc6c18257e7b3f7c52640e57dfec0c36f7f82db9c90733c00c850478c2"
+}

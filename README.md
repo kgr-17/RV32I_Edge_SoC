@@ -30,7 +30,7 @@ was explicitly approved by the owner on November2. Across four seeds,12,760 orde
 GPR/RAM sample events matched, including2,008 successful retirements. Random
 instruction/reset/formal and final core DV closure, FPGA implementation, hardware
 and ASIC results remain future milestones. T041's [directed ISA/EEI matrix](docs/ISA_COMPLIANCE_MATRIX.md)
-passed all five gates on attempt2 and awaits owner review:6,364 retirements/632
+passed all five gates on attempt2 and was owner-approved November2:6,364 retirements/632
 scenario runs, all40 families/nine fault classes, explicit FENCE and bus-error
 evidence. The first nonvacuity failure and strengthened stimulus are preserved.
 

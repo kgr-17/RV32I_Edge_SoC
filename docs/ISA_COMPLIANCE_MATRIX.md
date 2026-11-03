@@ -1,6 +1,6 @@
 # T041 directed RV32I / initial EEI review matrix
 
-November 2, 2026, America/Los_Angeles. **All five gates passed; owner review pending.**
+November 2, 2026, America/Los_Angeles. **All five gates passed; owner approved November 2.**
 Formal attempt2 passed after retaining the first nonvacuity failure. This matrix covers the declared
 40-instruction RV32I 2.1 core and owner-approved v0.2 fault-halt EEI. It records
 finite directed tests and their limits; it is not RISC-V certification, exhaustive
@@ -236,3 +236,17 @@ alignment precedence, boundary arithmetic, independent-vs-hand expectations,
 the retained failed attempt and the explicit certification/SoC/formal/reset gaps.
 Accepting this scoped directed matrix permits the next eligible task to proceed;
 query the harness (T019 is currently expected) rather than assuming a task order.
+
+## Owner acceptance
+
+The owner explicitly answered "Approve T041 and authorize that command" for
+`python -B scripts/harness.py approve T041 --confirm-owner-review`. Before
+execution, every review-ready and source-audit hash matched package `9f37135`,
+including submitted document SHA256
+`cba59ddc6c18257e7b3f7c52640e57dfec0c36f7f82db9c90733c00c850478c2`.
+The authorized command returned PASS/exit0; T041 is completed. An actual `next`
+query selected T019. Exact authorization/raw-command receipts are
+`evidence/owner_reviews/T041-2026-11-02.json` and its `-command.json` companion.
+Earlier pending-state text describes the submitted review. Scope, limits,
+measurements and preserved failures remain the accepted package. This approval
+grants no tool-installation, scheduling, programming or architecture-change scope.
