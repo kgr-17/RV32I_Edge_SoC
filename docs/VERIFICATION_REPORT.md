@@ -1,6 +1,6 @@
 # L1 reference-core baseline for owner review
 
-Status: AUTOMATED GATES PASS; OWNER REVIEW PENDING. Date 2026-10-26
+Status: AUTOMATED GATES PASS; OWNER APPROVED 2026-11-02. Baseline date 2026-10-26
 America/Los_Angeles. Engineering baseline commit 5814768. T001..T011 are
 completed, including recorded T002 architecture and T006 register-file reviews.
 The architecture submission's historical PROPOSED label is preserved; its
@@ -102,6 +102,15 @@ about unexecuted later tests. Runtime is unrestricted; unattended stays disabled
   the owner's acknowledgment. AGENTS.md reserves the approval command to the owner.
 
 No owner approval is created by this document or the matrix generator.
+
+## Owner acknowledgment applied 2026-11-02
+
+The owner explicitly replied "Approve T012 and authorize that command" to the
+review of commit 4591b78. The specified approval command was executed on resume,
+exit 0. The approved report bytes were hash-checked before this acknowledgment
+was appended; the original submission and all pending-review language below
+remain historical provenance. See evidence/owner_reviews/T012-2026-11-02.json
+and its command receipt. T012 is completed. No broader approvals are inferred.
 
 ## Fresh T012 acceptance and per-seed matrix
 

@@ -1,0 +1,18 @@
+{
+  "task": "T012",
+  "executed_date": "2026-11-02",
+  "authorization_scope": "User explicitly approved reviewed T012 baseline and this one approval command; authorization persists across resume.",
+  "question_item_id": "[\"request_user_input_async\",\"call_760e0c7c636245a4a7d8b8d1dfa7e602\",0]",
+  "answer": "Approve T012 and authorize that command",
+  "command": [
+    "python",
+    "-B",
+    "scripts/harness.py",
+    "approve",
+    "T012",
+    "--confirm-owner-review"
+  ],
+  "review_commit": "4591b78",
+  "review_document": "docs/VERIFICATION_REPORT.md",
+  "review_sha256": "f9a63426e30a4f9e9d6d7aca94693c7281940eab113cc30614f7cac39d7427d8"
+}
