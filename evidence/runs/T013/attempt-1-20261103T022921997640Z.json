@@ -1,0 +1,71 @@
+{
+  "task": "T013",
+  "attempt": 1,
+  "git_commit": "14d9641eb91515312b7f7359aa604fe14ba9cb8f",
+  "python": "3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)]",
+  "stage": "finished",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "lint"
+      ],
+      "started_utc": "2026-11-03T02:29:22.030178+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/rtl_checks.py\", \"lint\"], \"started_utc\": \"2026-11-03T02:29:22.180054+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\n  \\\"status\\\": \\\"PASS\\\",\\n  \\\"evidence\\\": \\\"evidence\\\\\\\\toolchain_runs\\\\\\\\lint-20261103T022922375287Z.json\\\",\\n  \\\"checks\\\": 23,\\n  \\\"simulations\\\": [],\\n  \\\"error\\\": null\\n}\\n\", \"stderr\": \"\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "test-pipeline"
+      ],
+      "started_utc": "2026-11-03T02:32:32.683479+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"dv/integration/test_pipeline_base.py\"], \"started_utc\": \"2026-11-03T02:32:32.831935+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"\", \"stderr\": \"test_capture_hold_and_clear_have_distinct_events (__main__.StageLedgerTests) ... ok\\ntest_each_stage_is_independent_and_zero_is_valid_data (__main__.StageLedgerTests) ... ok\\ntest_invalid_input_cannot_retain_metadata (__main__.StageLedgerTests) ... ok\\ntest_reset_dominates_every_local_control (__main__.StageLedgerTests) ... ok\\n\\n----------------------------------------------------------------------\\nRan 4 tests in 0.000s\\n\\nOK\\n\"}\n{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/unit_checks.py\", \"pipeline\"], \"started_utc\": \"2026-11-03T02:32:32.977885+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\n  \\\"status\\\": \\\"PASS\\\",\\n  \\\"evidence\\\": \\\"evidence/toolchain_runs/pipeline-20261103T023233165030Z.json\\\",\\n  \\\"checks\\\": 17,\\n  \\\"counts\\\": [\\n    39511,\\n    39511\\n  ],\\n  \\\"error\\\": null\\n}\\n\", \"stderr\": \"\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_utc": "2026-11-03T02:32:49.403362+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "started_utc": "2026-11-03T02:32:49.451611+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "waveform_paths": [],
+  "seed": null,
+  "evidence_sha256": "e00527f936e2dfde1d5345d2f8a2fb0e386a00a0a12d5ccc88a0e759a85caea0"
+}

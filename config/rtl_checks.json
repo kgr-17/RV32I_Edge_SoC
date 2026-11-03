@@ -139,6 +139,32 @@
         "/tb_reference_core/fault_valid_o",
         "/tb_reference_core/fault_code_o"
       ]
+    },
+    "pipeline": {
+      "task": "T013",
+      "sources": [
+        "rtl/core/pipeline_core.sv"
+      ],
+      "testbench": "dv/integration/tb_pipeline_base.sv",
+      "test_top": "tb_pipeline_base",
+      "reference": "dv/integration/test_pipeline_base.py",
+      "seeds": [
+        1,
+        20261102
+      ],
+      "waves": [
+        "/tb_pipeline_base/clk",
+        "/tb_pipeline_base/rst",
+        "/tb_pipeline_base/clear",
+        "/tb_pipeline_base/hold",
+        "/tb_pipeline_base/valid",
+        "/tb_pipeline_base/v129",
+        "/tb_pipeline_base/if_payload",
+        "/tb_pipeline_base/id_payload",
+        "/tb_pipeline_base/ex_payload",
+        "/tb_pipeline_base/mem_payload",
+        "/tb_pipeline_base/wb_payload"
+      ]
     }
   },
   "lint_designs": [
@@ -196,6 +222,14 @@
         "rtl/core/lsu.sv",
         "rtl/core/reference_core.sv",
         "dv/lint/reference_core_lint_top.sv"
+      ]
+    },
+    {
+      "name": "rv32_pipeline_registers",
+      "top": "pipeline_lint_top",
+      "sources": [
+        "rtl/core/pipeline_core.sv",
+        "dv/lint/pipeline_lint_top.sv"
       ]
     }
   ],
