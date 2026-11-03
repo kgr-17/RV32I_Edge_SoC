@@ -1,0 +1,526 @@
+{
+  "profile": "lsu",
+  "status": "PASS",
+  "started_utc": "20261103T040603952725Z",
+  "base_commit": "2d7b4ccb739336f451b0c1c8d23750550de3ca24",
+  "scope": "lsu unit simulation only; no full CPU or hardware",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\lsu-20261103T040603952725Z\\versions",
+      "started_utc": "2026-11-03T04:06:04.047174+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "git version 2.48.1.windows.1\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.125
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\lsu-20261103T040603952725Z\\versions\\xvlog",
+      "started_utc": "2026-11-03T04:06:04.169095+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.609
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\lsu-20261103T040603952725Z\\versions\\xelab",
+      "started_utc": "2026-11-03T04:06:04.788904+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.609
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\lsu-20261103T040603952725Z\\versions\\xsim",
+      "started_utc": "2026-11-03T04:06:05.414469+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2025 Xilinx, Inc. All Rights Reserved.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.484
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\rv32_pkg.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\lsu.sv",
+        "C:\\RV32I_Edge_SoC\\dv\\unit\\tb_lsu.sv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\lsu-20261103T040603952725Z\\sim_lsu",
+      "started_utc": "2026-11-03T04:06:05.937563+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "INFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/rv32_pkg.sv\" into library work\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/lsu.sv\" into library work\nINFO: [VRFC 10-311] analyzing module lsu\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/unit/tb_lsu.sv\" into library work\nINFO: [VRFC 10-311] analyzing module tb_lsu\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.703
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "work.tb_lsu",
+        "--snapshot",
+        "unit_snapshot",
+        "--timescale",
+        "1ns/1ps",
+        "--debug",
+        "typical"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\lsu-20261103T040603952725Z\\sim_lsu",
+      "started_utc": "2026-11-03T04:06:06.642295+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nRunning: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_lsu --snapshot unit_snapshot --timescale 1ns/1ps --debug typical \nMulti-threading is on. Using 26 slave threads.\nStarting static elaboration\nPass Through NonSizing Optimizer\nCompleted static elaboration\nStarting simulation data flow analysis\nCompleted simulation data flow analysis\nTime Resolution for simulation is 1ps\nCompiling package work.rv32_pkg\nCompiling module work.lsu\nCompiling module work.tb_lsu\nBuilt simulation snapshot unit_snapshot\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 1.344
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "unit_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\units\\lsu-20261103T040603952725Z\\sim_lsu\\seed_1.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\lsu-20261103T040603952725Z\\sim_lsu",
+      "started_utc": "2026-11-03T04:06:08.144792+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Mon Nov  2 20:06:08 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/unit_snapshot/xsim_script.tcl\n# xsim {unit_snapshot} -testplusarg SEED=1 -testplusarg COUNT=44872 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/vectors_1.txt -wdb {C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/seed_1.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/run.tcl\n## log_wave /tb_lsu/op /tb_lsu/addr /tb_lsu/data /tb_lsu/word_data /tb_lsu/load_data /tb_lsu/store_word /tb_lsu/be /tb_lsu/bad\n## run all\nLSU_SIM_PASS seed=1 checked=44872\n$finish called at time : 44872 ns : File \"C:/RV32I_Edge_SoC/dv/unit/tb_lsu.sv\" Line 44\nexit 0\nINFO: [Common 17-206] Exiting xsim at Mon Nov  2 20:06:10 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.75,
+      "argument_file": {
+        "path": "build\\units\\lsu-20261103T040603952725Z\\sim_lsu\\seed_1.args",
+        "sha256": "f68df8b2352f86d156f05b6dd409fcb981f2045c6e3ccb783d14d92bd44d235e",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nCOUNT=44872\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/vectors_1.txt\n--log\nseed_1.log\n--wdb\nC:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/seed_1.wdb\n",
+        "intended_argv": [
+          "unit_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "COUNT=44872",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/vectors_1.txt",
+          "--log",
+          "seed_1.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/seed_1.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "unit_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\units\\lsu-20261103T040603952725Z\\sim_lsu\\seed_20261025.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\lsu-20261103T040603952725Z\\sim_lsu",
+      "started_utc": "2026-11-03T04:06:11.121203+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Mon Nov  2 20:06:11 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/unit_snapshot/xsim_script.tcl\n# xsim {unit_snapshot} -testplusarg SEED=20261025 -testplusarg COUNT=44872 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/vectors_20261025.txt -wdb {C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/seed_20261025.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/run.tcl} -onfinish quit -onerror quit -sv_seed 20261025\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/run.tcl\n## log_wave /tb_lsu/op /tb_lsu/addr /tb_lsu/data /tb_lsu/word_data /tb_lsu/load_data /tb_lsu/store_word /tb_lsu/be /tb_lsu/bad\n## run all\nLSU_SIM_PASS seed=20261025 checked=44872\n$finish called at time : 44872 ns : File \"C:/RV32I_Edge_SoC/dv/unit/tb_lsu.sv\" Line 44\nexit 0\nINFO: [Common 17-206] Exiting xsim at Mon Nov  2 20:06:13 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.734,
+      "argument_file": {
+        "path": "build\\units\\lsu-20261103T040603952725Z\\sim_lsu\\seed_20261025.args",
+        "sha256": "fccf4518f47cbe7bab69bcef851a181695815141c1aa8ec183afb144688a129a",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n20261025\n--testplusarg\nSEED=20261025\n--testplusarg\nCOUNT=44872\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/vectors_20261025.txt\n--log\nseed_20261025.log\n--wdb\nC:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/seed_20261025.wdb\n",
+        "intended_argv": [
+          "unit_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "20261025",
+          "--testplusarg",
+          "SEED=20261025",
+          "--testplusarg",
+          "COUNT=44872",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/vectors_20261025.txt",
+          "--log",
+          "seed_20261025.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/seed_20261025.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "unit_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\units\\lsu-20261103T040603952725Z\\sim_lsu\\corrupt_expected.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\lsu-20261103T040603952725Z\\sim_lsu",
+      "started_utc": "2026-11-03T04:06:13.889551+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Mon Nov  2 20:06:14 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/unit_snapshot/xsim_script.tcl\n# xsim {unit_snapshot} -testplusarg SEED=20261025 -testplusarg COUNT=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/corrupt_expected.txt -wdb {C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/corrupt_expected.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/run.tcl} -onfinish quit -onerror quit -sv_seed 20261025\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/run.tcl\n## log_wave /tb_lsu/op /tb_lsu/addr /tb_lsu/data /tb_lsu/word_data /tb_lsu/load_data /tb_lsu/store_word /tb_lsu/be /tb_lsu/bad\n## run all\nFatal: LSU_MISMATCH seed=20261025 row=0 op=0e addr=10000002 load=000000e5/000000e5 store=00000000/00000000 be=4/4 merged=19e5eb8b/19e5eb8a\nTime: 1 ns  Iteration: 0  Process: /tb_lsu/Initial17_1  Scope: tb_lsu  File: C:/RV32I_Edge_SoC/dv/unit/tb_lsu.sv Line: 36\n$finish called at time : 1 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Mon Nov  2 20:06:16 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.515,
+      "argument_file": {
+        "path": "build\\units\\lsu-20261103T040603952725Z\\sim_lsu\\corrupt_expected.args",
+        "sha256": "375cdc79fafbd13652b2bdaed6028260b91dd7faf7964282dd7edc98d91bf669",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n20261025\n--testplusarg\nSEED=20261025\n--testplusarg\nCOUNT=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/corrupt_expected.txt\n--log\ncorrupt_expected.log\n--wdb\nC:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/corrupt_expected.wdb\n",
+        "intended_argv": [
+          "unit_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "20261025",
+          "--testplusarg",
+          "SEED=20261025",
+          "--testplusarg",
+          "COUNT=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/corrupt_expected.txt",
+          "--log",
+          "corrupt_expected.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/corrupt_expected.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "unit_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\units\\lsu-20261103T040603952725Z\\sim_lsu\\empty_vectors.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\lsu-20261103T040603952725Z\\sim_lsu",
+      "started_utc": "2026-11-03T04:06:16.425767+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Mon Nov  2 20:06:17 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/unit_snapshot/xsim_script.tcl\n# xsim {unit_snapshot} -testplusarg SEED=20261025 -testplusarg COUNT=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/empty_vectors.txt -wdb {C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/empty_vectors.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/run.tcl} -onfinish quit -onerror quit -sv_seed 20261025\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/run.tcl\n## log_wave /tb_lsu/op /tb_lsu/addr /tb_lsu/data /tb_lsu/word_data /tb_lsu/load_data /tb_lsu/store_word /tb_lsu/be /tb_lsu/bad\n## run all\nFatal: Wrong count 0 != 1\nTime: 0 ps  Iteration: 0  Process: /tb_lsu/Initial17_1  Scope: tb_lsu  File: C:/RV32I_Edge_SoC/dv/unit/tb_lsu.sv Line: 42\n$finish called at time : 0 fs\nexit 0\nINFO: [Common 17-206] Exiting xsim at Mon Nov  2 20:06:18 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.468,
+      "argument_file": {
+        "path": "build\\units\\lsu-20261103T040603952725Z\\sim_lsu\\empty_vectors.args",
+        "sha256": "8579fb2610a35b7b34d106ab8ccd861114e695db02fcd8f1a5d4f363840307dc",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n20261025\n--testplusarg\nSEED=20261025\n--testplusarg\nCOUNT=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/empty_vectors.txt\n--log\nempty_vectors.log\n--wdb\nC:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/empty_vectors.wdb\n",
+        "intended_argv": [
+          "unit_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "20261025",
+          "--testplusarg",
+          "SEED=20261025",
+          "--testplusarg",
+          "COUNT=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/empty_vectors.txt",
+          "--log",
+          "empty_vectors.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/units/lsu-20261103T040603952725Z/sim_lsu/empty_vectors.wdb"
+        ]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "Pinned Python version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned tzdata version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned Git version",
+      "status": "PASS",
+      "command_index": 0
+    },
+    {
+      "name": "Pinned xvlog version",
+      "status": "PASS",
+      "command_index": 1
+    },
+    {
+      "name": "Pinned xelab version",
+      "status": "PASS",
+      "command_index": 2
+    },
+    {
+      "name": "Pinned xsim version",
+      "status": "PASS",
+      "command_index": 3
+    },
+    {
+      "name": "lsu compile",
+      "status": "PASS",
+      "command_index": 4
+    },
+    {
+      "name": "lsu elaboration",
+      "status": "PASS",
+      "command_index": 5
+    },
+    {
+      "name": "lsu coverage bins seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "lsu independent comparison seed=1",
+      "status": "PASS",
+      "command_index": 6
+    },
+    {
+      "name": "lsu waveform seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "lsu coverage bins seed=20261025",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "lsu independent comparison seed=20261025",
+      "status": "PASS",
+      "command_index": 7
+    },
+    {
+      "name": "lsu waveform seed=20261025",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "lsu rejects corrupt expected bit",
+      "status": "PASS",
+      "command_index": 8
+    },
+    {
+      "name": "lsu rejects empty vectors",
+      "status": "PASS",
+      "command_index": 9
+    },
+    {
+      "name": "lsu sources unchanged during verification",
+      "status": "PASS",
+      "command_index": null
+    }
+  ],
+  "simulations": [
+    {
+      "design": "lsu",
+      "seed": 1,
+      "checked_vectors": 44872,
+      "vector_path": "build/units/lsu-20261103T040603952725Z/sim_lsu/vectors_1.txt",
+      "vector_sha256": "c73ba4fc81c9c7fa88032c4fd648a52eec7c3c324d52c59c3978deadba2fdbaa",
+      "waveform": "build/units/lsu-20261103T040603952725Z/sim_lsu/seed_1.wdb",
+      "waveform_sha256": "02caf8b805cbcf147cfb3ac899cf3ef9faa8ab233ccb051ee14ebe77bc379a94",
+      "coverage": {
+        "bad:12:1": 1278,
+        "bad:12:3": 1313,
+        "bad:13:1": 1297,
+        "bad:13:2": 1302,
+        "bad:13:3": 1307,
+        "bad:15:1": 1269,
+        "bad:15:3": 1241,
+        "bad:17:1": 1273,
+        "bad:17:3": 1217,
+        "bad:18:1": 1296,
+        "bad:18:2": 1259,
+        "bad:18:3": 1289,
+        "group:all-byte-values": 3072,
+        "group:edge-cross": 6272,
+        "group:halfword-walking-sign": 456,
+        "group:random": 32768,
+        "group:unsupported": 1792,
+        "group:word-walking": 512,
+        "lane:11:0": 1472,
+        "lane:11:1": 1489,
+        "lane:11:2": 1503,
+        "lane:11:3": 1440,
+        "lane:12:0": 1260,
+        "lane:12:2": 1181,
+        "lane:13:0": 1230,
+        "lane:14:0": 1470,
+        "lane:14:1": 1498,
+        "lane:14:2": 1475,
+        "lane:14:3": 1461,
+        "lane:15:0": 1265,
+        "lane:15:2": 1257,
+        "lane:16:0": 1444,
+        "lane:16:1": 1459,
+        "lane:16:2": 1503,
+        "lane:16:3": 1498,
+        "lane:17:0": 1256,
+        "lane:17:2": 1286,
+        "lane:18:0": 1292,
+        "unsupported": 1792
+      }
+    },
+    {
+      "design": "lsu",
+      "seed": 20261025,
+      "checked_vectors": 44872,
+      "vector_path": "build/units/lsu-20261103T040603952725Z/sim_lsu/vectors_20261025.txt",
+      "vector_sha256": "77157d566a8e2fa4b8fef789028b3f86646664c9a563e97cd745122c215ac113",
+      "waveform": "build/units/lsu-20261103T040603952725Z/sim_lsu/seed_20261025.wdb",
+      "waveform_sha256": "5cf56598bb14f1ab9c52c67171973985492975f615fa611c24687dc31988f4e2",
+      "coverage": {
+        "bad:12:1": 1270,
+        "bad:12:3": 1222,
+        "bad:13:1": 1237,
+        "bad:13:2": 1320,
+        "bad:13:3": 1270,
+        "bad:15:1": 1227,
+        "bad:15:3": 1269,
+        "bad:17:1": 1298,
+        "bad:17:3": 1233,
+        "bad:18:1": 1295,
+        "bad:18:2": 1306,
+        "bad:18:3": 1259,
+        "group:all-byte-values": 3072,
+        "group:edge-cross": 6272,
+        "group:halfword-walking-sign": 456,
+        "group:random": 32768,
+        "group:unsupported": 1792,
+        "group:word-walking": 512,
+        "lane:11:0": 1454,
+        "lane:11:1": 1464,
+        "lane:11:2": 1509,
+        "lane:11:3": 1477,
+        "lane:12:0": 1301,
+        "lane:12:2": 1239,
+        "lane:13:0": 1309,
+        "lane:14:0": 1479,
+        "lane:14:1": 1446,
+        "lane:14:2": 1496,
+        "lane:14:3": 1483,
+        "lane:15:0": 1257,
+        "lane:15:2": 1279,
+        "lane:16:0": 1514,
+        "lane:16:1": 1484,
+        "lane:16:2": 1404,
+        "lane:16:3": 1502,
+        "lane:17:0": 1264,
+        "lane:17:2": 1237,
+        "lane:18:0": 1276,
+        "unsupported": 1792
+      }
+    }
+  ],
+  "excluded": [
+    "full CPU execution/retirement",
+    "formal",
+    "timing closure",
+    "physical hardware",
+    "ASIC"
+  ],
+  "task": "T008",
+  "source_sha256": {
+    "rtl/core/rv32_pkg.sv": "a64532c6e1a92232680b4cff5871aa98cdf3694b348e700fc4aa36d7ac948069",
+    "rtl/core/lsu.sv": "3aec50b3fb07044048da457f3ca59a01a21a256a817c806497d04585f69609e6",
+    "dv/unit/tb_lsu.sv": "3210ab2fbc03f7a64210ae8eea42abe746d1ca21f8a0a7fc4a86474ba769f4c1",
+    "dv/unit/test_lsu.py": "eb6a1425c2668b187971ebaeaf16c5da80e0d504d8faad4c8ca311f96f75589e",
+    "config/rtl_checks.json": "6c0361210064efddbf55913b175c4139e6c26fd68e43227ce62d92996f39e981",
+    "scripts/unit_checks.py": "dec178db4844dce3ffde1b159d0df82a843ec74737c7e5cd3f0a8f6c57b30849",
+    "scripts/rtl_checks.py": "b5a7078c247a6500dac6dce3029cdb88df6e9f058aba3c8146b065122f3f5be3"
+  },
+  "pins": {
+    "schema_version": 1,
+    "python_version": "3.9.13",
+    "git_version": "2.48.1.windows.1",
+    "tzdata_version": "2026.2",
+    "vivado_version": "2025.2",
+    "vivado_sw_build": "6299465"
+  },
+  "tcl": {
+    "path": "build/units/lsu-20261103T040603952725Z/sim_lsu/run.tcl",
+    "sha256": "708657f3154df08dcccc213c2a2c221f706aa3fc1db7ab71f1532668f9897225"
+  },
+  "finished_utc": "2026-11-03T04:06:18.930402+00:00"
+}

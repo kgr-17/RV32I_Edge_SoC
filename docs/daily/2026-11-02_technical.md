@@ -123,3 +123,32 @@ Full13-target regression PASS/exit0 in evidence/t016-regression-2026-11-02.json.
 # T016 delivery sequencing guard
 
 The preservation audit returned an ongoing subprocess session, not completion. A premature dependent git add then failed exit128 on its not-yet-created audit file. Fail-fast logic prevented commit and the clean-baseline guard refused T017 begin. No new task was started, no state was forced and no data was discarded. Waited for the audit session to finish successfully:411 historical files preserved and143 artifacts hash-verified. Then perform staging/whitespace/hash checks and commit before retrying T017. This was orchestration sequencing, not an RTL or test failure; required gates remain passed. Future audits use a longer bounded initial wait and dependent mutations wait for explicit process completion.
+
+
+---
+
+<!-- entry:a5498f9aec524b69c600b64a8d491c89c2d9db8888b358e65063c5e56205bab1 -->
+
+# T017 seeded bus timing stress prepared
+
+T016 committed2d7b4cc after waiting for audit completion and clean Git; beganT017. New test_backpressure.py/tb_backpressure.sv retain the exact21-case deterministic stimulus prefix and its per-case nonvacuity checks, then replay21 more cases under variable bus timing. Seeds1/7/101/20261102. IF ready has seeded/forced low windows with response1..4; data ready varies and latency1..32, first accepted data per stress scenario32. Actual timing counters must show IF/D request stalls and32-edge wait. All full retirement/order/RAM/fault/stability/outstanding/duplicate/progress/halt-drain checks remain. No old check weakened to accommodate random timing.
+
+Four generator tests validate prefix retention, unique42 IDs, replay/data variation and complete categories/counts. Helpers are explicit SHA inputs and actual corrupt-expected/empty runs required. Production RTL/reference/control tests and architecture/XPR/XDC/kit unchanged at preparation. Registered real test-backpressure and regression route. First finishT017 --evidence evidence/daily/T017.md uses attempt1/3 for lint/test-backpressure and both whitespace gates. Results pending. Preserve raw timing/collision counts, vectors/WDBs/commands and append today's same two reports. Independent pipeline ISS milestoneT018, random instructions/reset/formal/timing/hardware/ASIC remain future; no unauthorized global/download/push/programming/scheduling action.
+
+
+---
+
+<!-- entry:1fdeae97b590b5e6c71eb466afb8035743f5eed5e2cfbcf4951a1bf18a0cf35f -->
+
+# T017 first attempt: randomized execution PASS, native exit FAIL
+
+Receipt evidence/runs/T017/attempt-1-20261103T035529249994Z.json: lint FAIL, test-backpressure and both whitespace gates PASS. Actual backpressure-20261103T035629029200Z.json executes four seeds1/7/101/20261102 each42 cases/502 retirements, total168 cases/2008 retirements. IF request stalls433/496/467/564; data request stalls153/122/137/150; maximum accepted-data wait32 in all four. Cycles5293/5711/5387/5370. Original per-case deterministic guards, full retire/RAM/protocol, random timing bins, four generator and actual corrupt/empty checks all pass. No DUT mismatch observed.
+
+Lint failed on unchanged ALU because Vivado exited with EXCEPTION_ACCESS_VIOLATION/raw4294967295 AFTER zero-warning synthesis/DRC and completion marker. This is a retained process failure, not accepted as pass. Complete small crash-log text/path/hash recorded in evidence/t017-native-crash-2026-11-02.json and full command output in lint-20261103T035529642606Z.json. Cause undetermined; no source/check/filter/tool-setting/timeout changes. Retry uses attempt2/3, identical gates and sources, preserving all first evidence. Do not declare task complete until every required command passes. No broader approvals, unbounded retry or environment modification.
+
+
+---
+
+<!-- entry:f82975f3c9e9234a54833ca2c288d6cde14dbceb429273fe465df76eaf6b902e -->
+
+T017 completed on formal attempt2/3; no source/check/tool/timeout change after the retained native ALU Vivado exit crash in attempt1. Four-seed bus stress (1,7,101,20261102) passes2008 retirements/168 scenarios, full retire/order/RAM/fault/protocol/drain checks, IF/D stalls and32-edge data waits. Required lint/test-backpressure/whitespace commands exit0. Receipt T017/attempt-2-20261103T035820350917Z.json; lint-20261103T035820737275Z.json29checks/16commands; backpressure-20261103T040409826639Z.json23checks/12commands. Full14-target regression PASS exit0: evidence/t017-regression-2026-11-02.json; closing backpressure-20261103T040837573279Z.json. Scalar/storage1185178 vectors remain a different workload from pipeline2008, directed502 and dependency128 retirements. Original deterministic cases/checks, production RTL, architecture/XPR/XDC/kit and previous evidence preserved. Audit evidence/t017-complete-2026-11-02.json; inspect/stage/commit then require clean Git before begin T018. T018 must compare actual pipeline events with independent ISS and stop awaiting owner review after its gates. No formal, routed timing, physical hardware or ASIC signoff. Python3.9.13/Git2.48.1.windows.1/Vivado-XSim2025.2 build6299465 unchanged. Attended unrestricted runtime only; no unattended scheduler configured. Report-entry transport encoding was corrected using ASCII Unicode escapes after the PowerShell pipe replaced Chinese characters; the initial input JSON is retained, and corrected CJK content checked before publication.

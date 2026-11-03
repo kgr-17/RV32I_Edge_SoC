@@ -230,8 +230,15 @@
         "-B",
         "scripts/verify.py",
         "test-control"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/verify.py",
+        "test-backpressure"
       ]
-    ]
+    ],
+    "timeout_seconds": 600
   },
   "test-regfile": {
     "inputs": [
@@ -544,6 +551,40 @@
         "-B",
         "scripts/unit_checks.py",
         "control"
+      ]
+    ]
+  },
+  "test-backpressure": {
+    "inputs": [
+      "rtl/core/rv32_pkg.sv",
+      "rtl/core/decoder.sv",
+      "rtl/core/alu.sv",
+      "rtl/core/regfile.sv",
+      "rtl/core/branch_unit.sv",
+      "rtl/core/lsu.sv",
+      "rtl/core/pipeline_core.sv",
+      "rtl/core/forwarding_unit.sv",
+      "rtl/core/hazard_unit.sv",
+      "rtl/core/pipeline_cpu.sv",
+      "config/rtl_checks.json",
+      "scripts/unit_checks.py",
+      "dv/integration/tb_backpressure.sv",
+      "dv/integration/test_backpressure.py",
+      "dv/integration/test_core_smoke.py",
+      "dv/integration/test_load_use.py",
+      "dv/integration/test_flush.py"
+    ],
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "dv/integration/test_backpressure.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/unit_checks.py",
+        "backpressure"
       ]
     ]
   }

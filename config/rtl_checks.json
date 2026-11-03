@@ -289,6 +289,50 @@
         "/tb_control/dut/fetch_killed_q",
         "/tb_control/dut/wb_fault"
       ]
+    },
+    "backpressure": {
+      "task": "T017",
+      "sources": [
+        "rtl/core/rv32_pkg.sv",
+        "rtl/core/decoder.sv",
+        "rtl/core/alu.sv",
+        "rtl/core/regfile.sv",
+        "rtl/core/branch_unit.sv",
+        "rtl/core/lsu.sv",
+        "rtl/core/pipeline_core.sv",
+        "rtl/core/forwarding_unit.sv",
+        "rtl/core/hazard_unit.sv",
+        "rtl/core/pipeline_cpu.sv"
+      ],
+      "testbench": "dv/integration/tb_backpressure.sv",
+      "test_top": "tb_backpressure",
+      "reference": "dv/integration/test_backpressure.py",
+      "extra_inputs": [
+        "dv/integration/test_core_smoke.py",
+        "dv/integration/test_load_use.py",
+        "dv/integration/test_flush.py"
+      ],
+      "seeds": [
+        1,
+        7,
+        101,
+        20261102
+      ],
+      "waves": [
+        "/tb_backpressure/clk_i",
+        "/tb_backpressure/rst_i",
+        "/tb_backpressure/retire_valid_o",
+        "/tb_backpressure/retire_pc_o",
+        "/tb_backpressure/retire_rd_wdata_o",
+        "/tb_backpressure/dmem_req_valid_o",
+        "/tb_backpressure/dmem_rsp_valid_i",
+        "/tb_backpressure/dut/dependency",
+        "/tb_backpressure/dut/front_hold",
+        "/tb_backpressure/dut/e_valid",
+        "/tb_backpressure/dut/redirect",
+        "/tb_backpressure/dut/fetch_killed_q",
+        "/tb_backpressure/dut/wb_fault"
+      ]
     }
   },
   "lint_designs": [
