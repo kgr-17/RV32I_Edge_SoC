@@ -210,6 +210,12 @@
         "-B",
         "scripts/verify.py",
         "test-pipeline"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/verify.py",
+        "test-forwarding"
       ]
     ]
   },
@@ -394,6 +400,28 @@
         "-B",
         "scripts/unit_checks.py",
         "pipeline"
+      ]
+    ]
+  },
+  "test-forwarding": {
+    "inputs": [
+      "config/rtl_checks.json",
+      "scripts/unit_checks.py",
+      "rtl/core/forwarding_unit.sv",
+      "dv/integration/test_forwarding.py",
+      "dv/integration/tb_forwarding.sv"
+    ],
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "dv/integration/test_forwarding.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/unit_checks.py",
+        "forwarding"
       ]
     ]
   }

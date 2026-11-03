@@ -1,0 +1,71 @@
+{
+  "task": "T014",
+  "attempt": 1,
+  "git_commit": "c020c43eb8098b874a78ff74a7d26c719f445b86",
+  "python": "3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)]",
+  "stage": "finished",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "lint"
+      ],
+      "started_utc": "2026-11-03T02:42:34.422900+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/rtl_checks.py\", \"lint\"], \"started_utc\": \"2026-11-03T02:42:34.784680+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\n  \\\"status\\\": \\\"PASS\\\",\\n  \\\"evidence\\\": \\\"evidence\\\\\\\\toolchain_runs\\\\\\\\lint-20261103T024235074260Z.json\\\",\\n  \\\"checks\\\": 25,\\n  \\\"simulations\\\": [],\\n  \\\"error\\\": null\\n}\\n\", \"stderr\": \"\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "test-forwarding"
+      ],
+      "started_utc": "2026-11-03T02:46:08.608405+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"dv/integration/test_forwarding.py\"], \"started_utc\": \"2026-11-03T02:46:08.754227+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"\", \"stderr\": \"test_independent_operands_and_write_qualification (__main__.ForwardingOracleTests) ... ok\\ntest_newest_producer_wins_each_operand (__main__.ForwardingOracleTests) ... ok\\ntest_unavailable_newest_load_cannot_fall_back_to_older_wb (__main__.ForwardingOracleTests) ... ok\\ntest_x0_unused_and_invalid_zero_every_effect (__main__.ForwardingOracleTests) ... ok\\n\\n----------------------------------------------------------------------\\nRan 4 tests in 0.000s\\n\\nOK\\n\"}\n{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/unit_checks.py\", \"forwarding\"], \"started_utc\": \"2026-11-03T02:46:08.969573+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\n  \\\"status\\\": \\\"PASS\\\",\\n  \\\"evidence\\\": \\\"evidence/toolchain_runs/forwarding-20261103T024609161432Z.json\\\",\\n  \\\"checks\\\": 17,\\n  \\\"counts\\\": [\\n    72212,\\n    72212\\n  ],\\n  \\\"error\\\": null\\n}\\n\", \"stderr\": \"\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_utc": "2026-11-03T02:46:26.616510+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "started_utc": "2026-11-03T02:46:26.662904+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "waveform_paths": [],
+  "seed": null,
+  "evidence_sha256": "f25d1b60a55aff85dbd95e88205d5fffd66c6a7a260fe8adefcb6cacb72af3bd"
+}

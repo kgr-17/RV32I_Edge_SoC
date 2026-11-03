@@ -1,0 +1,9 @@
+{
+  "task": "T014",
+  "phase": "closing regression launch",
+  "status": "FAIL",
+  "exit_code": 1,
+  "tests_started": false,
+  "error": "SyntaxError: inline wrapper used else1 without whitespace; Python compilation failed before any code ran.",
+  "repair": "Use an explicit if statement; no test/source/check changed."
+}

@@ -165,6 +165,32 @@
         "/tb_pipeline_base/mem_payload",
         "/tb_pipeline_base/wb_payload"
       ]
+    },
+    "forwarding": {
+      "task": "T014",
+      "sources": [
+        "rtl/core/forwarding_unit.sv"
+      ],
+      "testbench": "dv/integration/tb_forwarding.sv",
+      "test_top": "tb_forwarding",
+      "reference": "dv/integration/test_forwarding.py",
+      "seeds": [
+        1,
+        20261102
+      ],
+      "waves": [
+        "/tb_forwarding/flags",
+        "/tb_forwarding/ra",
+        "/tb_forwarding/rb",
+        "/tb_forwarding/ex_rd",
+        "/tb_forwarding/wb_rd",
+        "/tb_forwarding/a",
+        "/tb_forwarding/b",
+        "/tb_forwarding/sa",
+        "/tb_forwarding/sb",
+        "/tb_forwarding/ba",
+        "/tb_forwarding/bb"
+      ]
     }
   },
   "lint_designs": [
@@ -230,6 +256,14 @@
       "sources": [
         "rtl/core/pipeline_core.sv",
         "dv/lint/pipeline_lint_top.sv"
+      ]
+    },
+    {
+      "name": "rv32_forwarding",
+      "top": "forwarding_lint_top",
+      "sources": [
+        "rtl/core/forwarding_unit.sv",
+        "dv/lint/forwarding_lint_top.sv"
       ]
     }
   ],
