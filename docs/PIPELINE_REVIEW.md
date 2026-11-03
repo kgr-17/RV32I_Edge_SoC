@@ -1,6 +1,6 @@
 # T018 executable pipeline milestone review
 
-Prepared November 2, 2026 (America/Los_Angeles). **Owner review pending.**
+Prepared November 2, 2026 (America/Los_Angeles). **Owner approved November 2.**
 This is the L2 directed pipeline milestone, not final CPU/SoC completion.
 All six required commands passed on formal attempt 1; the harness now records
 `awaiting_review`. Results and actual receipt identities follow below.
@@ -185,3 +185,16 @@ and all23 original project files. Git retains the baseline and every task commit
 This package requests acceptance of the directed L2 scope and its explicit
 remaining gaps. It does not request an architecture revision or permission to
 program hardware, download/install tools, schedule unattended work or push Git.
+
+## Owner acceptance, November 2
+
+The owner explicitly answered "Approve T018 and authorize that command" for
+`python -B scripts/harness.py approve T018 --confirm-owner-review`. Before
+executing, the reviewed package `de07a80`, this document's submitted SHA256
+`7146b4d148d8bc32101fa45a7f68d3ba54ecd005cbdaff690a18e84427285a73`, and every
+review-ready/source-audit hash were verified unchanged. The exact command
+returned PASS/exit0; T018 is completed and T019 may begin from a clean commit.
+Authorization and raw command evidence: `evidence/owner_reviews/T018-2026-11-02.json`
+and `T018-2026-11-02-command.json`. Earlier pending-state statements describe
+the submitted review; the scope, measurements, exclusions and evidence remain
+the accepted package. This acknowledgment grants no additional execution scope.

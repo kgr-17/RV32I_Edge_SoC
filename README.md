@@ -26,7 +26,7 @@ T015 pipeline dependency integration matched 128 retirements; T016 control match
 data waits observed. The first attempt's native Vivado exit crash is retained;
 the identical second attempt passed. T018's independent pipeline ISS comparison
 and all six gates passed on attempt1; the [pipeline review](docs/PIPELINE_REVIEW.md)
-is awaiting owner acceptance. Across four seeds,12,760 ordered retirement/fault/
+was explicitly approved by the owner on November2. Across four seeds,12,760 ordered retirement/fault/
 GPR/RAM sample events matched, including2,008 successful retirements. Random
 instruction/reset/formal and final ISA/EEI closure, FPGA implementation, hardware
 and ASIC results remain future milestones.
