@@ -1,0 +1,71 @@
+{
+  "task": "T015",
+  "attempt": 1,
+  "git_commit": "43a572af9b7b0efdf2ca36f0033f1983a3305445",
+  "python": "3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)]",
+  "stage": "finished",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "lint"
+      ],
+      "started_utc": "2026-11-03T03:09:35.970589+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "FAIL",
+      "exit_code": 1,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/rtl_checks.py\", \"lint\"], \"started_utc\": \"2026-11-03T03:09:36.120160+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"FAIL\", \"exit_code\": 1, \"stdout\": \"{\\n  \\\"status\\\": \\\"FAIL\\\",\\n  \\\"evidence\\\": \\\"evidence\\\\\\\\toolchain_runs\\\\\\\\lint-20261103T030936311706Z.json\\\",\\n  \\\"checks\\\": 25,\\n  \\\"simulations\\\": [],\\n  \\\"error\\\": \\\"Synthesis lint pipeline_cpu_lint_top\\\"\\n}\\n\", \"stderr\": \"\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "test-hazards"
+      ],
+      "started_utc": "2026-11-03T03:14:34.289890+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/test_unit_checks.py\"], \"started_utc\": \"2026-11-03T03:14:34.444557+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"\", \"stderr\": \"test_actual_spec (__main__.UnitPolicyTests) ... ok\\ntest_corrupt_empty_input_rejected (__main__.UnitPolicyTests) ... ok\\ntest_corrupt_expected_keeps_program_for_core_and_row_for_units (__main__.UnitPolicyTests) ... ok\\ntest_invalid_seeds (__main__.UnitPolicyTests) ... ok\\ntest_missing_extra_dependency_not_run (__main__.UnitPolicyTests) ... ok\\ntest_missing_reference_not_run (__main__.UnitPolicyTests) ... ok\\ntest_missing_unit_not_run (__main__.UnitPolicyTests) ... ok\\ntest_wave_and_identifier_injection_rejected (__main__.UnitPolicyTests) ... ok\\n\\n----------------------------------------------------------------------\\nRan 8 tests in 0.064s\\n\\nOK\\n\"}\n{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"dv/unit/test_hazard.py\"], \"started_utc\": \"2026-11-03T03:14:34.738904+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"\", \"stderr\": \"test_both_sources_and_exact_identity (__main__.HazardOracleTests) ... ok\\ntest_every_enable_qualifies (__main__.HazardOracleTests) ... ok\\ntest_no_zero_dependency (__main__.HazardOracleTests) ... ok\\ntest_unused_sources_are_not_dependencies (__main__.HazardOracleTests) ... ok\\n\\n----------------------------------------------------------------------\\nRan 4 tests in 0.000s\\n\\nOK\\n\"}\n{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/unit_checks.py\", \"hazard\"], \"started_utc\": \"2026-11-03T03:14:34.877552+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\n  \\\"status\\\": \\\"PASS\\\",\\n  \\\"evidence\\\": \\\"evidence/toolchain_runs/hazard-20261103T031435072503Z.json\\\",\\n  \\\"checks\\\": 17,\\n  \\\"counts\\\": [\\n    37312,\\n    37312\\n  ],\\n  \\\"error\\\": null\\n}\\n\", \"stderr\": \"\"}\n{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"dv/integration/test_load_use.py\"], \"started_utc\": \"2026-11-03T03:14:49.504532+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"\", \"stderr\": \"test_all_dependency_categories_present (__main__.LoadUsePrograms) ... ok\\ntest_data_seed_changes_without_reducing_scenarios (__main__.LoadUsePrograms) ... ok\\ntest_expected_rows_are_real_retirements (__main__.LoadUsePrograms) ... ok\\ntest_nonempty_replayable_scenarios (__main__.LoadUsePrograms) ... ok\\n\\n----------------------------------------------------------------------\\nRan 4 tests in 0.008s\\n\\nOK\\n\"}\n{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/unit_checks.py\", \"load_use\"], \"started_utc\": \"2026-11-03T03:14:49.669091+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\n  \\\"status\\\": \\\"PASS\\\",\\n  \\\"evidence\\\": \\\"evidence/toolchain_runs/load_use-20261103T031449865087Z.json\\\",\\n  \\\"checks\\\": 17,\\n  \\\"counts\\\": [\\n    303,\\n    303\\n  ],\\n  \\\"error\\\": null\\n}\\n\", \"stderr\": \"\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_utc": "2026-11-03T03:15:05.596191+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "started_utc": "2026-11-03T03:15:05.647599+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "waveform_paths": [],
+  "seed": null,
+  "evidence_sha256": "e51f9f88e21495ee4d54b89303895aa5771c0ee008ea91239d0ea1b5c3007bc8"
+}

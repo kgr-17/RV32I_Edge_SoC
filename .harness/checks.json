@@ -47,7 +47,8 @@
         "scripts/rtl_checks.py",
         "all"
       ]
-    ]
+    ],
+    "timeout_seconds": 600
   },
   "lint": {
     "inputs": [
@@ -66,7 +67,8 @@
         "scripts/rtl_checks.py",
         "lint"
       ]
-    ]
+    ],
+    "timeout_seconds": 600
   },
   "test-decode": {
     "inputs": [
@@ -216,6 +218,12 @@
         "-B",
         "scripts/verify.py",
         "test-forwarding"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/verify.py",
+        "test-hazards"
       ]
     ]
   },
@@ -422,6 +430,81 @@
         "-B",
         "scripts/unit_checks.py",
         "forwarding"
+      ]
+    ]
+  },
+  "test-hazards": {
+    "inputs": [
+      "rtl/core/rv32_pkg.sv",
+      "rtl/core/decoder.sv",
+      "rtl/core/alu.sv",
+      "rtl/core/regfile.sv",
+      "rtl/core/branch_unit.sv",
+      "rtl/core/lsu.sv",
+      "rtl/core/pipeline_core.sv",
+      "rtl/core/forwarding_unit.sv",
+      "rtl/core/hazard_unit.sv",
+      "rtl/core/pipeline_cpu.sv",
+      "config/rtl_checks.json",
+      "scripts/unit_checks.py",
+      "scripts/test_unit_checks.py",
+      "dv/unit/test_hazard.py",
+      "dv/unit/tb_hazard.sv",
+      "dv/integration/test_load_use.py",
+      "dv/integration/test_core_smoke.py",
+      "dv/integration/tb_load_use.sv",
+      "scripts/test_execution_budgets.py",
+      "scripts/test_tool_runner.py",
+      "scripts/test_rtl_checks.py",
+      "scripts/test_harness.py"
+    ],
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "scripts/test_execution_budgets.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/test_tool_runner.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/test_rtl_checks.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/test_harness.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/test_unit_checks.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "dv/unit/test_hazard.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/unit_checks.py",
+        "hazard"
+      ],
+      [
+        "{python}",
+        "-B",
+        "dv/integration/test_load_use.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/unit_checks.py",
+        "load_use"
       ]
     ]
   }

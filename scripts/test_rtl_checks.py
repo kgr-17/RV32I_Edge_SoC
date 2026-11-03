@@ -15,6 +15,13 @@ class CheckPolicyTests(unittest.TestCase):
     def test_positive_completion(self):
         self.assertTrue(rtl_checks.successful(self.record, 'COMPLETED'))
 
+    def test_invalid_synthesis_budgets_rejected(self):
+        manifest=rtl_checks.load_manifest()
+        for value in (0,-1,True,121,float('inf')):
+            changed=copy.deepcopy(manifest);changed['lint_designs'][0]['timeout_seconds']=value
+            with mock.patch.object(rtl_checks.harness,'read',return_value=changed):
+                with self.assertRaises(ValueError):rtl_checks.load_manifest()
+
     def test_zero_tests_or_missing_completion_rejected(self):
         self.record['stdout'] = 'simulation exited normally\n'
         self.assertFalse(rtl_checks.successful(self.record, 'COMPLETED'))

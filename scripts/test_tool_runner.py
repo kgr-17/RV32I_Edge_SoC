@@ -61,7 +61,12 @@ class RunnerTests(unittest.TestCase):
         with self.assertRaises(harness.Stop):
             tool_runner.run([sys.executable, '--version'], harness.ROOT.parent)
         with self.assertRaises(ValueError):
-            self.python('pass', timeout=61)
+            self.python('pass', timeout=121)
+
+    def test_bounded_longer_command_budget(self):
+        result=self.python("print('BOUNDED_BUDGET')",timeout=61)
+        self.assertEqual(result['status'],'PASS')
+        self.assertEqual(result['timeout_seconds'],61)
 
 
 if __name__ == '__main__':

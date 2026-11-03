@@ -19,7 +19,7 @@ def main():
     if any(not harness.inside(name).is_file() for name in entry['inputs']):
         print('NOT RUN: missing check inputs: ' + args.check)
         return 125
-    records = [harness.run(command) for command in entry['commands']]
+    records = [harness.run(command, timeout_seconds=entry.get('timeout_seconds',300)) for command in entry['commands']]
     for record in records:
         print(json.dumps(record, ensure_ascii=False))
     if any(r['status'] == 'NOT RUN' for r in records):

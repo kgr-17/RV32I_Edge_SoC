@@ -1,0 +1,498 @@
+{
+  "profile": "forwarding",
+  "status": "PASS",
+  "started_utc": "20261103T033127313801Z",
+  "base_commit": "43a572af9b7b0efdf2ca36f0033f1983a3305445",
+  "scope": "forwarding unit simulation only; no full CPU or hardware",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\forwarding-20261103T033127313801Z\\versions",
+      "started_utc": "2026-11-03T03:31:27.406188+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "git version 2.48.1.windows.1\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.11
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\forwarding-20261103T033127313801Z\\versions\\xvlog",
+      "started_utc": "2026-11-03T03:31:27.513646+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.578
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\forwarding-20261103T033127313801Z\\versions\\xelab",
+      "started_utc": "2026-11-03T03:31:28.101475+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.579
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\forwarding-20261103T033127313801Z\\versions\\xsim",
+      "started_utc": "2026-11-03T03:31:28.683454+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2025 Xilinx, Inc. All Rights Reserved.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.453
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\forwarding_unit.sv",
+        "C:\\RV32I_Edge_SoC\\dv\\integration\\tb_forwarding.sv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\forwarding-20261103T033127313801Z\\sim_forwarding",
+      "started_utc": "2026-11-03T03:31:29.179357+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "INFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/forwarding_unit.sv\" into library work\nINFO: [VRFC 10-311] analyzing module forwarding_unit\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/integration/tb_forwarding.sv\" into library work\nINFO: [VRFC 10-311] analyzing module tb_forwarding\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.656
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "work.tb_forwarding",
+        "--snapshot",
+        "unit_snapshot",
+        "--timescale",
+        "1ns/1ps",
+        "--debug",
+        "typical"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\forwarding-20261103T033127313801Z\\sim_forwarding",
+      "started_utc": "2026-11-03T03:31:29.842069+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nRunning: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_forwarding --snapshot unit_snapshot --timescale 1ns/1ps --debug typical \nMulti-threading is on. Using 26 slave threads.\nStarting static elaboration\nPass Through NonSizing Optimizer\nCompleted static elaboration\nStarting simulation data flow analysis\nCompleted simulation data flow analysis\nTime Resolution for simulation is 1ps\nCompiling module work.forwarding_unit\nCompiling module work.tb_forwarding\nBuilt simulation snapshot unit_snapshot\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 1.265
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "unit_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\units\\forwarding-20261103T033127313801Z\\sim_forwarding\\seed_1.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\forwarding-20261103T033127313801Z\\sim_forwarding",
+      "started_utc": "2026-11-03T03:31:31.411676+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Mon Nov  2 19:31:31 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/unit_snapshot/xsim_script.tcl\n# xsim {unit_snapshot} -testplusarg SEED=1 -testplusarg COUNT=72212 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/vectors_1.txt -wdb {C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/seed_1.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/run.tcl\n## log_wave /tb_forwarding/flags /tb_forwarding/ra /tb_forwarding/rb /tb_forwarding/ex_rd /tb_forwarding/wb_rd /tb_forwarding/a /tb_forwarding/b /tb_forwarding/sa /tb_forwarding/sb /tb_forwarding/ba /tb_forwarding/bb\n## run all\nFORWARDING_SIM_PASS seed=1 checked=72212\n$finish called at time : 72212 ns : File \"C:/RV32I_Edge_SoC/dv/integration/tb_forwarding.sv\" Line 37\nexit 0\nINFO: [Common 17-206] Exiting xsim at Mon Nov  2 19:31:34 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.937,
+      "argument_file": {
+        "path": "build\\units\\forwarding-20261103T033127313801Z\\sim_forwarding\\seed_1.args",
+        "sha256": "f8f63bd013842f57c7311264aba61a0551b1dba8806adddb9955961505f74022",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nCOUNT=72212\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/vectors_1.txt\n--log\nseed_1.log\n--wdb\nC:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/seed_1.wdb\n",
+        "intended_argv": [
+          "unit_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "COUNT=72212",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/vectors_1.txt",
+          "--log",
+          "seed_1.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/seed_1.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "unit_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\units\\forwarding-20261103T033127313801Z\\sim_forwarding\\seed_20261102.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\forwarding-20261103T033127313801Z\\sim_forwarding",
+      "started_utc": "2026-11-03T03:31:34.683090+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Mon Nov  2 19:31:35 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/unit_snapshot/xsim_script.tcl\n# xsim {unit_snapshot} -testplusarg SEED=20261102 -testplusarg COUNT=72212 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/vectors_20261102.txt -wdb {C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/seed_20261102.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/run.tcl} -onfinish quit -onerror quit -sv_seed 20261102\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/run.tcl\n## log_wave /tb_forwarding/flags /tb_forwarding/ra /tb_forwarding/rb /tb_forwarding/ex_rd /tb_forwarding/wb_rd /tb_forwarding/a /tb_forwarding/b /tb_forwarding/sa /tb_forwarding/sb /tb_forwarding/ba /tb_forwarding/bb\n## run all\nFORWARDING_SIM_PASS seed=20261102 checked=72212\n$finish called at time : 72212 ns : File \"C:/RV32I_Edge_SoC/dv/integration/tb_forwarding.sv\" Line 37\nexit 0\nINFO: [Common 17-206] Exiting xsim at Mon Nov  2 19:31:37 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.921,
+      "argument_file": {
+        "path": "build\\units\\forwarding-20261103T033127313801Z\\sim_forwarding\\seed_20261102.args",
+        "sha256": "291dee8f4dd2197375573959e6c2a66c917817e06760b69aa20919dae5b4725d",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n20261102\n--testplusarg\nSEED=20261102\n--testplusarg\nCOUNT=72212\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/vectors_20261102.txt\n--log\nseed_20261102.log\n--wdb\nC:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/seed_20261102.wdb\n",
+        "intended_argv": [
+          "unit_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "20261102",
+          "--testplusarg",
+          "SEED=20261102",
+          "--testplusarg",
+          "COUNT=72212",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/vectors_20261102.txt",
+          "--log",
+          "seed_20261102.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/seed_20261102.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "unit_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\units\\forwarding-20261103T033127313801Z\\sim_forwarding\\corrupt_expected.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\forwarding-20261103T033127313801Z\\sim_forwarding",
+      "started_utc": "2026-11-03T03:31:37.642855+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Mon Nov  2 19:31:38 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/unit_snapshot/xsim_script.tcl\n# xsim {unit_snapshot} -testplusarg SEED=20261102 -testplusarg COUNT=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/corrupt_expected.txt -wdb {C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/corrupt_expected.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/run.tcl} -onfinish quit -onerror quit -sv_seed 20261102\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/run.tcl\n## log_wave /tb_forwarding/flags /tb_forwarding/ra /tb_forwarding/rb /tb_forwarding/ex_rd /tb_forwarding/wb_rd /tb_forwarding/a /tb_forwarding/b /tb_forwarding/sa /tb_forwarding/sb /tb_forwarding/ba /tb_forwarding/bb\n## run all\nFatal: FORWARDING_MISMATCH seed=20261102 row=0 flags=df ra= 1 rb= 2 ex= 3 wb= 4 a=00000001/00000001 b=00000002/00000002 src=0/0 wait=0/1\nTime: 1 ns  Iteration: 0  Process: /tb_forwarding/Initial17_1  Scope: tb_forwarding  File: C:/RV32I_Edge_SoC/dv/integration/tb_forwarding.sv Line: 29\n$finish called at time : 1 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Mon Nov  2 19:31:40 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.453,
+      "argument_file": {
+        "path": "build\\units\\forwarding-20261103T033127313801Z\\sim_forwarding\\corrupt_expected.args",
+        "sha256": "f7fa3171c57e241bc100e51dff3d227ee698c4210e1e78753ee3e02c843adea0",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n20261102\n--testplusarg\nSEED=20261102\n--testplusarg\nCOUNT=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/corrupt_expected.txt\n--log\ncorrupt_expected.log\n--wdb\nC:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/corrupt_expected.wdb\n",
+        "intended_argv": [
+          "unit_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "20261102",
+          "--testplusarg",
+          "SEED=20261102",
+          "--testplusarg",
+          "COUNT=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/corrupt_expected.txt",
+          "--log",
+          "corrupt_expected.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/corrupt_expected.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "unit_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\units\\forwarding-20261103T033127313801Z\\sim_forwarding\\empty_vectors.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\forwarding-20261103T033127313801Z\\sim_forwarding",
+      "started_utc": "2026-11-03T03:31:40.136380+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Mon Nov  2 19:31:40 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/unit_snapshot/xsim_script.tcl\n# xsim {unit_snapshot} -testplusarg SEED=20261102 -testplusarg COUNT=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/empty_vectors.txt -wdb {C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/empty_vectors.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/run.tcl} -onfinish quit -onerror quit -sv_seed 20261102\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/run.tcl\n## log_wave /tb_forwarding/flags /tb_forwarding/ra /tb_forwarding/rb /tb_forwarding/ex_rd /tb_forwarding/wb_rd /tb_forwarding/a /tb_forwarding/b /tb_forwarding/sa /tb_forwarding/sb /tb_forwarding/ba /tb_forwarding/bb\n## run all\nFatal: Wrong count 0 != 1\nTime: 0 ps  Iteration: 0  Process: /tb_forwarding/Initial17_1  Scope: tb_forwarding  File: C:/RV32I_Edge_SoC/dv/integration/tb_forwarding.sv Line: 35\n$finish called at time : 0 fs\nexit 0\nINFO: [Common 17-206] Exiting xsim at Mon Nov  2 19:31:42 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.468,
+      "argument_file": {
+        "path": "build\\units\\forwarding-20261103T033127313801Z\\sim_forwarding\\empty_vectors.args",
+        "sha256": "7dbad4a931534483e26f5b52212f40115ea31f7eb0f7885d38156d2c47a25f37",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n20261102\n--testplusarg\nSEED=20261102\n--testplusarg\nCOUNT=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/empty_vectors.txt\n--log\nempty_vectors.log\n--wdb\nC:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/empty_vectors.wdb\n",
+        "intended_argv": [
+          "unit_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "20261102",
+          "--testplusarg",
+          "SEED=20261102",
+          "--testplusarg",
+          "COUNT=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/empty_vectors.txt",
+          "--log",
+          "empty_vectors.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/units/forwarding-20261103T033127313801Z/sim_forwarding/empty_vectors.wdb"
+        ]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "Pinned Python version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned tzdata version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned Git version",
+      "status": "PASS",
+      "command_index": 0
+    },
+    {
+      "name": "Pinned xvlog version",
+      "status": "PASS",
+      "command_index": 1
+    },
+    {
+      "name": "Pinned xelab version",
+      "status": "PASS",
+      "command_index": 2
+    },
+    {
+      "name": "Pinned xsim version",
+      "status": "PASS",
+      "command_index": 3
+    },
+    {
+      "name": "forwarding compile",
+      "status": "PASS",
+      "command_index": 4
+    },
+    {
+      "name": "forwarding elaboration",
+      "status": "PASS",
+      "command_index": 5
+    },
+    {
+      "name": "forwarding coverage bins seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "forwarding independent comparison seed=1",
+      "status": "PASS",
+      "command_index": 6
+    },
+    {
+      "name": "forwarding waveform seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "forwarding coverage bins seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "forwarding independent comparison seed=20261102",
+      "status": "PASS",
+      "command_index": 7
+    },
+    {
+      "name": "forwarding waveform seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "forwarding rejects corrupt expected bit",
+      "status": "PASS",
+      "command_index": 8
+    },
+    {
+      "name": "forwarding rejects empty vectors",
+      "status": "PASS",
+      "command_index": 9
+    },
+    {
+      "name": "forwarding sources unchanged during verification",
+      "status": "PASS",
+      "command_index": null
+    }
+  ],
+  "simulations": [
+    {
+      "design": "forwarding",
+      "seed": 1,
+      "checked_vectors": 72212,
+      "vector_path": "build/units/forwarding-20261103T033127313801Z/sim_forwarding/vectors_1.txt",
+      "vector_sha256": "a8ad2310fad795be88261ac09dcd63c42cfb5ed191450e5fcd66c1e38db4c95e",
+      "waveform": "build/units/forwarding-20261103T033127313801Z/sim_forwarding/seed_1.wdb",
+      "waveform_sha256": "0a873fb07ef1646db1be4e6f4c66dec1ac95dcb0e500ebe6e186ad544118e2a7",
+      "coverage": {
+        "a:blocked": 1030,
+        "a:captured": 60984,
+        "a:ex": 1295,
+        "a:invalid": 3102,
+        "a:load_shadows_wb": 36,
+        "a:newest_wins": 167,
+        "a:unused": 1561,
+        "a:wb": 2034,
+        "a:x0": 2206,
+        "b:blocked": 1020,
+        "b:captured": 61030,
+        "b:ex": 1222,
+        "b:invalid": 3102,
+        "b:load_shadows_wb": 36,
+        "b:newest_wins": 167,
+        "b:unused": 1503,
+        "b:wb": 2120,
+        "b:x0": 2215,
+        "dual_blocked": 9,
+        "dual_ex_wb": 98,
+        "dual_wb_ex": 98,
+        "group:anchors": 4,
+        "group:id-cross": 65536,
+        "group:qualifier-cross": 2048,
+        "group:random": 4096,
+        "group:walking-data": 528
+      }
+    },
+    {
+      "design": "forwarding",
+      "seed": 20261102,
+      "checked_vectors": 72212,
+      "vector_path": "build/units/forwarding-20261103T033127313801Z/sim_forwarding/vectors_20261102.txt",
+      "vector_sha256": "bd2b68911a6d594ba8fc388f11abdf52b821c8c2d83422bd65501a30704fe329",
+      "waveform": "build/units/forwarding-20261103T033127313801Z/sim_forwarding/seed_20261102.wdb",
+      "waveform_sha256": "ab9637deaf25efd6d847f407aefe964c0d7103872536423bcafd2f8b4db8fca3",
+      "coverage": {
+        "a:blocked": 1030,
+        "a:captured": 61038,
+        "a:ex": 1293,
+        "a:invalid": 3038,
+        "a:load_shadows_wb": 36,
+        "a:newest_wins": 167,
+        "a:unused": 1573,
+        "a:wb": 2037,
+        "a:x0": 2203,
+        "b:blocked": 1019,
+        "b:captured": 61063,
+        "b:ex": 1220,
+        "b:invalid": 3038,
+        "b:load_shadows_wb": 36,
+        "b:newest_wins": 167,
+        "b:unused": 1550,
+        "b:wb": 2118,
+        "b:x0": 2204,
+        "dual_blocked": 9,
+        "dual_ex_wb": 98,
+        "dual_wb_ex": 98,
+        "group:anchors": 4,
+        "group:id-cross": 65536,
+        "group:qualifier-cross": 2048,
+        "group:random": 4096,
+        "group:walking-data": 528
+      }
+    }
+  ],
+  "excluded": [
+    "full CPU execution/retirement",
+    "formal",
+    "timing closure",
+    "physical hardware",
+    "ASIC"
+  ],
+  "task": "T014",
+  "source_sha256": {
+    "rtl/core/forwarding_unit.sv": "443c38de8fe17239e8e19d30a52250f2741b90f6e84813e5e4165c360cf5dd99",
+    "dv/integration/tb_forwarding.sv": "e9c6d1336b86fc1d5ca998db9786166f6650d1eb16328e01305063f2e2437f3e",
+    "dv/integration/test_forwarding.py": "833c21ee407acc4c3c0456f4d1ada3bc8d455f144baec6ac6e6ed873fc9ff1f2",
+    "config/rtl_checks.json": "70a1e1cffbfeb7f1d7cd386d54fe113ef5d681c13486b2bf7a645c99e4f13934",
+    "scripts/unit_checks.py": "dec178db4844dce3ffde1b159d0df82a843ec74737c7e5cd3f0a8f6c57b30849",
+    "scripts/rtl_checks.py": "b5a7078c247a6500dac6dce3029cdb88df6e9f058aba3c8146b065122f3f5be3"
+  },
+  "pins": {
+    "schema_version": 1,
+    "python_version": "3.9.13",
+    "git_version": "2.48.1.windows.1",
+    "tzdata_version": "2026.2",
+    "vivado_version": "2025.2",
+    "vivado_sw_build": "6299465"
+  },
+  "tcl": {
+    "path": "build/units/forwarding-20261103T033127313801Z/sim_forwarding/run.tcl",
+    "sha256": "e959be98f6ca183c345b7e4f174cead94567e2cdcc88facd66f4b3ae9030180b"
+  },
+  "finished_utc": "2026-11-03T03:31:42.610643+00:00"
+}

@@ -12,6 +12,10 @@ class UnitPolicyTests(unittest.TestCase):
     def test_actual_spec(self):
         self.assertEqual(u.unit_spec(self.manifest, 'alu')['task'], 'T005')
 
+    def test_missing_extra_dependency_not_run(self):
+        changed=copy.deepcopy(self.manifest);changed['unit_sims']['alu']['extra_inputs']=['dv/missing-helper.py']
+        with self.assertRaises(u.rtl_checks.NotRun):u.unit_spec(changed,'alu')
+
     def test_corrupt_expected_keeps_program_for_core_and_row_for_units(self):
         content = '00 00000000\n01 12345678\n04 00000000\n'
         self.assertEqual(u.corrupt_expected(content), '00 1\n')

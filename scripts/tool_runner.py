@@ -67,8 +67,8 @@ def run(argv, cwd, timeout=30):
         raise harness.Stop('Tool cwd must stay in project')
     if not argv or not all(isinstance(arg, str) and arg for arg in argv):
         raise ValueError('Expected nonempty exact argv')
-    if not 0 < timeout <= 60:
-        raise ValueError('Tool timeout must be between zero and 60 seconds')
+    if not 0 < timeout <= 120:
+        raise ValueError('Tool timeout must be between zero and 120 seconds')
     cwd.mkdir(parents=True, exist_ok=True)
     env = harness.local_env()
     for name in ('APPDATA', 'LOCALAPPDATA', 'USERPROFILE'):

@@ -28,7 +28,7 @@ def unit_spec(manifest, unit):
     seeds = spec['seeds']
     if not seeds or len(seeds) != len(set(seeds)) or any(type(s) is not int or not 0 < s < 2**31 for s in seeds):
         raise ValueError('Invalid unit replay seeds')
-    for name in spec['sources'] + [spec['testbench'], spec['reference']]:
+    for name in spec['sources'] + [spec['testbench'], spec['reference']] + spec.get('extra_inputs', []):
         if not harness.inside(name).is_file():
             raise rtl_checks.NotRun('Missing unit input: ' + name)
     if not spec['waves'] or any(not re.fullmatch(r'/[A-Za-z_][A-Za-z0-9_/]*', name) for name in spec['waves']):
@@ -62,7 +62,7 @@ def main():
         spec = unit_spec(manifest, unit)
         checks.result['task'] = spec['task']
         inputs = spec['sources'] + [spec['testbench'], spec['reference'], 'config/rtl_checks.json',
-                                    'scripts/unit_checks.py', 'scripts/rtl_checks.py']
+                                    'scripts/unit_checks.py', 'scripts/rtl_checks.py'] + spec.get('extra_inputs', [])
         checks.result['source_sha256'] = {name: digest(harness.inside(name)) for name in inputs}
         checks.versions(manifest)
         module = importlib.util.spec_from_file_location('unit_reference_' + unit, harness.inside(spec['reference']))

@@ -27,6 +27,9 @@ def load_manifest():
     registered = set()
     names = set()
     for design in manifest['designs'] + manifest.get('lint_designs', []):
+        timeout=design.get('timeout_seconds',45)
+        if type(timeout) is not int or not 0<timeout<=120:
+            raise ValueError('Invalid bounded synthesis timeout')
         simulation = design in manifest['designs']
         for key in (('name', 'top', 'test_top') if simulation else ('name', 'top')):
             if not re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', design[key]):
@@ -125,14 +128,14 @@ class Checks:
         self.result['pins'] = {key: value for key, value in manifest.items() if key.endswith('_version') or key == 'vivado_sw_build'}
         self.save()
 
-    def lint(self, sources, top, manifest, negative=False):
+    def lint(self, sources, top, manifest, negative=False, timeout=45):
         cwd = self.base / ('negative_latch' if negative else 'lint_' + top)
         cwd.mkdir(parents=True)
         source_list = cwd / 'sources.txt'
         harness.atomic_text(source_list, '\n'.join(str(harness.inside(name)) for name in sources) + '\n')
         record = self.vendor('vivado', ['-mode', 'batch', '-nolog', '-nojournal', '-notrace', '-source',
                             str(harness.inside('scripts/vivado_lint.tcl')), '-tclargs', str(source_list), top,
-                            'xc7a35tcpg236-1', manifest['vivado_version']], cwd, 45)
+                            'xc7a35tcpg236-1', manifest['vivado_version']], cwd, timeout)
         output = record['stdout'] + '\n' + record['stderr']
         if negative:
             self.require(record['status'] == 'FAIL' and 'LATCH_DETECTED' in output,
@@ -200,7 +203,7 @@ def main():
         if manifest.get('lint_designs') and args.profile in ('all', 'lint'):
             checks.result['scope'] = 'Manifest RTL synthesis lint plus infrastructure fixture DV; no complete CPU/SoC or hardware'
             for design in manifest['lint_designs']:
-                checks.lint(design['sources'], design['top'], manifest)
+                checks.lint(design['sources'], design['top'], manifest, timeout=design.get('timeout_seconds',45))
         for design in manifest['designs']:
             if args.profile in ('all', 'lint'):
                 checks.lint(design['sources'], design['top'], manifest)

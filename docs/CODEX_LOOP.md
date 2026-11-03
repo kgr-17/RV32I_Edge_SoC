@@ -147,5 +147,23 @@ must use this persistent project, preserve state across runs, execute one active
 task at a time, respect review/terminal holds and explicit run budgets, and produce
 both reports even when blocked. Removing the calendar quota does not authorize
 such an adapter or unlimited unattended execution.
+
+## Bounded runtime growth (T015, 2026-11-02)
+
+The integrated pipeline exceeded the old 45-second synthesis allowance while
+still mapping logic, so the first attempt correctly failed TIMEOUT. New per-design
+manifest timeout_seconds defaults to the original 45 and is validated <=120;
+only rv32_pipeline_cpu currently uses 120. The process runner has the same finite
+120-second maximum and retains Windows Job/POSIX process-tree cleanup. Existing
+simulator/version and intentional-hang timeouts are unchanged. TIMEOUT never passes.
+
+Registered composite checks may set timeout_seconds <=600; lint and toolchain-rtl
+use 600 because growing sequential probe lists exceed the former 300 aggregate.
+Both the outer harness and inner verify child honor that same declared ceiling.
+Other commands still default to 300. Invalid/unbounded budgets are rejected.
+This allocates compute time; it does not suppress diagnostics, remove any check,
+alter the three-attempt task limit, change actual sandbox permissions or enable
+unattended work. New policy and actual descendant-kill tests must pass after
+runner changes. Original timeout logs/inputs remain preserved.
 Do not assume availability of a particular Codex scheduling feature or launch a
 full-access CLI to bypass restrictions. Use the manual workflow until verified.

@@ -208,14 +208,26 @@ def local_env():
     return env
 
 
-def run(argv):
+def execution_timeout(argv, override=None):
+    value=300 if override is None else override
+    if override is None and len(argv)>=4 and argv[1]=='-B' and argv[2] in (
+            'scripts/verify.py', str(ROOT / 'scripts/verify.py')):
+        entry=read(inside('.harness/checks.json')).get(argv[3],{})
+        value=entry.get('timeout_seconds',300)
+    if type(value) is not int or not 0<value<=600:
+        raise Stop('Aggregate command timeout must be a positive integer <=600 seconds')
+    return value
+
+
+def run(argv, timeout_seconds=None):
     argv = [sys.executable if x == '{python}' else x for x in argv]
+    timeout_seconds=execution_timeout(argv,timeout_seconds)
     record = {'argv': argv, 'started_utc': dt.datetime.now(dt.timezone.utc).isoformat(),
               'cwd': str(ROOT), 'executable': shutil.which(argv[0]), 'status': 'NOT RUN',
-              'exit_code': None, 'stdout': '', 'stderr': ''}
+              'exit_code': None, 'stdout': '', 'stderr': '', 'timeout_seconds': timeout_seconds}
     try:
         proc = subprocess.run(argv, cwd=ROOT, env=local_env(), capture_output=True,
-                              text=True, encoding='utf-8', errors='replace', timeout=300)
+                              text=True, encoding='utf-8', errors='replace', timeout=timeout_seconds)
         record.update(exit_code=proc.returncode, stdout=proc.stdout, stderr=proc.stderr,
                       status='PASS' if proc.returncode == 0 else
                       ('NOT RUN' if proc.returncode in (125, 127) else 'FAIL'))
@@ -223,7 +235,7 @@ def run(argv):
         record['stderr'] = str(exc)
     except subprocess.TimeoutExpired as exc:
         output = exc.stdout or ''
-        record.update(status='FAIL', stderr='TIMEOUT after 300 seconds',
+        record.update(status='FAIL', stderr='TIMEOUT after %d seconds'%timeout_seconds,
                       stdout=output.decode('utf-8', 'replace') if isinstance(output, bytes) else output)
     return record
 

@@ -55,3 +55,40 @@ Attempt 1 evidence/runs/T014/attempt-1-20261103T024234381472Z.json: all four req
 The first closing regression wrapper had an inline SyntaxError before any command/test executed; exact explanation retained in evidence/t014-regression-launch-failure-2026-11-02.json. Corrected only that launch wrapper; actual verify.py regress PASS/exit 0 in evidence/t014-regression-2026-11-02.json. Eleven targets pass. Eight RTL unit components total 1,110,554 vectors; reference CPU/ISS separately replay established retirements/terminal samples and Python memory replays its own edges. Repeats are not new unique program coverage. Pins unchanged Python3.9.13/Git2.48.1.windows.1/tzdata2026.2/Vivado-XSim2025.2 SW6299465. Report date November 2, UTC receipts November 3. No install/global/physical/unattended operation.
 
 Changed new forwarding RTL/bench/oracle/probe/FORWARDING.md, config/registry/state/backlog/README, evidence/audit and today's same two report files. Existing RTL/architecture/XPR/XDC/kit/prior-date reports preserved; audit evidence/t014-complete-2026-11-02.json binds sources/outputs/preservation. Mandatory 14/41, no active task. Commit inspected files then begin T015 load-use integration, preserving dependent operands and actual single commit rather than equating combinational selection with full pipeline ISA behavior. T013 storage and T014 selectors are ready components; executable pipeline, control/bus/ISA closure, formal, routed timing, hardware and ASIC remain following evidence.
+
+
+---
+
+<!-- entry:609c05144fe2cf84b14fb1bc7eae52fda33cd2975e1e356ff300f65ef545227e -->
+
+# T015 interlock and executable pipeline integration prepared
+
+T014 committed 43a572a; began T015 from clean Git. Added hazard_unit.sv and pipeline_cpu.sv implementing pipeline_core under reviewed external ports, reusing approved decoder/ALU/RF/branch/LSU/stage/forwarding units. IF maintains one offered/accepted unanswered transaction; a three-word FIFO holds already-responded fetches, preserving instruction order and allowing burst dependencies after long memory hold. This is internal buffering, not a cache or architectural protocol revision. MEM hold drains WB once; unresolved load consumers remain in EX through response and release on WB forwarding. Held EX operands capture transient qualified WB/EX values. Fault/redirect/reset/bus wiring preserves reviewed age, effect and drain rules, but dedicated T016/T017 collision/stress and T018 independent pipeline closure remain required.
+
+Added independent detector set-intersection tests, actual pipeline bus bench and five explicit hand-assembled retirement scenarios: both-source load dependence, disappearing WB refresh while held, load-to-store, x0 load and seeded data chains. IF ready/latency1 and data latency12..15 force queued bursts and long holds. Actual simulator must observe nonzero hazard and held-refresh cycles, compare full retirement/order/final RAM, stable requests, one outstanding/no duplicate and sticky fault plus stale fetch drain. No selector-only pass can satisfy those checks. Four oracle/four program tests supplement actual RTL runs. Generic unit driver now hashes explicit extra imported helper inputs and rejects a missing helper, with a new policy test; existing profiles retain behavior.
+
+Registered test-hazards with both actual detector and load_use backend profiles and observable synthesis probes. First finish T015 --evidence evidence/daily/T015.md uses attempt 1/3 and runs lint/test-hazards plus both whitespace gates. Results pending. Old reference CPU/bench, architecture/XPR/XDC/kit are unchanged. Save failures, append today's same two reports, commit only inspected task files and preserve recoverability. No formal/full ISA/timing/physical/ASIC signoff, tool installation, owner-command or unattended authorization inferred.
+
+
+---
+
+<!-- entry:22ce1ff0f113366b3e75c6e686784d9aa18150d44f2a0a27459b1db48cad9f22 -->
+
+# T015 attempt 1: functional execution passes, synthesis budget insufficient
+
+Receipt evidence/runs/T015/attempt-1-20261103T030935925917Z.json: lint FAIL, test-hazards and both whitespace gates PASS. Pipeline probe reached technology mapping with no warnings/errors but hit the existing 45-second command timeout; Windows Job cleanup returned raw0, still correctly classified TIMEOUT/failure. No full-pipeline synthesis pass is claimed. Lint lint-20261103T030936311706Z.json retained. Functional hazard-20261103T031435072503Z.json compares 37,312 vectors per seed; load_use-20261103T031449865087Z.json actually executes five cases/64 retirements per seed (128 total), observed hazard177/161 cycles and held-WB refresh2/2. All full retirement/order/RAM/protocol and actual wrong-expected/empty checks pass. Input parser counts303/seed are not retirements.
+
+Archived 22 exact first inputs in evidence/failed_sources/T015/attempt-1/inputs.zip plus hashes. No RTL/oracle/stimulus/structural Tcl/filter changes for retry. Explicit finite resource budgets now scale with design: existing synthesis defaults45; new pipeline CPU120 and manifest/runner maximum120; composite lint/toolchain-rtl600 with outer/inner propagation and maximum600, other commands default300. All timeouts still fail, process-tree cleanup remains, warnings/structure/coverage/negatives are unchanged. This changes project compute allowances, not actual sandbox controls or owner approval gates. Five new budget-policy tests plus updated bound/real descendant cleanup, existing harness/acceptance tests are included before functional checks. CODEX_LOOP documents it. Retry uses attempt2/3 with no budget reset or unbounded loop. Preserve complete synthesis result and both source/evidence hashes when it finishes.
+
+
+---
+
+<!-- entry:1b6fb8475e085c6115fc943420386f35bdb2c56f1439303e0673b2260d2e8c48 -->
+
+# T015 passed second attempt and full regression
+
+Receipt evidence/runs/T015/attempt-2-20261103T032242259806Z.json: all four gates PASS/exit0. Lint lint-20261103T032242656865Z.json passed29 checks/16 commands; integrated pipeline probe completed37.969s with zero warnings/errors and all structural checks. Explicit finite budgets120/600 are honored; timeout never passes. First timed-out inputs/logs remain intact. No RTL/expectation/structural-Tcl/filter change between attempts. Workflow resource-budget propagation and guards are tested. Test-hazards ran79 Python tests: budgets5/process7/acceptance16/harness35/unit-policy8/detector4/program4, including real descendant cleanup.
+
+Actual detector hazard-20261103T032807683328Z.json compares74,624 vectors across two seeds, all7 bins and both negatives pass. Actual pipeline load_use-20261103T032822104969Z.json compares64 retirements/five scenarios per seed,128 total, cycle762/733, simulation2.454/2.422s, actual hazard177/161 cycles and held-WB-refresh2/2. All full fields/order/RAM/protocol/fault-drain and corrupt/empty checks pass.303 input rows/seed are not instructions. Full twelve-target regression PASS/exit0 in evidence/t015-regression-2026-11-02.json. Nine unit components total1,185,178 vectors; reference CPU/ISS324 retirements and new pipeline128 are separate replays; Python model49,276 edges separate. Pins unchanged Python3.9.13/Git2.48.1.windows.1/tzdata2026.2/Vivado-XSim2025.2 SW6299465.
+
+Changed hazard and executable pipeline integration, new bus/producer-set/hand-program tests, observable CPU probe, explicit extra helper hash support, bounded runtime budget support/tests, registry/manifest/state/backlog/README/CODEX_LOOP/LOAD_USE, evidence/archive/audit and today's same two reports. Old reference and unit RTL, approved architecture, XPR/XDC/kit and prior reports preserved. Audit evidence/t015-complete-2026-11-02.json records source/artifact/history proofs. Mandatory15/41, no active task. Commit inspected files then begin T016 dedicated redirect/wrong-path/age testing. Five dependency scenarios do not establish complete pipeline ISA, control collisions, random timing/reset, formal, routed timing, hardware or ASIC closure. No installs, pushes, physical action or unattended execution.

@@ -191,6 +191,63 @@
         "/tb_forwarding/ba",
         "/tb_forwarding/bb"
       ]
+    },
+    "hazard": {
+      "task": "T015",
+      "sources": [
+        "rtl/core/hazard_unit.sv"
+      ],
+      "testbench": "dv/unit/tb_hazard.sv",
+      "test_top": "tb_hazard",
+      "reference": "dv/unit/test_hazard.py",
+      "seeds": [
+        1,
+        20261102
+      ],
+      "waves": [
+        "/tb_hazard/flags",
+        "/tb_hazard/a",
+        "/tb_hazard/b",
+        "/tb_hazard/dest",
+        "/tb_hazard/stall"
+      ]
+    },
+    "load_use": {
+      "task": "T015",
+      "sources": [
+        "rtl/core/rv32_pkg.sv",
+        "rtl/core/decoder.sv",
+        "rtl/core/alu.sv",
+        "rtl/core/regfile.sv",
+        "rtl/core/branch_unit.sv",
+        "rtl/core/lsu.sv",
+        "rtl/core/pipeline_core.sv",
+        "rtl/core/forwarding_unit.sv",
+        "rtl/core/hazard_unit.sv",
+        "rtl/core/pipeline_cpu.sv"
+      ],
+      "testbench": "dv/integration/tb_load_use.sv",
+      "test_top": "tb_load_use",
+      "reference": "dv/integration/test_load_use.py",
+      "extra_inputs": [
+        "dv/integration/test_core_smoke.py"
+      ],
+      "seeds": [
+        1,
+        20261102
+      ],
+      "waves": [
+        "/tb_load_use/clk_i",
+        "/tb_load_use/rst_i",
+        "/tb_load_use/retire_valid_o",
+        "/tb_load_use/retire_pc_o",
+        "/tb_load_use/retire_rd_wdata_o",
+        "/tb_load_use/dmem_req_valid_o",
+        "/tb_load_use/dmem_rsp_valid_i",
+        "/tb_load_use/dut/dependency",
+        "/tb_load_use/dut/front_hold",
+        "/tb_load_use/dut/e_valid"
+      ]
     }
   },
   "lint_designs": [
@@ -265,6 +322,31 @@
         "rtl/core/forwarding_unit.sv",
         "dv/lint/forwarding_lint_top.sv"
       ]
+    },
+    {
+      "name": "rv32_hazard",
+      "top": "hazard_unit",
+      "sources": [
+        "rtl/core/hazard_unit.sv"
+      ]
+    },
+    {
+      "name": "rv32_pipeline_cpu",
+      "top": "pipeline_cpu_lint_top",
+      "sources": [
+        "rtl/core/rv32_pkg.sv",
+        "rtl/core/decoder.sv",
+        "rtl/core/alu.sv",
+        "rtl/core/regfile.sv",
+        "rtl/core/branch_unit.sv",
+        "rtl/core/lsu.sv",
+        "rtl/core/pipeline_core.sv",
+        "rtl/core/forwarding_unit.sv",
+        "rtl/core/hazard_unit.sv",
+        "rtl/core/pipeline_cpu.sv",
+        "dv/lint/pipeline_cpu_lint_top.sv"
+      ],
+      "timeout_seconds": 120
     }
   ],
   "designs": [
