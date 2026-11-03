@@ -20,7 +20,8 @@ T011 independent ISA comparison matched those retirements and terminal GPR/RAM
 samples. T012's [L1 baseline report](docs/VERIFICATION_REPORT.md) was explicitly
 approved by the owner on November 2. T013 stage storage passed 79,022 clocked
 vectors at widths 1/32/129; T014 forwarding passed 144,424 comparisons.
-T015 pipeline dependency integration matched 128 retirements; T016 control is next.
+T015 pipeline dependency integration matched 128 retirements; T016 control matched
+502 retirements across 42 scenarios. T017 randomized bus waits are next.
 Full pipeline ISA/control closure,
 ISA/EEI closure, FPGA implementation, hardware and ASIC results remain future milestones.
 

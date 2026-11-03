@@ -224,6 +224,12 @@
         "-B",
         "scripts/verify.py",
         "test-hazards"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/verify.py",
+        "test-control"
       ]
     ]
   },
@@ -505,6 +511,39 @@
         "-B",
         "scripts/unit_checks.py",
         "load_use"
+      ]
+    ]
+  },
+  "test-control": {
+    "inputs": [
+      "rtl/core/rv32_pkg.sv",
+      "rtl/core/decoder.sv",
+      "rtl/core/alu.sv",
+      "rtl/core/regfile.sv",
+      "rtl/core/branch_unit.sv",
+      "rtl/core/lsu.sv",
+      "rtl/core/pipeline_core.sv",
+      "rtl/core/forwarding_unit.sv",
+      "rtl/core/hazard_unit.sv",
+      "rtl/core/pipeline_cpu.sv",
+      "config/rtl_checks.json",
+      "scripts/unit_checks.py",
+      "dv/integration/tb_control.sv",
+      "dv/integration/test_flush.py",
+      "dv/integration/test_core_smoke.py",
+      "dv/integration/test_load_use.py"
+    ],
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "dv/integration/test_flush.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/unit_checks.py",
+        "control"
       ]
     ]
   }

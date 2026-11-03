@@ -248,6 +248,47 @@
         "/tb_load_use/dut/front_hold",
         "/tb_load_use/dut/e_valid"
       ]
+    },
+    "control": {
+      "task": "T016",
+      "sources": [
+        "rtl/core/rv32_pkg.sv",
+        "rtl/core/decoder.sv",
+        "rtl/core/alu.sv",
+        "rtl/core/regfile.sv",
+        "rtl/core/branch_unit.sv",
+        "rtl/core/lsu.sv",
+        "rtl/core/pipeline_core.sv",
+        "rtl/core/forwarding_unit.sv",
+        "rtl/core/hazard_unit.sv",
+        "rtl/core/pipeline_cpu.sv"
+      ],
+      "testbench": "dv/integration/tb_control.sv",
+      "test_top": "tb_control",
+      "reference": "dv/integration/test_flush.py",
+      "extra_inputs": [
+        "dv/integration/test_core_smoke.py",
+        "dv/integration/test_load_use.py"
+      ],
+      "seeds": [
+        1,
+        20261102
+      ],
+      "waves": [
+        "/tb_control/clk_i",
+        "/tb_control/rst_i",
+        "/tb_control/retire_valid_o",
+        "/tb_control/retire_pc_o",
+        "/tb_control/retire_rd_wdata_o",
+        "/tb_control/dmem_req_valid_o",
+        "/tb_control/dmem_rsp_valid_i",
+        "/tb_control/dut/dependency",
+        "/tb_control/dut/front_hold",
+        "/tb_control/dut/e_valid",
+        "/tb_control/dut/redirect",
+        "/tb_control/dut/fetch_killed_q",
+        "/tb_control/dut/wb_fault"
+      ]
     }
   },
   "lint_designs": [

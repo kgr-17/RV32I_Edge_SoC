@@ -92,3 +92,34 @@ Receipt evidence/runs/T015/attempt-2-20261103T032242259806Z.json: all four gates
 Actual detector hazard-20261103T032807683328Z.json compares74,624 vectors across two seeds, all7 bins and both negatives pass. Actual pipeline load_use-20261103T032822104969Z.json compares64 retirements/five scenarios per seed,128 total, cycle762/733, simulation2.454/2.422s, actual hazard177/161 cycles and held-WB-refresh2/2. All full fields/order/RAM/protocol/fault-drain and corrupt/empty checks pass.303 input rows/seed are not instructions. Full twelve-target regression PASS/exit0 in evidence/t015-regression-2026-11-02.json. Nine unit components total1,185,178 vectors; reference CPU/ISS324 retirements and new pipeline128 are separate replays; Python model49,276 edges separate. Pins unchanged Python3.9.13/Git2.48.1.windows.1/tzdata2026.2/Vivado-XSim2025.2 SW6299465.
 
 Changed hazard and executable pipeline integration, new bus/producer-set/hand-program tests, observable CPU probe, explicit extra helper hash support, bounded runtime budget support/tests, registry/manifest/state/backlog/README/CODEX_LOOP/LOAD_USE, evidence/archive/audit and today's same two reports. Old reference and unit RTL, approved architecture, XPR/XDC/kit and prior reports preserved. Audit evidence/t015-complete-2026-11-02.json records source/artifact/history proofs. Mandatory15/41, no active task. Commit inspected files then begin T016 dedicated redirect/wrong-path/age testing. Five dependency scenarios do not establish complete pipeline ISA, control collisions, random timing/reset, formal, routed timing, hardware or ASIC closure. No installs, pushes, physical action or unattended execution.
+
+
+---
+
+<!-- entry:cf6b4847a0432d619566f924bf496d2da359edf47ccc22732b50f1422f94524a -->
+
+# T016 dedicated control and age cases prepared
+
+T015 committed9fc5830; beganT016 from clean Git. Added test_flush.py/tb_control.sv and CONTROL_FLUSH.md, registry/control unit profile. Production RTL and original/reference tests are unchanged at preparation.21 scenarios per seed combine original ISA11, dependency5 and five explicit collisions. Cases16/17 force a qualified redirect to wait behind older memory then kill a wrong-path store/illegal instruction. Case18 uses a loaded odd JALR target and checks WB forwarding, bit0 clear and link readback. Case19 forces older WB fault against younger MEM store and requires no offered request/effect. Case20 redirects from ROM0xfffc while a speculative0x10000 fetch errors; that killed error must drain and not terminate architecture. Each designated case has a nonzero runtime collision requirement, preventing vacuous metadata coverage.
+
+Actual pipeline bench preserves full ordered retirement/RAM/fault/stability/outstanding/drain/progress checks and actual corrupt/empty rejection. Four generator tests and all imported helper SHA binding required. Seeds1/20261102, IF latency1/data12..15; random waits/reset stress and independent pipeline ISS closure remain following tasks. Next finishT016 --evidence evidence/daily/T016.md reserves attempt1/3 and runs lint/test-control plus both whitespace gates. No pass asserted before execution. Preserve failure evidence and approved control priority; append today's same two reports, commit inspected scope, then continue T017 if ready/budget permits. No architecture/global/tool-install/owner-command/physical/unattended approval inferred.
+
+
+---
+
+<!-- entry:d9cc858b6570c6a61cb9273ba1482190f3b91f6b50173976dad6f0d00b1e9635 -->
+
+# T016 passed first attempt with no RTL change
+
+Receipt evidence/runs/T016/attempt-1-20261103T034053597508Z.json: all4 gates PASS/exit0. Lint lint-20261103T034053984038Z.json29 checks/16 commands; actual control-20261103T034520677473Z.json17 checks/10 commands plus four generator tests. Seeds1/20261102 each251 retirements/21 scenarios, total502/42;1,249 parser rows per seed are not instruction counts. Simulations2.563/2.500s, cycles2204/2218. All70 required program bins and actual wrong-expected/empty checks pass. Each seed14 qualified redirects; case16 deferred17/17 cycles, case17 deferred12/15, case18 loaded-JALR hazards16/13, case19 suppressed store1/1, case20 drained killed fetch access error1/1. All designated per-case nonvacuity checks pass alongside full retirement/order/RAM/fault/stability/outstanding/drain/progress checks. This includes all forty instruction/nine fault families through hand-expected pipeline execution; independent pipeline ISS is stillT018.
+
+Full13-target regression PASS/exit0 in evidence/t016-regression-2026-11-02.json. Scalar/storage units1,185,178 vectors, reference/ISS324 retirements, pipeline dependency128 and control502 replay scopes, Python model49,276 edges remain separate. Replays do not expand unique program coverage. Production RTL, reference tests, architecture/XPR/XDC/kit and prior-date reports unchanged. Audit evidence/t016-complete-2026-11-02.json binds current test/helper/config and actual artifacts/preservation. Pins unchangedPython3.9.13/Git2.48.1.windows.1/tzdata2026.2/Vivado-XSim2025.2 SW6299465. Mandatory16/41, no active task. Commit inspected files then beginT017 random request/response waits without weakening the deterministic collision cases. No formal/full certification/routed timing/physical/ASIC claim or install/global/push/scheduler/programming action.
+
+
+---
+
+<!-- entry:91403d3d5a260a55e0bc1621c2b0e2678ce163355d85e10fcb3ae368c653c39e -->
+
+# T016 delivery sequencing guard
+
+The preservation audit returned an ongoing subprocess session, not completion. A premature dependent git add then failed exit128 on its not-yet-created audit file. Fail-fast logic prevented commit and the clean-baseline guard refused T017 begin. No new task was started, no state was forced and no data was discarded. Waited for the audit session to finish successfully:411 historical files preserved and143 artifacts hash-verified. Then perform staging/whitespace/hash checks and commit before retrying T017. This was orchestration sequencing, not an RTL or test failure; required gates remain passed. Future audits use a longer bounded initial wait and dependent mutations wait for explicit process completion.
