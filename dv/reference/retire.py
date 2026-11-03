@@ -40,11 +40,15 @@ def stimulus_images(content):
     return cases
 
 
-def expected_trace(cases):
+def expected_trace(cases, error_words_by_scenario=None):
+    error_words_by_scenario = error_words_by_scenario or {}
+    if any(type(ident) is not int or ident not in {case['id'] for case in cases}
+           for ident in error_words_by_scenario):
+        raise ValueError('fault injection names an unknown scenario')
     result, coverage, summaries = [], Counter(), []
     for case in cases:
         ident = case['id']
-        iss = RV32ISS(case['image'])
+        iss = RV32ISS(case['image'], error_words=error_words_by_scenario.get(ident, ()))
         events, fault = iss.run()
         result.extend(('R', ident, *event.fields()) for event in events)
         result.append(('F', ident, fault.pc, fault.insn, fault.code, fault.tval))
@@ -61,7 +65,7 @@ def expected_trace(cases):
 
 
 def observed_trace(output, prefix='CORE'):
-    if prefix not in ('CORE', 'BACKPRESSURE'):
+    if prefix not in ('CORE', 'BACKPRESSURE', 'ISA_COMPLETE'):
         raise ValueError('Unregistered observed trace prefix')
     tags = {prefix + '_' + name: (kind, length) for name, kind, length in
             (('RETIRE', 'R', 15), ('FAULT', 'F', 6), ('GPR', 'G', 4), ('RAM', 'M', 4))}

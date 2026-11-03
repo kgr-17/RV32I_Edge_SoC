@@ -28,8 +28,11 @@ the identical second attempt passed. T018's independent pipeline ISS comparison
 and all six gates passed on attempt1; the [pipeline review](docs/PIPELINE_REVIEW.md)
 was explicitly approved by the owner on November2. Across four seeds,12,760 ordered retirement/fault/
 GPR/RAM sample events matched, including2,008 successful retirements. Random
-instruction/reset/formal and final ISA/EEI closure, FPGA implementation, hardware
-and ASIC results remain future milestones.
+instruction/reset/formal and final core DV closure, FPGA implementation, hardware
+and ASIC results remain future milestones. T041's [directed ISA/EEI matrix](docs/ISA_COMPLIANCE_MATRIX.md)
+passed all five gates on attempt2 and awaits owner review:6,364 retirements/632
+scenario runs, all40 families/nine fault classes, explicit FENCE and bus-error
+evidence. The first nonvacuity failure and strengthened stimulus are preserved.
 
 The existing `RV32I_Edge_SoC.xpr` is the active Vivado project. Its configured part
 is `xc7a35tcpg236-1`. The owner confirmed a Digilent Basys 3. Top module, RTL and

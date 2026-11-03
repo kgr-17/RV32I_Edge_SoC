@@ -333,6 +333,62 @@
         "/tb_backpressure/dut/fetch_killed_q",
         "/tb_backpressure/dut/wb_fault"
       ]
+    },
+    "isa_complete": {
+      "task": "T041",
+      "sources": [
+        "rtl/core/rv32_pkg.sv",
+        "rtl/core/decoder.sv",
+        "rtl/core/alu.sv",
+        "rtl/core/regfile.sv",
+        "rtl/core/branch_unit.sv",
+        "rtl/core/lsu.sv",
+        "rtl/core/pipeline_core.sv",
+        "rtl/core/forwarding_unit.sv",
+        "rtl/core/hazard_unit.sv",
+        "rtl/core/pipeline_cpu.sv"
+      ],
+      "testbench": "dv/integration/tb_isa_complete.sv",
+      "test_top": "tb_isa_complete",
+      "reference": "dv/integration/test_isa_complete.py",
+      "extra_inputs": [
+        "dv/integration/test_core_smoke.py",
+        "dv/integration/test_load_use.py",
+        "dv/integration/test_flush.py",
+        "dv/integration/test_backpressure.py"
+      ],
+      "seeds": [
+        1,
+        7,
+        101,
+        20261102
+      ],
+      "waves": [
+        "/tb_isa_complete/clk_i",
+        "/tb_isa_complete/rst_i",
+        "/tb_isa_complete/retire_valid_o",
+        "/tb_isa_complete/retire_pc_o",
+        "/tb_isa_complete/retire_rd_wdata_o",
+        "/tb_isa_complete/dmem_req_valid_o",
+        "/tb_isa_complete/dmem_rsp_valid_i",
+        "/tb_isa_complete/dut/dependency",
+        "/tb_isa_complete/dut/front_hold",
+        "/tb_isa_complete/dut/e_valid",
+        "/tb_isa_complete/dut/redirect",
+        "/tb_isa_complete/dut/fetch_killed_q",
+        "/tb_isa_complete/dut/wb_fault"
+      ],
+      "error_words_by_scenario": {
+        "46": [
+          0
+        ],
+        "47": [
+          65536
+        ],
+        "48": [
+          65536
+        ]
+      }
     }
   },
   "lint_designs": [

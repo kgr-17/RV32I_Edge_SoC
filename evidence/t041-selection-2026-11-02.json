@@ -1,0 +1,19 @@
+{
+  "task": "T041",
+  "date": "2026-11-02",
+  "baseline_commit": "bf52dd4",
+  "previous_expected_next": "T019",
+  "rejected_command": [
+    "python",
+    "-B",
+    "scripts/harness.py",
+    "begin",
+    "T019"
+  ],
+  "exit_code": 2,
+  "stderr": "STOP: Not the first eligible task; dependencies/review may block it",
+  "diagnosis": "T041 priority185 precedes T019 priority190 after T018 approval; prior handoff assumption corrected.",
+  "T019_remains_pending": true,
+  "actual_active": "T041",
+  "backlog_change": "Retains lint/test-isa-complete; adds full regress to the formal required commands for shared checker/manifest changes. No acceptance check removed."
+}

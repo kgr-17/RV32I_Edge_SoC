@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "-B",
+    "scripts/harness.py",
+    "next"
+  ],
+  "started_utc": "2026-11-03T05:16:33.877248+00:00",
+  "cwd": "C:\\RV32I_Edge_SoC",
+  "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+  "status": "PASS",
+  "exit_code": 0,
+  "stdout": "{\n  \"valid\": true,\n  \"tasks\": 45,\n  \"project_status\": \"in_progress\",\n  \"daily_exception\": null,\n  \"tasks_today\": [\n    \"T013\",\n    \"T014\",\n    \"T015\",\n    \"T016\",\n    \"T017\",\n    \"T018\",\n    \"T041\"\n  ],\n  \"daily_task_limit\": null,\n  \"execution_approval_pending\": [\n    \"T032\",\n    \"T038\",\n    \"T039\",\n    \"T043\"\n  ],\n  \"active\": null,\n  \"daily_claim\": null,\n  \"next\": null,\n  \"planning_only\": true\n}\n",
+  "stderr": "",
+  "timeout_seconds": 300
+}

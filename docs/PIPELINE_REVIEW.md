@@ -193,7 +193,9 @@ The owner explicitly answered "Approve T018 and authorize that command" for
 executing, the reviewed package `de07a80`, this document's submitted SHA256
 `7146b4d148d8bc32101fa45a7f68d3ba54ecd005cbdaff690a18e84427285a73`, and every
 review-ready/source-audit hash were verified unchanged. The exact command
-returned PASS/exit0; T018 is completed and T019 may begin from a clean commit.
+returned PASS/exit0; T018 is completed. Subsequent work follows actual backlog
+selection: T041 priority185 precedes T019 priority190. The earlier T019-first
+handoff assumption was rejected by the harness and corrected in T041 evidence.
 Authorization and raw command evidence: `evidence/owner_reviews/T018-2026-11-02.json`
 and `T018-2026-11-02-command.json`. Earlier pending-state statements describe
 the submitted review; the scope, measurements, exclusions and evidence remain

@@ -22,12 +22,14 @@ def profile_for(unit):
         return 'retire', 'T011', 'CORE', 'reference core'
     if unit == 'backpressure':
         return 'pipeline-iss', 'T018', 'BACKPRESSURE', 'executable pipeline'
+    if unit == 'isa_complete':
+        return 'isa-complete', 'T041', 'ISA_COMPLETE', 'executable pipeline ISA/EEI'
     raise ValueError('Unregistered ISS backend: ' + str(unit))
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--unit', choices=('core', 'backpressure'), default='core')
+    parser.add_argument('--unit', choices=('core', 'backpressure', 'isa_complete'), default='core')
     args = parser.parse_args()
     profile, task, prefix, label = profile_for(args.unit)
     checks = rtl_checks.Checks(profile, task=task, scope='Independent ISS vs actual ' + label + ' retirement/fault and terminal-state trace')
@@ -35,6 +37,10 @@ def main():
     if args.unit == 'backpressure':
         checks.result['excluded'] = ['formal', 'routed timing closure', 'physical FPGA', 'ASIC',
                                      'complete ISA/EEI compliance', 'random instruction closure', 'in-flight reset closure']
+    if args.unit == 'isa_complete':
+        checks.result['excluded'] = ['formal', 'routed timing', 'physical FPGA', 'ASIC',
+                                     'RISC-V certification', 'SoC/MMIO peripheral verification',
+                                     'random instruction closure', 'in-flight reset closure', 'privileged ISA/interrupts']
     checks.result['comparisons'] = []
     exit_code = 1
     try:
@@ -46,11 +52,13 @@ def main():
                   'scripts/retire_checks.py', 'dv/reference/rv32_iss.py', 'dv/reference/retire.py', 'dv/integration/test_retire.py']
         if args.unit == 'backpressure':
             sources.append('dv/integration/test_pipeline_iss.py')
+        if args.unit == 'isa_complete':
+            sources += ['scripts/isa_complete_checks.py', 'dv/integration/test_isa_directed.py']
         sources = list(dict.fromkeys(sources))
         checks.result['source_sha256'] = {name: digest(harness.inside(name)) for name in sources}
         checks.versions(manifest)
         record = checks.command([sys.executable, '-B', str(harness.inside('scripts/unit_checks.py')), args.unit],
-                                checks.base, 60)
+                                checks.base, 120 if args.unit == 'isa_complete' else 60)
         # unit_checks.py uses ROOT-relative local manifests and sources; its
         # process working directory can be the isolated evidence build folder.
         checks.require(rtl_checks.successful(record), 'Actual ' + args.unit + ' unit backend passes', record)
@@ -67,7 +75,9 @@ def main():
             seed = sim['seed']
             vector_path = harness.inside(sim['vector_path'])
             checks.require(digest(vector_path) == sim['vector_sha256'], 'Exact simulated program seed=' + str(seed))
-            expected, coverage, scenarios = expected_trace(stimulus_images(vector_path.read_text(encoding='utf-8')))
+            injected = {int(key): value for key, value in spec.get('error_words_by_scenario', {}).items()}
+            checks.result['error_words_by_scenario'] = {str(key): value for key, value in injected.items()}
+            expected, coverage, scenarios = expected_trace(stimulus_images(vector_path.read_text(encoding='utf-8')), injected)
             check = next(row for row in run['checks'] if row['name'] == args.unit + ' independent comparison seed=' + str(seed))
             actual_command = run['commands'][check['command_index']]
             checks.require(check['status'] == 'PASS' and rtl_checks.successful(actual_command),

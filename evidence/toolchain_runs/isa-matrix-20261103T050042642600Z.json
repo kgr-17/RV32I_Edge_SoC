@@ -1,0 +1,37 @@
+{
+  "profile": "isa-matrix",
+  "status": "FAIL",
+  "started_utc": "20261103T050042642600Z",
+  "base_commit": "bf52dd48605a09a9834c171ccd1b9f1e18a3a937",
+  "scope": "Actual pipeline ISA/EEI traceability and runtime FENCE evidence",
+  "commands": [],
+  "checks": [
+    {
+      "name": "FENCE evidence policy tests",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Owner-reviewed architecture identity",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Owner architecture and pipeline acceptance",
+      "status": "PASS",
+      "command_index": null
+    }
+  ],
+  "simulations": [],
+  "excluded": [
+    "RISC-V certification",
+    "privileged ISA/interrupts",
+    "SoC/MMIO",
+    "formal",
+    "timing",
+    "hardware",
+    "ASIC"
+  ],
+  "error": "actual independent comparison is not passing",
+  "finished_utc": "2026-11-03T05:00:42.709192+00:00"
+}

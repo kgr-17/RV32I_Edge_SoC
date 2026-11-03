@@ -1,0 +1,49 @@
+[
+  {
+    "argv": [
+      "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "-B",
+      "dv/integration/test_isa_complete.py"
+    ],
+    "started_utc": "2026-11-03T04:47:09.009982+00:00",
+    "cwd": "C:\\RV32I_Edge_SoC",
+    "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "status": "PASS",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_case_size_fits_existing_real_scoreboard_bound (__main__.IsaCompletePrograms) ... ok\ntest_complete_unique_case_and_semantic_inventory (__main__.IsaCompletePrograms) ... ok\ntest_configured_bus_errors_match_explicit_stimulus (__main__.IsaCompletePrograms) ... ok\ntest_fault_injection_is_explicit_and_scenario_bound (__main__.IsaCompletePrograms) ... ok\ntest_hand_expectations_match_independent_iss_for_every_case (__main__.IsaCompletePrograms) ... ok\ntest_legacy_prefix_and_all_runtime_collision_cases_retained (__main__.IsaCompletePrograms) ... ok\ntest_literal_fence_encodings_have_funct3_zero (__main__.IsaCompletePrograms) ... ok\ntest_replay_and_seed_dependent_fence_data (__main__.IsaCompletePrograms) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.616s\n\nOK\n",
+    "timeout_seconds": 300
+  },
+  {
+    "argv": [
+      "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "-B",
+      "-m",
+      "unittest",
+      "scripts.isa_complete_checks.FenceEvidenceTests"
+    ],
+    "started_utc": "2026-11-03T04:47:09.794733+00:00",
+    "cwd": "C:\\RV32I_Edge_SoC",
+    "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "status": "FAIL",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "E\n======================================================================\nERROR: isa_complete_checks (unittest.loader._FailedTest)\n----------------------------------------------------------------------\nImportError: Failed to import test module: isa_complete_checks\nTraceback (most recent call last):\n  File \"C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\lib\\unittest\\loader.py\", line 154, in loadTestsFromName\n    module = __import__(module_name)\n  File \"C:\\RV32I_Edge_SoC\\scripts\\isa_complete_checks.py\", line 9, in <module>\n    import harness\nModuleNotFoundError: No module named 'harness'\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n",
+    "timeout_seconds": 300
+  },
+  {
+    "argv": [
+      "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "-B",
+      "dv/integration/test_retire.py"
+    ],
+    "started_utc": "2026-11-03T04:47:09.980852+00:00",
+    "cwd": "C:\\RV32I_Edge_SoC",
+    "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "status": "PASS",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_observed_parser_and_real_mismatch_rejection (__main__.ComparisonTests) ... ok\ntest_reordering_fault_and_terminal_state_mutation_rejected (__main__.ComparisonTests) ... ok\ntest_stimulus_ignores_hand_expected_fields (__main__.ComparisonTests) ... ok\ntest_bad_target_is_fault_before_link_and_jalr_clear (__main__.IssTests) ... ok\ntest_byte_store_extension_full_word_and_load_x0_effect (__main__.IssTests) ... ok\ntest_fault_priority_error_effects_and_x0_access_fault (__main__.IssTests) ... ok\ntest_instruction_access_error_and_bound (__main__.IssTests) ... ok\ntest_literal_arithmetic_and_signed_shift (__main__.IssTests) ... ok\ntest_reserved_extensions_and_fence_fields (__main__.IssTests) ... ok\ntest_reset_retains_committed_memory_and_sticky_fault (__main__.IssTests) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.001s\n\nOK\n",
+    "timeout_seconds": 300
+  }
+]
