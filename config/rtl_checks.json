@@ -437,6 +437,61 @@
         "/tb_random/dut/fetch_killed_q",
         "/tb_random/dut/wb_fault"
       ]
+    },
+    "assertions": {
+      "task": "T020",
+      "sources": [
+        "rtl/core/rv32_pkg.sv",
+        "rtl/core/decoder.sv",
+        "rtl/core/alu.sv",
+        "rtl/core/regfile.sv",
+        "rtl/core/branch_unit.sv",
+        "rtl/core/lsu.sv",
+        "rtl/core/pipeline_core.sv",
+        "rtl/core/forwarding_unit.sv",
+        "rtl/core/hazard_unit.sv",
+        "rtl/core/pipeline_cpu.sv",
+        "dv/assertions/core_properties.sv"
+      ],
+      "testbench": "dv/assertions/tb_assertions.sv",
+      "test_top": "tb_assertions",
+      "reference": "dv/assertions/test_assertions.py",
+      "extra_inputs": [
+        "dv/integration/test_core_smoke.py",
+        "dv/integration/test_load_use.py",
+        "dv/integration/test_flush.py",
+        "dv/integration/test_backpressure.py",
+        "dv/reference/rv32_iss.py",
+        "dv/random/test_random_programs.py",
+        "dv/assertions/tb_property_negative.sv",
+        "scripts/assertion_checks.py"
+      ],
+      "seeds": [
+        1,
+        7,
+        101,
+        20261102,
+        314159,
+        271828
+      ],
+      "waves": [
+        "/tb_assertions/clk_i",
+        "/tb_assertions/rst_i",
+        "/tb_assertions/retire_valid_o",
+        "/tb_assertions/retire_pc_o",
+        "/tb_assertions/retire_rd_wdata_o",
+        "/tb_assertions/dmem_req_valid_o",
+        "/tb_assertions/dmem_rsp_valid_i",
+        "/tb_assertions/dut/dependency",
+        "/tb_assertions/dut/front_hold",
+        "/tb_assertions/dut/e_valid",
+        "/tb_assertions/dut/redirect",
+        "/tb_assertions/dut/fetch_killed_q",
+        "/tb_assertions/dut/wb_fault",
+        "/tb_assertions/monitor/expected_order_q",
+        "/tb_assertions/monitor/i_pending_q",
+        "/tb_assertions/monitor/d_pending_q"
+      ]
     }
   },
   "lint_designs": [

@@ -37,7 +37,11 @@ T019 random programs and the streaming scoreboard completed November4 on
 attempt3: all five gates passed unchanged, including full16-target regression.
 Six seeds matched14,458 retirements/300 scenarios, with11,446 random-only
 retirements and36 streaming defect rejections. The native exit failure and
-owner-requested shutdown interruption remain preserved. Next is T020 assertions.
+owner-requested shutdown interruption remain preserved. T020's executable
+assertions completed on attempt2: all17 regression targets passed, six seeds
+exercised real pipeline invariants and all16 isolated violations were detected.
+The first regression's XSim native launch failure is preserved. See
+[assertion scope and evidence](docs/ASSERTION_PLAN.md). Next is T021 coverage.
 
 The existing `RV32I_Edge_SoC.xpr` is the active Vivado project. Its configured part
 is `xc7a35tcpg236-1`. The owner confirmed a Digilent Basys 3. Top module, RTL and
