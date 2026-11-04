@@ -33,10 +33,11 @@ and ASIC results remain future milestones. T041's [directed ISA/EEI matrix](docs
 passed all five gates on attempt2 and was owner-approved November2:6,364 retirements/632
 scenario runs, all40 families/nine fault classes, explicit FENCE and bus-error
 evidence. The first nonvacuity failure and strengthened stimulus are preserved.
-T019 random programs and the streaming scoreboard are saved at the owner's
-shutdown request: functional suite/full16-target regression passed, first lint
-hit a native exit crash, and attempt2 was interrupted. T019 remains active;
-resume from the latest technical handoff before starting another task.
+T019 random programs and the streaming scoreboard completed November4 on
+attempt3: all five gates passed unchanged, including full16-target regression.
+Six seeds matched14,458 retirements/300 scenarios, with11,446 random-only
+retirements and36 streaming defect rejections. The native exit failure and
+owner-requested shutdown interruption remain preserved. Next is T020 assertions.
 
 The existing `RV32I_Edge_SoC.xpr` is the active Vivado project. Its configured part
 is `xc7a35tcpg236-1`. The owner confirmed a Digilent Basys 3. Top module, RTL and

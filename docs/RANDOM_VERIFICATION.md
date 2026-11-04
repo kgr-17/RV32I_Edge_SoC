@@ -1,6 +1,6 @@
 # T019 replayable random instructions and architectural scoreboard
 
-Prepared November 2; actual RTL results pending formal gates. T041 owner
+Completed November 4 on attempt3; all required gates PASS. Prepared November 2. T041 owner
 approval acknowledgment is committed9415b4b; T019 began from that clean baseline
 after querying actual first-eligible selection. No ISA/EEI, ports, map, reset,
 priority, clock or production RTL change is made.
@@ -100,3 +100,21 @@ task: two attempts reserved, one finish attempt remaining. The second running
 journal/partial lint are retained with an explicit interruption companion in
 evidence/t019-shutdown-checkpoint-2026-11-02.json. No pass/completion inferred.
 Resume T019 from the dated technical handoff before selecting any other task.
+
+## Completed after attended resume, November 4
+
+Attempt3 receipt `evidence/runs/T019/attempt-3-20261104T230832096019Z.json`
+records lint/test-random/full16-target regress/both whitespace checks PASS,
+exit0. No RTL, source, seed, check or timeout changed for this retry. The first
+native crash and second interrupted journal retain their original bytes.
+Lint passed29 checks/16 commands, including all positive probes and latch rejection.
+Direct independent checker `random-iss-20261104T231412880842Z.json` passed52
+checks/5 commands; actual backend `random-20261104T231415087939Z.json` passed29
+checks/14 commands. Full regression replays `random-iss-20261104T231954162299Z.json`
+and `random-20261104T231956400060Z.json` agree exactly; replay is not new coverage.
+Observed totals33,658 events:14,458 retirements,300 faults,9,300 GPR words and
+9,600 RAM sample words. Random-only total11,446 retirements/48 runs. All40
+random-only instruction families per seed,36 scoreboard mutations and18 comparator
+mutations were checked; corrupt-expected/empty simulations rejected. All earlier
+limitations remain. Completion audit binds26 tool receipts,288 artifacts and55
+source files; preservation audit verifies629 historical files and23 originals.
