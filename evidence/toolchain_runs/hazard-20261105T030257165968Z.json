@@ -1,0 +1,460 @@
+{
+  "profile": "hazard",
+  "status": "PASS",
+  "started_utc": "20261105T030257165968Z",
+  "base_commit": "b45d043bf4ef49d8187c773f9c5318f8831ab4c6",
+  "scope": "hazard unit simulation only; no full CPU or hardware",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\hazard-20261105T030257165968Z\\versions",
+      "started_utc": "2026-11-05T03:02:57.260332+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "git version 2.48.1.windows.1\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.109
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\hazard-20261105T030257165968Z\\versions\\xvlog",
+      "started_utc": "2026-11-05T03:02:57.383167+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.64
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\hazard-20261105T030257165968Z\\versions\\xelab",
+      "started_utc": "2026-11-05T03:02:58.031809+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.625
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\hazard-20261105T030257165968Z\\versions\\xsim",
+      "started_utc": "2026-11-05T03:02:58.652091+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2025 Xilinx, Inc. All Rights Reserved.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.485
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\hazard_unit.sv",
+        "C:\\RV32I_Edge_SoC\\dv\\unit\\tb_hazard.sv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\hazard-20261105T030257165968Z\\sim_hazard",
+      "started_utc": "2026-11-05T03:02:59.178256+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "INFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/hazard_unit.sv\" into library work\nINFO: [VRFC 10-311] analyzing module hazard_unit\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/unit/tb_hazard.sv\" into library work\nINFO: [VRFC 10-311] analyzing module tb_hazard\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.687
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "work.tb_hazard",
+        "--snapshot",
+        "unit_snapshot",
+        "--timescale",
+        "1ns/1ps",
+        "--debug",
+        "typical"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\hazard-20261105T030257165968Z\\sim_hazard",
+      "started_utc": "2026-11-05T03:02:59.870849+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nRunning: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_hazard --snapshot unit_snapshot --timescale 1ns/1ps --debug typical \nMulti-threading is on. Using 26 slave threads.\nStarting static elaboration\nPass Through NonSizing Optimizer\nCompleted static elaboration\nStarting simulation data flow analysis\nCompleted simulation data flow analysis\nTime Resolution for simulation is 1ps\nCompiling module work.hazard_unit\nCompiling module work.tb_hazard\nBuilt simulation snapshot unit_snapshot\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 1.313
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "unit_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\units\\hazard-20261105T030257165968Z\\sim_hazard\\seed_1.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\hazard-20261105T030257165968Z\\sim_hazard",
+      "started_utc": "2026-11-05T03:03:01.285939+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 19:03:01 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/unit_snapshot/xsim_script.tcl\n# xsim {unit_snapshot} -testplusarg SEED=1 -testplusarg COUNT=37312 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/vectors_1.txt -wdb {C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/seed_1.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/run.tcl\n## log_wave /tb_hazard/flags /tb_hazard/a /tb_hazard/b /tb_hazard/dest /tb_hazard/stall\n## run all\nHAZARD_SIM_PASS seed=1 checked=37312\n$finish called at time : 37312 ns : File \"C:/RV32I_Edge_SoC/dv/unit/tb_hazard.sv\" Line 26\nexit 0\nINFO: [Common 17-206] Exiting xsim at Wed Nov  4 19:03:03 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.547,
+      "argument_file": {
+        "path": "build\\units\\hazard-20261105T030257165968Z\\sim_hazard\\seed_1.args",
+        "sha256": "f367b6ff4183168dc137c4217fbb570186eb1138e4019559d0977078cae3abd3",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nCOUNT=37312\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/vectors_1.txt\n--log\nseed_1.log\n--wdb\nC:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/seed_1.wdb\n",
+        "intended_argv": [
+          "unit_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "COUNT=37312",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/vectors_1.txt",
+          "--log",
+          "seed_1.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/seed_1.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "unit_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\units\\hazard-20261105T030257165968Z\\sim_hazard\\seed_20261102.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\hazard-20261105T030257165968Z\\sim_hazard",
+      "started_utc": "2026-11-05T03:03:03.947142+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 19:03:04 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/unit_snapshot/xsim_script.tcl\n# xsim {unit_snapshot} -testplusarg SEED=20261102 -testplusarg COUNT=37312 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/vectors_20261102.txt -wdb {C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/seed_20261102.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/run.tcl} -onfinish quit -onerror quit -sv_seed 20261102\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/run.tcl\n## log_wave /tb_hazard/flags /tb_hazard/a /tb_hazard/b /tb_hazard/dest /tb_hazard/stall\n## run all\nHAZARD_SIM_PASS seed=20261102 checked=37312\n$finish called at time : 37312 ns : File \"C:/RV32I_Edge_SoC/dv/unit/tb_hazard.sv\" Line 26\nexit 0\nINFO: [Common 17-206] Exiting xsim at Wed Nov  4 19:03:06 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.563,
+      "argument_file": {
+        "path": "build\\units\\hazard-20261105T030257165968Z\\sim_hazard\\seed_20261102.args",
+        "sha256": "a663c71a0d426867ef72e0d41893562cea984e5654b780a0646f96cf27efcf73",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n20261102\n--testplusarg\nSEED=20261102\n--testplusarg\nCOUNT=37312\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/vectors_20261102.txt\n--log\nseed_20261102.log\n--wdb\nC:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/seed_20261102.wdb\n",
+        "intended_argv": [
+          "unit_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "20261102",
+          "--testplusarg",
+          "SEED=20261102",
+          "--testplusarg",
+          "COUNT=37312",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/vectors_20261102.txt",
+          "--log",
+          "seed_20261102.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/seed_20261102.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "unit_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\units\\hazard-20261105T030257165968Z\\sim_hazard\\corrupt_expected.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\hazard-20261105T030257165968Z\\sim_hazard",
+      "started_utc": "2026-11-05T03:03:06.534716+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 19:03:07 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/unit_snapshot/xsim_script.tcl\n# xsim {unit_snapshot} -testplusarg SEED=20261102 -testplusarg COUNT=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/corrupt_expected.txt -wdb {C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/corrupt_expected.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/run.tcl} -onfinish quit -onerror quit -sv_seed 20261102\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/run.tcl\n## log_wave /tb_hazard/flags /tb_hazard/a /tb_hazard/b /tb_hazard/dest /tb_hazard/stall\n## run all\nFatal: HAZARD_MISMATCH seed=20261102 row=0\nTime: 1 ns  Iteration: 0  Process: /tb_hazard/Initial13_0  Scope: tb_hazard  File: C:/RV32I_Edge_SoC/dv/unit/tb_hazard.sv Line: 21\n$finish called at time : 1 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Wed Nov  4 19:03:08 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.484,
+      "argument_file": {
+        "path": "build\\units\\hazard-20261105T030257165968Z\\sim_hazard\\corrupt_expected.args",
+        "sha256": "14ca4fa640b6d4ff0bc3b641df6b4e2d9ba7f82603d168ad71160283c6c8cd8a",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n20261102\n--testplusarg\nSEED=20261102\n--testplusarg\nCOUNT=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/corrupt_expected.txt\n--log\ncorrupt_expected.log\n--wdb\nC:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/corrupt_expected.wdb\n",
+        "intended_argv": [
+          "unit_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "20261102",
+          "--testplusarg",
+          "SEED=20261102",
+          "--testplusarg",
+          "COUNT=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/corrupt_expected.txt",
+          "--log",
+          "corrupt_expected.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/corrupt_expected.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "unit_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\units\\hazard-20261105T030257165968Z\\sim_hazard\\empty_vectors.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\hazard-20261105T030257165968Z\\sim_hazard",
+      "started_utc": "2026-11-05T03:03:09.047139+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 19:03:09 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/unit_snapshot/xsim_script.tcl\n# xsim {unit_snapshot} -testplusarg SEED=20261102 -testplusarg COUNT=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/empty_vectors.txt -wdb {C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/empty_vectors.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/run.tcl} -onfinish quit -onerror quit -sv_seed 20261102\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/run.tcl\n## log_wave /tb_hazard/flags /tb_hazard/a /tb_hazard/b /tb_hazard/dest /tb_hazard/stall\n## run all\nFatal: Wrong count 0 != 1\nTime: 0 ps  Iteration: 0  Process: /tb_hazard/Initial13_0  Scope: tb_hazard  File: C:/RV32I_Edge_SoC/dv/unit/tb_hazard.sv Line: 25\n$finish called at time : 0 fs\nexit 0\nINFO: [Common 17-206] Exiting xsim at Wed Nov  4 19:03:11 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.484,
+      "argument_file": {
+        "path": "build\\units\\hazard-20261105T030257165968Z\\sim_hazard\\empty_vectors.args",
+        "sha256": "1b7b0bf416fad7cec327052d44ae02a5a4f3962ee7ea5ed5fc16b67552ff6582",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n20261102\n--testplusarg\nSEED=20261102\n--testplusarg\nCOUNT=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/empty_vectors.txt\n--log\nempty_vectors.log\n--wdb\nC:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/empty_vectors.wdb\n",
+        "intended_argv": [
+          "unit_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "20261102",
+          "--testplusarg",
+          "SEED=20261102",
+          "--testplusarg",
+          "COUNT=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/empty_vectors.txt",
+          "--log",
+          "empty_vectors.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/units/hazard-20261105T030257165968Z/sim_hazard/empty_vectors.wdb"
+        ]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "Pinned Python version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned tzdata version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned Git version",
+      "status": "PASS",
+      "command_index": 0
+    },
+    {
+      "name": "Pinned xvlog version",
+      "status": "PASS",
+      "command_index": 1
+    },
+    {
+      "name": "Pinned xelab version",
+      "status": "PASS",
+      "command_index": 2
+    },
+    {
+      "name": "Pinned xsim version",
+      "status": "PASS",
+      "command_index": 3
+    },
+    {
+      "name": "hazard compile",
+      "status": "PASS",
+      "command_index": 4
+    },
+    {
+      "name": "hazard elaboration",
+      "status": "PASS",
+      "command_index": 5
+    },
+    {
+      "name": "hazard coverage bins seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "hazard independent comparison seed=1",
+      "status": "PASS",
+      "command_index": 6
+    },
+    {
+      "name": "hazard waveform seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "hazard coverage bins seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "hazard independent comparison seed=20261102",
+      "status": "PASS",
+      "command_index": 7
+    },
+    {
+      "name": "hazard waveform seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "hazard rejects corrupt expected bit",
+      "status": "PASS",
+      "command_index": 8
+    },
+    {
+      "name": "hazard rejects empty vectors",
+      "status": "PASS",
+      "command_index": 9
+    },
+    {
+      "name": "hazard sources unchanged during verification",
+      "status": "PASS",
+      "command_index": null
+    }
+  ],
+  "simulations": [
+    {
+      "design": "hazard",
+      "seed": 1,
+      "checked_vectors": 37312,
+      "vector_path": "build/units/hazard-20261105T030257165968Z/sim_hazard/vectors_1.txt",
+      "vector_sha256": "f60e5effebad65854925c48541cc63b3eb9bcf260b356af5d20dc7619752709a",
+      "waveform": "build/units/hazard-20261105T030257165968Z/sim_hazard/seed_1.wdb",
+      "waveform_sha256": "ef01ede8c3541772d571f79b09f56fcd08aa4bb53abff4c70b8bda965fbae0b8",
+      "coverage": {
+        "a_only": 967,
+        "b_only": 969,
+        "both": 33,
+        "disabled_consumer": 2326,
+        "disabled_producer": 3988,
+        "none": 35343,
+        "x0_ignored": 1280
+      }
+    },
+    {
+      "design": "hazard",
+      "seed": 20261102,
+      "checked_vectors": 37312,
+      "vector_path": "build/units/hazard-20261105T030257165968Z/sim_hazard/vectors_20261102.txt",
+      "vector_sha256": "7c4cf0e798d42fccfa14060a695e315197ee37f10dcd5edb86e95385d5f97fa5",
+      "waveform": "build/units/hazard-20261105T030257165968Z/sim_hazard/seed_20261102.wdb",
+      "waveform_sha256": "7f4cbc4a641ff628ab71648faa87eca95490deaea83d678a365e69695e4fb6d5",
+      "coverage": {
+        "a_only": 968,
+        "b_only": 966,
+        "both": 33,
+        "disabled_consumer": 2299,
+        "disabled_producer": 3985,
+        "none": 35345,
+        "x0_ignored": 1270
+      }
+    }
+  ],
+  "excluded": [
+    "full CPU execution/retirement",
+    "formal",
+    "timing closure",
+    "physical hardware",
+    "ASIC"
+  ],
+  "task": "T015",
+  "source_sha256": {
+    "rtl/core/hazard_unit.sv": "d3306b8c4292833febee1d31da7d4b500025385ba93c50879df3e34972eb8fc6",
+    "dv/unit/tb_hazard.sv": "750e28aad0220004d1f96b6545d0c86701a315a2521178a310da2639815c571b",
+    "dv/unit/test_hazard.py": "72fd0f4e5726a4459bffe2af03f101e0552cb81db46ecd95162d1d6df999fe9c",
+    "config/rtl_checks.json": "a6a91ec1c8257d10fe46e0ce6265c4cbc3bad7fcd488e45cfc23575b372869af",
+    "scripts/unit_checks.py": "dec178db4844dce3ffde1b159d0df82a843ec74737c7e5cd3f0a8f6c57b30849",
+    "scripts/rtl_checks.py": "b5a7078c247a6500dac6dce3029cdb88df6e9f058aba3c8146b065122f3f5be3"
+  },
+  "pins": {
+    "schema_version": 1,
+    "python_version": "3.9.13",
+    "git_version": "2.48.1.windows.1",
+    "tzdata_version": "2026.2",
+    "vivado_version": "2025.2",
+    "vivado_sw_build": "6299465"
+  },
+  "tcl": {
+    "path": "build/units/hazard-20261105T030257165968Z/sim_hazard/run.tcl",
+    "sha256": "15f02883f63dac3df183c92a81259c0bcaefc9757fbc543c5744521e295d14f6"
+  },
+  "finished_utc": "2026-11-05T03:03:11.545435+00:00"
+}

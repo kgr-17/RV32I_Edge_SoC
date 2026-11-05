@@ -173,3 +173,11 @@ unattended work. New policy and actual descendant-kill tests must pass after
 runner changes. Original timeout logs/inputs remain preserved.
 Do not assume availability of a particular Codex scheduling feature or launch a
 full-access CLI to bypass restrictions. Use the manual workflow until verified.
+
+T024 observed runtime adjustment (2026-11-04): the reference-core probe completed
+warning-free synthesis/DRC and the exact marker but missed the45-second process
+deadline. Its first attempt remains TIMEOUT/FAIL. Only rv32_reference_core now
+uses90 seconds, under the existing120-second per-design maximum; executable
+pipeline CPU stays120, other probes default45, negatives and composite ceilings
+are unchanged. This is bounded tool compute time, not a hardware timing or
+functional-check waiver. Retry all required task gates and retain the first log.

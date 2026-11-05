@@ -951,5 +951,64 @@
       ]
     ],
     "timeout_seconds": 600
+  },
+  "workflow-policy": {
+    "inputs": [
+      "scripts/harness.py",
+      "scripts/test_harness.py",
+      "scripts/test_execution_budgets.py",
+      "scripts/check_arch_spec.py",
+      "scripts/test_arch_spec.py",
+      "docs/ARCH_CONTRACT.json",
+      "AGENTS.md",
+      "docs/BACKLOG.json"
+    ],
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "scripts/test_harness.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/test_execution_budgets.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/check_arch_spec.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/test_arch_spec.py"
+      ]
+    ]
+  },
+  "test-dv-closure": {
+    "inputs": [
+      "scripts/closure_checks.py",
+      "scripts/test_closure_checks.py",
+      "scripts/harness.py",
+      "config/rtl_checks.json",
+      ".harness/checks.json",
+      "docs/ARCH_CONTRACT.json",
+      "docs/DV_CLOSURE.md",
+      "docs/VERIFICATION_REPORT.md",
+      "evidence/owner_reviews/T023-skip-2026-11-04.json"
+    ],
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "scripts/test_closure_checks.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/closure_checks.py"
+      ]
+    ]
   }
 }

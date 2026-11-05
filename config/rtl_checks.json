@@ -664,7 +664,8 @@
         "rtl/core/lsu.sv",
         "rtl/core/reference_core.sv",
         "dv/lint/reference_core_lint_top.sv"
-      ]
+      ],
+      "timeout_seconds": 90
     },
     {
       "name": "rv32_pipeline_registers",

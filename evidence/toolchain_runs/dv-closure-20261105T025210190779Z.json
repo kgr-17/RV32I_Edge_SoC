@@ -1,0 +1,33 @@
+{
+  "profile": "dv-closure",
+  "status": "FAIL",
+  "started_utc": "20261105T025210190779Z",
+  "base_commit": "b45d043bf4ef49d8187c773f9c5318f8831ab4c6",
+  "scope": "Simulation DV closure review, with explicit owner-skipped formal exception",
+  "commands": [],
+  "checks": [
+    {
+      "name": "Current active T024 verification attempt",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Authoritative current-attempt journal, no fallback",
+      "status": "PASS",
+      "command_index": null
+    }
+  ],
+  "simulations": [],
+  "excluded": [
+    "formal proof (T023 owner-skipped)",
+    "RISC-V certification",
+    "exhaustive operand/state/reset/coverage proof",
+    "SoC/MMIO",
+    "IRQ/CSR revision",
+    "routed timing",
+    "physical FPGA",
+    "ASIC"
+  ],
+  "error": "Current-attempt gate missing/failed/NOT RUN or reordered",
+  "finished_utc": "2026-11-05T02:52:10.263248+00:00"
+}

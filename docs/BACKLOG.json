@@ -1073,6 +1073,12 @@
           "{python}",
           "-B",
           "scripts/verify.py",
+          "workflow-policy"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
           "lint"
         ],
         [
@@ -1086,10 +1092,16 @@
           "-B",
           "scripts/verify.py",
           "coverage"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-dv-closure"
         ]
       ],
       "priority": 240,
-      "status": "pending",
+      "status": "awaiting_review",
       "human_approval_required": true,
       "start_approval_required": false,
       "optional": false,

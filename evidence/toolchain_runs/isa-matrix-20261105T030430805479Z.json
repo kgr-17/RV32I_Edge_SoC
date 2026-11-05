@@ -1,0 +1,728 @@
+{
+  "profile": "isa-matrix",
+  "status": "PASS",
+  "started_utc": "20261105T030430805479Z",
+  "base_commit": "b45d043bf4ef49d8187c773f9c5318f8831ab4c6",
+  "scope": "Actual pipeline ISA/EEI traceability and runtime FENCE evidence",
+  "commands": [],
+  "checks": [
+    {
+      "name": "FENCE evidence policy tests",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Owner-reviewed architecture identity",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Owner architecture and pipeline acceptance",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Fresh passing complete ISA/fault/event/state/mutation matrix",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual backend receipt hash",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual executable pipeline backend identity",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Explicit in-range instruction/load/store error stimuli",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Normalized trace hash 1 observed_1.json",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Normalized trace hash 1 expected_1.json",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Normalized trace hash 1 corrupt_1.json",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual semantic scenarios seed=1 missing=[]",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases fence_drain seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases fence_ignored_fields seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases hints seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases alu_edges seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases illegal_m seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases illegal_csr seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases illegal_system seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases illegal_fence_i seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases illegal_fields seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases illegal_extensions seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases alignment_before_map seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases load_x0_fault seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases branch_alignment seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases backward_branch seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases jalr_wrap seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases jalr_negative seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases jal_wrap seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases auipc_wrap seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases address_wrap seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases memory_boundaries seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases precise_ecall seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases precise_ebreak seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases bus_error_response seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Successful actual FENCE trace producer 1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual injected fault 1/46",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual injected fault 1/47",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual injected fault 1/48",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Normalized trace hash 7 observed_7.json",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Normalized trace hash 7 expected_7.json",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Normalized trace hash 7 corrupt_7.json",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual semantic scenarios seed=7 missing=[]",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases fence_drain seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases fence_ignored_fields seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases hints seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases alu_edges seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases illegal_m seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases illegal_csr seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases illegal_system seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases illegal_fence_i seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases illegal_fields seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases illegal_extensions seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases alignment_before_map seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases load_x0_fault seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases branch_alignment seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases backward_branch seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases jalr_wrap seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases jalr_negative seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases jal_wrap seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases auipc_wrap seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases address_wrap seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases memory_boundaries seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases precise_ecall seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases precise_ebreak seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases bus_error_response seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Successful actual FENCE trace producer 7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual injected fault 7/46",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual injected fault 7/47",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual injected fault 7/48",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Normalized trace hash 101 observed_101.json",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Normalized trace hash 101 expected_101.json",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Normalized trace hash 101 corrupt_101.json",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual semantic scenarios seed=101 missing=[]",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases fence_drain seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases fence_ignored_fields seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases hints seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases alu_edges seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases illegal_m seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases illegal_csr seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases illegal_system seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases illegal_fence_i seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases illegal_fields seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases illegal_extensions seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases alignment_before_map seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases load_x0_fault seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases branch_alignment seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases backward_branch seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases jalr_wrap seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases jalr_negative seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases jal_wrap seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases auipc_wrap seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases address_wrap seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases memory_boundaries seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases precise_ecall seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases precise_ebreak seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases bus_error_response seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Successful actual FENCE trace producer 101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual injected fault 101/46",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual injected fault 101/47",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual injected fault 101/48",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Normalized trace hash 20261102 observed_20261102.json",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Normalized trace hash 20261102 expected_20261102.json",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Normalized trace hash 20261102 corrupt_20261102.json",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual semantic scenarios seed=20261102 missing=[]",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases fence_drain seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases fence_ignored_fields seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases hints seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases alu_edges seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases illegal_m seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases illegal_csr seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases illegal_system seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases illegal_fence_i seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases illegal_fields seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases illegal_extensions seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases alignment_before_map seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases load_x0_fault seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases branch_alignment seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases backward_branch seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases jalr_wrap seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases jalr_negative seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases jal_wrap seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases auipc_wrap seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases address_wrap seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases memory_boundaries seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases precise_ecall seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases precise_ebreak seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty semantic cases bus_error_response seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Successful actual FENCE trace producer 20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual injected fault 20261102/46",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual injected fault 20261102/47",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual injected fault 20261102/48",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Matrix sources unchanged",
+      "status": "PASS",
+      "command_index": null
+    }
+  ],
+  "simulations": [],
+  "excluded": [
+    "RISC-V certification",
+    "privileged ISA/interrupts",
+    "SoC/MMIO",
+    "formal",
+    "timing",
+    "hardware",
+    "ASIC"
+  ],
+  "source_sha256": {
+    "rtl/core/rv32_pkg.sv": "a64532c6e1a92232680b4cff5871aa98cdf3694b348e700fc4aa36d7ac948069",
+    "rtl/core/decoder.sv": "1c50bfd7b1fe87c34ca618e854cfce90890df7765092a542ccbb132dcd88f808",
+    "rtl/core/alu.sv": "bff51163e8c202d806a9a3343d82df0d46f4ae34717f48711595a91b72a93b99",
+    "rtl/core/regfile.sv": "b237b622b105509dfeefefe6add04e12dd9fc5b878e6e1133e5fe0a3e3ad2bec",
+    "rtl/core/branch_unit.sv": "df42e9881113c91b3c5a07af32d7116aa673ef39d24f728dafc4e88fde41f63e",
+    "rtl/core/lsu.sv": "3aec50b3fb07044048da457f3ca59a01a21a256a817c806497d04585f69609e6",
+    "rtl/core/pipeline_core.sv": "9bbf1456055d422b17dae7c8875eb4597aff598f829e181ec50dacda6756a560",
+    "rtl/core/forwarding_unit.sv": "443c38de8fe17239e8e19d30a52250f2741b90f6e84813e5e4165c360cf5dd99",
+    "rtl/core/hazard_unit.sv": "d3306b8c4292833febee1d31da7d4b500025385ba93c50879df3e34972eb8fc6",
+    "rtl/core/pipeline_cpu.sv": "0cf4469c22c5b40cf94507da21fdf8e5fdafbfcc6db10f4f7544512b0918d353",
+    "dv/integration/test_core_smoke.py": "e7e81581805d64d2c9a9264b750bb8116c7efca6848522622f83504564ef343d",
+    "dv/integration/test_load_use.py": "017480522fc6f851ea0b2621b49efd0ef191354014af9f0a8ef5f7cc37b61930",
+    "dv/integration/test_flush.py": "5099e12f54faa89526c90b9590ae1c7f5465bd78fdd372d84dd3ec69b71ae34d",
+    "dv/integration/test_backpressure.py": "91e6673cbeaba42987138f1a2138c0c8144a2891888ca66dbfef602627acc9e3",
+    "dv/integration/tb_isa_complete.sv": "af390945bc87ff627f355f4d16947c246a16b9ca7abd0f4ac30a95acd8024812",
+    "dv/integration/test_isa_complete.py": "0bbcb1025abffc93d41716d54a1fad0b22e5bb87adec904217522c812e028627",
+    "scripts/unit_checks.py": "dec178db4844dce3ffde1b159d0df82a843ec74737c7e5cd3f0a8f6c57b30849",
+    "scripts/rtl_checks.py": "b5a7078c247a6500dac6dce3029cdb88df6e9f058aba3c8146b065122f3f5be3",
+    "scripts/tool_runner.py": "2ffc6d2c8d4be6b21f5b836a033b6971f44f9172d22b18378ade58498ec4d5f7",
+    "scripts/tool_child.py": "8a61d7f13507a0d41b838aef00b1488e9ecc0b535ff9a08caca729b0551b62a8",
+    "config/rtl_checks.json": "a6a91ec1c8257d10fe46e0ce6265c4cbc3bad7fcd488e45cfc23575b372869af",
+    ".harness/checks.json": "b638db06da64f650efbb5e93bad65c0015e09786dd3cd1803e13b5c07237dd38",
+    "docs/ARCH_CONTRACT.json": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03",
+    "scripts/retire_checks.py": "85d0d8efc172340be21a13b0b6cc7b6cab3253c537ab1db2a04c9c6d01046bcf",
+    "dv/reference/rv32_iss.py": "3bea09d666445514edbff6a4d433bdc2e18eec0b416b6780e617efcc91ab856c",
+    "dv/reference/retire.py": "184ad394f3bb58043381d485768836bb139776056e5820c3e1dd8d7851f8f503",
+    "dv/integration/test_retire.py": "2a266a4762a9852498529be0e307ab9793d7b8dc5cb5408a206b583b336af59e",
+    "scripts/isa_complete_checks.py": "0a4dce05e7b65d65c54e568201b3fadce47ece10d6ef69695bc65850daa545ad",
+    "dv/integration/test_isa_directed.py": "cd87fff30093edc94696264382b2f3f7c9425320140926ca2063c4ba90e9d261"
+  },
+  "pins": {
+    "schema_version": 1,
+    "python_version": "3.9.13",
+    "git_version": "2.48.1.windows.1",
+    "tzdata_version": "2026.2",
+    "vivado_version": "2025.2",
+    "vivado_sw_build": "6299465"
+  },
+  "independent_receipt": {
+    "path": "evidence/toolchain_runs/isa-complete-20261105T030406130240Z.json",
+    "sha256": "85ff37785c6897cb85714f04c23993957b5ca9c6594a0d016edbaad7b45ec19a"
+  },
+  "matrix": {
+    "path": "evidence/isa/2026-11-04_matrix-20261105T030430805479Z.json",
+    "sha256": "3107d0eef535791ef66df4a42ee380219f2a6a9bbe8a0de7bfb0d22c81482e98"
+  },
+  "finished_utc": "2026-11-05T03:04:31.252603+00:00"
+}

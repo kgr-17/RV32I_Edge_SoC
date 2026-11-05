@@ -188,3 +188,26 @@ T012 remains awaiting_review; mandatory completion is 11/41. No owner approval
 was generated. After review, the owner acknowledgment is
 `python -B scripts/harness.py approve T012 --confirm-owner-review`.
 T013 is not begun until that review closes and the Git baseline is clean.
+
+
+## T024 current simulation DV review (November4)
+
+The complete L1 report above is preserved as historical owner-approved evidence.
+Current five-stage CPU simulation DV review is docs/DV_CLOSURE.md. T019..T022
+passed their scoped gates; T023 was explicitly owner-skipped with formal NOT RUN,
+not a proof or completed verification task. T024 fresh workflow/lint/full19-target
+regression/coverage/collector gates are pending. Its owner review is distinct from
+T012 approval. No production architecture/RTL/XPR/XDC change or system signoff.
+
+T024 final result: all seven gates PASS, exit 0 on attempt 2
+(`evidence/runs/T024/attempt-2-20261105T025313197475Z.json`). All 19 registered
+regression targets passed, plus explicit coverage and fresh evidence collection.
+The collector binds 32 current receipts across 27 profiles. Final audit checks
+66 receipts, 984 artifacts and 71 current sources. Scoped results remain
+pipeline 2,008 retirements, ISA 6,364, random 14,458, stress 9,840 main plus
+52 pre-reset retirements/28 reset windows; finite stress coverage 49/49 reachable.
+Repeated runs do not expand coverage claims. The first 45-second reference-core
+lint timeout and rejected closure remain failed; only its bounded runtime changed
+to 90 seconds before the complete retry. See [full review](DV_CLOSURE.md).
+T024 is awaiting owner review, T025 unstarted; formal remains owner-skipped/NOT
+RUN. Simulation and synthesis lint provide no routed timing/hardware/ASIC proof.

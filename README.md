@@ -54,7 +54,9 @@ T023 selected formal verification was explicitly owner-skipped on November4;
 its original NOT RUN125 record and zero executed formal tasks remain preserved.
 See [formal limits and owner exception](docs/FORMAL_LIMITS.md). Progress is23
 completed mandatory milestones plus1 owner-skipped, out of41. T024 simulation
-DV review is next and will explicitly disclose missing formal proof.
+DV review passed all seven gates on attempt2, including the full19-target
+regression, and awaits owner review. See [DV review package](docs/DV_CLOSURE.md),
+which explicitly discloses missing formal proof. T025 has not begun.
 
 The existing `RV32I_Edge_SoC.xpr` is the active Vivado project. Its configured part
 is `xc7a35tcpg236-1`. The owner confirmed a Digilent Basys 3. Top module, RTL and
