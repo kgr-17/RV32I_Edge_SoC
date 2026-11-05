@@ -41,7 +41,11 @@ owner-requested shutdown interruption remain preserved. T020's executable
 assertions completed on attempt2: all17 regression targets passed, six seeds
 exercised real pipeline invariants and all16 isolated violations were detected.
 The first regression's XSim native launch failure is preserved. See
-[assertion scope and evidence](docs/ASSERTION_PLAN.md). Next is T021 coverage.
+[assertion scope and evidence](docs/ASSERTION_PLAN.md). T021 coverage completed
+on attempt2 with all18 regression targets passing. A directed JAL/MEM case
+filled a mandatory collision gap;44 of49 reachable crosses were observed,
+five remain explicitly uncovered, and15 structural exclusions are documented.
+See [coverage inventory and gaps](docs/COVERAGE_PLAN.md). Next is T022 stress/reset.
 
 The existing `RV32I_Edge_SoC.xpr` is the active Vivado project. Its configured part
 is `xc7a35tcpg236-1`. The owner confirmed a Digilent Basys 3. Top module, RTL and

@@ -29,7 +29,7 @@
     "T018": "completed",
     "T019": "completed",
     "T020": "completed",
-    "T021": "pending",
+    "T021": "completed",
     "T022": "pending",
     "T023": "pending",
     "T024": "pending",
@@ -76,7 +76,8 @@
     "T018": 1,
     "T041": 2,
     "T019": 3,
-    "T020": 2
+    "T020": 2,
+    "T021": 2
   },
   "blocked_reasons": {},
   "receipts": {
@@ -100,7 +101,8 @@
     "T018": "evidence/runs/T018/attempt-1-20261103T041420187535Z.json",
     "T041": "evidence/runs/T041/attempt-2-20261103T050224175926Z.json",
     "T019": "evidence/runs/T019/attempt-3-20261104T230832096019Z.json",
-    "T020": "evidence/runs/T020/attempt-2-20261104T234039076194Z.json"
+    "T020": "evidence/runs/T020/attempt-2-20261104T234039076194Z.json",
+    "T021": "evidence/runs/T021/attempt-2-20261105T001339775353Z.json"
   },
   "owner_reviews": {
     "T002": {
@@ -173,7 +175,8 @@
     ],
     "2026-11-04": [
       "T019",
-      "T020"
+      "T020",
+      "T021"
     ]
   }
 }

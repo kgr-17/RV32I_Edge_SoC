@@ -941,10 +941,16 @@
           "-B",
           "scripts/verify.py",
           "coverage"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "regress"
         ]
       ],
       "priority": 210,
-      "status": "pending",
+      "status": "completed",
       "human_approval_required": false,
       "start_approval_required": false,
       "optional": false,

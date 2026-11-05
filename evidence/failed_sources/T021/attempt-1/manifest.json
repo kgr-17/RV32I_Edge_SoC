@@ -1,0 +1,85 @@
+{
+  "status": "COVERAGE_GAP_PRESERVED",
+  "source_sha256": {
+    "rtl/core/rv32_pkg.sv": "a64532c6e1a92232680b4cff5871aa98cdf3694b348e700fc4aa36d7ac948069",
+    "rtl/core/decoder.sv": "1c50bfd7b1fe87c34ca618e854cfce90890df7765092a542ccbb132dcd88f808",
+    "rtl/core/alu.sv": "bff51163e8c202d806a9a3343d82df0d46f4ae34717f48711595a91b72a93b99",
+    "rtl/core/regfile.sv": "b237b622b105509dfeefefe6add04e12dd9fc5b878e6e1133e5fe0a3e3ad2bec",
+    "rtl/core/branch_unit.sv": "df42e9881113c91b3c5a07af32d7116aa673ef39d24f728dafc4e88fde41f63e",
+    "rtl/core/lsu.sv": "3aec50b3fb07044048da457f3ca59a01a21a256a817c806497d04585f69609e6",
+    "rtl/core/pipeline_core.sv": "9bbf1456055d422b17dae7c8875eb4597aff598f829e181ec50dacda6756a560",
+    "rtl/core/forwarding_unit.sv": "443c38de8fe17239e8e19d30a52250f2741b90f6e84813e5e4165c360cf5dd99",
+    "rtl/core/hazard_unit.sv": "d3306b8c4292833febee1d31da7d4b500025385ba93c50879df3e34972eb8fc6",
+    "rtl/core/pipeline_cpu.sv": "0cf4469c22c5b40cf94507da21fdf8e5fdafbfcc6db10f4f7544512b0918d353",
+    "dv/assertions/core_properties.sv": "5e3a254d5e8a715c6904718a4a302c6228ddb01e8fe65083d8a917ba129919a8",
+    "dv/integration/test_core_smoke.py": "e7e81581805d64d2c9a9264b750bb8116c7efca6848522622f83504564ef343d",
+    "dv/integration/test_load_use.py": "017480522fc6f851ea0b2621b49efd0ef191354014af9f0a8ef5f7cc37b61930",
+    "dv/integration/test_flush.py": "5099e12f54faa89526c90b9590ae1c7f5465bd78fdd372d84dd3ec69b71ae34d",
+    "dv/integration/test_backpressure.py": "91e6673cbeaba42987138f1a2138c0c8144a2891888ca66dbfef602627acc9e3",
+    "dv/reference/rv32_iss.py": "3bea09d666445514edbff6a4d433bdc2e18eec0b416b6780e617efcc91ab856c",
+    "dv/random/test_random_programs.py": "81e0d33eacb64d63082ec6d3472d94a5ebbd1a8053cbd4da98293655cb59ba70",
+    "dv/assertions/tb_property_negative.sv": "293a5f6be1cdc424ab2d04aa87c7f285c66cdf16d7e8c9ef94bcad73638b033b",
+    "scripts/assertion_checks.py": "285c28327377b8bdb627c64a0524aca493dd043562a2874f8f4e53641a47eb71",
+    "dv/coverage/coverage_report.py": "e6211239fbefde342dd3f0c3c83186a7ce97a24f1b835635fb250abd0b95f656",
+    "dv/coverage/tb_coverage.sv": "564bbb1873dca096adbde2de72b37e4f99a99368e2be80a1824a0fea76381498",
+    "dv/coverage/test_coverage.py": "480d8fb58940d26124a03f364d3e12f9b3bf5446ce9a748604c903d2a9a0873b",
+    "dv/reference/retire.py": "45e33888a75238e47715d8e4cb658a192dec3153dab302fb8047eb40414da76a",
+    "scripts/coverage_checks.py": "f93e437ce353fbaf927b53c3dd10d848084fbe28f1b83fb6112a922205795e39",
+    "scripts/unit_checks.py": "dec178db4844dce3ffde1b159d0df82a843ec74737c7e5cd3f0a8f6c57b30849",
+    "scripts/rtl_checks.py": "b5a7078c247a6500dac6dce3029cdb88df6e9f058aba3c8146b065122f3f5be3",
+    "scripts/tool_runner.py": "2ffc6d2c8d4be6b21f5b836a033b6971f44f9172d22b18378ade58498ec4d5f7",
+    "scripts/tool_child.py": "8a61d7f13507a0d41b838aef00b1488e9ecc0b535ff9a08caca729b0551b62a8",
+    "config/rtl_checks.json": "d6c1a4e03ae43df8e2da93bb41d71c4c71fe2cec6fdc4ba3b03c7f0ae94c3ff6",
+    ".harness/checks.json": "574fa0cef01606dcf15daa7cc40b59aaceae9950c3606790c10b3903d2f3cc4e",
+    "docs/ARCH_CONTRACT.json": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03"
+  },
+  "archive_sha256": "05f145b54adc27df345cd547f76f7d4c58d6ee69327ac3400491654f99c5f372",
+  "artifacts": {
+    "build/units/coverage-20261105T000401886541Z/sim_coverage/vectors_1.txt": "63417112b5fd8b76afc843ce5d5ae84ea8cb6b1466df385eccd43e53b6f20af3",
+    "build/units/coverage-20261105T000401886541Z/sim_coverage/seed_1.wdb": "634c11e2d31fcaa7b1f20f053b7c3850a2f74a940e67ec489624b9dbeee0f67a",
+    "build/units/coverage-20261105T000401886541Z/sim_coverage/vectors_7.txt": "e49fa8838abe6b75b9a58c24c5b15c8edcfc06a9f1c725ae5510f4027805ff54",
+    "build/units/coverage-20261105T000401886541Z/sim_coverage/seed_7.wdb": "585607771bc4334abd7b797f2123540471c783420e179efeaee2e5d789719aed",
+    "build/units/coverage-20261105T000401886541Z/sim_coverage/vectors_101.txt": "c0c28a47b1320aedf439eea84ae2e87bf4df581e4b6b9317c2dfe0824e48470e",
+    "build/units/coverage-20261105T000401886541Z/sim_coverage/seed_101.wdb": "3b765117b37a039b51b95d7fbb91b887b4667d3ae072d1482e29af678251d2b7",
+    "build/units/coverage-20261105T000401886541Z/sim_coverage/vectors_20261102.txt": "cec8217e7b2803f1418b4c302de792fe91b07eaa1f087aabc54db2a0286e7468",
+    "build/units/coverage-20261105T000401886541Z/sim_coverage/seed_20261102.wdb": "27d13480acccfdb53491b20fe7f07f924dd5a9bb770b63c8fce18df237a00f8d",
+    "build/units/coverage-20261105T000401886541Z/sim_coverage/vectors_314159.txt": "1987d9798728929bc78819514bec926bd7238abb11e6fb313a4e146e7e644484",
+    "build/units/coverage-20261105T000401886541Z/sim_coverage/seed_314159.wdb": "b70ccf27d7195494bcb22815664cd98b195aab942fab32dc5648fff0d6ce55dc",
+    "build/units/coverage-20261105T000401886541Z/sim_coverage/vectors_271828.txt": "ca2af98c06dc2f40c5c1a10288b1816b7fbee2e8e8265977fa56e394dd5171a0",
+    "build/units/coverage-20261105T000401886541Z/sim_coverage/seed_271828.wdb": "e763dec5577bbaba96fb0c078226249bbe2b20d6b749139e7f64a8a11f773735"
+  },
+  "witnesses": [
+    {
+      "seed": 1,
+      "branch_deferred": 62,
+      "jump_deferred": 0
+    },
+    {
+      "seed": 7,
+      "branch_deferred": 59,
+      "jump_deferred": 0
+    },
+    {
+      "seed": 101,
+      "branch_deferred": 62,
+      "jump_deferred": 19
+    },
+    {
+      "seed": 20261102,
+      "branch_deferred": 75,
+      "jump_deferred": 25
+    },
+    {
+      "seed": 314159,
+      "branch_deferred": 68,
+      "jump_deferred": 46
+    },
+    {
+      "seed": 271828,
+      "branch_deferred": 49,
+      "jump_deferred": 0
+    }
+  ],
+  "failed_receipt": "evidence/toolchain_runs/coverage-report-20261105T000359641321Z.json",
+  "diagnosis": "All six actual functional backends passed. Required jump/deferred_redirect missing on seeds1,7,271828; parent stops at first seed. Keep requirement. After all current gates finish add a dedicated priming-load/older-store/JAL collision with deterministic fast IF and32-edge data wait, preserving all50 original cases/bytes and failure history."
+}

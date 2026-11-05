@@ -1,0 +1,1372 @@
+{
+  "profile": "assertions",
+  "status": "PASS",
+  "started_utc": "20261105T002420789622Z",
+  "base_commit": "1dd0f88a9af887b560099b284dd2c7874e10fd9a",
+  "scope": "Clocked immediate SV assertions on actual pipeline plus isolated negative monitor simulations",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\versions",
+      "started_utc": "2026-11-05T00:24:20.887608+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "git version 2.48.1.windows.1\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.109
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\versions\\xvlog",
+      "started_utc": "2026-11-05T00:24:21.000065+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.609
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\versions\\xelab",
+      "started_utc": "2026-11-05T00:24:21.607023+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.594
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\versions\\xsim",
+      "started_utc": "2026-11-05T00:24:22.211360+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2025 Xilinx, Inc. All Rights Reserved.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.469
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "C:\\RV32I_Edge_SoC\\scripts\\unit_checks.py",
+        "assertions"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z",
+      "started_utc": "2026-11-05T00:24:22.685336+00:00",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"evidence\": \"evidence/toolchain_runs/assertions-20261105T002422955169Z.json\",\n  \"checks\": 29,\n  \"counts\": [\n    6596,\n    6590,\n    6616,\n    6578,\n    6602,\n    6604\n  ],\n  \"error\": null\n}\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 26.968
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--sv",
+        "C:\\RV32I_Edge_SoC\\dv\\assertions\\core_properties.sv",
+        "C:\\RV32I_Edge_SoC\\dv\\assertions\\tb_property_negative.sv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative",
+      "started_utc": "2026-11-05T00:24:49.724898+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "INFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/assertions/core_properties.sv\" into library work\nINFO: [VRFC 10-311] analyzing module core_properties\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/assertions/tb_property_negative.sv\" into library work\nINFO: [VRFC 10-311] analyzing module tb_property_negative\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.688
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "work.tb_property_negative",
+        "--snapshot",
+        "property_snapshot",
+        "--timescale",
+        "1ns/1ps",
+        "--debug",
+        "typical"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative",
+      "started_utc": "2026-11-05T00:24:50.426184+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nRunning: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_property_negative --snapshot property_snapshot --timescale 1ns/1ps --debug typical \nMulti-threading is on. Using 26 slave threads.\nStarting static elaboration\nPass Through NonSizing Optimizer\nCompleted static elaboration\nStarting simulation data flow analysis\nCompleted simulation data flow analysis\nTime Resolution for simulation is 1ps\nCompiling module work.core_properties\nCompiling module work.tb_property_negative\nBuilt simulation snapshot property_snapshot\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 1.406
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "property_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_0.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative",
+      "started_utc": "2026-11-05T00:24:51.852076+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 16:24:52 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/property_snapshot/xsim_script.tcl\n# xsim {property_snapshot} -testplusarg INJECT=0 -wdb {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_0.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl} -onfinish quit -onerror quit -sv_seed 7\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n## log_wave /tb_property_negative/clk_i /tb_property_negative/rst_i /tb_property_negative/monitor/expected_order_q\n## run all\nPROPERTY_CONTROL_PASS\n$finish called at time : 110 ns : File \"C:/RV32I_Edge_SoC/dv/assertions/tb_property_negative.sv\" Line 64\nexit 0\nINFO: [Common 17-206] Exiting xsim at Wed Nov  4 16:24:54 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.5,
+      "argument_file": {
+        "path": "build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_0.args",
+        "sha256": "9f6c3dd6f8fee66e895ee1d2ab33d956f59c2e31dc2621a809f88507ab035bad",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n7\n--testplusarg\nINJECT=0\n--log\ninject_0.log\n--wdb\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_0.wdb\n",
+        "intended_argv": [
+          "property_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "7",
+          "--testplusarg",
+          "INJECT=0",
+          "--log",
+          "inject_0.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_0.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "property_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_1.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative",
+      "started_utc": "2026-11-05T00:24:54.366466+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 16:24:54 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/property_snapshot/xsim_script.tcl\n# xsim {property_snapshot} -testplusarg INJECT=1 -wdb {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_1.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl} -onfinish quit -onerror quit -sv_seed 7\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n## log_wave /tb_property_negative/clk_i /tb_property_negative/rst_i /tb_property_negative/monitor/expected_order_q\n## run all\nFatal: CORE_ASSERT_FAIL P_X0_A\nTime: 35 ns  Iteration: 0  Process: /tb_property_negative/monitor/Always36_1  Scope: tb_property_negative.monitor  File: C:/RV32I_Edge_SoC/dv/assertions/core_properties.sv Line: 51\n$finish called at time : 35 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Wed Nov  4 16:24:56 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.5,
+      "argument_file": {
+        "path": "build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_1.args",
+        "sha256": "3f5a8c8f403f29fd313568551d5c5429e0295a5bfa9d12029bd83beff584775e",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n7\n--testplusarg\nINJECT=1\n--log\ninject_1.log\n--wdb\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_1.wdb\n",
+        "intended_argv": [
+          "property_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "7",
+          "--testplusarg",
+          "INJECT=1",
+          "--log",
+          "inject_1.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_1.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "property_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_2.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative",
+      "started_utc": "2026-11-05T00:24:56.880250+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 16:24:57 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/property_snapshot/xsim_script.tcl\n# xsim {property_snapshot} -testplusarg INJECT=2 -wdb {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_2.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl} -onfinish quit -onerror quit -sv_seed 7\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n## log_wave /tb_property_negative/clk_i /tb_property_negative/rst_i /tb_property_negative/monitor/expected_order_q\n## run all\nFatal: CORE_ASSERT_FAIL P_X0_B\nTime: 35 ns  Iteration: 0  Process: /tb_property_negative/monitor/Always36_1  Scope: tb_property_negative.monitor  File: C:/RV32I_Edge_SoC/dv/assertions/core_properties.sv Line: 55\n$finish called at time : 35 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Wed Nov  4 16:24:59 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.453,
+      "argument_file": {
+        "path": "build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_2.args",
+        "sha256": "a997f833e004dd8cf2ed66a65a9cacb50bb735e27e4619a8bfb1982ba69bc005",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n7\n--testplusarg\nINJECT=2\n--log\ninject_2.log\n--wdb\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_2.wdb\n",
+        "intended_argv": [
+          "property_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "7",
+          "--testplusarg",
+          "INJECT=2",
+          "--log",
+          "inject_2.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_2.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "property_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_3.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative",
+      "started_utc": "2026-11-05T00:24:59.349753+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 16:24:59 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/property_snapshot/xsim_script.tcl\n# xsim {property_snapshot} -testplusarg INJECT=3 -wdb {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_3.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl} -onfinish quit -onerror quit -sv_seed 7\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n## log_wave /tb_property_negative/clk_i /tb_property_negative/rst_i /tb_property_negative/monitor/expected_order_q\n## run all\nFatal: CORE_ASSERT_FAIL P_RETIRE_ORDER\nTime: 35 ns  Iteration: 0  Process: /tb_property_negative/monitor/Always36_1  Scope: tb_property_negative.monitor  File: C:/RV32I_Edge_SoC/dv/assertions/core_properties.sv Line: 96\n$finish called at time : 35 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Wed Nov  4 16:25:01 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.454,
+      "argument_file": {
+        "path": "build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_3.args",
+        "sha256": "c9cec9a678b0c215979ef5be9fc0f012534ebf0f07deea79fc3c16adcb668346",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n7\n--testplusarg\nINJECT=3\n--log\ninject_3.log\n--wdb\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_3.wdb\n",
+        "intended_argv": [
+          "property_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "7",
+          "--testplusarg",
+          "INJECT=3",
+          "--log",
+          "inject_3.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_3.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "property_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_4.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative",
+      "started_utc": "2026-11-05T00:25:01.833580+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 16:25:02 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/property_snapshot/xsim_script.tcl\n# xsim {property_snapshot} -testplusarg INJECT=4 -wdb {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_4.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl} -onfinish quit -onerror quit -sv_seed 7\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n## log_wave /tb_property_negative/clk_i /tb_property_negative/rst_i /tb_property_negative/monitor/expected_order_q\n## run all\nFatal: CORE_ASSERT_FAIL P_RESET_QUIET\nTime: 15 ns  Iteration: 0  Process: /tb_property_negative/monitor/Always36_1  Scope: tb_property_negative.monitor  File: C:/RV32I_Edge_SoC/dv/assertions/core_properties.sv Line: 39\n$finish called at time : 15 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Wed Nov  4 16:25:04 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.453,
+      "argument_file": {
+        "path": "build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_4.args",
+        "sha256": "7382f93fd8bb252827638eea6db8a7dcdde5c3ecc08b332d8b55e9ccf3573c16",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n7\n--testplusarg\nINJECT=4\n--log\ninject_4.log\n--wdb\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_4.wdb\n",
+        "intended_argv": [
+          "property_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "7",
+          "--testplusarg",
+          "INJECT=4",
+          "--log",
+          "inject_4.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_4.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "property_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_5.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative",
+      "started_utc": "2026-11-05T00:25:04.299720+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 16:25:04 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/property_snapshot/xsim_script.tcl\n# xsim {property_snapshot} -testplusarg INJECT=5 -wdb {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_5.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl} -onfinish quit -onerror quit -sv_seed 7\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n## log_wave /tb_property_negative/clk_i /tb_property_negative/rst_i /tb_property_negative/monitor/expected_order_q\n## run all\nFatal: CORE_ASSERT_FAIL P_RESET_STATE\nTime: 25 ns  Iteration: 0  Process: /tb_property_negative/monitor/Always36_1  Scope: tb_property_negative.monitor  File: C:/RV32I_Edge_SoC/dv/assertions/core_properties.sv Line: 47\n$finish called at time : 25 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Wed Nov  4 16:25:06 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.453,
+      "argument_file": {
+        "path": "build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_5.args",
+        "sha256": "b3585001c0764cadccbcc9de493ec87301fd3f33271078341f8793166fcf4043",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n7\n--testplusarg\nINJECT=5\n--log\ninject_5.log\n--wdb\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_5.wdb\n",
+        "intended_argv": [
+          "property_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "7",
+          "--testplusarg",
+          "INJECT=5",
+          "--log",
+          "inject_5.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_5.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "property_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_6.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative",
+      "started_utc": "2026-11-05T00:25:06.771724+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 16:25:07 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/property_snapshot/xsim_script.tcl\n# xsim {property_snapshot} -testplusarg INJECT=6 -wdb {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_6.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl} -onfinish quit -onerror quit -sv_seed 7\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n## log_wave /tb_property_negative/clk_i /tb_property_negative/rst_i /tb_property_negative/monitor/expected_order_q\n## run all\nFatal: CORE_ASSERT_FAIL P_I_STABLE\nTime: 55 ns  Iteration: 0  Process: /tb_property_negative/monitor/Always36_1  Scope: tb_property_negative.monitor  File: C:/RV32I_Edge_SoC/dv/assertions/core_properties.sv Line: 66\n$finish called at time : 55 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Wed Nov  4 16:25:09 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.469,
+      "argument_file": {
+        "path": "build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_6.args",
+        "sha256": "03c948f70a755610faa6978142ad749aaf52d04c2d204acc642c8e00dc6e3feb",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n7\n--testplusarg\nINJECT=6\n--log\ninject_6.log\n--wdb\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_6.wdb\n",
+        "intended_argv": [
+          "property_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "7",
+          "--testplusarg",
+          "INJECT=6",
+          "--log",
+          "inject_6.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_6.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "property_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_7.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative",
+      "started_utc": "2026-11-05T00:25:09.266096+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 16:25:09 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/property_snapshot/xsim_script.tcl\n# xsim {property_snapshot} -testplusarg INJECT=7 -wdb {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_7.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl} -onfinish quit -onerror quit -sv_seed 7\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n## log_wave /tb_property_negative/clk_i /tb_property_negative/rst_i /tb_property_negative/monitor/expected_order_q\n## run all\nFatal: CORE_ASSERT_FAIL P_D_STABLE\nTime: 55 ns  Iteration: 0  Process: /tb_property_negative/monitor/Always36_1  Scope: tb_property_negative.monitor  File: C:/RV32I_Edge_SoC/dv/assertions/core_properties.sv Line: 71\n$finish called at time : 55 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Wed Nov  4 16:25:11 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.484,
+      "argument_file": {
+        "path": "build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_7.args",
+        "sha256": "c7871990c57cba1edbd2801f1477090e2435c8a0dfa985c2f277382d385e4f36",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n7\n--testplusarg\nINJECT=7\n--log\ninject_7.log\n--wdb\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_7.wdb\n",
+        "intended_argv": [
+          "property_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "7",
+          "--testplusarg",
+          "INJECT=7",
+          "--log",
+          "inject_7.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_7.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "property_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_8.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative",
+      "started_utc": "2026-11-05T00:25:11.757976+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 16:25:12 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/property_snapshot/xsim_script.tcl\n# xsim {property_snapshot} -testplusarg INJECT=8 -wdb {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_8.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl} -onfinish quit -onerror quit -sv_seed 7\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n## log_wave /tb_property_negative/clk_i /tb_property_negative/rst_i /tb_property_negative/monitor/expected_order_q\n## run all\nFatal: CORE_ASSERT_FAIL P_I_STABLE\nTime: 55 ns  Iteration: 0  Process: /tb_property_negative/monitor/Always36_1  Scope: tb_property_negative.monitor  File: C:/RV32I_Edge_SoC/dv/assertions/core_properties.sv Line: 66\n$finish called at time : 55 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Wed Nov  4 16:25:14 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.484,
+      "argument_file": {
+        "path": "build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_8.args",
+        "sha256": "e55c634810ab0f1a84c496c7a86c5afa292b2618bab834f9669d9d9738fe158c",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n7\n--testplusarg\nINJECT=8\n--log\ninject_8.log\n--wdb\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_8.wdb\n",
+        "intended_argv": [
+          "property_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "7",
+          "--testplusarg",
+          "INJECT=8",
+          "--log",
+          "inject_8.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_8.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "property_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_9.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative",
+      "started_utc": "2026-11-05T00:25:14.266267+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 16:25:14 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/property_snapshot/xsim_script.tcl\n# xsim {property_snapshot} -testplusarg INJECT=9 -wdb {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_9.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl} -onfinish quit -onerror quit -sv_seed 7\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n## log_wave /tb_property_negative/clk_i /tb_property_negative/rst_i /tb_property_negative/monitor/expected_order_q\n## run all\nFatal: CORE_ASSERT_FAIL P_D_STABLE\nTime: 55 ns  Iteration: 0  Process: /tb_property_negative/monitor/Always36_1  Scope: tb_property_negative.monitor  File: C:/RV32I_Edge_SoC/dv/assertions/core_properties.sv Line: 71\n$finish called at time : 55 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Wed Nov  4 16:25:16 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.484,
+      "argument_file": {
+        "path": "build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_9.args",
+        "sha256": "9e74d5f71e97859be0c1a80ae094053c3fecc012511019e2d011c16cda16158a",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n7\n--testplusarg\nINJECT=9\n--log\ninject_9.log\n--wdb\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_9.wdb\n",
+        "intended_argv": [
+          "property_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "7",
+          "--testplusarg",
+          "INJECT=9",
+          "--log",
+          "inject_9.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_9.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "property_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_10.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative",
+      "started_utc": "2026-11-05T00:25:16.766318+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 16:25:17 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/property_snapshot/xsim_script.tcl\n# xsim {property_snapshot} -testplusarg INJECT=10 -wdb {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_10.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl} -onfinish quit -onerror quit -sv_seed 7\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n## log_wave /tb_property_negative/clk_i /tb_property_negative/rst_i /tb_property_negative/monitor/expected_order_q\n## run all\nFatal: CORE_ASSERT_FAIL P_FAULT_STICKY\nTime: 105 ns  Iteration: 0  Process: /tb_property_negative/monitor/Always36_1  Scope: tb_property_negative.monitor  File: C:/RV32I_Edge_SoC/dv/assertions/core_properties.sv Line: 106\n$finish called at time : 105 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Wed Nov  4 16:25:19 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.468,
+      "argument_file": {
+        "path": "build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_10.args",
+        "sha256": "fa4732caf831838984e524c87a4158db7cb95ebe1c01ea273d4fa715e4ae5fc9",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n7\n--testplusarg\nINJECT=10\n--log\ninject_10.log\n--wdb\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_10.wdb\n",
+        "intended_argv": [
+          "property_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "7",
+          "--testplusarg",
+          "INJECT=10",
+          "--log",
+          "inject_10.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_10.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "property_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_11.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative",
+      "started_utc": "2026-11-05T00:25:19.254828+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 16:25:19 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/property_snapshot/xsim_script.tcl\n# xsim {property_snapshot} -testplusarg INJECT=11 -wdb {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_11.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl} -onfinish quit -onerror quit -sv_seed 7\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n## log_wave /tb_property_negative/clk_i /tb_property_negative/rst_i /tb_property_negative/monitor/expected_order_q\n## run all\nFatal: CORE_ASSERT_FAIL P_FAULT_STICKY\nTime: 105 ns  Iteration: 0  Process: /tb_property_negative/monitor/Always36_1  Scope: tb_property_negative.monitor  File: C:/RV32I_Edge_SoC/dv/assertions/core_properties.sv Line: 106\n$finish called at time : 105 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Wed Nov  4 16:25:21 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.437,
+      "argument_file": {
+        "path": "build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_11.args",
+        "sha256": "f05d92b48271a3663f079f665dc3dd4927860fd7f71cb753b02ebf79ec9e4125",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n7\n--testplusarg\nINJECT=11\n--log\ninject_11.log\n--wdb\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_11.wdb\n",
+        "intended_argv": [
+          "property_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "7",
+          "--testplusarg",
+          "INJECT=11",
+          "--log",
+          "inject_11.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_11.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "property_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_12.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative",
+      "started_utc": "2026-11-05T00:25:21.724577+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 16:25:22 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/property_snapshot/xsim_script.tcl\n# xsim {property_snapshot} -testplusarg INJECT=12 -wdb {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_12.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl} -onfinish quit -onerror quit -sv_seed 7\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n## log_wave /tb_property_negative/clk_i /tb_property_negative/rst_i /tb_property_negative/monitor/expected_order_q\n## run all\nFatal: CORE_ASSERT_FAIL P_RETIRE_DEST\nTime: 35 ns  Iteration: 0  Process: /tb_property_negative/monitor/Always36_1  Scope: tb_property_negative.monitor  File: C:/RV32I_Edge_SoC/dv/assertions/core_properties.sv Line: 99\n$finish called at time : 35 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Wed Nov  4 16:25:24 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.454,
+      "argument_file": {
+        "path": "build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_12.args",
+        "sha256": "9b2fc8b143e25e473dc044778a4e3166b5041abd4defe643d89241ac2dfa1f45",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n7\n--testplusarg\nINJECT=12\n--log\ninject_12.log\n--wdb\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_12.wdb\n",
+        "intended_argv": [
+          "property_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "7",
+          "--testplusarg",
+          "INJECT=12",
+          "--log",
+          "inject_12.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_12.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "property_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_13.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative",
+      "started_utc": "2026-11-05T00:25:24.204835+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 16:25:24 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/property_snapshot/xsim_script.tcl\n# xsim {property_snapshot} -testplusarg INJECT=13 -wdb {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_13.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl} -onfinish quit -onerror quit -sv_seed 7\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n## log_wave /tb_property_negative/clk_i /tb_property_negative/rst_i /tb_property_negative/monitor/expected_order_q\n## run all\nFatal: CORE_ASSERT_FAIL P_I_RESPONSE\nTime: 35 ns  Iteration: 0  Process: /tb_property_negative/monitor/Always36_1  Scope: tb_property_negative.monitor  File: C:/RV32I_Edge_SoC/dv/assertions/core_properties.sv Line: 82\n$finish called at time : 35 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Wed Nov  4 16:25:26 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.484,
+      "argument_file": {
+        "path": "build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_13.args",
+        "sha256": "04e793ae022270dfd79a8570a24b0dc9e0f42d7e888ca27d5516e4102a8f9978",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n7\n--testplusarg\nINJECT=13\n--log\ninject_13.log\n--wdb\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_13.wdb\n",
+        "intended_argv": [
+          "property_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "7",
+          "--testplusarg",
+          "INJECT=13",
+          "--log",
+          "inject_13.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_13.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "property_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_14.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative",
+      "started_utc": "2026-11-05T00:25:26.716878+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 16:25:27 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/property_snapshot/xsim_script.tcl\n# xsim {property_snapshot} -testplusarg INJECT=14 -wdb {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_14.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl} -onfinish quit -onerror quit -sv_seed 7\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n## log_wave /tb_property_negative/clk_i /tb_property_negative/rst_i /tb_property_negative/monitor/expected_order_q\n## run all\nFatal: CORE_ASSERT_FAIL P_D_RESPONSE\nTime: 35 ns  Iteration: 0  Process: /tb_property_negative/monitor/Always36_1  Scope: tb_property_negative.monitor  File: C:/RV32I_Edge_SoC/dv/assertions/core_properties.sv Line: 91\n$finish called at time : 35 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Wed Nov  4 16:25:29 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.484,
+      "argument_file": {
+        "path": "build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_14.args",
+        "sha256": "cd2b4e371bbe8d83875aa308eaecd89c947b6c48f3490aab90efc2b169317e52",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n7\n--testplusarg\nINJECT=14\n--log\ninject_14.log\n--wdb\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_14.wdb\n",
+        "intended_argv": [
+          "property_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "7",
+          "--testplusarg",
+          "INJECT=14",
+          "--log",
+          "inject_14.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_14.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "property_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_15.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative",
+      "started_utc": "2026-11-05T00:25:29.221908+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 16:25:29 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/property_snapshot/xsim_script.tcl\n# xsim {property_snapshot} -testplusarg INJECT=15 -wdb {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_15.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl} -onfinish quit -onerror quit -sv_seed 7\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n## log_wave /tb_property_negative/clk_i /tb_property_negative/rst_i /tb_property_negative/monitor/expected_order_q\n## run all\nFatal: CORE_ASSERT_FAIL P_I_SINGLE\nTime: 65 ns  Iteration: 0  Process: /tb_property_negative/monitor/Always36_1  Scope: tb_property_negative.monitor  File: C:/RV32I_Edge_SoC/dv/assertions/core_properties.sv Line: 77\n$finish called at time : 65 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Wed Nov  4 16:25:31 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.469,
+      "argument_file": {
+        "path": "build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_15.args",
+        "sha256": "732d444b220aea4ac581100fdaad21e7cbd61f69df06cdc75c0553297c4daa30",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n7\n--testplusarg\nINJECT=15\n--log\ninject_15.log\n--wdb\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_15.wdb\n",
+        "intended_argv": [
+          "property_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "7",
+          "--testplusarg",
+          "INJECT=15",
+          "--log",
+          "inject_15.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_15.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "property_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_16.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T020\\assertions-20261105T002420789622Z\\monitor_negative",
+      "started_utc": "2026-11-05T00:25:31.716135+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 16:25:32 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/property_snapshot/xsim_script.tcl\n# xsim {property_snapshot} -testplusarg INJECT=16 -wdb {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_16.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl} -onfinish quit -onerror quit -sv_seed 7\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n## log_wave /tb_property_negative/clk_i /tb_property_negative/rst_i /tb_property_negative/monitor/expected_order_q\n## run all\nFatal: CORE_ASSERT_FAIL P_D_SINGLE\nTime: 65 ns  Iteration: 0  Process: /tb_property_negative/monitor/Always36_1  Scope: tb_property_negative.monitor  File: C:/RV32I_Edge_SoC/dv/assertions/core_properties.sv Line: 86\n$finish called at time : 65 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Wed Nov  4 16:25:34 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.469,
+      "argument_file": {
+        "path": "build\\T020\\assertions-20261105T002420789622Z\\monitor_negative\\inject_16.args",
+        "sha256": "9f22091ed82fc6230a48058fff7003f61e6c022d7e4d06e5ea4a42ae0e92ab1a",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n7\n--testplusarg\nINJECT=16\n--log\ninject_16.log\n--wdb\nC:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_16.wdb\n",
+        "intended_argv": [
+          "property_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "7",
+          "--testplusarg",
+          "INJECT=16",
+          "--log",
+          "inject_16.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_16.wdb"
+        ]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "Pinned Python version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned tzdata version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned Git version",
+      "status": "PASS",
+      "command_index": 0
+    },
+    {
+      "name": "Pinned xvlog version",
+      "status": "PASS",
+      "command_index": 1
+    },
+    {
+      "name": "Pinned xelab version",
+      "status": "PASS",
+      "command_index": 2
+    },
+    {
+      "name": "Pinned xsim version",
+      "status": "PASS",
+      "command_index": 3
+    },
+    {
+      "name": "Actual assertion-instrumented pipeline backend passes",
+      "status": "PASS",
+      "command_index": 4
+    },
+    {
+      "name": "Exact actual assertion seed set",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual instrumented trace producer seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonvacuous actual property witnesses seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual instrumented trace producer seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonvacuous actual property witnesses seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual instrumented trace producer seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonvacuous actual property witnesses seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual instrumented trace producer seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonvacuous actual property witnesses seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual instrumented trace producer seed=314159",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonvacuous actual property witnesses seed=314159",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual instrumented trace producer seed=271828",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonvacuous actual property witnesses seed=271828",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Isolated assertion monitor compile",
+      "status": "PASS",
+      "command_index": 5
+    },
+    {
+      "name": "Isolated assertion monitor elaboration",
+      "status": "PASS",
+      "command_index": 6
+    },
+    {
+      "name": "Isolated legal control passes",
+      "status": "PASS",
+      "command_index": 7
+    },
+    {
+      "name": "Isolated monitor waveform 0",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Isolated violation 1 detected by P_X0_A",
+      "status": "PASS",
+      "command_index": 8
+    },
+    {
+      "name": "Isolated monitor waveform 1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Isolated violation 2 detected by P_X0_B",
+      "status": "PASS",
+      "command_index": 9
+    },
+    {
+      "name": "Isolated monitor waveform 2",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Isolated violation 3 detected by P_RETIRE_ORDER",
+      "status": "PASS",
+      "command_index": 10
+    },
+    {
+      "name": "Isolated monitor waveform 3",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Isolated violation 4 detected by P_RESET_QUIET",
+      "status": "PASS",
+      "command_index": 11
+    },
+    {
+      "name": "Isolated monitor waveform 4",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Isolated violation 5 detected by P_RESET_STATE",
+      "status": "PASS",
+      "command_index": 12
+    },
+    {
+      "name": "Isolated monitor waveform 5",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Isolated violation 6 detected by P_I_STABLE",
+      "status": "PASS",
+      "command_index": 13
+    },
+    {
+      "name": "Isolated monitor waveform 6",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Isolated violation 7 detected by P_D_STABLE",
+      "status": "PASS",
+      "command_index": 14
+    },
+    {
+      "name": "Isolated monitor waveform 7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Isolated violation 8 detected by P_I_STABLE",
+      "status": "PASS",
+      "command_index": 15
+    },
+    {
+      "name": "Isolated monitor waveform 8",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Isolated violation 9 detected by P_D_STABLE",
+      "status": "PASS",
+      "command_index": 16
+    },
+    {
+      "name": "Isolated monitor waveform 9",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Isolated violation 10 detected by P_FAULT_STICKY",
+      "status": "PASS",
+      "command_index": 17
+    },
+    {
+      "name": "Isolated monitor waveform 10",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Isolated violation 11 detected by P_FAULT_STICKY",
+      "status": "PASS",
+      "command_index": 18
+    },
+    {
+      "name": "Isolated monitor waveform 11",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Isolated violation 12 detected by P_RETIRE_DEST",
+      "status": "PASS",
+      "command_index": 19
+    },
+    {
+      "name": "Isolated monitor waveform 12",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Isolated violation 13 detected by P_I_RESPONSE",
+      "status": "PASS",
+      "command_index": 20
+    },
+    {
+      "name": "Isolated monitor waveform 13",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Isolated violation 14 detected by P_D_RESPONSE",
+      "status": "PASS",
+      "command_index": 21
+    },
+    {
+      "name": "Isolated monitor waveform 14",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Isolated violation 15 detected by P_I_SINGLE",
+      "status": "PASS",
+      "command_index": 22
+    },
+    {
+      "name": "Isolated monitor waveform 15",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Isolated violation 16 detected by P_D_SINGLE",
+      "status": "PASS",
+      "command_index": 23
+    },
+    {
+      "name": "Isolated monitor waveform 16",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "All assertion inputs unchanged",
+      "status": "PASS",
+      "command_index": null
+    }
+  ],
+  "simulations": [],
+  "excluded": [
+    "concurrent SVA engine",
+    "formal proof",
+    "exhaustive coverage",
+    "in-flight reset closure",
+    "routed timing",
+    "physical hardware",
+    "ASIC"
+  ],
+  "property_runs": [
+    {
+      "seed": 1,
+      "resets": 150,
+      "x0_a": 12888,
+      "x0_b": 17166,
+      "retires": 2408,
+      "i_holds": 3459,
+      "d_holds": 593,
+      "faults": 357,
+      "i_requests": 2841,
+      "d_requests": 411
+    },
+    {
+      "seed": 7,
+      "resets": 150,
+      "x0_a": 12969,
+      "x0_b": 17266,
+      "retires": 2402,
+      "i_holds": 3578,
+      "d_holds": 549,
+      "faults": 353,
+      "i_requests": 2839,
+      "d_requests": 410
+    },
+    {
+      "seed": 101,
+      "resets": 150,
+      "x0_a": 13400,
+      "x0_b": 17662,
+      "retires": 2428,
+      "i_holds": 3600,
+      "d_holds": 545,
+      "faults": 362,
+      "i_requests": 2884,
+      "d_requests": 414
+    },
+    {
+      "seed": 20261102,
+      "resets": 150,
+      "x0_a": 13311,
+      "x0_b": 17415,
+      "retires": 2390,
+      "i_holds": 3784,
+      "d_holds": 628,
+      "faults": 382,
+      "i_requests": 2839,
+      "d_requests": 410
+    },
+    {
+      "seed": 314159,
+      "resets": 150,
+      "x0_a": 13152,
+      "x0_b": 17262,
+      "retires": 2414,
+      "i_holds": 3646,
+      "d_holds": 643,
+      "faults": 355,
+      "i_requests": 2863,
+      "d_requests": 413
+    },
+    {
+      "seed": 271828,
+      "resets": 150,
+      "x0_a": 13162,
+      "x0_b": 17533,
+      "retires": 2416,
+      "i_holds": 3739,
+      "d_holds": 592,
+      "faults": 356,
+      "i_requests": 2870,
+      "d_requests": 408
+    }
+  ],
+  "injections": [
+    {
+      "injection": 1,
+      "property": "P_X0_A",
+      "command_index": 8
+    },
+    {
+      "injection": 2,
+      "property": "P_X0_B",
+      "command_index": 9
+    },
+    {
+      "injection": 3,
+      "property": "P_RETIRE_ORDER",
+      "command_index": 10
+    },
+    {
+      "injection": 4,
+      "property": "P_RESET_QUIET",
+      "command_index": 11
+    },
+    {
+      "injection": 5,
+      "property": "P_RESET_STATE",
+      "command_index": 12
+    },
+    {
+      "injection": 6,
+      "property": "P_I_STABLE",
+      "command_index": 13
+    },
+    {
+      "injection": 7,
+      "property": "P_D_STABLE",
+      "command_index": 14
+    },
+    {
+      "injection": 8,
+      "property": "P_I_STABLE",
+      "command_index": 15
+    },
+    {
+      "injection": 9,
+      "property": "P_D_STABLE",
+      "command_index": 16
+    },
+    {
+      "injection": 10,
+      "property": "P_FAULT_STICKY",
+      "command_index": 17
+    },
+    {
+      "injection": 11,
+      "property": "P_FAULT_STICKY",
+      "command_index": 18
+    },
+    {
+      "injection": 12,
+      "property": "P_RETIRE_DEST",
+      "command_index": 19
+    },
+    {
+      "injection": 13,
+      "property": "P_I_RESPONSE",
+      "command_index": 20
+    },
+    {
+      "injection": 14,
+      "property": "P_D_RESPONSE",
+      "command_index": 21
+    },
+    {
+      "injection": 15,
+      "property": "P_I_SINGLE",
+      "command_index": 22
+    },
+    {
+      "injection": 16,
+      "property": "P_D_SINGLE",
+      "command_index": 23
+    }
+  ],
+  "source_sha256": {
+    "rtl/core/rv32_pkg.sv": "a64532c6e1a92232680b4cff5871aa98cdf3694b348e700fc4aa36d7ac948069",
+    "rtl/core/decoder.sv": "1c50bfd7b1fe87c34ca618e854cfce90890df7765092a542ccbb132dcd88f808",
+    "rtl/core/alu.sv": "bff51163e8c202d806a9a3343d82df0d46f4ae34717f48711595a91b72a93b99",
+    "rtl/core/regfile.sv": "b237b622b105509dfeefefe6add04e12dd9fc5b878e6e1133e5fe0a3e3ad2bec",
+    "rtl/core/branch_unit.sv": "df42e9881113c91b3c5a07af32d7116aa673ef39d24f728dafc4e88fde41f63e",
+    "rtl/core/lsu.sv": "3aec50b3fb07044048da457f3ca59a01a21a256a817c806497d04585f69609e6",
+    "rtl/core/pipeline_core.sv": "9bbf1456055d422b17dae7c8875eb4597aff598f829e181ec50dacda6756a560",
+    "rtl/core/forwarding_unit.sv": "443c38de8fe17239e8e19d30a52250f2741b90f6e84813e5e4165c360cf5dd99",
+    "rtl/core/hazard_unit.sv": "d3306b8c4292833febee1d31da7d4b500025385ba93c50879df3e34972eb8fc6",
+    "rtl/core/pipeline_cpu.sv": "0cf4469c22c5b40cf94507da21fdf8e5fdafbfcc6db10f4f7544512b0918d353",
+    "dv/assertions/core_properties.sv": "5e3a254d5e8a715c6904718a4a302c6228ddb01e8fe65083d8a917ba129919a8",
+    "dv/integration/test_core_smoke.py": "e7e81581805d64d2c9a9264b750bb8116c7efca6848522622f83504564ef343d",
+    "dv/integration/test_load_use.py": "017480522fc6f851ea0b2621b49efd0ef191354014af9f0a8ef5f7cc37b61930",
+    "dv/integration/test_flush.py": "5099e12f54faa89526c90b9590ae1c7f5465bd78fdd372d84dd3ec69b71ae34d",
+    "dv/integration/test_backpressure.py": "91e6673cbeaba42987138f1a2138c0c8144a2891888ca66dbfef602627acc9e3",
+    "dv/reference/rv32_iss.py": "3bea09d666445514edbff6a4d433bdc2e18eec0b416b6780e617efcc91ab856c",
+    "dv/random/test_random_programs.py": "81e0d33eacb64d63082ec6d3472d94a5ebbd1a8053cbd4da98293655cb59ba70",
+    "dv/assertions/tb_property_negative.sv": "293a5f6be1cdc424ab2d04aa87c7f285c66cdf16d7e8c9ef94bcad73638b033b",
+    "scripts/assertion_checks.py": "285c28327377b8bdb627c64a0524aca493dd043562a2874f8f4e53641a47eb71",
+    "dv/assertions/test_assertions.py": "51808452c89f8ee7ee18538b85715650e00dce980ede0f807f84e5bcd80ebfab",
+    "dv/assertions/tb_assertions.sv": "93e75cadde55545092426485139ed08361eb9c4afd0c3d941346f50548099ec3",
+    "scripts/unit_checks.py": "dec178db4844dce3ffde1b159d0df82a843ec74737c7e5cd3f0a8f6c57b30849",
+    "scripts/rtl_checks.py": "b5a7078c247a6500dac6dce3029cdb88df6e9f058aba3c8146b065122f3f5be3",
+    "scripts/tool_runner.py": "2ffc6d2c8d4be6b21f5b836a033b6971f44f9172d22b18378ade58498ec4d5f7",
+    "scripts/tool_child.py": "8a61d7f13507a0d41b838aef00b1488e9ecc0b535ff9a08caca729b0551b62a8",
+    "config/rtl_checks.json": "d6c1a4e03ae43df8e2da93bb41d71c4c71fe2cec6fdc4ba3b03c7f0ae94c3ff6",
+    ".harness/checks.json": "574fa0cef01606dcf15daa7cc40b59aaceae9950c3606790c10b3903d2f3cc4e",
+    "docs/ARCH_CONTRACT.json": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03"
+  },
+  "pins": {
+    "schema_version": 1,
+    "python_version": "3.9.13",
+    "git_version": "2.48.1.windows.1",
+    "tzdata_version": "2026.2",
+    "vivado_version": "2025.2",
+    "vivado_sw_build": "6299465"
+  },
+  "backend": {
+    "path": "evidence/toolchain_runs/assertions-20261105T002422955169Z.json",
+    "sha256": "da2b2320d81a10eececef591972ae1e09dbe05280785d26d1f5c0acba1f9027d"
+  },
+  "tcl": {
+    "path": "build/T020/assertions-20261105T002420789622Z/monitor_negative/run.tcl",
+    "sha256": "c073e5b5ce71ae26496fdb5d0327d8025da501b8d8467e4d5840257d6756d262"
+  },
+  "artifacts": {
+    "build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_0.wdb": "9e454dd3c324d181582cd5ff5e74548d9920e3ae514e2fb33e3f154ef168a787",
+    "build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_1.wdb": "2326378f56bb347b452ed035b3ccbe94e621097cbad907ad7cf1e4c7d7f2f9cc",
+    "build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_2.wdb": "7abedd5cbd3e97e5ac1e12fec79186112e76f120cba0247a26cec72268baf396",
+    "build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_3.wdb": "bac88b000bd654c5ddb3726f07517654d3e17b5ec2cf37ea6073be825a95954e",
+    "build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_4.wdb": "fa65aeb0fa57f93e7b98627056400dda5e5ee8d8e527d93761942ac9e0e518c9",
+    "build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_5.wdb": "57713581f2ac3a20c563a82bb6f3a908ee52bdaa63f8d9fb945a2cd8ff89c6ee",
+    "build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_6.wdb": "f7b5b8873c772505402582dc1a1e8bba833f3c27e6c21afae2918e43bc3bb8ab",
+    "build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_7.wdb": "425227459edfd41f1b509ef24b2226009358f154732d3849b43c45696d5eb399",
+    "build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_8.wdb": "e3305505813ec95cbac71ad251b44f720edba4b47d47e3702c2406e5a08cb2cc",
+    "build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_9.wdb": "f6e43047b560a30d7e237a8bd4ad346f9981be4db4b4de625fd17da1a861e61b",
+    "build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_10.wdb": "32151066a6d75caa9ab1c68a3723f7007d418c60c2c8235c7459a726bf86fecf",
+    "build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_11.wdb": "ce63d7c02bf42517fc781fb56de48bf1d081c11c28e03de61e907273c668718c",
+    "build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_12.wdb": "ed818be7a01d26c006d160091c70c5a2ac94463e6caf614f092b36eaad14d5e7",
+    "build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_13.wdb": "e76286bcafd9c0856fb7eba47ad15ae363820b169f5c861a2113dd0a07fef05b",
+    "build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_14.wdb": "7aacd1fd4b713f3ee73f4dd2061ec1b5addf28fea26ca5b3cca810f43dc06b10",
+    "build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_15.wdb": "57cfd1c19fc2143ef65fbc5b4a9f1a34b1c11919e0916e3778696c3751559ac8",
+    "build/T020/assertions-20261105T002420789622Z/monitor_negative/inject_16.wdb": "803745b591d85004f2d83382335c4ab1a5ee0fba5c4f82d418c49b1635e0d5e2"
+  },
+  "finished_utc": "2026-11-05T00:25:34.204281+00:00"
+}

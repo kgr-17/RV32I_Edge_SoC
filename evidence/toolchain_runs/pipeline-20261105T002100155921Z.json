@@ -1,0 +1,542 @@
+{
+  "profile": "pipeline",
+  "status": "PASS",
+  "started_utc": "20261105T002100155921Z",
+  "base_commit": "1dd0f88a9af887b560099b284dd2c7874e10fd9a",
+  "scope": "pipeline unit simulation only; no full CPU or hardware",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\pipeline-20261105T002100155921Z\\versions",
+      "started_utc": "2026-11-05T00:21:00.248011+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "git version 2.48.1.windows.1\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.109
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\pipeline-20261105T002100155921Z\\versions\\xvlog",
+      "started_utc": "2026-11-05T00:21:00.359929+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.61
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\pipeline-20261105T002100155921Z\\versions\\xelab",
+      "started_utc": "2026-11-05T00:21:00.960016+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.609
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\pipeline-20261105T002100155921Z\\versions\\xsim",
+      "started_utc": "2026-11-05T00:21:01.566328+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2025 Xilinx, Inc. All Rights Reserved.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.453
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\pipeline_core.sv",
+        "C:\\RV32I_Edge_SoC\\dv\\integration\\tb_pipeline_base.sv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\pipeline-20261105T002100155921Z\\sim_pipeline",
+      "started_utc": "2026-11-05T00:21:02.076789+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "INFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/pipeline_core.sv\" into library work\nINFO: [VRFC 10-311] analyzing module rv32_pipeline_stage\nINFO: [VRFC 10-311] analyzing module pipeline_registers\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/integration/tb_pipeline_base.sv\" into library work\nINFO: [VRFC 10-311] analyzing module tb_pipeline_base\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.688
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "work.tb_pipeline_base",
+        "--snapshot",
+        "unit_snapshot",
+        "--timescale",
+        "1ns/1ps",
+        "--debug",
+        "typical"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\pipeline-20261105T002100155921Z\\sim_pipeline",
+      "started_utc": "2026-11-05T00:21:02.763575+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nRunning: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_pipeline_base --snapshot unit_snapshot --timescale 1ns/1ps --debug typical \nMulti-threading is on. Using 26 slave threads.\nStarting static elaboration\nPass Through NonSizing Optimizer\nCompleted static elaboration\nStarting simulation data flow analysis\nCompleted simulation data flow analysis\nTime Resolution for simulation is 1ps\nCompiling module work.rv32_pipeline_stage(WIDTH=32'b01...\nCompiling module work.pipeline_registers(WIDTH=32'b010...\nCompiling module work.rv32_pipeline_stage\nCompiling module work.pipeline_registers_default\nCompiling module work.rv32_pipeline_stage(WIDTH=32'b01...\nCompiling module work.pipeline_registers(WIDTH=32'b01)\nCompiling module work.tb_pipeline_base\nBuilt simulation snapshot unit_snapshot\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 1.406
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "unit_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\units\\pipeline-20261105T002100155921Z\\sim_pipeline\\seed_1.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\pipeline-20261105T002100155921Z\\sim_pipeline",
+      "started_utc": "2026-11-05T00:21:04.560116+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 16:21:05 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/unit_snapshot/xsim_script.tcl\n# xsim {unit_snapshot} -testplusarg SEED=1 -testplusarg COUNT=39511 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/vectors_1.txt -wdb {C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/seed_1.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/run.tcl\n## log_wave /tb_pipeline_base/clk /tb_pipeline_base/rst /tb_pipeline_base/clear /tb_pipeline_base/hold /tb_pipeline_base/valid /tb_pipeline_base/v129 /tb_pipeline_base/if_payload /tb_pipeline_base/id_payload /tb_pipeline_base/ex_payload /tb_pipeline_base/mem_payload /tb_pipeline_base/wb_payload\n## run all\nPIPELINE_SIM_PASS seed=1 checked=39511\n$finish called at time : 790231 ns : File \"C:/RV32I_Edge_SoC/dv/integration/tb_pipeline_base.sv\" Line 64\nexit 0\nINFO: [Common 17-206] Exiting xsim at Wed Nov  4 16:21:07 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 3.109,
+      "argument_file": {
+        "path": "build\\units\\pipeline-20261105T002100155921Z\\sim_pipeline\\seed_1.args",
+        "sha256": "ff5a643c04a33d5e4d4a92476c3af693d4927fd8fd0455a3e87bb5cbc8e2668f",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nCOUNT=39511\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/vectors_1.txt\n--log\nseed_1.log\n--wdb\nC:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/seed_1.wdb\n",
+        "intended_argv": [
+          "unit_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "COUNT=39511",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/vectors_1.txt",
+          "--log",
+          "seed_1.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/seed_1.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "unit_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\units\\pipeline-20261105T002100155921Z\\sim_pipeline\\seed_20261102.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\pipeline-20261105T002100155921Z\\sim_pipeline",
+      "started_utc": "2026-11-05T00:21:08.093341+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 16:21:08 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/unit_snapshot/xsim_script.tcl\n# xsim {unit_snapshot} -testplusarg SEED=20261102 -testplusarg COUNT=39511 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/vectors_20261102.txt -wdb {C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/seed_20261102.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/run.tcl} -onfinish quit -onerror quit -sv_seed 20261102\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/run.tcl\n## log_wave /tb_pipeline_base/clk /tb_pipeline_base/rst /tb_pipeline_base/clear /tb_pipeline_base/hold /tb_pipeline_base/valid /tb_pipeline_base/v129 /tb_pipeline_base/if_payload /tb_pipeline_base/id_payload /tb_pipeline_base/ex_payload /tb_pipeline_base/mem_payload /tb_pipeline_base/wb_payload\n## run all\nPIPELINE_SIM_PASS seed=20261102 checked=39511\n$finish called at time : 790231 ns : File \"C:/RV32I_Edge_SoC/dv/integration/tb_pipeline_base.sv\" Line 64\nexit 0\nINFO: [Common 17-206] Exiting xsim at Wed Nov  4 16:21:11 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 3.125,
+      "argument_file": {
+        "path": "build\\units\\pipeline-20261105T002100155921Z\\sim_pipeline\\seed_20261102.args",
+        "sha256": "def56acca95be2572e4e160fa9e8eee166d4d3edc11c139181980795798219e3",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n20261102\n--testplusarg\nSEED=20261102\n--testplusarg\nCOUNT=39511\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/vectors_20261102.txt\n--log\nseed_20261102.log\n--wdb\nC:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/seed_20261102.wdb\n",
+        "intended_argv": [
+          "unit_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "20261102",
+          "--testplusarg",
+          "SEED=20261102",
+          "--testplusarg",
+          "COUNT=39511",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/vectors_20261102.txt",
+          "--log",
+          "seed_20261102.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/seed_20261102.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "unit_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\units\\pipeline-20261105T002100155921Z\\sim_pipeline\\corrupt_expected.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\pipeline-20261105T002100155921Z\\sim_pipeline",
+      "started_utc": "2026-11-05T00:21:11.258359+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 16:21:11 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/unit_snapshot/xsim_script.tcl\n# xsim {unit_snapshot} -testplusarg SEED=20261102 -testplusarg COUNT=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/corrupt_expected.txt -wdb {C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/corrupt_expected.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/run.tcl} -onfinish quit -onerror quit -sv_seed 20261102\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/run.tcl\n## log_wave /tb_pipeline_base/clk /tb_pipeline_base/rst /tb_pipeline_base/clear /tb_pipeline_base/hold /tb_pipeline_base/valid /tb_pipeline_base/v129 /tb_pipeline_base/if_payload /tb_pipeline_base/id_payload /tb_pipeline_base/ex_payload /tb_pipeline_base/mem_payload /tb_pipeline_base/wb_payload\n## run all\nFatal: PIPELINE_MISMATCH payload seed=20261102 row=0 stage=4 phase=1\nTime: 31 ns  Iteration: 0  Process: /tb_pipeline_base/compare/Block30_16  Scope: tb_pipeline_base.compare.Block30_16  File: C:/RV32I_Edge_SoC/dv/integration/tb_pipeline_base.sv Line: 34\n$finish called at time : 31 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Wed Nov  4 16:21:13 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.437,
+      "argument_file": {
+        "path": "build\\units\\pipeline-20261105T002100155921Z\\sim_pipeline\\corrupt_expected.args",
+        "sha256": "b443ec33138eaa23b03cb72e2cdc6b09abadc61ca50a7009e009eaefa87c1823",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n20261102\n--testplusarg\nSEED=20261102\n--testplusarg\nCOUNT=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/corrupt_expected.txt\n--log\ncorrupt_expected.log\n--wdb\nC:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/corrupt_expected.wdb\n",
+        "intended_argv": [
+          "unit_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "20261102",
+          "--testplusarg",
+          "SEED=20261102",
+          "--testplusarg",
+          "COUNT=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/corrupt_expected.txt",
+          "--log",
+          "corrupt_expected.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/corrupt_expected.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "unit_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\units\\pipeline-20261105T002100155921Z\\sim_pipeline\\empty_vectors.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\pipeline-20261105T002100155921Z\\sim_pipeline",
+      "started_utc": "2026-11-05T00:21:13.718633+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 16:21:14 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/unit_snapshot/xsim_script.tcl\n# xsim {unit_snapshot} -testplusarg SEED=20261102 -testplusarg COUNT=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/empty_vectors.txt -wdb {C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/empty_vectors.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/run.tcl} -onfinish quit -onerror quit -sv_seed 20261102\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/run.tcl\n## log_wave /tb_pipeline_base/clk /tb_pipeline_base/rst /tb_pipeline_base/clear /tb_pipeline_base/hold /tb_pipeline_base/valid /tb_pipeline_base/v129 /tb_pipeline_base/if_payload /tb_pipeline_base/id_payload /tb_pipeline_base/ex_payload /tb_pipeline_base/mem_payload /tb_pipeline_base/wb_payload\n## run all\nFatal: Wrong count 0 != 1\nTime: 20 ns  Iteration: 0  Process: /tb_pipeline_base/Initial37_17  Scope: tb_pipeline_base  File: C:/RV32I_Edge_SoC/dv/integration/tb_pipeline_base.sv Line: 62\n$finish called at time : 20 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Wed Nov  4 16:21:16 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.469,
+      "argument_file": {
+        "path": "build\\units\\pipeline-20261105T002100155921Z\\sim_pipeline\\empty_vectors.args",
+        "sha256": "1a49017b741936c237fa6656dd708f16649ad32ec6e77a222398c675300436e0",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n20261102\n--testplusarg\nSEED=20261102\n--testplusarg\nCOUNT=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/empty_vectors.txt\n--log\nempty_vectors.log\n--wdb\nC:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/empty_vectors.wdb\n",
+        "intended_argv": [
+          "unit_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "20261102",
+          "--testplusarg",
+          "SEED=20261102",
+          "--testplusarg",
+          "COUNT=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/empty_vectors.txt",
+          "--log",
+          "empty_vectors.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/units/pipeline-20261105T002100155921Z/sim_pipeline/empty_vectors.wdb"
+        ]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "Pinned Python version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned tzdata version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned Git version",
+      "status": "PASS",
+      "command_index": 0
+    },
+    {
+      "name": "Pinned xvlog version",
+      "status": "PASS",
+      "command_index": 1
+    },
+    {
+      "name": "Pinned xelab version",
+      "status": "PASS",
+      "command_index": 2
+    },
+    {
+      "name": "Pinned xsim version",
+      "status": "PASS",
+      "command_index": 3
+    },
+    {
+      "name": "pipeline compile",
+      "status": "PASS",
+      "command_index": 4
+    },
+    {
+      "name": "pipeline elaboration",
+      "status": "PASS",
+      "command_index": 5
+    },
+    {
+      "name": "pipeline coverage bins seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "pipeline independent comparison seed=1",
+      "status": "PASS",
+      "command_index": 6
+    },
+    {
+      "name": "pipeline waveform seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "pipeline coverage bins seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "pipeline independent comparison seed=20261102",
+      "status": "PASS",
+      "command_index": 7
+    },
+    {
+      "name": "pipeline waveform seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "pipeline rejects corrupt expected bit",
+      "status": "PASS",
+      "command_index": 8
+    },
+    {
+      "name": "pipeline rejects empty vectors",
+      "status": "PASS",
+      "command_index": 9
+    },
+    {
+      "name": "pipeline sources unchanged during verification",
+      "status": "PASS",
+      "command_index": null
+    }
+  ],
+  "simulations": [
+    {
+      "design": "pipeline",
+      "seed": 1,
+      "checked_vectors": 39511,
+      "vector_path": "build/units/pipeline-20261105T002100155921Z/sim_pipeline/vectors_1.txt",
+      "vector_sha256": "c9ddbd614f63b5ddab10506f45a0578eb1946fa368516eb3d525c4e615572bf2",
+      "waveform": "build/units/pipeline-20261105T002100155921Z/sim_pipeline/seed_1.wdb",
+      "waveform_sha256": "70ce60450c6adbbb103069003068d9d7b71f90bf303845f9d4d3b7e1debd24a5",
+      "coverage": {
+        "all_bubble": 4970,
+        "all_valid": 246,
+        "between_edge_reset": 32,
+        "group:control-cross": 32768,
+        "group:directed": 2,
+        "group:hold-walking": 1290,
+        "group:pulse-reset": 32,
+        "group:random": 4096,
+        "group:reset": 1,
+        "group:reset-cross": 32,
+        "group:walking-payload": 1290,
+        "mixed_valid": 34295,
+        "stage:0:bubble": 6675,
+        "stage:0:capture": 4848,
+        "stage:0:clear": 18397,
+        "stage:0:clear_over_hold": 9217,
+        "stage:0:hold_bubble": 830,
+        "stage:0:hold_valid": 8588,
+        "stage:0:reset": 173,
+        "stage:1:bubble": 6676,
+        "stage:1:capture": 4875,
+        "stage:1:clear": 18375,
+        "stage:1:clear_over_hold": 9207,
+        "stage:1:hold_bubble": 801,
+        "stage:1:hold_valid": 8611,
+        "stage:1:reset": 173,
+        "stage:2:bubble": 6630,
+        "stage:2:capture": 4885,
+        "stage:2:clear": 18384,
+        "stage:2:clear_over_hold": 9195,
+        "stage:2:hold_bubble": 831,
+        "stage:2:hold_valid": 8608,
+        "stage:2:reset": 173,
+        "stage:3:bubble": 6665,
+        "stage:3:capture": 4890,
+        "stage:3:clear": 18327,
+        "stage:3:clear_over_hold": 9136,
+        "stage:3:hold_bubble": 830,
+        "stage:3:hold_valid": 8626,
+        "stage:3:reset": 173,
+        "stage:4:bubble": 6645,
+        "stage:4:capture": 4841,
+        "stage:4:clear": 18375,
+        "stage:4:clear_over_hold": 9164,
+        "stage:4:hold_bubble": 907,
+        "stage:4:hold_valid": 8570,
+        "stage:4:reset": 173,
+        "wb_drain_front_held": 1
+      }
+    },
+    {
+      "design": "pipeline",
+      "seed": 20261102,
+      "checked_vectors": 39511,
+      "vector_path": "build/units/pipeline-20261105T002100155921Z/sim_pipeline/vectors_20261102.txt",
+      "vector_sha256": "2040e7ca9bc149f1b2fa8023bd91917a48b1f2a190345470a377844304107388",
+      "waveform": "build/units/pipeline-20261105T002100155921Z/sim_pipeline/seed_20261102.wdb",
+      "waveform_sha256": "6bea8bfe831c3da48d9a9cd549525d8d68c136ba5c9a128ffe4f29c4038b1f27",
+      "coverage": {
+        "all_bubble": 4883,
+        "all_valid": 245,
+        "between_edge_reset": 32,
+        "group:control-cross": 32768,
+        "group:directed": 2,
+        "group:hold-walking": 1290,
+        "group:pulse-reset": 32,
+        "group:random": 4096,
+        "group:reset": 1,
+        "group:reset-cross": 32,
+        "group:walking-payload": 1290,
+        "mixed_valid": 34383,
+        "stage:0:bubble": 6649,
+        "stage:0:capture": 4874,
+        "stage:0:clear": 18362,
+        "stage:0:clear_over_hold": 9187,
+        "stage:0:hold_bubble": 837,
+        "stage:0:hold_valid": 8624,
+        "stage:0:reset": 165,
+        "stage:1:bubble": 6659,
+        "stage:1:capture": 4849,
+        "stage:1:clear": 18467,
+        "stage:1:clear_over_hold": 9236,
+        "stage:1:hold_bubble": 743,
+        "stage:1:hold_valid": 8628,
+        "stage:1:reset": 165,
+        "stage:2:bubble": 6697,
+        "stage:2:capture": 4823,
+        "stage:2:clear": 18404,
+        "stage:2:clear_over_hold": 9212,
+        "stage:2:hold_bubble": 819,
+        "stage:2:hold_valid": 8603,
+        "stage:2:reset": 165,
+        "stage:3:bubble": 6661,
+        "stage:3:capture": 4891,
+        "stage:3:clear": 18357,
+        "stage:3:clear_over_hold": 9179,
+        "stage:3:hold_bubble": 799,
+        "stage:3:hold_valid": 8638,
+        "stage:3:reset": 165,
+        "stage:4:bubble": 6694,
+        "stage:4:capture": 4890,
+        "stage:4:clear": 18326,
+        "stage:4:clear_over_hold": 9175,
+        "stage:4:hold_bubble": 818,
+        "stage:4:hold_valid": 8618,
+        "stage:4:reset": 165,
+        "wb_drain_front_held": 1
+      }
+    }
+  ],
+  "excluded": [
+    "full CPU execution/retirement",
+    "formal",
+    "timing closure",
+    "physical hardware",
+    "ASIC"
+  ],
+  "task": "T013",
+  "source_sha256": {
+    "rtl/core/pipeline_core.sv": "9bbf1456055d422b17dae7c8875eb4597aff598f829e181ec50dacda6756a560",
+    "dv/integration/tb_pipeline_base.sv": "9bdba21b8482cd11078f787000ce5c371ed4cd1d04f76ebd0d27afa5d9ae1e65",
+    "dv/integration/test_pipeline_base.py": "9677dc162a25bbbe0bb02e47ee2b2609a5984010d6a6f19fb2c5b415b42da693",
+    "config/rtl_checks.json": "d6c1a4e03ae43df8e2da93bb41d71c4c71fe2cec6fdc4ba3b03c7f0ae94c3ff6",
+    "scripts/unit_checks.py": "dec178db4844dce3ffde1b159d0df82a843ec74737c7e5cd3f0a8f6c57b30849",
+    "scripts/rtl_checks.py": "b5a7078c247a6500dac6dce3029cdb88df6e9f058aba3c8146b065122f3f5be3"
+  },
+  "pins": {
+    "schema_version": 1,
+    "python_version": "3.9.13",
+    "git_version": "2.48.1.windows.1",
+    "tzdata_version": "2026.2",
+    "vivado_version": "2025.2",
+    "vivado_sw_build": "6299465"
+  },
+  "tcl": {
+    "path": "build/units/pipeline-20261105T002100155921Z/sim_pipeline/run.tcl",
+    "sha256": "806121857c2c3a55cab14ed27f4bc71146fca06a64f6d0bec158b3f6e9ff2f2d"
+  },
+  "finished_utc": "2026-11-05T00:21:16.184997+00:00"
+}
