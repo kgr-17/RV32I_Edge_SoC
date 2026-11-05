@@ -65,7 +65,7 @@ def expected_trace(cases, error_words_by_scenario=None):
 
 
 def observed_trace(output, prefix='CORE'):
-    if prefix not in ('CORE', 'BACKPRESSURE', 'ISA_COMPLETE', 'RANDOM', 'COVERAGE'):
+    if prefix not in ('CORE', 'BACKPRESSURE', 'ISA_COMPLETE', 'RANDOM', 'COVERAGE', 'STRESS'):
         raise ValueError('Unregistered observed trace prefix')
     tags = {prefix + '_' + name: (kind, length) for name, kind, length in
             (('RETIRE', 'R', 15), ('FAULT', 'F', 6), ('GPR', 'G', 4), ('RAM', 'M', 4))}

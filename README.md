@@ -45,7 +45,12 @@ The first regression's XSim native launch failure is preserved. See
 on attempt2 with all18 regression targets passing. A directed JAL/MEM case
 filled a mandatory collision gap;44 of49 reachable crosses were observed,
 five remain explicitly uncovered, and15 structural exclusions are documented.
-See [coverage inventory and gaps](docs/COVERAGE_PLAN.md). Next is T022 stress/reset.
+See [coverage inventory and gaps](docs/COVERAGE_PLAN.md). T022 completed on its
+first attempt with all19 regression targets passing:9,840 main retirements,
+52 pre-reset retirements and28 selected shared-reset windows checked. Added
+stress programs hit the five prior gaps (49/49 in the finite cross inventory),
+and the injected retention leak was rejected. See [stress scope](docs/STRESS_VERIFICATION.md).
+Next is T023 selected formal verification; no formal proof is inferred from simulation.
 
 The existing `RV32I_Edge_SoC.xpr` is the active Vivado project. Its configured part
 is `xc7a35tcpg236-1`. The owner confirmed a Digilent Basys 3. Top module, RTL and

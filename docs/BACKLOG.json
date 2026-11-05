@@ -988,10 +988,16 @@
           "-B",
           "scripts/verify.py",
           "test-stress"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "regress"
         ]
       ],
       "priority": 220,
-      "status": "pending",
+      "status": "completed",
       "human_approval_required": false,
       "start_approval_required": false,
       "optional": false,

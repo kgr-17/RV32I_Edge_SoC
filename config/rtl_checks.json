@@ -548,6 +548,65 @@
         "/tb_coverage/monitor/i_pending_q",
         "/tb_coverage/monitor/d_pending_q"
       ]
+    },
+    "stress": {
+      "task": "T022",
+      "sources": [
+        "rtl/core/rv32_pkg.sv",
+        "rtl/core/decoder.sv",
+        "rtl/core/alu.sv",
+        "rtl/core/regfile.sv",
+        "rtl/core/branch_unit.sv",
+        "rtl/core/lsu.sv",
+        "rtl/core/pipeline_core.sv",
+        "rtl/core/forwarding_unit.sv",
+        "rtl/core/hazard_unit.sv",
+        "rtl/core/pipeline_cpu.sv",
+        "dv/assertions/core_properties.sv"
+      ],
+      "testbench": "dv/random/tb_stress.sv",
+      "test_top": "tb_stress",
+      "reference": "dv/random/test_stress.py",
+      "extra_inputs": [
+        "dv/integration/test_core_smoke.py",
+        "dv/integration/test_load_use.py",
+        "dv/integration/test_flush.py",
+        "dv/integration/test_backpressure.py",
+        "dv/reference/rv32_iss.py",
+        "dv/random/test_random_programs.py",
+        "dv/assertions/tb_property_negative.sv",
+        "scripts/assertion_checks.py",
+        "dv/coverage/coverage_report.py",
+        "dv/coverage/test_coverage.py",
+        "dv/coverage/tb_coverage.sv",
+        "scripts/coverage_checks.py"
+      ],
+      "seeds": [
+        1,
+        314159,
+        20261104,
+        424242
+      ],
+      "waves": [
+        "/tb_stress/clk_i",
+        "/tb_stress/rst_i",
+        "/tb_stress/retire_valid_o",
+        "/tb_stress/retire_pc_o",
+        "/tb_stress/retire_rd_wdata_o",
+        "/tb_stress/dmem_req_valid_o",
+        "/tb_stress/dmem_rsp_valid_i",
+        "/tb_stress/dut/dependency",
+        "/tb_stress/dut/front_hold",
+        "/tb_stress/dut/e_valid",
+        "/tb_stress/dut/redirect",
+        "/tb_stress/dut/fetch_killed_q",
+        "/tb_stress/dut/wb_fault",
+        "/tb_stress/monitor/expected_order_q",
+        "/tb_stress/monitor/i_pending_q",
+        "/tb_stress/monitor/d_pending_q",
+        "/tb_stress/reset_done",
+        "/tb_stress/reset_mode"
+      ]
     }
   },
   "lint_designs": [
