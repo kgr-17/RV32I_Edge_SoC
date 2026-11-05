@@ -1,0 +1,45 @@
+{
+  "task": "T024",
+  "date": "2026-11-04",
+  "recorded_utc": "2026-11-05T03:16:56.702508+00:00",
+  "status": "awaiting_review",
+  "review_package_commit": "cfe29102dec254f2a7fb8b4c98f8e8f853f738d8",
+  "files_sha256": {
+    "docs/DV_CLOSURE.md": "212a6a67adbbfe818edf725cab198c1ebb7237c51b1a08ab5c38b686f6d460e9",
+    "docs/VERIFICATION_REPORT.md": "116c3fdecf4c31841f880880a1cc6c0e7fd226c270d567754b0e36b3b8ebc540",
+    "evidence/daily/T024.md": "52763079ae6c6ff9425a36dd2ed3302283f84da38cf3bbef1b2047a2a59dee7a",
+    "docs/BACKLOG.json": "a45538a9cd494af7f55319b37882f241d406a2ad3cadff088460042aa3c66570",
+    ".harness/state.json": "85dfdd9a4b6872b31b5b6e806d3dc313c584fd35efd85bb7184d83b51a672aa7",
+    "docs/ARCH_CONTRACT.json": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03",
+    "evidence/t024-review-audit-2026-11-04.json": "823dbe6dcd21f0451f78a15e0e23a6c9f67d0233aa097cfaebf8906678deb080",
+    "evidence/t024-preservation-final-2026-11-04.json": "d14d14262eeb7e37c023f89446f8ca8226f50f97f10bf78aa2d29c57d1fef5da",
+    "evidence/runs/T024/attempt-2-20261105T025313197475Z.json": "31bfe7dcd3687ed3a024d2be71332873d2b6a81a50b3631dd511c2715280d89b",
+    "evidence/toolchain_runs/dv-closure-20261105T030748742605Z.json": "b685d3e0aa41a7c29dffb5f356c1937ec2a48c3293eaf8292e5c18b413f7b72c",
+    "evidence/owner_reviews/T023-skip-2026-11-04.json": "2a1c5401a406118577761b51cf0e04fc04bac43deadc7220859902fd49ef2df1",
+    "evidence/failed_sources/T024/attempt-1/manifest.json": "420ad59f595af99ed11f4f6dfb79cb0d90ccccae2ad7521259be072f13da188b",
+    "evidence/prepare/T024-gate-evidence-2026-11-04.json": "90cb73a5db0a5c0694a8011ec7e7a25cc57ddf4de4f7c236368873352cc4a117"
+  },
+  "all_seven_gates": "PASS exit0",
+  "verification_attempt": 2,
+  "retained_failed_attempt": 1,
+  "current_closure_tools": 32,
+  "required_profiles": 27,
+  "formal_disposition": {
+    "task": "T023",
+    "status": "OWNER-SKIPPED",
+    "verification": "NOT RUN",
+    "proof": false
+  },
+  "owner_authorization_received": false,
+  "requested_command": [
+    "python",
+    "-B",
+    "scripts/harness.py",
+    "approve",
+    "T024",
+    "--confirm-owner-review"
+  ],
+  "expected_next_after_approval": "T025",
+  "must_query_first_eligible_before_begin": true,
+  "runtime": "unrestricted, attended only"
+}
