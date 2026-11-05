@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "task": "T023",
+  "action": "skip",
+  "date": "2026-11-04",
+  "owner_instruction": "yes, make this task mark as skip. and work on others",
+  "source": "Direct owner instruction in this conversation after discussion of deferring formal verification",
+  "reason": "Owner chooses to skip unavailable formal verification and continue simulation-based engineering, with the gap disclosed at DV and final reviews.",
+  "verification_status": "NOT RUN",
+  "formal_proof_claim": false,
+  "preserved_attempts": 1,
+  "preserved_receipt": "evidence/runs/T023/attempt-1-20261105T005724903976Z.json",
+  "preserved_receipt_sha256": "b1b2facc5e6a3e3951d72058742949463ec80ed52b8a143f9cf9fa4814ddabce",
+  "baseline_commit": "ac4ba14a37a819279f9724b074e73f1b66840af7",
+  "scope": "T023 only; no other task, check, human review or execution approval is waived. Formal drafts remain for a future owner-directed revisit."
+}

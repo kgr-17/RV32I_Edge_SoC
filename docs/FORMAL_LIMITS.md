@@ -1,5 +1,12 @@
 # T023 selected bounded-formal package and tool blocker
 
+Current disposition: OWNER-SKIPPED on2026-11-04 under the explicit instruction
+"yes, make this task mark as skip. and work on others". Formal evidence remains
+NOT RUN, not completed/PASS. See evidence/owner_reviews/T023-skip-2026-11-04.json.
+The original failed attempt/budget and drafts below are preserved. T024 can now
+proceed with this exception disclosed; a future formal revisit requires an owner
+scope change, rather than automatic retries or installation.
+
 Status: NOT RUN. No prover, solver, formal compilation, counterexample or cover
 witness has executed. T022 completed in141bc17; T023 began from clean Git.
 

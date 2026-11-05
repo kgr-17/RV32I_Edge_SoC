@@ -1,0 +1,26 @@
+{
+  "scope": "Owner-requested skip workflow validation, not RTL/formal proof",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/test_execution_budgets.py"
+      ],
+      "started_utc": "2026-11-05T02:27:47.988492+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_bad_registry_budget_rejected (__main__.BudgetTests) ... ok\ntest_default_unchanged (__main__.BudgetTests) ... ok\ntest_override_for_child_uses_same_bound (__main__.BudgetTests) ... ok\ntest_registered_composite_budget (__main__.BudgetTests) ... ok\ntest_unbounded_or_invalid_rejected (__main__.BudgetTests) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nOK\n",
+      "timeout_seconds": 300
+    }
+  ],
+  "source_sha256": {
+    "scripts/harness.py": "451407093ded94e04641e39a773779ba3948d5a7db9971f1c2690111af1c47f1",
+    "scripts/test_harness.py": "23f3f2494577e318b5acfcf65c206579d4b497e7d7d6e8403727f1c075f2b060",
+    "docs/BACKLOG.json": "35647a4880a08fa4524744813d2b6169ac698f63324f11699f83048f644ab7e3",
+    "AGENTS.md": "2307088cc1752eb0b7671a7aec9df2fe1dd246da0900507deb16a6e5485097fb"
+  }
+}

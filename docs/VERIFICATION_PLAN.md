@@ -1,5 +1,12 @@
 # Active verification acceptance additions (2026-10-14)
 
+Current owner revision (2026-11-04): T023 is explicitly owner-skipped, formal
+verification remains NOT RUN. Its original requirement below is historical.
+Simulation/assertion/reset/coverage and all other mandatory gates remain required.
+T024 may proceed with this disclosed exception; final owner review must acknowledge
+it. No simulation result or skipped task is a formal pass. See the task-specific
+receipt in BACKLOG.owner_skip_policy and evidence/owner_reviews/.
+
 Original hierarchy is retained below. Selected formal verification (T023), full
 RV32I/EEI behavior (T041), UART RX (T042), routed FPGA timing/power (T043),
 physical authorized hardware validation and ASIC block evidence are mandatory.

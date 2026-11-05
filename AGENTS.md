@@ -45,3 +45,10 @@ stop-after-success rule. Use the actual America/Los_Angeles date for reports and
 daily_tasks participation history. Preserve legacy daily_claims/daily_exceptions
 as historical provenance; they no longer restrict how many tasks can run today.
 No CPU RTL is to be implemented before T002 owner review and T003 toolchain gates.
+
+Owner policy revision 2026-11-04 explicitly authorizes skipping T023 and continuing
+other work. Record `skipped` separately from completed/PASS, retain formal NOT RUN
+and all prior attempts/receipts. Only a task-specific hashed owner skip receipt
+may satisfy dependencies this way. No other task or review gate is waived.
+T024 and final review must disclose/acknowledge the missing formal evidence.
+Do not call `skip` without an explicit owner instruction for that exact task.

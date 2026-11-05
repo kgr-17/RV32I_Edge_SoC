@@ -1,0 +1,36 @@
+{
+  "status": "PASS_OWNER_SKIP_NOT_VERIFICATION_PASS",
+  "baseline": "ac4ba14a37a819279f9724b074e73f1b66840af7",
+  "validation_receipts": {
+    "evidence/workflow/T023-skip-2026-11-04-architecture.json": "02fb5756336117db77cef2abdc3e1f209574adcd26234a3e0d97b3de9ebdae94",
+    "evidence/workflow/T023-skip-2026-11-04-budgets.json": "084154ac7dfb134a008c9b21a035d047ff7ec06c10b2adb12d9d21d139cdebd6",
+    "evidence/workflow/T023-skip-2026-11-04-harness.json": "ae4e6e3eec80a9a3bf4f50cb73b72e39d9442f9d2f6fcf19e0640516f3753d56"
+  },
+  "owner_record": {
+    "evidence": "evidence/owner_reviews/T023-skip-2026-11-04.json",
+    "sha256": "2a1c5401a406118577761b51cf0e04fc04bac43deadc7220859902fd49ef2df1"
+  },
+  "command_receipt_sha256": "b90c2ba2821b0a5df69b7322f5a3b68bf2350881f8003f5fb6f8240c6b6c51fa",
+  "preserved_fields": [
+    "attempts",
+    "receipts",
+    "owner_reviews",
+    "daily_claims",
+    "daily_exceptions",
+    "daily_tasks"
+  ],
+  "original_not_run_receipt": "evidence/runs/T023/attempt-1-20261105T005724903976Z.json",
+  "source_sha256": {
+    "scripts/harness.py": "451407093ded94e04641e39a773779ba3948d5a7db9971f1c2690111af1c47f1",
+    "scripts/test_harness.py": "23f3f2494577e318b5acfcf65c206579d4b497e7d7d6e8403727f1c075f2b060",
+    "AGENTS.md": "2307088cc1752eb0b7671a7aec9df2fe1dd246da0900507deb16a6e5485097fb",
+    "docs/CODEX_LOOP.md": "785ff506f05347a507857a9bed054b418221e90d30f24e24e27215a41495766b",
+    "docs/VERIFICATION_PLAN.md": "a8e6116c78be65bdfffc46c119bcbe89a92dbe0b8b812833e13fcae9149a32a8"
+  },
+  "next": "T024",
+  "mandatory_completed": 23,
+  "owner_skipped": [
+    "T023"
+  ],
+  "formal_proof": false
+}

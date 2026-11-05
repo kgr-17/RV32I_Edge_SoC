@@ -50,11 +50,11 @@ first attempt with all19 regression targets passing:9,840 main retirements,
 52 pre-reset retirements and28 selected shared-reset windows checked. Added
 stress programs hit the five prior gaps (49/49 in the finite cross inventory),
 and the injected retention leak was rejected. See [stress scope](docs/STRESS_VERIFICATION.md).
-T023 selected formal verification is waiting for tools: actual sby/Yosys/SMT/Z3
-probes returned NOT RUN125, with zero formal tasks executed. Its reviewed draft
-and recovery steps are in [formal limits](docs/FORMAL_LIMITS.md). T023 remains
-active/failed with two attempts available;23/41 mandatory milestones are complete.
-No formal proof is inferred from simulation, and T024 cannot start yet.
+T023 selected formal verification was explicitly owner-skipped on November4;
+its original NOT RUN125 record and zero executed formal tasks remain preserved.
+See [formal limits and owner exception](docs/FORMAL_LIMITS.md). Progress is23
+completed mandatory milestones plus1 owner-skipped, out of41. T024 simulation
+DV review is next and will explicitly disclose missing formal proof.
 
 The existing `RV32I_Edge_SoC.xpr` is the active Vivado project. Its configured part
 is `xc7a35tcpg236-1`. The owner confirmed a Digilent Basys 3. Top module, RTL and

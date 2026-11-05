@@ -1040,7 +1040,7 @@
         ]
       ],
       "priority": 230,
-      "status": "failed",
+      "status": "skipped",
       "human_approval_required": false,
       "start_approval_required": false,
       "optional": false,
@@ -1054,7 +1054,7 @@
       "phase": "P3",
       "title": "Verification closure review with negative fault injection",
       "description": "Implement, verify and document this bounded milestone: Verification closure review with negative fault injection.",
-      "engineering_objective": "Directed/random/assertion/coverage evidence and negative fault injection are traceable; known failures block owner DV closure.",
+      "engineering_objective": "Simulation-directed/random/assertion/reset/coverage evidence and negative fault injection are traceable; known functional failures block owner DV closure. T023 owner skip and missing formal proof are explicitly reviewed.",
       "depends_on": [
         "T023",
         "T041"
@@ -1064,7 +1064,7 @@
         "docs/VERIFICATION_REPORT.md"
       ],
       "acceptance_criteria": [
-        "Directed/random/assertion/coverage evidence and negative fault injection are traceable; known failures block owner DV closure.",
+        "Simulation-directed/random/assertion/reset/coverage evidence and negative fault injection are traceable; known functional failures block owner DV closure. T023 owner skip and missing formal proof are explicitly reviewed.",
         "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
         "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
       ],
@@ -1728,7 +1728,7 @@
       "phase": "P5",
       "title": "Post-flow technical limitations and final human review",
       "description": "Implement, verify and document this bounded milestone: Post-flow technical limitations and final human review.",
-      "engineering_objective": "Every mandatory task is completed; reproducible final evidence covers CPU, SoC, FPGA hardware and ASIC; owner gives final approval.",
+      "engineering_objective": "Every mandatory task is completed or explicitly owner-skipped; reproducible final evidence covers CPU, SoC, FPGA hardware and ASIC. Final review discloses every owner skip and missing formal proof; owner gives final approval.",
       "depends_on": [
         "T001",
         "T002",
@@ -1776,7 +1776,7 @@
         "docs/FINAL_REVIEW_zh-CN.md"
       ],
       "acceptance_criteria": [
-        "Every mandatory task is completed; reproducible final evidence covers CPU, SoC, FPGA hardware and ASIC; owner gives final approval.",
+        "Every mandatory task is completed or explicitly owner-skipped; reproducible final evidence covers CPU, SoC, FPGA hardware and ASIC. Final review discloses every owner skip and missing formal proof; owner gives final approval.",
         "Every required command executes successfully with exact argv, output, exit status and tool versions saved.",
         "Daily English handoff and Simplified Chinese review distinguish verified behavior from remaining gaps."
       ],
@@ -2020,5 +2020,11 @@
       ]
     }
   ],
-  "final_review_task": "T040"
+  "final_review_task": "T040",
+  "owner_skip_policy": {
+    "T023": {
+      "evidence": "evidence/owner_reviews/T023-skip-2026-11-04.json",
+      "sha256": "2a1c5401a406118577761b51cf0e04fc04bac43deadc7220859902fd49ef2df1"
+    }
+  }
 }

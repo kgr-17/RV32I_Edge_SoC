@@ -99,7 +99,11 @@ not an autonomous process that runs itself in the background.
 ## State and approvals
 
 Task states: pending, in_progress, passed, failed, blocked, awaiting_review,
-completed. `passed` is reserved for recoverable pre-finalization states; ordinary
+completed, skipped. `skipped` is an owner-authorized scope exception, never PASS.
+Only task-specific BACKLOG.owner_skip_policy and matching immutable owner evidence
+can release that dependency. Current authorization covers T023 only; preserve its
+attempts/NOT RUN receipts. No review/execution gate can be skipped with this command.
+`passed` is reserved for recoverable pre-finalization states; ordinary
 success transitions to completed or awaiting_review. The authoritative atomic
 file is `.harness/state.json`; BACKLOG statuses are its repairable mirror. A crash
 between writes cannot promote a task based on stale backlog data. State updates
@@ -122,7 +126,9 @@ history and old receipts. It must not be used to evade verification limits. Thes
 flags are process rules; human review is still essential for semantic correctness.
 
 The final T040 owner gate depends directly on EVERY mandatory task. The project
-becomes completed only after all mandatory tasks and final review complete.
+becomes completed only after all mandatory tasks complete or have an explicit
+validated owner skip, and the final owner review completes with those skips
+disclosed. Owner review records retain acknowledged_skipped_tasks separately.
 Completed projects refuse new implementation, including optional work; no infinite
 in-process loop exists. Daily reporting/status may continue without implementation.
 

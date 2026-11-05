@@ -1,0 +1,41 @@
+{
+  "scope": "Owner-requested skip workflow validation, not RTL/formal proof",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/check_arch_spec.py"
+      ],
+      "started_utc": "2026-11-05T02:27:47.988492+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"scope\": \"Proposed document consistency ONLY\",\n  \"contract_sha256\": \"403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03\",\n  \"version\": \"0.2-proposed\",\n  \"ports\": 38,\n  \"instructions\": 40,\n  \"requirements\": 22,\n  \"errors\": [],\n  \"rtl_verification\": \"NOT RUN\",\n  \"owner_approval\": \"PENDING\"\n}\n",
+      "stderr": "",
+      "timeout_seconds": 300
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/test_arch_spec.py"
+      ],
+      "started_utc": "2026-11-05T02:27:48.224804+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_actual_proposal_is_consistent (__main__.ContractChecks) ... ok\ntest_bus_width_mismatch_rejected (__main__.ContractChecks) ... ok\ntest_direction_suffix_rejected (__main__.ContractChecks) ... ok\ntest_fault_code_collision_rejected (__main__.ContractChecks) ... ok\ntest_instruction_missing_or_duplicate (__main__.ContractChecks) ... ok\ntest_missing_required_field_rejected (__main__.ContractChecks) ... ok\ntest_nonexecutable_boot_rejected (__main__.ContractChecks) ... ok\ntest_overlapping_regions_rejected (__main__.ContractChecks) ... ok\ntest_port_documentation_drift_rejected (__main__.ContractChecks) ... ok\ntest_register_outside_region_rejected (__main__.ContractChecks) ... ok\ntest_reset_policy_ambiguity_rejected (__main__.ContractChecks) ... ok\ntest_response_zero_latency_rejected (__main__.ContractChecks) ... ok\ntest_self_approval_rejected (__main__.ContractChecks) ... ok\ntest_unknown_traceability_task_rejected (__main__.ContractChecks) ... ok\ntest_wrong_priority_rejected (__main__.ContractChecks) ... ok\ntest_wrong_target_part_rejected (__main__.ContractChecks) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 0.014s\n\nOK\n",
+      "timeout_seconds": 300
+    }
+  ],
+  "source_sha256": {
+    "scripts/harness.py": "451407093ded94e04641e39a773779ba3948d5a7db9971f1c2690111af1c47f1",
+    "scripts/test_harness.py": "23f3f2494577e318b5acfcf65c206579d4b497e7d7d6e8403727f1c075f2b060",
+    "docs/BACKLOG.json": "35647a4880a08fa4524744813d2b6169ac698f63324f11699f83048f644ab7e3",
+    "AGENTS.md": "2307088cc1752eb0b7671a7aec9df2fe1dd246da0900507deb16a6e5485097fb"
+  }
+}

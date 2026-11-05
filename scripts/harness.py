@@ -14,7 +14,7 @@ import tempfile
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
-STATES = {'pending', 'in_progress', 'passed', 'failed', 'blocked', 'awaiting_review', 'completed'}
+STATES = {'pending', 'in_progress', 'passed', 'failed', 'blocked', 'awaiting_review', 'completed', 'skipped'}
 REQUIRED = {'id', 'title', 'description', 'engineering_objective', 'depends_on',
             'required_files', 'acceptance_criteria', 'verification_commands',
             'priority', 'status', 'human_approval_required', 'optional'}
@@ -94,6 +94,39 @@ def status(state, task):
     return state['task_states'].get(task['id'], task['status'])
 
 
+def dependency_satisfied(state, task):
+    # load() validates every skipped task's policy and immutable owner receipt.
+    return status(state, task) in ('completed', 'skipped')
+
+
+def skip_authority(plan, state, task, acknowledgment=None):
+    tid=task['id']
+    policy=plan.get('owner_skip_policy', {}).get(tid)
+    if not isinstance(policy,dict) or set(policy)!={'evidence','sha256'}:
+        raise Stop('No task-specific owner skip policy: '+tid)
+    if tid==plan['final_review_task'] or task['human_approval_required'] or task.get('start_approval_required'):
+        raise Stop('Owner review/execution gates cannot be skipped by this policy')
+    path=inside(policy['evidence'])
+    if hashlib.sha256(path.read_bytes()).hexdigest()!=policy['sha256']:
+        raise Stop('Owner skip evidence changed: '+tid)
+    record=read(path)
+    if (record.get('schema_version')!=1 or record.get('action')!='skip' or record.get('task')!=tid
+            or not isinstance(record.get('owner_instruction'),str) or len(record['owner_instruction'].strip())<8
+            or not isinstance(record.get('reason'),str) or len(record['reason'].strip())<12
+            or record.get('verification_status')!='NOT RUN' or record.get('formal_proof_claim') is not False
+            or record.get('preserved_attempts')!=state['attempts'].get(tid,0)
+            or record.get('preserved_receipt')!=state['receipts'].get(tid)):
+        raise Stop('Invalid task-specific owner skip evidence: '+tid)
+    if dt.date.fromisoformat(record['date']).isoformat()!=record['date']:
+        raise Stop('Invalid owner skip date')
+    receipt=state['receipts'].get(tid)
+    if receipt and hashlib.sha256(inside(receipt).read_bytes()).hexdigest()!=record.get('preserved_receipt_sha256'):
+        raise Stop('Preserved verification receipt changed: '+tid)
+    if acknowledgment is not None and acknowledgment!={**policy,'date':record['date']}:
+        raise Stop('Owner skip acknowledgment does not match policy: '+tid)
+    return {**policy,'date':record['date']}
+
+
 def load():
     plan, state = read(inside('docs/BACKLOG.json')), read(inside('.harness/state.json'))
     if state.get('schema_version') not in (2, 3):
@@ -136,9 +169,16 @@ def load():
         walk(tid)
     if set(state['task_states']) - byid.keys() or set(state['task_states'].values()) - STATES:
         raise Stop('Unknown task or invalid runtime status')
+    skipped={t['id'] for t in tasks if status(state,t)=='skipped'}
+    if set(state.get('owner_skips',{}))!=skipped:
+        raise Stop('Skipped tasks require matching owner evidence')
+    for tid in skipped:
+        if not isinstance(state['owner_skips'][tid],dict):
+            raise Stop('Missing owner skip acknowledgment: '+tid)
+        skip_authority(plan,state,byid[tid],state['owner_skips'][tid])
     for task in tasks:
-        if status(state, task) in ('in_progress', 'passed', 'failed', 'awaiting_review', 'completed') and any(
-                status(state, byid[d]) != 'completed' for d in task['depends_on']):
+        if status(state, task) in ('in_progress', 'passed', 'failed', 'awaiting_review', 'completed', 'skipped') and any(
+                not dependency_satisfied(state, byid[d]) for d in task['depends_on']):
             raise Stop('Runtime task bypasses incomplete dependency: ' + task['id'])
     active = state['active']
     unfinished = [t['id'] for t in tasks if status(state, t) in ('in_progress', 'failed', 'passed')]
@@ -169,7 +209,7 @@ def load():
             mandatory - {final['id']}) <= set(final['depends_on']):
         raise Stop('Final owner review must depend on every mandatory task')
     if state['project_status'] == 'completed' and not all(
-            status(state, t) == 'completed' for t in tasks if not t['optional']):
+            dependency_satisfied(state, t) for t in tasks if not t['optional']):
         raise Stop('Project falsely marked completed')
     return plan, state
 
@@ -194,7 +234,7 @@ def candidates(plan, state):
     return sorted((t for t in plan['tasks'] if status(state, t) == 'pending'
                    and (not t['optional'] or t['id'] in state['enabled_optional_ids'])
                    and (not t.get('start_approval_required') or t['id'] in state.get('start_approvals', {}))
-                   and all(status(state, byid[d]) == 'completed' for d in t['depends_on'])),
+                   and all(dependency_satisfied(state, byid[d]) for d in t['depends_on'])),
                   key=lambda t: (t['priority'], t['id']))
 
 
@@ -322,6 +362,8 @@ def finish(tid, evidence):
             raise Stop('Unknown task: ' + tid)
         if status(state, task) in ('completed', 'awaiting_review'):
             return {'action': 'ALREADY_VERIFIED', 'task': tid, 'status': status(state, task)}
+        if status(state,task)=='skipped':
+            raise Stop('Owner-skipped task has no verification pass: '+tid)
         if state['active'] != tid:
             raise Stop('Only the active task can finish')
         date = today()
@@ -398,8 +440,23 @@ def owner_action(command, tid, confirmed):
                 raise Stop('Task is not awaiting owner review')
             state['task_states'][tid] = 'completed'
             state['owner_reviews'][tid] = {'date': today(), 'receipt': state['receipts'].get(tid)}
-            if all(status(state, t) == 'completed' for t in plan['tasks'] if not t['optional']):
+            waived=sorted(state.get('owner_skips',{})) if tid==plan['final_review_task'] else [
+                dep for dep in task['depends_on'] if state['task_states'].get(dep)=='skipped']
+            if waived:
+                state['owner_reviews'][tid]['acknowledged_skipped_tasks']=waived
+            if all(dependency_satisfied(state, t) for t in plan['tasks'] if not t['optional']):
                 state['project_status'] = 'completed'
+        elif command == 'skip':
+            if current=='skipped':
+                return {'action':'ALREADY_SKIPPED','task':tid,'verification_status':'NOT RUN'}
+            if current not in ('in_progress','failed','blocked') or state['active'] not in (None,tid):
+                raise Stop('Skip only the active/blocked task after explicit owner instruction')
+            acknowledgment=skip_authority(plan,state,task)
+            state.setdefault('owner_skips',{})[tid]=acknowledgment
+            state['task_states'][tid]='skipped'
+            state['active']=None
+            state['blocked_reasons'].pop(tid,None)
+            record_task_day(state,today(),tid)
         elif command == 'reopen':
             if current != 'blocked':
                 raise Stop('Only blocked tasks can be reopened')
@@ -410,10 +467,12 @@ def owner_action(command, tid, confirmed):
             if not task.get('start_approval_required'):
                 raise Stop('Task does not require execution authorization')
             state.setdefault('start_approvals', {})[tid] = {'date': today()}
-        else:
+        elif command == 'enable':
             if not task['optional']:
                 raise Stop('Only optional tasks can be enabled')
             state['enabled_optional_ids'] = sorted(set(state['enabled_optional_ids'] + [tid]))
+        else:
+            raise Stop('Unknown owner action')
         save(plan, state)
         return {'action': command.upper(), 'task': tid}
 
@@ -447,7 +506,7 @@ def main():
     p = sub.add_parser('begin'); p.add_argument('task_id')
     p = sub.add_parser('finish'); p.add_argument('task_id'); p.add_argument('--evidence', required=True)
     p = sub.add_parser('block'); p.add_argument('task_id'); p.add_argument('--reason', required=True)
-    for name in ('approve', 'reopen', 'enable', 'authorize'):
+    for name in ('approve', 'reopen', 'enable', 'authorize', 'skip'):
         p = sub.add_parser(name); p.add_argument('task_id'); p.add_argument('--confirm-owner-review', action='store_true')
     args = parser.parse_args()
     try:
@@ -455,7 +514,7 @@ def main():
             result = begin(args.task_id)
         elif args.command == 'finish':
             result = finish(args.task_id, args.evidence)
-        elif args.command in ('approve', 'reopen', 'enable', 'authorize'):
+        elif args.command in ('approve', 'reopen', 'enable', 'authorize', 'skip'):
             result = owner_action(args.command, args.task_id, args.confirm_owner_review)
         elif args.command == 'daily':
             result = daily(args.supervised)
@@ -475,6 +534,7 @@ def main():
             plan, state = load()
             ready = candidates(plan, state)
             result = {'valid': True, 'tasks': len(plan['tasks']), 'project_status': state['project_status']}
+            result['owner_skipped']=[t['id'] for t in plan['tasks'] if status(state,t)=='skipped']
             result['daily_exception'] = state.get('daily_exceptions', {}).get(today())
             result.update(tasks_today=task_days(state).get(today(), []), daily_task_limit=None)
             result['execution_approval_pending'] = [t['id'] for t in plan['tasks']

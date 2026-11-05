@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "-B",
+    "scripts/harness.py",
+    "skip",
+    "T023",
+    "--confirm-owner-review"
+  ],
+  "started_utc": "2026-11-05T02:28:35.921619+00:00",
+  "cwd": "C:\\RV32I_Edge_SoC",
+  "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+  "status": "PASS",
+  "exit_code": 0,
+  "stdout": "{\n  \"action\": \"SKIP\",\n  \"task\": \"T023\"\n}\n",
+  "stderr": "",
+  "timeout_seconds": 300
+}

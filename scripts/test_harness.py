@@ -92,6 +92,87 @@ class HarnessTests(unittest.TestCase):
             h.begin('B')
         self.assertEqual(h.candidates(*h.load())[0]['id'], 'A')
 
+    def skip_policy(self,tid='A'):
+        plan,state=h.load()
+        record={'schema_version':1,'date':h.today(),'task':tid,'action':'skip',
+            'owner_instruction':'Skip this task and continue other work.',
+            'reason':'Explicit owner acceptance of missing selected verification.',
+            'verification_status':'NOT RUN','formal_proof_claim':False,
+            'preserved_attempts':state['attempts'].get(tid,0),
+            'preserved_receipt':state['receipts'].get(tid)}
+        if record['preserved_receipt']:
+            record['preserved_receipt_sha256']=hashlib.sha256(h.inside(record['preserved_receipt']).read_bytes()).hexdigest()
+        path='evidence/owner_skip_'+tid+'.json';h.atomic(h.inside(path),record)
+        policy={'evidence':path,'sha256':hashlib.sha256(h.inside(path).read_bytes()).hexdigest()}
+        plan.setdefault('owner_skip_policy',{})[tid]=policy
+        h.atomic(h.inside('docs/BACKLOG.json'),plan)
+        return path
+
+    def test_owner_skip_preserves_failed_attempt_and_unblocks_dependency_without_pass(self):
+        self.tasks[0]['verification_commands']=[['{python}','-c','raise SystemExit(125)']]
+        self.persist_plan();h.begin('A')
+        with self.assertRaises(h.Stop):self.finish('A')
+        _,before=h.load();receipt=before['receipts']['A'];raw=h.inside(receipt).read_bytes()
+        self.skip_policy();h.owner_action('skip','A',True)
+        plan,state=h.load()
+        self.assertEqual(state['task_states']['A'],'skipped');self.assertIsNone(state['active'])
+        self.assertEqual(state['attempts']['A'],1);self.assertEqual(h.inside(receipt).read_bytes(),raw)
+        self.assertEqual(h.candidates(plan,state)[0]['id'],'B')
+        with self.assertRaises(h.Stop):self.finish('A')
+        self.assertEqual(h.owner_action('skip','A',True)['action'],'ALREADY_SKIPPED')
+
+    def test_skip_requires_confirmation_and_task_specific_policy(self):
+        h.begin('A')
+        with self.assertRaises(h.Stop):h.owner_action('skip','A',False)
+        with self.assertRaises(h.Stop):h.owner_action('skip','A',True)
+        self.assertEqual(h.load()[1]['active'],'A')
+
+    def test_forged_skipped_status_without_owner_record_rejected(self):
+        self.state['task_states']['A']='skipped';self.state['active']=None
+        h.atomic(h.inside('.harness/state.json'),self.state)
+        with self.assertRaises(h.Stop):h.load()
+
+    def test_changed_skip_evidence_rejected(self):
+        h.begin('A');path=self.skip_policy();h.owner_action('skip','A',True)
+        record=h.read(h.inside(path));record['task']='B';h.atomic(h.inside(path),record)
+        with self.assertRaises(h.Stop):h.load()
+
+    def test_skip_cannot_erase_attempts_or_alter_original_failure_receipt(self):
+        self.tasks[0]['verification_commands']=[['{python}','-c','raise SystemExit(125)']]
+        self.persist_plan();h.begin('A')
+        with self.assertRaises(h.Stop):self.finish('A')
+        self.skip_policy();h.owner_action('skip','A',True)
+        _,state=h.load();state['attempts']['A']=0;h.atomic(h.inside('.harness/state.json'),state)
+        with self.assertRaises(h.Stop):h.load()
+        state['attempts']['A']=1;h.atomic(h.inside('.harness/state.json'),state)
+        receipt=h.inside(state['receipts']['A']);receipt.write_bytes(receipt.read_bytes()+b'\n')
+        with self.assertRaises(h.Stop):h.load()
+
+    def test_null_skip_acknowledgment_rejected(self):
+        h.begin('A');self.skip_policy();h.owner_action('skip','A',True)
+        _,state=h.load();state['owner_skips']['A']=None;h.atomic(h.inside('.harness/state.json'),state)
+        with self.assertRaises(h.Stop):h.load()
+
+    def test_skip_cannot_target_another_active_task_or_review_gate(self):
+        h.begin('A');self.skip_policy('B')
+        with self.assertRaises(h.Stop):h.owner_action('skip','B',True)
+        self.assertEqual(h.load()[1]['active'],'A')
+        self.complete_a();h.begin('B');self.skip_policy('B')
+        with self.assertRaises(h.Stop):h.owner_action('skip','B',True)
+
+    def test_valid_skip_still_requires_successor_and_final_owner_reviews(self):
+        h.begin('A');self.skip_policy();h.owner_action('skip','A',True);self.commit()
+        h.begin('B');self.finish('B')
+        self.assertEqual(h.load()[1]['task_states']['B'],'awaiting_review')
+        self.assertEqual(h.candidates(*h.load()),[])
+        h.owner_action('approve','B',True);self.commit();h.begin('F');self.finish('F')
+        self.assertEqual(h.load()[1]['owner_reviews']['B']['acknowledged_skipped_tasks'],['A'])
+        self.assertEqual(h.load()[1]['project_status'],'in_progress')
+        h.owner_action('approve','F',True)
+        self.assertEqual(h.load()[1]['project_status'],'completed')
+        self.assertEqual(h.load()[1]['task_states']['A'],'skipped')
+        self.assertEqual(h.load()[1]['owner_reviews']['F']['acknowledged_skipped_tasks'],['A'])
+
     def test_priority_selection(self):
         self.tasks[1]['depends_on'] = []
         self.tasks[1]['priority'] = 0

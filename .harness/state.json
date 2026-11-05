@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "project_status": "in_progress",
-  "active": "T023",
+  "active": null,
   "daily_claims": {
     "2026-10-14": "T001",
     "2026-10-16": "T002",
@@ -31,7 +31,7 @@
     "T020": "completed",
     "T021": "completed",
     "T022": "completed",
-    "T023": "failed",
+    "T023": "skipped",
     "T024": "pending",
     "T025": "pending",
     "T026": "pending",
@@ -184,5 +184,12 @@
       "T022",
       "T023"
     ]
+  },
+  "owner_skips": {
+    "T023": {
+      "evidence": "evidence/owner_reviews/T023-skip-2026-11-04.json",
+      "sha256": "2a1c5401a406118577761b51cf0e04fc04bac43deadc7220859902fd49ef2df1",
+      "date": "2026-11-04"
+    }
   }
 }
