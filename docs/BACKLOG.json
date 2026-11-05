@@ -1101,7 +1101,7 @@
         ]
       ],
       "priority": 240,
-      "status": "awaiting_review",
+      "status": "completed",
       "human_approval_required": true,
       "start_approval_required": false,
       "optional": false,
