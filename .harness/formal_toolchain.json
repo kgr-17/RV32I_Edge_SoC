@@ -1,0 +1,15 @@
+{
+  "status": "NOT_CONFIGURED_TOOLS_NOT_FOUND",
+  "commands": {
+    "sby": null,
+    "yosys": null,
+    "yosys-smtbmc": null,
+    "z3": null
+  },
+  "version_contains": {
+    "sby": null,
+    "yosys": null,
+    "z3": null
+  },
+  "note": "Commands may be explicit argv lists after installed tools are identified. No download, installation or global PATH change is performed. Actual frontend/SMT compatibility remains NOT RUN."
+}

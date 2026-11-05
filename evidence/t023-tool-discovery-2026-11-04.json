@@ -1,0 +1,32 @@
+{
+  "path_discovery": {
+    "yosys": null,
+    "yosys-smtbmc": null,
+    "sby": null,
+    "z3": null,
+    "boolector": null,
+    "yices-smt2": null,
+    "cvc5": null
+  },
+  "targeted_roots": [
+    "C:\\msys64\\usr\\bin",
+    "C:\\msys64\\mingw64\\bin",
+    "C:\\msys64\\ucrt64\\bin",
+    "C:\\msys64\\clang64\\bin",
+    "C:\\oss-cad-suite\\bin",
+    "C:\\tools\\oss-cad-suite\\bin"
+  ],
+  "existing_tools": [],
+  "note": "Read-only PATH and targeted executable discovery. One shallow C:/ directory-name inventory identified MSYS2; no contents inside unrelated directories/files were read. No package manager, installation, network or global PATH changes.",
+  "additional_targeted_roots": [
+    "C:\\msys64\\usr\\local\\bin",
+    "C:\\msys64\\opt\\oss-cad-suite\\bin"
+  ],
+  "additional_existing_tools": [],
+  "python_formal_modules": {
+    "sby": false,
+    "pyosys": false,
+    "yowasp_yosys": false,
+    "z3": false
+  }
+}

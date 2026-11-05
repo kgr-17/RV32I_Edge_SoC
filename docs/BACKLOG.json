@@ -1040,7 +1040,7 @@
         ]
       ],
       "priority": 230,
-      "status": "pending",
+      "status": "failed",
       "human_approval_required": false,
       "start_approval_required": false,
       "optional": false,

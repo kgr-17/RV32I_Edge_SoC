@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "project_status": "in_progress",
-  "active": null,
+  "active": "T023",
   "daily_claims": {
     "2026-10-14": "T001",
     "2026-10-16": "T002",
@@ -31,7 +31,7 @@
     "T020": "completed",
     "T021": "completed",
     "T022": "completed",
-    "T023": "pending",
+    "T023": "failed",
     "T024": "pending",
     "T025": "pending",
     "T026": "pending",
@@ -78,7 +78,8 @@
     "T019": 3,
     "T020": 2,
     "T021": 2,
-    "T022": 1
+    "T022": 1,
+    "T023": 1
   },
   "blocked_reasons": {},
   "receipts": {
@@ -104,7 +105,8 @@
     "T019": "evidence/runs/T019/attempt-3-20261104T230832096019Z.json",
     "T020": "evidence/runs/T020/attempt-2-20261104T234039076194Z.json",
     "T021": "evidence/runs/T021/attempt-2-20261105T001339775353Z.json",
-    "T022": "evidence/runs/T022/attempt-1-20261105T003605460319Z.json"
+    "T022": "evidence/runs/T022/attempt-1-20261105T003605460319Z.json",
+    "T023": "evidence/runs/T023/attempt-1-20261105T005724903976Z.json"
   },
   "owner_reviews": {
     "T002": {
@@ -179,7 +181,8 @@
       "T019",
       "T020",
       "T021",
-      "T022"
+      "T022",
+      "T023"
     ]
   }
 }

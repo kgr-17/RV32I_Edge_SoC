@@ -922,5 +922,34 @@
         "stress"
       ]
     ]
+  },
+  "formal-smoke": {
+    "inputs": [
+      "formal/core_properties.sby",
+      "formal/alu_properties.sv",
+      "formal/forwarding_properties.sv",
+      "formal/stage_properties.sv",
+      "formal/tool_launcher.py",
+      ".harness/formal_toolchain.json",
+      "scripts/formal_checks.py",
+      "scripts/test_formal_checks.py",
+      "rtl/core/rv32_pkg.sv",
+      "rtl/core/alu.sv",
+      "rtl/core/forwarding_unit.sv",
+      "rtl/core/pipeline_core.sv"
+    ],
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "scripts/test_formal_checks.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/formal_checks.py"
+      ]
+    ],
+    "timeout_seconds": 600
   }
 }

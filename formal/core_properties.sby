@@ -1,0 +1,36 @@
+[tasks]
+alu
+forward
+stage
+cover_stage
+negative
+
+[options]
+mode bmc
+depth 12
+cover_stage: mode cover
+negative: depth 2
+
+[engines]
+smtbmc z3
+
+[script]
+alu: read -formal -sv rv32_pkg.sv alu.sv alu_properties.sv
+alu: prep -top formal_alu
+negative: read -formal -D FORMAL_NEGATIVE -sv rv32_pkg.sv alu.sv alu_properties.sv
+negative: prep -top formal_alu
+forward: read -formal -sv forwarding_unit.sv forwarding_properties.sv
+forward: prep -top formal_forward
+stage: read -formal -sv pipeline_core.sv stage_properties.sv
+stage: prep -top formal_stage
+cover_stage: read -formal -sv pipeline_core.sv stage_properties.sv
+cover_stage: prep -top formal_stage
+
+[files]
+../rtl/core/rv32_pkg.sv
+../rtl/core/alu.sv
+../rtl/core/forwarding_unit.sv
+../rtl/core/pipeline_core.sv
+alu_properties.sv
+forwarding_properties.sv
+stage_properties.sv

@@ -1,0 +1,54 @@
+{
+  "status": "BLOCKED_BY_UNAVAILABLE_TOOLS_NOT_A_PROOF",
+  "formal_receipt": {
+    "path": "evidence/toolchain_runs/formal-smoke-20261105T010204187410Z.json",
+    "sha256": "cbc4596623e492ee085c1e603cf0e449ec24727e1ee749be7618dfb02c006939"
+  },
+  "task_receipt": {
+    "path": "evidence/runs/T023/attempt-1-20261105T005724903976Z.json",
+    "sha256": "b1b2facc5e6a3e3951d72058742949463ec80ed52b8a143f9cf9fa4814ddabce"
+  },
+  "lint_receipt": {
+    "path": "evidence/toolchain_runs/lint-20261105T005725293076Z.json",
+    "sha256": "82c5c4b397f9f5af9a10942c067081dcce13a0f28edfad8edb8550e9665bed4d"
+  },
+  "discovery_receipt": {
+    "path": "evidence/t023-tool-discovery-2026-11-04.json",
+    "sha256": "69f2864f1733081c1f139d318f39f3f67b4d8b6816f0e610eacae87de96dc4dc"
+  },
+  "source_sha256": {
+    "formal/core_properties.sby": "13997521ea7277904f07213f0b84f4e58d2d2ee7ceb9fdad8d92c76d545a9eda",
+    "formal/alu_properties.sv": "82c542dfc3c01d22b70b1ab4c90d4b608590235c8518dfa66e896239a863e8f6",
+    "formal/forwarding_properties.sv": "7f55f029728bead72c85476cf478eb6924871518597344545ffc9adddab8c204",
+    "formal/stage_properties.sv": "946de8f0ced1a5f6283de1afcc471bf02c2a093d4ee5325cc9b6808c4b6517bd",
+    "rtl/core/rv32_pkg.sv": "a64532c6e1a92232680b4cff5871aa98cdf3694b348e700fc4aa36d7ac948069",
+    "rtl/core/alu.sv": "bff51163e8c202d806a9a3343d82df0d46f4ae34717f48711595a91b72a93b99",
+    "rtl/core/forwarding_unit.sv": "443c38de8fe17239e8e19d30a52250f2741b90f6e84813e5e4165c360cf5dd99",
+    "rtl/core/pipeline_core.sv": "9bbf1456055d422b17dae7c8875eb4597aff598f829e181ec50dacda6756a560",
+    ".harness/formal_toolchain.json": "047b8264a9087a76271753b8bde56c8ccfaa15ff4f8ea1907f2b85897523c324",
+    ".harness/checks.json": "d001d3193d502bbc6a236c5a86a90ebbccd19357eb89bc0744ddaf613bbb5d04",
+    "docs/ARCH_CONTRACT.json": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03",
+    "formal/tool_launcher.py": "c231e5ba53f7f73bef330fea55eaaeb08c2af772d2ff010bb5be4365535dc90b",
+    "scripts/formal_checks.py": "eff0d16504d3464096ca4d34d559ca7d57e5613bb37657df68467218042bfc8e",
+    "scripts/test_formal_checks.py": "cd9dcbdba3455172d2727f4ebeaa9227df290a4a1f53ba9fb5f77e6c3f1d4c90",
+    "scripts/rtl_checks.py": "b5a7078c247a6500dac6dce3029cdb88df6e9f058aba3c8146b065122f3f5be3",
+    "scripts/tool_runner.py": "2ffc6d2c8d4be6b21f5b836a033b6971f44f9172d22b18378ade58498ec4d5f7",
+    "scripts/tool_child.py": "8a61d7f13507a0d41b838aef00b1488e9ecc0b535ff9a08caca729b0551b62a8"
+  },
+  "preservation_receipt": "evidence/t023-preservation-2026-11-04.json",
+  "active": "T023",
+  "task_state": "failed",
+  "attempts": 1,
+  "remaining_finish_attempts": 2,
+  "mandatory_completed": 23,
+  "formal_tasks_executed": 0,
+  "owner_action": "Provide actual installed commands/paths or explicitly authorize project-local dependency download/installation. No unchanged retries or self-reopen.",
+  "resume": [
+    "Read latest technical handoff and required contract files",
+    "python -B scripts/harness.py daily --supervised",
+    "git status --short --branch",
+    "python -B scripts/harness.py begin T023",
+    "Identify actual tools/version pins and frontend/SMT compatibility; no automatic installation",
+    "python -B scripts/harness.py finish T023 --evidence evidence/daily/T023.md"
+  ]
+}
