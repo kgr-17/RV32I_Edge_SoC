@@ -1,0 +1,17 @@
+{
+  "scope": "Read-only vendor parameter research, not verification evidence. Initial list_param pattern syntax errored despite native exit0; corrected help/list probes did not identify a solution. No parameters or installed settings changed by these queries.",
+  "scripts": {
+    ".tmp/t025_board_params.tcl": {
+      "sha256": "8dc739b45159d7ad20ff3c07adb562e02dcaeed3a8265d0b3384e69d855a492b",
+      "content": "list_param *board*\nexit 0\n"
+    },
+    ".tmp/t025_board_param_help.tcl": {
+      "sha256": "7395dcdc3914153458b24d0d17cef11ebc810fe7a345c19feaaf2b5b95e1662d",
+      "content": "list_param -help\nexit 0\n"
+    },
+    ".tmp/t025_board_param_list.tcl": {
+      "sha256": "30099c2cfd7d94d2e3e0beefced5523266b0b641c9970d41bc883bc24bc038b6",
+      "content": "foreach param [lsort [list_param]] {\n    if {[string match -nocase *board* $param]} {\n        puts \"BOARD_PARAMETER $param = [get_param $param]\"\n    }\n}\nexit 0\n"
+    }
+  }
+}

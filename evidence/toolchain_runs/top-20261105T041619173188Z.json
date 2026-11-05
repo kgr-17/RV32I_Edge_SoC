@@ -1,0 +1,178 @@
+{
+  "profile": "top",
+  "status": "FAIL",
+  "started_utc": "20261105T041619173188Z",
+  "base_commit": "9fe08553391b670cdeb13bba2f3712aa4be54d24",
+  "scope": "Basys3 diagnostic shell and selected board constraints only",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T025\\top-20261105T041619173188Z\\versions",
+      "started_utc": "2026-11-05T04:16:19.287409+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "git version 2.48.1.windows.1\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.109
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T025\\top-20261105T041619173188Z\\versions\\xvlog",
+      "started_utc": "2026-11-05T04:16:19.409587+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.593
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T025\\top-20261105T041619173188Z\\versions\\xelab",
+      "started_utc": "2026-11-05T04:16:20.018219+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.578
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T025\\top-20261105T041619173188Z\\versions\\xsim",
+      "started_utc": "2026-11-05T04:16:20.616604+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2025 Xilinx, Inc. All Rights Reserved.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.5
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--sv",
+        "C:\\RV32I_Edge_SoC\\fpga\\basys3\\top.sv",
+        "C:\\RV32I_Edge_SoC\\dv\\board\\tb_board_io.sv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T025\\top-20261105T041619173188Z\\simulation",
+      "started_utc": "2026-11-05T04:16:21.130590+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 1,
+      "status": "FAIL",
+      "stdout": "INFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/fpga/basys3/top.sv\" into library work\nINFO: [VRFC 10-311] analyzing module basys3_top\nERROR: [VRFC 10-1103] net type must be explicitly specified for 'clk' when default_nettype is none [C:/RV32I_Edge_SoC/fpga/basys3/top.sv:5]\nERROR: [VRFC 10-1103] net type must be explicitly specified for 'btnC' when default_nettype is none [C:/RV32I_Edge_SoC/fpga/basys3/top.sv:6]\nERROR: [VRFC 10-1103] net type must be explicitly specified for 'sw' when default_nettype is none [C:/RV32I_Edge_SoC/fpga/basys3/top.sv:7]\nERROR: [VRFC 10-1103] net type must be explicitly specified for 'RsRx' when default_nettype is none [C:/RV32I_Edge_SoC/fpga/basys3/top.sv:8]\nERROR: [VRFC 10-8530] module 'basys3_top' is ignored due to previous errors [C:/RV32I_Edge_SoC/fpga/basys3/top.sv:4]\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.672
+    }
+  ],
+  "checks": [
+    {
+      "name": "Exact selected documented pin/clock map and integrated project",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned Python version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned tzdata version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned Git version",
+      "status": "PASS",
+      "command_index": 0
+    },
+    {
+      "name": "Pinned xvlog version",
+      "status": "PASS",
+      "command_index": 1
+    },
+    {
+      "name": "Pinned xelab version",
+      "status": "PASS",
+      "command_index": 2
+    },
+    {
+      "name": "Pinned xsim version",
+      "status": "PASS",
+      "command_index": 3
+    },
+    {
+      "name": "Board shell compile",
+      "status": "FAIL",
+      "command_index": 4
+    }
+  ],
+  "simulations": [],
+  "excluded": [
+    "CPU/SoC execution",
+    "UART controller",
+    "metastability proof",
+    "complete CDC analysis",
+    "formal",
+    "routed timing",
+    "physical FPGA",
+    "ASIC"
+  ],
+  "source_sha256": {
+    "fpga/basys3/top.sv": "3e05df367c78a0aee5bae6fc7d7960b44f4246d75678462d9be4c418de1c9dd2",
+    "fpga/basys3/basys3.xdc": "13152309c5afd879353cf45a1f8e860f4adb24c3e0258d979c21d69e39613584",
+    "fpga/basys3/integrate.tcl": "8544a90f7ea5d9af6df9afcf972b4655bb1a63a9edf388e17f4fe9f8ca1d64bd",
+    "config/basys3_pins.json": "31c5672a77ba6f128cda7911e1f3a3fcfd063b981b2e343c3f9d31f783367980",
+    "config/rtl_checks.json": "e7cd0911313641ae27aa186b3c5727dfd5f5124f3ddd60e2aeb935bb0c649ffc",
+    "scripts/board_checks.py": "0044c2d8f3633e2bc79e6c0adaaa8f90a70a1797a787dba09d9c2896050b4e5a",
+    "scripts/test_board_checks.py": "be28d6bb273278b2eb7c0b30ae3e618d6d459edbc1773e36ffad660c0b1c36d3",
+    "scripts/vivado_board_check.tcl": "0632916e4e4ba880b69cbbbaf7b2c2a21f692ba2ba98da02dd4840d8f65ab1d6",
+    "scripts/rtl_checks.py": "b5a7078c247a6500dac6dce3029cdb88df6e9f058aba3c8146b065122f3f5be3",
+    "scripts/tool_runner.py": "2ffc6d2c8d4be6b21f5b836a033b6971f44f9172d22b18378ade58498ec4d5f7",
+    "scripts/tool_child.py": "8a61d7f13507a0d41b838aef00b1488e9ecc0b535ff9a08caca729b0551b62a8",
+    "dv/board/board_model.py": "bcf9d332b485d9928d36e86e2d6a944ac449a8ae2066afc36e72885877d32da8",
+    "dv/board/tb_board_io.sv": "fefe015e22ce3c22b93f56ed9fcde82e9816b8a1543fb444e8fdaa5d24c9f19d",
+    "RV32I_Edge_SoC.xpr": "6e4cd72bf847da3e30786dd5b716a20a589e890be3c2a6a7d580f7c971f02406",
+    "docs/ARCH_CONTRACT.json": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03"
+  },
+  "pins": {
+    "schema_version": 1,
+    "python_version": "3.9.13",
+    "git_version": "2.48.1.windows.1",
+    "tzdata_version": "2026.2",
+    "vivado_version": "2025.2",
+    "vivado_sw_build": "6299465"
+  },
+  "error": "Board shell compile",
+  "finished_utc": "2026-11-05T04:16:21.812199+00:00"
+}

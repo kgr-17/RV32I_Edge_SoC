@@ -1,0 +1,174 @@
+{
+  "board": "Digilent Basys 3",
+  "part": "xc7a35tcpg236-1",
+  "accessed_la_date": "2026-11-04",
+  "manual_revision": "2019-07-10, applies to rev C",
+  "master_xdc_revision_note": "upstream header says rev B; selected pins independently agree with rev C manual figures 6 and 16 and section 4",
+  "sources": [
+    {
+      "url": "https://digilent.com/reference/_media/reference/programmable-logic/basys-3/basys3_rm.pdf",
+      "sections": "4/5, printed p7 and figure16 printed p15",
+      "scope": "100MHz/W5, USB UART direction, active-high button/LED and selected pin facts"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Digilent/digilent-xdc/master/Basys-3-Master.xdc",
+      "sections": "clock, switches, LEDs, center button, USB-RS232 and config voltage",
+      "scope": "selected factual pin cross-check only; no downloaded IP or complete constraints file"
+    }
+  ],
+  "io_standard": "LVCMOS33",
+  "clock": {
+    "port": "clk",
+    "period_ns": 10,
+    "waveform_ns": [
+      0,
+      5
+    ]
+  },
+  "pins": {
+    "clk": [
+      "W5",
+      "IN"
+    ],
+    "btnC": [
+      "U18",
+      "IN"
+    ],
+    "RsRx": [
+      "B18",
+      "IN"
+    ],
+    "RsTx": [
+      "A18",
+      "OUT"
+    ],
+    "sw[0]": [
+      "V17",
+      "IN"
+    ],
+    "sw[1]": [
+      "V16",
+      "IN"
+    ],
+    "sw[2]": [
+      "W16",
+      "IN"
+    ],
+    "sw[3]": [
+      "W17",
+      "IN"
+    ],
+    "sw[4]": [
+      "W15",
+      "IN"
+    ],
+    "sw[5]": [
+      "V15",
+      "IN"
+    ],
+    "sw[6]": [
+      "W14",
+      "IN"
+    ],
+    "sw[7]": [
+      "W13",
+      "IN"
+    ],
+    "sw[8]": [
+      "V2",
+      "IN"
+    ],
+    "sw[9]": [
+      "T3",
+      "IN"
+    ],
+    "sw[10]": [
+      "T2",
+      "IN"
+    ],
+    "sw[11]": [
+      "R3",
+      "IN"
+    ],
+    "sw[12]": [
+      "W2",
+      "IN"
+    ],
+    "sw[13]": [
+      "U1",
+      "IN"
+    ],
+    "sw[14]": [
+      "T1",
+      "IN"
+    ],
+    "sw[15]": [
+      "R2",
+      "IN"
+    ],
+    "led[0]": [
+      "U16",
+      "OUT"
+    ],
+    "led[1]": [
+      "E19",
+      "OUT"
+    ],
+    "led[2]": [
+      "U19",
+      "OUT"
+    ],
+    "led[3]": [
+      "V19",
+      "OUT"
+    ],
+    "led[4]": [
+      "W18",
+      "OUT"
+    ],
+    "led[5]": [
+      "U15",
+      "OUT"
+    ],
+    "led[6]": [
+      "U14",
+      "OUT"
+    ],
+    "led[7]": [
+      "V14",
+      "OUT"
+    ],
+    "led[8]": [
+      "V13",
+      "OUT"
+    ],
+    "led[9]": [
+      "V3",
+      "OUT"
+    ],
+    "led[10]": [
+      "W3",
+      "OUT"
+    ],
+    "led[11]": [
+      "U3",
+      "OUT"
+    ],
+    "led[12]": [
+      "P3",
+      "OUT"
+    ],
+    "led[13]": [
+      "N3",
+      "OUT"
+    ],
+    "led[14]": [
+      "P1",
+      "OUT"
+    ],
+    "led[15]": [
+      "L1",
+      "OUT"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "changed": {
+    "RV32I_Edge_SoC.cache/wt/project.wpc": {
+      "original_sha256": "868826f37ffb4c6f5b92e253c7d473f0effa236e823a5923a3691677b870cadb",
+      "current_sha256": "78d78aeaf24e0de70c17d8cca0acc7813488942d4218b08414d713db6e8d5a4d"
+    },
+    "RV32I_Edge_SoC.xpr": {
+      "original_sha256": "c94b0e09ce2ea5e694f50e073d2ff9ae86f1908d4f80e5613fc0a432d6539cc4",
+      "current_sha256": "9dd90f19e5fa7d99887786a4b544aa69ce40acfbb45be966b06ad3c6c745280a"
+    }
+  },
+  "reason": "XPR selected diagnostic shell/XDC/top and canonical LF; Vivado automatically updated project source-management cache when integrating. No user RTL or constraints existed in original project.",
+  "recovery_copies": [
+    ".baseline/T025-2026-11-04/project-before.xpr",
+    ".baseline/T025-2026-11-04/project-before.wpc",
+    ".baseline/T025-2026-11-04/project-after.wpc"
+  ],
+  "original_archive": ".baseline/20261015T051119Z/original.zip",
+  "unmodified_original_files": 21
+}

@@ -1,0 +1,14 @@
+{
+  "scope": "Three preparation records remain strict FAIL on unrelated installed board-catalog warnings despite actual command exit0/source integration; no task finish attempt consumed yet. Process-only board flag and empty-preset normalization did not remove warnings; both experiments removed. No message suppression or installed tool changes. Actual test-top checks selected part, project structure, simulated shell and non-project synthesized pin/clock/DRC properties independently. Catalog warning remains explicitly unresolved.",
+  "archive_sha256": "909e47936026e9260d443b6a5b5b689cddbbf09cbd8d46479e5a0e2893a5c29f",
+  "files": {
+    "1/integrate.tcl": "8544a90f7ea5d9af6df9afcf972b4655bb1a63a9edf388e17f4fe9f8ca1d64bd",
+    "2/integrate.tcl": "1dd449a0e4263395f00d3133a8ce5838bb0c50d9556cddb7fb9c95a4c9580f80",
+    "3/integrate.tcl": "3294e3fbf6e773dc7aabe26b2f78ec622b5e035573c3a1de5f3ff5ad58582ba2"
+  },
+  "receipts": [
+    "evidence/toolchain_runs/top-integration-20261105T040646609236Z.json",
+    "evidence/toolchain_runs/top-integration-20261105T040733824516Z.json",
+    "evidence/toolchain_runs/top-integration-20261105T040942536602Z.json"
+  ]
+}

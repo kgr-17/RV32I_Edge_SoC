@@ -707,6 +707,13 @@
         "dv/lint/pipeline_cpu_lint_top.sv"
       ],
       "timeout_seconds": 120
+    },
+    {
+      "name": "basys3_board_shell",
+      "top": "basys3_top",
+      "sources": [
+        "fpga/basys3/top.sv"
+      ]
     }
   ],
   "designs": [

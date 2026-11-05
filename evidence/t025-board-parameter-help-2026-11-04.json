@@ -1,0 +1,24 @@
+{
+  "argv": [
+    "cmd.exe",
+    "/d",
+    "/c",
+    "C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat",
+    "-mode",
+    "batch",
+    "-nolog",
+    "-nojournal",
+    "-notrace",
+    "-source",
+    "C:\\RV32I_Edge_SoC\\.tmp\\t025_board_param_help.tcl"
+  ],
+  "cwd": "C:\\RV32I_Edge_SoC\\build\\T025\\board-parameter-help",
+  "started_utc": "2026-11-05T04:08:50.209025+00:00",
+  "timeout_seconds": 30,
+  "exit_code": 0,
+  "status": "PASS",
+  "stdout": "\n****** Vivado v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Wed Nov  4 20:08:50 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource {C:\\RV32I_Edge_SoC\\.tmp\\t025_board_param_help.tcl} -notrace\nlist_param\n\nDescription: \nGet all parameter names\n\nSyntax: \nlist_param  [-quiet] [-verbose]\n\nReturns: \nlist\n\nUsage: \n  Name        Description\n  -----------------------\n  [-quiet]    Ignore command errors\n  [-verbose]  Suspend message limits during command execution\n\nCategories: \nPropertyAndParameter\n\nDescription:\n\n  Gets a list of user-definable configuration parameters. These parameters\n  configure a variety of settings and behaviors of the tool. For more\n  information on a specific parameter use the report_param command, which\n  returns a description of the parameter as well as its current value.\n\nArguments:\n\n  -quiet - (Optional) Execute the command quietly, returning no messages from\n  the command. The command also returns TCL_OK regardless of any errors\n  encountered during execution.\n\n  Note: Any errors encountered on the command-line, while launching the\n  command, will be returned. Only errors occurring inside the command will be\n  trapped.\n\n  -verbose - (Optional) Temporarily override any message limits and return\n  all messages from this command.\n\n  Note: Message limits can be defined with the set_msg_config command.\n\nExamples:\n\n  The following example returns a list of all user-definable parameters:\n\n    list_param \n    \n\nSee Also:\n\n   *  get_param\n   *  report_param\n   *  reset_param\n   *  set_param\nINFO: [Common 17-206] Exiting Vivado at Wed Nov  4 20:08:52 2026...\n",
+  "stderr": "",
+  "cleanup": "Windows Job Object",
+  "duration_seconds": 2.547
+}

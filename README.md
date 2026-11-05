@@ -52,17 +52,19 @@ stress programs hit the five prior gaps (49/49 in the finite cross inventory),
 and the injected retention leak was rejected. See [stress scope](docs/STRESS_VERIFICATION.md).
 T023 selected formal verification was explicitly owner-skipped on November4;
 its original NOT RUN125 record and zero executed formal tasks remain preserved.
-See [formal limits and owner exception](docs/FORMAL_LIMITS.md). Progress is24
+See [formal limits and owner exception](docs/FORMAL_LIMITS.md). Progress is25
 completed mandatory milestones plus1 owner-skipped, out of41. T024 simulation
 DV review passed all seven gates on attempt2, including the full19-target
 regression, and was explicitly owner-approved November4, acknowledging missing
-formal proof. See [DV review package](docs/DV_CLOSURE.md). T025 board constraints
-are next.
+formal proof. See [DV review package](docs/DV_CLOSURE.md). T025 board shell/XDC
+completed on attempt2:962 vectors, exact negative checks and actual36-port/10ns
+constraint/DRC inspection. See [board scope and limits](docs/BOARD_CONSTRAINTS.md).
 
 The existing `RV32I_Edge_SoC.xpr` is the active Vivado project. Its configured part
-is `xc7a35tcpg236-1`. The owner confirmed a Digilent Basys 3. Top module, RTL and
-constraints are not yet configured in the XPR; the core units are verified with
-reproducible non-project scripts. Vivado 2025.2 was located and its batch
+is `xc7a35tcpg236-1`. The owner confirmed a Digilent Basys 3. The XPR now selects
+`basys3_top` with the T025 diagnostic shell and selected board constraints. CPU/SoC
+wiring is pending T031; this shell only demonstrates synchronized board I/O. Core
+units are verified with reproducible non-project scripts. Vivado 2025.2 was located and its batch
 startup/target-part catalog verified; local paths are in `.harness/toolchain.json`.
 
 From PowerShell in `C:\RV32I_Edge_SoC`:

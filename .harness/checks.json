@@ -150,7 +150,17 @@
       "scripts/xsim_run.tcl",
       "dv/toolchain/register_fixture.sv",
       "dv/toolchain/tb_toolchain.sv",
-      "dv/toolchain/negative_syntax.sv"
+      "dv/toolchain/negative_syntax.sv",
+      "fpga/basys3/top.sv",
+      "fpga/basys3/basys3.xdc",
+      "fpga/basys3/integrate.tcl",
+      "config/basys3_pins.json",
+      "scripts/board_checks.py",
+      "scripts/test_board_checks.py",
+      "scripts/vivado_board_check.tcl",
+      "dv/board/board_model.py",
+      "dv/board/tb_board_io.sv",
+      "RV32I_Edge_SoC.xpr"
     ],
     "commands": [
       [
@@ -266,6 +276,12 @@
         "-B",
         "scripts/verify.py",
         "test-stress"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/verify.py",
+        "test-top"
       ]
     ],
     "timeout_seconds": 600
@@ -1008,6 +1024,32 @@
         "{python}",
         "-B",
         "scripts/closure_checks.py"
+      ]
+    ]
+  },
+  "test-top": {
+    "inputs": [
+      "fpga/basys3/top.sv",
+      "fpga/basys3/basys3.xdc",
+      "fpga/basys3/integrate.tcl",
+      "config/basys3_pins.json",
+      "scripts/board_checks.py",
+      "scripts/test_board_checks.py",
+      "scripts/vivado_board_check.tcl",
+      "dv/board/board_model.py",
+      "dv/board/tb_board_io.sv",
+      "RV32I_Edge_SoC.xpr"
+    ],
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "scripts/test_board_checks.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/board_checks.py"
       ]
     ]
   }
