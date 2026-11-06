@@ -1,0 +1,13 @@
+{
+  "receipt": "evidence/toolchain_runs/uart-lint-repair-20261106T212438462986Z.json",
+  "source_sha256": {
+    "rtl/peripherals/uart_tx.sv": "3418eb069158da20b88ab7e490cf903f6a174b7c69fce5de8c40ef367c75d719",
+    "rtl/peripherals/uart_mmio_tx.sv": "5f19519b788b889f380ca82dd82c9290ad18704f387af11b450c81b7f7c11ae6",
+    "dv/lint/uart_lint_top.sv": "f98a73d7edd0fce078a4b4cbaad67df4b94c66ebed87fd87181df7db94bcd48a",
+    "config/rtl_checks.json": "87cd11de7f955025c1b56104149d3ea41623daac9f64c402b113c185b5ad06d2",
+    "scripts/rtl_checks.py": "dc6c2cda4debd5c9fcc2321f9e537cfb998e7fcb38ef61ae6c7a56b045c42935",
+    "scripts/vivado_lint.tcl": "f8cd49ab0198fd18306828cdb51736750a83925ffe47060efc87bf1f777abe65"
+  },
+  "archive_sha256": "980fb2ebfdb05cebea39116292f238e36df9ac435d8e65bc9c0566c6394624fb",
+  "diagnosis": "The32-bit child input still emits unused reserved-bit warnings even when driven by constants in a wrapper. Do not suppress them or invent hardware loads. Use a natural8-bit internal TX payload with explicit low-byte adaptation from the unchanged32-bit master bus; addresses/masks/read response remain unchanged. RX W1C expansion stays T042."
+}

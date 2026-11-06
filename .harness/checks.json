@@ -176,7 +176,14 @@
       "rtl/memory/data_ram.sv",
       "dv/lint/memory_lint_top.sv",
       "dv/firmware/memory_model.py",
-      "dv/firmware/tb_memories.sv"
+      "dv/firmware/tb_memories.sv",
+      "rtl/peripherals/uart_tx.sv",
+      "rtl/peripherals/uart_mmio_tx.sv",
+      "dv/unit/test_uart.py",
+      "dv/unit/tb_uart.sv",
+      "scripts/uart_checks.py",
+      "config/rtl_checks.json",
+      "docs/ARCH_CONTRACT.json"
     ],
     "commands": [
       [
@@ -304,6 +311,12 @@
         "-B",
         "scripts/verify.py",
         "test-firmware"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/verify.py",
+        "test-uart"
       ]
     ],
     "timeout_seconds": 600
@@ -1108,6 +1121,29 @@
         "{python}",
         "-B",
         "scripts/firmware_checks.py"
+      ]
+    ]
+  },
+  "test-uart": {
+    "inputs": [
+      "rtl/peripherals/uart_tx.sv",
+      "rtl/peripherals/uart_mmio_tx.sv",
+      "dv/unit/test_uart.py",
+      "dv/unit/tb_uart.sv",
+      "scripts/uart_checks.py",
+      "config/rtl_checks.json",
+      "docs/ARCH_CONTRACT.json"
+    ],
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "dv/unit/test_uart.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/uart_checks.py"
       ]
     ]
   }

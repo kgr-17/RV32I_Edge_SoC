@@ -1,0 +1,75 @@
+{
+  "task": "T027",
+  "attempt": 1,
+  "git_commit": "a04e23a5cef5712807ffb6e86ff45602b8007777",
+  "python": "3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)]",
+  "stage": "finished",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "lint"
+      ],
+      "started_utc": "2026-11-06T21:16:42.984820+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "FAIL",
+      "exit_code": 1,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/rtl_checks.py\", \"lint\"], \"started_utc\": \"2026-11-06T21:16:43.374962+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"FAIL\", \"exit_code\": 1, \"stdout\": \"{\\n  \\\"status\\\": \\\"FAIL\\\",\\n  \\\"evidence\\\": \\\"evidence\\\\\\\\toolchain_runs\\\\\\\\lint-20261106T211643666670Z.json\\\",\\n  \\\"checks\\\": 31,\\n  \\\"simulations\\\": [],\\n  \\\"error\\\": \\\"Synthesis lint uart_mmio_tx\\\"\\n}\\n\", \"stderr\": \"\", \"timeout_seconds\": 600}\n",
+      "stderr": "",
+      "timeout_seconds": 600
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "test-uart"
+      ],
+      "started_utc": "2026-11-06T21:21:35.926476+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"dv/unit/test_uart.py\"], \"started_utc\": \"2026-11-06T21:21:36.082851+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"\", \"stderr\": \"test_byte_lanes_and_disabled_error (__main__.UartReferenceTests) ... ok\\ntest_complete_fast_corpus_seed_replay (__main__.UartReferenceTests) ... ok\\ntest_disable_does_not_cancel_frame_and_reset_does (__main__.UartReferenceTests) ... ok\\ntest_manual_lsb_first_8n1_frame (__main__.UartReferenceTests) ... ok\\ntest_no_zero_latency_response_and_no_replacement (__main__.UartReferenceTests) ... ok\\ntest_production_divisor_and_bounds (__main__.UartReferenceTests) ... ok\\ntest_reset_cancels_response_and_sticky_old_data (__main__.UartReferenceTests) ... ok\\ntest_tx_effect_waits_for_response (__main__.UartReferenceTests) ... ok\\n\\n----------------------------------------------------------------------\\nRan 8 tests in 0.217s\\n\\nOK\\n\", \"timeout_seconds\": 300}\n{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/uart_checks.py\"], \"started_utc\": \"2026-11-06T21:21:36.509971+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\\"status\\\": \\\"PASS\\\", \\\"evidence\\\": \\\"evidence/toolchain_runs/uart-20261106T212136696519Z.json\\\", \\\"error\\\": null}\\n\", \"stderr\": \"\", \"timeout_seconds\": 300}\n",
+      "stderr": "",
+      "timeout_seconds": 300
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_utc": "2026-11-06T21:22:05.001298+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "timeout_seconds": 300
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "started_utc": "2026-11-06T21:22:05.053492+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "timeout_seconds": 300
+    }
+  ],
+  "waveform_paths": [],
+  "seed": null,
+  "evidence_sha256": "8bfc0f4d9d157d81324658cbca03db5ef728920573c3fd1fd605619d75748558"
+}

@@ -727,6 +727,15 @@
         "fpga/basys3/rom_init.mem"
       ],
       "timeout_seconds": 90
+    },
+    {
+      "name": "uart_tx_mmio",
+      "top": "uart_lint_top",
+      "sources": [
+        "rtl/peripherals/uart_tx.sv",
+        "rtl/peripherals/uart_mmio_tx.sv",
+        "dv/lint/uart_lint_top.sv"
+      ]
     }
   ],
   "designs": [
