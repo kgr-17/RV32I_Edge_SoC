@@ -1,0 +1,18 @@
+{
+  "command": [
+    "python",
+    "-B",
+    "dv/integration/test_mmio.py"
+  ],
+  "exit_code": 1,
+  "result": "3 PASS / 2 FAIL",
+  "failure": "Both failures corpus line168 partial high-byte COUNT write: used mask8 at word base instead of original byte offset+3; correctly rejected as malformed by model. Correct driver address, retain expected pre-increment merge and all malformed-mask checks.",
+  "source_sha256": {
+    "rtl/peripherals/input_sync.sv": "75a1f76a6c5d736ca4a1ef88423174c08469a287ee973a48e1f3e910361b86dc",
+    "rtl/peripherals/gpio.sv": "35bc4643d638962f99ff0c9fe199743c70ace4bd32544419c91e31af5495c5fd",
+    "rtl/peripherals/timer.sv": "8d8d00c8e9834bf4a5247f424f34a3a18af1494d152c691a0a4d8f182be77425",
+    "dv/integration/test_mmio.py": "31aba888c108abe12d6857ed80174e4ea0124529ad2f93ccee486eb91c0d9196",
+    "dv/integration/tb_mmio.sv": "ad9bd6225b473908429ca39b2eda24a8f6e90178501e44aaebc22d4f60850037"
+  },
+  "archive_sha256": "e2a144de7a0d50f74c74295941145a2bcd23f017c9140acbaab3e398874c5c65"
+}

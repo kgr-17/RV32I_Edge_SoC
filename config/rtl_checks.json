@@ -748,6 +748,21 @@
         "rtl/peripherals/uart_mmio.sv",
         "dv/lint/uart_full_lint_top.sv"
       ]
+    },
+    {
+      "name": "gpio_mmio",
+      "top": "gpio",
+      "sources": [
+        "rtl/peripherals/input_sync.sv",
+        "rtl/peripherals/gpio.sv"
+      ]
+    },
+    {
+      "name": "timer_mmio",
+      "top": "timer",
+      "sources": [
+        "rtl/peripherals/timer.sv"
+      ]
     }
   ],
   "designs": [

@@ -200,3 +200,107 @@ MTBF/fullCDC/routedtiming/SoC/IRQ/hardware/power/ASIC signoff. Versions unchange
 Python3.9.13/Git2.48.1.windows.1/tzdata2026.2/Vivado-XSim2025.2 SW6299465. Actual
 runtime unrestricted/never, attendedonly; no install/download/global settings/
 push/hostscheduler/physicalprogramming. Exactly same two Nov6 report files.
+
+
+---
+
+<!-- entry:b10e87a1c3f5ecb1004bd48cef06df8ed65b4e38e053b2bdae3fbabb08823e41 -->
+
+## T028 prepared: GPIO and free-running timer
+
+T042 committed d71d900 after all four first-attempt gates: lint37/20commands,
+UART34/14,RX66/24;46 sources/138 artifacts,1094 old files preserved. BeginT028
+from clean Git; baseline1124 tracked hashes excludes state/backlog. New absent
+RTL files input_sync.sv,gpio.sv,timer.sv created before inventory but no old file
+changed. Two-stage ASYNC_REG GPIO helper is needed here; T029 reset/fullCDC remains
+pending. GPIO meaningful write16 from master[15:0], full32 address/read response,
+4BE, output16; input16 sampled/snapshotted. Timer meaningful32 payload, COUNT/
+COMPARE32, CTRL enable/auto2, sticky/W1C bit0; no interrupt. Both registered one-
+outstanding interfaces hold snapshots, no consume-edge replacement, reset gates
+acceptance/clears state and successful response acceptance commits writes only.
+
+COUNT write merges selected bytes with pre-increment value and suppresses that
+edge increment/match. Old compare/control govern normal counting; event beats W1C.
+Timer counts through response stalls. GPIO SET/CLEAR idempotent/masked; high lanes
+ignored, RO/unallocated/malformed originals error. No architecture/ISA/map/clock/
+target/resetpriority/CPU/UART/XPR/XDC/image change. New test_mmio.py uses bit sets
+and elapsed-epoch formulas, TB pre/post outputs and master hold, driver native
+two seeds/three exact input negatives/three isolated RTL fault injections.
+
+Five reference tests PASS. Preserve first fixture failure(mask8 at offset0 instead
+of3), five-input ZIP. Native preparation mmio-20261106T221416774407Z FAIL35checks/
+17commands at undetected clear-priority mutant: both positive seeds, input
+negatives and SETfault passed. Archive12 exact inputs/117 generated hashes under
+failed_sources/T028/native-preparation-1. Autoreloadcompare1 reasserted flag before
+observation; add immediate STATUS read and isolated singlematch W1C collision,
+keeping all existing cases and productionRTL unchanged. Fresh task gates pending.
+
+Next python -B scripts/harness.py finish T028 --evidence evidence/daily/T028.md,
+attempt1/3, lint/test-mmio/whitespace. On pass audit current receipt/source/vector/
+summary/WDB/negative bindings, old files/report prefixes, append this same Nov6
+pair, review/stage/hash/whitespace/commit thenqueryactualnext(expectedT029).
+Registry24 retains23 predecessors; no full24regression/completeCDC/SoC/IRQ/formal/
+routedtiming/hardware/ASIC result. T023 skipped/NOT RUN. Versions unchanged Python
+3.9.13/Git2.48.1.windows.1/tzdata2026.2/Vivado-XSim2025.2 SW6299465. Runtime
+unrestricted/never, attendedonly; no download/install/globalconfiguration/push/
+hostscheduler/programming. No owner review gate waived.28 complete+1 skipped/41.
+
+
+---
+
+<!-- entry:ced94be2279b780f5ee055f89d41aa9b3db1d79a79486adb4e7f54e86e038be0 -->
+
+## T028 completed: synchronized GPIO and timer priorities
+
+T042 committedd71d900. T028 passed all four gates on attempt1, all exit0: lint,
+test-mmio and both whitespace checks. Current task receipt: evidence/runs/T028/attempt-1-20261106T221630943647Z.json.
+Current native receipts: evidence/toolchain_runs/lint-20261106T221631390123Z.json, evidence/toolchain_runs/mmio-20261106T222532992519Z.json. Checks/commands:
+{"lint": [41, 22], "mmio": [46, 20]}. Five independent reference tests passed. Real XSim two
+seeds1/20261106 checked 9295 rows, every pre/post public bus/LED
+output. Actual wrong-LED/empty/truncated negatives and all three isolated RTL
+mutations detected: GPIO SET toggling, timer W1C winning over match, COUNT-write
+allowing match. Fresh result does not relabel failed preparation.
+
+New rtl/peripherals/gpio.sv,input_sync.sv,timer.sv; new dv/integration/test_mmio.py,
+tb_mmio.sv and scripts/mmio_checks.py, docs/GPIO_TIMER.md, registry/state/backlog/
+README/evidence and same two report appendices. GPIO16 raw bits through2ASYNC_REG
+stages/bit, LEDs16 with maskedOUT/SET/CLEAR, IN held snapshot; internal meaningful
+write16 from master[15:0], full32 address/read response,4BE. Timer full32 payload/
+COUNT/COMPARE, CTRL2bits, stickyW1C bit0, no IRQ. Both one outstanding/registered
+response/no consume-edge replacement; writes at successful response acceptance.
+COUNT merges pre-increment bytes/suppresses increment+newmatch; old enable/
+compare govern other edges; real match beats W1C. Timer continues during stalls.
+No CPU/UART/XPR/XDC/ISA/map/clock/target/resetpriority/firmware change.
+
+Independent oracle uses bit-set GPIO and elapsed-epoch closed-form timer; final
+audit uses direct per-cycle modular arithmetic/bit masks on actual SV-compared
+transcripts, not that oracle. Validates bus snapshots, handshakes, all16 single-bit
+LED values/seven legal lane choices each, resets, timer effects/priorities and
+source/wave/vector/summary/argument bindings. Audit counts: {"tools": 2, "sources": 45, "artifacts": 100, "preserved": 1119, "edge_rows": 9295}.
+Per-seed inventory: [{"seed": 1, "cycles": 4648, "requests": [1851, 1797], "replies": [1850, 1796], "errors": [481, 361], "canceled": [1, 1], "gpio_single_bit_values": 16, "legal_lane_choices_each": 7, "count_write_match_collisions": 1, "match_w1c_collisions": 2, "match_events": 12, "gpio_effects": 624}, {"seed": 20261106, "cycles": 4647, "requests": [1837, 1805], "replies": [1836, 1804], "errors": [516, 358], "canceled": [1, 1], "gpio_single_bit_values": 16, "legal_lane_choices_each": 7, "count_write_match_collisions": 1, "match_w1c_collisions": 2, "match_events": 12, "gpio_effects": 589}]. Preserves1119 historical tracked
+files outside5 declared integration/report edits and both earlier report prefixes.
+Pre-gate evidence snapshots under evidence/prepare/T028-gate-evidence-2026-11-06.json.
+
+Both failures retained: five-input reference fixture archive(mask8 needed byte
+offset3), and12-input/117-generated native-preparation archive. First native FAIL
+missed transient wrongclear during compare1 autoreload; immediateSTATUS and
+singlematch collision now force visibility and detect actual faulty RTL. No
+warning/negative/check/timeout weakened; original productionRTL unchanged since
+first native prep. Read docs/GPIO_TIMER.md for exact evidence/limitations.
+
+Reproduce python -B scripts/verify.py test-mmio and python -B scripts/verify.py
+lint. Reviewdiff/whitespace/staged source hashes, commit inspectedT028 locally,
+thenquery next and begin actualT029 expected. Next session read handoff/AGENTS/
+boundary/ARCH/verification/backlog/state/loop, daily --supervised and recover
+active before selectinganother. Input_sync helper introduced for GPIO does not
+complete T029: async reset release/full scoped CDC analysis remains pending.
+OfficialAMD UG906 pages were read ahead for CDC planning, no download/install;
+2025.2-specific webURL unavailable, verify installed tool help/options; no zero-
+path CDC signoff or analogMTBF inference. Notes in .tmp/t029_documentation_notes.json.
+
+29 mandatory complete plus1 owner-skipped of41. Registry24 retains23 predecessors;
+full24regression NOT RUN. T023 formal still skipped/NOT RUN, neverPASS. No
+completeCDC/SoC/IRQ/routedtiming/power/hardware/ASIC result. Versions unchanged
+Python3.9.13/Git2.48.1.windows.1/tzdata2026.2/Vivado-XSim2025.2 SW6299465. Actual
+runtime unrestricted/never, attendedonly; no tools/packages/IP install/download,
+globalconfiguration, push, hostscheduler or physicalFPGAprogramming.

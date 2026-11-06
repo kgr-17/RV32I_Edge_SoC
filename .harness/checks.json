@@ -66,7 +66,14 @@
       "dv/unit/tb_uart_rx.sv",
       "dv/lint/uart_full_lint_top.sv",
       "scripts/uart_rx_checks.py",
-      "scripts/uart_rx_structure.tcl"
+      "scripts/uart_rx_structure.tcl",
+      "rtl/peripherals/input_sync.sv",
+      "rtl/peripherals/gpio.sv",
+      "rtl/peripherals/timer.sv",
+      "dv/integration/test_mmio.py",
+      "dv/integration/tb_mmio.sv",
+      "scripts/mmio_checks.py",
+      "docs/ARCH_CONTRACT.json"
     ],
     "commands": [
       [
@@ -330,6 +337,12 @@
         "-B",
         "scripts/verify.py",
         "test-uart-rx"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/verify.py",
+        "test-mmio"
       ]
     ],
     "timeout_seconds": 600
@@ -1197,5 +1210,29 @@
       ]
     ],
     "timeout_seconds": 600
+  },
+  "test-mmio": {
+    "inputs": [
+      "rtl/peripherals/input_sync.sv",
+      "rtl/peripherals/gpio.sv",
+      "rtl/peripherals/timer.sv",
+      "dv/integration/test_mmio.py",
+      "dv/integration/tb_mmio.sv",
+      "scripts/mmio_checks.py",
+      "docs/ARCH_CONTRACT.json",
+      "config/rtl_checks.json"
+    ],
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "dv/integration/test_mmio.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/mmio_checks.py"
+      ]
+    ]
   }
 }

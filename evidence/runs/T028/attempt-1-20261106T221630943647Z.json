@@ -1,0 +1,75 @@
+{
+  "task": "T028",
+  "attempt": 1,
+  "git_commit": "d71d9006bdf00c351beedd8ebd5d6b7f2ee53509",
+  "python": "3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)]",
+  "stage": "finished",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "lint"
+      ],
+      "started_utc": "2026-11-06T22:16:30.998946+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/rtl_checks.py\", \"lint\"], \"started_utc\": \"2026-11-06T22:16:31.203005+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\n  \\\"status\\\": \\\"PASS\\\",\\n  \\\"evidence\\\": \\\"evidence\\\\\\\\toolchain_runs\\\\\\\\lint-20261106T221631390123Z.json\\\",\\n  \\\"checks\\\": 41,\\n  \\\"simulations\\\": [],\\n  \\\"error\\\": null\\n}\\n\", \"stderr\": \"\", \"timeout_seconds\": 600}\n",
+      "stderr": "",
+      "timeout_seconds": 600
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "test-mmio"
+      ],
+      "started_utc": "2026-11-06T22:25:32.326481+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"dv/integration/test_mmio.py\"], \"started_utc\": \"2026-11-06T22:25:32.480241+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"\", \"stderr\": \"test_closed_form_wrap_auto_and_zero_compare (__main__.MmioReferenceTests) ... ok\\ntest_gpio_two_sample_snapshot_and_side_effect_commit (__main__.MmioReferenceTests) ... ok\\ntest_master_hold_until_acceptance (__main__.MmioReferenceTests) ... ok\\ntest_partial_merge (__main__.MmioReferenceTests) ... ok\\ntest_priority_and_corpus_replay (__main__.MmioReferenceTests) ... ok\\n\\n----------------------------------------------------------------------\\nRan 5 tests in 0.182s\\n\\nOK\\n\", \"timeout_seconds\": 300}\n{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/mmio_checks.py\"], \"started_utc\": \"2026-11-06T22:25:32.804048+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\\"status\\\": \\\"PASS\\\", \\\"evidence\\\": \\\"evidence/toolchain_runs/mmio-20261106T222532992519Z.json\\\", \\\"error\\\": null}\\n\", \"stderr\": \"\", \"timeout_seconds\": 300}\n",
+      "stderr": "",
+      "timeout_seconds": 300
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_utc": "2026-11-06T22:26:04.776053+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "timeout_seconds": 300
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "started_utc": "2026-11-06T22:26:04.832577+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "timeout_seconds": 300
+    }
+  ],
+  "waveform_paths": [],
+  "seed": null,
+  "evidence_sha256": "282dfb3897437b43e87b2ad4fed23737eecc09acf74d461da90f082ef6e3e1e1"
+}
