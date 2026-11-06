@@ -58,7 +58,8 @@
       "scripts/tool_child.py",
       "scripts/vivado_lint.tcl",
       "dv/toolchain/register_fixture.sv",
-      "dv/toolchain/negative_latch.sv"
+      "dv/toolchain/negative_latch.sv",
+      "fpga/basys3/rom_init.mem"
     ],
     "commands": [
       [
@@ -160,7 +161,22 @@
       "scripts/vivado_board_check.tcl",
       "dv/board/board_model.py",
       "dv/board/tb_board_io.sv",
-      "RV32I_Edge_SoC.xpr"
+      "RV32I_Edge_SoC.xpr",
+      "sw/boot.S",
+      "sw/smoke.S",
+      "sw/linker.ld",
+      ".harness/software_toolchain.json",
+      "fpga/basys3/rom_init.mem",
+      "scripts/firmware_image.py",
+      "scripts/firmware_build.py",
+      "scripts/firmware_checks.py",
+      "scripts/test_firmware.py",
+      "scripts/vivado_memory_check.tcl",
+      "rtl/memory/boot_rom.sv",
+      "rtl/memory/data_ram.sv",
+      "dv/lint/memory_lint_top.sv",
+      "dv/firmware/memory_model.py",
+      "dv/firmware/tb_memories.sv"
     ],
     "commands": [
       [
@@ -282,6 +298,12 @@
         "-B",
         "scripts/verify.py",
         "test-top"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/verify.py",
+        "test-firmware"
       ]
     ],
     "timeout_seconds": 600
@@ -1050,6 +1072,42 @@
         "{python}",
         "-B",
         "scripts/board_checks.py"
+      ]
+    ]
+  },
+  "test-firmware": {
+    "inputs": [
+      "sw/boot.S",
+      "sw/smoke.S",
+      "sw/linker.ld",
+      ".harness/software_toolchain.json",
+      "fpga/basys3/rom_init.mem",
+      "scripts/firmware_image.py",
+      "scripts/firmware_build.py",
+      "scripts/firmware_checks.py",
+      "scripts/test_firmware.py",
+      "scripts/vivado_memory_check.tcl",
+      "rtl/memory/boot_rom.sv",
+      "rtl/memory/data_ram.sv",
+      "dv/lint/memory_lint_top.sv",
+      "dv/firmware/memory_model.py",
+      "dv/firmware/tb_memories.sv"
+    ],
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "scripts/test_rtl_checks.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/test_firmware.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/firmware_checks.py"
       ]
     ]
   }

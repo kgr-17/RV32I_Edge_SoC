@@ -1,0 +1,49 @@
+{
+  "tools": {
+    "gcc": {
+      "command": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-gcc.exe"
+      ],
+      "sha256": "90927f7c3c61d85284403b6fc63a5dbc31feb73e295fa68ef376e7378f048bc4",
+      "version_line": "riscv32-xilinx-elf-gcc.exe (GCC) 13.4.0"
+    },
+    "ld": {
+      "command": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-ld.exe"
+      ],
+      "sha256": "84af5d6d526368f541845614f26da112e15cd03b86121dccfe3d97f0afdd8d93",
+      "version_line": "GNU ld (GNU Binutils) 2.43.1.20241111"
+    },
+    "objcopy": {
+      "command": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-objcopy.exe"
+      ],
+      "sha256": "64ae2a0f875d741947b4a0ff651709cf51a2db3dc62eee05fcfdec3e553ea9c3",
+      "version_line": "GNU objcopy (GNU Binutils) 2.39.0.20220819"
+    },
+    "readelf": {
+      "command": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-readelf.exe"
+      ],
+      "sha256": "074756bb1c9c1b986b2b3354db89ef9140d8eb56590e519958b195f059d23ecd",
+      "version_line": "GNU readelf (GNU Binutils) 2.39.0.20220819"
+    },
+    "objdump": {
+      "command": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-objdump.exe"
+      ],
+      "sha256": "fc83c86b64aa2e07246fd6d41f3e4c055020d2854162d0b8b293f35827f27986",
+      "version_line": "GNU objdump (GNU Binutils) 2.39.0.20220819"
+    }
+  },
+  "target": "riscv32-xilinx-elf",
+  "march": "rv32i",
+  "mabi": "ilp32",
+  "scope": "Observed installed AMD tools, process-local absolute commands; no global PATH or installation changes",
+  "evidence": "evidence/t026-compiler-probes-2026-11-04.json",
+  "components_sha256": {
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\x86_64-w64-mingw32\\usr\\libexec\\riscv32-xilinx-elf\\gcc\\riscv32-xilinx-elf\\13.4.0\\cc1.exe": "af63512f18d48199da85b011d566cc211ab8a3fd62b5cc8e34e52f8c88c206c9",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\x86_64-w64-mingw32\\usr\\bin\\riscv32-xilinx-elf\\riscv32-xilinx-elf-as.exe": "13392e4e81eacf737aeed6cc4d493162aa96184c4ba55e5762dce23d5271cba8",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\x86_64-w64-mingw32\\usr\\bin\\riscv32-xilinx-elf\\riscv32-xilinx-elf-ld.exe": "3ff18605eb4184f05e3bbabc2476f9fd61d2ffebdb4a1f7869bffd2802972a5c"
+  }
+}

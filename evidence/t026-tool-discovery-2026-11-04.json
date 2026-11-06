@@ -1,0 +1,70 @@
+{
+  "utc": "2026-11-05T04:28:31.474398+00:00",
+  "scope": "PATH and named installed EDA/LLVM/MSYS2/VisualStudio tool folders only; no personal directories or exhaustive disk search",
+  "path": {
+    "riscv32-unknown-elf-gcc": null,
+    "riscv64-unknown-elf-gcc": null,
+    "riscv-none-elf-gcc": null,
+    "clang": null,
+    "ld.lld": null,
+    "llvm-objcopy": null,
+    "llvm-readelf": null,
+    "llvm-objdump": null
+  },
+  "roots": [
+    {
+      "path": "C:\\Program Files\\LLVM\\bin",
+      "exists": false
+    },
+    {
+      "path": "C:\\msys64\\ucrt64\\bin",
+      "exists": true
+    },
+    {
+      "path": "C:\\msys64\\mingw64\\bin",
+      "exists": true
+    },
+    {
+      "path": "C:\\msys64\\clang64\\bin",
+      "exists": true
+    },
+    {
+      "path": "C:\\AMDDesignTools\\2025.2\\Vitis\\gnu",
+      "exists": false
+    },
+    {
+      "path": "C:\\AMDDesignTools\\2025.2\\gnu",
+      "exists": true
+    },
+    {
+      "path": "C:\\Xilinx\\Vitis",
+      "exists": false
+    }
+  ],
+  "executables": {
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\linux_toolchain\\nt32\\bin\\riscv32-amd-linux-gcc.exe": "45d07cd3e840f1c1f7577b119e423db77cd5621db3939d1ea2ee326cd7f4d4d8",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\linux_toolchain\\nt32\\x86_64-w64-mingw32\\usr\\bin\\riscv32-amd-linux\\riscv32-amd-linux-gcc.exe": "6cd11ad234186fc95dfbf90407cd11967691c70c09ae9b2506898349d5dfb73f",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\linux_toolchain\\nt32\\x86_64-w64-mingw32\\usr\\bin\\riscv32-amd-linux-musl\\riscv32-amd-linux-musl-gcc.exe": "ee1d1b4573dcde26acee9fee9f6ede15f4d9496ed608a8ea5e2c9a8878f39daa",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\linux_toolchain\\nt64\\bin\\riscv64-amd-linux-gcc.exe": "03072d3fd4e43f6c2d3a4321d877ddb1ccad6eb553257a200a178ec07b2aae5d",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\linux_toolchain\\nt64\\x86_64-w64-mingw32\\usr\\bin\\riscv64-amd-linux\\riscv64-amd-linux-gcc.exe": "498827bd77f79b329b679a27663f8fbda50c61fe8088dc579bc06a48a8eca139",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\linux_toolchain\\nt64\\x86_64-w64-mingw32\\usr\\bin\\riscv64-amd-linux-musl\\riscv64-amd-linux-musl-gcc.exe": "76ba968c01f048cbd3e8e689eaa2a798b3b4dca08597731622b1051b5de374d4",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-gcc.exe": "90927f7c3c61d85284403b6fc63a5dbc31feb73e295fa68ef376e7378f048bc4",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\x86_64-w64-mingw32\\usr\\bin\\riscv32-xilinx-elf\\riscv32-xilinx-elf-gcc.exe": "ebd3a49fdf9cf0279af290d9570f0aa65cb94293c648adb64195aa1f8b30d28f",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\linux_toolchain\\nt32\\bin\\riscv32-amd-linux-ld.exe": "b916417d0699991cf8ba35268bf9e3e6fba0eed295b8febfac4b3bea334ab31f",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\linux_toolchain\\nt32\\x86_64-w64-mingw32\\usr\\bin\\riscv32-amd-linux\\riscv32-amd-linux-ld.exe": "68a757577dc19a92dadfdc5a54de7165ba6cce9d2988199c90870bd43446c8d4",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\linux_toolchain\\nt32\\x86_64-w64-mingw32\\usr\\bin\\riscv32-amd-linux-musl\\riscv32-amd-linux-musl-ld.exe": "68a757577dc19a92dadfdc5a54de7165ba6cce9d2988199c90870bd43446c8d4",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\linux_toolchain\\nt64\\bin\\riscv64-amd-linux-ld.exe": "869664e5b89b6715731503a99dcf45dcfff6a20b800ce1c1980532ec4f76289f",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\linux_toolchain\\nt64\\x86_64-w64-mingw32\\usr\\bin\\riscv64-amd-linux\\riscv64-amd-linux-ld.exe": "e88d965fde99c9ddde106467b26e0c0aae85d351a81dda7e58a679f528934b43",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\linux_toolchain\\nt64\\x86_64-w64-mingw32\\usr\\bin\\riscv64-amd-linux-musl\\riscv64-amd-linux-musl-ld.exe": "e88d965fde99c9ddde106467b26e0c0aae85d351a81dda7e58a679f528934b43",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-ld.exe": "84af5d6d526368f541845614f26da112e15cd03b86121dccfe3d97f0afdd8d93",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\x86_64-w64-mingw32\\usr\\bin\\riscv32-xilinx-elf\\riscv32-xilinx-elf-ld.exe": "3ff18605eb4184f05e3bbabc2476f9fd61d2ffebdb4a1f7869bffd2802972a5c",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\linux_toolchain\\nt32\\bin\\riscv32-amd-linux-objcopy.exe": "5e65bfd74875508b812637fc80e00f21b54bde9291d78ae21ba2e32697951040",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\linux_toolchain\\nt32\\x86_64-w64-mingw32\\usr\\bin\\riscv32-amd-linux\\riscv32-amd-linux-objcopy.exe": "5e65bfd74875508b812637fc80e00f21b54bde9291d78ae21ba2e32697951040",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\linux_toolchain\\nt32\\x86_64-w64-mingw32\\usr\\bin\\riscv32-amd-linux-musl\\riscv32-amd-linux-musl-objcopy.exe": "5e65bfd74875508b812637fc80e00f21b54bde9291d78ae21ba2e32697951040",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\linux_toolchain\\nt64\\bin\\riscv64-amd-linux-objcopy.exe": "da9e5d6eecb499e8e86fcf3ef1560624bc4994f7215e40afb3bed86b22dbc8d5",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\linux_toolchain\\nt64\\x86_64-w64-mingw32\\usr\\bin\\riscv64-amd-linux\\riscv64-amd-linux-objcopy.exe": "da9e5d6eecb499e8e86fcf3ef1560624bc4994f7215e40afb3bed86b22dbc8d5",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\linux_toolchain\\nt64\\x86_64-w64-mingw32\\usr\\bin\\riscv64-amd-linux-musl\\riscv64-amd-linux-musl-objcopy.exe": "da9e5d6eecb499e8e86fcf3ef1560624bc4994f7215e40afb3bed86b22dbc8d5",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-objcopy.exe": "64ae2a0f875d741947b4a0ff651709cf51a2db3dc62eee05fcfdec3e553ea9c3",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\x86_64-w64-mingw32\\usr\\bin\\riscv32-xilinx-elf\\riscv32-xilinx-elf-objcopy.exe": "3a1b3c4e69b00016a47a525b4a8f4b85d3438792c6c9dd2ef90e737eddc7266e"
+  }
+}

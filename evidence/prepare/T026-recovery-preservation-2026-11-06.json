@@ -1,0 +1,10 @@
+{
+  "previous_daily_reports_sha256": {
+    "docs/daily/2026-11-04_technical.md": "caded278047abcec3825d71fc17b53f8bb5a393b7ae98a239eb62f17c088cc77",
+    "docs/daily/2026-11-04_zh-CN.md": "c4d867b3b53197d043cfb7649047d633d24dd66586303bb3ff8ad1c37785e493"
+  },
+  "current_receipt": "evidence/runs/T026/attempt-3-20261106T205251043860Z.json",
+  "active_task": "T026",
+  "verification_attempt": 3,
+  "instruction": "Current native/functional gates remain unchanged. Preserve both earlier attempts and source archives; no attempt reset or owner-action command performed during recovery."
+}

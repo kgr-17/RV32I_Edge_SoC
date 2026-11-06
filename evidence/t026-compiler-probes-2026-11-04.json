@@ -1,0 +1,110 @@
+{
+  "commands": [
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-gcc.exe",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\tool-discovery",
+      "started_utc": "2026-11-05T04:28:56.708738+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "riscv32-xilinx-elf-gcc.exe (GCC) 13.4.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.61
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-gcc.exe",
+        "-dumpmachine"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\tool-discovery",
+      "started_utc": "2026-11-05T04:28:57.315977+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "riscv32-xilinx-elf\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.109
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-gcc.exe",
+        "-print-multi-lib"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\tool-discovery",
+      "started_utc": "2026-11-05T04:28:57.434013+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": ".;\nrv32i/ilp32;@march=rv32i@mabi=ilp32\nrv32ib/ilp32;@march=rv32ib@mabi=ilp32\nrv32ic/ilp32;@march=rv32ic@mabi=ilp32\nrv32icb/ilp32;@march=rv32icb@mabi=ilp32\nrv32im/ilp32;@march=rv32im@mabi=ilp32\nrv32imb/ilp32;@march=rv32imb@mabi=ilp32\nrv32imc/ilp32;@march=rv32imc@mabi=ilp32\nrv32imcb/ilp32;@march=rv32imcb@mabi=ilp32\nrv32imac/ilp32;@march=rv32imac@mabi=ilp32\nrv32imac_zicsr_zifencei/ilp32;@march=rv32imac_zicsr_zifencei@mabi=ilp32\nrv32imf_zicsr/ilp32f;@march=rv32imf_zicsr@mabi=ilp32f\nrv32imfc_zicsr/ilp32f;@march=rv32imfc_zicsr@mabi=ilp32f\nrv32imafc_zicsr/ilp32f;@march=rv32imafc_zicsr@mabi=ilp32f\nrv32imfdc_zicsr/ilp32d;@march=rv32imfdc_zicsr@mabi=ilp32d\nrv64i/lp64;@march=rv64i@mabi=lp64\nrv64ic/lp64;@march=rv64ic@mabi=lp64\nrv64im/lp64;@march=rv64im@mabi=lp64\nrv64imc/lp64;@march=rv64imc@mabi=lp64\nrv64imac/lp64;@march=rv64imac@mabi=lp64\nrv64imf_zicsr/lp64f;@march=rv64imf_zicsr@mabi=lp64f\nrv64imfc_zicsr/lp64f;@march=rv64imfc_zicsr@mabi=lp64f\nrv64imafc_zicsr/lp64f;@march=rv64imafc_zicsr@mabi=lp64f\nrv64imfdc_zicsr/lp64d;@march=rv64imfdc_zicsr@mabi=lp64d\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.125
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-ld.exe",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\tool-discovery",
+      "started_utc": "2026-11-05T04:28:57.552255+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "GNU ld (GNU Binutils) 2.43.1.20241111\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) a later version.\nThis program has absolutely no warranty.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.578
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-objcopy.exe",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\tool-discovery",
+      "started_utc": "2026-11-05T04:28:58.125390+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "GNU objcopy (GNU Binutils) 2.39.0.20220819\nCopyright (C) 2022 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) any later version.\nThis program has absolutely no warranty.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.282
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-readelf.exe",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\tool-discovery",
+      "started_utc": "2026-11-05T04:28:58.420569+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "GNU readelf (GNU Binutils) 2.39.0.20220819\nCopyright (C) 2022 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) any later version.\nThis program has absolutely no warranty.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.297
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-objdump.exe",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\tool-discovery",
+      "started_utc": "2026-11-05T04:28:58.721025+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "GNU objdump (GNU Binutils) 2.39.0.20220819\nCopyright (C) 2022 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) any later version.\nThis program has absolutely no warranty.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.344
+    }
+  ],
+  "scope": "Installed AMD baremetal RISC-V tools, version/multilib discovery only; no installation or host PATH change"
+}

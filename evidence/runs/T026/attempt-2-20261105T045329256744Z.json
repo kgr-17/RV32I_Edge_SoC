@@ -1,0 +1,75 @@
+{
+  "task": "T026",
+  "attempt": 2,
+  "git_commit": "1dd3daec958a84f9634f6686a887de98432a9924",
+  "python": "3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)]",
+  "stage": "finished",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "lint"
+      ],
+      "started_utc": "2026-11-05T04:53:29.298226+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "FAIL",
+      "exit_code": 1,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/rtl_checks.py\", \"lint\"], \"started_utc\": \"2026-11-05T04:53:29.455428+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"FAIL\", \"exit_code\": 1, \"stdout\": \"{\\n  \\\"status\\\": \\\"FAIL\\\",\\n  \\\"evidence\\\": \\\"evidence\\\\\\\\toolchain_runs\\\\\\\\lint-20261105T045329648983Z.json\\\",\\n  \\\"checks\\\": 31,\\n  \\\"simulations\\\": [],\\n  \\\"error\\\": \\\"Synthesis lint register_fixture\\\"\\n}\\n\", \"stderr\": \"\", \"timeout_seconds\": 600}\n",
+      "stderr": "",
+      "timeout_seconds": 600
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "test-firmware"
+      ],
+      "started_utc": "2026-11-05T04:59:59.860151+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/test_rtl_checks.py\"], \"started_utc\": \"2026-11-05T05:00:00.010145+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"\", \"stderr\": \"test_duplicate_completion_rejected (__main__.CheckPolicyTests) ... ok\\ntest_empty_manifest_rejected (__main__.CheckPolicyTests) ... ok\\ntest_error_despite_exit_zero_rejected (__main__.CheckPolicyTests) ... ok\\ntest_invalid_seed_rejected (__main__.CheckPolicyTests) ... ok\\ntest_invalid_synthesis_budgets_rejected (__main__.CheckPolicyTests) ... ok\\ntest_memory_initialization_inputs_must_be_unique_and_present (__main__.CheckPolicyTests) ... ok\\ntest_missing_lint_only_source_is_not_run (__main__.CheckPolicyTests) ... ok\\ntest_missing_source_not_run (__main__.CheckPolicyTests) ... ok\\ntest_nonzero_cannot_be_accepted_as_pass (__main__.CheckPolicyTests) ... ok\\ntest_oracle_reset_wins_and_hold (__main__.CheckPolicyTests) ... ok\\ntest_positive_completion (__main__.CheckPolicyTests) ... ok\\ntest_production_lint_only_designs_registered_without_fixture_protocol (__main__.CheckPolicyTests) ... ok\\ntest_replay_and_seed_variation (__main__.CheckPolicyTests) ... ok\\ntest_timeout_or_nonzero_rejected (__main__.CheckPolicyTests) ... ok\\ntest_unregistered_production_source_not_run (__main__.CheckPolicyTests) ... ok\\ntest_xsim_batch_does_not_receive_equals_arguments (__main__.CheckPolicyTests) ... ok\\ntest_zero_tests_or_missing_completion_rejected (__main__.CheckPolicyTests) ... ok\\n\\n----------------------------------------------------------------------\\nRan 17 tests in 0.096s\\n\\nOK\\n\", \"timeout_seconds\": 300}\n{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/test_firmware.py\"], \"started_utc\": \"2026-11-05T05:00:00.422235+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"\", \"stderr\": \"test_bad_symbols_and_image_capacity_rejected (__main__.FirmwareTests) ... ok\\ntest_byte_lane_read_first_and_warm_reset_retention (__main__.FirmwareTests) ... ok\\ntest_independent_elf_lma_and_little_endian_word_image (__main__.FirmwareTests) ... ok\\ntest_outside_rom_ram_overlap_and_permissions_rejected (__main__.FirmwareTests) ... ok\\ntest_pattern_addresses_unique_and_stimulus_replay (__main__.FirmwareTests) ... ok\\ntest_rom_two_ports_independent_enable_and_holds (__main__.FirmwareTests) ... ok\\ntest_wrong_class_machine_entry_flags_and_short_tables_rejected (__main__.FirmwareTests) ... ok\\n\\n----------------------------------------------------------------------\\nRan 7 tests in 0.034s\\n\\nOK\\n\", \"timeout_seconds\": 300}\n{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/firmware_checks.py\"], \"started_utc\": \"2026-11-05T05:00:00.635337+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\\"status\\\": \\\"PASS\\\", \\\"evidence\\\": \\\"evidence/toolchain_runs/firmware-20261105T050000850238Z.json\\\", \\\"error\\\": null}\\n\", \"stderr\": \"\", \"timeout_seconds\": 300}\n",
+      "stderr": "",
+      "timeout_seconds": 300
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_utc": "2026-11-05T05:00:50.006572+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "timeout_seconds": 300
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "started_utc": "2026-11-05T05:00:50.056604+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "timeout_seconds": 300
+    }
+  ],
+  "waveform_paths": [],
+  "seed": null,
+  "evidence_sha256": "4b934ef0f6bd9bb4312d977167bd79579880915d8910e8468e4e643bb9c9277c"
+}

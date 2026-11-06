@@ -1,0 +1,54 @@
+{
+  "commands": [
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-gcc.exe",
+        "-print-prog-name=cc1"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\tool-components",
+      "started_utc": "2026-11-05T04:43:28.174518+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "C:/AMDDesignTools/2025.2/gnu/riscv/nt/x86_64-w64-mingw32/usr/bin/riscv32-xilinx-elf/../../libexec/riscv32-xilinx-elf/gcc/riscv32-xilinx-elf/13.4.0/cc1.exe\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.11
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-gcc.exe",
+        "-print-prog-name=as"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\tool-components",
+      "started_utc": "2026-11-05T04:43:28.313055+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "C:/AMDDesignTools/2025.2/gnu/riscv/nt/x86_64-w64-mingw32/usr/bin/riscv32-xilinx-elf/../../libexec/riscv32-xilinx-elf/gcc/riscv32-xilinx-elf/13.4.0/as.exe\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.109
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-gcc.exe",
+        "-print-prog-name=ld"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\tool-components",
+      "started_utc": "2026-11-05T04:43:28.431735+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "C:/AMDDesignTools/2025.2/gnu/riscv/nt/x86_64-w64-mingw32/usr/bin/riscv32-xilinx-elf/../../libexec/riscv32-xilinx-elf/gcc/riscv32-xilinx-elf/13.4.0/ld.exe\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.11
+    }
+  ],
+  "components_sha256": {
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\x86_64-w64-mingw32\\usr\\libexec\\riscv32-xilinx-elf\\gcc\\riscv32-xilinx-elf\\13.4.0\\cc1.exe": "af63512f18d48199da85b011d566cc211ab8a3fd62b5cc8e34e52f8c88c206c9",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\x86_64-w64-mingw32\\usr\\bin\\riscv32-xilinx-elf\\riscv32-xilinx-elf-as.exe": "13392e4e81eacf737aeed6cc4d493162aa96184c4ba55e5762dce23d5271cba8",
+    "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\x86_64-w64-mingw32\\usr\\bin\\riscv32-xilinx-elf\\riscv32-xilinx-elf-ld.exe": "3ff18605eb4184f05e3bbabc2476f9fd61d2ffebdb4a1f7869bffd2802972a5c"
+  }
+}

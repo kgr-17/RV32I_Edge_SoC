@@ -15,6 +15,16 @@ class CheckPolicyTests(unittest.TestCase):
     def test_positive_completion(self):
         self.assertTrue(rtl_checks.successful(self.record, 'COMPLETED'))
 
+    def test_memory_initialization_inputs_must_be_unique_and_present(self):
+        manifest=rtl_checks.load_manifest()
+        for invalid in ('not-a-list',[7],['wrong.txt'],['a/rom.mem','b/rom.mem']):
+            changed=copy.deepcopy(manifest);changed['lint_designs'][0]['memory_files']=invalid
+            with mock.patch.object(rtl_checks.harness,'read',return_value=changed):
+                with self.assertRaises(ValueError):rtl_checks.load_manifest()
+        changed=copy.deepcopy(manifest);changed['lint_designs'][0]['memory_files']=['missing_t026_image.mem']
+        with mock.patch.object(rtl_checks.harness,'read',return_value=changed):
+            with self.assertRaises(rtl_checks.NotRun):rtl_checks.load_manifest()
+
     def test_invalid_synthesis_budgets_rejected(self):
         manifest=rtl_checks.load_manifest()
         for value in (0,-1,True,121,float('inf')):

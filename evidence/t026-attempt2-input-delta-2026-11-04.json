@@ -1,0 +1,11 @@
+{
+  "scope": "Only RAM mapping attribute/comment changed, exact original logic recovers after removing those lines; all2124 prior generated hashes match. Gates/tests/seeds/timeouts unchanged.",
+  "changed": {
+    "rtl/memory/data_ram.sv": {
+      "before": "bdc645340e8575a18bbe3dae2d0f3caa268fa1bf58d26fe1ac3e11da5dfd2851",
+      "after": "41d68829e41df43d62274c708c9b6e996d757d5f676ddccb1773301956e35b7c"
+    }
+  },
+  "verified_unchanged_generated": 2124,
+  "first_failed_receipt": "evidence/runs/T026/attempt-1-20261105T044625439841Z.json"
+}

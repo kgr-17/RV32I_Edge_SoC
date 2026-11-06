@@ -41,6 +41,12 @@ def load_manifest():
             if not harness.inside(name).is_file():
                 raise NotRun('Missing source: ' + name)
         registered.update(design['sources'])
+        memory_files=design.get('memory_files',[])
+        if (not isinstance(memory_files,list) or any(not isinstance(f,str) or not f.endswith('.mem') for f in memory_files) or
+                len({Path(f).name for f in memory_files})!=len(memory_files)):
+            raise ValueError('Invalid/aliased memory initialization inputs')
+        for name in memory_files:
+            if not harness.inside(name).is_file():raise NotRun('Missing initialization image: '+name)
     production = {path.relative_to(harness.ROOT).as_posix()
                   for pattern in ('*.sv', '*.v') for path in harness.inside('rtl').rglob(pattern)}
     if production - registered:
@@ -128,9 +134,11 @@ class Checks:
         self.result['pins'] = {key: value for key, value in manifest.items() if key.endswith('_version') or key == 'vivado_sw_build'}
         self.save()
 
-    def lint(self, sources, top, manifest, negative=False, timeout=45):
+    def lint(self, sources, top, manifest, negative=False, timeout=45, memory_files=()):
         cwd = self.base / ('negative_latch' if negative else 'lint_' + top)
         cwd.mkdir(parents=True)
+        for name in memory_files:
+            harness.atomic_text(cwd / Path(name).name, harness.inside(name).read_text(encoding='ascii'))
         source_list = cwd / 'sources.txt'
         harness.atomic_text(source_list, '\n'.join(str(harness.inside(name)) for name in sources) + '\n')
         record = self.vendor('vivado', ['-mode', 'batch', '-nolog', '-nojournal', '-notrace', '-source',
@@ -203,7 +211,7 @@ def main():
         if manifest.get('lint_designs') and args.profile in ('all', 'lint'):
             checks.result['scope'] = 'Manifest RTL synthesis lint plus infrastructure fixture DV; no complete CPU/SoC or hardware'
             for design in manifest['lint_designs']:
-                checks.lint(design['sources'], design['top'], manifest, timeout=design.get('timeout_seconds',45))
+                checks.lint(design['sources'], design['top'], manifest, timeout=design.get('timeout_seconds',45),memory_files=design.get('memory_files',[]))
         for design in manifest['designs']:
             if args.profile in ('all', 'lint'):
                 checks.lint(design['sources'], design['top'], manifest)

@@ -1,0 +1,10 @@
+{
+  "scope": "Exact native bytes retained in ZIP and original project-local log; readable text uses canonical LF. No dump inspected/copied.",
+  "path": "evidence/failed_sources/T026/attempt-2/hs_err_pid31348.txt",
+  "sha256": "5849854efd7128593d74b6a5ba55f01be5d35b7ed6605d277b53601621874fce",
+  "raw_report_sha256": "56867003ffe4329f75e1c0c57c49327bd32d993927d770f6f36aaaa2d7765f73",
+  "raw_archive_path": "evidence/failed_sources/T026/attempt-2/crash-report.zip",
+  "raw_archive_sha256": "76100c6b06513c5f5ba5bb34707579bd5f068e81847e2db8bd74be471cb9362b",
+  "manifest": "evidence/failed_sources/T026/attempt-2/manifest.json",
+  "manifest_sha256": "24eeab44868f8f5e198bed548bc2b93a43e90d90039a34e0613c5321cf2b520b"
+}

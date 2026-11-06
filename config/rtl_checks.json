@@ -714,6 +714,19 @@
       "sources": [
         "fpga/basys3/top.sv"
       ]
+    },
+    {
+      "name": "soc_bram_banks",
+      "top": "memory_lint_top",
+      "sources": [
+        "rtl/memory/boot_rom.sv",
+        "rtl/memory/data_ram.sv",
+        "dv/lint/memory_lint_top.sv"
+      ],
+      "memory_files": [
+        "fpga/basys3/rom_init.mem"
+      ],
+      "timeout_seconds": 90
     }
   ],
   "designs": [

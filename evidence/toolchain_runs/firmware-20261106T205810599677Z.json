@@ -1,0 +1,1057 @@
+{
+  "profile": "firmware",
+  "status": "PASS",
+  "started_utc": "20261106T205810599677Z",
+  "base_commit": "1dd3daec958a84f9634f6686a887de98432a9924",
+  "scope": "Compiled RV32I boot/ISS plus primitive memory RTL; no SoC or physical hardware",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\versions",
+      "started_utc": "2026-11-06T20:58:10.694194+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "git version 2.48.1.windows.1\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.11
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\versions\\xvlog",
+      "started_utc": "2026-11-06T20:58:10.812049+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.593
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\versions\\xelab",
+      "started_utc": "2026-11-06T20:58:11.406048+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.578
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\versions\\xsim",
+      "started_utc": "2026-11-06T20:58:11.990048+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2025 Xilinx, Inc. All Rights Reserved.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.438
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-gcc.exe",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler",
+      "started_utc": "2026-11-06T20:58:12.477579+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "riscv32-xilinx-elf-gcc.exe (GCC) 13.4.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.11
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-ld.exe",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler",
+      "started_utc": "2026-11-06T20:58:12.594224+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "GNU ld (GNU Binutils) 2.43.1.20241111\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) a later version.\nThis program has absolutely no warranty.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.14
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-objcopy.exe",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler",
+      "started_utc": "2026-11-06T20:58:12.727578+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "GNU objcopy (GNU Binutils) 2.39.0.20220819\nCopyright (C) 2022 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) any later version.\nThis program has absolutely no warranty.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.094
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-readelf.exe",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler",
+      "started_utc": "2026-11-06T20:58:12.830974+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "GNU readelf (GNU Binutils) 2.39.0.20220819\nCopyright (C) 2022 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) any later version.\nThis program has absolutely no warranty.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.094
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-objdump.exe",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler",
+      "started_utc": "2026-11-06T20:58:12.937047+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "GNU objdump (GNU Binutils) 2.39.0.20220819\nCopyright (C) 2022 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) any later version.\nThis program has absolutely no warranty.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.109
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-gcc.exe",
+        "-dumpmachine"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler",
+      "started_utc": "2026-11-06T20:58:13.035898+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "riscv32-xilinx-elf\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.109
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-gcc.exe",
+        "-march=rv32i",
+        "-mabi=ilp32",
+        "-misa-spec=20191213",
+        "-mno-relax",
+        "-Wa,--fatal-warnings",
+        "-c",
+        "C:\\RV32I_Edge_SoC\\sw\\boot.S",
+        "-o",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\boot.o"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler",
+      "started_utc": "2026-11-06T20:58:13.156760+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.157
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-gcc.exe",
+        "-march=rv32i",
+        "-mabi=ilp32",
+        "-misa-spec=20191213",
+        "-mno-relax",
+        "-Wa,--fatal-warnings",
+        "-c",
+        "C:\\RV32I_Edge_SoC\\sw\\smoke.S",
+        "-o",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\smoke.o"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler",
+      "started_utc": "2026-11-06T20:58:13.317181+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.125
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-ld.exe",
+        "-m",
+        "elf32lriscv",
+        "--no-relax",
+        "--fatal-warnings",
+        "-T",
+        "C:\\RV32I_Edge_SoC\\sw\\linker.ld",
+        "-Map",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\firmware.map",
+        "-o",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\firmware.elf",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\boot.o",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\smoke.o"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler",
+      "started_utc": "2026-11-06T20:58:13.460965+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.109
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-objcopy.exe",
+        "-O",
+        "binary",
+        "--gap-fill",
+        "0",
+        "--pad-to",
+        "0x10000",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\firmware.elf",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\firmware.bin"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler",
+      "started_utc": "2026-11-06T20:58:13.589849+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.094
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-readelf.exe",
+        "-h",
+        "-lW",
+        "-sW",
+        "-A",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\firmware.elf"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler",
+      "started_utc": "2026-11-06T20:58:13.694247+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "ELF Header:\n  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 \n  Class:                             ELF32\n  Data:                              2's complement, little endian\n  Version:                           1 (current)\n  OS/ABI:                            UNIX - System V\n  ABI Version:                       0\n  Type:                              EXEC (Executable file)\n  Machine:                           RISC-V\n  Version:                           0x1\n  Entry point address:               0x0\n  Start of program headers:          52 (bytes into file)\n  Start of section headers:          8904 (bytes into file)\n  Flags:                             0x0\n  Size of this header:               52 (bytes)\n  Size of program headers:           32 (bytes)\n  Number of program headers:         3\n  Size of section headers:           40 (bytes)\n  Number of section headers:         9\n  Section header string table index: 8\n\nProgram Headers:\n  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align\n  RISCV_ATTRIBUT 0x002008 0x00000000 0x00000000 0x0001a 0x00000 R   0x1\n  LOAD           0x001000 0x00000000 0x00000000 0x000ec 0x000ec R E 0x1000\n  LOAD           0x002000 0x00010000 0x000000ec 0x00008 0x00014 RW  0x1000\n\n Section to Segment mapping:\n  Segment Sections...\n   00     .riscv.attributes \n   01     .text \n   02     .data .bss \n\nSymbol table '.symtab' contains 26 entries:\n   Num:    Value  Size Type    Bind   Vis      Ndx Name\n     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND \n     1: 00000000     0 SECTION LOCAL  DEFAULT    1 .text\n     2: 000000ec     0 SECTION LOCAL  DEFAULT    2 .rodata\n     3: 00010000     0 SECTION LOCAL  DEFAULT    3 .data\n     4: 00010008     0 SECTION LOCAL  DEFAULT    4 .bss\n     5: 00000000     0 SECTION LOCAL  DEFAULT    5 .riscv.attributes\n     6: 00000000     0 FILE    LOCAL  DEFAULT  ABS boot.o\n     7: 00000000     0 NOTYPE  LOCAL  DEFAULT    1 $xrv32i2p1\n     8: 00000000     0 FILE    LOCAL  DEFAULT  ABS smoke.o\n     9: 00000064     0 NOTYPE  LOCAL  DEFAULT    1 $xrv32i2p1\n    10: 000000dc     0 NOTYPE  LOCAL  DEFAULT    1 fail\n    11: 000000e0     0 NOTYPE  LOCAL  DEFAULT    1 done\n    12: 000000ec     0 NOTYPE  GLOBAL DEFAULT  ABS __data_load\n    13: 00010008     0 NOTYPE  GLOBAL DEFAULT    4 zero_area\n    14: 00010014     0 NOTYPE  GLOBAL DEFAULT    4 __bss_end\n    15: 00010010     0 NOTYPE  GLOBAL DEFAULT    4 signature\n    16: 0000005c     0 NOTYPE  GLOBAL DEFAULT    1 halt_ecall\n    17: 000000f4     0 NOTYPE  GLOBAL DEFAULT  ABS __rom_image_end\n    18: 00020000     0 NOTYPE  GLOBAL DEFAULT    4 __stack_top\n    19: 00000000   100 FUNC    GLOBAL DEFAULT    1 _start\n    20: 00010008     0 NOTYPE  GLOBAL DEFAULT    3 __data_end\n    21: 00010000     0 NOTYPE  GLOBAL DEFAULT    3 initial_data\n    22: 00010008     0 NOTYPE  GLOBAL DEFAULT    4 __bss_start\n    23: 00000064   136 FUNC    GLOBAL DEFAULT    1 main\n    24: 0001f000     0 NOTYPE  GLOBAL DEFAULT  ABS __stack_bottom\n    25: 00010000     0 NOTYPE  GLOBAL DEFAULT    3 __data_start\nAttribute Section: riscv\nFile Attributes\n  Tag_RISCV_arch: \"rv32i2p1\"\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.094
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-objdump.exe",
+        "-d",
+        "-M",
+        "no-aliases",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\firmware.elf"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler",
+      "started_utc": "2026-11-06T20:58:13.797459+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\nC:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\firmware.elf:     file format elf32-littleriscv\n\n\nDisassembly of section .text:\n\n00000000 <_start>:\n   0:\t00020117          \tauipc\tsp,0x20\n   4:\t00010113          \taddi\tsp,sp,0 # 20000 <__stack_top>\n   8:\t00000297          \tauipc\tt0,0x0\n   c:\t0e428293          \taddi\tt0,t0,228 # ec <__data_load>\n  10:\t00010317          \tauipc\tt1,0x10\n  14:\tff030313          \taddi\tt1,t1,-16 # 10000 <__data_start>\n  18:\t00010397          \tauipc\tt2,0x10\n  1c:\tff038393          \taddi\tt2,t2,-16 # 10008 <__bss_start>\n  20:\t00737c63          \tbgeu\tt1,t2,38 <_start+0x38>\n  24:\t0002ae03          \tlw\tt3,0(t0)\n  28:\t01c32023          \tsw\tt3,0(t1)\n  2c:\t00428293          \taddi\tt0,t0,4\n  30:\t00430313          \taddi\tt1,t1,4\n  34:\tfedff06f          \tjal\tzero,20 <_start+0x20>\n  38:\t00010297          \tauipc\tt0,0x10\n  3c:\tfd028293          \taddi\tt0,t0,-48 # 10008 <__bss_start>\n  40:\t00010317          \tauipc\tt1,0x10\n  44:\tfd430313          \taddi\tt1,t1,-44 # 10014 <__bss_end>\n  48:\t0062f863          \tbgeu\tt0,t1,58 <_start+0x58>\n  4c:\t0002a023          \tsw\tzero,0(t0)\n  50:\t00428293          \taddi\tt0,t0,4\n  54:\tff5ff06f          \tjal\tzero,48 <_start+0x48>\n  58:\t00c000ef          \tjal\tra,64 <main>\n\n0000005c <halt_ecall>:\n  5c:\t00000073          \tecall\n  60:\t0000006f          \tjal\tzero,60 <halt_ecall+0x4>\n\n00000064 <main>:\n  64:\tff010113          \taddi\tsp,sp,-16\n  68:\t00112623          \tsw\tra,12(sp)\n  6c:\t10203eb7          \tlui\tt4,0x10203\n  70:\t040e8e93          \taddi\tt4,t4,64 # 10203040 <__stack_top+0x101e3040>\n  74:\t01d12423          \tsw\tt4,8(sp)\n  78:\t00812f03          \tlw\tt5,8(sp)\n  7c:\t07ee9063          \tbne\tt4,t5,dc <fail>\n  80:\t00010297          \tauipc\tt0,0x10\n  84:\tf8028293          \taddi\tt0,t0,-128 # 10000 <__data_start>\n  88:\t0002a303          \tlw\tt1,0(t0)\n  8c:\tcafec3b7          \tlui\tt2,0xcafec\n  90:\tabe38393          \taddi\tt2,t2,-1346 # cafebabe <__stack_top+0xcafcbabe>\n  94:\t04731463          \tbne\tt1,t2,dc <fail>\n  98:\t0042a303          \tlw\tt1,4(t0)\n  9c:\t1357a3b7          \tlui\tt2,0x1357a\n  a0:\tbdf38393          \taddi\tt2,t2,-1057 # 13579bdf <__stack_top+0x13559bdf>\n  a4:\t02731c63          \tbne\tt1,t2,dc <fail>\n  a8:\t00010297          \tauipc\tt0,0x10\n  ac:\tf6028293          \taddi\tt0,t0,-160 # 10008 <__bss_start>\n  b0:\t0002a303          \tlw\tt1,0(t0)\n  b4:\t02031463          \tbne\tt1,zero,dc <fail>\n  b8:\t0042a303          \tlw\tt1,4(t0)\n  bc:\t02031063          \tbne\tt1,zero,dc <fail>\n  c0:\t00010297          \tauipc\tt0,0x10\n  c4:\tf5028293          \taddi\tt0,t0,-176 # 10010 <signature>\n  c8:\t600d6337          \tlui\tt1,0x600d6\n  cc:\t00d30313          \taddi\tt1,t1,13 # 600d600d <__stack_top+0x600b600d>\n  d0:\t0062a023          \tsw\tt1,0(t0)\n  d4:\t00000513          \taddi\ta0,zero,0\n  d8:\t0080006f          \tjal\tzero,e0 <done>\n\n000000dc <fail>:\n  dc:\t00100513          \taddi\ta0,zero,1\n\n000000e0 <done>:\n  e0:\t00c12083          \tlw\tra,12(sp)\n  e4:\t01010113          \taddi\tsp,sp,16\n  e8:\t00008067          \tjalr\tzero,0(ra)\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.109
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-gcc.exe",
+        "-march=rv32i",
+        "-mabi=ilp32",
+        "-mno-relax",
+        "-c",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\overflow_ROM.S",
+        "-o",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\overflow_ROM.o"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler",
+      "started_utc": "2026-11-06T20:58:14.031549+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.141
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-ld.exe",
+        "-m",
+        "elf32lriscv",
+        "--no-relax",
+        "--fatal-warnings",
+        "-T",
+        "C:\\RV32I_Edge_SoC\\sw\\linker.ld",
+        "-Map",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\overflow_ROM.map",
+        "-o",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\overflow_ROM.elf",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\boot.o",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\smoke.o",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\overflow_ROM.o"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler",
+      "started_utc": "2026-11-06T20:58:14.178830+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 1,
+      "status": "FAIL",
+      "stdout": "",
+      "stderr": "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\\\..\\x86_64-w64-mingw32\\usr\\bin\\riscv32-xilinx-elf\\riscv32-xilinx-elf-ld.exe: C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\overflow_ROM.elf section `.rodata' will not fit in region `ROM'\nC:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\\\..\\x86_64-w64-mingw32\\usr\\bin\\riscv32-xilinx-elf\\riscv32-xilinx-elf-ld.exe: ROM image exceeds approved region\nC:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\\\..\\x86_64-w64-mingw32\\usr\\bin\\riscv32-xilinx-elf\\riscv32-xilinx-elf-ld.exe: section .data VMA [00010000,00010007] overlaps section .rodata VMA [000000ec,000100eb]\nC:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\\\..\\x86_64-w64-mingw32\\usr\\bin\\riscv32-xilinx-elf\\riscv32-xilinx-elf-ld.exe: region `ROM' overflowed by 244 bytes\n",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.125
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-gcc.exe",
+        "-march=rv32i",
+        "-mabi=ilp32",
+        "-mno-relax",
+        "-c",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\overflow_RAM.S",
+        "-o",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\overflow_RAM.o"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler",
+      "started_utc": "2026-11-06T20:58:14.316018+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.141
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-ld.exe",
+        "-m",
+        "elf32lriscv",
+        "--no-relax",
+        "--fatal-warnings",
+        "-T",
+        "C:\\RV32I_Edge_SoC\\sw\\linker.ld",
+        "-Map",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\overflow_RAM.map",
+        "-o",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\overflow_RAM.elf",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\boot.o",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\smoke.o",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\overflow_RAM.o"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler",
+      "started_utc": "2026-11-06T20:58:14.460976+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 1,
+      "status": "FAIL",
+      "stdout": "",
+      "stderr": "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\\\..\\x86_64-w64-mingw32\\usr\\bin\\riscv32-xilinx-elf\\riscv32-xilinx-elf-ld.exe: C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\compiler\\overflow_RAM.elf section `.bss' will not fit in region `RAM'\nC:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\\\..\\x86_64-w64-mingw32\\usr\\bin\\riscv32-xilinx-elf\\riscv32-xilinx-elf-ld.exe: RAM/stack collision\nC:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\\\..\\x86_64-w64-mingw32\\usr\\bin\\riscv32-xilinx-elf\\riscv32-xilinx-elf-ld.exe: region `RAM' overflowed by 20 bytes\n",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.125
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\memory\\boot_rom.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\memory\\data_ram.sv",
+        "C:\\RV32I_Edge_SoC\\dv\\firmware\\tb_memories.sv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\memories",
+      "started_utc": "2026-11-06T20:58:14.629637+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "INFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/memory/boot_rom.sv\" into library work\nINFO: [VRFC 10-311] analyzing module boot_rom\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/memory/data_ram.sv\" into library work\nINFO: [VRFC 10-311] analyzing module data_ram\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/firmware/tb_memories.sv\" into library work\nINFO: [VRFC 10-311] analyzing module tb_memories\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.718
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "work.tb_memories",
+        "--snapshot",
+        "memory_snapshot",
+        "--timescale",
+        "1ns/1ps",
+        "--debug",
+        "typical"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\memories",
+      "started_utc": "2026-11-06T20:58:15.354737+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nRunning: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_memories --snapshot memory_snapshot --timescale 1ns/1ps --debug typical \nMulti-threading is on. Using 26 slave threads.\nStarting static elaboration\nPass Through NonSizing Optimizer\nCompleted static elaboration\nStarting simulation data flow analysis\nCompleted simulation data flow analysis\nTime Resolution for simulation is 1ps\nCompiling module work.boot_rom(INIT_FILE=\"rom_pattern....\nCompiling module work.boot_rom\nCompiling module work.data_ram\nCompiling module work.tb_memories\nBuilt simulation snapshot memory_snapshot\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 1.407
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "memory_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\memories\\seed_1.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\memories",
+      "started_utc": "2026-11-06T20:58:16.861045+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Fri Nov  6 12:58:17 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/memory_snapshot/xsim_script.tcl\n# xsim {memory_snapshot} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/vectors_1.txt -wdb {C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/seed_1.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/run.tcl\n## log_wave /tb_memories/clk /tb_memories/rst /tb_memories/ae /tb_memories/be /tb_memories/re /tb_memories/aa /tb_memories/ba /tb_memories/ra /tb_memories/mask /tb_memories/data /tb_memories/pa /tb_memories/pb /tb_memories/boot_a /tb_memories/boot_b /tb_memories/ram_data /tb_memories/pav /tb_memories/pbv /tb_memories/rv\n## run all\nMEMORY_SIM_PASS seed=1 checked=33125\n$finish called at time : 331256 ns : File \"C:/RV32I_Edge_SoC/dv/firmware/tb_memories.sv\" Line 41\nexit 0\nINFO: [Common 17-206] Exiting xsim at Fri Nov  6 12:58:19 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.75,
+      "argument_file": {
+        "path": "build\\T026\\firmware-20261106T205810599677Z\\memories\\seed_1.args",
+        "sha256": "35ccaaf7da088bcc6bf1c2efe957760cb99ecf46628e3f04a621b76c428c51bd",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/vectors_1.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/seed_1.wdb\n",
+        "intended_argv": [
+          "memory_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/vectors_1.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/seed_1.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "memory_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\memories\\seed_20261104.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\memories",
+      "started_utc": "2026-11-06T20:58:19.715327+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Fri Nov  6 12:58:20 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/memory_snapshot/xsim_script.tcl\n# xsim {memory_snapshot} -testplusarg SEED=20261104 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/vectors_20261104.txt -wdb {C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/seed_20261104.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/run.tcl} -onfinish quit -onerror quit -sv_seed 20261104\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/run.tcl\n## log_wave /tb_memories/clk /tb_memories/rst /tb_memories/ae /tb_memories/be /tb_memories/re /tb_memories/aa /tb_memories/ba /tb_memories/ra /tb_memories/mask /tb_memories/data /tb_memories/pa /tb_memories/pb /tb_memories/boot_a /tb_memories/boot_b /tb_memories/ram_data /tb_memories/pav /tb_memories/pbv /tb_memories/rv\n## run all\nMEMORY_SIM_PASS seed=20261104 checked=33125\n$finish called at time : 331256 ns : File \"C:/RV32I_Edge_SoC/dv/firmware/tb_memories.sv\" Line 41\nexit 0\nINFO: [Common 17-206] Exiting xsim at Fri Nov  6 12:58:22 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.75,
+      "argument_file": {
+        "path": "build\\T026\\firmware-20261106T205810599677Z\\memories\\seed_20261104.args",
+        "sha256": "830509d9ecb6c4b076123d03a5293f01107aad71921796f05be509d8c94667d2",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n20261104\n--testplusarg\nSEED=20261104\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/vectors_20261104.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/seed_20261104.wdb\n",
+        "intended_argv": [
+          "memory_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "20261104",
+          "--testplusarg",
+          "SEED=20261104",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/vectors_20261104.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/seed_20261104.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "memory_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\memories\\wrong-expected.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\memories",
+      "started_utc": "2026-11-06T20:58:22.559110+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Fri Nov  6 12:58:23 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/memory_snapshot/xsim_script.tcl\n# xsim {memory_snapshot} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/wrong-expected.txt -wdb {C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/wrong-expected.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/run.tcl\n## log_wave /tb_memories/clk /tb_memories/rst /tb_memories/ae /tb_memories/be /tb_memories/re /tb_memories/aa /tb_memories/ba /tb_memories/ra /tb_memories/mask /tb_memories/data /tb_memories/pa /tb_memories/pb /tb_memories/boot_a /tb_memories/boot_b /tb_memories/ram_data /tb_memories/pav /tb_memories/pbv /tb_memories/rv\n## run all\nFatal: MEMORY_MISMATCH checked=0\nTime: 16 ns  Iteration: 0  Process: /tb_memories/Initial21_8  Scope: tb_memories  File: C:/RV32I_Edge_SoC/dv/firmware/tb_memories.sv Line: 34\n$finish called at time : 16 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Fri Nov  6 12:58:24 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.484,
+      "argument_file": {
+        "path": "build\\T026\\firmware-20261106T205810599677Z\\memories\\wrong-expected.args",
+        "sha256": "8b136ff4d572d1d9080de3b4e6c007cdb8c854cbeb6f467b0f17e39a9f197ec3",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/wrong-expected.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/wrong-expected.wdb\n",
+        "intended_argv": [
+          "memory_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/wrong-expected.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/wrong-expected.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "memory_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\memories\\empty.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\memories",
+      "started_utc": "2026-11-06T20:58:25.052907+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Fri Nov  6 12:58:25 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/memory_snapshot/xsim_script.tcl\n# xsim {memory_snapshot} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/empty.txt -wdb {C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/empty.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/run.tcl\n## log_wave /tb_memories/clk /tb_memories/rst /tb_memories/ae /tb_memories/be /tb_memories/re /tb_memories/aa /tb_memories/ba /tb_memories/ra /tb_memories/mask /tb_memories/data /tb_memories/pa /tb_memories/pb /tb_memories/boot_a /tb_memories/boot_b /tb_memories/ram_data /tb_memories/pav /tb_memories/pbv /tb_memories/rv\n## run all\nFatal: MEMORY_EMPTY_VECTORS\nTime: 0 ps  Iteration: 0  Process: /tb_memories/Initial21_8  Scope: tb_memories  File: C:/RV32I_Edge_SoC/dv/firmware/tb_memories.sv Line: 39\n$finish called at time : 0 fs\nexit 0\nINFO: [Common 17-206] Exiting xsim at Fri Nov  6 12:58:27 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.437,
+      "argument_file": {
+        "path": "build\\T026\\firmware-20261106T205810599677Z\\memories\\empty.args",
+        "sha256": "aa856e952bf00da2916d51eaa47b2c5e7ea9c0ddd55d5d62240bcb9ba8b83846",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/empty.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/empty.wdb\n",
+        "intended_argv": [
+          "memory_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/empty.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/memories/empty.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat",
+        "-mode",
+        "batch",
+        "-nolog",
+        "-nojournal",
+        "-notrace",
+        "-source",
+        "C:\\RV32I_Edge_SoC\\scripts\\vivado_memory_check.tcl",
+        "-tclargs",
+        "C:\\RV32I_Edge_SoC"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T026\\firmware-20261106T205810599677Z\\inference",
+      "started_utc": "2026-11-06T20:58:27.502980+00:00",
+      "timeout_seconds": 90,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** Vivado v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Fri Nov  6 12:58:28 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource {C:\\RV32I_Edge_SoC\\scripts\\vivado_memory_check.tcl} -notrace\nCommand: synth_design -top memory_lint_top -part xc7a35tcpg236-1 -flatten_hierarchy none\nStarting synth_design\nAttempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'\nINFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'\nINFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.\nINFO: [Synth 8-7078] Launching helper process for spawning children vivado processes\nINFO: [Synth 8-7075] Helper process launched with PID 10756\n---------------------------------------------------------------------------------\nStarting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1079.152 ; gain = 537.527\n---------------------------------------------------------------------------------\nINFO: [Synth 8-6157] synthesizing module 'memory_lint_top' [C:/RV32I_Edge_SoC/dv/lint/memory_lint_top.sv:2]\nINFO: [Synth 8-6157] synthesizing module 'boot_rom' [C:/RV32I_Edge_SoC/rtl/memory/boot_rom.sv:3]\nINFO: [Synth 8-3876] $readmem data file 'rom_init.mem' is read successfully [C:/RV32I_Edge_SoC/rtl/memory/boot_rom.sv:13]\nINFO: [Synth 8-6155] done synthesizing module 'boot_rom' (0#1) [C:/RV32I_Edge_SoC/rtl/memory/boot_rom.sv:3]\nINFO: [Synth 8-6157] synthesizing module 'data_ram' [C:/RV32I_Edge_SoC/rtl/memory/data_ram.sv:4]\nINFO: [Synth 8-6155] done synthesizing module 'data_ram' (0#1) [C:/RV32I_Edge_SoC/rtl/memory/data_ram.sv:4]\nINFO: [Synth 8-6155] done synthesizing module 'memory_lint_top' (0#1) [C:/RV32I_Edge_SoC/dv/lint/memory_lint_top.sv:2]\n---------------------------------------------------------------------------------\nFinished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1244.828 ; gain = 703.203\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1244.828 ; gain = 703.203\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Loading Part and Timing Information\n---------------------------------------------------------------------------------\nLoading part: xc7a35tcpg236-1\n---------------------------------------------------------------------------------\nINFO: [Device 21-403] Loading part xc7a35tcpg236-1\nFinished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1244.828 ; gain = 703.203\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1244.828 ; gain = 703.203\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart RTL Component Statistics \n---------------------------------------------------------------------------------\nDetailed RTL Component Info : \n+---Registers : \n\t               32 Bit    Registers := 3     \n\t                1 Bit    Registers := 3     \n+---RAMs : \n\t             512K Bit\t(16384 X 32 bit)          RAMs := 1     \n+---ROMs : \n\t                    ROMs := 2     \n+---Muxes : \n\t   4 Input   32 Bit        Muxes := 2     \n\t   2 Input   32 Bit        Muxes := 4     \n\t   2 Input    8 Bit        Muxes := 1     \n\t   4 Input    1 Bit        Muxes := 1     \n---------------------------------------------------------------------------------\nFinished RTL Component Statistics \n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Part Resource Summary\n---------------------------------------------------------------------------------\nPart Resources:\nDSPs: 90 (col length:60)\nBRAMs: 100 (col length: RAMB18 60 RAMB36 30)\n---------------------------------------------------------------------------------\nFinished Part Resource Summary\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart Cross Boundary and Area Optimization\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1432.836 ; gain = 891.211\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart ROM, RAM, DSP, Shift Register and Retiming Reporting\n---------------------------------------------------------------------------------\n\nBlock RAM: Preliminary Mapping Report (see note below)\n+------------+-------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+\n|Module Name | RTL Object  | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | \n+------------+-------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+\n|ram         | storage_reg | 16 K x 32(READ_FIRST)  | W |   | 16 K x 32(WRITE_FIRST) |   | R | Port A and B     | 0      | 16     | \n+------------+-------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+\n\nNote: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. \n---------------------------------------------------------------------------------\nFinished ROM, RAM, DSP, Shift Register and Retiming Reporting\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart Timing Optimization\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Timing Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1437.844 ; gain = 896.219\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart ROM, RAM, DSP, Shift Register and Retiming Reporting\n---------------------------------------------------------------------------------\n\nBlock RAM: Final Mapping Report\n+------------+-------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+\n|Module Name | RTL Object  | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | \n+------------+-------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+\n|ram         | storage_reg | 16 K x 32(READ_FIRST)  | W |   | 16 K x 32(WRITE_FIRST) |   | R | Port A and B     | 0      | 16     | \n+------------+-------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+\n\n---------------------------------------------------------------------------------\nFinished ROM, RAM, DSP, Shift Register and Retiming Reporting\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Technology Mapping\n---------------------------------------------------------------------------------\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_12 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_12 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_13 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_13 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_14 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_14 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_15 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance rom/a_data_o_reg_15 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance ram/storage_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance ram/storage_reg_bram_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance ram/storage_reg_bram_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance ram/storage_reg_bram_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance ram/storage_reg_bram_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance ram/storage_reg_bram_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance ram/storage_reg_bram_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance ram/storage_reg_bram_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance ram/storage_reg_bram_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance ram/storage_reg_bram_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance ram/storage_reg_bram_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance ram/storage_reg_bram_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance ram/storage_reg_bram_12 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance ram/storage_reg_bram_13 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance ram/storage_reg_bram_14 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\nINFO: [Synth 8-7052] The timing for the instance ram/storage_reg_bram_15 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.\n---------------------------------------------------------------------------------\nFinished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1437.844 ; gain = 896.219\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart IO Insertion\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Final Netlist Cleanup\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Final Netlist Cleanup\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1647.344 ; gain = 1105.719\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Renaming Generated Instances\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1647.344 ; gain = 1105.719\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Handling Custom Attributes\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1648.312 ; gain = 1106.688\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Writing Synthesis Report\n---------------------------------------------------------------------------------\n\nReport BlackBoxes: \n+-+--------------+----------+\n| |BlackBox name |Instances |\n+-+--------------+----------+\n+-+--------------+----------+\n\nReport Cell Usage: \n+------+---------+------+\n|      |Cell     |Count |\n+------+---------+------+\n|1     |BUFG     |     1|\n|2     |LUT2     |     3|\n|3     |LUT5     |    64|\n|4     |LUT6     |   160|\n|5     |MUXF7    |    64|\n|6     |MUXF8    |    32|\n|7     |RAMB36E1 |    32|\n|8     |FDRE     |     7|\n|9     |IBUF     |    83|\n|10    |OBUF     |    99|\n+------+---------+------+\n\nReport Instance Areas: \n+------+---------+---------+------+\n|      |Instance |Module   |Cells |\n+------+---------+---------+------+\n|1     |top      |         |   545|\n|2     |  rom    |boot_rom |    20|\n|3     |  ram    |data_ram |   342|\n+------+---------+---------+------+\n---------------------------------------------------------------------------------\nFinished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1648.312 ; gain = 1106.688\n---------------------------------------------------------------------------------\nSynthesis finished with 0 errors, 0 critical warnings and 0 warnings.\nSynthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1648.312 ; gain = 1106.688\nSynthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1648.312 ; gain = 1106.688\nINFO: [Project 1-571] Translating synthesized netlist\nNetlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1662.371 ; gain = 0.000\nINFO: [Netlist 29-17] Analyzing 128 Unisim elements for replacement\nINFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds\nINFO: [Project 1-570] Preparing netlist for logic optimization\nINFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).\nNetlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1777.016 ; gain = 0.000\nINFO: [Project 1-111] Unisim Transformation Summary:\nNo Unisim elements were transformed.\n\nSynth Design complete | Checksum: 1f20da78\nINFO: [Common 17-83] Releasing license: Synthesis\n67 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.\nsynth_design completed successfully\nsynth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1777.016 ; gain = 1239.402\nCommand: report_drc -checks {LUTLP-1 MDRV-1} -file memory_drc.rpt\nINFO: [DRC 23-27] Running DRC with 2 threads\nINFO: [Vivado_Tcl 2-168] The results of DRC are in file C:/RV32I_Edge_SoC/build/T026/firmware-20261106T205810599677Z/inference/memory_drc.rpt.\nreport_drc completed successfully\nMEMORY_BRAM_COUNTS rom=16 ram=16\nMEMORY_INFERENCE_PASS\nINFO: [Common 17-206] Exiting Vivado at Fri Nov  6 12:58:49 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 22.297
+    }
+  ],
+  "checks": [
+    {
+      "name": "Pinned Python version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned tzdata version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned Git version",
+      "status": "PASS",
+      "command_index": 0
+    },
+    {
+      "name": "Pinned xvlog version",
+      "status": "PASS",
+      "command_index": 1
+    },
+    {
+      "name": "Pinned xelab version",
+      "status": "PASS",
+      "command_index": 2
+    },
+    {
+      "name": "Pinned xsim version",
+      "status": "PASS",
+      "command_index": 3
+    },
+    {
+      "name": "Pinned software tool gcc",
+      "status": "PASS",
+      "command_index": 4
+    },
+    {
+      "name": "Pinned software tool ld",
+      "status": "PASS",
+      "command_index": 5
+    },
+    {
+      "name": "Pinned software tool objcopy",
+      "status": "PASS",
+      "command_index": 6
+    },
+    {
+      "name": "Pinned software tool readelf",
+      "status": "PASS",
+      "command_index": 7
+    },
+    {
+      "name": "Pinned software tool objdump",
+      "status": "PASS",
+      "command_index": 8
+    },
+    {
+      "name": "Actual RV32 compiler target",
+      "status": "PASS",
+      "command_index": 9
+    },
+    {
+      "name": "Actual RV32I assembly boot",
+      "status": "PASS",
+      "command_index": 10
+    },
+    {
+      "name": "Actual RV32I assembly smoke",
+      "status": "PASS",
+      "command_index": 11
+    },
+    {
+      "name": "Actual approved-map link",
+      "status": "PASS",
+      "command_index": 12
+    },
+    {
+      "name": "Independent ELF LMA image equals objcopy,64KiB",
+      "status": "PASS",
+      "command_index": 13
+    },
+    {
+      "name": "Actual readelf report",
+      "status": "PASS",
+      "command_index": 14
+    },
+    {
+      "name": "Actual objdump report",
+      "status": "PASS",
+      "command_index": 15
+    },
+    {
+      "name": "Complete committed ROM image matches fresh actual build",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Independent compiled boot dirty-start seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Independent compiled boot warm-reset seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Warm reset keeps memory outside runtime init",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Independent compiled boot dirty-start seed=20261104",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Independent compiled boot warm-reset seed=20261104",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Warm reset keeps memory outside runtime init",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Corrupted entry instruction rejected as illegal",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Corrupted copied data reaches explicit smoke failure",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Overflow stimulus assembles ROM",
+      "status": "PASS",
+      "command_index": 16
+    },
+    {
+      "name": "Actual linker overflow rejected ROM",
+      "status": "PASS",
+      "command_index": 17
+    },
+    {
+      "name": "Overflow stimulus assembles RAM",
+      "status": "PASS",
+      "command_index": 18
+    },
+    {
+      "name": "Actual linker overflow rejected RAM",
+      "status": "PASS",
+      "command_index": 19
+    },
+    {
+      "name": "Compiler components unchanged",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual memory compile",
+      "status": "PASS",
+      "command_index": 20
+    },
+    {
+      "name": "Actual memory elaboration",
+      "status": "PASS",
+      "command_index": 21
+    },
+    {
+      "name": "Independent primitive memory scoreboard seed=1",
+      "status": "PASS",
+      "command_index": 22
+    },
+    {
+      "name": "Positive memory waveform",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Independent primitive memory scoreboard seed=20261104",
+      "status": "PASS",
+      "command_index": 23
+    },
+    {
+      "name": "Positive memory waveform",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual memory negative wrong-expected",
+      "status": "PASS",
+      "command_index": 24
+    },
+    {
+      "name": "Negative memory waveform",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual memory negative empty",
+      "status": "PASS",
+      "command_index": 25
+    },
+    {
+      "name": "Negative memory waveform",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual selected-part ROM and RAM block inference",
+      "status": "PASS",
+      "command_index": 26
+    },
+    {
+      "name": "All firmware and memory sources unchanged",
+      "status": "PASS",
+      "command_index": null
+    }
+  ],
+  "simulations": [
+    {
+      "seed": 1,
+      "checked_vectors": 33125,
+      "vector_path": "build/T026/firmware-20261106T205810599677Z/memories/vectors_1.txt",
+      "vector_sha256": "f735587332a69f6733689c0e5cf8b257cd25e59e14936235250f84b45c6546d4",
+      "waveform": "build/T026/firmware-20261106T205810599677Z/memories/seed_1.wdb",
+      "waveform_sha256": "e0d50b3fe302e64583cc7dc6d0c8ee2f0b8a8a6958a6e0cc4a8bb34a7bb4f180"
+    },
+    {
+      "seed": 20261104,
+      "checked_vectors": 33125,
+      "vector_path": "build/T026/firmware-20261106T205810599677Z/memories/vectors_20261104.txt",
+      "vector_sha256": "c2a6b1f90a4df428322c3cf59ea851a6a9a7c355f9565b77505ce9bff5ec9ef6",
+      "waveform": "build/T026/firmware-20261106T205810599677Z/memories/seed_20261104.wdb",
+      "waveform_sha256": "3dcf5d29d281f12504541ec578bb9fd240a1660f153f1b3e20b3a90d6342bb9b"
+    }
+  ],
+  "excluded": [
+    "actual compiled CPU/SoC execution",
+    "local-bus adapter",
+    "UART/MMIO",
+    "IRQ",
+    "formal",
+    "routed timing",
+    "physical hardware",
+    "ASIC"
+  ],
+  "source_sha256": {
+    "sw/boot.S": "f509b77f6d35d4ac2c7bffb8604f5296a546000fed1fc09656c974482447bfa5",
+    "sw/smoke.S": "61475846901f012230735f77e20ba1528d7b9d0b2ab05e8692bde5c586613e03",
+    "sw/linker.ld": "7540b8577e60351280a22c3094728b82f70ed2dd5529eb6aa7f9dfdee5d04146",
+    ".harness/software_toolchain.json": "89488260ea006d5c21b99c101014aa8008f204e64bcfd48f53c9ff39e8eb91ce",
+    "fpga/basys3/rom_init.mem": "e56c04859f3a22d294d2103ed0d706111f2d5829b4d2ffcb1de0b5a130a1e7b8",
+    "scripts/firmware_image.py": "34c512388117bdf1d5d9056376193928202b1c38376d09769d1d565f61b14ba7",
+    "scripts/firmware_build.py": "a43fa16a53655b549f8fa8452b29ffa532ed70bc87f690191100d3b4de09923d",
+    "scripts/firmware_checks.py": "541a53f2f6a58949cb8d9d4673abc7aebad9879a49fb21cf036f4da6f216b8cb",
+    "scripts/test_firmware.py": "77afae0abfa60d4fe0c254dfdc2b26f727b4e1d0b9062e415b6650bfc63d53a1",
+    "scripts/vivado_memory_check.tcl": "6fbfcac393015d117d2ffd272fa3d5cd329d241cece689738186ad0708e94685",
+    "scripts/rtl_checks.py": "dc6c2cda4debd5c9fcc2321f9e537cfb998e7fcb38ef61ae6c7a56b045c42935",
+    "scripts/test_rtl_checks.py": "f7f2ffb5d8e64f9501a351b43d1be2bf27fda7f462bf6240aa43e23ac0856c25",
+    "config/rtl_checks.json": "e4e6d4bd0eb1346f3232fe84bcb6cb8b80ab9370e710cf78784c2c3c41402928",
+    "rtl/memory/boot_rom.sv": "8eccb9eec2644e978488bc5e87a3b8a703fd5c1ce73c3dfb4b3a10c979ab6049",
+    "rtl/memory/data_ram.sv": "41d68829e41df43d62274c708c9b6e996d757d5f676ddccb1773301956e35b7c",
+    "dv/lint/memory_lint_top.sv": "905f942a67c1328e2ff15f966cc826a945c4f62d0d0118493c208b6da6d09b95",
+    "dv/firmware/memory_model.py": "6b768a7e0408d16ad0f23a6727702509160dc1ab705a25a2e5f8be7fef137b49",
+    "dv/firmware/tb_memories.sv": "42b8352300f74ae18d1b82e274e8dde55cf3f3ad3d49956c7b07088801ab85cb",
+    "dv/reference/rv32_iss.py": "3bea09d666445514edbff6a4d433bdc2e18eec0b416b6780e617efcc91ab856c",
+    "docs/ARCH_CONTRACT.json": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03"
+  },
+  "pins": {
+    "schema_version": 1,
+    "python_version": "3.9.13",
+    "git_version": "2.48.1.windows.1",
+    "tzdata_version": "2026.2",
+    "vivado_version": "2025.2",
+    "vivado_sw_build": "6299465"
+  },
+  "software_toolchain": {
+    "tools": {
+      "gcc": {
+        "command": [
+          "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-gcc.exe"
+        ],
+        "sha256": "90927f7c3c61d85284403b6fc63a5dbc31feb73e295fa68ef376e7378f048bc4",
+        "version_line": "riscv32-xilinx-elf-gcc.exe (GCC) 13.4.0"
+      },
+      "ld": {
+        "command": [
+          "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-ld.exe"
+        ],
+        "sha256": "84af5d6d526368f541845614f26da112e15cd03b86121dccfe3d97f0afdd8d93",
+        "version_line": "GNU ld (GNU Binutils) 2.43.1.20241111"
+      },
+      "objcopy": {
+        "command": [
+          "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-objcopy.exe"
+        ],
+        "sha256": "64ae2a0f875d741947b4a0ff651709cf51a2db3dc62eee05fcfdec3e553ea9c3",
+        "version_line": "GNU objcopy (GNU Binutils) 2.39.0.20220819"
+      },
+      "readelf": {
+        "command": [
+          "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-readelf.exe"
+        ],
+        "sha256": "074756bb1c9c1b986b2b3354db89ef9140d8eb56590e519958b195f059d23ecd",
+        "version_line": "GNU readelf (GNU Binutils) 2.39.0.20220819"
+      },
+      "objdump": {
+        "command": [
+          "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-objdump.exe"
+        ],
+        "sha256": "fc83c86b64aa2e07246fd6d41f3e4c055020d2854162d0b8b293f35827f27986",
+        "version_line": "GNU objdump (GNU Binutils) 2.39.0.20220819"
+      }
+    },
+    "target": "riscv32-xilinx-elf",
+    "march": "rv32i",
+    "mabi": "ilp32",
+    "scope": "Observed installed AMD tools, process-local absolute commands; no global PATH or installation changes",
+    "evidence": "evidence/t026-compiler-probes-2026-11-04.json",
+    "components_sha256": {
+      "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\x86_64-w64-mingw32\\usr\\libexec\\riscv32-xilinx-elf\\gcc\\riscv32-xilinx-elf\\13.4.0\\cc1.exe": "af63512f18d48199da85b011d566cc211ab8a3fd62b5cc8e34e52f8c88c206c9",
+      "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\x86_64-w64-mingw32\\usr\\bin\\riscv32-xilinx-elf\\riscv32-xilinx-elf-as.exe": "13392e4e81eacf737aeed6cc4d493162aa96184c4ba55e5762dce23d5271cba8",
+      "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\x86_64-w64-mingw32\\usr\\bin\\riscv32-xilinx-elf\\riscv32-xilinx-elf-ld.exe": "3ff18605eb4184f05e3bbabc2476f9fd61d2ffebdb4a1f7869bffd2802972a5c"
+    }
+  },
+  "boot_runs": [
+    {
+      "seed": 1,
+      "phase": "dirty-start",
+      "retirements": 72,
+      "trace": "build/T026/firmware-20261106T205810599677Z/compiler/iss_1_dirty-start.json"
+    },
+    {
+      "seed": 1,
+      "phase": "warm-reset",
+      "retirements": 72,
+      "trace": "build/T026/firmware-20261106T205810599677Z/compiler/iss_1_warm-reset.json"
+    },
+    {
+      "seed": 20261104,
+      "phase": "dirty-start",
+      "retirements": 72,
+      "trace": "build/T026/firmware-20261106T205810599677Z/compiler/iss_20261104_dirty-start.json"
+    },
+    {
+      "seed": 20261104,
+      "phase": "warm-reset",
+      "retirements": 72,
+      "trace": "build/T026/firmware-20261106T205810599677Z/compiler/iss_20261104_warm-reset.json"
+    }
+  ],
+  "segments": [
+    {
+      "vma": 0,
+      "lma": 0,
+      "size": 236,
+      "memsize": 236,
+      "flags": 5
+    },
+    {
+      "vma": 65536,
+      "lma": 236,
+      "size": 8,
+      "memsize": 20,
+      "flags": 6
+    }
+  ],
+  "symbols": {
+    "boot.o": 0,
+    "$xrv32i2p1": 100,
+    "smoke.o": 0,
+    "fail": 220,
+    "done": 224,
+    "__data_load": 236,
+    "zero_area": 65544,
+    "__bss_end": 65556,
+    "signature": 65552,
+    "halt_ecall": 92,
+    "__rom_image_end": 244,
+    "__stack_top": 131072,
+    "_start": 0,
+    "__data_end": 65544,
+    "initial_data": 65536,
+    "__bss_start": 65544,
+    "main": 100,
+    "__stack_bottom": 126976,
+    "__data_start": 65536
+  },
+  "artifacts": {
+    "build/T026/firmware-20261106T205810599677Z/compiler/boot.o": "65d7c12bb63c267c4d8bd9ad950aad25a040af8683f8d3bcbdd6577f9365dc85",
+    "build/T026/firmware-20261106T205810599677Z/compiler/disassembly.txt": "f747023aba504362427d8b33904f94207dd9ef030aa65339fc5612e17354ea98",
+    "build/T026/firmware-20261106T205810599677Z/compiler/firmware.bin": "b548cfd807fc9196738b3f150ad647b573f3771c6148e6a0b95a1f5f2f30679f",
+    "build/T026/firmware-20261106T205810599677Z/compiler/firmware.elf": "04a30455472afb606c5b0af64c68640383f75875bfd2964e9b11a76ad4dd74a5",
+    "build/T026/firmware-20261106T205810599677Z/compiler/firmware.map": "2dd2d81a096739d4ace6609f8c6d9b0bb388e8b65e6be348ce00ac4a7af0a537",
+    "build/T026/firmware-20261106T205810599677Z/compiler/iss_1_dirty-start.json": "4c168b97ff719d0c76fa1d3b6e38c5d1890e2fd99d75c9d2b684c59048f4651f",
+    "build/T026/firmware-20261106T205810599677Z/compiler/iss_1_warm-reset.json": "4c168b97ff719d0c76fa1d3b6e38c5d1890e2fd99d75c9d2b684c59048f4651f",
+    "build/T026/firmware-20261106T205810599677Z/compiler/iss_20261104_dirty-start.json": "4c168b97ff719d0c76fa1d3b6e38c5d1890e2fd99d75c9d2b684c59048f4651f",
+    "build/T026/firmware-20261106T205810599677Z/compiler/iss_20261104_warm-reset.json": "4c168b97ff719d0c76fa1d3b6e38c5d1890e2fd99d75c9d2b684c59048f4651f",
+    "build/T026/firmware-20261106T205810599677Z/compiler/overflow_RAM.map": "40226fdc6c17b366e207229d66388776cffad3633e54a26aecf9ab14e34683bd",
+    "build/T026/firmware-20261106T205810599677Z/compiler/overflow_RAM.o": "4f1deb5ffff43eb447ad3cdb460e7ca9ce928f4fc5c76034478abf5d56e8f14d",
+    "build/T026/firmware-20261106T205810599677Z/compiler/overflow_RAM.S": "40de82d1f71b9e26ad65c3f7ee77d5f3179fcef96141f830454e665d3e2c3bcc",
+    "build/T026/firmware-20261106T205810599677Z/compiler/overflow_ROM.map": "a7e0b514049b0e80d318cdfd06c78fa04ff87a0beaa8c746804357bb5e227244",
+    "build/T026/firmware-20261106T205810599677Z/compiler/overflow_ROM.o": "fadd175f5e76813769ef86d8482e889273eaafa8c1d026e0883d5533cd17da65",
+    "build/T026/firmware-20261106T205810599677Z/compiler/overflow_ROM.S": "e6b07dcd80f9bf33a3665a5af6c7b6f77cd96d8294676f95015d4c04bf7dcb3a",
+    "build/T026/firmware-20261106T205810599677Z/compiler/readelf.txt": "3cb06d52afb206c6a56b0eb3a7fe1c3c13a584ffeb1c04ac45ec82dd52d56bbf",
+    "build/T026/firmware-20261106T205810599677Z/compiler/rom_init.mem": "e56c04859f3a22d294d2103ed0d706111f2d5829b4d2ffcb1de0b5a130a1e7b8",
+    "build/T026/firmware-20261106T205810599677Z/compiler/smoke.o": "dd5c78acd9eabdf3ab7eae0f980bb96a4fb8e0923ac1c9d93a91f74d21322f35",
+    "build/T026/firmware-20261106T205810599677Z/memories/rom_init.mem": "e56c04859f3a22d294d2103ed0d706111f2d5829b4d2ffcb1de0b5a130a1e7b8",
+    "build/T026/firmware-20261106T205810599677Z/memories/rom_pattern.mem": "63ee29069b262f7542855dde930675780bbd5508b18d9722fdca8fb0674ef8e0",
+    "build/T026/firmware-20261106T205810599677Z/memories/run.tcl": "e9c8ff51e216e7264d15a82b0999787b1bcbcb7b4b8bd397f331e149511dea4e",
+    "build/T026/firmware-20261106T205810599677Z/memories/wrong-expected.txt": "fe8a0f2b3e24c359e85c8c2f62c7040efb164733aef9ea08d4039f174e5fdaca",
+    "build/T026/firmware-20261106T205810599677Z/memories/wrong-expected.wdb": "5e65d2fab5067eea39b228e120dcf6ddd85ed5b294dacb768bb38c76a71ac823",
+    "build/T026/firmware-20261106T205810599677Z/memories/empty.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build/T026/firmware-20261106T205810599677Z/memories/empty.wdb": "fec67dc68a23b4e98b0ae2456859d5334a0c52d591160701c6e2b5f9801dbb05",
+    "build/T026/firmware-20261106T205810599677Z/inference/rom_init.mem": "e56c04859f3a22d294d2103ed0d706111f2d5829b4d2ffcb1de0b5a130a1e7b8",
+    "build/T026/firmware-20261106T205810599677Z/inference/memory_utilization.rpt": "9924e04f75eb4081d4d54afdef4ab6ba9a22c7e9007c833553a279c8e0f002e2",
+    "build/T026/firmware-20261106T205810599677Z/inference/memory_drc.rpt": "1eb4eee2242df56585b7c4ea33a2235f9107f97c88d63f71946a6ab13663e566"
+  },
+  "finished_utc": "2026-11-06T20:58:49.821715+00:00"
+}

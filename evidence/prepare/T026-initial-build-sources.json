@@ -1,0 +1,16 @@
+{
+  "source_receipt": "evidence/toolchain_runs/firmware-build-20261105T043646978727Z.json",
+  "archive_sha256": "a63e3bf37f64f4cdda5fe1763fe4245b29b1472e8fefb2df1792dcc8992faeb9",
+  "source_sha256": {
+    "sw/boot.S": "f509b77f6d35d4ac2c7bffb8604f5296a546000fed1fc09656c974482447bfa5",
+    "sw/smoke.S": "61475846901f012230735f77e20ba1528d7b9d0b2ab05e8692bde5c586613e03",
+    "sw/linker.ld": "7540b8577e60351280a22c3094728b82f70ed2dd5529eb6aa7f9dfdee5d04146",
+    ".harness/software_toolchain.json": "6c6f379cc39bc22f43d30b53cf249193dd6b0d07438b8ce91eb7045a27811cbd",
+    "scripts/firmware_image.py": "34c512388117bdf1d5d9056376193928202b1c38376d09769d1d565f61b14ba7",
+    "scripts/firmware_build.py": "342cb01cab40c147a2fad9751a78220b42911248fe13e7c68f67717858d5c708",
+    "dv/reference/rv32_iss.py": "3bea09d666445514edbff6a4d433bdc2e18eec0b416b6780e617efcc91ab856c",
+    "docs/ARCH_CONTRACT.json": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03",
+    "fpga/basys3/rom_init.mem": "e56c04859f3a22d294d2103ed0d706111f2d5829b4d2ffcb1de0b5a130a1e7b8"
+  },
+  "reason": "Initial preparation build passed with observed wrapper pins. Current gate additionally pins cc1/as/ld component hashes; preserved earlier config/collector version exactly, no reuse as a current gate."
+}
