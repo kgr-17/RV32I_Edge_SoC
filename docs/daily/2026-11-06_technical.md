@@ -97,3 +97,106 @@ state.active before selecting another task.27 mandatory completed plus1 skipped
 of41. T023 is still owner-skipped/formal NOT RUN, never PASS. No RX/CDC/routed
 timing/hardware/ASIC signoff. Runtime unrestricted/never, attended only; no host
 scheduling, tool installation/global changes/downloads/push/FPGA programming.
+
+
+---
+
+<!-- entry:445a0e6cacfadefce955c5230c8c2e6f9884a4f7fd7ad769e9b080158742a57c -->
+
+## T042 prepared: synchronized UART receiver and combined frontend
+
+T027 committed0ddab70, Git clean before beginT042. Baseline1102 tracked hashes
+excluding state/backlog; declared existing changes cover frontend wrapper/shared
+TX driver/registries/docs/report pair. Canonical uart_mmio.sv adds meaningful
+master wdata[9:0] adapter, unchanged32-bit address/read response and4BE. Old
+uart_mmio_tx8-bit interface wraps canonical UART with RX high/W1C0; actual oldTX
+corpus replay is required inside the RXgate. No architecture/map/CPU/XPR/XDC/
+clock/resetpriority/firmware image change. T042 does not need owner review.
+
+uart_rx.sv uses two ASYNC_REG stages and absolute center timing8N1 at default868.
+Disable aborts partial sampling; existing completed event and slot remain. One
+slot; overrun retains old, bad stop discards, error events beat W1C, selected-low
+successful originally-valid read pops, empty snapshot cannot consume future byte.
+Simultaneous old-pop/new-receive retains new. CTRL masks honor lowlane enable and
+lane1 bits8/9 W1C. Reset clears slot/errors/protocol/CTRL3. Full spec UART_RX.md.
+
+Six independent timestamp/history model tests PASS. Reference-preparation failure
+is archived: releasing a one-cycle reset inside ongoing payload can create a fresh
+apparent start. Deterministic abort tests hold reset until idle; no RTL/check
+relaxation. Actual native preparation uart-rx-20261106T215650293874Z PASS66checks/
+24commands: six positive seeds1/20261106 at8/7/868, all256 bytes fast, four phase
+offsets, production sender860/876 skew, three precise wrong-byte/empty/truncated
+negatives, two actual isolated pop/clear-priority RTL mutation detections, and
+actual synthesized2ASYNC_REG/firstfanout1/commonclock inspection. This is
+preparation, not taskPASS; fresh finish runs every required gate. Registry23
+retains22 predecessors. Test-uart native replay also executed separately; current
+full gate will bind its result. All logs remain project-local.
+
+Next python -B scripts/harness.py finish T042 --evidence evidence/daily/T042.md,
+attempt1/3. On pass independently audit actual checked files/effects/frames/source
+bindings, preserve historical bytes/report prefixes, append existing Nov6 report
+pair, review/stage/whitespace/commit thenquery next(expectedT028). If failure,
+archive exact sources/artifacts before correction; never weaken checks or self-
+reopen. Versions Python3.9.13/Git2.48.1.windows.1/tzdata2026.2/Vivado-XSim2025.2
+SW6299465. Runtime unrestricted/never, attendedonly; no downloads/install/global
+settings/push/scheduler/programming. FormalT023 remains skipped/NOT RUN; no full23
+regression/completeCDC/analogMTBF/SoC/IRQ/routedtiming/power/hardware/ASIC signoff.
+
+
+---
+
+<!-- entry:ce957472e8ea94b5f99b29924c1c9ee3d5c35d0f6111d894d50a95e5d22c2506 -->
+
+## T042 completed: synchronized UART reception and exact MMIO effects
+
+T027 remains committed0ddab70. T042 passed all four gates on attempt1, exit0:
+lint, test-uart-rx, git diff --check, cached check. Current task receipt:
+evidence/runs/T042/attempt-1-20261106T215848954626Z.json. Current native gate receipts:
+evidence/toolchain_runs/lint-20261106T215849820672Z.json, evidence/toolchain_runs/uart-20261106T220653942752Z.json, evidence/toolchain_runs/uart-rx-20261106T220726016343Z.json. Native checks/commands by profile:
+{"lint": [37, 20], "uart": [34, 14], "uart-rx": [66, 24]}. Nine priorTX reference tests plus six RX tests passed.
+Real RX six seed/divider runs checked752306 edge rows: fast8=27900/27907,
+odd7=3133/3135, production868=345115/345116. Prior unchanged TX corpus replayed
+247940 rows; total1000246 native-compared edge rows. Wrong-byte/empty/truncated
+controls and two isolated pop/clear-priority RTL mutations detected exactly.
+Actual synthesis found2ASYNC_REG stages, firstfanout1 to secondD, common clock.
+
+Changed RTL: new uart_rx.sv/uart_mmio.sv, existing uart_mmio_tx.sv becomes unchanged-
+interface compatibility wrapper. New DV tb_uart_rx.sv/test_uart_rx.py, lint probe
+uart_full_lint_top.sv; new scripts/uart_rx_checks.py/uart_rx_structure.tcl, shared
+uart_checks.py compiles dependencies; registries/state/backlog/README/UARTdocs/
+evidence/report pair. No CPU/XPR/XDC/ISA/map/target/clock/reset-priority/image
+change. Full frontend uses internal meaningful write10bits from master[9:0],
+32-bit original byte address/read response,4BE. T031 must use that adapter and
+canonical uart_mmio with raw rx_i; compatibility wrapper tiesRXhigh/W1C0.
+
+Receiver: two stages, center sampling8N1/LSB first, default868, short false starts
+ignored, bad stop discarded/one error during break until high, disable aborts
+partial but preserves completed event/pending slot. RXevent passes registered
+PHY-to-slot boundary one edge later. One slot; new receive overruns and retains
+old unless same-edge successful originally-valid low-lane read pop, which keeps
+new. Empty snapshot cannot pop future byte; response values hold. New error wins
+W1C; byte1 bits8/9 clear flags only on successful response. Reset clears all;
+mid-payload reset release is not an untagged framing recovery guarantee.
+
+Audit evidence/t042-final-audit-2026-11-06.json checks current source/artifact
+bindings, bus snapshots/lanes/transaction accounting/effect collisions, native
+direct receiver pulses and raw sampled bit positions independently of models.
+Counts: {"tools": 3, "sources": 46, "artifacts": 138, "preserved": 1094, "rx_edge_rows": 752306, "tx_replayed_rows": 247940}. All1094 historical tracked files outside8 declared
+integration/report edits remain byte-identical; report prefixes and4-input failed
+reference-preparation source archive retained. Preparation nativePASS66/24 is
+separate from fresh task gates. Prior T027 post-gate staged whitespace initially
+exit2(extra final blank line); corrected before0ddab70, final cached check exit0.
+A Python3.9 helper rejected Path.write_text(newline=...) without changing files;
+used byte-preserving LF write instead. No verification gate or source weakened.
+
+Reproduce python -B scripts/verify.py test-uart-rx(includes old TX replay), and
+python -B scripts/verify.py lint. Review diff/staged hashes/whitespace then commit
+inspected T042 files locally; query harness next, begin actual readyT028 expected.
+At next session read latest handoff/AGENTS/boundary/ARCH/verification/backlog/state/
+loop first, daily --supervised, recover state.active before next.28 mandatory
+completed plus1 owner-skipped of41. Registry23 retains22 predecessors; full23
+regression NOT RUN. T023 formal remains skipped/NOT RUN, never PASS. No analog
+MTBF/fullCDC/routedtiming/SoC/IRQ/hardware/power/ASIC signoff. Versions unchanged
+Python3.9.13/Git2.48.1.windows.1/tzdata2026.2/Vivado-XSim2025.2 SW6299465. Actual
+runtime unrestricted/never, attendedonly; no install/download/global settings/
+push/hostscheduler/physicalprogramming. Exactly same two Nov6 report files.

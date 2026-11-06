@@ -59,7 +59,14 @@
       "scripts/vivado_lint.tcl",
       "dv/toolchain/register_fixture.sv",
       "dv/toolchain/negative_latch.sv",
-      "fpga/basys3/rom_init.mem"
+      "fpga/basys3/rom_init.mem",
+      "rtl/peripherals/uart_rx.sv",
+      "rtl/peripherals/uart_mmio.sv",
+      "dv/unit/test_uart_rx.py",
+      "dv/unit/tb_uart_rx.sv",
+      "dv/lint/uart_full_lint_top.sv",
+      "scripts/uart_rx_checks.py",
+      "scripts/uart_rx_structure.tcl"
     ],
     "commands": [
       [
@@ -317,6 +324,12 @@
         "-B",
         "scripts/verify.py",
         "test-uart"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/verify.py",
+        "test-uart-rx"
       ]
     ],
     "timeout_seconds": 600
@@ -1132,7 +1145,9 @@
       "dv/unit/tb_uart.sv",
       "scripts/uart_checks.py",
       "config/rtl_checks.json",
-      "docs/ARCH_CONTRACT.json"
+      "docs/ARCH_CONTRACT.json",
+      "rtl/peripherals/uart_rx.sv",
+      "rtl/peripherals/uart_mmio.sv"
     ],
     "commands": [
       [
@@ -1146,5 +1161,41 @@
         "scripts/uart_checks.py"
       ]
     ]
+  },
+  "test-uart-rx": {
+    "inputs": [
+      "rtl/peripherals/uart_rx.sv",
+      "rtl/peripherals/uart_mmio.sv",
+      "dv/unit/test_uart_rx.py",
+      "dv/unit/tb_uart_rx.sv",
+      "dv/lint/uart_full_lint_top.sv",
+      "scripts/uart_rx_checks.py",
+      "scripts/uart_rx_structure.tcl",
+      "rtl/peripherals/uart_tx.sv",
+      "rtl/peripherals/uart_mmio_tx.sv",
+      "dv/unit/test_uart.py",
+      "scripts/uart_checks.py",
+      "docs/ARCH_CONTRACT.json",
+      "config/rtl_checks.json"
+    ],
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "scripts/verify.py",
+        "test-uart"
+      ],
+      [
+        "{python}",
+        "-B",
+        "dv/unit/test_uart_rx.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/uart_rx_checks.py"
+      ]
+    ],
+    "timeout_seconds": 600
   }
 }

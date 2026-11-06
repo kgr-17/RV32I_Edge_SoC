@@ -1,0 +1,75 @@
+{
+  "task": "T042",
+  "attempt": 1,
+  "git_commit": "0ddab707d02880f13cfae09aa5b9d475d84f74e4",
+  "python": "3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)]",
+  "stage": "finished",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "lint"
+      ],
+      "started_utc": "2026-11-06T21:58:49.242363+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/rtl_checks.py\", \"lint\"], \"started_utc\": \"2026-11-06T21:58:49.462102+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\n  \\\"status\\\": \\\"PASS\\\",\\n  \\\"evidence\\\": \\\"evidence\\\\\\\\toolchain_runs\\\\\\\\lint-20261106T215849820672Z.json\\\",\\n  \\\"checks\\\": 37,\\n  \\\"simulations\\\": [],\\n  \\\"error\\\": null\\n}\\n\", \"stderr\": \"\", \"timeout_seconds\": 600}\n",
+      "stderr": "",
+      "timeout_seconds": 600
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "test-uart-rx"
+      ],
+      "started_utc": "2026-11-06T22:06:52.002878+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/verify.py\", \"test-uart\"], \"started_utc\": \"2026-11-06T22:06:52.159706+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\\"argv\\\": [\\\"C:\\\\\\\\Users\\\\\\\\Yixu\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Programs\\\\\\\\Python\\\\\\\\Python39\\\\\\\\python.exe\\\", \\\"-B\\\", \\\"dv/unit/test_uart.py\\\"], \\\"started_utc\\\": \\\"2026-11-06T22:06:52.311614+00:00\\\", \\\"cwd\\\": \\\"C:\\\\\\\\RV32I_Edge_SoC\\\", \\\"executable\\\": \\\"C:\\\\\\\\Users\\\\\\\\Yixu\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Programs\\\\\\\\Python\\\\\\\\Python39\\\\\\\\python.exe\\\", \\\"status\\\": \\\"PASS\\\", \\\"exit_code\\\": 0, \\\"stdout\\\": \\\"\\\", \\\"stderr\\\": \\\"test_byte_lanes_and_disabled_error (__main__.UartReferenceTests) ... ok\\\\ntest_complete_fast_corpus_seed_replay (__main__.UartReferenceTests) ... ok\\\\ntest_disable_does_not_cancel_frame_and_reset_does (__main__.UartReferenceTests) ... ok\\\\ntest_manual_lsb_first_8n1_frame (__main__.UartReferenceTests) ... ok\\\\ntest_no_zero_latency_response_and_no_replacement (__main__.UartReferenceTests) ... ok\\\\ntest_peer_valid_and_payload_hold_until_acceptance (__main__.UartReferenceTests) ... ok\\\\ntest_production_divisor_and_bounds (__main__.UartReferenceTests) ... ok\\\\ntest_reset_cancels_response_and_sticky_old_data (__main__.UartReferenceTests) ... ok\\\\ntest_tx_effect_waits_for_response (__main__.UartReferenceTests) ... ok\\\\n\\\\n----------------------------------------------------------------------\\\\nRan 9 tests in 1.310s\\\\n\\\\nOK\\\\n\\\", \\\"timeout_seconds\\\": 300}\\n{\\\"argv\\\": [\\\"C:\\\\\\\\Users\\\\\\\\Yixu\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Programs\\\\\\\\Python\\\\\\\\Python39\\\\\\\\python.exe\\\", \\\"-B\\\", \\\"scripts/uart_checks.py\\\"], \\\"started_utc\\\": \\\"2026-11-06T22:06:53.761110+00:00\\\", \\\"cwd\\\": \\\"C:\\\\\\\\RV32I_Edge_SoC\\\", \\\"executable\\\": \\\"C:\\\\\\\\Users\\\\\\\\Yixu\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Programs\\\\\\\\Python\\\\\\\\Python39\\\\\\\\python.exe\\\", \\\"status\\\": \\\"PASS\\\", \\\"exit_code\\\": 0, \\\"stdout\\\": \\\"{\\\\\\\"status\\\\\\\": \\\\\\\"PASS\\\\\\\", \\\\\\\"evidence\\\\\\\": \\\\\\\"evidence/toolchain_runs/uart-20261106T220653942752Z.json\\\\\\\", \\\\\\\"error\\\\\\\": null}\\\\n\\\", \\\"stderr\\\": \\\"\\\", \\\"timeout_seconds\\\": 300}\\n\", \"stderr\": \"\", \"timeout_seconds\": 600}\n{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"dv/unit/test_uart_rx.py\"], \"started_utc\": \"2026-11-06T22:07:22.227808+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"\", \"stderr\": \"test_break_one_error_until_high (__main__.ReceiverTests) ... ok\\ntest_empty_snapshot_cannot_pop_future_head (__main__.ReceiverTests) ... ok\\ntest_event_wins_clear_and_consume_keeps_new (__main__.ReceiverTests) ... ok\\ntest_manual_a5_centers_and_two_stage_delay (__main__.ReceiverTests) ... ok\\ntest_production_odd_bounds_and_producer_stability (__main__.ReceiverTests) ... ok\\ntest_replay_all_bytes_and_seed_difference (__main__.ReceiverTests) ... ok\\n\\n----------------------------------------------------------------------\\nRan 6 tests in 3.453s\\n\\nOK\\n\", \"timeout_seconds\": 600}\n{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/uart_rx_checks.py\"], \"started_utc\": \"2026-11-06T22:07:25.829563+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\\"status\\\": \\\"PASS\\\", \\\"evidence\\\": \\\"evidence/toolchain_runs/uart-rx-20261106T220726016343Z.json\\\", \\\"error\\\": null}\\n\", \"stderr\": \"\", \"timeout_seconds\": 600}\n",
+      "stderr": "",
+      "timeout_seconds": 600
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_utc": "2026-11-06T22:08:48.967144+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "timeout_seconds": 300
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "started_utc": "2026-11-06T22:08:49.019293+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "timeout_seconds": 300
+    }
+  ],
+  "waveform_paths": [],
+  "seed": null,
+  "evidence_sha256": "6c394854f0144c570ece34d134f353669e5c06ba7a4b590e190aed6edb6c7abb"
+}

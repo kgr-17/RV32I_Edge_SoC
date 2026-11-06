@@ -19,13 +19,14 @@ def main():
     try:
         manifest=rtl_checks.load_manifest()
         sources=['rtl/peripherals/uart_tx.sv','rtl/peripherals/uart_mmio_tx.sv','dv/unit/tb_uart.sv','dv/unit/test_uart.py',
+            'rtl/peripherals/uart_rx.sv','rtl/peripherals/uart_mmio.sv',
             'scripts/uart_checks.py','scripts/rtl_checks.py','scripts/tool_runner.py','scripts/tool_child.py',
             '.harness/checks.json','config/rtl_checks.json','docs/ARCH_CONTRACT.json']
         c.result['source_sha256']={f:sha(harness.inside(f)) for f in sources};c.versions(manifest)
         spec=importlib.util.spec_from_file_location('uart_reference',harness.inside('dv/unit/test_uart.py'))
         model=importlib.util.module_from_spec(spec);spec.loader.exec_module(model)
         cwd=c.base/'simulation'
-        r=c.vendor('xvlog',['--sv']+[str(harness.inside(f)) for f in sources[:4] if f.endswith('.sv')],cwd,15)
+        r=c.vendor('xvlog',['--sv']+[str(harness.inside(f)) for f in sources if f.endswith('.sv')],cwd,15)
         c.require(rtl_checks.successful(r),'Actual UART SystemVerilog compile',r)
         c.result['seed_reports']=[];artifacts={}
         for label,top,root,divider in [('fast','tb_uart','/tb_uart',4),('default','tb_uart_default','/tb_uart_default/body',868)]:

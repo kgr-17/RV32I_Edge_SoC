@@ -3,6 +3,12 @@
 Completed November6 on attempt2 from clean a04e23a(T026). All four gates passed.
 Approved ISA/map/reset priorities/100MHz clock/target remain unchanged.
 
+T042 development note: uart_mmio_tx now preserves this exact interface as a
+compatibility wrapper around canonical uart_mmio with RX tied idle. The canonical
+frontend adds reception and meaningful CTRL bits9:8. Original T027 evidence below
+is bound to its commit; T042 replays its unchanged vectors against the refactor.
+See UART_RX.md for current implementation scope and pending task gates.
+
 ## Implemented interfaces and bit timing
 
 rtl/peripherals/uart_tx.sv uses clk_i/rst_i/enable_i, data_valid_i/data_ready_o,

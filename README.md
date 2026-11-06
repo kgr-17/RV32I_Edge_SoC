@@ -52,7 +52,7 @@ stress programs hit the five prior gaps (49/49 in the finite cross inventory),
 and the injected retention leak was rejected. See [stress scope](docs/STRESS_VERIFICATION.md).
 T023 selected formal verification was explicitly owner-skipped on November4;
 its original NOT RUN125 record and zero executed formal tasks remain preserved.
-See [formal limits and owner exception](docs/FORMAL_LIMITS.md). Progress is27
+See [formal limits and owner exception](docs/FORMAL_LIMITS.md). Progress is28
 completed mandatory milestones plus1 owner-skipped, out of41. T024 simulation
 DV review passed all seven gates on attempt2, including the full19-target
 regression, and was explicitly owner-approved November4, acknowledging missing
@@ -66,8 +66,10 @@ first mapping warnings and later native Vivado exit crash remain preserved.
 Compiled CPU/SoC execution is pending T031.
 T027 completed November6 on attempt2: UART TX and sending-side MMIO passed
 247,940 native simulation rows, three negative controls and warning-free
-synthesis lint. See [UART TX scope and evidence](docs/UART_TX.md). Mandatory RX
-verification follows in T042; UART reception and board execution are still pending.
+synthesis lint. See [UART TX scope and evidence](docs/UART_TX.md).
+T042 completed on attempt1:752306 RX edge rows plus the unchanged247940 TX replay,
+three negative controls, two collision mutations and actual two-stage synchronizer
+inspection. See [combined UART evidence](docs/UART_RX.md). Board execution remains pending.
 
 The existing `RV32I_Edge_SoC.xpr` is the active Vivado project. Its configured part
 is `xc7a35tcpg236-1`. The owner confirmed a Digilent Basys 3. The XPR now selects

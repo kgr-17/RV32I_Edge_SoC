@@ -734,7 +734,19 @@
       "sources": [
         "rtl/peripherals/uart_tx.sv",
         "rtl/peripherals/uart_mmio_tx.sv",
-        "dv/lint/uart_lint_top.sv"
+        "dv/lint/uart_lint_top.sv",
+        "rtl/peripherals/uart_rx.sv",
+        "rtl/peripherals/uart_mmio.sv"
+      ]
+    },
+    {
+      "name": "uart_rx_mmio",
+      "top": "uart_full_lint_top",
+      "sources": [
+        "rtl/peripherals/uart_tx.sv",
+        "rtl/peripherals/uart_rx.sv",
+        "rtl/peripherals/uart_mmio.sv",
+        "dv/lint/uart_full_lint_top.sv"
       ]
     }
   ],

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "python",
+    "-B",
+    "dv/unit/test_uart_rx.py"
+  ],
+  "exit_code": 1,
+  "result": "5 PASS / 1 FAIL",
+  "failure": "test_production_odd_bounds_and_producer_stability, corpus line215: asserted no receive after releasing a one-cycle reset inside asynchronous frame; remaining payload can form a fresh start. Hold reset through end of that frame for deterministic abort test; no receiver behavior or expectation weakened.",
+  "source_sha256": {
+    "dv/unit/test_uart_rx.py": "6e7b05421e7ec9d7e62b5ce0fb1c4e94ad38934bf4a33019732fd0585a7a094c",
+    "rtl/peripherals/uart_rx.sv": "d5c22f05450b70033746c8b762e5d4fb5fe974b496c822c400be8795fc344a4c",
+    "rtl/peripherals/uart_mmio.sv": "d73efd7e3a8535e642e5fde766eabffb8fe8d499672367f1b20d28c408f875a1",
+    "dv/unit/tb_uart_rx.sv": "cb2df54828b6a107501f7d8961a32afe5c90987a0097ea36248447f8cb4387c9"
+  },
+  "archive_sha256": "9b4106a1f3358e15dc27a146e61406f82fbf53e03980d02141b26b39c18a812e"
+}
