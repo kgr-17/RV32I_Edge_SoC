@@ -1,0 +1,47 @@
+{
+  "retrieved_utc": "2026-11-07T21:14:22.649767+00:00",
+  "authorization": "Owner authorized official documentation reads; no tools/packages/IP installed or fetched.",
+  "edition": "RISC-V official 20240411 library, logical versioned URL; no byte-stable page archive claimed",
+  "sources": [
+    {
+      "id": "S-CSR-OPS",
+      "url": "https://docs.riscv.org/reference/isa/v20240411/unpriv/zicsr.html",
+      "heading": "Zicsr, Extension for Control and Status Register Instructions, Version 2.0",
+      "sections": [
+        "6.1 CSR Instructions"
+      ],
+      "use": "Access suppression, atomic operations and zero-index versus zero-value distinction"
+    },
+    {
+      "id": "S-CSR-ADDR",
+      "url": "https://docs.riscv.org/reference/isa/v20240411/priv/priv-csrs.html",
+      "heading": "Control and Status Registers (CSRs)",
+      "sections": [
+        "1.1 CSR Address Mapping Conventions",
+        "1.2 CSR Listing"
+      ],
+      "use": "Register addresses and register-level versus field-level write permissions"
+    },
+    {
+      "id": "S-MACHINE",
+      "url": "https://docs.riscv.org/reference/isa/v20240411/priv/machine.html",
+      "heading": "Machine-Level ISA, Version 1.13",
+      "sections": [
+        "2.1.6 mstatus",
+        "2.1.7 mtvec",
+        "2.1.9 mip/mie",
+        "2.1.13-16 trap CSRs",
+        "2.3.1 ECALL/EBREAK",
+        "2.3.2 trap return"
+      ],
+      "use": "Trap CSR state, direct entry, machine-external source, return and pending/mask reevaluation"
+    }
+  ],
+  "engineering_choices": [
+    "Custom sticky32-bit timer feeds machine-external cause11; no standard64-bit timer claim",
+    "Timer CTRL bit1 already auto-reload, IRQ uses bit2",
+    "Feature-selected legacy mode and default enabled physical-top proposal",
+    "Drain and recheck at empty boundary, explicit observation interfaces, acceptance requirements"
+  ],
+  "implementation": "NOT RUN / NOT IMPLEMENTED; proposal only"
+}

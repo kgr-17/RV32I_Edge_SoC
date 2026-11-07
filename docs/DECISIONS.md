@@ -90,3 +90,52 @@ final routed FPGA and physical evidence. The v0.2 fatal EEI is an intermediate
 baseline, not an excuse to omit interrupts from project completion. Trade-off:
 additional implementation and validation scope, with explicit review before any
 new ports/CSR/trap priorities. This task only restores backlog traceability.
+
+## T044 submission v0.3 - proposed, not approved or implemented
+
+The earlier T002 proposal wording above is historical. Its owner acceptance is
+recorded in evidence/owner_reviews/T002-2026-10-17.json and the approved v0.2
+contract hash remains unchanged. T031 is implemented and verified in commit
+66bfa46. The following new decisions require the separate T044 owner review.
+
+### ADR-0013: Feature-selected resumable trap environment
+
+Proposal: add ENABLE_TRAPS default0 to pipeline/SoC, preserving v0.2 fatal-halt
+semantics and all legacy expected outcomes. In T045 the physical top defaults
+to enabled mode with separate firmware, CSR operations, direct vectoring and
+MRET; physical pins, clock, memory map and reset cancellation remain unchanged.
+See INTERRUPT_SPEC.md for exact registers, masks, causes and new observation ports.
+
+Trade-off: both configurations must remain tested, and the enabled firmware must
+install a valid handler and preserve GPR/CSR context. Single hardware CSR frame,
+no privilege transitions or full privileged-platform compliance claim. Illegal
+instructions, ECALL and EBREAK become resumable synchronous traps only in enabled
+mode. Verification must retain old oracles and test new CSR/trap state independently.
+
+### ADR-0014: Preserve the custom timer and route a platform interrupt
+
+Proposal: retain 32-bit COUNT/COMPARE, sticky equality match, bit0 COUNT_ENABLE,
+bit1 AUTO_RELOAD and successful-response effects; add bit2 IRQ_ENABLE under
+ENABLE_IRQ default0. In enabled SoC configuration, sticky MATCH gated by bit2
+drives synchronous irq_external_i and machine-external cause11 / MEIP-MEIE bit11.
+No external pin, new clock, new address or standard64-bit timer facility is added.
+
+Trade-off: a bare-metal handler must acknowledge the existing W1C status or mask
+the source; software expecting a standard mtime/mtimecmp or PLIC requires a future
+reviewed platform extension. Match-over-W1C and auto-reload collisions must retain
+their existing tested behavior. Repeated level IRQ and CSR masks need new tests.
+
+### ADR-0015: Drain to a precise architectural interrupt boundary
+
+Proposal: stop fresh fetch creation, drain offered fetches under stable-valid
+rules, discard their results, finish admitted queued/stage work in age order,
+then recheck IRQ/masks at an empty pipeline/bus boundary. Save the last successful
+retirement's next_pc. Older synchronous faults take precedence; data effects must
+already have their matching retirement before IRQ entry. Add separate full-width
+trap and CSR observation channels; preserve existing bus and retirement widths.
+
+Trade-off: variable memory latency extends interrupt latency; no hard real-time
+bound or cancellation timeout is promised. Tests must prove exact-once stores and
+MMIO pops, correct branch/exception age, canceled IRQ draining, reset in every
+phase, and return without skipped or repeated instructions. No RTL changes are
+authorized until T044 owner approval; T043 and T032 authorizations remain separate.
