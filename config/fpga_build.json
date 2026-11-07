@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "top": "basys3_top",
+  "part": "xc7a35tcpg236-1",
+  "clock_period_ns": 10.0,
+  "vivado_version": "2025.2",
+  "vivado_sw_build": "6299465",
+  "design_scope": "diagnostic_shell_before_T031",
+  "rtl_sources": ["fpga/basys3/top.sv"],
+  "constraints": ["fpga/basys3/basys3.xdc"],
+  "memory_files": []
+}

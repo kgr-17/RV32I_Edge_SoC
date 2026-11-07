@@ -1,0 +1,24 @@
+{
+  "receipt": "evidence/toolchain_runs/tcl-20261107T031917748909Z.json",
+  "source_sha256": {
+    "config/fpga_build.json": "652a00a9729318bf2d78f85b8abd8fc0c6c4c923ddf3ab200eaafe53f784ecb2",
+    "fpga/basys3/build.tcl": "abb920458c00c3177862b07e96fe9fab9526b3404f940f0ef72f83f63fb67c24",
+    "scripts/fpga_build.py": "c371de3c6e14b3c7b58a5f84d88827c348ab0c029fbed47ece024338eaf196e1",
+    "scripts/test_fpga_build.py": "b11df6b93f22cbaca715bd7dbf4098de5c673ba0ddf40777b61ac7e1c4e2fa65",
+    "scripts/tcl_checks.py": "67051c18bf592bef5c594421dfe5c0e4962ff7bd10e4b705134081bd56f748f3",
+    "scripts/harness.py": "451407093ded94e04641e39a773779ba3948d5a7db9971f1c2690111af1c47f1",
+    "scripts/tool_runner.py": "2ffc6d2c8d4be6b21f5b836a033b6971f44f9172d22b18378ade58498ec4d5f7",
+    "scripts/tool_child.py": "8a61d7f13507a0d41b838aef00b1488e9ecc0b535ff9a08caca729b0551b62a8",
+    "scripts/rtl_checks.py": "dc6c2cda4debd5c9fcc2321f9e537cfb998e7fcb38ef61ae6c7a56b045c42935",
+    ".harness/checks.json": "ba8c65f21e7b0a462423ee0bc6aad818e572baa8470dbef3fc3a7ad957005966",
+    "docs/ARCH_CONTRACT.json": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03",
+    "fpga/basys3/top.sv": "359cc67f9ecaa46d2e607a8c84d4a3f7a7b21cf52dac6e3e759302e2234edf80",
+    "fpga/basys3/basys3.xdc": "13152309c5afd879353cf45a1f8e860f4adb24c3e0258d979c21d69e39613584"
+  },
+  "archive_sha256": "daf682e85722cde6d79ba322258204d8283efcb8754c234504030860fadb347e",
+  "generated_artifacts": {
+    "build/T030/tcl-20261107T031917748909Z/versions/xelab/xelab.pb": "1413d29e3075deed248563d8a39c969981a0d61fcc5977150fa52074b16dd1c1",
+    "build/T030/tcl-20261107T031917748909Z/versions/xvlog/xvlog.pb": "1413d29e3075deed248563d8a39c969981a0d61fcc5977150fa52074b16dd1c1"
+  },
+  "failure": "Pure policy tests3errors/6 and first actualCLI plan rejected because newAPI passed absolute output paths to existing harness.inside, which deliberately accepts project-relative names. Add launcher-local strict normalization back to relative paths; retain unchanged harness helper and outside-workspace guards. No output/artifact created by rejected plan."
+}

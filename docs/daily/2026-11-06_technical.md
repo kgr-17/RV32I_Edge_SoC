@@ -407,3 +407,108 @@ date stillNov6 even after UTCNov7 clock advancement. Versions unchanged Python
 3.9.13/Git2.48.1.windows.1/tzdata2026.2/Vivado-XSim2025.2 SW6299465. Runtime
 unrestricted/never attendedonly; no install/download/globalconfiguration/push/
 hostscheduler/physicalprogramming. No owner review or approval gate waived.
+
+
+---
+
+<!-- entry:39e79c689ceef7b1f4f2bc5780342ca9af8f9faf1fc61c4f9a16e8ed06a26892 -->
+
+## T030 prepared: nonproject build planning and owner-controlled execution workflow
+
+T029 committed1f0be70 after lint43/23commands, CDC50/25,3290digitalrows and actual
+18chain36stage classification. Retain unwaivedGPIO CDC6Warning, no complete/routed
+CDCclaim. BeganT030 fromcleanGit, baseline1174trackedhashes before source edits;
+state/backlogexcluded, declared existingchanges checksregistry/README/reportpair
+only. No RTL/XPR/XDC/ROM/architecture/clock/target/resetpriority changes.
+
+New config/fpga_build.json pins currentdiagnostic sources/top/part/10ns/version;
+scripts/fpga_build.py validates inputs/freshbuildout/uniqueimages and writes
+hashedTSV jobs; fpga/basys3/build.tcl validates nonproject20command plan. Plan
+executes no designcommand; execution branches code-reviewed NOT RUN underT030.
+Real executionlauncher requires actualactive+authorizedT043, completedT031/T044/
+T045, T044ownerreview and updatedintegratedmanifest. Never invokesownercommands.
+Flags/TSV acknowledgments are workflow, notsecurity; actualruntimeunrestricted.
+ToolRunner120cap retained(defaultfixed120), aggregate600cap unchanged. Outputs
+freshbuildonly, noforceoverwrite/cleanup/projectsave/programmingcommand.
+
+Six policytests PASS. Preservethree failed preparations before freshfinish:
+absolutePath passedto relative-only harnessAPI(13inputs/2generated), native300
+timeout rejectedagainst120cap(13/4), blanketDCP check finds SDKcollateral(13/191).
+Thirdprep actualCLIplan20commands PASS/no requestedartifactdir; five DCPs are
+byte-identical installed2025.2/data/XilinxTclStore examplefiles and earlierT029
+read-onlystartup copies. Vivado/data isinstalledsymlink toshareddata, notnetwork
+download. New catalogpins only exact5relativepaths/SHA and checks actual SDKroot
+derivedfromconfiguredtool. AnyotherDCP/bitstreamstillfails, targetoutdirabsent.
+No tool/harnesscheck/timeout/warning weakened; guard corrected for concreteSDK
+provenance, sourcearchives/logs retained. ActualTcl eight rejectcases must run.
+
+Required freshfinish attempt1/3: python -B scripts/harness.py finish T030 --evidence
+evidence/daily/T030.md, lint/test-tcl/whitespace. SixPythonpolicies plus actual
+VivadoCLIplan and target/clock/source/path/mode/auth/output negatives. Synthetic
+policy state is in-memory only; noactualauthorization/statewrite. Afterpassaudit
+job/result/source/guard/collateral hashes, preserve1170oldfiles/reportprefixes,
+snapshotpregateevidence, appendsameNov6pair, review/stagedhash/whitespace/commit
+thenquerynext(expectedT031). Readrequiredsessioncontext/recoveractiveonresume.
+
+Registry26 retains25earlier targets; nofull26regression. FulltargetSoCsynth/route/
+timing/power/CDC/bitstream NOT RUN untilT043 ownerauthorization; programmingT032
+separate. T023 skipped/formalNOT RUN, neverPASS. Nohardware/ASICclaim.30mandatory
+completed+1ownerskipped/41, nootherreviewwaived. CurrentLAdateNov6 despiteUTCNov7;
+exactexistingtwoNov6reports only. Versions Python3.9.13/Git2.48.1.windows.1/
+tzdata2026.2/Vivado-XSim2025.2 SW6299465 unchanged. Attendedunrestricted/never,
+noinstall/download/globalconfig/push/hostscheduler/FPGAprogramming.
+
+
+---
+
+<!-- entry:4329513c369970b0e0c720ba5fee2471672621efba5139c51b572d5801bc8fd3 -->
+
+## T030 completed: actual Tcl plan and guarded nonproject build infrastructure
+
+T029 committed1f0be70. T030 passed all four first-attempt gates, all exit0: lint,
+test-tcl,bothwhitespace. Current task receipt: evidence/runs/T030/attempt-1-20261107T032611376979Z.json.
+Native/checker receipts: evidence/toolchain_runs/lint-20261107T032611935315Z.json, evidence/toolchain_runs/tcl-20261107T033512521004Z.json. Checks/commandrecords:
+{"lint": [43, 23], "tcl": [33, 13]}. Six policy tests PASS. Actual CLI launches actual Vivado,
+validates20 planned commands; inner native record preserved in result.json.
+Eight actual Tcl rejects passed: wrongpart/clock,missing/outside source,unknown
+mode,unauthorizedexecute,outside/existing output. Ownerstate fields unchanged.
+
+New config/fpga_build.json,config/vivado_vendor_collateral.json,
+fpga/basys3/build.tcl,scripts/fpga_build.py,test_fpga_build.py,tcl_checks.py,
+docs/FPGA_PPA.md,registry/state/backlog/README/evidence/reportpair. No RTL/XPR/XDC/
+ROM/architecture/clock/target/resetpriority change. Config stilldiagnostic shell;
+T031 must update source/image manifest for verified SoC, T045 later for reviewed
+interrupt revision. Reproducible plan: python -B scripts/fpga_build.py plan --output
+build/FPGA/new_unique_name. Plan prints commands only; real execution branches
+NOT RUN in this task. Python launcher needs actualactive/authorizedT043 and
+completed/reviewed prerequisites; no owner commands called, no state writes from
+policy fixtures. Flags are workflow, not sandbox/security/authentication.
+
+Execution code-review scope: freshprojectbuildoutputs, unique memory basenames,
+nonprojectsource/XDC, synth/impl checkpoints and timing/clock/CDC/DRC/power reports;
+nonempty max/min paths/slack>=0 and emptyDRC beforebitstream. Actual fullreport
+completeness/constraints/source/firmware binding still required underT043; plan
+success is not execution validation. Tool120second/aggregate600 caps unchanged.
+Larger later flows must use bounded checkpoint stages, preserve timeout failures.
+T043 authorization is separate from physicalT032 programming authorization.
+
+Final audit: {"tools": 2, "sources": 49, "artifacts": 149, "preserved": 1170, "planned_commands": 20, "actual_reject_cases": 8, "installed_vendor_examples": 5}. Validates nested actualCLI/native result,
+job/inputs, exact command sequence, all8 diagnostics, sentinel preservation,
+absence of requested targetoutdir/bitstreams and unchangedownerpolicy fields.
+Only5 precise DCPs match installed SDKsources and earlierread-onlyT029startup
+copies byte-for-byte. Any other DCP still rejected. Shared Vivado/data is an
+installed symlink; no download/install. Preserve1170historical files and earlier
+reportprefixes. All three failed prep archives retained13inputs each, generated
+2/4/191: absolute-vs-relative API,300-vs-120 bound, SDKfixture classification.
+Sharedharness/ToolRunner/RTL unchanged; no warning/negative/check weakened.
+
+Reviewdiff/stagedhash/whitespace thencommit inspectedT030 locally andquerynext
+(T031expected). Resume reads latesthandoff/AGENTS/boundary/ARCH/verification/
+backlog/state/loop and daily --supervised, recoveractive before selectingnext.
+Reproduce python -B scripts/verify.py test-tcl and lint.31mandatory completed+
+1ownerskipped/41; registry26 retains25 earlier targets, nofull26regressionclaim.
+T023 formal skipped/NOT RUN, neverPASS. FulltargetSoCsynth/place/route/timing/
+power/fullCDC/bitstream NOT RUN, no physical/ASIC evidence. Versions unchanged
+Python3.9.13/Git2.48.1.windows.1/tzdata2026.2/Vivado-XSim2025.2 SW6299465. LAdate
+Nov6 despiteUTCNov7. Attendedunrestricted/never; no globalconfig/push/scheduler/
+programming. Exactlysame twoNov6reports, all earlier entries retained.

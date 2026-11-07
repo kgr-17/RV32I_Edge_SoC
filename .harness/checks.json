@@ -356,6 +356,12 @@
         "-B",
         "scripts/verify.py",
         "test-cdc"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/verify.py",
+        "test-tcl"
       ]
     ],
     "timeout_seconds": 600
@@ -1272,6 +1278,31 @@
         "{python}",
         "-B",
         "scripts/cdc_checks.py"
+      ]
+    ]
+  },
+  "test-tcl": {
+    "inputs": [
+      "config/fpga_build.json",
+      "config/vivado_vendor_collateral.json",
+      "fpga/basys3/build.tcl",
+      "scripts/fpga_build.py",
+      "scripts/test_fpga_build.py",
+      "scripts/tcl_checks.py",
+      "fpga/basys3/top.sv",
+      "fpga/basys3/basys3.xdc",
+      "docs/ARCH_CONTRACT.json"
+    ],
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "scripts/test_fpga_build.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/tcl_checks.py"
       ]
     ]
   }

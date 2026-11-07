@@ -1,0 +1,178 @@
+{
+  "profile": "tcl",
+  "status": "FAIL",
+  "started_utc": "20261107T032059054844Z",
+  "base_commit": "1f0be7099d419107c65be7955a11cb7d84b02bb7",
+  "scope": "Actual Vivado nonproject Tcl plan/input/output/owner-ack guards only; target synth/place/route/bitstream NOT RUN",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261107T032059054844Z\\versions",
+      "started_utc": "2026-11-07T03:20:59.134743+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "git version 2.48.1.windows.1\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.109
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261107T032059054844Z\\versions\\xvlog",
+      "started_utc": "2026-11-07T03:20:59.257133+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.593
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261107T032059054844Z\\versions\\xelab",
+      "started_utc": "2026-11-07T03:20:59.868030+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.609
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261107T032059054844Z\\versions\\xsim",
+      "started_utc": "2026-11-07T03:21:00.489173+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2025 Xilinx, Inc. All Rights Reserved.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.469
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "C:\\RV32I_Edge_SoC\\scripts\\fpga_build.py",
+        "plan",
+        "--output",
+        "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261107T032059054844Z\\positive"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261107T032059054844Z\\launcher",
+      "started_utc": "2026-11-07T03:21:00.977407+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "{\"status\": \"PASS\", \"mode\": \"plan\", \"stage\": \"all\", \"result\": \"build\\\\T030\\\\tcl-20261107T032059054844Z\\\\positive\\\\result.json\"}\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 3.016
+    }
+  ],
+  "checks": [
+    {
+      "name": "Pinned Python version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned tzdata version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned Git version",
+      "status": "PASS",
+      "command_index": 0
+    },
+    {
+      "name": "Pinned xvlog version",
+      "status": "PASS",
+      "command_index": 1
+    },
+    {
+      "name": "Pinned xelab version",
+      "status": "PASS",
+      "command_index": 2
+    },
+    {
+      "name": "Pinned xsim version",
+      "status": "PASS",
+      "command_index": 3
+    },
+    {
+      "name": "Actual CLI plan launch",
+      "status": "PASS",
+      "command_index": 4
+    },
+    {
+      "name": "Actual Tcl validates20 planned commands, executesnone",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Plan creates no target build artifacts",
+      "status": "FAIL",
+      "command_index": null
+    }
+  ],
+  "simulations": [],
+  "excluded": [
+    "full-target synthesis",
+    "placement/routing",
+    "timing/power closure",
+    "bitstream generation",
+    "FPGA programming",
+    "SoC/ASIC signoff"
+  ],
+  "pins": {
+    "schema_version": 1,
+    "python_version": "3.9.13",
+    "git_version": "2.48.1.windows.1",
+    "tzdata_version": "2026.2",
+    "vivado_version": "2025.2",
+    "vivado_sw_build": "6299465"
+  },
+  "source_sha256": {
+    "config/fpga_build.json": "652a00a9729318bf2d78f85b8abd8fc0c6c4c923ddf3ab200eaafe53f784ecb2",
+    "fpga/basys3/build.tcl": "abb920458c00c3177862b07e96fe9fab9526b3404f940f0ef72f83f63fb67c24",
+    "scripts/fpga_build.py": "297286fd9bdc8e84d9c5dfe81f3587050b1ef0096a3f3e883f8f76451bac4e98",
+    "scripts/test_fpga_build.py": "b11df6b93f22cbaca715bd7dbf4098de5c673ba0ddf40777b61ac7e1c4e2fa65",
+    "scripts/tcl_checks.py": "67051c18bf592bef5c594421dfe5c0e4962ff7bd10e4b705134081bd56f748f3",
+    "scripts/harness.py": "451407093ded94e04641e39a773779ba3948d5a7db9971f1c2690111af1c47f1",
+    "scripts/tool_runner.py": "2ffc6d2c8d4be6b21f5b836a033b6971f44f9172d22b18378ade58498ec4d5f7",
+    "scripts/tool_child.py": "8a61d7f13507a0d41b838aef00b1488e9ecc0b535ff9a08caca729b0551b62a8",
+    "scripts/rtl_checks.py": "dc6c2cda4debd5c9fcc2321f9e537cfb998e7fcb38ef61ae6c7a56b045c42935",
+    ".harness/checks.json": "ba8c65f21e7b0a462423ee0bc6aad818e572baa8470dbef3fc3a7ad957005966",
+    "docs/ARCH_CONTRACT.json": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03",
+    "fpga/basys3/top.sv": "359cc67f9ecaa46d2e607a8c84d4a3f7a7b21cf52dac6e3e759302e2234edf80",
+    "fpga/basys3/basys3.xdc": "13152309c5afd879353cf45a1f8e860f4adb24c3e0258d979c21d69e39613584"
+  },
+  "error": "Plan creates no target build artifacts",
+  "finished_utc": "2026-11-07T03:21:03.999572+00:00"
+}

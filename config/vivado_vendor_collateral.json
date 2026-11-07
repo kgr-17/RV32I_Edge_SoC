@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "vivado_version": "2025.2",
+  "vivado_sw_build": "6299465",
+  "provenance": "Exact SDK examples read from installed2025.2 data/XilinxTclStore, matching earlier project-local read-only startup cache. Tool install data is a symlink under Vivado; no download/install/modification. These are not target build outputs.",
+  "checkpoints": {
+    "tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/test/src/convert_muxfx_to_luts/convert_muxfx_to_luts_0001.dcp": {
+      "sha256": "f5523a0472be907ca017c370da7d916b88bb7a4ca257c9e22c15c88f760cb74c",
+      "installed_source": "C:/AMDDesignTools/2025.2/data/XilinxTclStore/tclapp/xilinx/designutils/test/src/convert_muxfx_to_luts/convert_muxfx_to_luts_0001.dcp",
+      "prior_readonly_copy": "build/T029/cdc-options-20261106T222834395131Z/options/2025.2/XilinxTclStore/tclapp/xilinx/designutils/test/src/convert_muxfx_to_luts/convert_muxfx_to_luts_0001.dcp"
+    },
+    "tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/test/src/timing_report_to_verilog/timing_report_to_verilog_0001.dcp": {
+      "sha256": "41c29412fd0f982fa0f8f1b33071e6ede477f6ad571547a300a8790f82a9eb9d",
+      "installed_source": "C:/AMDDesignTools/2025.2/data/XilinxTclStore/tclapp/xilinx/designutils/test/src/timing_report_to_verilog/timing_report_to_verilog_0001.dcp",
+      "prior_readonly_copy": "build/T029/cdc-options-20261106T222834395131Z/options/2025.2/XilinxTclStore/tclapp/xilinx/designutils/test/src/timing_report_to_verilog/timing_report_to_verilog_0001.dcp"
+    },
+    "tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/test/src/timing_report_to_verilog/timing_report_to_verilog_0002.dcp": {
+      "sha256": "cb44ccf1f91900621b6d9e2d791dc6184281981b2a6cbb6df7b9aa810e2ac884",
+      "installed_source": "C:/AMDDesignTools/2025.2/data/XilinxTclStore/tclapp/xilinx/designutils/test/src/timing_report_to_verilog/timing_report_to_verilog_0002.dcp",
+      "prior_readonly_copy": "build/T029/cdc-options-20261106T222834395131Z/options/2025.2/XilinxTclStore/tclapp/xilinx/designutils/test/src/timing_report_to_verilog/timing_report_to_verilog_0002.dcp"
+    },
+    "tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/test/src/write_loc_constraints/write_loc_constraints_0001.dcp": {
+      "sha256": "2bacd70e8c0eff8897d57ce36a40963722b005d93fd5deb6e0bb5c82dff58c7b",
+      "installed_source": "C:/AMDDesignTools/2025.2/data/XilinxTclStore/tclapp/xilinx/designutils/test/src/write_loc_constraints/write_loc_constraints_0001.dcp",
+      "prior_readonly_copy": "build/T029/cdc-options-20261106T222834395131Z/options/2025.2/XilinxTclStore/tclapp/xilinx/designutils/test/src/write_loc_constraints/write_loc_constraints_0001.dcp"
+    },
+    "tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/test/src/write_slr_pblock_xdc/write_slr_pblock_xdc_0001.dcp": {
+      "sha256": "41c29412fd0f982fa0f8f1b33071e6ede477f6ad571547a300a8790f82a9eb9d",
+      "installed_source": "C:/AMDDesignTools/2025.2/data/XilinxTclStore/tclapp/xilinx/designutils/test/src/write_slr_pblock_xdc/write_slr_pblock_xdc_0001.dcp",
+      "prior_readonly_copy": "build/T029/cdc-options-20261106T222834395131Z/options/2025.2/XilinxTclStore/tclapp/xilinx/designutils/test/src/write_slr_pblock_xdc/write_slr_pblock_xdc_0001.dcp"
+    }
+  }
+}

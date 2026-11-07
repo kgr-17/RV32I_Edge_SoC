@@ -52,7 +52,7 @@ stress programs hit the five prior gaps (49/49 in the finite cross inventory),
 and the injected retention leak was rejected. See [stress scope](docs/STRESS_VERIFICATION.md).
 T023 selected formal verification was explicitly owner-skipped on November4;
 its original NOT RUN125 record and zero executed formal tasks remain preserved.
-See [formal limits and owner exception](docs/FORMAL_LIMITS.md). Progress is30
+See [formal limits and owner exception](docs/FORMAL_LIMITS.md). Progress is31
 completed mandatory milestones plus1 owner-skipped, out of41. T024 simulation
 DV review passed all seven gates on attempt2, including the full19-target
 regression, and was explicitly owner-approved November4, acknowledging missing
@@ -76,6 +76,9 @@ See [GPIO/timer contracts and evidence](docs/GPIO_TIMER.md).
 T029 completed on attempt1:3290reset/input rows and scoped synthesized CDC for
 18chains/36stages. GPIO CDC-6Warning remains unwaived; fullSoC/routedCDC is pending.
 See [CDC scope and limits](docs/CDC_REPORT.md).
+T030 completed on attempt1: reproducible nonproject Tcl plan,20command validation
+and eight actual rejection cases. Full-target execution remains owner-controlled
+T043; see [FPGA build/PPA status](docs/FPGA_PPA.md).
 
 The existing `RV32I_Edge_SoC.xpr` is the active Vivado project. Its configured part
 is `xc7a35tcpg236-1`. The owner confirmed a Digilent Basys 3. The XPR now selects
