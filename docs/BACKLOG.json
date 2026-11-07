@@ -1314,7 +1314,7 @@
         ]
       ],
       "priority": 290,
-      "status": "pending",
+      "status": "completed",
       "human_approval_required": false,
       "start_approval_required": false,
       "optional": false,

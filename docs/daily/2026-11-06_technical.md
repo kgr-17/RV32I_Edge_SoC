@@ -304,3 +304,106 @@ completeCDC/SoC/IRQ/routedtiming/power/hardware/ASIC result. Versions unchanged
 Python3.9.13/Git2.48.1.windows.1/tzdata2026.2/Vivado-XSim2025.2 SW6299465. Actual
 runtime unrestricted/never, attendedonly; no tools/packages/IP install/download,
 globalconfiguration, push, hostscheduler or physicalFPGAprogramming.
+
+
+---
+
+<!-- entry:630f2b359797f0d22769429d1be63562a51c3840d7f01bf3bdf80daeed380ef2 -->
+
+## T029 prepared: reset boundary and nonempty scoped CDC analysis
+
+T028 committed02ff265, after lint41/22 and MMIO46/20 plus five policy tests,
+9295native rows, all three actual mutations detected. Audit45sources/100artifacts/
+1119oldfiles. BeganT029 fromcleanGit; baseline1145 historical tracked hashes
+before adding sources, exclude state/backlog. Only declared old edits registries/
+README/reportpair. New reset_sync.sv mirrors reviewed asyncassert/2edge release
+with FPGAINIT11 andASYNC_REG/SHREG_EXTRACT=NO. Existing input_sync,UART,GPIO,CPU,
+board/XPR/XDC/image/architecture/clock/resetpriority unchanged. T031 must use new
+tested boundary for SoC; diagnostic top retains original inline reset for now.
+
+Three history/deadline policy tests PASS. Actual cdc-20261106T223420874717Z native
+preparation PASS50checks/25commands: two1645-row seeds1/20261106, widths1/16/32,
+all32onehot,49heldreset/36subcyclepulses perseeds, phases0..3; INIT/clockstop hooks,
+three precise input negatives, invalidWIDTH33 and three RTL digital mutations
+(oneedge release/noasyncassert/stagebypass) detected. Simulated0.2ns reset pulse
+does not establish actual minimum pulse width/recovery/removal/MTBF.
+
+First virtualclock primaryinput report remains FAIL: zeroCDCobjects despite
+complete clock/delay checks, plus ignoredGUI-name warning. Preserve5 exact inputs/
+6generatedreports and warninglogs. Installed2025.2 help confirms option semantics;
+first inventory probe did not print returned help, verbose probe retained full
+text. OfficialAMD docs reads only, webversion2026.1 explicitlydistinguished from
+installed2025.2. Investigation14inputZIP/4receipts under evidence/prepare/.
+
+Actual analysis-only source-register fixture exposes external_model13ns vs
+core10ns; target gains no clock. Actual tool reports exactly CDC3Info(RX1),
+CDC9Info(reset1),CDC6Warning(GPIO16), depth2; 18chains/36ASYNCcells/firstfanout1/
+commonclock verified. Warning remains/notwaived: GPIO bits independent levels,
+no atomic multibit/pulse/debounce guarantee. Reject unknown/Critical/waived or
+missingstage/attribute/endpoints/clocks. Actual source-attribute mutation yields
+CDC2Warning and bypass yieldsCDC4Critical; both rejected. Full check_timing
+analysis constraints complete; allreports/objects/waves/vectors hashes saved.
+
+Next finish T029 --evidence evidence/daily/T029.md via python -B scripts/harness.py,
+attempt1/3; fresh lint/test-cdc/bothwhitespace required. Onpass audit source and
+artifact bindings, CDC/chain/faulttables, preserve1140 oldfiles/reportprefixes,
+append same two Nov6reports, review/stage/hash/whitespace/commit thenactualnext
+(T030expected). Readrequiredsessioncontext and recoveractive first onresume.
+Registry25 retains24predecessors; no full25regression/fullSoC/routedCDC/MTBF/
+formal/timing/power/hardware/ASIC signoff. T023 skipped/NOT RUN. Versions unchanged
+Python3.9.13/Git2.48.1.windows.1/tzdata2026.2/Vivado-XSim2025.2 SW6299465. Runtime
+unrestricted/never attendedonly, noinstall/download/IP/globalconfig/push/scheduler/
+physicalprogramming.29mandatory complete+1ownerskipped/41; noother gatewaived.
+
+
+---
+
+<!-- entry:72bd48ca7f2d4b3a19256359b5140045f66d125873c140847c5b39bf992698ff -->
+
+## T029 completed: reset/input synchronization and retained-warning scoped CDC
+
+T028 remains committed02ff265. T029 passed all four first-attempt gates, exit0:
+lint,test-cdc,bothwhitespace. Current task receipt: evidence/runs/T029/attempt-1-20261106T223751516977Z.json.
+Current native receipts: evidence/toolchain_runs/lint-20261106T223751983214Z.json, evidence/toolchain_runs/cdc-20261106T224711167069Z.json. Checks/commands:
+{"lint": [43, 23], "cdc": [50, 25]}. Three reference tests passed. Native seeds1/20261106 each
+1645rows(3290total), widths1/16/32, all32onehot outputs,49heldreset/36subcyclepulses
+each, phases0..3, INIT/clockstop assertion/release hooks. Wrong-reset/empty/
+truncated/WIDTH33 and three digital RTL faults detected. Actual synthesized
+missingRXattribute CDC2Warning and inputstagebypass CDC4Critical both rejected.
+
+New reset_sync.sv reusable wrapper(asynchronous assert,FPGAINIT11,two rising-edge
+release, ASYNC_REG/SHREG_EXTRACTNO), DV cdc_probe/cdc_registered_probe/tb_cdc/
+test_cdc, scripts cdc_checks.py/cdc_structure.tcl, docsCDC_REPORT,registries/state/
+backlog/README/evidence/reportpair. Existing GPIO/input_sync/UART/CPU/board/XPR/
+XDC/images/architecture/100MHz/resetpriorities unchanged. T031 must instantiate
+tested reset_sync and connect raw GPIO/RX once; current diagnostic inline reset
+stays unchanged. Source launch FFs and13nsclock are only in the analysis fixture.
+
+Actual nonempty unwaived report: CDC3Info RX1/depth2, CDC9Info reset1/depth2 and
+CDC6Warning GPIO16/depth2,18chains/36ASYNCcells/firstfanout1. CDC6 remains Warning,
+notwaived: independent GPIO levels, no atomic word/pulse/debounce guarantee.
+Complete12check_timing categories report0 issues under analysis model. No
+message severity override/quieterror/waiver. Not zero-warning/fullrouted CDC/MTBF.
+
+Audit evidence/t029-final-audit-2026-11-06.json: {"tools": 2, "sources": 49, "artifacts": 128, "preserved": 1140, "edge_rows": 3290, "chains": 18, "stages": 36, "retained_cdc_warnings": 1, "raw_report_members": 25}. Independent
+bit-shift/firststage replay checks actual native-compared history expectations;
+reads actual CDC/chain/timing/fault tables, allbindings and preserved1140 oldfiles/
+reportprefixes. Raw25reportmembers saved exactbytes in T029-raw-cdc-reports ZIP.
+14 investigation inputs/4receipts retained; rejected primary-input empty report
+FAIL5inputs/6artifacts remains. Final post-gate audit initially exit1 because it
+required identical local hierarchical clock-net names across modules. Actual
+CDCobjects all target core_clk; native perpair same-net assertion plus source
+mapping verifies three expected local aliases. Correct audit, archive3 exact
+inputs; rerunexit0. Native gates and RTL unchanged, no check weakened.
+
+Reproduce python -B scripts/verify.py test-cdc and lint. Reviewdiff/stagedsource
+hash/whitespace, commit inspectedT029 locally thenqueryactualnext(T030expected).
+Continue attended tasks sequentially. Onfuture session read latesthandoff/AGENTS/
+boundary/ARCH/verification/backlog/state/loop, daily --supervised, recoveractive
+before selectingnext.30mandatory complete+1ownerskipped/41. Registry25 retains24
+predecessors; full25regression NOT RUN. T023 formal skipped/NOT RUN, neverPASS.
+No completeSoC/routedCDC/analogMTBF/timing/power/hardware/ASIC result. ActualLA
+date stillNov6 even after UTCNov7 clock advancement. Versions unchanged Python
+3.9.13/Git2.48.1.windows.1/tzdata2026.2/Vivado-XSim2025.2 SW6299465. Runtime
+unrestricted/never attendedonly; no install/download/globalconfiguration/push/
+hostscheduler/physicalprogramming. No owner review or approval gate waived.

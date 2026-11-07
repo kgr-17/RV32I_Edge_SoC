@@ -1,0 +1,43 @@
+{
+  "archive": "evidence/prepare/T029-investigation-inputs-2026-11-06.zip",
+  "archive_sha256": "1334399f63b4b1481cd0ad82a37f2f38308363de56e1def8a99b8917be90f391",
+  "source_sha256": {
+    ".tmp/cdc_options.tcl": "e545585fb9c1dd6099f4809df063a4ec7302f740007e9f7c0fd7097077edd895",
+    ".tmp/cdc_options.py": "5f81111e186c6a8bc49914b0b8a374f020e42d60c37573dde58568760f4798b1",
+    ".tmp/cdc_options_verbose.tcl": "592c1b647d25e18316f5bd218f3bff0dfbd4269e6c39d35cf99b94e3a9f79523",
+    ".tmp/cdc_options_verbose.py": "d2910e1b3ba465741ca9db6d2d1dd09b8fe6950e041b636a4c928a0c6c21c175",
+    ".tmp/cdc_probe_prepare.tcl": "3f2c63a4fde7a60111dd69d2656a8ab9702749afa2339fd926d117ad52d0b96c",
+    ".tmp/cdc_probe_prepare.py": "c11fd0c77cf7c4ce6382d97c202652baaf3592dfd0feb55617ca5c3622b11669",
+    ".tmp/cdc_probe_registered.tcl": "1aa292a9e5e183da5615040a31fb87500fcb142a8ccf3721f5e5f9728b1c03bf",
+    ".tmp/cdc_probe_registered.py": "76792bf5a6f2147134b46b867ea93a9aaf5c7071f53b5da754e202a0e41ff39e",
+    ".tmp/t029_documentation_notes.json": "775b36165d519a3aaaf213cd253ba2f275adf9ccf003741a6a83421e93df56ec",
+    "rtl/peripherals/reset_sync.sv": "26be9f30f22ce8abf0e0644e1ffa8622907ad680edde59c05614f05ee49b278a",
+    "rtl/peripherals/input_sync.sv": "75a1f76a6c5d736ca4a1ef88423174c08469a287ee973a48e1f3e910361b86dc",
+    "rtl/peripherals/uart_rx.sv": "d5c22f05450b70033746c8b762e5d4fb5fe974b496c822c400be8795fc344a4c",
+    "dv/cdc/cdc_probe.sv": "cb99086da260ea57f6c63a489b1c8e5ac4d6a39b8f4f8753348995427ea5b5ae",
+    "dv/cdc/cdc_registered_probe.sv": "14edee769e45d49bd66d3721b3d9551eba990d3a376e70a30173a76dac48c1ab"
+  },
+  "receipts": {
+    "evidence/toolchain_runs/cdc-options-20261106T222834395131Z.json": {
+      "sha256": "a07fe42d8db413fda5695565e174e83ace307047859c8af2116451451f0d8ce2",
+      "status": "PASS",
+      "scope": "Read-only local Vivado2025.2 Tcl option discovery, no hardware design/build"
+    },
+    "evidence/toolchain_runs/cdc-options-verbose-20261106T222854760323Z.json": {
+      "sha256": "3446549f5ce706b583ec9b2d7c74733a4097ac22bb404ccc98186fe344366e26",
+      "status": "PASS",
+      "scope": "Read-only local Vivado2025.2 Tcl option discovery, no hardware design/build"
+    },
+    "evidence/toolchain_runs/cdc-report-preparation-20261106T222931468106Z.json": {
+      "sha256": "f2d57ffa462f64df29fb7b33d19f7597014010f6b0484769a916a1261f374c70",
+      "status": "FAIL",
+      "scope": "Actual2025.2 report capture/inspection only; not a CDC task pass"
+    },
+    "evidence/toolchain_runs/cdc-registered-preparation-20261106T223138258243Z.json": {
+      "sha256": "a14466b96929dc7c32d3a76f27a78c49a13282172330f2dc413086c9986ca0c2",
+      "status": "PASS",
+      "scope": "Actual2025.2 registered-source CDC capture only; not a task pass"
+    }
+  },
+  "scope": "Preserve all option/probe investigation source bytes, including ignored temp scripts. SourceFF fixture models off-chip launchers only; no extra production clock. Primary-input report capture FAIL/empty remains inadequate. Registered report capture PASS is not final task/zero-warning signoff."
+}

@@ -73,7 +73,14 @@
       "dv/integration/test_mmio.py",
       "dv/integration/tb_mmio.sv",
       "scripts/mmio_checks.py",
-      "docs/ARCH_CONTRACT.json"
+      "docs/ARCH_CONTRACT.json",
+      "rtl/peripherals/reset_sync.sv",
+      "dv/cdc/cdc_probe.sv",
+      "dv/cdc/cdc_registered_probe.sv",
+      "dv/cdc/tb_cdc.sv",
+      "dv/cdc/test_cdc.py",
+      "scripts/cdc_checks.py",
+      "scripts/cdc_structure.tcl"
     ],
     "commands": [
       [
@@ -343,6 +350,12 @@
         "-B",
         "scripts/verify.py",
         "test-mmio"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/verify.py",
+        "test-cdc"
       ]
     ],
     "timeout_seconds": 600
@@ -1232,6 +1245,33 @@
         "{python}",
         "-B",
         "scripts/mmio_checks.py"
+      ]
+    ]
+  },
+  "test-cdc": {
+    "inputs": [
+      "rtl/peripherals/reset_sync.sv",
+      "rtl/peripherals/input_sync.sv",
+      "rtl/peripherals/uart_rx.sv",
+      "dv/cdc/cdc_probe.sv",
+      "dv/cdc/cdc_registered_probe.sv",
+      "dv/cdc/tb_cdc.sv",
+      "dv/cdc/test_cdc.py",
+      "scripts/cdc_checks.py",
+      "scripts/cdc_structure.tcl",
+      "config/rtl_checks.json",
+      "docs/ARCH_CONTRACT.json"
+    ],
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "dv/cdc/test_cdc.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/cdc_checks.py"
       ]
     ]
   }

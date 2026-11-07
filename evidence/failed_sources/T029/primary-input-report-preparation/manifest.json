@@ -1,0 +1,20 @@
+{
+  "receipt": "evidence/toolchain_runs/cdc-report-preparation-20261106T222931468106Z.json",
+  "source_sha256": {
+    "rtl/peripherals/reset_sync.sv": "26be9f30f22ce8abf0e0644e1ffa8622907ad680edde59c05614f05ee49b278a",
+    "rtl/peripherals/input_sync.sv": "75a1f76a6c5d736ca4a1ef88423174c08469a287ee973a48e1f3e910361b86dc",
+    "rtl/peripherals/uart_rx.sv": "d5c22f05450b70033746c8b762e5d4fb5fe974b496c822c400be8795fc344a4c",
+    "dv/cdc/cdc_probe.sv": "cb99086da260ea57f6c63a489b1c8e5ac4d6a39b8f4f8753348995427ea5b5ae",
+    ".tmp/cdc_probe_prepare.tcl": "3f2c63a4fde7a60111dd69d2656a8ab9702749afa2339fd926d117ad52d0b96c"
+  },
+  "archive_sha256": "3424c1270eceb57ae6ef4088c8ef6a164944c66d4b5459d2f6113cb4e82c1b42",
+  "generated_artifacts": {
+    "build/T029/cdc-report-preparation-20261106T222931468106Z/probe/cdc.rpt": "1a3a1b9349ca6c5ca7881d8e16da7aa9131b283d499d100be4fed6fe6366bc85",
+    "build/T029/cdc-report-preparation-20261106T222931468106Z/probe/cdc_objects.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build/T029/cdc-report-preparation-20261106T222931468106Z/probe/dfx_runtime.txt": "ca01760064802f7c1390bb24c0508090531bf3d805455060d856478963e774d9",
+    "build/T029/cdc-report-preparation-20261106T222931468106Z/probe/effective_analysis.xdc": "76a4739eb8f1735a7b1a8a63801a37f42a9af5c9a788d3d6e910f20d0de833bb",
+    "build/T029/cdc-report-preparation-20261106T222931468106Z/probe/sources.txt": "d42377acdfdfcc3210d7bc992b522c3cbdf989c6aa93f7adb8b52eceb18d3a1f",
+    "build/T029/cdc-report-preparation-20261106T222931468106Z/probe/timing_checks.rpt": "d9703e144d2b878fc0a90dab974726a13b990a8023225b176b613d185c8fda51"
+  },
+  "failure": "Virtual source clocks and complete I/O delay constraints yielded All paths are Safely Timed with zero CDC objects. Batch -name ignored and get namedobjects warning also rejected by strict warning gate. Never accept empty report as safety evidence. Use explicit analysis-only source FFs/external clock; remove GUI-only name, retain no_waiver/allchecks and capture primary-input limitation."
+}

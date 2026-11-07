@@ -1,0 +1,15 @@
+{
+  "command": [
+    "python",
+    "-B",
+    ".tmp/t029_audit.py"
+  ],
+  "exit_code": 1,
+  "failure": "Post-gate audit incorrectly required identical local clock net names across hierarchy. All three CDC groups report ENDPOINT_CLOCK=core_clk; per-pair Tcl enforces same net, and source/probe topology maps three local aliases to clk_i. Correct audit to exact expected aliases plus tool logical-domain checks; task source/gates unchanged.",
+  "source_sha256": {
+    ".tmp/t029_audit.py": "7a84e829fa8c366e8e074dafaf28cada69b83df4f94a686453ded1dc272be5db",
+    "build/T029/cdc-20261106T224711167069Z/structure-positive/chains.tsv": "ca67bc3f63d7992d30794ecc4ccac1822448c89571325408ae4c4bdb73d3250a",
+    "build/T029/cdc-20261106T224711167069Z/structure-positive/inventory.tsv": "e2c60ef74c3ae76d64099bce083e0370bf8a72bc4800ea5d93549c574409d601"
+  },
+  "archive_sha256": "04cca6b93f6722a9842f2790e7477580685a9de87e7b8d661571a04b3360863a"
+}

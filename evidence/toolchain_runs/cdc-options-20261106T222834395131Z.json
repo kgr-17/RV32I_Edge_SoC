@@ -1,0 +1,51 @@
+{
+  "profile": "cdc-options",
+  "status": "PASS",
+  "started_utc": "20261106T222834395131Z",
+  "base_commit": "02ff26527e74839e7d1c2876166e388a5c751dec",
+  "scope": "Read-only local Vivado2025.2 Tcl option discovery, no hardware design/build",
+  "commands": [
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat",
+        "-mode",
+        "batch",
+        "-nolog",
+        "-nojournal",
+        "-notrace",
+        "-source",
+        "C:\\RV32I_Edge_SoC\\.tmp\\cdc_options.tcl"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-options-20261106T222834395131Z\\options",
+      "started_utc": "2026-11-06T22:28:34.468791+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** Vivado v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Fri Nov  6 14:28:35 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource {C:\\RV32I_Edge_SoC\\.tmp\\cdc_options.tcl} -notrace\nCDC_OPTIONS_VERSION=2025.2\nCDC_COMMANDS=get_cdc_violations read_chipscope_cdc report_cdc write_chipscope_cdc\nCDC_OPTIONS_PASS\nINFO: [Common 17-206] Exiting Vivado at Fri Nov  6 14:28:37 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.875
+    }
+  ],
+  "checks": [
+    {
+      "name": "Installed2025.2 CDC options",
+      "status": "PASS",
+      "command_index": 0
+    }
+  ],
+  "simulations": [],
+  "excluded": [
+    "formal",
+    "timing closure",
+    "physical FPGA",
+    "ASIC",
+    "CPU ISA correctness"
+  ],
+  "source_sha256": {
+    ".tmp/cdc_options.tcl": "e545585fb9c1dd6099f4809df063a4ec7302f740007e9f7c0fd7097077edd895"
+  }
+}

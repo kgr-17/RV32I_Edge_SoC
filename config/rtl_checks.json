@@ -763,6 +763,13 @@
       "sources": [
         "rtl/peripherals/timer.sv"
       ]
+    },
+    {
+      "name": "reset_boundary",
+      "top": "reset_sync",
+      "sources": [
+        "rtl/peripherals/reset_sync.sv"
+      ]
     }
   ],
   "designs": [
