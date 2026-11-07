@@ -512,3 +512,49 @@ power/fullCDC/bitstream NOT RUN, no physical/ASIC evidence. Versions unchanged
 Python3.9.13/Git2.48.1.windows.1/tzdata2026.2/Vivado-XSim2025.2 SW6299465. LAdate
 Nov6 despiteUTCNov7. Attendedunrestricted/never; no globalconfig/push/scheduler/
 programming. Exactlysame twoNov6reports, all earlier entries retained.
+
+
+---
+
+<!-- entry:aa9a7e0b1f8b17d34cbc73af89e470d434a248206afa0989dae6096067b290c1 -->
+
+## T031 active: first actual compiled SoC boot passed
+
+T030 committedb94e043 after lint43/23,Tcl33/13records, sixpolicies/all8Tclrejects,
+20commandsplanned(noexecution),1170 oldfilespreserved. BeganT031 fromcleanGit;
+baseline1199trackedhashes before edits. New soc_fabric/edge_soc connect unchanged
+pipelineCPU, dualportROM/RAM, UART/GPIO/timer under approved oneoutstanding/map/
+100MHz/sharedreset/responseeffect contract. OriginalCPU/peripheral/memory RTL and
+boot/linker/T026image unchanged. Separate actual SoCapp/image compiled; FPGA
+top/XPR/config remain diagnostic until validation/recoverableintegration.
+
+Actual compiler preparation soc-firmware-20261107T034249704290Z PASS: pinned GNU
+RV32I/ILP32, strictELF and objcopy64KiB matching, newsoc_boot.mem. First native
+prep soc-boot-preparation-20261107T035028209737Z failed actualxelab missingCPUtop:
+selectedstage-onlypipeline_lint_top, archived17sources/32generatedhashes. Fixed
+source list to pipeline_cpu_lint_top; productionRTL unchanged.
+
+Secondprep soc-boot-preparation-20261107T035106853512Z PASS23checks/19commands.
+Actual native pipeline executes compiled image, fastdivider8,1970cycles,
+two187-retirement boots, independentlydecoded PASSCRLF twice, persistentword
+1->2 acrosswarmreset.440I/118Dresponses,664busyDwaitcycles,22RAMwriteeffects.
+Independent bus/peripheral reference checks responses/effects, unchanged ISS plus
+newgoldMMIO extension compares allretirements, actualserialbitinterval decoder
+checks output; fullphysicalRAM equals architecturalRAM. No marker-only acceptance.
+See docs/SOC_BOOT.md,evidence/daily/T031.md; finaltaskgates pending.
+
+ResumeexactlyactiveT031. Next implement standalonefabric mapping/ROMwriteerror/
+lanes/stalls/resetcancel tests, production868boot, preserve diagnostic compatibility,
+registersources andrecoverable XPR/sourceintegration after nativechecks. Preserve
+all23existing lint checks; boundedtwo-worker independentlint may be needed for
+600aggregate/120native caps, no timeoutincrease/check removal. Host28logicalCPU/
+32GB, observed~20GBfree via read-onlyqueries. FulltargettechnologySYNTH/PPA/route/
+bitstream remains T043 ownercontrolled, use unitfabriclint+actualSoCsim here.
+
+After required finishT031 --evidence evidence/daily/T031.md passes(all<=3attempts),
+audit source/image/vector/trace/wave/ISA/UART/project bindings and oldfiles,
+appendexacttwo datedreports, review/stagedhash/whitespace/commit thenprepare
+T044architecture ownerreview. No ownercommands onuserbehalf without exact prior
+authorization.31complete+1ownerskip/41, formalT023skipped/NOT RUN, allotherreviews
+required. Runtimeunrestricted/never attendedonly; noinstall/download/globalconfig/
+push/hostscheduler/physicalFPGA. CurrentLAdateNov6, tools unchanged.

@@ -8,7 +8,7 @@ module tb_board_io;
     logic RsRx = 1'b0;
     wire [15:0] led;
     wire RsTx;
-    basys3_top dut (.clk(clk), .btnC(btnC), .sw(sw), .RsRx(RsRx), .led(led), .RsTx(RsTx));
+    basys3_diagnostic_top dut (.clk(clk), .btnC(btnC), .sw(sw), .RsRx(RsRx), .led(led), .RsTx(RsTx));
     always #5 if (run_clock) clk = ~clk;
     integer fd, fields, checked = 0, seed, r, rx, tx, rst;
     logic [15:0] switches, expected;

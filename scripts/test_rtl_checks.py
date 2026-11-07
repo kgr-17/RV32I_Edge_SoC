@@ -3,12 +3,62 @@
 import copy
 import tempfile
 import unittest
+import threading
+import time
+import json
+from concurrent.futures import ThreadPoolExecutor
 from unittest import mock
 from pathlib import Path
 import rtl_checks
 
 
 class CheckPolicyTests(unittest.TestCase):
+    def test_concurrent_evidence_is_complete_with_valid_command_indices(self):
+        root = rtl_checks.harness.inside('build/evidence_concurrency_tests')
+        root.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(dir=str(root)) as folder:
+            c = object.__new__(rtl_checks.Checks)
+            c._lock = threading.RLock()
+            c.path = Path(folder)/'result.json'
+            c.result = {'commands': [], 'checks': []}
+            def native(argv, directory, timeout):
+                time.sleep(0.005)
+                return {'argv': argv, 'status': 'PASS', 'exit_code': 0}
+            def job(index):
+                record = c.command([str(index)], Path(folder), 15)
+                c.require(True, str(index), record)
+            with mock.patch.object(rtl_checks.tool_runner, 'run', side_effect=native):
+                with ThreadPoolExecutor(max_workers=2) as pool:
+                    list(pool.map(job, range(12)))
+            evidence = json.loads(c.path.read_text())
+            self.assertEqual(len(evidence['commands']), 12)
+            self.assertEqual(len(evidence['checks']), 12)
+            for check in evidence['checks']:
+                self.assertEqual(evidence['commands'][check['command_index']]['argv'], [check['name']])
+
+    def test_bounded_lint_runs_every_design_and_retains_failures(self):
+        checks = object.__new__(rtl_checks.Checks)
+        guard = threading.Lock()
+        activity = {'live': 0, 'peak': 0, 'seen': []}
+        def job(sources, top, manifest, **kwargs):
+            with guard:
+                activity['live'] += 1
+                activity['peak'] = max(activity['peak'], activity['live'])
+                activity['seen'].append((top, kwargs['timeout']))
+            time.sleep(0.02)
+            with guard:
+                activity['live'] -= 1
+            if top == 'bad':
+                raise rtl_checks.NotRun('missing tool')
+        checks.lint = job
+        manifest = {'lint_designs': [dict(top=n, sources=[n], timeout_seconds=45)
+                                    for n in ('a', 'bad', 'c', 'd')]}
+        with self.assertRaisesRegex(rtl_checks.NotRun, 'missing tool'):
+            checks.lint_manifest(manifest)
+        self.assertCountEqual(activity['seen'], [(n, 45) for n in ('a', 'bad', 'c', 'd')])
+        self.assertEqual(activity['live'], 0)
+        self.assertEqual(activity['peak'], 2)
+
     def setUp(self):
         self.record = {'status': 'PASS', 'exit_code': 0, 'stdout': 'COMPLETED\n', 'stderr': ''}
 

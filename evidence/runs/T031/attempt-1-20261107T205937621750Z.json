@@ -1,0 +1,75 @@
+{
+  "task": "T031",
+  "attempt": 1,
+  "git_commit": "b94e043421f7e30897cccaa7fb46eec9e8e1cf37",
+  "python": "3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)]",
+  "stage": "finished",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "lint"
+      ],
+      "started_utc": "2026-11-07T20:59:37.657680+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/rtl_checks.py\", \"lint\"], \"started_utc\": \"2026-11-07T20:59:37.810752+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\n  \\\"status\\\": \\\"PASS\\\",\\n  \\\"evidence\\\": \\\"evidence\\\\\\\\toolchain_runs\\\\\\\\lint-20261107T205938016781Z.json\\\",\\n  \\\"checks\\\": 45,\\n  \\\"simulations\\\": [],\\n  \\\"error\\\": null\\n}\\n\", \"stderr\": \"\", \"timeout_seconds\": 600}\n",
+      "stderr": "",
+      "timeout_seconds": 600
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/verify.py",
+        "test-soc"
+      ],
+      "started_utc": "2026-11-07T21:03:38.636270+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"dv/integration/test_soc_boot.py\"], \"started_utc\": \"2026-11-07T21:03:38.779970+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"\", \"stderr\": \"test_full_address_and_lane_decoding (__main__.SocOracleTests) ... ok\\ntest_mmio_retirement_requires_ordered_successful_bus_response (__main__.SocOracleTests) ... ok\\ntest_mmio_signed_byte_and_unsigned_half_independent (__main__.SocOracleTests) ... ok\\ntest_replayable_fabric_stimulus_and_accounting (__main__.SocOracleTests) ... ok\\ntest_reset_cancels_uncommitted_store_but_preserves_committed_ram (__main__.SocOracleTests) ... ok\\ntest_trace_missing_and_malformed_cannot_pass (__main__.SocOracleTests) ... ok\\ntest_uart_actual_bit_width_framing_and_truncation_rejected (__main__.SocOracleTests) ... ok\\n\\n----------------------------------------------------------------------\\nRan 7 tests in 0.197s\\n\\nOK\\n\", \"timeout_seconds\": 300}\n{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/test_rtl_checks.py\"], \"started_utc\": \"2026-11-07T21:03:39.182512+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"\", \"stderr\": \"test_bounded_lint_runs_every_design_and_retains_failures (__main__.CheckPolicyTests) ... ok\\ntest_concurrent_evidence_is_complete_with_valid_command_indices (__main__.CheckPolicyTests) ... ok\\ntest_duplicate_completion_rejected (__main__.CheckPolicyTests) ... ok\\ntest_empty_manifest_rejected (__main__.CheckPolicyTests) ... ok\\ntest_error_despite_exit_zero_rejected (__main__.CheckPolicyTests) ... ok\\ntest_invalid_seed_rejected (__main__.CheckPolicyTests) ... ok\\ntest_invalid_synthesis_budgets_rejected (__main__.CheckPolicyTests) ... ok\\ntest_memory_initialization_inputs_must_be_unique_and_present (__main__.CheckPolicyTests) ... ok\\ntest_missing_lint_only_source_is_not_run (__main__.CheckPolicyTests) ... ok\\ntest_missing_source_not_run (__main__.CheckPolicyTests) ... ok\\ntest_nonzero_cannot_be_accepted_as_pass (__main__.CheckPolicyTests) ... ok\\ntest_oracle_reset_wins_and_hold (__main__.CheckPolicyTests) ... ok\\ntest_positive_completion (__main__.CheckPolicyTests) ... ok\\ntest_production_lint_only_designs_registered_without_fixture_protocol (__main__.CheckPolicyTests) ... ok\\ntest_replay_and_seed_variation (__main__.CheckPolicyTests) ... ok\\ntest_timeout_or_nonzero_rejected (__main__.CheckPolicyTests) ... ok\\ntest_unregistered_production_source_not_run (__main__.CheckPolicyTests) ... ok\\ntest_xsim_batch_does_not_receive_equals_arguments (__main__.CheckPolicyTests) ... ok\\ntest_zero_tests_or_missing_completion_rejected (__main__.CheckPolicyTests) ... ok\\n\\n----------------------------------------------------------------------\\nRan 19 tests in 0.302s\\n\\nOK\\n\", \"timeout_seconds\": 300}\n{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/test_board_checks.py\"], \"started_utc\": \"2026-11-07T21:03:39.805428+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"\", \"stderr\": \"test_actual_documented_constraints (__main__.BoardPolicyTests) ... ok\\ntest_blanket_exceptions_and_missing_config_rejected (__main__.BoardPolicyTests) ... ok\\ntest_history_expected_exact_release_and_sample_latency (__main__.BoardPolicyTests) ... ok\\ntest_integrated_manifest_rejects_missing_extra_disabled_and_stale_sources (__main__.BoardPolicyTests) ... ok\\ntest_missing_extra_duplicate_and_aliased_pins_rejected (__main__.BoardPolicyTests) ... ok\\ntest_project_parser_requires_real_sources_top_and_part (__main__.BoardPolicyTests) ... ok\\ntest_reasserted_reset_discards_prior_samples (__main__.BoardPolicyTests) ... ok\\ntest_reversed_uart_bad_standard_and_wrong_clock_rejected (__main__.BoardPolicyTests) ... ok\\ntest_seed_replay_variation_and_walking_bit_inventory (__main__.BoardPolicyTests) ... ok\\ntest_wrong_board_fact_cannot_change_target (__main__.BoardPolicyTests) ... ok\\n\\n----------------------------------------------------------------------\\nRan 10 tests in 0.033s\\n\\nOK\\n\", \"timeout_seconds\": 300}\n{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/test_fpga_build.py\"], \"started_utc\": \"2026-11-07T21:03:40.073076+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"\", \"stderr\": \"test_config_contract_rejects_drift_and_missing_inputs (__main__.FpgaBuildTests) ... ok\\ntest_forbidden_output_and_existing_content_preserved (__main__.FpgaBuildTests) ... ok\\ntest_implementation_checkpoint_required_and_no_fake_artifact (__main__.FpgaBuildTests) ... ok\\ntest_memory_basename_alias (__main__.FpgaBuildTests) ... ok\\ntest_owner_policy_in_memory_only_and_real_execution_rejected (__main__.FpgaBuildTests) ... ok\\ntest_plan_has_hashed_inputs_and_no_build_output (__main__.FpgaBuildTests) ... ok\\n\\n----------------------------------------------------------------------\\nRan 6 tests in 0.103s\\n\\nOK\\n\", \"timeout_seconds\": 300}\n{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/board_checks.py\"], \"started_utc\": \"2026-11-07T21:03:40.466864+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\\"status\\\": \\\"PASS\\\", \\\"evidence\\\": \\\"evidence/toolchain_runs/top-20261107T210340673979Z.json\\\", \\\"error\\\": null}\\n\", \"stderr\": \"\", \"timeout_seconds\": 300}\n{\"argv\": [\"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"-B\", \"scripts/soc_checks.py\"], \"started_utc\": \"2026-11-07T21:04:42.221227+00:00\", \"cwd\": \"C:\\\\RV32I_Edge_SoC\", \"executable\": \"C:\\\\Users\\\\Yixu\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python39\\\\python.exe\", \"status\": \"PASS\", \"exit_code\": 0, \"stdout\": \"{\\\"status\\\": \\\"PASS\\\", \\\"evidence\\\": \\\"evidence/toolchain_runs/soc-20261107T210442479446Z.json\\\", \\\"error\\\": null}\\n\", \"stderr\": \"\", \"timeout_seconds\": 300}\n",
+      "stderr": "",
+      "timeout_seconds": 300
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_utc": "2026-11-07T21:05:31.562475+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "timeout_seconds": 300
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "started_utc": "2026-11-07T21:05:31.614051+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "timeout_seconds": 300
+    }
+  ],
+  "waveform_paths": [],
+  "seed": null,
+  "evidence_sha256": "7208b662fc91aa983c1f8ec2fba2e3ea4cb5074040f59d308be05bfc6903bfd4"
+}

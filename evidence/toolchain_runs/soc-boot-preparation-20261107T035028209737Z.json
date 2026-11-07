@@ -1,0 +1,620 @@
+{
+  "profile": "soc-boot-preparation",
+  "status": "FAIL",
+  "started_utc": "20261107T035028209737Z",
+  "base_commit": "b94e043421f7e30897cccaa7fb46eec9e8e1cf37",
+  "scope": "First actual compiled CPU/memory/MMIO boot and independent transcript check; preparation only",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\versions",
+      "started_utc": "2026-11-07T03:50:28.330839+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "git version 2.48.1.windows.1\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.156
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\versions\\xvlog",
+      "started_utc": "2026-11-07T03:50:28.507516+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.843
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\versions\\xelab",
+      "started_utc": "2026-11-07T03:50:29.358437+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.625
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\versions\\xsim",
+      "started_utc": "2026-11-07T03:50:29.980117+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2025 Xilinx, Inc. All Rights Reserved.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.485
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-gcc.exe",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\compiler",
+      "started_utc": "2026-11-07T03:50:30.501461+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "riscv32-xilinx-elf-gcc.exe (GCC) 13.4.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.109
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-ld.exe",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\compiler",
+      "started_utc": "2026-11-07T03:50:30.620921+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "GNU ld (GNU Binutils) 2.43.1.20241111\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) a later version.\nThis program has absolutely no warranty.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.125
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-objcopy.exe",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\compiler",
+      "started_utc": "2026-11-07T03:50:30.755411+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "GNU objcopy (GNU Binutils) 2.39.0.20220819\nCopyright (C) 2022 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) any later version.\nThis program has absolutely no warranty.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.093
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-readelf.exe",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\compiler",
+      "started_utc": "2026-11-07T03:50:30.861538+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "GNU readelf (GNU Binutils) 2.39.0.20220819\nCopyright (C) 2022 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) any later version.\nThis program has absolutely no warranty.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.094
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-objdump.exe",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\compiler",
+      "started_utc": "2026-11-07T03:50:30.971163+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "GNU objdump (GNU Binutils) 2.39.0.20220819\nCopyright (C) 2022 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) any later version.\nThis program has absolutely no warranty.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.094
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-gcc.exe",
+        "-dumpmachine"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\compiler",
+      "started_utc": "2026-11-07T03:50:31.081006+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "riscv32-xilinx-elf\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.109
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-gcc.exe",
+        "-march=rv32i",
+        "-mabi=ilp32",
+        "-misa-spec=20191213",
+        "-mno-relax",
+        "-Wa,--fatal-warnings",
+        "-c",
+        "C:\\RV32I_Edge_SoC\\sw\\boot.S",
+        "-o",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\compiler\\boot.o"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\compiler",
+      "started_utc": "2026-11-07T03:50:31.209817+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.14
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-gcc.exe",
+        "-march=rv32i",
+        "-mabi=ilp32",
+        "-misa-spec=20191213",
+        "-mno-relax",
+        "-Wa,--fatal-warnings",
+        "-c",
+        "C:\\RV32I_Edge_SoC\\sw\\soc_smoke.S",
+        "-o",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\compiler\\soc_smoke.o"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\compiler",
+      "started_utc": "2026-11-07T03:50:31.366813+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.141
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-ld.exe",
+        "-m",
+        "elf32lriscv",
+        "--no-relax",
+        "--fatal-warnings",
+        "-T",
+        "C:\\RV32I_Edge_SoC\\sw\\linker.ld",
+        "-Map",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\compiler\\soc.map",
+        "-o",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\compiler\\soc.elf",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\compiler\\boot.o",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\compiler\\soc_smoke.o"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\compiler",
+      "started_utc": "2026-11-07T03:50:31.522250+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.125
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-objcopy.exe",
+        "-O",
+        "binary",
+        "--gap-fill",
+        "0",
+        "--pad-to",
+        "0x10000",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\compiler\\soc.elf",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\compiler\\soc.bin"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\compiler",
+      "started_utc": "2026-11-07T03:50:31.659108+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.094
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-readelf.exe",
+        "-h",
+        "-lW",
+        "-sW",
+        "-A",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\compiler\\soc.elf"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\compiler",
+      "started_utc": "2026-11-07T03:50:31.771445+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "ELF Header:\n  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 \n  Class:                             ELF32\n  Data:                              2's complement, little endian\n  Version:                           1 (current)\n  OS/ABI:                            UNIX - System V\n  ABI Version:                       0\n  Type:                              EXEC (Executable file)\n  Machine:                           RISC-V\n  Version:                           0x1\n  Entry point address:               0x0\n  Start of program headers:          52 (bytes into file)\n  Start of section headers:          8996 (bytes into file)\n  Flags:                             0x0\n  Size of this header:               52 (bytes)\n  Size of program headers:           32 (bytes)\n  Number of program headers:         3\n  Size of section headers:           40 (bytes)\n  Number of section headers:         9\n  Section header string table index: 8\n\nProgram Headers:\n  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align\n  RISCV_ATTRIBUT 0x002008 0x00000000 0x00000000 0x0001a 0x00000 R   0x1\n  LOAD           0x001000 0x00000000 0x00000000 0x00214 0x00214 R E 0x1000\n  LOAD           0x002000 0x00010000 0x00000214 0x00008 0x00014 RW  0x1000\n\n Section to Segment mapping:\n  Segment Sections...\n   00     .riscv.attributes \n   01     .text .rodata \n   02     .data .bss \n\nSymbol table '.symtab' contains 29 entries:\n   Num:    Value  Size Type    Bind   Vis      Ndx Name\n     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND \n     1: 00000000     0 SECTION LOCAL  DEFAULT    1 .text\n     2: 00000204     0 SECTION LOCAL  DEFAULT    2 .rodata\n     3: 00010000     0 SECTION LOCAL  DEFAULT    3 .data\n     4: 00010008     0 SECTION LOCAL  DEFAULT    4 .bss\n     5: 00000000     0 SECTION LOCAL  DEFAULT    5 .riscv.attributes\n     6: 00000000     0 FILE    LOCAL  DEFAULT  ABS boot.o\n     7: 00000000     0 NOTYPE  LOCAL  DEFAULT    1 $xrv32i2p1\n     8: 00000000     0 FILE    LOCAL  DEFAULT  ABS soc_smoke.o\n     9: 00000064     0 NOTYPE  LOCAL  DEFAULT    1 $xrv32i2p1\n    10: 000001c0     0 NOTYPE  LOCAL  DEFAULT    1 failed\n    11: 00000204     0 NOTYPE  LOCAL  DEFAULT    2 pass_message\n    12: 000001dc     0 NOTYPE  LOCAL  DEFAULT    1 put_string\n    13: 000001d0     0 NOTYPE  LOCAL  DEFAULT    1 finished\n    14: 0000020b     0 NOTYPE  LOCAL  DEFAULT    2 fail_message\n    15: 00000214     0 NOTYPE  GLOBAL DEFAULT  ABS __data_load\n    16: 00010008     0 NOTYPE  GLOBAL DEFAULT    4 zero_area\n    17: 00010014     0 NOTYPE  GLOBAL DEFAULT    4 __bss_end\n    18: 00010010     0 NOTYPE  GLOBAL DEFAULT    4 signature\n    19: 0000005c     0 NOTYPE  GLOBAL DEFAULT    1 halt_ecall\n    20: 0000021c     0 NOTYPE  GLOBAL DEFAULT  ABS __rom_image_end\n    21: 00020000     0 NOTYPE  GLOBAL DEFAULT    4 __stack_top\n    22: 00000000   100 FUNC    GLOBAL DEFAULT    1 _start\n    23: 00010008     0 NOTYPE  GLOBAL DEFAULT    3 __data_end\n    24: 00010000     0 NOTYPE  GLOBAL DEFAULT    3 initial_data\n    25: 00010008     0 NOTYPE  GLOBAL DEFAULT    4 __bss_start\n    26: 00000064     0 NOTYPE  GLOBAL DEFAULT    1 main\n    27: 0001f000     0 NOTYPE  GLOBAL DEFAULT  ABS __stack_bottom\n    28: 00010000     0 NOTYPE  GLOBAL DEFAULT    3 __data_start\nAttribute Section: riscv\nFile Attributes\n  Tag_RISCV_arch: \"rv32i2p1\"\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.094
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-objdump.exe",
+        "-d",
+        "-M",
+        "no-aliases",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\compiler\\soc.elf"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\compiler",
+      "started_utc": "2026-11-07T03:50:31.885816+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\nC:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\compiler\\soc.elf:     file format elf32-littleriscv\n\n\nDisassembly of section .text:\n\n00000000 <_start>:\n   0:\t00020117          \tauipc\tsp,0x20\n   4:\t00010113          \taddi\tsp,sp,0 # 20000 <__stack_top>\n   8:\t00000297          \tauipc\tt0,0x0\n   c:\t20c28293          \taddi\tt0,t0,524 # 214 <__data_load>\n  10:\t00010317          \tauipc\tt1,0x10\n  14:\tff030313          \taddi\tt1,t1,-16 # 10000 <__data_start>\n  18:\t00010397          \tauipc\tt2,0x10\n  1c:\tff038393          \taddi\tt2,t2,-16 # 10008 <__bss_start>\n  20:\t00737c63          \tbgeu\tt1,t2,38 <_start+0x38>\n  24:\t0002ae03          \tlw\tt3,0(t0)\n  28:\t01c32023          \tsw\tt3,0(t1)\n  2c:\t00428293          \taddi\tt0,t0,4\n  30:\t00430313          \taddi\tt1,t1,4\n  34:\tfedff06f          \tjal\tzero,20 <_start+0x20>\n  38:\t00010297          \tauipc\tt0,0x10\n  3c:\tfd028293          \taddi\tt0,t0,-48 # 10008 <__bss_start>\n  40:\t00010317          \tauipc\tt1,0x10\n  44:\tfd430313          \taddi\tt1,t1,-44 # 10014 <__bss_end>\n  48:\t0062f863          \tbgeu\tt0,t1,58 <_start+0x58>\n  4c:\t0002a023          \tsw\tzero,0(t0)\n  50:\t00428293          \taddi\tt0,t0,4\n  54:\tff5ff06f          \tjal\tzero,48 <_start+0x48>\n  58:\t00c000ef          \tjal\tra,64 <main>\n\n0000005c <halt_ecall>:\n  5c:\t00000073          \tecall\n  60:\t0000006f          \tjal\tzero,60 <halt_ecall+0x4>\n\n00000064 <main>:\n  64:\tff010113          \taddi\tsp,sp,-16\n  68:\t00112623          \tsw\tra,12(sp)\n  6c:\t00010297          \tauipc\tt0,0x10\n  70:\tf9428293          \taddi\tt0,t0,-108 # 10000 <__data_start>\n  74:\t0002a303          \tlw\tt1,0(t0)\n  78:\tcafec3b7          \tlui\tt2,0xcafec\n  7c:\tabe38393          \taddi\tt2,t2,-1346 # cafebabe <__stack_top+0xcafcbabe>\n  80:\t14731063          \tbne\tt1,t2,1c0 <failed>\n  84:\t0042a303          \tlw\tt1,4(t0)\n  88:\t1357a3b7          \tlui\tt2,0x1357a\n  8c:\tbdf38393          \taddi\tt2,t2,-1057 # 13579bdf <__stack_top+0x13559bdf>\n  90:\t12731863          \tbne\tt1,t2,1c0 <failed>\n  94:\t00010297          \tauipc\tt0,0x10\n  98:\tf7428293          \taddi\tt0,t0,-140 # 10008 <__bss_start>\n  9c:\t0002a303          \tlw\tt1,0(t0)\n  a0:\t0042a383          \tlw\tt2,4(t0)\n  a4:\t00736333          \tor\tt1,t1,t2\n  a8:\t10031c63          \tbne\tt1,zero,1c0 <failed>\n  ac:\t80ff8337          \tlui\tt1,0x80ff8\n  b0:\tf0130313          \taddi\tt1,t1,-255 # 80ff7f01 <__stack_top+0x80fd7f01>\n  b4:\t0062a023          \tsw\tt1,0(t0)\n  b8:\t00328383          \tlb\tt2,3(t0)\n  bc:\tf8000e13          \taddi\tt3,zero,-128\n  c0:\t11c39063          \tbne\tt2,t3,1c0 <failed>\n  c4:\t0032c383          \tlbu\tt2,3(t0)\n  c8:\t08000e13          \taddi\tt3,zero,128\n  cc:\t0fc39a63          \tbne\tt2,t3,1c0 <failed>\n  d0:\t00001337          \tlui\tt1,0x1\n  d4:\t23430313          \taddi\tt1,t1,564 # 1234 <__rom_image_end+0x1018>\n  d8:\t00629123          \tsh\tt1,2(t0)\n  dc:\t0022d383          \tlhu\tt2,2(t0)\n  e0:\t0e639063          \tbne\tt2,t1,1c0 <failed>\n  e4:\t05500313          \taddi\tt1,zero,85\n  e8:\t006280a3          \tsb\tt1,1(t0)\n  ec:\t0002a383          \tlw\tt2,0(t0)\n  f0:\t12345e37          \tlui\tt3,0x12345\n  f4:\t501e0e13          \taddi\tt3,t3,1281 # 12345501 <__stack_top+0x12325501>\n  f8:\t0dc39463          \tbne\tt2,t3,1c0 <failed>\n  fc:\t0001e2b7          \tlui\tt0,0x1e\n 100:\t0002a303          \tlw\tt1,0(t0) # 1e000 <__bss_end+0xdfec>\n 104:\t00130313          \taddi\tt1,t1,1\n 108:\t0062a023          \tsw\tt1,0(t0)\n 10c:\t100002b7          \tlui\tt0,0x10000\n 110:\t02028293          \taddi\tt0,t0,32 # 10000020 <__stack_top+0xffe0020>\n 114:\t0042a303          \tlw\tt1,4(t0)\n 118:\t0062a023          \tsw\tt1,0(t0)\n 11c:\t0f000393          \taddi\tt2,zero,240\n 120:\t00728423          \tsb\tt2,8(t0)\n 124:\t00f00393          \taddi\tt2,zero,15\n 128:\t00728623          \tsb\tt2,12(t0)\n 12c:\t0f036313          \tori\tt1,t1,240\n 130:\tff037313          \tandi\tt1,t1,-16\n 134:\t0002a383          \tlw\tt2,0(t0)\n 138:\t08731463          \tbne\tt1,t2,1c0 <failed>\n 13c:\t100002b7          \tlui\tt0,0x10000\n 140:\t10028293          \taddi\tt0,t0,256 # 10000100 <__stack_top+0xffe0100>\n 144:\t0002a423          \tsw\tzero,8(t0)\n 148:\tffc00313          \taddi\tt1,zero,-4\n 14c:\t0062a023          \tsw\tt1,0(t0)\n 150:\t0002a223          \tsw\tzero,4(t0)\n 154:\t00100313          \taddi\tt1,zero,1\n 158:\t0062a423          \tsw\tt1,8(t0)\n 15c:\t00c2a383          \tlw\tt2,12(t0)\n 160:\t0013f393          \tandi\tt2,t2,1\n 164:\tfe038ce3          \tbeq\tt2,zero,15c <main+0xf8>\n 168:\t0062a623          \tsw\tt1,12(t0)\n 16c:\t0002a423          \tsw\tzero,8(t0)\n 170:\t00c2a383          \tlw\tt2,12(t0)\n 174:\t04039663          \tbne\tt2,zero,1c0 <failed>\n 178:\t100002b7          \tlui\tt0,0x10000\n 17c:\t0042a303          \tlw\tt1,4(t0) # 10000004 <__stack_top+0xffe0004>\n 180:\t00237313          \tandi\tt1,t1,2\n 184:\tfe030ce3          \tbeq\tt1,zero,17c <main+0x118>\n 188:\t0082c303          \tlbu\tt1,8(t0)\n 18c:\t04100393          \taddi\tt2,zero,65\n 190:\t02731863          \tbne\tt1,t2,1c0 <failed>\n 194:\t0ff0000f          \tfence\tiorw,iorw\n 198:\t00000597          \tauipc\ta1,0x0\n 19c:\t06c58593          \taddi\ta1,a1,108 # 204 <pass_message>\n 1a0:\t03c000ef          \tjal\tra,1dc <put_string>\n 1a4:\t00010297          \tauipc\tt0,0x10\n 1a8:\te6c28293          \taddi\tt0,t0,-404 # 10010 <signature>\n 1ac:\t600d6337          \tlui\tt1,0x600d6\n 1b0:\t00d30313          \taddi\tt1,t1,13 # 600d600d <__stack_top+0x600b600d>\n 1b4:\t0062a023          \tsw\tt1,0(t0)\n 1b8:\t00000513          \taddi\ta0,zero,0\n 1bc:\t0140006f          \tjal\tzero,1d0 <finished>\n\n000001c0 <failed>:\n 1c0:\t00000597          \tauipc\ta1,0x0\n 1c4:\t04b58593          \taddi\ta1,a1,75 # 20b <fail_message>\n 1c8:\t014000ef          \tjal\tra,1dc <put_string>\n 1cc:\t00100513          \taddi\ta0,zero,1\n\n000001d0 <finished>:\n 1d0:\t00c12083          \tlw\tra,12(sp)\n 1d4:\t01010113          \taddi\tsp,sp,16\n 1d8:\t00008067          \tjalr\tzero,0(ra)\n\n000001dc <put_string>:\n 1dc:\t10000e37          \tlui\tt3,0x10000\n 1e0:\t0005c283          \tlbu\tt0,0(a1)\n 1e4:\t00028863          \tbeq\tt0,zero,1f4 <put_string+0x18>\n 1e8:\t005e0023          \tsb\tt0,0(t3) # 10000000 <__stack_top+0xffe0000>\n 1ec:\t00158593          \taddi\ta1,a1,1\n 1f0:\tff1ff06f          \tjal\tzero,1e0 <put_string+0x4>\n 1f4:\t004e2283          \tlw\tt0,4(t3)\n 1f8:\t0012f293          \tandi\tt0,t0,1\n 1fc:\tfe028ce3          \tbeq\tt0,zero,1f4 <put_string+0x18>\n 200:\t00008067          \tjalr\tzero,0(ra)\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.093
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\pipeline_core.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\memory\\boot_rom.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\memory\\data_ram.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\uart_tx.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\uart_rx.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\uart_mmio.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\input_sync.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\gpio.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\timer.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\reset_sync.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\soc\\soc_fabric.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\soc\\edge_soc.sv",
+        "C:\\RV32I_Edge_SoC\\dv\\integration\\tb_soc_boot.sv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\simulation",
+      "started_utc": "2026-11-07T03:50:32.020968+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "INFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/pipeline_core.sv\" into library work\nINFO: [VRFC 10-311] analyzing module rv32_pipeline_stage\nINFO: [VRFC 10-311] analyzing module pipeline_registers\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/memory/boot_rom.sv\" into library work\nINFO: [VRFC 10-311] analyzing module boot_rom\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/memory/data_ram.sv\" into library work\nINFO: [VRFC 10-311] analyzing module data_ram\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/uart_tx.sv\" into library work\nINFO: [VRFC 10-311] analyzing module uart_tx\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/uart_rx.sv\" into library work\nINFO: [VRFC 10-311] analyzing module uart_rx\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/uart_mmio.sv\" into library work\nINFO: [VRFC 10-311] analyzing module uart_mmio\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/input_sync.sv\" into library work\nINFO: [VRFC 10-311] analyzing module input_sync\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/gpio.sv\" into library work\nINFO: [VRFC 10-311] analyzing module gpio\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/timer.sv\" into library work\nINFO: [VRFC 10-311] analyzing module timer\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/reset_sync.sv\" into library work\nINFO: [VRFC 10-311] analyzing module reset_sync\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/soc/soc_fabric.sv\" into library work\nINFO: [VRFC 10-311] analyzing module soc_fabric\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/soc/edge_soc.sv\" into library work\nINFO: [VRFC 10-311] analyzing module edge_soc\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/integration/tb_soc_boot.sv\" into library work\nINFO: [VRFC 10-311] analyzing module tb_soc_boot\nINFO: [VRFC 10-311] analyzing module tb_soc_boot_default\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.735
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "work.tb_soc_boot",
+        "--snapshot",
+        "soc",
+        "--timescale",
+        "1ns/1ps",
+        "--debug",
+        "typical"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-boot-preparation-20261107T035028209737Z\\simulation",
+      "started_utc": "2026-11-07T03:50:32.771002+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 1,
+      "status": "FAIL",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nRunning: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_soc_boot --snapshot soc --timescale 1ns/1ps --debug typical \nMulti-threading is on. Using 26 slave threads.\nStarting static elaboration\nPass Through NonSizing Optimizer\nERROR: [VRFC 10-2063] Module <pipeline_core> not found while processing module instance <cpu> [C:/RV32I_Edge_SoC/rtl/soc/edge_soc.sv:28]\nERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.735
+    }
+  ],
+  "checks": [
+    {
+      "name": "Pinned Python version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned tzdata version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned Git version",
+      "status": "PASS",
+      "command_index": 0
+    },
+    {
+      "name": "Pinned xvlog version",
+      "status": "PASS",
+      "command_index": 1
+    },
+    {
+      "name": "Pinned xelab version",
+      "status": "PASS",
+      "command_index": 2
+    },
+    {
+      "name": "Pinned xsim version",
+      "status": "PASS",
+      "command_index": 3
+    },
+    {
+      "name": "Pinned software tool gcc",
+      "status": "PASS",
+      "command_index": 4
+    },
+    {
+      "name": "Pinned software tool ld",
+      "status": "PASS",
+      "command_index": 5
+    },
+    {
+      "name": "Pinned software tool objcopy",
+      "status": "PASS",
+      "command_index": 6
+    },
+    {
+      "name": "Pinned software tool readelf",
+      "status": "PASS",
+      "command_index": 7
+    },
+    {
+      "name": "Pinned software tool objdump",
+      "status": "PASS",
+      "command_index": 8
+    },
+    {
+      "name": "Actual RV32 compiler target",
+      "status": "PASS",
+      "command_index": 9
+    },
+    {
+      "name": "Actual SoC assembly boot",
+      "status": "PASS",
+      "command_index": 10
+    },
+    {
+      "name": "Actual SoC assembly soc_smoke",
+      "status": "PASS",
+      "command_index": 11
+    },
+    {
+      "name": "Actual SoC approved-map link",
+      "status": "PASS",
+      "command_index": 12
+    },
+    {
+      "name": "Independent SoC ELF LMA image equals objcopy64KiB",
+      "status": "PASS",
+      "command_index": 13
+    },
+    {
+      "name": "Actual SoC readelf",
+      "status": "PASS",
+      "command_index": 14
+    },
+    {
+      "name": "Actual SoC objdump",
+      "status": "PASS",
+      "command_index": 15
+    },
+    {
+      "name": "Committed separate SoC image matches fresh actual build",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual SoC compile",
+      "status": "PASS",
+      "command_index": 16
+    },
+    {
+      "name": "Actual SoC elaborate",
+      "status": "FAIL",
+      "command_index": 17
+    }
+  ],
+  "simulations": [],
+  "excluded": [
+    "formal",
+    "timing closure",
+    "physical FPGA",
+    "ASIC",
+    "CPU ISA correctness"
+  ],
+  "pins": {
+    "schema_version": 1,
+    "python_version": "3.9.13",
+    "git_version": "2.48.1.windows.1",
+    "tzdata_version": "2026.2",
+    "vivado_version": "2025.2",
+    "vivado_sw_build": "6299465"
+  },
+  "source_sha256": {
+    "rtl/core/pipeline_core.sv": "9bbf1456055d422b17dae7c8875eb4597aff598f829e181ec50dacda6756a560",
+    "rtl/memory/boot_rom.sv": "8eccb9eec2644e978488bc5e87a3b8a703fd5c1ce73c3dfb4b3a10c979ab6049",
+    "rtl/memory/data_ram.sv": "41d68829e41df43d62274c708c9b6e996d757d5f676ddccb1773301956e35b7c",
+    "rtl/peripherals/uart_tx.sv": "3418eb069158da20b88ab7e490cf903f6a174b7c69fce5de8c40ef367c75d719",
+    "rtl/peripherals/uart_rx.sv": "d5c22f05450b70033746c8b762e5d4fb5fe974b496c822c400be8795fc344a4c",
+    "rtl/peripherals/uart_mmio.sv": "d73efd7e3a8535e642e5fde766eabffb8fe8d499672367f1b20d28c408f875a1",
+    "rtl/peripherals/input_sync.sv": "75a1f76a6c5d736ca4a1ef88423174c08469a287ee973a48e1f3e910361b86dc",
+    "rtl/peripherals/gpio.sv": "35bc4643d638962f99ff0c9fe199743c70ace4bd32544419c91e31af5495c5fd",
+    "rtl/peripherals/timer.sv": "8d8d00c8e9834bf4a5247f424f34a3a18af1494d152c691a0a4d8f182be77425",
+    "rtl/peripherals/reset_sync.sv": "26be9f30f22ce8abf0e0644e1ffa8622907ad680edde59c05614f05ee49b278a",
+    "rtl/soc/soc_fabric.sv": "c6098ebb16e5ee1f2310cb097f12ef265db00af3016463057e7fd9c9f37173a6",
+    "rtl/soc/edge_soc.sv": "d14bf111eb5f6b46c0dbec4988b2c8e8dfcd800855a2547e8852b69871e4e49e",
+    "dv/integration/tb_soc_boot.sv": "d474dd59224a2bc5fe077c473a92ac47cb10c27fcc43c6ae6a45492f9dc7d505",
+    "dv/integration/soc_model.py": "cc1ad7783b47c22847752b1a48451f05b3064c6c2eae62e39434f86f06dddd09",
+    "sw/soc_smoke.S": "ce95b6d3118665f24078d623ca7d00c7c632ed465acacd55f70b0e982539fc88",
+    "scripts/soc_firmware.py": "e0d658ee6a44a229de85b3a3d8ec7e64502e5b447392072b81bb16d01c73ad7a",
+    ".tmp/soc_boot_prepare.py": "b8ee90b43fb81378c69539ef52a9d09e3e7919375f9f073df7551683ffeae055"
+  },
+  "software_toolchain": {
+    "tools": {
+      "gcc": {
+        "command": [
+          "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-gcc.exe"
+        ],
+        "sha256": "90927f7c3c61d85284403b6fc63a5dbc31feb73e295fa68ef376e7378f048bc4",
+        "version_line": "riscv32-xilinx-elf-gcc.exe (GCC) 13.4.0"
+      },
+      "ld": {
+        "command": [
+          "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-ld.exe"
+        ],
+        "sha256": "84af5d6d526368f541845614f26da112e15cd03b86121dccfe3d97f0afdd8d93",
+        "version_line": "GNU ld (GNU Binutils) 2.43.1.20241111"
+      },
+      "objcopy": {
+        "command": [
+          "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-objcopy.exe"
+        ],
+        "sha256": "64ae2a0f875d741947b4a0ff651709cf51a2db3dc62eee05fcfdec3e553ea9c3",
+        "version_line": "GNU objcopy (GNU Binutils) 2.39.0.20220819"
+      },
+      "readelf": {
+        "command": [
+          "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-readelf.exe"
+        ],
+        "sha256": "074756bb1c9c1b986b2b3354db89ef9140d8eb56590e519958b195f059d23ecd",
+        "version_line": "GNU readelf (GNU Binutils) 2.39.0.20220819"
+      },
+      "objdump": {
+        "command": [
+          "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-objdump.exe"
+        ],
+        "sha256": "fc83c86b64aa2e07246fd6d41f3e4c055020d2854162d0b8b293f35827f27986",
+        "version_line": "GNU objdump (GNU Binutils) 2.39.0.20220819"
+      }
+    },
+    "target": "riscv32-xilinx-elf",
+    "march": "rv32i",
+    "mabi": "ilp32",
+    "scope": "Observed installed AMD tools, process-local absolute commands; no global PATH or installation changes",
+    "evidence": "evidence/t026-compiler-probes-2026-11-04.json",
+    "components_sha256": {
+      "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\x86_64-w64-mingw32\\usr\\libexec\\riscv32-xilinx-elf\\gcc\\riscv32-xilinx-elf\\13.4.0\\cc1.exe": "af63512f18d48199da85b011d566cc211ab8a3fd62b5cc8e34e52f8c88c206c9",
+      "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\x86_64-w64-mingw32\\usr\\bin\\riscv32-xilinx-elf\\riscv32-xilinx-elf-as.exe": "13392e4e81eacf737aeed6cc4d493162aa96184c4ba55e5762dce23d5271cba8",
+      "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\x86_64-w64-mingw32\\usr\\bin\\riscv32-xilinx-elf\\riscv32-xilinx-elf-ld.exe": "3ff18605eb4184f05e3bbabc2476f9fd61d2ffebdb4a1f7869bffd2802972a5c"
+    }
+  },
+  "symbols": {
+    "boot.o": 0,
+    "$xrv32i2p1": 100,
+    "soc_smoke.o": 0,
+    "failed": 448,
+    "pass_message": 516,
+    "put_string": 476,
+    "finished": 464,
+    "fail_message": 523,
+    "__data_load": 532,
+    "zero_area": 65544,
+    "__bss_end": 65556,
+    "signature": 65552,
+    "halt_ecall": 92,
+    "__rom_image_end": 540,
+    "__stack_top": 131072,
+    "_start": 0,
+    "__data_end": 65544,
+    "initial_data": 65536,
+    "__bss_start": 65544,
+    "main": 100,
+    "__stack_bottom": 126976,
+    "__data_start": 65536
+  },
+  "segments": [
+    {
+      "vma": 0,
+      "lma": 0,
+      "size": 532,
+      "memsize": 532,
+      "flags": 5
+    },
+    {
+      "vma": 65536,
+      "lma": 532,
+      "size": 8,
+      "memsize": 20,
+      "flags": 6
+    }
+  ],
+  "artifacts": {
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/compiler/boot.o": "65d7c12bb63c267c4d8bd9ad950aad25a040af8683f8d3bcbdd6577f9365dc85",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/compiler/disassembly.txt": "d339c39a652dea9196f49b607c8dfd8d97a40597fd7922adca440d9ff85b85f7",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/compiler/readelf.txt": "b62c4cffd30921356021995809031adcef720b93f38e02bf14d0a7de9d6d3284",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/compiler/soc.bin": "6c0731cc2182539aff4b35d19ef7b11a4075f6210880c7b19886b69128387ae0",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/compiler/soc.elf": "a3ffeec6e855a7f9fc646ecf6c2e7d9ddb61b41f4b3f83c069db0c55efa19534",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/compiler/soc.map": "e254483f74237f32ed7afc6bb574513031fba6b6fb2bf8eb6702f31ead48ef55",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/compiler/soc_boot.mem": "be3c3acb1418e03cd32c17737280c35b49b2fd555952aa6a05623d8fd7599109",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/compiler/soc_smoke.o": "62b58ebd5c7644b2c74df42ebc2fd9e660b8a09acaa82f186bca351b4cd2e85f",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/simulation/soc_boot.mem": "be3c3acb1418e03cd32c17737280c35b49b2fd555952aa6a05623d8fd7599109",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/simulation/xelab.log": "6e05121fcf638997d2076279b7cb60b8a00597fd4957779c301636f24900429c",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/simulation/xelab.pb": "d58d053fa20bf3cd6089e656a6063e245ba0c364842697f5489de5a8789f4d47",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/simulation/xvlog.log": "b30fc6b2e3d698cb9bd76668053315a2ad5c48489886cbf904bcdd2099753cb0",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/simulation/xvlog.pb": "8f107bfc0e24523cdbcc144a9a002c152d2f8093765c0a19836d06f4af742d35",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/simulation/xsim.dir/xsim.version": "a15b42b7cedfdc50b6ac3c608a1a64d31d64690c57ccdd42e81a93c1c12b9468",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/simulation/xsim.dir/work/boot_rom.sdb": "a2c7111a8f4d3c8623a690006369b2f9bbba4d37eff48742deaebcc13c531f75",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/simulation/xsim.dir/work/data_ram.sdb": "d30f5197e3edb7045867e6e85d3b7a1873269659b7f461a17f1862ace542c543",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/simulation/xsim.dir/work/edge_soc.sdb": "639181ddf41489831a4d615a601ec79d11ad3adac3854ea009166e378645b138",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/simulation/xsim.dir/work/gpio.sdb": "3a6eb3eb979d5a205c4be2c75397d267cebdb73308f33cead8b7bbe0163b5e10",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/simulation/xsim.dir/work/input_sync.sdb": "15b36b1285e6bc0422669157a385ad2d2bcd942a55821dd7ab7a287d5dc7ac29",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/simulation/xsim.dir/work/pipeline_registers.sdb": "0246935d1583d0ae5c594f1866b87c71a61d4f84735fcdc6f7476354a66d8f0b",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/simulation/xsim.dir/work/reset_sync.sdb": "56b319033d5edb6bb0d8094226f4a6bdfc798380416bb23ebf77630f2914ea12",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/simulation/xsim.dir/work/rv32_pipeline_stage.sdb": "71b3ed579fa16d26e7839ac0248df5c588f7efecfb035db2f6a7fa183797b0e0",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/simulation/xsim.dir/work/soc_fabric.sdb": "5824573b2dfe338e8955896a8efae75a9b50d6b4a58445ed64078470e0a5bb7d",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/simulation/xsim.dir/work/tb_soc_boot.sdb": "56ef351bebfb6d697574bc9742499f28369605c3a19b474e036c1d70b27165d6",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/simulation/xsim.dir/work/tb_soc_boot_default.sdb": "f460d9babfcb55923869dcd127f89ea2466a7298b9ee1f343f5f25b0ca05f6b4",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/simulation/xsim.dir/work/timer.sdb": "625d209116554cb7297c3aae91f61c2076e17d32c6f4b4d3ac9d5084a7865fd7",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/simulation/xsim.dir/work/uart_mmio.sdb": "bb135bc47e3a855b036e91a4c2b27475728a8436daa655af8a8938c22df8face",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/simulation/xsim.dir/work/uart_rx.sdb": "638ecf1d26103751b98cfe8104f7498b8edb0f8653aa485152bbc5dd2203528f",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/simulation/xsim.dir/work/uart_tx.sdb": "cd3ef058d91c87a792fde6d9ada9977c55048b8506e3aa3755217ff6be2801b5",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/simulation/xsim.dir/work/work.rlx": "f623e69fcd29b22e4ae75651e1615e66f18d51a0241b34dabb4cfc5ffcf0598f",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/versions/xelab/xelab.pb": "1413d29e3075deed248563d8a39c969981a0d61fcc5977150fa52074b16dd1c1",
+    "build/T031/soc-boot-preparation-20261107T035028209737Z/versions/xvlog/xvlog.pb": "1413d29e3075deed248563d8a39c969981a0d61fcc5977150fa52074b16dd1c1"
+  },
+  "error": "Actual SoC elaborate"
+}

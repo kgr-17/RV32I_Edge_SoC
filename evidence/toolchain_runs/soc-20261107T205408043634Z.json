@@ -1,0 +1,19 @@
+{
+  "profile": "soc",
+  "status": "NOT RUN",
+  "started_utc": "20261107T205408043634Z",
+  "base_commit": "b94e043421f7e30897cccaa7fb46eec9e8e1cf37",
+  "scope": "Actual compiled RV32I CPU/memory/peripheral simulation, independent architectural/bus/serial checks; fabric unit DV",
+  "commands": [],
+  "checks": [],
+  "simulations": [],
+  "excluded": [
+    "formal (T023 owner-skipped)",
+    "full FPGA synthesis/implementation/timing/power/bitstream",
+    "physical hardware",
+    "ASIC"
+  ],
+  "error": "[Errno 2] No such file or directory: 'C:\\\\RV32I_Edge_SoC\\\\dv\\\\unit\\\\test_mmio.py'",
+  "artifacts": {},
+  "finished_utc": "2026-11-07T20:54:08.180405+00:00"
+}

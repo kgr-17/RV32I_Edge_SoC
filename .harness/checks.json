@@ -80,7 +80,11 @@
       "dv/cdc/tb_cdc.sv",
       "dv/cdc/test_cdc.py",
       "scripts/cdc_checks.py",
-      "scripts/cdc_structure.tcl"
+      "scripts/cdc_structure.tcl",
+      "rtl/soc/soc_fabric.sv",
+      "rtl/soc/edge_soc.sv",
+      "fpga/basys3/soc_boot.mem",
+      "fpga/basys3/diagnostic_top.sv"
     ],
     "commands": [
       [
@@ -204,7 +208,40 @@
       "dv/unit/tb_uart.sv",
       "scripts/uart_checks.py",
       "config/rtl_checks.json",
-      "docs/ARCH_CONTRACT.json"
+      "docs/ARCH_CONTRACT.json",
+      "fpga/basys3/diagnostic_top.sv",
+      "rtl/core/rv32_pkg.sv",
+      "rtl/core/decoder.sv",
+      "rtl/core/alu.sv",
+      "rtl/core/regfile.sv",
+      "rtl/core/branch_unit.sv",
+      "rtl/core/lsu.sv",
+      "rtl/core/pipeline_core.sv",
+      "rtl/core/forwarding_unit.sv",
+      "rtl/core/hazard_unit.sv",
+      "rtl/core/pipeline_cpu.sv",
+      "rtl/memory/boot_rom.sv",
+      "rtl/memory/data_ram.sv",
+      "rtl/peripherals/uart_tx.sv",
+      "rtl/peripherals/uart_rx.sv",
+      "rtl/peripherals/uart_mmio.sv",
+      "rtl/peripherals/input_sync.sv",
+      "rtl/peripherals/gpio.sv",
+      "rtl/peripherals/timer.sv",
+      "rtl/peripherals/reset_sync.sv",
+      "rtl/soc/soc_fabric.sv",
+      "rtl/soc/edge_soc.sv",
+      "dv/integration/tb_soc_boot.sv",
+      "dv/integration/tb_soc_fabric.sv",
+      "dv/integration/soc_model.py",
+      "dv/integration/test_soc_boot.py",
+      "scripts/soc_checks.py",
+      "scripts/soc_firmware.py",
+      "sw/soc_smoke.S",
+      "fpga/basys3/soc_boot.mem",
+      "config/fpga_build.json",
+      "scripts/project_integration.py",
+      "dv/integration/tb_soc_board.sv"
     ],
     "commands": [
       [
@@ -362,6 +399,12 @@
         "-B",
         "scripts/verify.py",
         "test-tcl"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/verify.py",
+        "test-soc"
       ]
     ],
     "timeout_seconds": 600
@@ -1118,7 +1161,8 @@
       "scripts/vivado_board_check.tcl",
       "dv/board/board_model.py",
       "dv/board/tb_board_io.sv",
-      "RV32I_Edge_SoC.xpr"
+      "RV32I_Edge_SoC.xpr",
+      "fpga/basys3/diagnostic_top.sv"
     ],
     "commands": [
       [
@@ -1303,6 +1347,74 @@
         "{python}",
         "-B",
         "scripts/tcl_checks.py"
+      ]
+    ]
+  },
+  "test-soc": {
+    "inputs": [
+      "rtl/core/rv32_pkg.sv",
+      "rtl/core/decoder.sv",
+      "rtl/core/alu.sv",
+      "rtl/core/regfile.sv",
+      "rtl/core/branch_unit.sv",
+      "rtl/core/lsu.sv",
+      "rtl/core/pipeline_core.sv",
+      "rtl/core/forwarding_unit.sv",
+      "rtl/core/hazard_unit.sv",
+      "rtl/core/pipeline_cpu.sv",
+      "rtl/memory/boot_rom.sv",
+      "rtl/memory/data_ram.sv",
+      "rtl/peripherals/uart_tx.sv",
+      "rtl/peripherals/uart_rx.sv",
+      "rtl/peripherals/uart_mmio.sv",
+      "rtl/peripherals/input_sync.sv",
+      "rtl/peripherals/gpio.sv",
+      "rtl/peripherals/timer.sv",
+      "rtl/peripherals/reset_sync.sv",
+      "rtl/soc/soc_fabric.sv",
+      "rtl/soc/edge_soc.sv",
+      "dv/integration/tb_soc_boot.sv",
+      "dv/integration/tb_soc_fabric.sv",
+      "dv/integration/soc_model.py",
+      "dv/integration/test_soc_boot.py",
+      "scripts/soc_checks.py",
+      "scripts/soc_firmware.py",
+      "sw/soc_smoke.S",
+      "fpga/basys3/soc_boot.mem",
+      "config/fpga_build.json",
+      "scripts/project_integration.py",
+      "dv/integration/tb_soc_board.sv"
+    ],
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "dv/integration/test_soc_boot.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/test_rtl_checks.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/test_board_checks.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/test_fpga_build.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/board_checks.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/soc_checks.py"
       ]
     ]
   }

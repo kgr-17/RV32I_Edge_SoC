@@ -9,6 +9,22 @@ import board_model
 
 
 class BoardPolicyTests(unittest.TestCase):
+    def test_integrated_manifest_rejects_missing_extra_disabled_and_stale_sources(self):
+        config=harness.read(harness.inside('config/fpga_build.json'))
+        source=harness.inside('RV32I_Edge_SoC.xpr').read_text()
+        validate_xpr(source,config)
+        for before,after in [('/rtl/soc/edge_soc.sv','/rtl/soc/missing.sv'),
+                             ('UsedIn" Val="synthesis"','UsedIn" Val="disabled"')]:
+            with self.assertRaises(ValueError):validate_xpr(source.replace(before,after),config)
+        bad=copy.deepcopy(config);bad['rtl_sources']=bad['rtl_sources'][:-1]
+        with self.assertRaises(ValueError):validate_xpr(source,bad)
+        # Diagnostic content is byte-identical to the pre-T031 body except name.
+        diagnostic=harness.inside('fpga/basys3/diagnostic_top.sv').read_text()
+        import zipfile
+        with zipfile.ZipFile(harness.inside('evidence/prepare/T031-before-integration/inputs.zip')) as archive:
+            original=archive.read('fpga/basys3/top.sv').decode().replace('\r\n','\n')
+        self.assertEqual(diagnostic,original.replace('module basys3_top (','module basys3_diagnostic_top ('))
+
     def setUp(self):
         self.facts = harness.read(harness.inside('config/basys3_pins.json'))
         self.xdc = harness.inside('fpga/basys3/basys3.xdc').read_text()

@@ -44,17 +44,27 @@ def validate_xdc(content, facts):
             raise ValueError('Missing/duplicate clock or voltage constraint')
 
 
-def validate_xpr(content):
+def validate_xpr(content, config=None):
     import xml.etree.ElementTree as ET
     root = ET.fromstring(content)
     options = {x.attrib['Name']: x.attrib['Val'] for x in root.findall('./Configuration/Option')}
     if options.get('Part') != 'xc7a35tcpg236-1':
         raise ValueError('Project part mismatch')
     sets = {x.attrib['Name']: x for x in root.findall('./FileSets/FileSet')}
-    for fileset, suffix in [('sources_1', '/fpga/basys3/top.sv'), ('constrs_1', '/fpga/basys3/basys3.xdc')]:
+    expected = {'sources_1': config['rtl_sources']+config['memory_files'],
+                'constrs_1': config['constraints']} if config else {
+                    'sources_1':['fpga/basys3/top.sv'],'constrs_1':['fpga/basys3/basys3.xdc']}
+    for fileset, files in expected.items():
         names = [x.attrib['Path'].replace('\\', '/') for x in sets[fileset].findall('File')]
-        if len(names) != 1 or not names[0].endswith(suffix):
+        normalized = [n.replace('$PPRDIR/', str(harness.ROOT).replace('\\','/')+'/') for n in names]
+        wanted = [str(harness.inside(n)).replace('\\','/') for n in files]
+        if sorted(n.casefold() for n in normalized) != sorted(n.casefold() for n in wanted):
             raise ValueError('Unexpected project fileset: ' + fileset)
+        if config:
+            needed = {'synthesis','simulation'} if fileset=='sources_1' else {'synthesis','implementation'}
+            for entry in sets[fileset].findall('File'):
+                uses={a.attrib['Val'] for a in entry.findall('./FileInfo/Attr') if a.attrib['Name']=='UsedIn'}
+                if not needed <= uses:raise ValueError('Disabled project input: '+entry.attrib['Path'])
     top = {x.attrib['Name']: x.attrib['Val'] for x in sets['sources_1'].findall('./Config/Option')}
     if top.get('TopModule') != 'basys3_top':
         raise ValueError('Project top mismatch')
@@ -66,7 +76,7 @@ def main():
     code = 1
     try:
         manifest = rtl_checks.load_manifest()
-        sources = ['fpga/basys3/top.sv', 'fpga/basys3/basys3.xdc', 'fpga/basys3/integrate.tcl',
+        sources = ['fpga/basys3/top.sv', 'fpga/basys3/diagnostic_top.sv', 'config/fpga_build.json', 'fpga/basys3/basys3.xdc', 'fpga/basys3/integrate.tcl',
             'config/basys3_pins.json', 'config/rtl_checks.json', 'scripts/board_checks.py',
             'scripts/test_board_checks.py', 'scripts/vivado_board_check.tcl', 'scripts/rtl_checks.py',
             'scripts/tool_runner.py', 'scripts/tool_child.py', 'dv/board/board_model.py',
@@ -75,11 +85,11 @@ def main():
         facts = harness.read(harness.inside('config/basys3_pins.json'))
         xdc = harness.inside('fpga/basys3/basys3.xdc')
         validate_xdc(xdc.read_text(), facts)
-        validate_xpr(harness.inside('RV32I_Edge_SoC.xpr').read_text())
+        validate_xpr(harness.inside('RV32I_Edge_SoC.xpr').read_text(), harness.read(harness.inside('config/fpga_build.json')))
         c.require(True, 'Exact selected documented pin/clock map and integrated project')
         c.versions(manifest)
         cwd = c.base / 'simulation'
-        compile_record = c.vendor('xvlog', ['--sv', str(harness.inside('fpga/basys3/top.sv')),
+        compile_record = c.vendor('xvlog', ['--sv', str(harness.inside('fpga/basys3/diagnostic_top.sv')),
             str(harness.inside('dv/board/tb_board_io.sv'))], cwd, 15)
         c.require(rtl_checks.successful(compile_record), 'Board shell compile', compile_record)
         elaborate = c.vendor('xelab', ['work.tb_board_io', '--snapshot', 'board_snapshot', '--timescale',

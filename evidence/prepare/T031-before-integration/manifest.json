@@ -1,0 +1,14 @@
+{
+  "inputs": {
+    "fpga/basys3/top.sv": "359cc67f9ecaa46d2e607a8c84d4a3f7a7b21cf52dac6e3e759302e2234edf80",
+    "fpga/basys3/integrate.tcl": "22d778527cba26f7beb6d33731427f8907455f22e08832a0e099225f46024abc",
+    "RV32I_Edge_SoC.xpr": "9dd90f19e5fa7d99887786a4b544aa69ce40acfbb45be966b06ad3c6c745280a",
+    "config/fpga_build.json": "652a00a9729318bf2d78f85b8abd8fc0c6c4c923ddf3ab200eaafe53f784ecb2",
+    "config/rtl_checks.json": "eb3fdb14597a19f7f766b34adc894701bf33de4bdf0d403879afdc78aa8f3cce",
+    ".harness/checks.json": "3a6efc69a16b0d1530e78b5ea10771e3abec9a2e809ba6f51e3d901b7a25eecc",
+    "scripts/board_checks.py": "0044c2d8f3633e2bc79e6c0adaaa8f90a70a1797a787dba09d9c2896050b4e5a",
+    "scripts/vivado_board_check.tcl": "0632916e4e4ba880b69cbbbaf7b2c2a21f692ba2ba98da02dd4840d8f65ab1d6",
+    "dv/board/tb_board_io.sv": "fefe015e22ce3c22b93f56ed9fcde82e9816b8a1543fb444e8fdaa5d24c9f19d",
+    "scripts/test_fpga_build.py": "b11df6b93f22cbaca715bd7dbf4098de5c673ba0ddf40777b61ac7e1c4e2fa65"
+  }
+}

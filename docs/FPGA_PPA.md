@@ -1,9 +1,11 @@
 # FPGA build flow and evidence boundary
 
 T030 prepared November6 from T029 commit1f0be70. All four task gates passed on attempt1.
-Confirmed Basys3 xc7a35tcpg236-1, one100MHz clock/10.000ns. Existing XPR/RTL/XDC/
-ROM image remain unchanged. Current config selects the diagnostic shell; T031
-must explicitly update the manifest to the integrated, verified SoC.
+Confirmed Basys3 xc7a35tcpg236-1, one100MHz clock/10.000ns. T030 preserved the
+diagnostic shell. T031 now selects the integrated initial-EEI SoC and the separate
+soc_boot.mem image; the original diagnostic and rom_init.mem remain recoverable.
+See SOC_BOOT.md for source integration, simulation and retained catalog warnings.
+This manifest update does not execute the T043 flow or establish full-target PPA.
 
 ## Reproducible project-local commands
 

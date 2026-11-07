@@ -5,8 +5,35 @@
   "clock_period_ns": 10.0,
   "vivado_version": "2025.2",
   "vivado_sw_build": "6299465",
-  "design_scope": "diagnostic_shell_before_T031",
-  "rtl_sources": ["fpga/basys3/top.sv"],
-  "constraints": ["fpga/basys3/basys3.xdc"],
-  "memory_files": []
+  "design_scope": "integrated_soc_initial_fault_halt_EEI",
+  "rtl_sources": [
+    "rtl/core/rv32_pkg.sv",
+    "rtl/core/decoder.sv",
+    "rtl/core/alu.sv",
+    "rtl/core/regfile.sv",
+    "rtl/core/branch_unit.sv",
+    "rtl/core/lsu.sv",
+    "rtl/core/pipeline_core.sv",
+    "rtl/core/forwarding_unit.sv",
+    "rtl/core/hazard_unit.sv",
+    "rtl/core/pipeline_cpu.sv",
+    "rtl/memory/boot_rom.sv",
+    "rtl/memory/data_ram.sv",
+    "rtl/peripherals/uart_tx.sv",
+    "rtl/peripherals/uart_rx.sv",
+    "rtl/peripherals/uart_mmio.sv",
+    "rtl/peripherals/input_sync.sv",
+    "rtl/peripherals/gpio.sv",
+    "rtl/peripherals/timer.sv",
+    "rtl/peripherals/reset_sync.sv",
+    "rtl/soc/soc_fabric.sv",
+    "rtl/soc/edge_soc.sv",
+    "fpga/basys3/top.sv"
+  ],
+  "constraints": [
+    "fpga/basys3/basys3.xdc"
+  ],
+  "memory_files": [
+    "fpga/basys3/soc_boot.mem"
+  ]
 }

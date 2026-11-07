@@ -123,3 +123,10 @@ This bootstrap session has unrestricted filesystem access. Unattended execution
 is disabled pending actual sandbox/approval configuration. No tools, packages or
 IP were downloaded/installed and no FPGA was programmed. Previously authorized
 official documentation reads are recorded in evidence/t002_sources.json.
+
+T031 connects the actual pipeline, ROM/RAM and UART/GPIO/timer in the existing
+Vivado project. See [SoC boot evidence](docs/SOC_BOOT.md). The canonical Basys 3
+top has passed compiled firmware simulation at the production UART divider;
+the original diagnostic remains in fpga/basys3/diagnostic_top.sv. Run
+`python -B scripts/verify.py test-soc` to reproduce. Full FPGA implementation,
+timing, bitstream and physical programming remain separate approval milestones.

@@ -43,7 +43,7 @@ class FpgaBuildTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'CHECKPOINT_REQUIRED'):fpga_build.prepare_job(self.base/'no-checkpoint',stage='impl')
         self.assertFalse((self.base/'no-checkpoint').exists())
     def test_owner_policy_in_memory_only_and_real_execution_rejected(self):
-        config=fpga_build.load_config();state={'active':'T043','start_approvals':{'T043':{}},'task_states':{k:'completed' for k in ('T031','T044','T045')},'owner_reviews':{'T044':{}}}
+        config=fpga_build.load_config();config['design_scope']='diagnostic_shell_before_T031';state={'active':'T043','start_approvals':{'T043':{}},'task_states':{k:'completed' for k in ('T031','T044','T045')},'owner_reviews':{'T044':{}}}
         with self.assertRaises(harness.Stop):fpga_build.check_execution(config,state)
         config['design_scope']='integrated_soc';fpga_build.check_execution(config,state) # pure predicate, no write/build
         for key in ('active','start_approvals','owner_reviews'):

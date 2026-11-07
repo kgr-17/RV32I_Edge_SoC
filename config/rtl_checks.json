@@ -710,9 +710,9 @@
     },
     {
       "name": "basys3_board_shell",
-      "top": "basys3_top",
+      "top": "basys3_diagnostic_top",
       "sources": [
-        "fpga/basys3/top.sv"
+        "fpga/basys3/diagnostic_top.sv"
       ]
     },
     {
@@ -770,6 +770,37 @@
       "sources": [
         "rtl/peripherals/reset_sync.sv"
       ]
+    },
+    {
+      "name": "soc_fabric_unit",
+      "top": "soc_fabric",
+      "sources": [
+        "rtl/core/rv32_pkg.sv",
+        "rtl/core/decoder.sv",
+        "rtl/core/alu.sv",
+        "rtl/core/regfile.sv",
+        "rtl/core/branch_unit.sv",
+        "rtl/core/lsu.sv",
+        "rtl/core/pipeline_core.sv",
+        "rtl/core/forwarding_unit.sv",
+        "rtl/core/hazard_unit.sv",
+        "rtl/core/pipeline_cpu.sv",
+        "rtl/memory/boot_rom.sv",
+        "rtl/memory/data_ram.sv",
+        "rtl/peripherals/uart_tx.sv",
+        "rtl/peripherals/uart_rx.sv",
+        "rtl/peripherals/uart_mmio.sv",
+        "rtl/peripherals/input_sync.sv",
+        "rtl/peripherals/gpio.sv",
+        "rtl/peripherals/timer.sv",
+        "rtl/peripherals/reset_sync.sv",
+        "rtl/soc/soc_fabric.sv",
+        "rtl/soc/edge_soc.sv"
+      ],
+      "memory_files": [
+        "fpga/basys3/soc_boot.mem"
+      ],
+      "timeout_seconds": 120
     }
   ],
   "designs": [

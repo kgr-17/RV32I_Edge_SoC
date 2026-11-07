@@ -3,8 +3,8 @@
 if {[catch {
     lassign $argv root xdc expected_file
     if {[version -short] ne "2025.2"} {error "VERSION_MISMATCH"}
-    read_verilog -sv [file join $root fpga/basys3/top.sv]
-    synth_design -top basys3_top -part xc7a35tcpg236-1 -flatten_hierarchy none
+    read_verilog -sv [file join $root fpga/basys3/diagnostic_top.sv]
+    synth_design -top basys3_diagnostic_top -part xc7a35tcpg236-1 -flatten_hierarchy none
     read_xdc $xdc
     set stream [open $expected_file r]
     set lines [split [string trim [read $stream]] "\n"]

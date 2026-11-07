@@ -9,6 +9,8 @@ import platform
 import random
 import re
 import sys
+import threading
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 import harness
 import tool_runner
@@ -77,6 +79,7 @@ def successful(record, marker=None):
 
 class Checks:
     def __init__(self, profile, task='T003', scope=None):
+        self._lock = threading.RLock()
         stamp = dt.datetime.now(dt.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
         self.path = harness.inside('evidence/toolchain_runs/' + profile + '-' + stamp + '.json')
         self.base = harness.inside('build/' + task + '/' + profile + '-' + stamp)
@@ -89,12 +92,14 @@ class Checks:
         self.save()
 
     def save(self):
-        harness.atomic(self.path, self.result)
+        with self._lock:
+            harness.atomic(self.path, self.result)
 
     def command(self, argv, directory, timeout):
         record = tool_runner.run(argv, directory, timeout)
-        self.result['commands'].append(record)
-        self.save()
+        with self._lock:
+            self.result['commands'].append(record)
+            self.save()
         if record['status'] == 'NOT RUN':
             raise NotRun('Required command unavailable: ' + repr(argv))
         return record
@@ -117,9 +122,10 @@ class Checks:
         return record
 
     def require(self, condition, description, record=None):
-        self.result['checks'].append({'name': description, 'status': 'PASS' if condition else 'FAIL',
-                                      'command_index': self.result['commands'].index(record) if record else None})
-        self.save()
+        with self._lock:
+            self.result['checks'].append({'name': description, 'status': 'PASS' if condition else 'FAIL',
+                                          'command_index': self.result['commands'].index(record) if record else None})
+            self.save()
         if not condition:
             raise RuntimeError(description)
 
@@ -151,6 +157,24 @@ class Checks:
         else:
             self.require(successful(record, 'TOOLCHAIN_LINT_PASS top=' + top), 'Synthesis lint ' + top, record)
             self.require('SW Build ' + manifest['vivado_sw_build'] in output, 'Pinned Vivado SW build', record)
+
+    def lint_manifest(self, manifest):
+        # Independent per-top working directories; at most two native tools.
+        # Join every job, retaining failures and all original checks/ceilings.
+        def run(design):
+            self.lint(design['sources'], design['top'], manifest,
+                      timeout=design.get('timeout_seconds', 45),
+                      memory_files=design.get('memory_files', []))
+        errors = []
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            futures = [pool.submit(run, design) for design in manifest['lint_designs']]
+            for future in futures:
+                try:
+                    future.result()
+                except Exception as exc:
+                    errors.append(exc)
+        if errors:
+            raise errors[0]
 
     def simulation(self, design, manifest):
         cwd = self.base / ('sim_' + design['name'])
@@ -210,8 +234,7 @@ def main():
         checks.versions(manifest)
         if manifest.get('lint_designs') and args.profile in ('all', 'lint'):
             checks.result['scope'] = 'Manifest RTL synthesis lint plus infrastructure fixture DV; no complete CPU/SoC or hardware'
-            for design in manifest['lint_designs']:
-                checks.lint(design['sources'], design['top'], manifest, timeout=design.get('timeout_seconds',45),memory_files=design.get('memory_files',[]))
+            checks.lint_manifest(manifest)
         for design in manifest['designs']:
             if args.profile in ('all', 'lint'):
                 checks.lint(design['sources'], design['top'], manifest)
