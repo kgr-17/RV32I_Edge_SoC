@@ -84,7 +84,12 @@
       "rtl/soc/soc_fabric.sv",
       "rtl/soc/edge_soc.sv",
       "fpga/basys3/soc_boot.mem",
-      "fpga/basys3/diagnostic_top.sv"
+      "fpga/basys3/diagnostic_top.sv",
+      "dv/lint/csr_lint_top.sv",
+      "dv/lint/pipeline_irq_lint_top.sv",
+      "dv/lint/timer_irq_lint_top.sv",
+      "rtl/core/csr_file.sv",
+      "rtl/core/trap_control.sv"
     ],
     "commands": [
       [
@@ -219,6 +224,8 @@
       "rtl/core/pipeline_core.sv",
       "rtl/core/forwarding_unit.sv",
       "rtl/core/hazard_unit.sv",
+      "rtl/core/csr_file.sv",
+      "rtl/core/trap_control.sv",
       "rtl/core/pipeline_cpu.sv",
       "rtl/memory/boot_rom.sv",
       "rtl/memory/data_ram.sv",
@@ -241,7 +248,39 @@
       "fpga/basys3/soc_boot.mem",
       "config/fpga_build.json",
       "scripts/project_integration.py",
-      "dv/integration/tb_soc_board.sv"
+      "dv/integration/tb_soc_board.sv",
+      "rtl/core/csr_file.sv",
+      "rtl/core/trap_control.sv",
+      "rtl/core/pipeline_cpu.sv",
+      "rtl/core/decoder.sv",
+      "rtl/core/rv32_pkg.sv",
+      "rtl/soc/edge_soc.sv",
+      "rtl/soc/soc_fabric.sv",
+      "rtl/peripherals/timer.sv",
+      "dv/unit/test_csr.py",
+      "dv/unit/tb_csr.sv",
+      "dv/integration/test_interrupts.py",
+      "dv/integration/interrupt_model.py",
+      "dv/integration/tb_timer_irq.sv",
+      "dv/integration/tb_interrupts.sv",
+      "dv/integration/tb_interrupt_waits.sv",
+      "dv/integration/tb_interrupt_aborts.sv",
+      "dv/integration/tb_interrupt_board.sv",
+      "dv/integration/irq_wait_soc.sv",
+      "scripts/interrupt_checks.py",
+      "scripts/interrupt_firmware.py",
+      "scripts/test_verify.py",
+      "scripts/verify.py",
+      "docs/INTERRUPT_CONTRACT.json",
+      "docs/INTERRUPT_SPEC.md",
+      "sw/interrupt_smoke.S",
+      "fpga/basys3/irq_boot.mem",
+      "fpga/basys3/top.sv",
+      "dv/integration/tb_interrupt_priority.sv",
+      "scripts/check_interrupt_contract.py",
+      "scripts/test_tool_runner.py",
+      "scripts/test_rtl_checks.py",
+      "scripts/vivado_lint.tcl"
     ],
     "commands": [
       [
@@ -405,6 +444,12 @@
         "-B",
         "scripts/verify.py",
         "test-soc"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/verify.py",
+        "test-interrupts"
       ]
     ],
     "timeout_seconds": 600
@@ -586,6 +631,8 @@
       "rtl/core/lsu.sv",
       "rtl/core/forwarding_unit.sv",
       "rtl/core/hazard_unit.sv",
+      "rtl/core/csr_file.sv",
+      "rtl/core/trap_control.sv",
       "rtl/core/pipeline_cpu.sv",
       "dv/integration/tb_backpressure.sv",
       "dv/integration/test_backpressure.py",
@@ -660,6 +707,8 @@
       "rtl/core/pipeline_core.sv",
       "rtl/core/forwarding_unit.sv",
       "rtl/core/hazard_unit.sv",
+      "rtl/core/csr_file.sv",
+      "rtl/core/trap_control.sv",
       "rtl/core/pipeline_cpu.sv",
       "config/rtl_checks.json",
       "scripts/unit_checks.py",
@@ -735,6 +784,8 @@
       "rtl/core/pipeline_core.sv",
       "rtl/core/forwarding_unit.sv",
       "rtl/core/hazard_unit.sv",
+      "rtl/core/csr_file.sv",
+      "rtl/core/trap_control.sv",
       "rtl/core/pipeline_cpu.sv",
       "config/rtl_checks.json",
       "scripts/unit_checks.py",
@@ -768,6 +819,8 @@
       "rtl/core/pipeline_core.sv",
       "rtl/core/forwarding_unit.sv",
       "rtl/core/hazard_unit.sv",
+      "rtl/core/csr_file.sv",
+      "rtl/core/trap_control.sv",
       "rtl/core/pipeline_cpu.sv",
       "config/rtl_checks.json",
       "scripts/unit_checks.py",
@@ -802,6 +855,8 @@
       "rtl/core/pipeline_core.sv",
       "rtl/core/forwarding_unit.sv",
       "rtl/core/hazard_unit.sv",
+      "rtl/core/csr_file.sv",
+      "rtl/core/trap_control.sv",
       "rtl/core/pipeline_cpu.sv",
       "config/rtl_checks.json",
       "scripts/unit_checks.py",
@@ -864,6 +919,8 @@
       "rtl/core/pipeline_core.sv",
       "rtl/core/forwarding_unit.sv",
       "rtl/core/hazard_unit.sv",
+      "rtl/core/csr_file.sv",
+      "rtl/core/trap_control.sv",
       "rtl/core/pipeline_cpu.sv",
       "config/rtl_checks.json",
       "scripts/unit_checks.py",
@@ -914,6 +971,8 @@
       "rtl/core/pipeline_core.sv",
       "rtl/core/forwarding_unit.sv",
       "rtl/core/hazard_unit.sv",
+      "rtl/core/csr_file.sv",
+      "rtl/core/trap_control.sv",
       "rtl/core/pipeline_cpu.sv",
       "config/rtl_checks.json",
       "scripts/unit_checks.py",
@@ -963,6 +1022,8 @@
       "rtl/core/pipeline_core.sv",
       "rtl/core/forwarding_unit.sv",
       "rtl/core/hazard_unit.sv",
+      "rtl/core/csr_file.sv",
+      "rtl/core/trap_control.sv",
       "rtl/core/pipeline_cpu.sv",
       "config/rtl_checks.json",
       "scripts/unit_checks.py",
@@ -1016,6 +1077,8 @@
       "rtl/core/pipeline_core.sv",
       "rtl/core/forwarding_unit.sv",
       "rtl/core/hazard_unit.sv",
+      "rtl/core/csr_file.sv",
+      "rtl/core/trap_control.sv",
       "rtl/core/pipeline_cpu.sv",
       "config/rtl_checks.json",
       "scripts/unit_checks.py",
@@ -1100,7 +1163,8 @@
       "scripts/test_arch_spec.py",
       "docs/ARCH_CONTRACT.json",
       "AGENTS.md",
-      "docs/BACKLOG.json"
+      "docs/BACKLOG.json",
+      "scripts/test_verify.py"
     ],
     "commands": [
       [
@@ -1122,6 +1186,11 @@
         "{python}",
         "-B",
         "scripts/test_arch_spec.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/test_verify.py"
       ]
     ]
   },
@@ -1361,6 +1430,8 @@
       "rtl/core/pipeline_core.sv",
       "rtl/core/forwarding_unit.sv",
       "rtl/core/hazard_unit.sv",
+      "rtl/core/csr_file.sv",
+      "rtl/core/trap_control.sv",
       "rtl/core/pipeline_cpu.sv",
       "rtl/memory/boot_rom.sv",
       "rtl/memory/data_ram.sv",
@@ -1415,6 +1486,85 @@
         "{python}",
         "-B",
         "scripts/soc_checks.py"
+      ]
+    ]
+  },
+  "test-interrupts": {
+    "inputs": [
+      "rtl/core/csr_file.sv",
+      "rtl/core/trap_control.sv",
+      "rtl/core/pipeline_cpu.sv",
+      "rtl/core/decoder.sv",
+      "rtl/core/rv32_pkg.sv",
+      "rtl/soc/edge_soc.sv",
+      "rtl/soc/soc_fabric.sv",
+      "rtl/peripherals/timer.sv",
+      "dv/unit/test_csr.py",
+      "dv/unit/tb_csr.sv",
+      "dv/integration/test_interrupts.py",
+      "dv/integration/interrupt_model.py",
+      "dv/integration/tb_timer_irq.sv",
+      "dv/integration/tb_interrupts.sv",
+      "dv/integration/tb_interrupt_waits.sv",
+      "dv/integration/tb_interrupt_aborts.sv",
+      "dv/integration/tb_interrupt_board.sv",
+      "dv/integration/irq_wait_soc.sv",
+      "scripts/interrupt_checks.py",
+      "scripts/interrupt_firmware.py",
+      "scripts/test_verify.py",
+      "scripts/verify.py",
+      "docs/INTERRUPT_CONTRACT.json",
+      "docs/INTERRUPT_SPEC.md",
+      "sw/interrupt_smoke.S",
+      "fpga/basys3/irq_boot.mem",
+      "fpga/basys3/top.sv",
+      "dv/integration/tb_interrupt_priority.sv",
+      "scripts/check_interrupt_contract.py",
+      "scripts/test_tool_runner.py",
+      "scripts/tool_runner.py",
+      "scripts/test_rtl_checks.py",
+      "scripts/vivado_lint.tcl"
+    ],
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "scripts/check_interrupt_contract.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "dv/unit/test_csr.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "dv/integration/test_interrupts.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/test_verify.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/test_execution_budgets.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/test_harness.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/test_tool_runner.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/interrupt_checks.py"
       ]
     ]
   }

@@ -20,6 +20,10 @@ class NotRun(RuntimeError):
     pass
 
 
+LEGACY_LINT_DEFINES = {'pipeline_cpu_lint_top':['RV32_CORE_LEGACY_PORTS'],
+                       'timer':['RV32_TIMER_LEGACY_PORTS']}
+
+
 def load_manifest():
     manifest = harness.read(harness.inside('config/rtl_checks.json'))
     if manifest['schema_version'] != 1 or not manifest['designs'] or not manifest['seeds']:
@@ -39,6 +43,11 @@ def load_manifest():
         if design['name'] in names or not design['sources']:
             raise ValueError('Duplicate/empty design')
         names.add(design['name'])
+        defines=design.get('defines',[])
+        if (not isinstance(defines,list) or
+                defines not in ([],LEGACY_LINT_DEFINES.get(design['top'])) or
+                simulation and defines):
+            raise ValueError('Invalid/scoped legacy synthesis definitions')
         for name in design['sources'] + ([design['testbench']] if simulation else []):
             if not harness.inside(name).is_file():
                 raise NotRun('Missing source: ' + name)
@@ -140,16 +149,24 @@ class Checks:
         self.result['pins'] = {key: value for key, value in manifest.items() if key.endswith('_version') or key == 'vivado_sw_build'}
         self.save()
 
-    def lint(self, sources, top, manifest, negative=False, timeout=45, memory_files=()):
+    def lint(self, sources, top, manifest, negative=False, timeout=45, memory_files=(), defines=()):
         cwd = self.base / ('negative_latch' if negative else 'lint_' + top)
         cwd.mkdir(parents=True)
         for name in memory_files:
             harness.atomic_text(cwd / Path(name).name, harness.inside(name).read_text(encoding='ascii'))
         source_list = cwd / 'sources.txt'
         harness.atomic_text(source_list, '\n'.join(str(harness.inside(name)) for name in sources) + '\n')
+        definition_file=cwd/'defines.txt'
+        harness.atomic_text(definition_file,'\n'.join(defines)+ ('\n' if defines else ''))
+        with self._lock:
+            self.result.setdefault('source_sha256',{}).update({name:hashlib.sha256(harness.inside(name).read_bytes()).hexdigest() for name in sources})
+            self.result.setdefault('lint_inputs',[]).append({'top':top,'defines':list(defines),
+                'source_list':{'path':source_list.relative_to(harness.ROOT).as_posix(),'sha256':hashlib.sha256(source_list.read_bytes()).hexdigest()},
+                'definition_file':{'path':definition_file.relative_to(harness.ROOT).as_posix(),'sha256':hashlib.sha256(definition_file.read_bytes()).hexdigest()}})
+            self.save()
         record = self.vendor('vivado', ['-mode', 'batch', '-nolog', '-nojournal', '-notrace', '-source',
                             str(harness.inside('scripts/vivado_lint.tcl')), '-tclargs', str(source_list), top,
-                            'xc7a35tcpg236-1', manifest['vivado_version']], cwd, timeout)
+                            'xc7a35tcpg236-1', manifest['vivado_version'],str(definition_file)], cwd, timeout)
         output = record['stdout'] + '\n' + record['stderr']
         if negative:
             self.require(record['status'] == 'FAIL' and 'LATCH_DETECTED' in output,
@@ -164,7 +181,7 @@ class Checks:
         def run(design):
             self.lint(design['sources'], design['top'], manifest,
                       timeout=design.get('timeout_seconds', 45),
-                      memory_files=design.get('memory_files', []))
+                      memory_files=design.get('memory_files', []),defines=design.get('defines',[]))
         errors = []
         with ThreadPoolExecutor(max_workers=2) as pool:
             futures = [pool.submit(run, design) for design in manifest['lint_designs']]

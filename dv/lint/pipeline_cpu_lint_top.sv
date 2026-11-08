@@ -52,6 +52,9 @@ module pipeline_cpu_lint_top (
     wire logic [3:0] fault_code_o;
     wire logic [31:0] fault_tval_o;
     pipeline_core dut (
+`ifndef RV32_CORE_LEGACY_PORTS
+        .irq_external_i(1'b0),
+`endif
         .clk_i(clk_i),
         .rst_i(rst_i),
         .imem_req_valid_o(imem_req_valid_o),
@@ -90,7 +93,7 @@ module pipeline_cpu_lint_top (
         .fault_insn_o(fault_insn_o),
         .fault_code_o(fault_code_o),
         .fault_tval_o(fault_tval_o)
-    );
+    ,.trap_valid_o(),.trap_order_o(),.trap_pc_o(),.trap_insn_o(),.trap_cause_o(),.trap_tval_o(),.trap_target_o(),.retire_csr_valid_o(),.retire_csr_read_o(),.retire_csr_write_o(),.retire_csr_addr_o(),.retire_csr_rdata_o(),.retire_csr_wdata_o());
     always_comb begin
         data_o = 32'd0;
         case (observe_sel_i)

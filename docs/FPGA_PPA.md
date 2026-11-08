@@ -7,6 +7,14 @@ soc_boot.mem image; the original diagnostic and rom_init.mem remain recoverable.
 See SOC_BOOT.md for source integration, simulation and retained catalog warnings.
 This manifest update does not execute the T043 flow or establish full-target PPA.
 
+T045 selects the owner-reviewed v0.3 interrupt mode in the canonical top and
+adds irq_boot.mem alongside the retained legacy image. The existing XPR gains
+the CSR/admission sources and new image without removing prior sources. Native
+simulation at production divider868 has passed; full FPGA synthesis, placement,
+routing, timing, power, complete CDC and bitstream evidence remain T043 work.
+Source-only integration retains the installed board-catalog warning failure;
+the exact manifest is checked separately. See INTERRUPT_REPORT.md.
+
 ## Reproducible project-local commands
 
 config/fpga_build.json lists exact top/part/version/build/clock, sources,

@@ -1,7 +1,10 @@
 `default_nettype none
 // Five-stage pipeline integration under the reviewed v0.2 external contract.
-module pipeline_core (
+module pipeline_core #(parameter bit ENABLE_TRAPS=1'b0) (
     input wire logic clk_i, rst_i,
+`ifndef RV32_CORE_LEGACY_PORTS
+    input wire logic irq_external_i,
+`endif
     output wire logic imem_req_valid_o,
     input wire logic imem_req_ready_i,
     output wire logic [31:0] imem_req_addr_o,
@@ -32,8 +35,21 @@ module pipeline_core (
     output logic fault_valid_o,
     output logic [31:0] fault_pc_o, fault_insn_o,
     output logic [3:0] fault_code_o,
-    output logic [31:0] fault_tval_o
+    output logic [31:0] fault_tval_o,
+    output logic trap_valid_o,
+    output logic [63:0] trap_order_o,
+    output logic [31:0] trap_pc_o,trap_insn_o,trap_cause_o,trap_tval_o,trap_target_o,
+    output logic retire_csr_valid_o,retire_csr_read_o,retire_csr_write_o,
+    output logic [11:0] retire_csr_addr_o,
+    output logic [31:0] retire_csr_rdata_o,retire_csr_wdata_o
 );
+`ifdef RV32_CORE_LEGACY_PORTS
+    // Unit synthesis specialization: the legacy configuration ties IRQ low.
+    wire logic irq_external_i=1'b0;
+    generate if(ENABLE_TRAPS) begin : g_invalid_legacy_ports
+        initial $fatal(1,"LEGACY_PORTS_REQUIRE_TRAPS_OFF");
+    end endgenerate
+`endif
     import rv32_pkg::*;
     typedef struct packed {
         logic [31:0] pc,insn;
@@ -52,6 +68,11 @@ module pipeline_core (
         logic [31:0] addr,wdata;
         logic [3:0] be,fault;
         logic [31:0] tval;
+        logic [2:0] csr_op;
+        logic [11:0] csr_addr;
+        logic [31:0] csr_operand;
+        logic csr_source_zero,csr_rd_zero,mret;
+
     } result_t;
     typedef struct packed { result_t result; op_t op; } m_t;
     typedef struct packed { result_t result; logic [31:0] raw; } w_t;
@@ -85,17 +106,65 @@ module pipeline_core (
     logic fetch_sent_q,fetch_killed_q,data_sent_q;
     logic [63:0] order_q;
 
-    assign wb_fault=w_valid && (w.result.fault!=4'd0);
+    wire logic csr_read,csr_write,csr_error,irq_eligible,irq_draining,irq_block,irq_commit,irq_boundary;
+    wire logic [31:0] csr_rdata,csr_wdata,csr_vector,csr_epc,irq_resume;
+    wire logic sync_trap=ENABLE_TRAPS && wb_fault && !rst_i;
+    wire logic mret_commit=ENABLE_TRAPS && w_valid && w.result.mret && !wb_fault && !rst_i;
+    wire logic successful_retire=!rst_i && !fault_valid_o && w_valid && !wb_fault;
+    wire logic trap_enter=sync_trap || irq_commit;
+    wire logic control_redirect=sync_trap || mret_commit || irq_boundary;
+    wire logic [31:0] control_target=(sync_trap || irq_commit) ? csr_vector : mret_commit ? csr_epc : irq_resume;
+    wire logic [31:0] wb_value=(ENABLE_TRAPS && w.result.csr_op!=3'd0) ? csr_rdata : w.result.value;
+    wire logic empty_pipeline=!f_valid && !d_valid && !e_valid && !m_valid && !w_valid && !fetch_sent_q && !data_sent_q;
+    wire logic d_serial=ENABLE_TRAPS && d_valid && decoded.op>=OP_CSRRW;
+    wire logic e_serial=ENABLE_TRAPS && e_valid && e.dec.op>=OP_CSRRW;
+    wire logic m_serial=ENABLE_TRAPS && m_valid && (m.result.csr_op!=3'd0 || m.result.mret);
+    wire logic w_serial=ENABLE_TRAPS && w_valid && (w.result.csr_op!=3'd0 || w.result.mret);
+    wire logic serial_block=(d_serial && (e_valid || m_valid || w_valid)) || e_serial || m_serial || w_serial;
+    wire logic [31:0] sync_cause;
+    function automatic logic [31:0] mapped_cause(input logic [3:0] diagnostic);
+        case(diagnostic)
+            4'd1:mapped_cause=32'd2;
+            4'd2:mapped_cause=32'd0;
+            4'd3:mapped_cause=32'd1;
+            4'd4:mapped_cause=32'd4;
+            4'd5:mapped_cause=32'd5;
+            4'd6:mapped_cause=32'd6;
+            4'd7:mapped_cause=32'd7;
+            4'd8:mapped_cause=32'd11;
+            4'd9:mapped_cause=32'd3;
+            default:mapped_cause=32'd2;
+        endcase
+    endfunction
+    assign sync_cause=csr_error ? 32'd2 : mapped_cause(w.result.fault);
+    assign wb_fault=w_valid && ((w.result.fault!=4'd0) || (ENABLE_TRAPS && csr_error));
+    generate if(ENABLE_TRAPS) begin : g_traps
+        csr_file csrs(.clk_i(clk_i),.rst_i(rst_i),.irq_external_i(irq_external_i),
+            .addr_i(w.result.csr_addr),.op_i(w_valid ? w.result.csr_op : 3'd0),.operand_i(w.result.csr_operand),
+            .source_zero_i(w.result.csr_source_zero),.rd_zero_i(w.result.csr_rd_zero),.commit_i(successful_retire),
+            .trap_i(trap_enter),.mret_i(mret_commit),.trap_pc_i(sync_trap ? w.result.pc[31:2] : irq_resume[31:2]),
+            .trap_cause_i(sync_trap ? sync_cause : 32'h8000000b),.trap_tval_i(sync_trap ? (csr_error ? w.result.insn : w.result.tval) : 32'd0),
+            .read_o(csr_read),.write_o(csr_write),.error_o(csr_error),.rdata_o(csr_rdata),.wdata_o(csr_wdata),
+            .mtvec_o(csr_vector),.mepc_o(csr_epc),.irq_enabled_o(irq_eligible));
+        trap_control admission(.clk_i(clk_i),.rst_i(rst_i),.eligible_i(irq_eligible),.empty_i(empty_pipeline),
+            .sync_trap_i(sync_trap),.retire_i(successful_retire),.retire_next_pc_i(w.result.next_pc),.trap_target_i(csr_vector),
+            .draining_o(irq_draining),.block_fetch_o(irq_block),.irq_commit_o(irq_commit),.boundary_o(irq_boundary),.resume_pc_o(irq_resume));
+    end else begin : g_legacy
+        assign csr_read=1'b0;assign csr_write=1'b0;assign csr_error=1'b0;
+        assign csr_rdata=32'd0;assign csr_wdata=32'd0;assign csr_vector=32'd0;assign csr_epc=32'd0;
+        assign irq_eligible=1'b0;assign irq_draining=1'b0;assign irq_block=1'b0;assign irq_commit=1'b0;assign irq_boundary=1'b0;assign irq_resume=32'd0;
+    end endgenerate
+
     assign gpr_write=!rst_i && !fault_valid_o && w_valid && !wb_fault && w.result.write;
-    decoder decode (.insn_i(d.insn),.decode_o(decoded));
+    decoder #(.ENABLE_TRAPS(ENABLE_TRAPS)) decode (.insn_i(d.insn),.decode_o(decoded));
     regfile registers (.clk_i(clk_i),.rst_i(rst_i),.write_en_i(gpr_write),
-        .write_addr_i(w.result.rd),.write_data_i(w.result.value),.read_addr_a_i(decoded.rs1),
+        .write_addr_i(w.result.rd),.write_data_i(wb_value),.read_addr_a_i(decoded.rs1),
         .read_addr_b_i(decoded.rs2),.read_data_a_o(rf_a),.read_data_b_o(rf_b));
     forwarding_unit forwarding (.valid_i(e_valid && !e.fetch_error),
         .uses_a_i(e.dec.uses_rs1),.uses_b_i(e.dec.uses_rs2),.rs_a_i(e.dec.rs1),.rs_b_i(e.dec.rs2),
         .captured_a_i(e.a),.captured_b_i(e.b),.ex_valid_i(m_valid),.ex_write_i(m.result.write),
         .ex_load_i(m.result.mem && !m.result.mwrite),.ex_rd_i(m.result.rd),.ex_value_i(m.result.value),
-        .wb_valid_i(w_valid && !wb_fault),.wb_write_i(w.result.write),.wb_rd_i(w.result.rd),.wb_value_i(w.result.value),
+        .wb_valid_i(w_valid && !wb_fault),.wb_write_i(w.result.write),.wb_rd_i(w.result.rd),.wb_value_i(wb_value),
         .value_a_o(fa),.value_b_o(fb),.source_a_o(source_a),.source_b_o(source_b),
         .blocked_a_o(blocked_a),.blocked_b_o(blocked_b));
     hazard_unit hazards (.consumer_valid_i(e_valid && !e.fetch_error),
@@ -125,17 +194,17 @@ module pipeline_core (
     assign mem_hold=m_valid && m.result.mem && !d_response;
     assign mem_complete=m_valid && (!m.result.mem || d_response);
     assign front_hold=mem_hold || dependency;
-    assign queue_pop=d_valid && !front_hold && !redirect && !wb_fault && !fault_valid_o;
+    assign queue_pop=d_valid && !front_hold && !serial_block && !redirect && !control_redirect && !wb_fault && !fault_valid_o;
     assign queue_room=(queue_count_q<2'd3) || queue_pop;
 
     // An offered/accepted instruction request is drained even after halt/kill.
     assign imem_req_valid_o=!rst_i && f_valid && !fetch_sent_q;
     assign imem_req_addr_o=imem_req_valid_o ? fetch_pc : 32'd0;
     assign imem_rsp_ready_o=!rst_i && f_valid && fetch_sent_q &&
-        (fault_valid_o || wb_fault || fetch_killed_q || redirect || queue_room);
+        (fault_valid_o || wb_fault || fetch_killed_q || redirect || control_redirect || irq_block || queue_room);
     assign i_request=imem_req_valid_o && imem_req_ready_i;
     assign i_response=imem_rsp_valid_i && imem_rsp_ready_o;
-    assign create_fetch=!rst_i && !fault_valid_o && !wb_fault && !redirect && !f_valid && queue_room;
+    assign create_fetch=!rst_i && !fault_valid_o && !wb_fault && !redirect && !control_redirect && !irq_block && !d_serial && !e_serial && !m_serial && !w_serial && !f_valid && queue_room;
 
     always_comb begin
         m_next='0;
@@ -173,6 +242,15 @@ module pipeline_core (
             m_next.result.fault=((e.dec.op>=OP_SB)&&(e.dec.op<=OP_SW)) ? 4'd6 : 4'd4;
             m_next.result.tval=address;
         end
+        if(ENABLE_TRAPS && e.dec.op>=OP_CSRRW && e.dec.op<=OP_CSRRCI) begin
+            m_next.result.csr_op=e.insn[14:12];m_next.result.csr_addr=e.insn[31:20];
+            m_next.result.csr_operand=e.insn[14] ? {27'd0,e.insn[19:15]} : fa;
+            m_next.result.csr_source_zero=(e.insn[19:15]==5'd0);
+            m_next.result.csr_rd_zero=(e.insn[11:7]==5'd0);
+        end
+        if(ENABLE_TRAPS && e.dec.op==OP_MRET) begin
+            m_next.result.mret=1'b1;m_next.result.next_pc=csr_epc;
+        end
         if (m_next.result.fault!=4'd0) begin
             m_next.result.write=1'b0;
             m_next.result.rd=5'd0;
@@ -180,7 +258,7 @@ module pipeline_core (
         end
         redirect=e_valid && branch_ok && taken && (m_next.result.fault==4'd0) &&
             !mem_hold && !dependency && !blocked_a && !blocked_b &&
-            !wb_fault && !fault_valid_o && !(d_response && dmem_rsp_err_i) && !rst_i;
+            !wb_fault && !fault_valid_o && !control_redirect && !(d_response && dmem_rsp_err_i) && !rst_i;
     end
     always_comb begin
         queue_count_next=queue_count_q;
@@ -189,7 +267,7 @@ module pipeline_core (
             queue_next[0]=fetch_queue[1];queue_next[1]=fetch_queue[2];queue_next[2]='0;
             queue_count_next=queue_count_q-2'd1;
         end
-        if (i_response && !fetch_killed_q && !redirect && !wb_fault && !fault_valid_o) begin
+        if (i_response && !fetch_killed_q && !redirect && !control_redirect && !irq_block && !wb_fault && !fault_valid_o) begin
             case (queue_count_next)
                 2'd0: queue_next[0]=d_next;
                 2'd1: queue_next[1]=d_next;
@@ -198,7 +276,7 @@ module pipeline_core (
             endcase
             queue_count_next=queue_count_next+2'd1;
         end
-        if (redirect || wb_fault || fault_valid_o) begin
+        if (redirect || control_redirect || wb_fault || fault_valid_o) begin
             queue_count_next=2'd0;
             for (int unsigned index=32'd0;index<32'd3;index=index+32'd1) queue_next[index]='0;
         end
@@ -236,18 +314,18 @@ module pipeline_core (
     // Responded words are FIFO buffers, not additional outstanding requests.
     for (genvar index=32'd0;index<32'd3;index=index+32'd1) begin : g_fetch_queue
         rv32_pipeline_stage #(.WIDTH($bits(d_t))) storage (.clk_i(clk_i),.rst_i(rst_i),
-            .clear_i(wb_fault || fault_valid_o || redirect),.hold_i(1'b0),
+            .clear_i(wb_fault || fault_valid_o || redirect || control_redirect),.hold_i(1'b0),
             .valid_i(queue_count_next>index),.payload_i(queue_next[index]),
             .valid_o(queue_valid[index]),.payload_o(fetch_queue[index]));
     end
     rv32_pipeline_stage #(.WIDTH($bits(e_t))) ex_stage (.clk_i(clk_i),.rst_i(rst_i),
-        .clear_i(wb_fault || fault_valid_o || redirect),.hold_i(1'b0),
-        .valid_i(front_hold ? e_valid : d_valid),.payload_i(e_next),.valid_o(e_valid),.payload_o(e));
+        .clear_i(wb_fault || fault_valid_o || redirect || control_redirect),.hold_i(1'b0),
+        .valid_i(front_hold ? e_valid : (d_valid && !serial_block)),.payload_i(e_next),.valid_o(e_valid),.payload_o(e));
     rv32_pipeline_stage #(.WIDTH($bits(m_t))) mem_stage (.clk_i(clk_i),.rst_i(rst_i),
-        .clear_i(wb_fault || fault_valid_o),.hold_i(mem_hold),.valid_i(e_valid && !dependency && !blocked_a && !blocked_b),
+        .clear_i(wb_fault || fault_valid_o || control_redirect),.hold_i(mem_hold),.valid_i(e_valid && !dependency && !blocked_a && !blocked_b),
         .payload_i(m_next),.valid_o(m_valid),.payload_o(m));
     rv32_pipeline_stage #(.WIDTH($bits(w_t))) wb_stage (.clk_i(clk_i),.rst_i(rst_i),
-        .clear_i(wb_fault || fault_valid_o),.hold_i(1'b0),.valid_i(mem_complete),
+        .clear_i(wb_fault || fault_valid_o || control_redirect),.hold_i(1'b0),.valid_i(mem_complete),
         .payload_i(w_next),.valid_o(w_valid),.payload_o(w));
 
     always_ff @(posedge clk_i) begin
@@ -260,7 +338,8 @@ module pipeline_core (
             if (i_response) begin fetch_sent_q<=1'b0;fetch_killed_q<=1'b0;end
             if (create_fetch) next_fetch_pc_q<=next_fetch_pc_q+32'd4;
             if (redirect) next_fetch_pc_q<=target;
-            if ((redirect || wb_fault || fault_valid_o) && f_valid && !i_response) fetch_killed_q<=1'b1;
+            if (control_redirect) next_fetch_pc_q<=control_target;
+            if ((redirect || control_redirect || irq_block || wb_fault || fault_valid_o) && f_valid && !i_response) fetch_killed_q<=1'b1;
             if (!mem_hold || wb_fault || fault_valid_o) data_sent_q<=1'b0;
             else if (d_request) data_sent_q<=1'b1;
         end
@@ -279,13 +358,15 @@ module pipeline_core (
             fault_insn_o<=32'd0;fault_code_o<=4'd0;fault_tval_o<=32'd0;
         end else if (!fault_valid_o && w_valid) begin
             if (wb_fault) begin
+                if(!ENABLE_TRAPS)begin
                 fault_valid_o<=1'b1;fault_pc_o<=w.result.pc;fault_insn_o<=w.result.insn;
                 fault_code_o<=w.result.fault;fault_tval_o<=w.result.tval;
+                end
             end else begin
                 retire_valid_o<=1'b1;retire_order_o<=order_q;
                 retire_pc_o<=w.result.pc;retire_next_pc_o<=w.result.next_pc;retire_insn_o<=w.result.insn;
                 retire_rd_write_o<=w.result.write;retire_rd_o<=w.result.rd;
-                retire_rd_wdata_o<=w.result.write ? w.result.value : 32'd0;
+                retire_rd_wdata_o<=w.result.write ? wb_value : 32'd0;
                 retire_mem_valid_o<=w.result.mem;retire_mem_write_o<=w.result.mwrite;
                 retire_mem_addr_o<=w.result.addr;retire_mem_be_o<=w.result.be;
                 retire_mem_wdata_o<=w.result.wdata;retire_mem_rdata_o<=w.raw;
@@ -293,5 +374,43 @@ module pipeline_core (
             end
         end
     end
+    // Disabled features have constant observation outputs, not unused flops.
+    generate if(ENABLE_TRAPS) begin : g_enabled_observation
+        always_ff @(posedge clk_i) begin
+        trap_valid_o<=1'b0;trap_order_o<=64'd0;trap_pc_o<=32'd0;trap_insn_o<=32'd0;
+        trap_cause_o<=32'd0;trap_tval_o<=32'd0;trap_target_o<=32'd0;
+        retire_csr_valid_o<=1'b0;retire_csr_read_o<=1'b0;retire_csr_write_o<=1'b0;
+        retire_csr_addr_o<=12'd0;retire_csr_rdata_o<=32'd0;retire_csr_wdata_o<=32'd0;
+            if(!rst_i) begin
+                if(successful_retire && w.result.csr_op!=3'd0) begin
+                    retire_csr_valid_o<=1'b1;retire_csr_addr_o<=w.result.csr_addr;
+                    retire_csr_read_o<=csr_read;retire_csr_write_o<=csr_write;
+                    retire_csr_rdata_o<=csr_rdata;retire_csr_wdata_o<=csr_wdata;
+                end
+            end
+        if(!rst_i && trap_enter) begin
+            trap_valid_o<=1'b1;trap_order_o<=order_q;
+            trap_pc_o<=sync_trap ? w.result.pc : irq_resume;
+            trap_insn_o<=sync_trap ? w.result.insn : 32'd0;
+            trap_cause_o<=sync_trap ? sync_cause : 32'h8000000b;
+            trap_tval_o<=sync_trap ? (csr_error ? w.result.insn : w.result.tval) : 32'd0;
+            trap_target_o<=csr_vector;
+        end
+        end
+    end else begin : g_legacy_observation
+        assign trap_valid_o=1'b0;
+        assign retire_csr_valid_o=1'b0;
+        assign retire_csr_read_o=1'b0;
+        assign retire_csr_write_o=1'b0;
+        assign trap_order_o=64'd0;
+        assign retire_csr_addr_o=12'd0;
+        assign trap_pc_o=32'd0;
+        assign trap_insn_o=32'd0;
+        assign trap_cause_o=32'd0;
+        assign trap_tval_o=32'd0;
+        assign trap_target_o=32'd0;
+        assign retire_csr_rdata_o=32'd0;
+        assign retire_csr_wdata_o=32'd0;
+    end endgenerate
 endmodule
 `default_nettype wire

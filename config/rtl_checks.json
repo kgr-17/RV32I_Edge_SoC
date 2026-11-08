@@ -224,6 +224,8 @@
         "rtl/core/pipeline_core.sv",
         "rtl/core/forwarding_unit.sv",
         "rtl/core/hazard_unit.sv",
+        "rtl/core/csr_file.sv",
+        "rtl/core/trap_control.sv",
         "rtl/core/pipeline_cpu.sv"
       ],
       "testbench": "dv/integration/tb_load_use.sv",
@@ -261,6 +263,8 @@
         "rtl/core/pipeline_core.sv",
         "rtl/core/forwarding_unit.sv",
         "rtl/core/hazard_unit.sv",
+        "rtl/core/csr_file.sv",
+        "rtl/core/trap_control.sv",
         "rtl/core/pipeline_cpu.sv"
       ],
       "testbench": "dv/integration/tb_control.sv",
@@ -302,6 +306,8 @@
         "rtl/core/pipeline_core.sv",
         "rtl/core/forwarding_unit.sv",
         "rtl/core/hazard_unit.sv",
+        "rtl/core/csr_file.sv",
+        "rtl/core/trap_control.sv",
         "rtl/core/pipeline_cpu.sv"
       ],
       "testbench": "dv/integration/tb_backpressure.sv",
@@ -346,6 +352,8 @@
         "rtl/core/pipeline_core.sv",
         "rtl/core/forwarding_unit.sv",
         "rtl/core/hazard_unit.sv",
+        "rtl/core/csr_file.sv",
+        "rtl/core/trap_control.sv",
         "rtl/core/pipeline_cpu.sv"
       ],
       "testbench": "dv/integration/tb_isa_complete.sv",
@@ -402,6 +410,8 @@
         "rtl/core/pipeline_core.sv",
         "rtl/core/forwarding_unit.sv",
         "rtl/core/hazard_unit.sv",
+        "rtl/core/csr_file.sv",
+        "rtl/core/trap_control.sv",
         "rtl/core/pipeline_cpu.sv"
       ],
       "testbench": "dv/random/tb_random.sv",
@@ -450,6 +460,8 @@
         "rtl/core/pipeline_core.sv",
         "rtl/core/forwarding_unit.sv",
         "rtl/core/hazard_unit.sv",
+        "rtl/core/csr_file.sv",
+        "rtl/core/trap_control.sv",
         "rtl/core/pipeline_cpu.sv",
         "dv/assertions/core_properties.sv"
       ],
@@ -505,6 +517,8 @@
         "rtl/core/pipeline_core.sv",
         "rtl/core/forwarding_unit.sv",
         "rtl/core/hazard_unit.sv",
+        "rtl/core/csr_file.sv",
+        "rtl/core/trap_control.sv",
         "rtl/core/pipeline_cpu.sv",
         "dv/assertions/core_properties.sv"
       ],
@@ -561,6 +575,8 @@
         "rtl/core/pipeline_core.sv",
         "rtl/core/forwarding_unit.sv",
         "rtl/core/hazard_unit.sv",
+        "rtl/core/csr_file.sv",
+        "rtl/core/trap_control.sv",
         "rtl/core/pipeline_cpu.sv",
         "dv/assertions/core_properties.sv"
       ],
@@ -703,10 +719,15 @@
         "rtl/core/pipeline_core.sv",
         "rtl/core/forwarding_unit.sv",
         "rtl/core/hazard_unit.sv",
+        "rtl/core/csr_file.sv",
+        "rtl/core/trap_control.sv",
         "rtl/core/pipeline_cpu.sv",
         "dv/lint/pipeline_cpu_lint_top.sv"
       ],
-      "timeout_seconds": 120
+      "timeout_seconds": 120,
+      "defines": [
+        "RV32_CORE_LEGACY_PORTS"
+      ]
     },
     {
       "name": "basys3_board_shell",
@@ -762,6 +783,9 @@
       "top": "timer",
       "sources": [
         "rtl/peripherals/timer.sv"
+      ],
+      "defines": [
+        "RV32_TIMER_LEGACY_PORTS"
       ]
     },
     {
@@ -784,6 +808,8 @@
         "rtl/core/pipeline_core.sv",
         "rtl/core/forwarding_unit.sv",
         "rtl/core/hazard_unit.sv",
+        "rtl/core/csr_file.sv",
+        "rtl/core/trap_control.sv",
         "rtl/core/pipeline_cpu.sv",
         "rtl/memory/boot_rom.sv",
         "rtl/memory/data_ram.sv",
@@ -801,6 +827,49 @@
         "fpga/basys3/soc_boot.mem"
       ],
       "timeout_seconds": 120
+    },
+    {
+      "name": "csr_state",
+      "top": "csr_lint_top",
+      "sources": [
+        "rtl/core/csr_file.sv",
+        "dv/lint/csr_lint_top.sv"
+      ]
+    },
+    {
+      "name": "trap_admission",
+      "top": "trap_control",
+      "sources": [
+        "rtl/core/trap_control.sv"
+      ]
+    },
+    {
+      "name": "enabled_pipeline",
+      "top": "pipeline_irq_lint_top",
+      "sources": [
+        "rtl/core/rv32_pkg.sv",
+        "rtl/core/decoder.sv",
+        "rtl/core/alu.sv",
+        "rtl/core/regfile.sv",
+        "rtl/core/branch_unit.sv",
+        "rtl/core/lsu.sv",
+        "rtl/core/pipeline_core.sv",
+        "rtl/core/forwarding_unit.sv",
+        "rtl/core/hazard_unit.sv",
+        "rtl/core/csr_file.sv",
+        "rtl/core/trap_control.sv",
+        "rtl/core/pipeline_cpu.sv",
+        "dv/lint/pipeline_irq_lint_top.sv"
+      ],
+      "timeout_seconds": 120
+    },
+    {
+      "name": "timer_irq_state",
+      "top": "timer_irq_lint_top",
+      "sources": [
+        "rtl/peripherals/timer.sv",
+        "dv/lint/timer_irq_lint_top.sv"
+      ]
     }
   ],
   "designs": [

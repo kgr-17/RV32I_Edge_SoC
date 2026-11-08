@@ -1,0 +1,911 @@
+{
+  "profile": "mmio",
+  "status": "PASS",
+  "started_utc": "20261108T020542326181Z",
+  "base_commit": "f9d05e0966b2016d631164de1cff71e260a0b553",
+  "scope": "Standalone synchronized GPIO and free-running timer, two independent bus channels; no SoC/IRQ",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\versions",
+      "started_utc": "2026-11-08T02:05:42.432477+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "git version 2.48.1.windows.1\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.109
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\versions\\xvlog",
+      "started_utc": "2026-11-08T02:05:42.554496+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.609
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\versions\\xelab",
+      "started_utc": "2026-11-08T02:05:43.189785+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.578
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\versions\\xsim",
+      "started_utc": "2026-11-08T02:05:43.786716+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2025 Xilinx, Inc. All Rights Reserved.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.484
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\input_sync.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\gpio.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\timer.sv",
+        "C:\\RV32I_Edge_SoC\\dv\\integration\\tb_mmio.sv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\simulation",
+      "started_utc": "2026-11-08T02:05:44.302054+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "INFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/input_sync.sv\" into library work\nINFO: [VRFC 10-311] analyzing module input_sync\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/gpio.sv\" into library work\nINFO: [VRFC 10-311] analyzing module gpio\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/timer.sv\" into library work\nINFO: [VRFC 10-311] analyzing module timer\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/integration/tb_mmio.sv\" into library work\nINFO: [VRFC 10-311] analyzing module tb_mmio\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.703
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "work.tb_mmio",
+        "--snapshot",
+        "mmio",
+        "--timescale",
+        "1ns/1ps",
+        "--debug",
+        "typical"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\simulation",
+      "started_utc": "2026-11-08T02:05:45.011707+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nRunning: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_mmio --snapshot mmio --timescale 1ns/1ps --debug typical \nMulti-threading is on. Using 26 slave threads.\nStarting static elaboration\nPass Through NonSizing Optimizer\nCompleted static elaboration\nStarting simulation data flow analysis\nCompleted simulation data flow analysis\nTime Resolution for simulation is 1ps\nCompiling module work.input_sync_default\nCompiling module work.gpio\nCompiling module work.timer\nCompiling module work.tb_mmio\nBuilt simulation snapshot mmio\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 1.625
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "mmio",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\simulation\\seed_1.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\simulation",
+      "started_utc": "2026-11-08T02:05:46.711097+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:05:47 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/mmio/xsim_script.tcl\n# xsim {mmio} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/seed_1.txt -wdb {C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/seed_1.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl\n## log_wave /tb_mmio/clk /tb_mmio/rst /tb_mmio/switches /tb_mmio/leds /tb_mmio/gv /tb_mmio/ga /tb_mmio/gw /tb_mmio/gd /tb_mmio/gb /tb_mmio/gr /tb_mmio/gq /tb_mmio/gs /tb_mmio/gdata /tb_mmio/ge /tb_mmio/tv /tb_mmio/ta /tb_mmio/tw /tb_mmio/td /tb_mmio/tb /tb_mmio/tr /tb_mmio/tq /tb_mmio/ts /tb_mmio/tdata /tb_mmio/te\n## run all\nMMIO_SIM_PASS seed=1 checked=4648\n$finish called at time : 46486 ns : File \"C:/RV32I_Edge_SoC/dv/integration/tb_mmio.sv\" Line 49\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sat Nov  7 18:05:49 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.515,
+      "argument_file": {
+        "path": "build\\T028\\mmio-20261108T020542326181Z\\simulation\\seed_1.args",
+        "sha256": "c7fa859ce3f2b729552b5c8d1d5264db3608d4a723c7d361fd0cbf6cec499758",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/seed_1.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/seed_1.wdb\n",
+        "intended_argv": [
+          "mmio",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/seed_1.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/seed_1.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "mmio",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\simulation\\seed_20261106.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\simulation",
+      "started_utc": "2026-11-08T02:05:49.313776+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:05:49 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/mmio/xsim_script.tcl\n# xsim {mmio} -testplusarg SEED=20261106 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/seed_20261106.txt -wdb {C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/seed_20261106.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl} -onfinish quit -onerror quit -sv_seed 20261106\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl\n## log_wave /tb_mmio/clk /tb_mmio/rst /tb_mmio/switches /tb_mmio/leds /tb_mmio/gv /tb_mmio/ga /tb_mmio/gw /tb_mmio/gd /tb_mmio/gb /tb_mmio/gr /tb_mmio/gq /tb_mmio/gs /tb_mmio/gdata /tb_mmio/ge /tb_mmio/tv /tb_mmio/ta /tb_mmio/tw /tb_mmio/td /tb_mmio/tb /tb_mmio/tr /tb_mmio/tq /tb_mmio/ts /tb_mmio/tdata /tb_mmio/te\n## run all\nMMIO_SIM_PASS seed=20261106 checked=4647\n$finish called at time : 46476 ns : File \"C:/RV32I_Edge_SoC/dv/integration/tb_mmio.sv\" Line 49\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sat Nov  7 18:05:51 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.547,
+      "argument_file": {
+        "path": "build\\T028\\mmio-20261108T020542326181Z\\simulation\\seed_20261106.args",
+        "sha256": "3864d7f83e98a7044c34950307bdda6aeeef6ec1a21ace39c7153149ae4a8cf6",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n20261106\n--testplusarg\nSEED=20261106\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/seed_20261106.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/seed_20261106.wdb\n",
+        "intended_argv": [
+          "mmio",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "20261106",
+          "--testplusarg",
+          "SEED=20261106",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/seed_20261106.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/seed_20261106.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "mmio",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\simulation\\wrong-led-effect.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\simulation",
+      "started_utc": "2026-11-08T02:05:51.887037+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:05:52 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/mmio/xsim_script.tcl\n# xsim {mmio} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/wrong-led-effect.txt -wdb {C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/wrong-led-effect.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl\n## log_wave /tb_mmio/clk /tb_mmio/rst /tb_mmio/switches /tb_mmio/leds /tb_mmio/gv /tb_mmio/ga /tb_mmio/gw /tb_mmio/gd /tb_mmio/gb /tb_mmio/gr /tb_mmio/gq /tb_mmio/gs /tb_mmio/gdata /tb_mmio/ge /tb_mmio/tv /tb_mmio/ta /tb_mmio/tw /tb_mmio/td /tb_mmio/tb /tb_mmio/tr /tb_mmio/tq /tb_mmio/ts /tb_mmio/tdata /tb_mmio/te\n## run all\nFatal: MMIO_MISMATCH phase=post checked=22\nTime: 236 ns  Iteration: 0  Process: /tb_mmio/Initial31_6  Scope: tb_mmio  File: C:/RV32I_Edge_SoC/dv/integration/tb_mmio.sv Line: 44\n$finish called at time : 236 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sat Nov  7 18:05:54 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.453,
+      "argument_file": {
+        "path": "build\\T028\\mmio-20261108T020542326181Z\\simulation\\wrong-led-effect.args",
+        "sha256": "66784ba8ef0a289c8b6c1c34ebb3a40758d452e5c5ae255a34cb0c87e0a50bcc",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/wrong-led-effect.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/wrong-led-effect.wdb\n",
+        "intended_argv": [
+          "mmio",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/wrong-led-effect.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/wrong-led-effect.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "mmio",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\simulation\\empty.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\simulation",
+      "started_utc": "2026-11-08T02:05:54.353640+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:05:54 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/mmio/xsim_script.tcl\n# xsim {mmio} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/empty.txt -wdb {C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/empty.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl\n## log_wave /tb_mmio/clk /tb_mmio/rst /tb_mmio/switches /tb_mmio/leds /tb_mmio/gv /tb_mmio/ga /tb_mmio/gw /tb_mmio/gd /tb_mmio/gb /tb_mmio/gr /tb_mmio/gq /tb_mmio/gs /tb_mmio/gdata /tb_mmio/ge /tb_mmio/tv /tb_mmio/ta /tb_mmio/tw /tb_mmio/td /tb_mmio/tb /tb_mmio/tr /tb_mmio/tq /tb_mmio/ts /tb_mmio/tdata /tb_mmio/te\n## run all\nFatal: MMIO_EMPTY_VECTORS\nTime: 0 ps  Iteration: 0  Process: /tb_mmio/Initial31_6  Scope: tb_mmio  File: C:/RV32I_Edge_SoC/dv/integration/tb_mmio.sv Line: 47\n$finish called at time : 0 fs\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sat Nov  7 18:05:56 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.454,
+      "argument_file": {
+        "path": "build\\T028\\mmio-20261108T020542326181Z\\simulation\\empty.args",
+        "sha256": "d6e8f37a7f6eb26450610d59767d99ff29852cf916c24ce136a658a4ec0f05ac",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/empty.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/empty.wdb\n",
+        "intended_argv": [
+          "mmio",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/empty.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/empty.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "mmio",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\simulation\\truncated.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\simulation",
+      "started_utc": "2026-11-08T02:05:56.828606+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:05:57 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/mmio/xsim_script.tcl\n# xsim {mmio} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/truncated.txt -wdb {C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/truncated.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl\n## log_wave /tb_mmio/clk /tb_mmio/rst /tb_mmio/switches /tb_mmio/leds /tb_mmio/gv /tb_mmio/ga /tb_mmio/gw /tb_mmio/gd /tb_mmio/gb /tb_mmio/gr /tb_mmio/gq /tb_mmio/gs /tb_mmio/gdata /tb_mmio/ge /tb_mmio/tv /tb_mmio/ta /tb_mmio/tw /tb_mmio/td /tb_mmio/tb /tb_mmio/tr /tb_mmio/tq /tb_mmio/ts /tb_mmio/tdata /tb_mmio/te\n## run all\nFatal: MMIO_MALFORMED_VECTOR\nTime: 16 ns  Iteration: 0  Process: /tb_mmio/Initial31_6  Scope: tb_mmio  File: C:/RV32I_Edge_SoC/dv/integration/tb_mmio.sv Line: 48\n$finish called at time : 16 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sat Nov  7 18:05:59 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.485,
+      "argument_file": {
+        "path": "build\\T028\\mmio-20261108T020542326181Z\\simulation\\truncated.args",
+        "sha256": "71cadc0af802596b938da49febb6f9aa93be6c052ba26f273d94463cf9c41982",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/truncated.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/truncated.wdb\n",
+        "intended_argv": [
+          "mmio",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/truncated.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/truncated.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\input_sync.sv",
+        "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\mutation-gpio-set-toggle\\gpio.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\timer.sv",
+        "C:\\RV32I_Edge_SoC\\dv\\integration\\tb_mmio.sv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\mutation-gpio-set-toggle",
+      "started_utc": "2026-11-08T02:05:59.328281+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "INFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/input_sync.sv\" into library work\nINFO: [VRFC 10-311] analyzing module input_sync\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/mutation-gpio-set-toggle/gpio.sv\" into library work\nINFO: [VRFC 10-311] analyzing module gpio\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/timer.sv\" into library work\nINFO: [VRFC 10-311] analyzing module timer\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/integration/tb_mmio.sv\" into library work\nINFO: [VRFC 10-311] analyzing module tb_mmio\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.703
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "work.tb_mmio",
+        "--snapshot",
+        "mmio",
+        "--timescale",
+        "1ns/1ps",
+        "--debug",
+        "typical"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\mutation-gpio-set-toggle",
+      "started_utc": "2026-11-08T02:06:00.034240+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nRunning: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_mmio --snapshot mmio --timescale 1ns/1ps --debug typical \nMulti-threading is on. Using 26 slave threads.\nStarting static elaboration\nPass Through NonSizing Optimizer\nCompleted static elaboration\nStarting simulation data flow analysis\nCompleted simulation data flow analysis\nTime Resolution for simulation is 1ps\nCompiling module work.input_sync_default\nCompiling module work.gpio\nCompiling module work.timer\nCompiling module work.tb_mmio\nBuilt simulation snapshot mmio\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 1.719
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "mmio",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\mutation-gpio-set-toggle\\gpio-set-toggle.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\mutation-gpio-set-toggle",
+      "started_utc": "2026-11-08T02:06:01.769722+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:06:02 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/mmio/xsim_script.tcl\n# xsim {mmio} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/mutation-gpio-set-toggle/vectors.txt -wdb {C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/mutation-gpio-set-toggle/gpio-set-toggle.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl\n## log_wave /tb_mmio/clk /tb_mmio/rst /tb_mmio/switches /tb_mmio/leds /tb_mmio/gv /tb_mmio/ga /tb_mmio/gw /tb_mmio/gd /tb_mmio/gb /tb_mmio/gr /tb_mmio/gq /tb_mmio/gs /tb_mmio/gdata /tb_mmio/ge /tb_mmio/tv /tb_mmio/ta /tb_mmio/tw /tb_mmio/td /tb_mmio/tb /tb_mmio/tr /tb_mmio/tq /tb_mmio/ts /tb_mmio/tdata /tb_mmio/te\n## run all\nFatal: MMIO_MISMATCH phase=post checked=24\nTime: 256 ns  Iteration: 0  Process: /tb_mmio/Initial31_6  Scope: tb_mmio  File: C:/RV32I_Edge_SoC/dv/integration/tb_mmio.sv Line: 44\n$finish called at time : 256 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sat Nov  7 18:06:04 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.485,
+      "argument_file": {
+        "path": "build\\T028\\mmio-20261108T020542326181Z\\mutation-gpio-set-toggle\\gpio-set-toggle.args",
+        "sha256": "2e96fa72ee02d076d98abc3dcdb2126a3dcc829e6f38a91eeb661d9be3b8c6b1",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/mutation-gpio-set-toggle/vectors.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/mutation-gpio-set-toggle/gpio-set-toggle.wdb\n",
+        "intended_argv": [
+          "mmio",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/mutation-gpio-set-toggle/vectors.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/mutation-gpio-set-toggle/gpio-set-toggle.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\input_sync.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\gpio.sv",
+        "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\mutation-timer-clear-priority\\timer.sv",
+        "C:\\RV32I_Edge_SoC\\dv\\integration\\tb_mmio.sv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\mutation-timer-clear-priority",
+      "started_utc": "2026-11-08T02:06:04.280343+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "INFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/input_sync.sv\" into library work\nINFO: [VRFC 10-311] analyzing module input_sync\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/gpio.sv\" into library work\nINFO: [VRFC 10-311] analyzing module gpio\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/mutation-timer-clear-priority/timer.sv\" into library work\nINFO: [VRFC 10-311] analyzing module timer\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/integration/tb_mmio.sv\" into library work\nINFO: [VRFC 10-311] analyzing module tb_mmio\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.703
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "work.tb_mmio",
+        "--snapshot",
+        "mmio",
+        "--timescale",
+        "1ns/1ps",
+        "--debug",
+        "typical"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\mutation-timer-clear-priority",
+      "started_utc": "2026-11-08T02:06:04.989630+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nRunning: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_mmio --snapshot mmio --timescale 1ns/1ps --debug typical \nMulti-threading is on. Using 26 slave threads.\nStarting static elaboration\nPass Through NonSizing Optimizer\nCompleted static elaboration\nStarting simulation data flow analysis\nCompleted simulation data flow analysis\nTime Resolution for simulation is 1ps\nCompiling module work.input_sync_default\nCompiling module work.gpio\nCompiling module work.timer\nCompiling module work.tb_mmio\nBuilt simulation snapshot mmio\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 1.578
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "mmio",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\mutation-timer-clear-priority\\timer-clear-priority.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\mutation-timer-clear-priority",
+      "started_utc": "2026-11-08T02:06:06.581602+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:06:07 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/mmio/xsim_script.tcl\n# xsim {mmio} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/mutation-timer-clear-priority/vectors.txt -wdb {C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/mutation-timer-clear-priority/timer-clear-priority.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl\n## log_wave /tb_mmio/clk /tb_mmio/rst /tb_mmio/switches /tb_mmio/leds /tb_mmio/gv /tb_mmio/ga /tb_mmio/gw /tb_mmio/gd /tb_mmio/gb /tb_mmio/gr /tb_mmio/gq /tb_mmio/gs /tb_mmio/gdata /tb_mmio/ge /tb_mmio/tv /tb_mmio/ta /tb_mmio/tw /tb_mmio/td /tb_mmio/tb /tb_mmio/tr /tb_mmio/tq /tb_mmio/ts /tb_mmio/tdata /tb_mmio/te\n## run all\nFatal: MMIO_MISMATCH phase=post checked=433\nTime: 4346 ns  Iteration: 0  Process: /tb_mmio/Initial31_6  Scope: tb_mmio  File: C:/RV32I_Edge_SoC/dv/integration/tb_mmio.sv Line: 44\n$finish called at time : 4346 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sat Nov  7 18:06:08 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.453,
+      "argument_file": {
+        "path": "build\\T028\\mmio-20261108T020542326181Z\\mutation-timer-clear-priority\\timer-clear-priority.args",
+        "sha256": "96aea8c941973601574af0bc675dcc2fc463f00379b292bb81971e425468f2ee",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/mutation-timer-clear-priority/vectors.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/mutation-timer-clear-priority/timer-clear-priority.wdb\n",
+        "intended_argv": [
+          "mmio",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/mutation-timer-clear-priority/vectors.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/mutation-timer-clear-priority/timer-clear-priority.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\input_sync.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\gpio.sv",
+        "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\mutation-timer-count-priority\\timer.sv",
+        "C:\\RV32I_Edge_SoC\\dv\\integration\\tb_mmio.sv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\mutation-timer-count-priority",
+      "started_utc": "2026-11-08T02:06:09.072723+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "INFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/input_sync.sv\" into library work\nINFO: [VRFC 10-311] analyzing module input_sync\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/gpio.sv\" into library work\nINFO: [VRFC 10-311] analyzing module gpio\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/mutation-timer-count-priority/timer.sv\" into library work\nINFO: [VRFC 10-311] analyzing module timer\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/integration/tb_mmio.sv\" into library work\nINFO: [VRFC 10-311] analyzing module tb_mmio\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.703
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "work.tb_mmio",
+        "--snapshot",
+        "mmio",
+        "--timescale",
+        "1ns/1ps",
+        "--debug",
+        "typical"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\mutation-timer-count-priority",
+      "started_utc": "2026-11-08T02:06:09.784251+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nRunning: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_mmio --snapshot mmio --timescale 1ns/1ps --debug typical \nMulti-threading is on. Using 26 slave threads.\nStarting static elaboration\nPass Through NonSizing Optimizer\nCompleted static elaboration\nStarting simulation data flow analysis\nCompleted simulation data flow analysis\nTime Resolution for simulation is 1ps\nCompiling module work.input_sync_default\nCompiling module work.gpio\nCompiling module work.timer\nCompiling module work.tb_mmio\nBuilt simulation snapshot mmio\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 1.578
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "mmio",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\mutation-timer-count-priority\\timer-count-priority.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T028\\mmio-20261108T020542326181Z\\mutation-timer-count-priority",
+      "started_utc": "2026-11-08T02:06:11.374302+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:06:11 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/mmio/xsim_script.tcl\n# xsim {mmio} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/mutation-timer-count-priority/vectors.txt -wdb {C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/mutation-timer-count-priority/timer-count-priority.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl\n## log_wave /tb_mmio/clk /tb_mmio/rst /tb_mmio/switches /tb_mmio/leds /tb_mmio/gv /tb_mmio/ga /tb_mmio/gw /tb_mmio/gd /tb_mmio/gb /tb_mmio/gr /tb_mmio/gq /tb_mmio/gs /tb_mmio/gdata /tb_mmio/ge /tb_mmio/tv /tb_mmio/ta /tb_mmio/tw /tb_mmio/td /tb_mmio/tb /tb_mmio/tr /tb_mmio/tq /tb_mmio/ts /tb_mmio/tdata /tb_mmio/te\n## run all\nFatal: MMIO_MISMATCH phase=post checked=481\nTime: 4826 ns  Iteration: 0  Process: /tb_mmio/Initial31_6  Scope: tb_mmio  File: C:/RV32I_Edge_SoC/dv/integration/tb_mmio.sv Line: 44\n$finish called at time : 4826 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sat Nov  7 18:06:13 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.438,
+      "argument_file": {
+        "path": "build\\T028\\mmio-20261108T020542326181Z\\mutation-timer-count-priority\\timer-count-priority.args",
+        "sha256": "c9776f9d0ca979d9e0a2dd4667ce69b94593369707aa1691e1712097102f8f0a",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/mutation-timer-count-priority/vectors.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/mutation-timer-count-priority/timer-count-priority.wdb\n",
+        "intended_argv": [
+          "mmio",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/simulation/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/mutation-timer-count-priority/vectors.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T028/mmio-20261108T020542326181Z/mutation-timer-count-priority/timer-count-priority.wdb"
+        ]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "Pinned Python version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned tzdata version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned Git version",
+      "status": "PASS",
+      "command_index": 0
+    },
+    {
+      "name": "Pinned xvlog version",
+      "status": "PASS",
+      "command_index": 1
+    },
+    {
+      "name": "Pinned xelab version",
+      "status": "PASS",
+      "command_index": 2
+    },
+    {
+      "name": "Pinned xsim version",
+      "status": "PASS",
+      "command_index": 3
+    },
+    {
+      "name": "Actual GPIO/timer SystemVerilog compile",
+      "status": "PASS",
+      "command_index": 4
+    },
+    {
+      "name": "Actual MMIO elaboration",
+      "status": "PASS",
+      "command_index": 5
+    },
+    {
+      "name": "Counted nonempty MMIO corpus",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Required MMIO/collision scenarios",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Executable timer priority witnesses",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Independent MMIO pre/post seed=1",
+      "status": "PASS",
+      "command_index": 6
+    },
+    {
+      "name": "Positive MMIO waveform",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Counted nonempty MMIO corpus",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Required MMIO/collision scenarios",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Executable timer priority witnesses",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Independent MMIO pre/post seed=20261106",
+      "status": "PASS",
+      "command_index": 7
+    },
+    {
+      "name": "Positive MMIO waveform",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual MMIO negative wrong-led-effect",
+      "status": "PASS",
+      "command_index": 8
+    },
+    {
+      "name": "Negative MMIO waveform",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual MMIO negative empty",
+      "status": "PASS",
+      "command_index": 9
+    },
+    {
+      "name": "Negative MMIO waveform",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual MMIO negative truncated",
+      "status": "PASS",
+      "command_index": 10
+    },
+    {
+      "name": "Negative MMIO waveform",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Unique mutation gpio-set-toggle",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual mutant compile gpio-set-toggle",
+      "status": "PASS",
+      "command_index": 11
+    },
+    {
+      "name": "Actual mutant elaborate gpio-set-toggle",
+      "status": "PASS",
+      "command_index": 12
+    },
+    {
+      "name": "Actual priority/SET fault detected gpio-set-toggle",
+      "status": "PASS",
+      "command_index": 13
+    },
+    {
+      "name": "Saved mutation artifact gpio.sv",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Saved mutation artifact vectors.txt",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Saved mutation artifact gpio-set-toggle.wdb",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Unique mutation timer-clear-priority",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual mutant compile timer-clear-priority",
+      "status": "PASS",
+      "command_index": 14
+    },
+    {
+      "name": "Actual mutant elaborate timer-clear-priority",
+      "status": "PASS",
+      "command_index": 15
+    },
+    {
+      "name": "Actual priority/SET fault detected timer-clear-priority",
+      "status": "PASS",
+      "command_index": 16
+    },
+    {
+      "name": "Saved mutation artifact timer.sv",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Saved mutation artifact vectors.txt",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Saved mutation artifact timer-clear-priority.wdb",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Unique mutation timer-count-priority",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual mutant compile timer-count-priority",
+      "status": "PASS",
+      "command_index": 17
+    },
+    {
+      "name": "Actual mutant elaborate timer-count-priority",
+      "status": "PASS",
+      "command_index": 18
+    },
+    {
+      "name": "Actual priority/SET fault detected timer-count-priority",
+      "status": "PASS",
+      "command_index": 19
+    },
+    {
+      "name": "Saved mutation artifact timer.sv",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Saved mutation artifact vectors.txt",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Saved mutation artifact timer-count-priority.wdb",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "MMIO source bindings unchanged",
+      "status": "PASS",
+      "command_index": null
+    }
+  ],
+  "simulations": [
+    {
+      "seed": 1,
+      "checked_vectors": 4648,
+      "vector_path": "build/T028/mmio-20261108T020542326181Z/simulation/seed_1.txt",
+      "vector_sha256": "08b4c9d68daefbf01dc3246d72314b02109b58ecb48bbf5009ad1ddaad3255bd",
+      "waveform": "build/T028/mmio-20261108T020542326181Z/simulation/seed_1.wdb",
+      "waveform_sha256": "dd8ff6e5f450b9df2f1bf8eac0f184750c43c0fb90d54371bf34386faefda3a2"
+    },
+    {
+      "seed": 20261106,
+      "checked_vectors": 4647,
+      "vector_path": "build/T028/mmio-20261108T020542326181Z/simulation/seed_20261106.txt",
+      "vector_sha256": "ea77aa8ccb5dff881ebd7befab39f1d8791153ca42a28a8ba1d9e8ca83b6da00",
+      "waveform": "build/T028/mmio-20261108T020542326181Z/simulation/seed_20261106.wdb",
+      "waveform_sha256": "7af267fdd11e4d06bd50543893409858ee8149addae3d7b18c43cc29daee080d"
+    }
+  ],
+  "excluded": [
+    "complete CDC/MTBF",
+    "SoC/compiled firmware",
+    "interrupts",
+    "full regression",
+    "formal",
+    "routed timing",
+    "hardware",
+    "ASIC"
+  ],
+  "source_sha256": {
+    "rtl/peripherals/input_sync.sv": "75a1f76a6c5d736ca4a1ef88423174c08469a287ee973a48e1f3e910361b86dc",
+    "rtl/peripherals/gpio.sv": "35bc4643d638962f99ff0c9fe199743c70ace4bd32544419c91e31af5495c5fd",
+    "rtl/peripherals/timer.sv": "9ec9e9c51587f10c7116646c45feb0ff8983d82cac8241b13e131c090432e03d",
+    "dv/integration/tb_mmio.sv": "8ebc3aef41eb896c77690697d23f5c362768dd2e021a468672abf329ec68c16d",
+    "dv/integration/test_mmio.py": "d4235a1bd283b3ed527e5b81f23f86cc7d2bb15f5972f3025d800b31a29ac373",
+    "scripts/mmio_checks.py": "c02cb0c4706c8a865e32b890d3e085f6bf22680e87d42dd6aaee90de113db017",
+    "scripts/rtl_checks.py": "f38cce3647f592f7c5ad915f56e65ec0782ace2faf75ce3cf549977bca6270e0",
+    "scripts/tool_runner.py": "2ffc6d2c8d4be6b21f5b836a033b6971f44f9172d22b18378ade58498ec4d5f7",
+    "scripts/tool_child.py": "8a61d7f13507a0d41b838aef00b1488e9ecc0b535ff9a08caca729b0551b62a8",
+    ".harness/checks.json": "66e7be7dbc460c283dd0d57d0fbb2106952428895509b103de5e4bed8e892d78",
+    "config/rtl_checks.json": "fffee851a3d91b7a9625bb4e21fe57850162eee16b289ba6897079584b459d40",
+    "docs/ARCH_CONTRACT.json": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03"
+  },
+  "pins": {
+    "schema_version": 1,
+    "python_version": "3.9.13",
+    "git_version": "2.48.1.windows.1",
+    "tzdata_version": "2026.2",
+    "vivado_version": "2025.2",
+    "vivado_sw_build": "6299465"
+  },
+  "seed_reports": [
+    {
+      "seed": 1,
+      "summary": "build/T028/mmio-20261108T020542326181Z/simulation/seed_1_summary.json"
+    },
+    {
+      "seed": 20261106,
+      "summary": "build/T028/mmio-20261108T020542326181Z/simulation/seed_20261106_summary.json"
+    }
+  ],
+  "artifacts": {
+    "build/T028/mmio-20261108T020542326181Z/simulation/run.tcl": "f976b1b511c2b44dc30f10b556658011479c8697b899949a6ea503a6cbb62356",
+    "build/T028/mmio-20261108T020542326181Z/simulation/seed_1_summary.json": "4cb61689d8d1e5f7bd73aa6b627d9ec29d1b1a88bf6ffd2fe1daa7b651c7f75e",
+    "build/T028/mmio-20261108T020542326181Z/simulation/seed_20261106_summary.json": "1175ec13dc3f5142d7ef0d06f79782084f8ba0a55f205147e31645f02dc35742",
+    "build/T028/mmio-20261108T020542326181Z/simulation/wrong-led-effect.txt": "9ed56d1e8ab9e2f3336a70ca40695ff11d1e7491f605901c7c86a23f6494a039",
+    "build/T028/mmio-20261108T020542326181Z/simulation/wrong-led-effect.wdb": "5dabb2f585a6099a86380b864d7f1d916e958277aa159d4184c3364b576f052a",
+    "build/T028/mmio-20261108T020542326181Z/simulation/empty.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build/T028/mmio-20261108T020542326181Z/simulation/empty.wdb": "a665dd8115e04b7e80aa1b868f05eac5d57e2d6ab0be0bb2869408634df6a9a0",
+    "build/T028/mmio-20261108T020542326181Z/simulation/truncated.txt": "f7dafdc4a693dde7fd561b9c8be512258bc5840d5bdf5072338db7bbe7882666",
+    "build/T028/mmio-20261108T020542326181Z/simulation/truncated.wdb": "e67b4a3e48ac1f0646e9f6cebf6b6d1714bec26fc82705e5778885c9ab85cb57",
+    "build/T028/mmio-20261108T020542326181Z/mutation-gpio-set-toggle/gpio.sv": "a69adc9efbd7c8319e0e15b6eb6e2272cf46eee3d07c57a54a431e91c07ddaba",
+    "build/T028/mmio-20261108T020542326181Z/mutation-gpio-set-toggle/vectors.txt": "08b4c9d68daefbf01dc3246d72314b02109b58ecb48bbf5009ad1ddaad3255bd",
+    "build/T028/mmio-20261108T020542326181Z/mutation-gpio-set-toggle/gpio-set-toggle.wdb": "49f11c51b684e8ac4b0f58792aa791814d7c4a5cb98409ca9c9190e2687e4458",
+    "build/T028/mmio-20261108T020542326181Z/mutation-timer-clear-priority/timer.sv": "ce1753d3af06c3edd56b4da1c9783c733b31a659b7e82385be4e54e7cf945511",
+    "build/T028/mmio-20261108T020542326181Z/mutation-timer-clear-priority/vectors.txt": "08b4c9d68daefbf01dc3246d72314b02109b58ecb48bbf5009ad1ddaad3255bd",
+    "build/T028/mmio-20261108T020542326181Z/mutation-timer-clear-priority/timer-clear-priority.wdb": "4ed51583e93d9cdebd139c461f754dc5f1d1d18753c1a6697f093a8346bb3bf6",
+    "build/T028/mmio-20261108T020542326181Z/mutation-timer-count-priority/timer.sv": "9ec823f9a2bc52d36823c096044e78486de25e5f522fa401f9ea457857c08f03",
+    "build/T028/mmio-20261108T020542326181Z/mutation-timer-count-priority/vectors.txt": "08b4c9d68daefbf01dc3246d72314b02109b58ecb48bbf5009ad1ddaad3255bd",
+    "build/T028/mmio-20261108T020542326181Z/mutation-timer-count-priority/timer-count-priority.wdb": "f53cab3ee848fa3c79f8129338c2e8f545972409a825c4cbd502aa6355a7afb4"
+  },
+  "finished_utc": "2026-11-08T02:06:13.842324+00:00"
+}

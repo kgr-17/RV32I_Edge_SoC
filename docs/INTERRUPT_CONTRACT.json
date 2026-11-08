@@ -1,0 +1,412 @@
+{
+  "version": "0.3",
+  "status": "owner_approved_implementation_target",
+  "approval_task": "T044",
+  "approval_evidence": "evidence/owner_reviews/T044-2026-11-07-authorization.json",
+  "approved_spec_sha256": "86dca0ef075734c57029be58c8a4f75a63540ef18384017489db3e2a4626c17d",
+  "legacy_contract_sha256": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03",
+  "configuration": {
+    "core_default_enable_traps": 0,
+    "soc_default_enable_traps": 0,
+    "canonical_top_default_enable_traps": 1,
+    "enabled_image": "irq_boot.mem",
+    "legacy_image": "soc_boot.mem",
+    "legacy_expected_behavior": "v0.2 unchanged"
+  },
+  "target": {
+    "part": "xc7a35tcpg236-1",
+    "clock_period_ns": 10,
+    "physical_ports": 36
+  },
+  "core_ports": [
+    {
+      "name": "clk_i",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "rst_i",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "imem_req_valid_o",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "imem_req_ready_i",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "imem_req_addr_o",
+      "direction": "output",
+      "width": 32
+    },
+    {
+      "name": "imem_rsp_valid_i",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "imem_rsp_ready_o",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "imem_rsp_rdata_i",
+      "direction": "input",
+      "width": 32
+    },
+    {
+      "name": "imem_rsp_err_i",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "dmem_req_valid_o",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "dmem_req_ready_i",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "dmem_req_addr_o",
+      "direction": "output",
+      "width": 32
+    },
+    {
+      "name": "dmem_req_write_o",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "dmem_req_wdata_o",
+      "direction": "output",
+      "width": 32
+    },
+    {
+      "name": "dmem_req_be_o",
+      "direction": "output",
+      "width": 4
+    },
+    {
+      "name": "dmem_rsp_valid_i",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "dmem_rsp_ready_o",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "dmem_rsp_rdata_i",
+      "direction": "input",
+      "width": 32
+    },
+    {
+      "name": "dmem_rsp_err_i",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "retire_valid_o",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "retire_order_o",
+      "direction": "output",
+      "width": 64
+    },
+    {
+      "name": "retire_pc_o",
+      "direction": "output",
+      "width": 32
+    },
+    {
+      "name": "retire_next_pc_o",
+      "direction": "output",
+      "width": 32
+    },
+    {
+      "name": "retire_insn_o",
+      "direction": "output",
+      "width": 32
+    },
+    {
+      "name": "retire_rd_write_o",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "retire_rd_o",
+      "direction": "output",
+      "width": 5
+    },
+    {
+      "name": "retire_rd_wdata_o",
+      "direction": "output",
+      "width": 32
+    },
+    {
+      "name": "retire_mem_valid_o",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "retire_mem_write_o",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "retire_mem_addr_o",
+      "direction": "output",
+      "width": 32
+    },
+    {
+      "name": "retire_mem_be_o",
+      "direction": "output",
+      "width": 4
+    },
+    {
+      "name": "retire_mem_wdata_o",
+      "direction": "output",
+      "width": 32
+    },
+    {
+      "name": "retire_mem_rdata_o",
+      "direction": "output",
+      "width": 32
+    },
+    {
+      "name": "fault_valid_o",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "fault_pc_o",
+      "direction": "output",
+      "width": 32
+    },
+    {
+      "name": "fault_insn_o",
+      "direction": "output",
+      "width": 32
+    },
+    {
+      "name": "fault_code_o",
+      "direction": "output",
+      "width": 4
+    },
+    {
+      "name": "fault_tval_o",
+      "direction": "output",
+      "width": 32
+    },
+    {
+      "name": "irq_external_i",
+      "direction": "input",
+      "width": 1
+    },
+    {
+      "name": "trap_valid_o",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "trap_order_o",
+      "direction": "output",
+      "width": 64
+    },
+    {
+      "name": "trap_pc_o",
+      "direction": "output",
+      "width": 32
+    },
+    {
+      "name": "trap_insn_o",
+      "direction": "output",
+      "width": 32
+    },
+    {
+      "name": "trap_cause_o",
+      "direction": "output",
+      "width": 32
+    },
+    {
+      "name": "trap_tval_o",
+      "direction": "output",
+      "width": 32
+    },
+    {
+      "name": "trap_target_o",
+      "direction": "output",
+      "width": 32
+    },
+    {
+      "name": "retire_csr_valid_o",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "retire_csr_read_o",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "retire_csr_write_o",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "name": "retire_csr_addr_o",
+      "direction": "output",
+      "width": 12
+    },
+    {
+      "name": "retire_csr_rdata_o",
+      "direction": "output",
+      "width": 32
+    },
+    {
+      "name": "retire_csr_wdata_o",
+      "direction": "output",
+      "width": 32
+    }
+  ],
+  "csrs": [
+    {
+      "address": 768,
+      "name": "mstatus",
+      "reset": 6144,
+      "write_mask": 136,
+      "register_read_only": false
+    },
+    {
+      "address": 769,
+      "name": "misa",
+      "reset": 1073742080,
+      "write_mask": 0,
+      "register_read_only": false
+    },
+    {
+      "address": 772,
+      "name": "mie",
+      "reset": 0,
+      "write_mask": 2048,
+      "register_read_only": false
+    },
+    {
+      "address": 773,
+      "name": "mtvec",
+      "reset": 0,
+      "write_mask": 4294967292,
+      "register_read_only": false
+    },
+    {
+      "address": 784,
+      "name": "mstatush",
+      "reset": 0,
+      "write_mask": 0,
+      "register_read_only": false
+    },
+    {
+      "address": 832,
+      "name": "mscratch",
+      "reset": 0,
+      "write_mask": 4294967295,
+      "register_read_only": false
+    },
+    {
+      "address": 833,
+      "name": "mepc",
+      "reset": 0,
+      "write_mask": 4294967292,
+      "register_read_only": false
+    },
+    {
+      "address": 834,
+      "name": "mcause",
+      "reset": 0,
+      "write_mask": 4294967295,
+      "register_read_only": false
+    },
+    {
+      "address": 835,
+      "name": "mtval",
+      "reset": 0,
+      "write_mask": 4294967295,
+      "register_read_only": false
+    },
+    {
+      "address": 836,
+      "name": "mip",
+      "reset": 0,
+      "write_mask": 0,
+      "register_read_only": false
+    },
+    {
+      "address": 3857,
+      "name": "mvendorid",
+      "reset": 0,
+      "write_mask": 0,
+      "register_read_only": true
+    },
+    {
+      "address": 3858,
+      "name": "marchid",
+      "reset": 0,
+      "write_mask": 0,
+      "register_read_only": true
+    },
+    {
+      "address": 3859,
+      "name": "mimpid",
+      "reset": 0,
+      "write_mask": 0,
+      "register_read_only": true
+    },
+    {
+      "address": 3860,
+      "name": "mhartid",
+      "reset": 0,
+      "write_mask": 0,
+      "register_read_only": true
+    }
+  ],
+  "irq": {
+    "source": "custom32-bit timer sticky MATCH && IRQ_ENABLE",
+    "timer_ctrl_irq_bit": 2,
+    "timer_ctrl_reload_bit": 1,
+    "cause": 2147483659,
+    "pending_enable_bit": 11,
+    "level_recheck_at_empty_boundary": true,
+    "resume_pc": "last successful retirement next_pc",
+    "irq_ack": "timer W1C status or IRQ-enable masking"
+  },
+  "synchronous_cause_mapping": {
+    "1": 2,
+    "2": 0,
+    "3": 1,
+    "4": 4,
+    "5": 5,
+    "6": 6,
+    "7": 7,
+    "8": 11,
+    "9": 3
+  },
+  "internal_interfaces": {
+    "csr_file.trap_pc_i": "aligned instruction word address bits31:2 (30bits); core/trap observation PC remains32bits"
+  },
+  "evidence_boundaries": [
+    "implementation gates pending T045",
+    "T023 formal skipped/NOT RUN",
+    "full FPGA timing/power/CDC/bitstream, physical hardware and ASIC remain separate"
+  ]
+}

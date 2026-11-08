@@ -1,0 +1,12 @@
+{
+  "replay": "Extract into the same project paths, then python -B .tmp/t045_final_audit.py; do not replay the report helper on a different date. Audit is bound to the recorded T045 state and attempt.",
+  "files": {
+    ".tmp/t045_final_audit.py": "6a70f7a18b548e2c12e9c539d8f9083a7f49b459adbc1a4a210dea02945e52e0",
+    ".tmp/t045_pass_entry.py": "63b0dff97949f8359d5feb6f75d54282d9215e0e07375794d9cf629dd8b49f1f"
+  },
+  "zip_sha256": "489cba4a44756d5c960827ff519715840e22efbdb27f4736a743037b36a47f81",
+  "audit_helper_preparation_corrections": [
+    "Classify unchanged historical compiler discovery reference separately from current-attempt tools",
+    "Require the exact lint top inventory, including both register_fixture and negative_latch, not only the latter. No acceptance gate changed."
+  ]
+}

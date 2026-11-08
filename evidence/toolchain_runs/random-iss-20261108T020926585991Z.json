@@ -1,0 +1,5094 @@
+{
+  "profile": "random-iss",
+  "status": "PASS",
+  "started_utc": "20261108T020926585991Z",
+  "base_commit": "f9d05e0966b2016d631164de1cff71e260a0b553",
+  "scope": "Independent ISS vs actual executable pipeline random instructions retirement/fault and terminal-state trace",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T019\\random-iss-20261108T020926585991Z\\versions",
+      "started_utc": "2026-11-08T02:09:26.692949+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "git version 2.48.1.windows.1\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.11
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T019\\random-iss-20261108T020926585991Z\\versions\\xvlog",
+      "started_utc": "2026-11-08T02:09:26.816385+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.578
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T019\\random-iss-20261108T020926585991Z\\versions\\xelab",
+      "started_utc": "2026-11-08T02:09:27.423566+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.625
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T019\\random-iss-20261108T020926585991Z\\versions\\xsim",
+      "started_utc": "2026-11-08T02:09:28.060060+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2025 Xilinx, Inc. All Rights Reserved.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.484
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "C:\\RV32I_Edge_SoC\\scripts\\unit_checks.py",
+        "random"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T019\\random-iss-20261108T020926585991Z",
+      "started_utc": "2026-11-08T02:09:28.550184+00:00",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "{\n  \"status\": \"PASS\",\n  \"evidence\": \"evidence/toolchain_runs/random-20261108T020928840583Z.json\",\n  \"checks\": 29,\n  \"counts\": [\n    6596,\n    6590,\n    6616,\n    6578,\n    6602,\n    6604\n  ],\n  \"error\": null\n}\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 26.781
+    }
+  ],
+  "checks": [
+    {
+      "name": "Pinned Python version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned tzdata version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned Git version",
+      "status": "PASS",
+      "command_index": 0
+    },
+    {
+      "name": "Pinned xvlog version",
+      "status": "PASS",
+      "command_index": 1
+    },
+    {
+      "name": "Pinned xelab version",
+      "status": "PASS",
+      "command_index": 2
+    },
+    {
+      "name": "Pinned xsim version",
+      "status": "PASS",
+      "command_index": 3
+    },
+    {
+      "name": "Actual random unit backend passes",
+      "status": "PASS",
+      "command_index": 4
+    },
+    {
+      "name": "Nonempty complete actual random seed set",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Exact ordered configured seed set",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Exact simulated program seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Successful actual trace producer seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Independent ISS family/fault coverage seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual retirement/fault/GPR/RAM equality seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual trace mutations rejected seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual random-only forty-family coverage seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Streaming scoreboard rejects six actual errors seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Exact simulated program seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Successful actual trace producer seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Independent ISS family/fault coverage seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual retirement/fault/GPR/RAM equality seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual trace mutations rejected seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual random-only forty-family coverage seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Streaming scoreboard rejects six actual errors seed=7",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Exact simulated program seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Successful actual trace producer seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Independent ISS family/fault coverage seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual retirement/fault/GPR/RAM equality seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual trace mutations rejected seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual random-only forty-family coverage seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Streaming scoreboard rejects six actual errors seed=101",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Exact simulated program seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Successful actual trace producer seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Independent ISS family/fault coverage seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual retirement/fault/GPR/RAM equality seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual trace mutations rejected seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual random-only forty-family coverage seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Streaming scoreboard rejects six actual errors seed=20261102",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Exact simulated program seed=314159",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Successful actual trace producer seed=314159",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Independent ISS family/fault coverage seed=314159",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual retirement/fault/GPR/RAM equality seed=314159",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual trace mutations rejected seed=314159",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual random-only forty-family coverage seed=314159",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Streaming scoreboard rejects six actual errors seed=314159",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Exact simulated program seed=271828",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Successful actual trace producer seed=271828",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Independent ISS family/fault coverage seed=271828",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual retirement/fault/GPR/RAM equality seed=271828",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual trace mutations rejected seed=271828",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual random-only forty-family coverage seed=271828",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Streaming scoreboard rejects six actual errors seed=271828",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "ISS and simulated sources unchanged",
+      "status": "PASS",
+      "command_index": null
+    }
+  ],
+  "simulations": [],
+  "excluded": [
+    "exhaustive ISA/state coverage",
+    "formal",
+    "routed timing",
+    "physical FPGA",
+    "ASIC",
+    "SoC/MMIO",
+    "in-flight reset closure",
+    "privileged ISA/interrupts"
+  ],
+  "task": "T019",
+  "unit": "random",
+  "trace_prefix": "RANDOM",
+  "comparisons": [
+    {
+      "seed": 1,
+      "events": 5608,
+      "backend_command_index": 6,
+      "retirements": 2408,
+      "faults": 50,
+      "gpr_words": 1550,
+      "ram_words": 1600,
+      "coverage": {
+        "fault:1": 4,
+        "fault:2": 4,
+        "fault:3": 2,
+        "fault:4": 2,
+        "fault:5": 2,
+        "fault:6": 2,
+        "fault:7": 2,
+        "fault:8": 26,
+        "fault:9": 6,
+        "op:ADD": 132,
+        "op:ADDI": 741,
+        "op:AND": 14,
+        "op:ANDI": 19,
+        "op:AUIPC": 37,
+        "op:BEQ": 21,
+        "op:BGE": 24,
+        "op:BGEU": 18,
+        "op:BLT": 21,
+        "op:BLTU": 19,
+        "op:BNE": 140,
+        "op:EBREAK": 6,
+        "op:ECALL": 26,
+        "op:FENCE": 50,
+        "op:JAL": 58,
+        "op:JALR": 54,
+        "op:LB": 38,
+        "op:LBU": 22,
+        "op:LH": 32,
+        "op:LHU": 21,
+        "op:LUI": 387,
+        "op:LW": 107,
+        "op:OR": 14,
+        "op:ORI": 13,
+        "op:SB": 38,
+        "op:SH": 35,
+        "op:SLL": 15,
+        "op:SLLI": 15,
+        "op:SLT": 15,
+        "op:SLTI": 15,
+        "op:SLTIU": 16,
+        "op:SLTU": 16,
+        "op:SRA": 13,
+        "op:SRAI": 14,
+        "op:SRL": 14,
+        "op:SRLI": 18,
+        "op:SUB": 15,
+        "op:SW": 122,
+        "op:XOR": 64,
+        "op:XORI": 13
+      },
+      "required_bins": [
+        "op:LUI",
+        "op:AUIPC",
+        "op:JAL",
+        "op:JALR",
+        "op:BEQ",
+        "op:BNE",
+        "op:BLT",
+        "op:BGE",
+        "op:BLTU",
+        "op:BGEU",
+        "op:LB",
+        "op:LH",
+        "op:LW",
+        "op:LBU",
+        "op:LHU",
+        "op:SB",
+        "op:SH",
+        "op:SW",
+        "op:ADDI",
+        "op:SLTI",
+        "op:SLTIU",
+        "op:XORI",
+        "op:ORI",
+        "op:ANDI",
+        "op:SLLI",
+        "op:SRLI",
+        "op:SRAI",
+        "op:ADD",
+        "op:SUB",
+        "op:SLL",
+        "op:SLT",
+        "op:SLTU",
+        "op:XOR",
+        "op:SRL",
+        "op:SRA",
+        "op:OR",
+        "op:AND",
+        "op:FENCE",
+        "op:ECALL",
+        "op:EBREAK",
+        "fault:1",
+        "fault:2",
+        "fault:3",
+        "fault:4",
+        "fault:5",
+        "fault:6",
+        "fault:7",
+        "fault:8",
+        "fault:9"
+      ],
+      "scenarios": [
+        {
+          "scenario": 0,
+          "retirements": 84,
+          "fault": {
+            "pc": 336,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 1,
+          "retirements": 21,
+          "fault": {
+            "pc": 116,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 2,
+          "retirements": 48,
+          "fault": {
+            "pc": 192,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 3,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 4,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 2098159,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 5,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 33767,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 6,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 1086339,
+            "code": 4,
+            "tval": 65537
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 7,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 41251,
+            "code": 6,
+            "tval": 65538
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 8,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 40963,
+            "code": 5,
+            "tval": 131072
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 9,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 8227,
+            "code": 7,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 10,
+          "retirements": 1,
+          "fault": {
+            "pc": 65536,
+            "insn": 0,
+            "code": 3,
+            "tval": 65536
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 11,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 12,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 13,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 14,
+          "retirements": 5,
+          "fault": {
+            "pc": 20,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 15,
+          "retirements": 35,
+          "fault": {
+            "pc": 140,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 16,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 17,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 18,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 19,
+          "retirements": 3,
+          "fault": {
+            "pc": 12,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 20,
+          "retirements": 4,
+          "fault": {
+            "pc": 36,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 21,
+          "retirements": 84,
+          "fault": {
+            "pc": 336,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 22,
+          "retirements": 21,
+          "fault": {
+            "pc": 116,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 23,
+          "retirements": 48,
+          "fault": {
+            "pc": 192,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 24,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 25,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 2098159,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 26,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 33767,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 27,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 1086339,
+            "code": 4,
+            "tval": 65537
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 28,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 41251,
+            "code": 6,
+            "tval": 65538
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 29,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 40963,
+            "code": 5,
+            "tval": 131072
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 30,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 8227,
+            "code": 7,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 31,
+          "retirements": 1,
+          "fault": {
+            "pc": 65536,
+            "insn": 0,
+            "code": 3,
+            "tval": 65536
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 32,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 33,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 34,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 35,
+          "retirements": 5,
+          "fault": {
+            "pc": 20,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 36,
+          "retirements": 35,
+          "fault": {
+            "pc": 140,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 37,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 38,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 39,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 40,
+          "retirements": 3,
+          "fault": {
+            "pc": 12,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 41,
+          "retirements": 4,
+          "fault": {
+            "pc": 36,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 42,
+          "retirements": 245,
+          "fault": {
+            "pc": 956,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 43,
+          "retirements": 238,
+          "fault": {
+            "pc": 956,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 44,
+          "retirements": 225,
+          "fault": {
+            "pc": 956,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 45,
+          "retirements": 237,
+          "fault": {
+            "pc": 956,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 46,
+          "retirements": 238,
+          "fault": {
+            "pc": 956,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 47,
+          "retirements": 238,
+          "fault": {
+            "pc": 956,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 48,
+          "retirements": 235,
+          "fault": {
+            "pc": 956,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 49,
+          "retirements": 250,
+          "fault": {
+            "pc": 956,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        }
+      ],
+      "artifacts": {
+        "build\\T019\\random-iss-20261108T020926585991Z\\observed_1.json": "91e12498ee70b5f01c4ab04b970deecfc8b494df0d77376025277206c3865d4f",
+        "build\\T019\\random-iss-20261108T020926585991Z\\expected_1.json": "91e12498ee70b5f01c4ab04b970deecfc8b494df0d77376025277206c3865d4f",
+        "build\\T019\\random-iss-20261108T020926585991Z\\corrupt_1.json": "e7e4cc289875b18f28b2da6fbb6f6a4f14b621d359b5a152c31ab877a2aa839e",
+        "build\\T019\\random-iss-20261108T020926585991Z\\scoreboard_1.json": "5be5c91b2ee93500bf9ab4fa0e4fc7ee0a0741013adc81ebb66ba80c5d39a375"
+      },
+      "negative_rejections": [
+        {
+          "case": "mutated_actual_bit",
+          "diagnostic": "event 0 mismatch: actual=('R', 0, 0, 0, 3859, 4, 1, 30, 0, 0, 0, 0, 0, 0, 1) expected=('R', 0, 0, 0, 3859, 4, 1, 30, 0, 0, 0, 0, 0, 0, 0)"
+        },
+        {
+          "case": "empty_actual",
+          "diagnostic": "zero-test trace comparison"
+        },
+        {
+          "case": "extra_actual_event",
+          "diagnostic": "event count mismatch actual=5609 expected=5608"
+        }
+      ],
+      "scoreboard": {
+        "scenarios": 8,
+        "retirements": 1906,
+        "operation_hits": {
+          "ADD": 110,
+          "ADDI": 563,
+          "AND": 12,
+          "ANDI": 17,
+          "AUIPC": 35,
+          "BEQ": 13,
+          "BGE": 20,
+          "BGEU": 14,
+          "BLT": 17,
+          "BLTU": 15,
+          "BNE": 136,
+          "EBREAK": 4,
+          "ECALL": 4,
+          "FENCE": 48,
+          "JAL": 48,
+          "JALR": 48,
+          "LB": 14,
+          "LBU": 14,
+          "LH": 18,
+          "LHU": 17,
+          "LUI": 341,
+          "LW": 25,
+          "OR": 12,
+          "ORI": 11,
+          "SB": 20,
+          "SH": 27,
+          "SLL": 13,
+          "SLLI": 13,
+          "SLT": 13,
+          "SLTI": 13,
+          "SLTIU": 14,
+          "SLTU": 14,
+          "SRA": 11,
+          "SRAI": 12,
+          "SRL": 12,
+          "SRLI": 16,
+          "SUB": 13,
+          "SW": 94,
+          "XOR": 62,
+          "XORI": 11
+        }
+      }
+    },
+    {
+      "seed": 7,
+      "events": 5602,
+      "backend_command_index": 7,
+      "retirements": 2402,
+      "faults": 50,
+      "gpr_words": 1550,
+      "ram_words": 1600,
+      "coverage": {
+        "fault:1": 4,
+        "fault:2": 4,
+        "fault:3": 2,
+        "fault:4": 2,
+        "fault:5": 2,
+        "fault:6": 2,
+        "fault:7": 2,
+        "fault:8": 26,
+        "fault:9": 6,
+        "op:ADD": 128,
+        "op:ADDI": 741,
+        "op:AND": 12,
+        "op:ANDI": 17,
+        "op:AUIPC": 33,
+        "op:BEQ": 19,
+        "op:BGE": 21,
+        "op:BGEU": 21,
+        "op:BLT": 19,
+        "op:BLTU": 23,
+        "op:BNE": 135,
+        "op:EBREAK": 6,
+        "op:ECALL": 26,
+        "op:FENCE": 50,
+        "op:JAL": 58,
+        "op:JALR": 54,
+        "op:LB": 40,
+        "op:LBU": 25,
+        "op:LH": 27,
+        "op:LHU": 20,
+        "op:LUI": 391,
+        "op:LW": 108,
+        "op:OR": 16,
+        "op:ORI": 17,
+        "op:SB": 43,
+        "op:SH": 29,
+        "op:SLL": 13,
+        "op:SLLI": 13,
+        "op:SLT": 18,
+        "op:SLTI": 14,
+        "op:SLTIU": 13,
+        "op:SLTU": 17,
+        "op:SRA": 14,
+        "op:SRAI": 18,
+        "op:SRL": 17,
+        "op:SRLI": 17,
+        "op:SUB": 17,
+        "op:SW": 122,
+        "op:XOR": 60,
+        "op:XORI": 14
+      },
+      "required_bins": [
+        "op:LUI",
+        "op:AUIPC",
+        "op:JAL",
+        "op:JALR",
+        "op:BEQ",
+        "op:BNE",
+        "op:BLT",
+        "op:BGE",
+        "op:BLTU",
+        "op:BGEU",
+        "op:LB",
+        "op:LH",
+        "op:LW",
+        "op:LBU",
+        "op:LHU",
+        "op:SB",
+        "op:SH",
+        "op:SW",
+        "op:ADDI",
+        "op:SLTI",
+        "op:SLTIU",
+        "op:XORI",
+        "op:ORI",
+        "op:ANDI",
+        "op:SLLI",
+        "op:SRLI",
+        "op:SRAI",
+        "op:ADD",
+        "op:SUB",
+        "op:SLL",
+        "op:SLT",
+        "op:SLTU",
+        "op:XOR",
+        "op:SRL",
+        "op:SRA",
+        "op:OR",
+        "op:AND",
+        "op:FENCE",
+        "op:ECALL",
+        "op:EBREAK",
+        "fault:1",
+        "fault:2",
+        "fault:3",
+        "fault:4",
+        "fault:5",
+        "fault:6",
+        "fault:7",
+        "fault:8",
+        "fault:9"
+      ],
+      "scenarios": [
+        {
+          "scenario": 0,
+          "retirements": 84,
+          "fault": {
+            "pc": 336,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 1,
+          "retirements": 21,
+          "fault": {
+            "pc": 116,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 2,
+          "retirements": 48,
+          "fault": {
+            "pc": 192,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 3,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 4,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 2098159,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 5,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 33767,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 6,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 1086339,
+            "code": 4,
+            "tval": 65537
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 7,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 41251,
+            "code": 6,
+            "tval": 65538
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 8,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 40963,
+            "code": 5,
+            "tval": 131072
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 9,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 8227,
+            "code": 7,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 10,
+          "retirements": 1,
+          "fault": {
+            "pc": 65536,
+            "insn": 0,
+            "code": 3,
+            "tval": 65536
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 11,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 12,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 13,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 14,
+          "retirements": 5,
+          "fault": {
+            "pc": 20,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 15,
+          "retirements": 35,
+          "fault": {
+            "pc": 140,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 16,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 17,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 18,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 19,
+          "retirements": 3,
+          "fault": {
+            "pc": 12,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 20,
+          "retirements": 4,
+          "fault": {
+            "pc": 36,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 21,
+          "retirements": 84,
+          "fault": {
+            "pc": 336,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 22,
+          "retirements": 21,
+          "fault": {
+            "pc": 116,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 23,
+          "retirements": 48,
+          "fault": {
+            "pc": 192,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 24,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 25,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 2098159,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 26,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 33767,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 27,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 1086339,
+            "code": 4,
+            "tval": 65537
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 28,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 41251,
+            "code": 6,
+            "tval": 65538
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 29,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 40963,
+            "code": 5,
+            "tval": 131072
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 30,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 8227,
+            "code": 7,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 31,
+          "retirements": 1,
+          "fault": {
+            "pc": 65536,
+            "insn": 0,
+            "code": 3,
+            "tval": 65536
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 32,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 33,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 34,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 35,
+          "retirements": 5,
+          "fault": {
+            "pc": 20,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 36,
+          "retirements": 35,
+          "fault": {
+            "pc": 140,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 37,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 38,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 39,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 40,
+          "retirements": 3,
+          "fault": {
+            "pc": 12,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 41,
+          "retirements": 4,
+          "fault": {
+            "pc": 36,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 42,
+          "retirements": 242,
+          "fault": {
+            "pc": 956,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 43,
+          "retirements": 237,
+          "fault": {
+            "pc": 956,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 44,
+          "retirements": 233,
+          "fault": {
+            "pc": 956,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 45,
+          "retirements": 235,
+          "fault": {
+            "pc": 956,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 46,
+          "retirements": 243,
+          "fault": {
+            "pc": 956,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 47,
+          "retirements": 235,
+          "fault": {
+            "pc": 956,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 48,
+          "retirements": 234,
+          "fault": {
+            "pc": 956,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 49,
+          "retirements": 241,
+          "fault": {
+            "pc": 956,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        }
+      ],
+      "artifacts": {
+        "build\\T019\\random-iss-20261108T020926585991Z\\observed_7.json": "5a52e7af9462d0f6d0d5643fe1563776b0dad81ae2375ce8df21e8a664cd050c",
+        "build\\T019\\random-iss-20261108T020926585991Z\\expected_7.json": "5a52e7af9462d0f6d0d5643fe1563776b0dad81ae2375ce8df21e8a664cd050c",
+        "build\\T019\\random-iss-20261108T020926585991Z\\corrupt_7.json": "9a04ebe7b6b5e4514531ad42a584e2073fc7e6bbfe808152b42dae6721fab0b7",
+        "build\\T019\\random-iss-20261108T020926585991Z\\scoreboard_7.json": "7a78ca40e0a032dfa3540bcf357391034915c9f9a8be4020abd6e0bb93d73ef9"
+      },
+      "negative_rejections": [
+        {
+          "case": "mutated_actual_bit",
+          "diagnostic": "event 0 mismatch: actual=('R', 0, 0, 0, 3859, 4, 1, 30, 0, 0, 0, 0, 0, 0, 1) expected=('R', 0, 0, 0, 3859, 4, 1, 30, 0, 0, 0, 0, 0, 0, 0)"
+        },
+        {
+          "case": "empty_actual",
+          "diagnostic": "zero-test trace comparison"
+        },
+        {
+          "case": "extra_actual_event",
+          "diagnostic": "event count mismatch actual=5603 expected=5602"
+        }
+      ],
+      "scoreboard": {
+        "scenarios": 8,
+        "retirements": 1900,
+        "operation_hits": {
+          "ADD": 106,
+          "ADDI": 563,
+          "AND": 10,
+          "ANDI": 15,
+          "AUIPC": 31,
+          "BEQ": 11,
+          "BGE": 17,
+          "BGEU": 17,
+          "BLT": 15,
+          "BLTU": 19,
+          "BNE": 131,
+          "EBREAK": 4,
+          "ECALL": 4,
+          "FENCE": 48,
+          "JAL": 48,
+          "JALR": 48,
+          "LB": 16,
+          "LBU": 17,
+          "LH": 13,
+          "LHU": 16,
+          "LUI": 345,
+          "LW": 26,
+          "OR": 14,
+          "ORI": 15,
+          "SB": 25,
+          "SH": 21,
+          "SLL": 11,
+          "SLLI": 11,
+          "SLT": 16,
+          "SLTI": 12,
+          "SLTIU": 11,
+          "SLTU": 15,
+          "SRA": 12,
+          "SRAI": 16,
+          "SRL": 15,
+          "SRLI": 15,
+          "SUB": 15,
+          "SW": 94,
+          "XOR": 58,
+          "XORI": 12
+        }
+      }
+    },
+    {
+      "seed": 101,
+      "events": 5628,
+      "backend_command_index": 8,
+      "retirements": 2428,
+      "faults": 50,
+      "gpr_words": 1550,
+      "ram_words": 1600,
+      "coverage": {
+        "fault:1": 4,
+        "fault:2": 4,
+        "fault:3": 2,
+        "fault:4": 2,
+        "fault:5": 2,
+        "fault:6": 2,
+        "fault:7": 2,
+        "fault:8": 26,
+        "fault:9": 6,
+        "op:ADD": 130,
+        "op:ADDI": 754,
+        "op:AND": 19,
+        "op:ANDI": 12,
+        "op:AUIPC": 31,
+        "op:BEQ": 24,
+        "op:BGE": 20,
+        "op:BGEU": 21,
+        "op:BLT": 20,
+        "op:BLTU": 19,
+        "op:BNE": 147,
+        "op:EBREAK": 6,
+        "op:ECALL": 26,
+        "op:FENCE": 50,
+        "op:JAL": 58,
+        "op:JALR": 54,
+        "op:LB": 39,
+        "op:LBU": 23,
+        "op:LH": 33,
+        "op:LHU": 15,
+        "op:LUI": 393,
+        "op:LW": 110,
+        "op:OR": 12,
+        "op:ORI": 13,
+        "op:SB": 40,
+        "op:SH": 30,
+        "op:SLL": 15,
+        "op:SLLI": 18,
+        "op:SLT": 12,
+        "op:SLTI": 18,
+        "op:SLTIU": 17,
+        "op:SLTU": 15,
+        "op:SRA": 15,
+        "op:SRAI": 13,
+        "op:SRL": 16,
+        "op:SRLI": 15,
+        "op:SUB": 14,
+        "op:SW": 128,
+        "op:XOR": 64,
+        "op:XORI": 13
+      },
+      "required_bins": [
+        "op:LUI",
+        "op:AUIPC",
+        "op:JAL",
+        "op:JALR",
+        "op:BEQ",
+        "op:BNE",
+        "op:BLT",
+        "op:BGE",
+        "op:BLTU",
+        "op:BGEU",
+        "op:LB",
+        "op:LH",
+        "op:LW",
+        "op:LBU",
+        "op:LHU",
+        "op:SB",
+        "op:SH",
+        "op:SW",
+        "op:ADDI",
+        "op:SLTI",
+        "op:SLTIU",
+        "op:XORI",
+        "op:ORI",
+        "op:ANDI",
+        "op:SLLI",
+        "op:SRLI",
+        "op:SRAI",
+        "op:ADD",
+        "op:SUB",
+        "op:SLL",
+        "op:SLT",
+        "op:SLTU",
+        "op:XOR",
+        "op:SRL",
+        "op:SRA",
+        "op:OR",
+        "op:AND",
+        "op:FENCE",
+        "op:ECALL",
+        "op:EBREAK",
+        "fault:1",
+        "fault:2",
+        "fault:3",
+        "fault:4",
+        "fault:5",
+        "fault:6",
+        "fault:7",
+        "fault:8",
+        "fault:9"
+      ],
+      "scenarios": [
+        {
+          "scenario": 0,
+          "retirements": 84,
+          "fault": {
+            "pc": 336,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 1,
+          "retirements": 21,
+          "fault": {
+            "pc": 116,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 2,
+          "retirements": 48,
+          "fault": {
+            "pc": 192,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 3,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 4,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 2098159,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 5,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 33767,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 6,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 1086339,
+            "code": 4,
+            "tval": 65537
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 7,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 41251,
+            "code": 6,
+            "tval": 65538
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 8,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 40963,
+            "code": 5,
+            "tval": 131072
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 9,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 8227,
+            "code": 7,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 10,
+          "retirements": 1,
+          "fault": {
+            "pc": 65536,
+            "insn": 0,
+            "code": 3,
+            "tval": 65536
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 11,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 12,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 13,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 14,
+          "retirements": 5,
+          "fault": {
+            "pc": 20,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 15,
+          "retirements": 35,
+          "fault": {
+            "pc": 140,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 16,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 17,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 18,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 19,
+          "retirements": 3,
+          "fault": {
+            "pc": 12,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 20,
+          "retirements": 4,
+          "fault": {
+            "pc": 36,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 21,
+          "retirements": 84,
+          "fault": {
+            "pc": 336,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 22,
+          "retirements": 21,
+          "fault": {
+            "pc": 116,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 23,
+          "retirements": 48,
+          "fault": {
+            "pc": 192,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 24,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 25,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 2098159,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 26,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 33767,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 27,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 1086339,
+            "code": 4,
+            "tval": 65537
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 28,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 41251,
+            "code": 6,
+            "tval": 65538
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 29,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 40963,
+            "code": 5,
+            "tval": 131072
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 30,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 8227,
+            "code": 7,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 31,
+          "retirements": 1,
+          "fault": {
+            "pc": 65536,
+            "insn": 0,
+            "code": 3,
+            "tval": 65536
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 32,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 33,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 34,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 35,
+          "retirements": 5,
+          "fault": {
+            "pc": 20,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 36,
+          "retirements": 35,
+          "fault": {
+            "pc": 140,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 37,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 38,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 39,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 40,
+          "retirements": 3,
+          "fault": {
+            "pc": 12,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 41,
+          "retirements": 4,
+          "fault": {
+            "pc": 36,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 42,
+          "retirements": 236,
+          "fault": {
+            "pc": 956,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 43,
+          "retirements": 244,
+          "fault": {
+            "pc": 956,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 44,
+          "retirements": 252,
+          "fault": {
+            "pc": 956,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 45,
+          "retirements": 238,
+          "fault": {
+            "pc": 956,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 46,
+          "retirements": 241,
+          "fault": {
+            "pc": 956,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 47,
+          "retirements": 236,
+          "fault": {
+            "pc": 956,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 48,
+          "retirements": 240,
+          "fault": {
+            "pc": 956,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 49,
+          "retirements": 239,
+          "fault": {
+            "pc": 956,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        }
+      ],
+      "artifacts": {
+        "build\\T019\\random-iss-20261108T020926585991Z\\observed_101.json": "24057d4e8193bfa878dafb2fa679547785d628b523cee58efd286aea87dabaf1",
+        "build\\T019\\random-iss-20261108T020926585991Z\\expected_101.json": "24057d4e8193bfa878dafb2fa679547785d628b523cee58efd286aea87dabaf1",
+        "build\\T019\\random-iss-20261108T020926585991Z\\corrupt_101.json": "e762360e59e325b8c286d305b0a5080357af20bf61c11ca4f53cc94d521d7edf",
+        "build\\T019\\random-iss-20261108T020926585991Z\\scoreboard_101.json": "b0858e82128c268ea26eea1010c53b99f6e7b48cd075ac9577c38a843c73b59f"
+      },
+      "negative_rejections": [
+        {
+          "case": "mutated_actual_bit",
+          "diagnostic": "event 0 mismatch: actual=('R', 0, 0, 0, 3859, 4, 1, 30, 0, 0, 0, 0, 0, 0, 1) expected=('R', 0, 0, 0, 3859, 4, 1, 30, 0, 0, 0, 0, 0, 0, 0)"
+        },
+        {
+          "case": "empty_actual",
+          "diagnostic": "zero-test trace comparison"
+        },
+        {
+          "case": "extra_actual_event",
+          "diagnostic": "event count mismatch actual=5629 expected=5628"
+        }
+      ],
+      "scoreboard": {
+        "scenarios": 8,
+        "retirements": 1926,
+        "operation_hits": {
+          "ADD": 108,
+          "ADDI": 576,
+          "AND": 17,
+          "ANDI": 10,
+          "AUIPC": 29,
+          "BEQ": 16,
+          "BGE": 16,
+          "BGEU": 17,
+          "BLT": 16,
+          "BLTU": 15,
+          "BNE": 143,
+          "EBREAK": 4,
+          "ECALL": 4,
+          "FENCE": 48,
+          "JAL": 48,
+          "JALR": 48,
+          "LB": 15,
+          "LBU": 15,
+          "LH": 19,
+          "LHU": 11,
+          "LUI": 347,
+          "LW": 28,
+          "OR": 10,
+          "ORI": 11,
+          "SB": 22,
+          "SH": 22,
+          "SLL": 13,
+          "SLLI": 16,
+          "SLT": 10,
+          "SLTI": 16,
+          "SLTIU": 15,
+          "SLTU": 13,
+          "SRA": 13,
+          "SRAI": 11,
+          "SRL": 14,
+          "SRLI": 13,
+          "SUB": 12,
+          "SW": 100,
+          "XOR": 62,
+          "XORI": 11
+        }
+      }
+    },
+    {
+      "seed": 20261102,
+      "events": 5590,
+      "backend_command_index": 9,
+      "retirements": 2390,
+      "faults": 50,
+      "gpr_words": 1550,
+      "ram_words": 1600,
+      "coverage": {
+        "fault:1": 4,
+        "fault:2": 4,
+        "fault:3": 2,
+        "fault:4": 2,
+        "fault:5": 2,
+        "fault:6": 2,
+        "fault:7": 2,
+        "fault:8": 26,
+        "fault:9": 6,
+        "op:ADD": 139,
+        "op:ADDI": 728,
+        "op:AND": 12,
+        "op:ANDI": 15,
+        "op:AUIPC": 33,
+        "op:BEQ": 28,
+        "op:BGE": 16,
+        "op:BGEU": 17,
+        "op:BLT": 20,
+        "op:BLTU": 17,
+        "op:BNE": 138,
+        "op:EBREAK": 6,
+        "op:ECALL": 26,
+        "op:FENCE": 50,
+        "op:JAL": 58,
+        "op:JALR": 54,
+        "op:LB": 40,
+        "op:LBU": 25,
+        "op:LH": 34,
+        "op:LHU": 21,
+        "op:LUI": 391,
+        "op:LW": 100,
+        "op:OR": 13,
+        "op:ORI": 14,
+        "op:SB": 43,
+        "op:SH": 37,
+        "op:SLL": 13,
+        "op:SLLI": 14,
+        "op:SLT": 18,
+        "op:SLTI": 17,
+        "op:SLTIU": 19,
+        "op:SLTU": 12,
+        "op:SRA": 13,
+        "op:SRAI": 14,
+        "op:SRL": 12,
+        "op:SRLI": 16,
+        "op:SUB": 15,
+        "op:SW": 114,
+        "op:XOR": 65,
+        "op:XORI": 17
+      },
+      "required_bins": [
+        "op:LUI",
+        "op:AUIPC",
+        "op:JAL",
+        "op:JALR",
+        "op:BEQ",
+        "op:BNE",
+        "op:BLT",
+        "op:BGE",
+        "op:BLTU",
+        "op:BGEU",
+        "op:LB",
+        "op:LH",
+        "op:LW",
+        "op:LBU",
+        "op:LHU",
+        "op:SB",
+        "op:SH",
+        "op:SW",
+        "op:ADDI",
+        "op:SLTI",
+        "op:SLTIU",
+        "op:XORI",
+        "op:ORI",
+        "op:ANDI",
+        "op:SLLI",
+        "op:SRLI",
+        "op:SRAI",
+        "op:ADD",
+        "op:SUB",
+        "op:SLL",
+        "op:SLT",
+        "op:SLTU",
+        "op:XOR",
+        "op:SRL",
+        "op:SRA",
+        "op:OR",
+        "op:AND",
+        "op:FENCE",
+        "op:ECALL",
+        "op:EBREAK",
+        "fault:1",
+        "fault:2",
+        "fault:3",
+        "fault:4",
+        "fault:5",
+        "fault:6",
+        "fault:7",
+        "fault:8",
+        "fault:9"
+      ],
+      "scenarios": [
+        {
+          "scenario": 0,
+          "retirements": 84,
+          "fault": {
+            "pc": 336,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 1,
+          "retirements": 21,
+          "fault": {
+            "pc": 116,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 2,
+          "retirements": 48,
+          "fault": {
+            "pc": 192,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 3,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 4,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 2098159,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 5,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 33767,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 6,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 1086339,
+            "code": 4,
+            "tval": 65537
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 7,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 41251,
+            "code": 6,
+            "tval": 65538
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 8,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 40963,
+            "code": 5,
+            "tval": 131072
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 9,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 8227,
+            "code": 7,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 10,
+          "retirements": 1,
+          "fault": {
+            "pc": 65536,
+            "insn": 0,
+            "code": 3,
+            "tval": 65536
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 11,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 12,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 13,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 14,
+          "retirements": 5,
+          "fault": {
+            "pc": 20,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 15,
+          "retirements": 35,
+          "fault": {
+            "pc": 140,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 16,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 17,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 18,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 19,
+          "retirements": 3,
+          "fault": {
+            "pc": 12,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 20,
+          "retirements": 4,
+          "fault": {
+            "pc": 36,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 21,
+          "retirements": 84,
+          "fault": {
+            "pc": 336,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 22,
+          "retirements": 21,
+          "fault": {
+            "pc": 116,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 23,
+          "retirements": 48,
+          "fault": {
+            "pc": 192,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 24,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 25,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 2098159,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 26,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 33767,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 27,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 1086339,
+            "code": 4,
+            "tval": 65537
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 28,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 41251,
+            "code": 6,
+            "tval": 65538
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 29,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 40963,
+            "code": 5,
+            "tval": 131072
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 30,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 8227,
+            "code": 7,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 31,
+          "retirements": 1,
+          "fault": {
+            "pc": 65536,
+            "insn": 0,
+            "code": 3,
+            "tval": 65536
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 32,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 33,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 34,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 35,
+          "retirements": 5,
+          "fault": {
+            "pc": 20,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 36,
+          "retirements": 35,
+          "fault": {
+            "pc": 140,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 37,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 38,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 39,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 40,
+          "retirements": 3,
+          "fault": {
+            "pc": 12,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 41,
+          "retirements": 4,
+          "fault": {
+            "pc": 36,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 42,
+          "retirements": 236,
+          "fault": {
+            "pc": 956,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 43,
+          "retirements": 231,
+          "fault": {
+            "pc": 956,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 44,
+          "retirements": 243,
+          "fault": {
+            "pc": 956,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 45,
+          "retirements": 240,
+          "fault": {
+            "pc": 956,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 46,
+          "retirements": 240,
+          "fault": {
+            "pc": 956,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 47,
+          "retirements": 228,
+          "fault": {
+            "pc": 956,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 48,
+          "retirements": 229,
+          "fault": {
+            "pc": 956,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 49,
+          "retirements": 241,
+          "fault": {
+            "pc": 956,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        }
+      ],
+      "artifacts": {
+        "build\\T019\\random-iss-20261108T020926585991Z\\observed_20261102.json": "818b4f6b509d30a17b0119ad6f54407a049dcc1c53ca93ad10537b721a9c5c76",
+        "build\\T019\\random-iss-20261108T020926585991Z\\expected_20261102.json": "818b4f6b509d30a17b0119ad6f54407a049dcc1c53ca93ad10537b721a9c5c76",
+        "build\\T019\\random-iss-20261108T020926585991Z\\corrupt_20261102.json": "0e39e247e9fd25130889aa1efa4f5fff68d17f8b489e1965b587adbed91ed860",
+        "build\\T019\\random-iss-20261108T020926585991Z\\scoreboard_20261102.json": "c1e4affb14e2349b35ed6b4a5cad999748c5e0c890085ccbcd7982e5e89481ae"
+      },
+      "negative_rejections": [
+        {
+          "case": "mutated_actual_bit",
+          "diagnostic": "event 0 mismatch: actual=('R', 0, 0, 0, 3859, 4, 1, 30, 0, 0, 0, 0, 0, 0, 1) expected=('R', 0, 0, 0, 3859, 4, 1, 30, 0, 0, 0, 0, 0, 0, 0)"
+        },
+        {
+          "case": "empty_actual",
+          "diagnostic": "zero-test trace comparison"
+        },
+        {
+          "case": "extra_actual_event",
+          "diagnostic": "event count mismatch actual=5591 expected=5590"
+        }
+      ],
+      "scoreboard": {
+        "scenarios": 8,
+        "retirements": 1888,
+        "operation_hits": {
+          "ADD": 117,
+          "ADDI": 550,
+          "AND": 10,
+          "ANDI": 13,
+          "AUIPC": 31,
+          "BEQ": 20,
+          "BGE": 12,
+          "BGEU": 13,
+          "BLT": 16,
+          "BLTU": 13,
+          "BNE": 134,
+          "EBREAK": 4,
+          "ECALL": 4,
+          "FENCE": 48,
+          "JAL": 48,
+          "JALR": 48,
+          "LB": 16,
+          "LBU": 17,
+          "LH": 20,
+          "LHU": 17,
+          "LUI": 345,
+          "LW": 18,
+          "OR": 11,
+          "ORI": 12,
+          "SB": 25,
+          "SH": 29,
+          "SLL": 11,
+          "SLLI": 12,
+          "SLT": 16,
+          "SLTI": 15,
+          "SLTIU": 17,
+          "SLTU": 10,
+          "SRA": 11,
+          "SRAI": 12,
+          "SRL": 10,
+          "SRLI": 14,
+          "SUB": 13,
+          "SW": 86,
+          "XOR": 63,
+          "XORI": 15
+        }
+      }
+    },
+    {
+      "seed": 314159,
+      "events": 5614,
+      "backend_command_index": 10,
+      "retirements": 2414,
+      "faults": 50,
+      "gpr_words": 1550,
+      "ram_words": 1600,
+      "coverage": {
+        "fault:1": 4,
+        "fault:2": 4,
+        "fault:3": 2,
+        "fault:4": 2,
+        "fault:5": 2,
+        "fault:6": 2,
+        "fault:7": 2,
+        "fault:8": 26,
+        "fault:9": 6,
+        "op:ADD": 129,
+        "op:ADDI": 745,
+        "op:AND": 13,
+        "op:ANDI": 18,
+        "op:AUIPC": 31,
+        "op:BEQ": 23,
+        "op:BGE": 24,
+        "op:BGEU": 19,
+        "op:BLT": 20,
+        "op:BLTU": 18,
+        "op:BNE": 140,
+        "op:EBREAK": 6,
+        "op:ECALL": 26,
+        "op:FENCE": 50,
+        "op:JAL": 58,
+        "op:JALR": 54,
+        "op:LB": 38,
+        "op:LBU": 26,
+        "op:LH": 25,
+        "op:LHU": 25,
+        "op:LUI": 393,
+        "op:LW": 106,
+        "op:OR": 14,
+        "op:ORI": 15,
+        "op:SB": 42,
+        "op:SH": 32,
+        "op:SLL": 14,
+        "op:SLLI": 14,
+        "op:SLT": 18,
+        "op:SLTI": 15,
+        "op:SLTIU": 16,
+        "op:SLTU": 16,
+        "op:SRA": 14,
+        "op:SRAI": 16,
+        "op:SRL": 16,
+        "op:SRLI": 13,
+        "op:SUB": 15,
+        "op:SW": 123,
+        "op:XOR": 63,
+        "op:XORI": 15
+      },
+      "required_bins": [
+        "op:LUI",
+        "op:AUIPC",
+        "op:JAL",
+        "op:JALR",
+        "op:BEQ",
+        "op:BNE",
+        "op:BLT",
+        "op:BGE",
+        "op:BLTU",
+        "op:BGEU",
+        "op:LB",
+        "op:LH",
+        "op:LW",
+        "op:LBU",
+        "op:LHU",
+        "op:SB",
+        "op:SH",
+        "op:SW",
+        "op:ADDI",
+        "op:SLTI",
+        "op:SLTIU",
+        "op:XORI",
+        "op:ORI",
+        "op:ANDI",
+        "op:SLLI",
+        "op:SRLI",
+        "op:SRAI",
+        "op:ADD",
+        "op:SUB",
+        "op:SLL",
+        "op:SLT",
+        "op:SLTU",
+        "op:XOR",
+        "op:SRL",
+        "op:SRA",
+        "op:OR",
+        "op:AND",
+        "op:FENCE",
+        "op:ECALL",
+        "op:EBREAK",
+        "fault:1",
+        "fault:2",
+        "fault:3",
+        "fault:4",
+        "fault:5",
+        "fault:6",
+        "fault:7",
+        "fault:8",
+        "fault:9"
+      ],
+      "scenarios": [
+        {
+          "scenario": 0,
+          "retirements": 84,
+          "fault": {
+            "pc": 336,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 1,
+          "retirements": 21,
+          "fault": {
+            "pc": 116,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 2,
+          "retirements": 48,
+          "fault": {
+            "pc": 192,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 3,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 4,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 2098159,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 5,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 33767,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 6,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 1086339,
+            "code": 4,
+            "tval": 65537
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 7,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 41251,
+            "code": 6,
+            "tval": 65538
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 8,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 40963,
+            "code": 5,
+            "tval": 131072
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 9,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 8227,
+            "code": 7,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 10,
+          "retirements": 1,
+          "fault": {
+            "pc": 65536,
+            "insn": 0,
+            "code": 3,
+            "tval": 65536
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 11,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 12,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 13,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 14,
+          "retirements": 5,
+          "fault": {
+            "pc": 20,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 15,
+          "retirements": 35,
+          "fault": {
+            "pc": 140,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 16,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 17,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 18,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 19,
+          "retirements": 3,
+          "fault": {
+            "pc": 12,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 20,
+          "retirements": 4,
+          "fault": {
+            "pc": 36,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 21,
+          "retirements": 84,
+          "fault": {
+            "pc": 336,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 22,
+          "retirements": 21,
+          "fault": {
+            "pc": 116,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 23,
+          "retirements": 48,
+          "fault": {
+            "pc": 192,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 24,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 25,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 2098159,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 26,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 33767,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 27,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 1086339,
+            "code": 4,
+            "tval": 65537
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 28,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 41251,
+            "code": 6,
+            "tval": 65538
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 29,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 40963,
+            "code": 5,
+            "tval": 131072
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 30,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 8227,
+            "code": 7,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 31,
+          "retirements": 1,
+          "fault": {
+            "pc": 65536,
+            "insn": 0,
+            "code": 3,
+            "tval": 65536
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 32,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 33,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 34,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 35,
+          "retirements": 5,
+          "fault": {
+            "pc": 20,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 36,
+          "retirements": 35,
+          "fault": {
+            "pc": 140,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 37,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 38,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 39,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 40,
+          "retirements": 3,
+          "fault": {
+            "pc": 12,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 41,
+          "retirements": 4,
+          "fault": {
+            "pc": 36,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 42,
+          "retirements": 240,
+          "fault": {
+            "pc": 956,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 43,
+          "retirements": 238,
+          "fault": {
+            "pc": 956,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 44,
+          "retirements": 241,
+          "fault": {
+            "pc": 956,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 45,
+          "retirements": 239,
+          "fault": {
+            "pc": 956,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 46,
+          "retirements": 239,
+          "fault": {
+            "pc": 956,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 47,
+          "retirements": 237,
+          "fault": {
+            "pc": 956,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 48,
+          "retirements": 243,
+          "fault": {
+            "pc": 956,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 49,
+          "retirements": 235,
+          "fault": {
+            "pc": 956,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        }
+      ],
+      "artifacts": {
+        "build\\T019\\random-iss-20261108T020926585991Z\\observed_314159.json": "1e34d15576de3ec0283ecc21b1bb4592802b4d0463d327d00d72900a791a757f",
+        "build\\T019\\random-iss-20261108T020926585991Z\\expected_314159.json": "1e34d15576de3ec0283ecc21b1bb4592802b4d0463d327d00d72900a791a757f",
+        "build\\T019\\random-iss-20261108T020926585991Z\\corrupt_314159.json": "15c1b3463b83945ecf049cb90fdd501dcd978031ded6ea73bec57087aefd0d40",
+        "build\\T019\\random-iss-20261108T020926585991Z\\scoreboard_314159.json": "5dd9ae1aaf061d05bea6076b940be1f980f1be4b798c22c87291ca654c15391f"
+      },
+      "negative_rejections": [
+        {
+          "case": "mutated_actual_bit",
+          "diagnostic": "event 0 mismatch: actual=('R', 0, 0, 0, 3859, 4, 1, 30, 0, 0, 0, 0, 0, 0, 1) expected=('R', 0, 0, 0, 3859, 4, 1, 30, 0, 0, 0, 0, 0, 0, 0)"
+        },
+        {
+          "case": "empty_actual",
+          "diagnostic": "zero-test trace comparison"
+        },
+        {
+          "case": "extra_actual_event",
+          "diagnostic": "event count mismatch actual=5615 expected=5614"
+        }
+      ],
+      "scoreboard": {
+        "scenarios": 8,
+        "retirements": 1912,
+        "operation_hits": {
+          "ADD": 107,
+          "ADDI": 567,
+          "AND": 11,
+          "ANDI": 16,
+          "AUIPC": 29,
+          "BEQ": 15,
+          "BGE": 20,
+          "BGEU": 15,
+          "BLT": 16,
+          "BLTU": 14,
+          "BNE": 136,
+          "EBREAK": 4,
+          "ECALL": 4,
+          "FENCE": 48,
+          "JAL": 48,
+          "JALR": 48,
+          "LB": 14,
+          "LBU": 18,
+          "LH": 11,
+          "LHU": 21,
+          "LUI": 347,
+          "LW": 24,
+          "OR": 12,
+          "ORI": 13,
+          "SB": 24,
+          "SH": 24,
+          "SLL": 12,
+          "SLLI": 12,
+          "SLT": 16,
+          "SLTI": 13,
+          "SLTIU": 14,
+          "SLTU": 14,
+          "SRA": 12,
+          "SRAI": 14,
+          "SRL": 14,
+          "SRLI": 11,
+          "SUB": 13,
+          "SW": 95,
+          "XOR": 61,
+          "XORI": 13
+        }
+      }
+    },
+    {
+      "seed": 271828,
+      "events": 5616,
+      "backend_command_index": 11,
+      "retirements": 2416,
+      "faults": 50,
+      "gpr_words": 1550,
+      "ram_words": 1600,
+      "coverage": {
+        "fault:1": 4,
+        "fault:2": 4,
+        "fault:3": 2,
+        "fault:4": 2,
+        "fault:5": 2,
+        "fault:6": 2,
+        "fault:7": 2,
+        "fault:8": 26,
+        "fault:9": 6,
+        "op:ADD": 131,
+        "op:ADDI": 747,
+        "op:AND": 13,
+        "op:ANDI": 16,
+        "op:AUIPC": 31,
+        "op:BEQ": 22,
+        "op:BGE": 23,
+        "op:BGEU": 15,
+        "op:BLT": 21,
+        "op:BLTU": 22,
+        "op:BNE": 145,
+        "op:EBREAK": 6,
+        "op:ECALL": 26,
+        "op:FENCE": 50,
+        "op:JAL": 58,
+        "op:JALR": 54,
+        "op:LB": 41,
+        "op:LBU": 23,
+        "op:LH": 30,
+        "op:LHU": 19,
+        "op:LUI": 393,
+        "op:LW": 107,
+        "op:OR": 15,
+        "op:ORI": 17,
+        "op:SB": 42,
+        "op:SH": 31,
+        "op:SLL": 14,
+        "op:SLLI": 17,
+        "op:SLT": 19,
+        "op:SLTI": 15,
+        "op:SLTIU": 17,
+        "op:SLTU": 13,
+        "op:SRA": 15,
+        "op:SRAI": 14,
+        "op:SRL": 17,
+        "op:SRLI": 14,
+        "op:SUB": 11,
+        "op:SW": 119,
+        "op:XOR": 64,
+        "op:XORI": 13
+      },
+      "required_bins": [
+        "op:LUI",
+        "op:AUIPC",
+        "op:JAL",
+        "op:JALR",
+        "op:BEQ",
+        "op:BNE",
+        "op:BLT",
+        "op:BGE",
+        "op:BLTU",
+        "op:BGEU",
+        "op:LB",
+        "op:LH",
+        "op:LW",
+        "op:LBU",
+        "op:LHU",
+        "op:SB",
+        "op:SH",
+        "op:SW",
+        "op:ADDI",
+        "op:SLTI",
+        "op:SLTIU",
+        "op:XORI",
+        "op:ORI",
+        "op:ANDI",
+        "op:SLLI",
+        "op:SRLI",
+        "op:SRAI",
+        "op:ADD",
+        "op:SUB",
+        "op:SLL",
+        "op:SLT",
+        "op:SLTU",
+        "op:XOR",
+        "op:SRL",
+        "op:SRA",
+        "op:OR",
+        "op:AND",
+        "op:FENCE",
+        "op:ECALL",
+        "op:EBREAK",
+        "fault:1",
+        "fault:2",
+        "fault:3",
+        "fault:4",
+        "fault:5",
+        "fault:6",
+        "fault:7",
+        "fault:8",
+        "fault:9"
+      ],
+      "scenarios": [
+        {
+          "scenario": 0,
+          "retirements": 84,
+          "fault": {
+            "pc": 336,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 1,
+          "retirements": 21,
+          "fault": {
+            "pc": 116,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 2,
+          "retirements": 48,
+          "fault": {
+            "pc": 192,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 3,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 4,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 2098159,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 5,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 33767,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 6,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 1086339,
+            "code": 4,
+            "tval": 65537
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 7,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 41251,
+            "code": 6,
+            "tval": 65538
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 8,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 40963,
+            "code": 5,
+            "tval": 131072
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 9,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 8227,
+            "code": 7,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 10,
+          "retirements": 1,
+          "fault": {
+            "pc": 65536,
+            "insn": 0,
+            "code": 3,
+            "tval": 65536
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 11,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 12,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 13,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 14,
+          "retirements": 5,
+          "fault": {
+            "pc": 20,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 15,
+          "retirements": 35,
+          "fault": {
+            "pc": 140,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 16,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 17,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 18,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 19,
+          "retirements": 3,
+          "fault": {
+            "pc": 12,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 20,
+          "retirements": 4,
+          "fault": {
+            "pc": 36,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 21,
+          "retirements": 84,
+          "fault": {
+            "pc": 336,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 22,
+          "retirements": 21,
+          "fault": {
+            "pc": 116,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 23,
+          "retirements": 48,
+          "fault": {
+            "pc": 192,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 24,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 25,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 2098159,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 26,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 33767,
+            "code": 2,
+            "tval": 2
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 27,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 1086339,
+            "code": 4,
+            "tval": 65537
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 28,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 41251,
+            "code": 6,
+            "tval": 65538
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 29,
+          "retirements": 2,
+          "fault": {
+            "pc": 8,
+            "insn": 40963,
+            "code": 5,
+            "tval": 131072
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 30,
+          "retirements": 0,
+          "fault": {
+            "pc": 0,
+            "insn": 8227,
+            "code": 7,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 31,
+          "retirements": 1,
+          "fault": {
+            "pc": 65536,
+            "insn": 0,
+            "code": 3,
+            "tval": 65536
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 32,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 33,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 34,
+          "retirements": 8,
+          "fault": {
+            "pc": 32,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 35,
+          "retirements": 5,
+          "fault": {
+            "pc": 20,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 36,
+          "retirements": 35,
+          "fault": {
+            "pc": 140,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 37,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 38,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 39,
+          "retirements": 6,
+          "fault": {
+            "pc": 28,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 40,
+          "retirements": 3,
+          "fault": {
+            "pc": 12,
+            "insn": 4294967295,
+            "code": 1,
+            "tval": 4294967295
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 41,
+          "retirements": 4,
+          "fault": {
+            "pc": 36,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 42,
+          "retirements": 249,
+          "fault": {
+            "pc": 956,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 43,
+          "retirements": 236,
+          "fault": {
+            "pc": 956,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 44,
+          "retirements": 244,
+          "fault": {
+            "pc": 956,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 45,
+          "retirements": 227,
+          "fault": {
+            "pc": 956,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 46,
+          "retirements": 235,
+          "fault": {
+            "pc": 956,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 47,
+          "retirements": 248,
+          "fault": {
+            "pc": 956,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 48,
+          "retirements": 237,
+          "fault": {
+            "pc": 956,
+            "insn": 115,
+            "code": 8,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        },
+        {
+          "scenario": 49,
+          "retirements": 238,
+          "fault": {
+            "pc": 956,
+            "insn": 1048691,
+            "code": 9,
+            "tval": 0
+          },
+          "gpr_words": 31,
+          "ram_words": 32
+        }
+      ],
+      "artifacts": {
+        "build\\T019\\random-iss-20261108T020926585991Z\\observed_271828.json": "ea06a032c5379851a8cb8c3819f71d8c7de30b955bf0467f75926f1fea83afd2",
+        "build\\T019\\random-iss-20261108T020926585991Z\\expected_271828.json": "ea06a032c5379851a8cb8c3819f71d8c7de30b955bf0467f75926f1fea83afd2",
+        "build\\T019\\random-iss-20261108T020926585991Z\\corrupt_271828.json": "0c1fdbc877c255d0c6334ff34622360dc7029896902e74fabe9283f39cb059b2",
+        "build\\T019\\random-iss-20261108T020926585991Z\\scoreboard_271828.json": "be6941bf1e279ff31bbb5dff3b633daab9ad08096216c0a983522aba9b99eada"
+      },
+      "negative_rejections": [
+        {
+          "case": "mutated_actual_bit",
+          "diagnostic": "event 0 mismatch: actual=('R', 0, 0, 0, 3859, 4, 1, 30, 0, 0, 0, 0, 0, 0, 1) expected=('R', 0, 0, 0, 3859, 4, 1, 30, 0, 0, 0, 0, 0, 0, 0)"
+        },
+        {
+          "case": "empty_actual",
+          "diagnostic": "zero-test trace comparison"
+        },
+        {
+          "case": "extra_actual_event",
+          "diagnostic": "event count mismatch actual=5617 expected=5616"
+        }
+      ],
+      "scoreboard": {
+        "scenarios": 8,
+        "retirements": 1914,
+        "operation_hits": {
+          "ADD": 109,
+          "ADDI": 569,
+          "AND": 11,
+          "ANDI": 14,
+          "AUIPC": 29,
+          "BEQ": 14,
+          "BGE": 19,
+          "BGEU": 11,
+          "BLT": 17,
+          "BLTU": 18,
+          "BNE": 141,
+          "EBREAK": 4,
+          "ECALL": 4,
+          "FENCE": 48,
+          "JAL": 48,
+          "JALR": 48,
+          "LB": 17,
+          "LBU": 15,
+          "LH": 16,
+          "LHU": 15,
+          "LUI": 347,
+          "LW": 25,
+          "OR": 13,
+          "ORI": 15,
+          "SB": 24,
+          "SH": 23,
+          "SLL": 12,
+          "SLLI": 15,
+          "SLT": 17,
+          "SLTI": 13,
+          "SLTIU": 15,
+          "SLTU": 11,
+          "SRA": 13,
+          "SRAI": 12,
+          "SRL": 15,
+          "SRLI": 12,
+          "SUB": 9,
+          "SW": 91,
+          "XOR": 62,
+          "XORI": 11
+        }
+      }
+    }
+  ],
+  "source_sha256": {
+    "rtl/core/rv32_pkg.sv": "cfbcc3bcc93f7dd66dca05422cb968a0c6bd421fe29b898e4775968b93f7831f",
+    "rtl/core/decoder.sv": "36a5b877e0e585969750f4446e2bb3cb3b3fe5829786118864de516e70e3842c",
+    "rtl/core/alu.sv": "bff51163e8c202d806a9a3343d82df0d46f4ae34717f48711595a91b72a93b99",
+    "rtl/core/regfile.sv": "b237b622b105509dfeefefe6add04e12dd9fc5b878e6e1133e5fe0a3e3ad2bec",
+    "rtl/core/branch_unit.sv": "df42e9881113c91b3c5a07af32d7116aa673ef39d24f728dafc4e88fde41f63e",
+    "rtl/core/lsu.sv": "3aec50b3fb07044048da457f3ca59a01a21a256a817c806497d04585f69609e6",
+    "rtl/core/pipeline_core.sv": "9bbf1456055d422b17dae7c8875eb4597aff598f829e181ec50dacda6756a560",
+    "rtl/core/forwarding_unit.sv": "443c38de8fe17239e8e19d30a52250f2741b90f6e84813e5e4165c360cf5dd99",
+    "rtl/core/hazard_unit.sv": "d3306b8c4292833febee1d31da7d4b500025385ba93c50879df3e34972eb8fc6",
+    "rtl/core/csr_file.sv": "a68a1be9c0b9e776e9fc511cbfd3e3732d157270a5abaed07177348259862fd5",
+    "rtl/core/trap_control.sv": "92068d33a9a38567159259661fb611666241b513d3aa8354ad79ff4a95f2b1de",
+    "rtl/core/pipeline_cpu.sv": "4206c45b0f29db4a1cdc968bd027df6e09e577241bca0093d84a33593f7368ce",
+    "dv/integration/test_core_smoke.py": "e7e81581805d64d2c9a9264b750bb8116c7efca6848522622f83504564ef343d",
+    "dv/integration/test_load_use.py": "017480522fc6f851ea0b2621b49efd0ef191354014af9f0a8ef5f7cc37b61930",
+    "dv/integration/test_flush.py": "5099e12f54faa89526c90b9590ae1c7f5465bd78fdd372d84dd3ec69b71ae34d",
+    "dv/integration/test_backpressure.py": "91e6673cbeaba42987138f1a2138c0c8144a2891888ca66dbfef602627acc9e3",
+    "dv/reference/rv32_iss.py": "3bea09d666445514edbff6a4d433bdc2e18eec0b416b6780e617efcc91ab856c",
+    "dv/random/tb_random.sv": "ab9b6dec8825f23cfd14898c07b3df7029d41ae6986c3600dd0a6720e2865b6a",
+    "dv/random/test_random_programs.py": "81e0d33eacb64d63082ec6d3472d94a5ebbd1a8053cbd4da98293655cb59ba70",
+    "scripts/unit_checks.py": "dec178db4844dce3ffde1b159d0df82a843ec74737c7e5cd3f0a8f6c57b30849",
+    "scripts/rtl_checks.py": "f38cce3647f592f7c5ad915f56e65ec0782ace2faf75ce3cf549977bca6270e0",
+    "scripts/tool_runner.py": "2ffc6d2c8d4be6b21f5b836a033b6971f44f9172d22b18378ade58498ec4d5f7",
+    "scripts/tool_child.py": "8a61d7f13507a0d41b838aef00b1488e9ecc0b535ff9a08caca729b0551b62a8",
+    "config/rtl_checks.json": "fffee851a3d91b7a9625bb4e21fe57850162eee16b289ba6897079584b459d40",
+    ".harness/checks.json": "66e7be7dbc460c283dd0d57d0fbb2106952428895509b103de5e4bed8e892d78",
+    "docs/ARCH_CONTRACT.json": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03",
+    "scripts/retire_checks.py": "85d0d8efc172340be21a13b0b6cc7b6cab3253c537ab1db2a04c9c6d01046bcf",
+    "dv/reference/retire.py": "184ad394f3bb58043381d485768836bb139776056e5820c3e1dd8d7851f8f503",
+    "dv/integration/test_retire.py": "2a266a4762a9852498529be0e307ab9793d7b8dc5cb5408a206b583b336af59e",
+    "dv/reference/scoreboard.py": "bcf9eb9bdac26e99ccb9dfd90d4d5f4aa1d6819eb389d02d86e8a8d1c8203dec",
+    "dv/random/test_scoreboard.py": "9495af9961cdd8af399f532537827729730466ca982457b9d12944563d740edc"
+  },
+  "pins": {
+    "schema_version": 1,
+    "python_version": "3.9.13",
+    "git_version": "2.48.1.windows.1",
+    "tzdata_version": "2026.2",
+    "vivado_version": "2025.2",
+    "vivado_sw_build": "6299465"
+  },
+  "backend": {
+    "path": "evidence/toolchain_runs/random-20261108T020928840583Z.json",
+    "sha256": "73cd3b9e6a74d4da0007e729ab38ec30b82fc829283e334fe97a20e7f586cd8d"
+  },
+  "error_words_by_scenario": {},
+  "finished_utc": "2026-11-08T02:09:56.512443+00:00"
+}

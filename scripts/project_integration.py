@@ -9,11 +9,11 @@ from board_checks import validate_xpr
 
 
 def main():
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--apply',action='store_true');args=parser.parse_args()
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--apply',action='store_true');parser.add_argument('--task',choices=('T031','T045'),default='T031');args=parser.parse_args()
     config=fpga_build.load_config();xpr=harness.inside('RV32I_Edge_SoC.xpr')
     if not args.apply:
         validate_xpr(xpr.read_text(),config);print('SOC_PROJECT_MANIFEST_PASS');return 0
-    c=rtl_checks.Checks('soc-project-integration',task='T031',scope='Existing project source integration only, no full FPGA build')
+    c=rtl_checks.Checks('soc-project-integration',task=args.task,scope='Existing project source integration only, no full FPGA build')
     c.result['source_sha256']={n:hashlib.sha256(harness.inside(n).read_bytes()).hexdigest() for n in ['config/fpga_build.json','scripts/project_integration.py','fpga/basys3/integrate.tcl']+config['rtl_sources']+config['memory_files']+config['constraints']}
     before=c.base/'project-before.xpr';before.write_bytes(xpr.read_bytes())
     job=c.base/'sources.tsv';harness.atomic_text(job,''.join(kind+'\t'+name+'\n' for kind,key in [('rtl','rtl_sources'),('mem','memory_files'),('xdc','constraints')] for name in config[key]))

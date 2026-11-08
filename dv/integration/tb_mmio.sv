@@ -12,7 +12,7 @@ module tb_mmio;
     gpio g(.clk_i(clk),.rst_i(rst),.switches_i(switches),.leds_o(leds),.req_valid_i(gv),.req_write_i(gw),
         .req_addr_i(ga),.req_wdata_i(gd[15:0]),.req_be_i(gb),.req_ready_o(gq),.rsp_valid_o(gs),.rsp_err_o(ge),.rsp_rdata_o(gdata),.rsp_ready_i(gr));
     timer t(.clk_i(clk),.rst_i(rst),.req_valid_i(tv),.req_write_i(tw),.req_addr_i(ta),.req_wdata_i(td),.req_be_i(tb),
-        .req_ready_o(tq),.rsp_valid_o(ts),.rsp_err_o(te),.rsp_rdata_o(tdata),.rsp_ready_i(tr));
+        .req_ready_o(tq),.rsp_valid_o(ts),.rsp_err_o(te),.rsp_rdata_o(tdata),.rsp_ready_i(tr),.irq_o());
     always #5 clk=~clk;
     integer fd,fields,checked=0,seed,ir,igv,igw,igr,itv,itw,itr;
     logic [15:0] isw,preled,postled;

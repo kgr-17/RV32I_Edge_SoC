@@ -6,11 +6,19 @@ import sys
 import tempfile
 import time
 import unittest
+from concurrent.futures import ThreadPoolExecutor
 import harness
 import tool_runner
 
 
 class RunnerTests(unittest.TestCase):
+    def test_parallel_commands_have_distinct_project_local_temporary_files(self):
+        code="import os,time;from pathlib import Path;p=Path(os.environ['TMP'])/'fixed-name.tmp';p.write_text(VALUE);time.sleep(0.1);print(p.read_text())"
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            results=list(pool.map(lambda value:self.python(code.replace('VALUE',repr(value))),('first','second')))
+        self.assertEqual([r['stdout'].strip() for r in results],['first','second'])
+        self.assertNotEqual(results[0]['temporary_directory'],results[1]['temporary_directory'])
+        self.assertTrue(all(Path(r['temporary_directory']).is_relative_to(harness.inside('build/tmp')) for r in results))
     def setUp(self):
         base = harness.inside('build/tool_runner_tests')
         base.mkdir(parents=True, exist_ok=True)

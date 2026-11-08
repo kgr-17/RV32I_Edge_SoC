@@ -13,6 +13,14 @@ import rtl_checks
 
 
 class CheckPolicyTests(unittest.TestCase):
+    def test_legacy_interface_definitions_are_scoped_to_exact_lint_units(self):
+        manifest=rtl_checks.load_manifest()
+        for bad in ('arbitrary',['DISABLE_CHECKS'],['RV32_CORE_LEGACY_PORTS'],[1],True):
+            changed=copy.deepcopy(manifest);changed['lint_designs'][0]['defines']=bad
+            with mock.patch.object(rtl_checks.harness,'read',return_value=changed):
+                with self.assertRaises(ValueError):rtl_checks.load_manifest()
+        for top,definitions in rtl_checks.LEGACY_LINT_DEFINES.items():
+            self.assertEqual(next(d for d in manifest['lint_designs'] if d['top']==top)['defines'],definitions)
     def test_concurrent_evidence_is_complete_with_valid_command_indices(self):
         root = rtl_checks.harness.inside('build/evidence_concurrency_tests')
         root.mkdir(parents=True, exist_ok=True)

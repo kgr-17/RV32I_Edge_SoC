@@ -1,0 +1,30 @@
+{
+  "profile": "interrupt-boot-preparation",
+  "status": "FAIL",
+  "started_utc": "20261108T022036211252Z",
+  "base_commit": "f9d05e0966b2016d631164de1cff71e260a0b553",
+  "scope": "Actual enabled pipeline/MMIO/CSR/trap compiled boot and independent bus/ISA/CSR/serial checker",
+  "commands": [],
+  "checks": [
+    {
+      "name": "Pinned Python version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned tzdata version",
+      "status": "PASS",
+      "command_index": null
+    }
+  ],
+  "simulations": [],
+  "excluded": [
+    "formal",
+    "timing closure",
+    "physical FPGA",
+    "ASIC",
+    "CPU ISA correctness"
+  ],
+  "error": "[WinError 3] The system cannot find the path specified: 'C:\\\\RV32I_Edge_SoC\\\\build\\\\tmp\\\\eda-ivm8eh8u'",
+  "artifacts": {}
+}

@@ -106,3 +106,9 @@ milestones remain mandatory. No FPGA programming, ASIC or metastability proof.
 
 Final audit: evidence/t031-final-audit-2026-11-07.json; 3 receipts, 60 sources,
 522 artifacts, 1182 preserved files, 9462 positive retirements / 36 UART bytes.
+
+T045 compatibility note: the canonical top now defaults to the reviewed interrupt
+configuration with irq_boot.mem. The T031 board-top test explicitly selects
+ENABLE_TRAPS=0 and soc_boot.mem, retaining all the expectations documented here.
+Both images remain in the project. This document and its historical receipts
+describe the legacy configuration; see INTERRUPT_REPORT.md for the new mode.

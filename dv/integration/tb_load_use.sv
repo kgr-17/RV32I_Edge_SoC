@@ -40,7 +40,7 @@ module tb_load_use;
     logic [3:0] fault_code_o;
     logic [31:0] fault_tval_o;
     always #5ns clk_i = ~clk_i;
-    pipeline_core dut (
+    pipeline_core dut (.irq_external_i(1'b0),
         .clk_i(clk_i),
         .rst_i(rst_i),
         .imem_req_valid_o(imem_req_valid_o),
@@ -79,7 +79,7 @@ module tb_load_use;
         .fault_insn_o(fault_insn_o),
         .fault_code_o(fault_code_o),
         .fault_tval_o(fault_tval_o)
-    );
+    ,.trap_valid_o(),.trap_order_o(),.trap_pc_o(),.trap_insn_o(),.trap_cause_o(),.trap_tval_o(),.trap_target_o(),.retire_csr_valid_o(),.retire_csr_read_o(),.retire_csr_write_o(),.retire_csr_addr_o(),.retire_csr_rdata_o(),.retire_csr_wdata_o());
     logic [31:0] rom [0:16383], ram [0:16383], expected_ram [0:16383];
     logic [31:0] expected [0:2047][0:11];
     logic [31:0] fields [0:11];

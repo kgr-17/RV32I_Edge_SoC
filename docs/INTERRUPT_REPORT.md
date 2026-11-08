@@ -1,0 +1,237 @@
+# Interrupt implementation evidence (T045 completed)
+
+Current result: attempt 2 passed all five required gates, including strict lint,
+the interrupt suite and all 28 regression targets. The final audit is in
+evidence/prepare/T045-final-audit-2026-11-07.json. The entries below retain the
+implementation and failure history; the last entry records final acceptance.
+Full FPGA execution, physical-board validation and formal proof remain separate
+evidence gaps. T023 is owner-skipped, with formal NOT RUN.
+
+## T045 active: first enabled CSR/trap/timer SoC boot passed
+
+Owner approval recorded f9d05e0; began T045 from clean Git. Baseline tracked
+source hashes in evidence/prepare/T045-baseline-2026-11-07.json. No finish attempts
+used. Added csr_file/trap_control, enabled decoder IDs41..47 (packed57-bit legacy
+decode unchanged), feature-constant pipeline CSR serialization/precise traps/
+drain-recheck and separate observations. Core/SoC default legacy0; timer bit2 IRQ
+enabled only with feature, preserves bit1 reload. Existing images/constraints/
+approved v0.2 and v0.3 documents untouched. Canonical FPGA top remains legacy
+until full enabled native validation and recoverable integration.
+
+Four independent CSR model tests PASS. Actual csr-preparation-20261108T011427355331Z
+PASS10checks/8commands:6424 pre/post vectors per seed1/20261107,12848total, CSR
+masks/read-only/zero-index-vs-value/trap/MRET/reset/admission cancellation. First
+legacy SoC prep soc-boot-preparation-20261108T011559866077Z strictly FAIL on new
+unconnected output warning; archived28 sources and generated hashes before binding
+all added outputs explicitly. Same legacy expectations then passed in
+soc-boot-preparation-20261108T011638471997Z, preserving old compiled program.
+
+Actual pinned GNU RV32I_Zicsr build interrupt-firmware-20261108T011955511938Z PASS;
+new sw/interrupt_smoke.S + existing boot/linker produce separate irq_boot.mem.
+Enabled interrupt-boot-preparation-20261108T012206694452Z PASS:7318cycles,
+two747-retirement boots, all nine synchronous mcause classes plus externalIRQ11,
+all six CSR operations, nested synchronous frame save/restore, MRET, timer W1C,
+20 independently decoded IRQ PASS CRLF bytes,354RAM effects, persistentword1->2.
+Independent CSR/ISA/bus/peripheral/RAM/serial checker passed; no marker-only test.
+
+Continue soleactiveT045: unit defect controls/lint, random bus waits and direct
+IRQ mask/cancel/reset/interactions across seeds, production868/actualtop boot,
+mode-aware source/image integration, runtime contract and complete test-interrupts
+driver. Full27existing regression targets plus new IRQ target must all run;
+old19-target run was478seconds, added EDA targets justify bounded2-worker
+independent regression under unchanged600 aggregate/120native limits. Preserve
+every command, order/evidence/failure and old expectations; test orchestration.
+Do not reserve finish until preparation is concrete; max3attempts. Record both
+reports before final gates, audit current/source/artifact/baseline and commit.
+FormalT023 stays ownerskipped/NOT RUN; fullFPGA synth/route/timing/PPA/fullCDC/
+bitstream/physical/ASIC NOT RUN, approvals remain separate. No install/download/
+globalconfig/push/scheduling/programming; attendedunrestricted/never. LAdateNov7,
+UTCNov8. VersionsPython3.9.13/Git2.48.1.windows.1/tzdata2026.2/Vivado-XSim2025.2
+SW6299465. New sessionreads latesthandoff plusrequiredcontractfiles/daily and
+recoversT045; do notselectanother task orclaimfeaturecomplete from preparations.
+
+
+---
+
+## T045 implementation prepared for final gates
+
+Latest full interrupt script preparation interrupts-20261108T014955485553Z PASS
+119checks/59commands. Four CSR unit tests and seven independent IRQ model tests
+PASS. Both seeds1/20261107 cover CSR/timer vectors, fast boots, random request/
+response waits, level cancellation during drain, six reset-aborted states then
+two complete boots, and an actual fault/IRQ collision. The latter uses a recorded
+verification-only illegal instruction patch after the polling load; source IRQ is
+admitted while the fault is in EX, and native IRQ_FAULT_WON>=2 confirms synchronous
+fault precedence. All effects/retirements/traps/CSR state/wholeRAM/UART are checked
+independently; disabled observation metadata must be zero and RAM cannot execute
+CSR/MRET encodings. Native wrong-resume core plus four unit RTL mutants rejected;
+six bad-vector, five bad-trace and actual corrupt-image controls rejected.
+
+Actual production Basys3 top at868 passed179302cycles/two2895-retirement boots,
+20IRQ PASS CRLF bytes, persistentword1->2. Standalone enabled CPU/CSR/admission
+lint PASS6checks/3commands (newCPU49.641s); explicit aligned30-bit internal CSR
+trap-PC adapter removed true unused-input warnings without changing32-bit core
+PC or masking diagnostics. Enabled timer lint is registered for final full lint.
+
+Project now includes newCSR/admission sources andirq_boot.mem, retainsoldimage,
+adds20XPRlines/no deletions. Backup evidence/prepare/T045-before-integration/.
+Source-only integration soc-project-integration-20261108T013838027098Z remainsFAIL
+forinstalled board-catalog warnings, exactmanifestPASS separately. Newcore/SoC
+defaults0 preservelegacy; canonicaltopdefaults1/newimage. LegacyboardTBexplicitly
+selects0/soc_boot.mem. New runtimecontract has52ports and binds exactT044specSHA;
+approvedv0.2/v0.3 submissions, XDC, boot/linker, priorimages andkit unchanged.
+
+Failures retained before repairs: legacyunconnectedports(28inputs), waitwrapper
+syntax(30), unusedCSRalignmentbits(18), cancellationwindow(30), prioritywindow
+(62), plusdriverPythonparseZIP. Sourcewindowrepairs changeDVstimulus only; required
+cancellation/fault-priority checks remain. Passing108check checkpoint archived
+beforepriorityextension. PowerShell redirection gaveNativeCommandError despite
+43unittestOK; rawoutputZIPretained. Exactargv policies thenPASS exits[0,0,0]
+in evidence/prepare/T045-policy-checks.json (dispatcher2,budget5,harness43).
+
+scripts/verify.py now runs only independent regression targets withmax2 workers,
+all28targetsretained, declaredresultindices preserved, each completion flushed
+atomically so laterfailure cannot erase earliercommandoutput. Larger appended
+suites startfirst; ordinarychecks staysequential. Concurrency/exception/NOTRUN/
+ordering tests passed; original600aggregate/120native caps unchanged. Full28
+regression NOT RUN yet. Registry/newdriverready; requiredfinishT045 next with
+lint,test-interrupts,regress,andwhitespace, max3attempts(current0). Do not reuse
+preparationPASS asfinaltaskgate. Onfailure preserveallinputs/receipts beforefix;
+never weakenchecks. Nativeartifact roots underbuild/T045; allactual logs/hashes.
+
+Next runcheck_interrupt_contract, inspectdiff, finish, auditallcurrentreceipts/
+source/artifacts/baseline/ownerstate, appendbothreports andcommitinspectedfiles.
+Thenquerynext expectedT043ownerexecutiongate; prepareconcreteplan andrequestowner
+authorization, never self-authorize or programhardware.33mandatorycomplete+1skip/
+41 beforeT045finishes. T023formal NOT RUN/ownerskipped. FullSoCimplementation,
+timing/PPA/fullCDC/bitstream/physical/ASIC NOT RUN. Runtimeunrestricted/never,
+attendedonly. No download/install/globalconfig/push/scheduler/FPGAprogramming.
+ExactlytwoNovember7reports, priorentriesretained. VersionsunchangedPython3.9.13/
+Git2.48.1.windows.1/tzdata2026.2/Vivado-XSim2025.2 SW6299465, pinnedGNUtools.
+
+## T045 first final attempt failed; bounded second attempt prepared
+
+Attempt 1, evidence/runs/T045/attempt-1-20261108T015654747556Z.json:
+lint FAIL(1), test-interrupts PASS(0), regress FAIL(1), both whitespace gates PASS(0).
+All 27 preceding regression targets passed. The new IRQ target failed because
+the production XSim process exited 4294967295 after 0.781s with empty stdout and
+stderr and no waveform. This is an actual native failure; root cause remains
+unknown. The separate earlier IRQ gate passed 119 checks/59 native commands.
+Regression completed all 28 indexed targets in 537.997524s under the unchanged
+600s command cap. Attempt-1 sources (200 files), manifest, journal and hashes are
+retained in evidence/failed_sources/T045/attempt-1/. One attempt consumed; two
+remain. Resume did not reopen or reset the attempt counter.
+
+Strict synthesis exposed unused constant IRQ/observation logic in disabled
+configurations. Enabled-only observation registers now use a generate branch;
+legacy observations are constant zero. Exact whitelisted legacy lint definitions
+omit only inactive IRQ boundary ports in the two disabled probes. Production,
+enabled probes and every simulation use the full normal interface without these
+definitions. Both native source guards reject an enabled feature combined with
+the legacy-port specialization. No warning filters or diagnostic policies changed.
+Native Vivado synth_design -help confirmed -verilog_define; read_verilog has no
+such option. Supplementary repair receipt disabled-lint-repair-20261108T022124252206Z
+PASS 9 checks/5 commands, including both default probes, enabled CPU, wrong-scope
+Tcl rejection and enabled-feature source-guard rejection. All 20 lint-policy tests
+and all 8 process-runner tests pass. Existing descendant timeout cleanup remains.
+
+Each native command now gets a unique directory under build/tmp and records it
+as temporary_directory; TMP/TEMP/TMPDIR are per child process. This prevents
+shared fixed temporary filenames. It is not proof of the XSim failure's cause.
+The first implementation lacked the parent directory; two preparations failed
+before EDA launch and their 20 inputs were archived before the mkdir repair.
+Enabled cold/warm boot then passed in interrupt-boot-preparation-20261108T022134468028Z.
+Runner tests are added to the required IRQ gate. No timeout cap increased.
+
+Source-only integration soc-project-integration-20261108T023432195703Z still FAIL
+for the installed board catalog warnings; project_manifest_matches is true and
+the second apply leaves the XPR unchanged. No full synthesis/implementation,
+bitstream or programming was invoked. Approved specifications, legacy firmware,
+XDC and original kit are retained. Temporary helper discovery used a nonexistent
+harness.write API; Python exited 1 before any file write, then atomic was used.
+
+Next: inspect current diff/contract, finish T045 for fresh attempt 2, audit exact
+current sources and recursive receipts/artifacts, append these same two dated
+reports and commit inspected files if all gates pass. If another failure occurs,
+retain its complete input snapshot before repair and observe the three-attempt
+limit. No automatic owner approval or task reopening. T043 execution requires
+separate owner authorization after its concrete plan is prepared. T023 formal
+remains owner-skipped/NOT RUN. Full target timing/PPA/CDC, hardware and ASIC remain
+NOT RUN. This runtime is unrestricted; attended execution only. Python3.9.13,
+Git2.48.1.windows.1, tzdata2026.2, Vivado/XSim2025.2 SW6299465 unchanged.
+
+## T045 completed: approved v0.3 implementation and simulation acceptance
+
+Authoritative attempt 2: evidence/runs/T045/attempt-2-20261108T023832980009Z.json. All five gates PASS, exit 0:
+python -B scripts/verify.py lint; python -B scripts/verify.py test-interrupts;
+python -B scripts/verify.py regress; git diff --check; git diff --cached --check.
+Strict lint passed 53 checks/28 native commands. Regression passed all 28 indexed
+targets in 567.403s; original 27 commands remain the unchanged prefix.
+Two fresh IRQ suites each passed 119 checks/59 commands, with seeds 1/20261107.
+Production top at divisor 868 passed 179302 cycles, two boots of 2895 retirements
+each, 20 independently decoded IRQ PASS CRLF bytes and persistent RAM counter
+1->2. Nine positive runs per suite include random waits, source cancellation,
+six reset-aborted states and fault-before-IRQ priority. Four unit RTL mutants,
+an actual wrong-return-PC core, malformed/wrong vectors/traces and corrupt ROM
+were rejected at their intended checks. Four CSR tests, seven IRQ oracle tests,
+two dispatch, five budget, 43 harness and eight native process tests also passed.
+No formal proof or certification is inferred from finite simulation.
+
+Implementation: csr_file atomically commits the approved 14-CSR subset with
+reset > trap > MRET > software-write priority. trap_control drains and rechecks
+the level, saving the latest retired continuation. The pipeline serializes six
+CSR operations and MRET; precise exceptions kill younger work and drain stale
+fetches. Timer CTRL bit 2 enables synchronous machine-external IRQ cause 11;
+bit 1 keeps its existing reload meaning. Separate trap and CSR observations
+extend the normal core to 52 ports. Core/SoC default to legacy mode, while the
+canonical Basys3 top enables the approved mode and separate irq_boot.mem.
+Production and all simulations use the normal interfaces; exact disabled probe
+specializations remain guarded and recorded. No warning filter was added.
+
+Main source changes: rtl/core/csr_file.sv, trap_control.sv, pipeline_cpu.sv,
+decoder.sv, rv32_pkg.sv; rtl/peripherals/timer.sv; rtl/soc/edge_soc.sv and
+soc_fabric.sv; fpga/basys3/top.sv. Verification adds independent CSR and full
+ISA/bus/peripheral/serial models, seven testbench snapshots, three lint probes,
+scripts/interrupt_checks.py, interrupt_firmware.py and interface-contract check.
+sw/interrupt_smoke.S uses the existing boot/linker, saves nested trap frames and
+demonstrates timer IRQ/MRET. Registry/manifests/source lists include these files;
+existing benches only bind new ports or select their original legacy image.
+Config/XPR source graph includes the two RTL files and additional image; XPR
+adds 20 lines with no deletion. Recoverable before-image is in
+evidence/prepare/T045-before-integration/. Original kit, XDC, prior images,
+boot/linker, approved architecture and interrupt specification stay unchanged.
+
+Engineering infrastructure: independent regression targets run with two workers,
+retain registered indices and flush complete results. Ordinary checks remain
+sequential. Each native command uses its own build/tmp directory. The existing
+600s aggregate and 120s native limits and descendant timeout cleanup remain.
+First final attempt and all preparatory failures are retained, including native
+XSim startup failure with unknown cause. The unique temporary directory change
+is isolation evidence, not proof of that failure's cause. Attempt 2 succeeds
+without clearing attempt 1; state records 2 attempts and no active task.
+
+Final audit evidence/prepare/T045-final-audit-2026-11-07.json recursively binds
+42 tool receipts, 170 source hashes and 2063 artifact hashes;
+all are current to this attempt. It also checks exact regression command prefix,
+source archive hashes, baseline preservation, report append-only history and
+unchanged owner approvals/skips/legacy claims. A copy of the audit helper is
+retained for replay. Source-only Vivado integration remains explicitly FAIL for
+installed board catalog warnings, with exact manifest PASS and idempotent XPR
+hash checked separately. This does not establish a warning-free full FPGA build.
+
+Git baseline f9d05e0 records T044 owner approval; reviewed proposal 80bd35e and
+T031 66bfa46 remain in history. Commit this inspected T045 package locally after
+the final diff/index review; do not push. Mandatory progress is 34 completed plus
+one owner-skipped task out of 41. T023 formal remains NOT RUN and must be disclosed
+in final review. Full target synthesis/place/route/timing/power/CDC/bitstream,
+physical-board tests and ASIC evidence remain NOT RUN.
+
+Next session: read this handoff and all AGENTS startup files, run daily
+--supervised, inspect Git and recover any active task. T045 is complete; do not
+rerun finish or reset attempts. Query next; prepare the hashed T043 plan only,
+then obtain the owner's explicit T043 execution authorization before authorize/
+begin or any full target build. Do not approve final T043 review or program a
+physical FPGA on the owner's behalf. Runtime remains unrestricted/never and is
+not a sandbox; no unattended runs, downloads, installs, global edits or scheduling.
+Versions unchanged: Python 3.9.13, Git 2.48.1.windows.1, tzdata 2026.2 and
+Vivado/XSim 2025.2 SW 6299465, with pinned actual GNU compiler components.

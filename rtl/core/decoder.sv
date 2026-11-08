@@ -1,5 +1,5 @@
 `default_nettype none
-module decoder (
+module decoder #(parameter bit ENABLE_TRAPS=1'b0) (
     input wire logic [31:0] insn_i,
     output rv32_pkg::decode_t decode_o
 );
@@ -84,6 +84,17 @@ module decoder (
                     32'h0010_0073: decode_o.op = OP_EBREAK;
                     default: decode_o.op = OP_ILLEGAL;
                 endcase
+                if(ENABLE_TRAPS) begin
+                    case(insn_i[14:12])
+                        3'd1:decode_o.op=OP_CSRRW;
+                        3'd2:decode_o.op=OP_CSRRS;
+                        3'd3:decode_o.op=OP_CSRRC;
+                        3'd5:decode_o.op=OP_CSRRWI;
+                        3'd6:decode_o.op=OP_CSRRSI;
+                        3'd7:decode_o.op=OP_CSRRCI;
+                        default:if(insn_i==32'h30200073)decode_o.op=OP_MRET;
+                    endcase
+                end
             end
             default: decode_o.op = OP_ILLEGAL;
         endcase
@@ -91,6 +102,12 @@ module decoder (
         decode_o.illegal = (decode_o.op == OP_ILLEGAL);
         // Only legal operations can expose operands or a destination.
         case (decode_o.op)
+            OP_CSRRW,OP_CSRRS,OP_CSRRC:begin
+                decode_o.uses_rs1=1'b1;decode_o.writes_rd=(insn_i[11:7]!=5'd0);
+            end
+            OP_CSRRWI,OP_CSRRSI,OP_CSRRCI:begin
+                decode_o.imm={27'd0,insn_i[19:15]};decode_o.writes_rd=(insn_i[11:7]!=5'd0);
+            end
             OP_LUI, OP_AUIPC: begin
                 decode_o.imm = {insn_i[31:12], 12'b0};
                 decode_o.writes_rd = (insn_i[11:7] != 5'd0);

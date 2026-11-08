@@ -1,0 +1,772 @@
+{
+  "profile": "uart",
+  "status": "PASS",
+  "started_utc": "20261108T020718352903Z",
+  "base_commit": "f9d05e0966b2016d631164de1cff71e260a0b553",
+  "scope": "TX serializer and TX-side local MMIO only; RX/SoC integration remains later",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T027\\uart-20261108T020718352903Z\\versions",
+      "started_utc": "2026-11-08T02:07:18.462000+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "git version 2.48.1.windows.1\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.109
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T027\\uart-20261108T020718352903Z\\versions\\xvlog",
+      "started_utc": "2026-11-08T02:07:18.578000+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.594
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T027\\uart-20261108T020718352903Z\\versions\\xelab",
+      "started_utc": "2026-11-08T02:07:19.178706+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.578
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T027\\uart-20261108T020718352903Z\\versions\\xsim",
+      "started_utc": "2026-11-08T02:07:19.778706+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2025 Xilinx, Inc. All Rights Reserved.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.453
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\uart_tx.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\uart_mmio_tx.sv",
+        "C:\\RV32I_Edge_SoC\\dv\\unit\\tb_uart.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\uart_rx.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\uart_mmio.sv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T027\\uart-20261108T020718352903Z\\simulation",
+      "started_utc": "2026-11-08T02:07:20.268998+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "INFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/uart_tx.sv\" into library work\nINFO: [VRFC 10-311] analyzing module uart_tx\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/uart_mmio_tx.sv\" into library work\nINFO: [VRFC 10-311] analyzing module uart_mmio_tx\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/unit/tb_uart.sv\" into library work\nINFO: [VRFC 10-311] analyzing module tb_uart\nINFO: [VRFC 10-311] analyzing module tb_uart_default\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/uart_rx.sv\" into library work\nINFO: [VRFC 10-311] analyzing module uart_rx\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/uart_mmio.sv\" into library work\nINFO: [VRFC 10-311] analyzing module uart_mmio\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.688
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "work.tb_uart",
+        "--snapshot",
+        "uart_fast",
+        "--timescale",
+        "1ns/1ps",
+        "--debug",
+        "typical"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T027\\uart-20261108T020718352903Z\\simulation",
+      "started_utc": "2026-11-08T02:07:20.960627+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nRunning: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_uart --snapshot uart_fast --timescale 1ns/1ps --debug typical \nMulti-threading is on. Using 26 slave threads.\nStarting static elaboration\nPass Through NonSizing Optimizer\nCompleted static elaboration\nStarting simulation data flow analysis\nCompleted simulation data flow analysis\nTime Resolution for simulation is 1ps\nCompiling module work.uart_tx(CLKS_PER_BIT=32'b0100)\nCompiling module work.uart_rx(CLKS_PER_BIT=32'b0100)\nCompiling module work.uart_mmio(CLKS_PER_BIT=32'b0100)\nCompiling module work.uart_mmio_tx(CLKS_PER_BIT=32'b01...\nCompiling module work.tb_uart\nBuilt simulation snapshot uart_fast\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 1.594
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "uart_fast",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T027\\uart-20261108T020718352903Z\\simulation\\fast_seed_1.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T027\\uart-20261108T020718352903Z\\simulation",
+      "started_utc": "2026-11-08T02:07:22.648270+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:07:23 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/uart_fast/xsim_script.tcl\n# xsim {uart_fast} -testplusarg SEED=1 -testplusarg DIV=4 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_seed_1.txt -wdb {C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_seed_1.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_run.tcl\n## log_wave /tb_uart/clk /tb_uart/rst /tb_uart/reqv /tb_uart/reqr /tb_uart/addr /tb_uart/wr /tb_uart/data /tb_uart/be /tb_uart/rspr /tb_uart/rspv /tb_uart/rdata /tb_uart/err /tb_uart/tx /tb_uart/pe /tb_uart/pv /tb_uart/pdata /tb_uart/pr /tb_uart/pb /tb_uart/pt\n## run all\nUART_SIM_PASS div=4 seed=1 checked=11775\n$finish called at time : 117756 ns : File \"C:/RV32I_Edge_SoC/dv/unit/tb_uart.sv\" Line 56\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sat Nov  7 18:07:25 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.547,
+      "argument_file": {
+        "path": "build\\T027\\uart-20261108T020718352903Z\\simulation\\fast_seed_1.args",
+        "sha256": "1859ce4be9798f95588f6b879eb01c405be4c9403728e288c3cc48f97ef0b51f",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nDIV=4\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_seed_1.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_seed_1.wdb\n",
+        "intended_argv": [
+          "uart_fast",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "DIV=4",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_seed_1.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_seed_1.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "uart_fast",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T027\\uart-20261108T020718352903Z\\simulation\\fast_seed_20261106.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T027\\uart-20261108T020718352903Z\\simulation",
+      "started_utc": "2026-11-08T02:07:25.293906+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:07:25 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/uart_fast/xsim_script.tcl\n# xsim {uart_fast} -testplusarg SEED=20261106 -testplusarg DIV=4 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_seed_20261106.txt -wdb {C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_seed_20261106.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_run.tcl} -onfinish quit -onerror quit -sv_seed 20261106\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_run.tcl\n## log_wave /tb_uart/clk /tb_uart/rst /tb_uart/reqv /tb_uart/reqr /tb_uart/addr /tb_uart/wr /tb_uart/data /tb_uart/be /tb_uart/rspr /tb_uart/rspv /tb_uart/rdata /tb_uart/err /tb_uart/tx /tb_uart/pe /tb_uart/pv /tb_uart/pdata /tb_uart/pr /tb_uart/pb /tb_uart/pt\n## run all\nUART_SIM_PASS div=4 seed=20261106 checked=11986\n$finish called at time : 119866 ns : File \"C:/RV32I_Edge_SoC/dv/unit/tb_uart.sv\" Line 56\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sat Nov  7 18:07:27 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.531,
+      "argument_file": {
+        "path": "build\\T027\\uart-20261108T020718352903Z\\simulation\\fast_seed_20261106.args",
+        "sha256": "41d90728190bb34eddec6a67c2f597eccc563ac5425a311a7d400ac7254a9759",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n20261106\n--testplusarg\nSEED=20261106\n--testplusarg\nDIV=4\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_seed_20261106.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_seed_20261106.wdb\n",
+        "intended_argv": [
+          "uart_fast",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "20261106",
+          "--testplusarg",
+          "SEED=20261106",
+          "--testplusarg",
+          "DIV=4",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_seed_20261106.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_seed_20261106.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "uart_fast",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T027\\uart-20261108T020718352903Z\\simulation\\wrong-expected.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T027\\uart-20261108T020718352903Z\\simulation",
+      "started_utc": "2026-11-08T02:07:27.995071+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:07:28 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/uart_fast/xsim_script.tcl\n# xsim {uart_fast} -testplusarg SEED=1 -testplusarg DIV=4 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/wrong-expected.txt -wdb {C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/wrong-expected.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_run.tcl\n## log_wave /tb_uart/clk /tb_uart/rst /tb_uart/reqv /tb_uart/reqr /tb_uart/addr /tb_uart/wr /tb_uart/data /tb_uart/be /tb_uart/rspr /tb_uart/rspv /tb_uart/rdata /tb_uart/err /tb_uart/tx /tb_uart/pe /tb_uart/pv /tb_uart/pdata /tb_uart/pr /tb_uart/pb /tb_uart/pt\n## run all\nFatal: UART_MISMATCH phase=post checked=0\nTime: 16 ns  Iteration: 0  Process: /tb_uart/Initial33_7  Scope: tb_uart  File: C:/RV32I_Edge_SoC/dv/unit/tb_uart.sv Line: 50\n$finish called at time : 16 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sat Nov  7 18:07:30 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.453,
+      "argument_file": {
+        "path": "build\\T027\\uart-20261108T020718352903Z\\simulation\\wrong-expected.args",
+        "sha256": "b5e2cbbff07f2861410188c4272db7d831f63fa83b75fd81da2ec9dd1693b537",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nDIV=4\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/wrong-expected.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/wrong-expected.wdb\n",
+        "intended_argv": [
+          "uart_fast",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "DIV=4",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/wrong-expected.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/wrong-expected.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "uart_fast",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T027\\uart-20261108T020718352903Z\\simulation\\empty.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T027\\uart-20261108T020718352903Z\\simulation",
+      "started_utc": "2026-11-08T02:07:30.466520+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:07:31 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/uart_fast/xsim_script.tcl\n# xsim {uart_fast} -testplusarg SEED=1 -testplusarg DIV=4 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/empty.txt -wdb {C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/empty.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_run.tcl\n## log_wave /tb_uart/clk /tb_uart/rst /tb_uart/reqv /tb_uart/reqr /tb_uart/addr /tb_uart/wr /tb_uart/data /tb_uart/be /tb_uart/rspr /tb_uart/rspv /tb_uart/rdata /tb_uart/err /tb_uart/tx /tb_uart/pe /tb_uart/pv /tb_uart/pdata /tb_uart/pr /tb_uart/pb /tb_uart/pt\n## run all\nFatal: UART_EMPTY_VECTORS\nTime: 0 ps  Iteration: 0  Process: /tb_uart/Initial33_7  Scope: tb_uart  File: C:/RV32I_Edge_SoC/dv/unit/tb_uart.sv Line: 54\n$finish called at time : 0 fs\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sat Nov  7 18:07:32 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.484,
+      "argument_file": {
+        "path": "build\\T027\\uart-20261108T020718352903Z\\simulation\\empty.args",
+        "sha256": "1c69575c2040fe415b0323b076f2af7bfea20dca341394d3b0231b531b1284ea",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nDIV=4\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/empty.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/empty.wdb\n",
+        "intended_argv": [
+          "uart_fast",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "DIV=4",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/empty.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/empty.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "uart_fast",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T027\\uart-20261108T020718352903Z\\simulation\\truncated.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T027\\uart-20261108T020718352903Z\\simulation",
+      "started_utc": "2026-11-08T02:07:32.960763+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:07:33 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/uart_fast/xsim_script.tcl\n# xsim {uart_fast} -testplusarg SEED=1 -testplusarg DIV=4 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/truncated.txt -wdb {C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/truncated.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_run.tcl\n## log_wave /tb_uart/clk /tb_uart/rst /tb_uart/reqv /tb_uart/reqr /tb_uart/addr /tb_uart/wr /tb_uart/data /tb_uart/be /tb_uart/rspr /tb_uart/rspv /tb_uart/rdata /tb_uart/err /tb_uart/tx /tb_uart/pe /tb_uart/pv /tb_uart/pdata /tb_uart/pr /tb_uart/pb /tb_uart/pt\n## run all\nFatal: UART_MALFORMED_VECTOR\nTime: 16 ns  Iteration: 0  Process: /tb_uart/Initial33_7  Scope: tb_uart  File: C:/RV32I_Edge_SoC/dv/unit/tb_uart.sv Line: 55\n$finish called at time : 16 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sat Nov  7 18:07:35 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.453,
+      "argument_file": {
+        "path": "build\\T027\\uart-20261108T020718352903Z\\simulation\\truncated.args",
+        "sha256": "10f00440a7500e92a8d1af32cd8aa640916431b87af4af9a31360c120803b3d1",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nDIV=4\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/truncated.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/truncated.wdb\n",
+        "intended_argv": [
+          "uart_fast",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/fast_run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "DIV=4",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/truncated.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/truncated.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "work.tb_uart_default",
+        "--snapshot",
+        "uart_default",
+        "--timescale",
+        "1ns/1ps",
+        "--debug",
+        "typical"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T027\\uart-20261108T020718352903Z\\simulation",
+      "started_utc": "2026-11-08T02:07:35.430453+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nRunning: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_uart_default --snapshot uart_default --timescale 1ns/1ps --debug typical \nMulti-threading is on. Using 26 slave threads.\nStarting static elaboration\nPass Through NonSizing Optimizer\nCompleted static elaboration\nStarting simulation data flow analysis\nCompleted simulation data flow analysis\nTime Resolution for simulation is 1ps\nCompiling module work.uart_tx_default\nCompiling module work.uart_rx_default\nCompiling module work.uart_mmio\nCompiling module work.uart_mmio_tx\nCompiling module work.tb_uart(CLKS_PER_BIT=32'b0110110...\nCompiling module work.tb_uart_default\nBuilt simulation snapshot uart_default\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 1.593
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "uart_default",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T027\\uart-20261108T020718352903Z\\simulation\\default_seed_1.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T027\\uart-20261108T020718352903Z\\simulation",
+      "started_utc": "2026-11-08T02:07:37.758024+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:07:38 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/uart_default/xsim_script.tcl\n# xsim {uart_default} -testplusarg SEED=1 -testplusarg DIV=868 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/default_seed_1.txt -wdb {C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/default_seed_1.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/default_run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/default_run.tcl\n## log_wave /tb_uart_default/body/clk /tb_uart_default/body/rst /tb_uart_default/body/reqv /tb_uart_default/body/reqr /tb_uart_default/body/addr /tb_uart_default/body/wr /tb_uart_default/body/data /tb_uart_default/body/be /tb_uart_default/body/rspr /tb_uart_default/body/rspv /tb_uart_default/body/rdata /tb_uart_default/body/err /tb_uart_default/body/tx /tb_uart_default/body/pe /tb_uart_default/body/pv /tb_uart_default/body/pdata /tb_uart_default/body/pr /tb_uart_default/body/pb /tb_uart_default/body/pt\n## run all\nUART_SIM_PASS div=868 seed=1 checked=120779\n$finish called at time : 1207796 ns : File \"C:/RV32I_Edge_SoC/dv/unit/tb_uart.sv\" Line 56\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sat Nov  7 18:07:41 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 3.593,
+      "argument_file": {
+        "path": "build\\T027\\uart-20261108T020718352903Z\\simulation\\default_seed_1.args",
+        "sha256": "b84a7189fa062af042d0d2ec9b73d50f90900bf2cbc993f4425a659d39a3937d",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/default_run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nDIV=868\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/default_seed_1.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/default_seed_1.wdb\n",
+        "intended_argv": [
+          "uart_default",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/default_run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "DIV=868",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/default_seed_1.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/default_seed_1.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "uart_default",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T027\\uart-20261108T020718352903Z\\simulation\\default_seed_20261106.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T027\\uart-20261108T020718352903Z\\simulation",
+      "started_utc": "2026-11-08T02:07:41.987796+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:07:42 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/uart_default/xsim_script.tcl\n# xsim {uart_default} -testplusarg SEED=20261106 -testplusarg DIV=868 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/default_seed_20261106.txt -wdb {C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/default_seed_20261106.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/default_run.tcl} -onfinish quit -onerror quit -sv_seed 20261106\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/default_run.tcl\n## log_wave /tb_uart_default/body/clk /tb_uart_default/body/rst /tb_uart_default/body/reqv /tb_uart_default/body/reqr /tb_uart_default/body/addr /tb_uart_default/body/wr /tb_uart_default/body/data /tb_uart_default/body/be /tb_uart_default/body/rspr /tb_uart_default/body/rspv /tb_uart_default/body/rdata /tb_uart_default/body/err /tb_uart_default/body/tx /tb_uart_default/body/pe /tb_uart_default/body/pv /tb_uart_default/body/pdata /tb_uart_default/body/pr /tb_uart_default/body/pb /tb_uart_default/body/pt\n## run all\nUART_SIM_PASS div=868 seed=20261106 checked=103400\n$finish called at time : 1034006 ns : File \"C:/RV32I_Edge_SoC/dv/unit/tb_uart.sv\" Line 56\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sat Nov  7 18:07:45 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 3.375,
+      "argument_file": {
+        "path": "build\\T027\\uart-20261108T020718352903Z\\simulation\\default_seed_20261106.args",
+        "sha256": "c435806b7c4d86ee98290cf64827a1083d04b141d37fc2a63006c03f7d01182c",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/default_run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n20261106\n--testplusarg\nSEED=20261106\n--testplusarg\nDIV=868\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/default_seed_20261106.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/default_seed_20261106.wdb\n",
+        "intended_argv": [
+          "uart_default",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/default_run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "20261106",
+          "--testplusarg",
+          "SEED=20261106",
+          "--testplusarg",
+          "DIV=868",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/default_seed_20261106.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T027/uart-20261108T020718352903Z/simulation/default_seed_20261106.wdb"
+        ]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "Pinned Python version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned tzdata version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned Git version",
+      "status": "PASS",
+      "command_index": 0
+    },
+    {
+      "name": "Pinned xvlog version",
+      "status": "PASS",
+      "command_index": 1
+    },
+    {
+      "name": "Pinned xelab version",
+      "status": "PASS",
+      "command_index": 2
+    },
+    {
+      "name": "Pinned xsim version",
+      "status": "PASS",
+      "command_index": 3
+    },
+    {
+      "name": "Actual UART SystemVerilog compile",
+      "status": "PASS",
+      "command_index": 4
+    },
+    {
+      "name": "UART fast elaboration",
+      "status": "PASS",
+      "command_index": 5
+    },
+    {
+      "name": "Nonempty counted UART corpus fast",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "All256 complete payloads through MMIO and direct PHY",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Required UART transaction/reset scenarios present",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Independent pre/post UART waveform seed=1 fast",
+      "status": "PASS",
+      "command_index": 6
+    },
+    {
+      "name": "Positive UART waveform",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty counted UART corpus fast",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "All256 complete payloads through MMIO and direct PHY",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Required UART transaction/reset scenarios present",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Independent pre/post UART waveform seed=20261106 fast",
+      "status": "PASS",
+      "command_index": 7
+    },
+    {
+      "name": "Positive UART waveform",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual UART negative wrong-expected",
+      "status": "PASS",
+      "command_index": 8
+    },
+    {
+      "name": "Negative UART waveform",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual UART negative empty",
+      "status": "PASS",
+      "command_index": 9
+    },
+    {
+      "name": "Negative UART waveform",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual UART negative truncated",
+      "status": "PASS",
+      "command_index": 10
+    },
+    {
+      "name": "Negative UART waveform",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "UART default elaboration",
+      "status": "PASS",
+      "command_index": 11
+    },
+    {
+      "name": "Nonempty counted UART corpus default",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Required UART transaction/reset scenarios present",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Independent pre/post UART waveform seed=1 default",
+      "status": "PASS",
+      "command_index": 12
+    },
+    {
+      "name": "Positive UART waveform",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Nonempty counted UART corpus default",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Required UART transaction/reset scenarios present",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Independent pre/post UART waveform seed=20261106 default",
+      "status": "PASS",
+      "command_index": 13
+    },
+    {
+      "name": "Positive UART waveform",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "UART sources unchanged",
+      "status": "PASS",
+      "command_index": null
+    }
+  ],
+  "simulations": [
+    {
+      "variant": "fast",
+      "divider": 4,
+      "seed": 1,
+      "checked_vectors": 11775,
+      "vector_path": "build/T027/uart-20261108T020718352903Z/simulation/fast_seed_1.txt",
+      "vector_sha256": "138ba5c9bbe3c3bb1a24ef6a2ec0c0962a6d81c66c003be200740858dbbd8e64",
+      "waveform": "build/T027/uart-20261108T020718352903Z/simulation/fast_seed_1.wdb",
+      "waveform_sha256": "d0e2c66c6d5a67580d21e66fb1043d07e3497c960a4fb7762bae74cb6eeb7fce"
+    },
+    {
+      "variant": "fast",
+      "divider": 4,
+      "seed": 20261106,
+      "checked_vectors": 11986,
+      "vector_path": "build/T027/uart-20261108T020718352903Z/simulation/fast_seed_20261106.txt",
+      "vector_sha256": "dcaccde42af3a3dfcfd5dea8a809acefd6b5019b40ead9c7e4886c044a67d986",
+      "waveform": "build/T027/uart-20261108T020718352903Z/simulation/fast_seed_20261106.wdb",
+      "waveform_sha256": "00ded8d42a5d59fa76517ea204c3e22bf9b040c1e5ce26ddc5ad6b00cedc329e"
+    },
+    {
+      "variant": "default",
+      "divider": 868,
+      "seed": 1,
+      "checked_vectors": 120779,
+      "vector_path": "build/T027/uart-20261108T020718352903Z/simulation/default_seed_1.txt",
+      "vector_sha256": "46dbb0d8e9972bf66df86911faaf2ad97780abd338546959d601661fe9df4105",
+      "waveform": "build/T027/uart-20261108T020718352903Z/simulation/default_seed_1.wdb",
+      "waveform_sha256": "3ecb384ae8700bdddf38fb3a9eb7ee885d627d13955f7e0f16234df645d96ba0"
+    },
+    {
+      "variant": "default",
+      "divider": 868,
+      "seed": 20261106,
+      "checked_vectors": 103400,
+      "vector_path": "build/T027/uart-20261108T020718352903Z/simulation/default_seed_20261106.txt",
+      "vector_sha256": "a0c497376d936b66389b646359ddb7b45381a6bc6eb1a96372891b6bd7034bd5",
+      "waveform": "build/T027/uart-20261108T020718352903Z/simulation/default_seed_20261106.wdb",
+      "waveform_sha256": "721723ace3d170b7c6e234505c14ed5024cd02fe344eb68c6f33db7911367968"
+    }
+  ],
+  "excluded": [
+    "UART RX reception/flags",
+    "full SoC/compiled firmware execution",
+    "IRQ",
+    "formal",
+    "routed timing",
+    "hardware",
+    "ASIC"
+  ],
+  "source_sha256": {
+    "rtl/peripherals/uart_tx.sv": "3418eb069158da20b88ab7e490cf903f6a174b7c69fce5de8c40ef367c75d719",
+    "rtl/peripherals/uart_mmio_tx.sv": "bccf042461f6eac9e889b659a0dd7eb8e104e9ce1008e0f18c46f87c33821df0",
+    "dv/unit/tb_uart.sv": "48b6f10a0e083420d4c8c6f1d491752dfd9fd564ddfb5c3e3dff718bb004c538",
+    "dv/unit/test_uart.py": "2e25eadd516f9af9f5e21a573d3aa248baf06a2af7cc47bba39446f617b2195a",
+    "rtl/peripherals/uart_rx.sv": "d5c22f05450b70033746c8b762e5d4fb5fe974b496c822c400be8795fc344a4c",
+    "rtl/peripherals/uart_mmio.sv": "d73efd7e3a8535e642e5fde766eabffb8fe8d499672367f1b20d28c408f875a1",
+    "scripts/uart_checks.py": "5bb3a4fdbcbe229efd69614fd2ccb15a4178c046fb800f9f1b73b6616b3aa537",
+    "scripts/rtl_checks.py": "f38cce3647f592f7c5ad915f56e65ec0782ace2faf75ce3cf549977bca6270e0",
+    "scripts/tool_runner.py": "2ffc6d2c8d4be6b21f5b836a033b6971f44f9172d22b18378ade58498ec4d5f7",
+    "scripts/tool_child.py": "8a61d7f13507a0d41b838aef00b1488e9ecc0b535ff9a08caca729b0551b62a8",
+    ".harness/checks.json": "66e7be7dbc460c283dd0d57d0fbb2106952428895509b103de5e4bed8e892d78",
+    "config/rtl_checks.json": "fffee851a3d91b7a9625bb4e21fe57850162eee16b289ba6897079584b459d40",
+    "docs/ARCH_CONTRACT.json": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03"
+  },
+  "pins": {
+    "schema_version": 1,
+    "python_version": "3.9.13",
+    "git_version": "2.48.1.windows.1",
+    "tzdata_version": "2026.2",
+    "vivado_version": "2025.2",
+    "vivado_sw_build": "6299465"
+  },
+  "seed_reports": [
+    {
+      "variant": "fast",
+      "seed": 1,
+      "divider": 4,
+      "cycles": 11775,
+      "requests": 360,
+      "replies": 359,
+      "errors": 30,
+      "canceled": 1,
+      "mmio_frames": 266,
+      "phy_frames": 286,
+      "summary": "build/T027/uart-20261108T020718352903Z/simulation/fast_seed_1_summary.json"
+    },
+    {
+      "variant": "fast",
+      "seed": 20261106,
+      "divider": 4,
+      "cycles": 11986,
+      "requests": 360,
+      "replies": 359,
+      "errors": 24,
+      "canceled": 1,
+      "mmio_frames": 271,
+      "phy_frames": 291,
+      "summary": "build/T027/uart-20261108T020718352903Z/simulation/fast_seed_20261106_summary.json"
+    },
+    {
+      "variant": "default",
+      "seed": 1,
+      "divider": 868,
+      "cycles": 120779,
+      "requests": 56,
+      "replies": 55,
+      "errors": 17,
+      "canceled": 1,
+      "mmio_frames": 12,
+      "phy_frames": 13,
+      "summary": "build/T027/uart-20261108T020718352903Z/simulation/default_seed_1_summary.json"
+    },
+    {
+      "variant": "default",
+      "seed": 20261106,
+      "divider": 868,
+      "cycles": 103400,
+      "requests": 56,
+      "replies": 55,
+      "errors": 20,
+      "canceled": 1,
+      "mmio_frames": 10,
+      "phy_frames": 11,
+      "summary": "build/T027/uart-20261108T020718352903Z/simulation/default_seed_20261106_summary.json"
+    }
+  ],
+  "artifacts": {
+    "build/T027/uart-20261108T020718352903Z/simulation/fast_run.tcl": "df92012c3f314382b1b4e52fde772bc5a7477603fe0173c2fc1b760c2cbeb584",
+    "build/T027/uart-20261108T020718352903Z/simulation/fast_seed_1_summary.json": "8c00ea40e6440d149b73898a2f122a95a5aecef0a7a90bc987d876976c8473e2",
+    "build/T027/uart-20261108T020718352903Z/simulation/fast_seed_20261106_summary.json": "b81347b473f652c405f63ffdc4c1af1ec4946c3df9b6f06defac12f0d5829bd5",
+    "build/T027/uart-20261108T020718352903Z/simulation/wrong-expected.txt": "035c89f659d92845a45cc5118d9decb919cfefd926a2689d67236a3e2065a105",
+    "build/T027/uart-20261108T020718352903Z/simulation/wrong-expected.wdb": "45f5c9d96b011b4ea1f36b10e8cd0c7823291d8548bfcb684cffa1f9c1f202d1",
+    "build/T027/uart-20261108T020718352903Z/simulation/empty.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build/T027/uart-20261108T020718352903Z/simulation/empty.wdb": "5005c85096181414f06c9bb08943da02c0ac379eec03211e37a55cc3ff70ebfa",
+    "build/T027/uart-20261108T020718352903Z/simulation/truncated.txt": "fe2c4b445892f92c9c26e2154aaf8452636cdd33dbd896858a8263a07299dd17",
+    "build/T027/uart-20261108T020718352903Z/simulation/truncated.wdb": "8f581d9db828317d9eba027e0ac72ae12f627f572e69300d00b8f69d376280a2",
+    "build/T027/uart-20261108T020718352903Z/simulation/default_run.tcl": "3919cc1a680e60587b4f1dc968430e41ccd530dea5826e79a14601c897734907",
+    "build/T027/uart-20261108T020718352903Z/simulation/default_seed_1_summary.json": "44f8706f3564788435bb29934f2235deeb1155728c93d0a8f6b68fa64e20d421",
+    "build/T027/uart-20261108T020718352903Z/simulation/default_seed_20261106_summary.json": "5a9d49d8dd5fac665f25495e675b14426e51d7249b598ad3e1c132f4538b83de"
+  },
+  "finished_utc": "2026-11-08T02:07:45.385802+00:00"
+}

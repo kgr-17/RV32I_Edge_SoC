@@ -13,7 +13,7 @@ module tb_soc_fabric;
         .clk_i(clk),.rst_i(rst),.rx_i(rx),.switches_i(sw),.tx_o(tx),.leds_o(leds),
         .i_req_valid_i(iv),.i_req_ready_o(ir),.i_req_addr_i(ia),.i_rsp_valid_o(is),.i_rsp_err_o(ie),.i_rsp_rdata_o(idata),.i_rsp_ready_i(irdy),
         .d_req_valid_i(dv),.d_req_write_i(dw),.d_req_ready_o(dr),.d_req_addr_i(da),.d_req_wdata_i(dd),.d_req_be_i(db),
-        .d_rsp_valid_o(ds),.d_rsp_err_o(de),.d_rsp_rdata_o(ddata),.d_rsp_ready_i(drdy));
+        .d_rsp_valid_o(ds),.d_rsp_err_o(de),.d_rsp_rdata_o(ddata),.d_rsp_ready_i(drdy),.irq_o());
     always #5 clk=~clk;
     integer fd,fields,checked=0,seed,r0,r1,r3,r5,r6,r8,r11;
     logic [15:0] r2;

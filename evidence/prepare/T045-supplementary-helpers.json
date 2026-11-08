@@ -1,0 +1,11 @@
+{
+  "scope": "Read-only native command help probes and append-only report helper; their initial failures remain recorded",
+  "files": {
+    ".tmp/t045_legacy_lint_help.tcl": "afb7100cf41c2863026f78fb89024766c602e705c6a6689d6fc8bf017b1265d9",
+    ".tmp/t045_synth_help.tcl": "cd035be42c27ce568d5d787390801434bc828755a5762b6d6da075b97958ac61",
+    ".tmp/t045_synth_help_loaded.tcl": "3d65d9152e46112482fd67594224aa07ca3cbaffeb8c8c9e2941bd206915c17c",
+    ".tmp/t045_synth_command_help.tcl": "6c4a87242f6a26028e0124fb73e9fc82b4e2caa282f013228cfc80f2baea53ab",
+    ".tmp/t045_repair_entry.py": "b902e4b37d27f08f4cf70a00f335b5a845e82f4764eb653cb16a403c861af61f"
+  },
+  "zip_sha256": "6375a60c27c93cc866d1e36955a93218c1f8a6e55bbec3680dc71d37e3481311"
+}

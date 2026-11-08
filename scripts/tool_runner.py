@@ -10,6 +10,7 @@ import signal
 import subprocess
 import sys
 import time
+import tempfile
 import harness
 
 
@@ -71,13 +72,20 @@ def run(argv, cwd, timeout=30):
         raise ValueError('Tool timeout must be between zero and 120 seconds')
     cwd.mkdir(parents=True, exist_ok=True)
     env = harness.local_env()
+    # Native SDK launchers may use fixed temporary basenames. Keep each command
+    # in a compact, unique project-local directory, including parallel runs.
+    temporary_base=harness.inside('build/tmp')
+    temporary_base.mkdir(parents=True,exist_ok=True)
+    temporary=Path(tempfile.mkdtemp(prefix='eda-',dir=str(temporary_base)))
+    for name in ('TMP','TEMP','TMPDIR'):env[name]=str(temporary)
     for name in ('APPDATA', 'LOCALAPPDATA', 'USERPROFILE'):
         folder = cwd / 'profile' / name.lower()
         folder.mkdir(parents=True, exist_ok=True)
         env[name] = str(folder)
     record = {'argv': argv, 'cwd': str(cwd), 'started_utc': dt.datetime.now(dt.timezone.utc).isoformat(),
               'timeout_seconds': timeout, 'exit_code': None, 'status': 'NOT RUN',
-              'stdout': '', 'stderr': '', 'cleanup': 'Windows Job Object' if os.name == 'nt' else 'POSIX process group'}
+              'stdout': '', 'stderr': '', 'temporary_directory':str(temporary),
+              'cleanup': 'Windows Job Object' if os.name == 'nt' else 'POSIX process group'}
     started = time.monotonic()
     job = None
     process = None

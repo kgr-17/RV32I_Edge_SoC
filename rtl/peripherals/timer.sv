@@ -1,15 +1,23 @@
 `default_nettype none
-module timer(
+module timer #(parameter bit ENABLE_IRQ=1'b0)(
     input wire logic clk_i,rst_i,req_valid_i,req_write_i,
     input wire logic [31:0] req_addr_i,req_wdata_i,
     input wire logic [3:0] req_be_i,
     output wire logic req_ready_o,rsp_valid_o,rsp_err_o,
     output wire logic [31:0] rsp_rdata_o,
     input wire logic rsp_ready_i
+`ifndef RV32_TIMER_LEGACY_PORTS
+    ,output wire logic irq_o
+`endif
 );
+`ifdef RV32_TIMER_LEGACY_PORTS
+    generate if(ENABLE_IRQ) begin : g_invalid_legacy_ports
+        initial $fatal(1,"LEGACY_PORTS_REQUIRE_IRQ_OFF");
+    end endgenerate
+`endif
     typedef enum logic [2:0] {NONE=3'd0,COUNT=3'd1,COMPARE=3'd2,CTRL=3'd3,STATUS=3'd4} op_t;
     logic [31:0] count_q,compare_q,pending_data_q,pending_mask_q;
-    logic [1:0] ctrl_q;
+    logic [2:0] ctrl_q;
     logic matched_q,rsp_valid_q,rsp_err_q,decode_error;
     logic [31:0] rsp_data_q,decode_data;
     op_t pending_op_q,decode_op;
@@ -37,19 +45,22 @@ module timer(
             case(word_addr)
                 32'h10000100:if(req_write_i) decode_op=COUNT;else decode_data=count_q;
                 32'h10000104:if(req_write_i) decode_op=COMPARE;else decode_data=compare_q;
-                32'h10000108:if(req_write_i) decode_op=CTRL;else decode_data={30'h00000000,ctrl_q};
+                32'h10000108:if(req_write_i) decode_op=CTRL;else decode_data={29'h00000000,ctrl_q};
                 32'h1000010c:if(req_write_i) decode_op=STATUS;else decode_data={31'h00000000,matched_q};
                 default:decode_error=1'b1;
             endcase
         end
     end
     assign req_ready_o=!rst_i && !rsp_valid_q;
+`ifndef RV32_TIMER_LEGACY_PORTS
+    assign irq_o=ENABLE_IRQ && !rst_i && ctrl_q[2] && matched_q;
+`endif
     assign rsp_valid_o=!rst_i && rsp_valid_q;
     assign rsp_err_o=!rst_i && rsp_err_q;
     assign rsp_rdata_o=rst_i ? 32'h00000000 : rsp_data_q;
     always_ff @(posedge clk_i) begin
         if(rst_i) begin
-            count_q<=32'h00000000;compare_q<=32'h00000000;ctrl_q<=2'b00;matched_q<=1'b0;
+            count_q<=32'h00000000;compare_q<=32'h00000000;ctrl_q<=3'b000;matched_q<=1'b0;
             pending_data_q<=32'h00000000;pending_mask_q<=32'h00000000;pending_op_q<=NONE;
             rsp_valid_q<=1'b0;rsp_err_q<=1'b0;rsp_data_q<=32'h00000000;
         end else begin
@@ -65,7 +76,7 @@ module timer(
                         case(pending_op_q)
                             COUNT:count_q<=(count_q & ~pending_mask_q)|(pending_data_q & pending_mask_q);
                             COMPARE:compare_q<=(compare_q & ~pending_mask_q)|(pending_data_q & pending_mask_q);
-                            CTRL:if(pending_mask_q[0]) ctrl_q<=pending_data_q[1:0];
+                            CTRL:if(pending_mask_q[0]) ctrl_q<=ENABLE_IRQ ? pending_data_q[2:0] : {1'b0,pending_data_q[1:0]};
                             default:;
                         endcase
                     end

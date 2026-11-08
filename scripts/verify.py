@@ -4,7 +4,33 @@ import argparse
 import json
 import sys
 from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor
+import threading
 import harness
+
+
+def run_commands(commands, timeout, parallel=False, on_record=None):
+    if not parallel:
+        return [harness.run(command, timeout_seconds=timeout) for command in commands]
+    output_lock=threading.Lock()
+    def execute(item):
+        index,command=item
+        try:
+            record=harness.run(command, timeout_seconds=timeout)
+        except (harness.Stop, OSError, ValueError, KeyError) as exc:
+            record={'argv':command,'status':'FAIL','exit_code':None,'stdout':'',
+                    'stderr':str(exc),'timeout_seconds':timeout}
+        record['registered_command_index']=index
+        if on_record:
+            with output_lock:on_record(record)
+        return record
+    # Independent targets have unique native work directories. Preserve result
+    # order and join every target, including after errors; no checks are removed.
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        # Later additions contain the larger peripheral/SoC suites. Start them
+        # first, while returning records in the declared manifest order.
+        records=list(pool.map(execute, reversed(list(enumerate(commands)))))
+        return list(reversed(records))
 
 
 def main():
@@ -19,9 +45,12 @@ def main():
     if any(not harness.inside(name).is_file() for name in entry['inputs']):
         print('NOT RUN: missing check inputs: ' + args.check)
         return 125
-    records = [harness.run(command, timeout_seconds=entry.get('timeout_seconds',300)) for command in entry['commands']]
-    for record in records:
-        print(json.dumps(record, ensure_ascii=False))
+    parallel=args.check=='regress'
+    emit=lambda record:print(json.dumps(record,ensure_ascii=False),flush=True)
+    records = run_commands(entry['commands'], entry.get('timeout_seconds',300),
+                           parallel=parallel,on_record=emit if parallel else None)
+    if not parallel:
+        for record in records:emit(record)
     if any(r['status'] == 'NOT RUN' for r in records):
         return 125
     return 0 if all(r['status'] == 'PASS' for r in records) else 1

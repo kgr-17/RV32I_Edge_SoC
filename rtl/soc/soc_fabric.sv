@@ -3,12 +3,14 @@
 // at successful response acceptance; shared reset cancels unfinished traffic.
 module soc_fabric #(
     parameter string ROM_INIT_FILE="soc_boot.mem",
-    parameter int unsigned UART_CLKS_PER_BIT=32'd868
+    parameter int unsigned UART_CLKS_PER_BIT=32'd868,
+    parameter bit ENABLE_IRQ=1'b0
 ) (
     input wire logic clk_i,rst_i,rx_i,
     input wire logic [15:0] switches_i,
     output wire logic tx_o,
     output wire logic [15:0] leds_o,
+    output wire logic irq_o,
     input wire logic i_req_valid_i,
     output wire logic i_req_ready_o,
     input wire logic [31:0] i_req_addr_i,
@@ -89,7 +91,7 @@ module soc_fabric #(
         .req_valid_i(!rst_i && !d_pending_q && d_req_valid_i && decoded==GPIO),.req_write_i(d_req_write_i),
         .req_addr_i(d_req_addr_i),.req_wdata_i(d_req_wdata_i[15:0]),.req_be_i(d_req_be_i),.req_ready_o(gpio_ready),
         .rsp_valid_o(gpio_valid),.rsp_err_o(gpio_error),.rsp_rdata_o(gpio_data),.rsp_ready_i(gpio_reply_ready));
-    timer timer_unit(.clk_i(clk_i),.rst_i(rst_i),
+    timer #(.ENABLE_IRQ(ENABLE_IRQ)) timer_unit(.clk_i(clk_i),.rst_i(rst_i),.irq_o(irq_o),
         .req_valid_i(!rst_i && !d_pending_q && d_req_valid_i && decoded==TIMER),.req_write_i(d_req_write_i),
         .req_addr_i(d_req_addr_i),.req_wdata_i(d_req_wdata_i),.req_be_i(d_req_be_i),.req_ready_o(timer_ready),
         .rsp_valid_o(timer_valid),.rsp_err_o(timer_error),.rsp_rdata_o(timer_data),.rsp_ready_i(timer_reply_ready));

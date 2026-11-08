@@ -5,7 +5,7 @@
   "clock_period_ns": 10.0,
   "vivado_version": "2025.2",
   "vivado_sw_build": "6299465",
-  "design_scope": "integrated_soc_initial_fault_halt_EEI",
+  "design_scope": "integrated_soc_v03_interrupts",
   "rtl_sources": [
     "rtl/core/rv32_pkg.sv",
     "rtl/core/decoder.sv",
@@ -16,6 +16,8 @@
     "rtl/core/pipeline_core.sv",
     "rtl/core/forwarding_unit.sv",
     "rtl/core/hazard_unit.sv",
+    "rtl/core/csr_file.sv",
+    "rtl/core/trap_control.sv",
     "rtl/core/pipeline_cpu.sv",
     "rtl/memory/boot_rom.sv",
     "rtl/memory/data_ram.sv",
@@ -34,6 +36,7 @@
     "fpga/basys3/basys3.xdc"
   ],
   "memory_files": [
-    "fpga/basys3/soc_boot.mem"
+    "fpga/basys3/soc_boot.mem",
+    "fpga/basys3/irq_boot.mem"
   ]
 }

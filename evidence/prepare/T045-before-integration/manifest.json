@@ -1,0 +1,8 @@
+{
+  "inputs": {
+    "fpga/basys3/top.sv": "e9a574cdc927a6ac2dfb7e3d1d4649136ae04c9508d14be3132e7a813acda479",
+    "RV32I_Edge_SoC.xpr": "2ff3ff934c997a5780a5883976a2c65855fb56edd7b66a16f2efd51e097f1183",
+    "config/fpga_build.json": "2d2ae740eedc1461991030e3680ee22f2eb18bae4de7368539eabe20020d7371",
+    "dv/integration/tb_soc_board.sv": "3b20a6932fb0a4716931db7c7493c4a61f317a0f0de3bc8ed5b0bf6657928dc6"
+  }
+}

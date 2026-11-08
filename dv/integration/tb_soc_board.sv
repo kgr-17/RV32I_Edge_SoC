@@ -11,7 +11,7 @@ module tb_soc_board;
     wire logic [4:0] rd;
     wire logic [3:0] be,fc;
     // Instantiate the actual canonical FPGA top, including its real reset chain.
-    basys3_top board(.clk(clk),.btnC(arst),.sw(switches),.RsRx(rx),.led(leds),.RsTx(tx));
+    basys3_top #(.ENABLE_TRAPS(1'b0),.ROM_INIT_FILE("soc_boot.mem")) board(.clk(clk),.btnC(arst),.sw(switches),.RsRx(rx),.led(leds),.RsTx(tx));
     assign rst=board.rst_s;
     assign rv=board.soc.retire_valid_o;
     assign order=board.soc.retire_order_o;

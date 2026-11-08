@@ -53,7 +53,7 @@
     "T042": "completed",
     "T043": "pending",
     "T044": "completed",
-    "T045": "pending"
+    "T045": "completed"
   },
   "attempts": {
     "T001": 2,
@@ -89,7 +89,8 @@
     "T029": 1,
     "T030": 1,
     "T031": 1,
-    "T044": 1
+    "T044": 1,
+    "T045": 2
   },
   "blocked_reasons": {},
   "receipts": {
@@ -126,7 +127,8 @@
     "T029": "evidence/runs/T029/attempt-1-20261106T223751516977Z.json",
     "T030": "evidence/runs/T030/attempt-1-20261107T032611376979Z.json",
     "T031": "evidence/runs/T031/attempt-1-20261107T205937621750Z.json",
-    "T044": "evidence/runs/T044/attempt-1-20261107T211422904365Z.json"
+    "T044": "evidence/runs/T044/attempt-1-20261107T211422904365Z.json",
+    "T045": "evidence/runs/T045/attempt-2-20261108T023832980009Z.json"
   },
   "owner_reviews": {
     "T002": {
@@ -229,7 +231,8 @@
     ],
     "2026-11-07": [
       "T031",
-      "T044"
+      "T044",
+      "T045"
     ]
   },
   "owner_skips": {

@@ -14,7 +14,10 @@ package rv32_pkg;
         OP_ADD = 6'd28, OP_SUB = 6'd29, OP_SLL = 6'd30, OP_SLT = 6'd31,
         OP_SLTU = 6'd32, OP_XOR = 6'd33, OP_SRL = 6'd34, OP_SRA = 6'd35,
         OP_OR = 6'd36, OP_AND = 6'd37,
-        OP_FENCE = 6'd38, OP_ECALL = 6'd39, OP_EBREAK = 6'd40
+        OP_FENCE = 6'd38, OP_ECALL = 6'd39, OP_EBREAK = 6'd40,
+        OP_CSRRW = 6'd41, OP_CSRRS = 6'd42, OP_CSRRC = 6'd43,
+        OP_CSRRWI = 6'd44, OP_CSRRSI = 6'd45, OP_CSRRCI = 6'd46,
+        OP_MRET = 6'd47
     } op_t;
 
     // Packed MSB->LSB interface, 57 bits. Immediate is already XLEN-wide.

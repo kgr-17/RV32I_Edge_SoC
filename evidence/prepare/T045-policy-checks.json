@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/test_verify.py"
+      ],
+      "started_utc": "2026-11-08T01:38:46.438692+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_all_targets_join_in_order_with_two_worker_ceiling (__main__.RegressionDispatchTests) ... ok\ntest_ordinary_target_dispatch_stays_sequential (__main__.RegressionDispatchTests) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.049s\n\nOK\n",
+      "timeout_seconds": 300
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/test_execution_budgets.py"
+      ],
+      "started_utc": "2026-11-08T01:38:46.781754+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_bad_registry_budget_rejected (__main__.BudgetTests) ... ok\ntest_default_unchanged (__main__.BudgetTests) ... ok\ntest_override_for_child_uses_same_bound (__main__.BudgetTests) ... ok\ntest_registered_composite_budget (__main__.BudgetTests) ... ok\ntest_unbounded_or_invalid_rejected (__main__.BudgetTests) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nOK\n",
+      "timeout_seconds": 300
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "scripts/test_harness.py"
+      ],
+      "started_utc": "2026-11-08T01:38:47.067981+00:00",
+      "cwd": "C:\\RV32I_Edge_SoC",
+      "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_active_task_cannot_be_skipped_on_same_date (__main__.HarnessTests) ... ok\ntest_both_reports_required (__main__.HarnessTests) ... ok\ntest_changed_skip_evidence_rejected (__main__.HarnessTests) ... ok\ntest_concurrent_controller_rejected (__main__.HarnessTests) ... ok\ntest_dependency_cycle_rejected (__main__.HarnessTests) ... ok\ntest_dependency_enforcement (__main__.HarnessTests) ... ok\ntest_dirty_worktree_protected (__main__.HarnessTests) ... ok\ntest_exception_evidence_tampering_detected (__main__.HarnessTests) ... ok\ntest_failed_verification_blocks_completion (__main__.HarnessTests) ... ok\ntest_final_review_cannot_skip_mandatory_work (__main__.HarnessTests) ... ok\ntest_forged_skipped_status_without_owner_record_rejected (__main__.HarnessTests) ... ok\ntest_full_output_preserved_and_command_not_shell (__main__.HarnessTests) ... ok\ntest_idempotent_begin_and_finish (__main__.HarnessTests) ... ok\ntest_interrupted_execution_recovery (__main__.HarnessTests) ... ok\ntest_invalid_history_and_lost_legacy_claim_rejected (__main__.HarnessTests) ... ok\ntest_legacy_claim_and_exception_preserved_through_resume_and_finish (__main__.HarnessTests) ... ok\ntest_legacy_exception_does_not_restrict_later_days (__main__.HarnessTests) ... ok\ntest_legacy_exception_wrong_binding_and_missing_evidence_rejected (__main__.HarnessTests) ... ok\ntest_missing_input_cannot_finish (__main__.HarnessTests) ... ok\ntest_missing_tool_is_not_run (__main__.HarnessTests) ... ok\ntest_multiple_tasks_same_day_preserve_order_and_no_duplicate_work (__main__.HarnessTests) ... ok\ntest_next_task_requires_previous_task_commit (__main__.HarnessTests) ... ok\ntest_null_skip_acknowledgment_rejected (__main__.HarnessTests) ... ok\ntest_optional_enable_and_terminal_review (__main__.HarnessTests) ... ok\ntest_owner_review_gate (__main__.HarnessTests) ... ok\ntest_owner_skip_preserves_failed_attempt_and_unblocks_dependency_without_pass (__main__.HarnessTests) ... ok\ntest_path_escape_and_link_rejected (__main__.HarnessTests) ... ok\ntest_preexecution_authorization (__main__.HarnessTests) ... ok\ntest_priority_selection (__main__.HarnessTests) ... ok\ntest_readiness_not_blocked_by_legacy_date_claim (__main__.HarnessTests) ... ok\ntest_report_append_idempotence_and_date_preservation (__main__.HarnessTests) ... ok\ntest_resume_across_day_records_history_without_blocking_next_task (__main__.HarnessTests) ... ok\ntest_runtime_cannot_bypass_dependencies (__main__.HarnessTests) ... ok\ntest_skip_cannot_erase_attempts_or_alter_original_failure_receipt (__main__.HarnessTests) ... ok\ntest_skip_cannot_target_another_active_task_or_review_gate (__main__.HarnessTests) ... ok\ntest_skip_requires_confirmation_and_task_specific_policy (__main__.HarnessTests) ... ok\ntest_state_recovers_stale_backlog_projection (__main__.HarnessTests) ... ok\ntest_terminal_completion_ignores_disabled_optional (__main__.HarnessTests) ... ok\ntest_three_attempt_budget_and_failure_preservation (__main__.HarnessTests) ... ok\ntest_three_tasks_can_complete_same_day_with_reviews_and_commits (__main__.HarnessTests) ... ok\ntest_unattended_refused_and_handoff_loaded (__main__.HarnessTests) ... ok\ntest_unregistered_checks_and_missing_inputs_not_run (__main__.HarnessTests) ... ok\ntest_valid_skip_still_requires_successor_and_final_owner_reviews (__main__.HarnessTests) ... ok\n\n----------------------------------------------------------------------\nRan 43 tests in 19.303s\n\nOK\n",
+      "timeout_seconds": 300
+    }
+  ],
+  "source_sha256": {
+    "scripts/test_verify.py": "c611ef3787b4909bb1894f02057dfdfa2ba2d71484d3535ca44e21467cfae2e3",
+    "scripts/test_execution_budgets.py": "0365910049f4ef76e871ee09e10b6183d746bc95fe4e9d226c7cfbcde18a9fa4",
+    "scripts/test_harness.py": "23f3f2494577e318b5acfcf65c206579d4b497e7d7d6e8403727f1c075f2b060",
+    "scripts/verify.py": "6250e730cfd9389a2ea71b63cca3e10bfa8f982bd2811b9cd64e6f64a91f7bc5",
+    "scripts/harness.py": "451407093ded94e04641e39a773779ba3948d5a7db9971f1c2690111af1c47f1"
+  },
+  "scope": "Regression dispatcher, unchanged bounded execution and persistent harness policies, exact argv without PowerShell redirection."
+}

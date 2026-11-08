@@ -130,3 +130,13 @@ top has passed compiled firmware simulation at the production UART divider;
 the original diagnostic remains in fpga/basys3/diagnostic_top.sv. Run
 `python -B scripts/verify.py test-soc` to reproduce. Full FPGA implementation,
 timing, bitstream and physical programming remain separate approval milestones.
+
+The owner approved interrupt architecture v0.3 at T044. T045 adds CSR operations,
+precise traps/MRET and the existing timer's IRQ at CTRL bit2, preserving bit1
+auto-reload. Core/SoC default to the legacy mode; the canonical physical top
+selects the interrupt mode and separate irq_boot.mem. See
+[interrupt evidence](docs/INTERRUPT_REPORT.md) and the
+[runtime contract](docs/INTERRUPT_CONTRACT.json). Reproduce with
+`python -B scripts/verify.py test-interrupts`. T045 acceptance passed on attempt 2:
+strict lint, interrupt tests and the full 28-target regression passed. Formal
+T023 remains owner-skipped/NOT RUN. Full FPGA execution awaits T043 authorization.

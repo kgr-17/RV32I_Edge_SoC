@@ -1,0 +1,1113 @@
+{
+  "profile": "cdc",
+  "status": "PASS",
+  "started_utc": "20261108T020534892960Z",
+  "base_commit": "f9d05e0966b2016d631164de1cff71e260a0b553",
+  "scope": "Digital reset/input primitive DV and scoped18-input synthesized CDC fixture; retained independent-GPIO CDC-6 Warning",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\versions",
+      "started_utc": "2026-11-08T02:05:34.996270+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "git version 2.48.1.windows.1\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.109
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\versions\\xvlog",
+      "started_utc": "2026-11-08T02:05:35.117469+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.609
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\versions\\xelab",
+      "started_utc": "2026-11-08T02:05:35.727311+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.61
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\versions\\xsim",
+      "started_utc": "2026-11-08T02:05:36.339934+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2025 Xilinx, Inc. All Rights Reserved.\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.484
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\reset_sync.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\input_sync.sv",
+        "C:\\RV32I_Edge_SoC\\dv\\cdc\\tb_cdc.sv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\simulation",
+      "started_utc": "2026-11-08T02:05:36.849392+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "INFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/reset_sync.sv\" into library work\nINFO: [VRFC 10-311] analyzing module reset_sync\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/input_sync.sv\" into library work\nINFO: [VRFC 10-311] analyzing module input_sync\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/cdc/tb_cdc.sv\" into library work\nINFO: [VRFC 10-311] analyzing module tb_cdc\nINFO: [VRFC 10-311] analyzing module tb_cdc_bad_width\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.688
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "work.tb_cdc",
+        "--snapshot",
+        "cdc",
+        "--timescale",
+        "1ns/1ps",
+        "--debug",
+        "typical"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\simulation",
+      "started_utc": "2026-11-08T02:05:37.542778+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nRunning: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_cdc --snapshot cdc --timescale 1ns/1ps --debug typical \nMulti-threading is on. Using 26 slave threads.\nStarting static elaboration\nPass Through NonSizing Optimizer\nCompleted static elaboration\nStarting simulation data flow analysis\nCompleted simulation data flow analysis\nTime Resolution for simulation is 1ps\nCompiling module work.reset_sync\nCompiling module work.input_sync(WIDTH=32'b01)\nCompiling module work.input_sync_default\nCompiling module work.input_sync(WIDTH=32'b0100000)\nCompiling module work.tb_cdc\nBuilt simulation snapshot cdc\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 1.297
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "cdc",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\simulation\\seed_1.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\simulation",
+      "started_utc": "2026-11-08T02:05:38.861588+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:05:39 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/cdc/xsim_script.tcl\n# xsim {cdc} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/seed_1.txt -wdb {C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/seed_1.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl\n## log_wave /tb_cdc/clk /tb_cdc/run_clock /tb_cdc/arst /tb_cdc/rst /tb_cdc/data /tb_cdc/word_out /tb_cdc/wide_out /tb_cdc/bit_in /tb_cdc/bit_out\n## run all\nCDC_SIM_PASS seed=1 checked=1645\n$finish called at time : 16531 ns : File \"C:/RV32I_Edge_SoC/dv/cdc/tb_cdc.sv\" Line 41\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sat Nov  7 18:05:41 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.547,
+      "argument_file": {
+        "path": "build\\T029\\cdc-20261108T020534892960Z\\simulation\\seed_1.args",
+        "sha256": "250520bec3e3a9ebb0aa0c095ae29ff90654193469e1dc3944e6d72fca1e5af6",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/seed_1.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/seed_1.wdb\n",
+        "intended_argv": [
+          "cdc",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/seed_1.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/seed_1.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "cdc",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\simulation\\seed_20261106.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\simulation",
+      "started_utc": "2026-11-08T02:05:41.434742+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:05:42 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/cdc/xsim_script.tcl\n# xsim {cdc} -testplusarg SEED=20261106 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/seed_20261106.txt -wdb {C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/seed_20261106.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl} -onfinish quit -onerror quit -sv_seed 20261106\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl\n## log_wave /tb_cdc/clk /tb_cdc/run_clock /tb_cdc/arst /tb_cdc/rst /tb_cdc/data /tb_cdc/word_out /tb_cdc/wide_out /tb_cdc/bit_in /tb_cdc/bit_out\n## run all\nCDC_SIM_PASS seed=20261106 checked=1645\n$finish called at time : 16531 ns : File \"C:/RV32I_Edge_SoC/dv/cdc/tb_cdc.sv\" Line 41\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sat Nov  7 18:05:43 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.453,
+      "argument_file": {
+        "path": "build\\T029\\cdc-20261108T020534892960Z\\simulation\\seed_20261106.args",
+        "sha256": "abe87568f1478f03d3053c5f2b5ca4b2c173203701856e7d3fe885644eee3aa4",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n20261106\n--testplusarg\nSEED=20261106\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/seed_20261106.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/seed_20261106.wdb\n",
+        "intended_argv": [
+          "cdc",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "20261106",
+          "--testplusarg",
+          "SEED=20261106",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/seed_20261106.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/seed_20261106.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "cdc",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\simulation\\wrong-reset-expectation.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\simulation",
+      "started_utc": "2026-11-08T02:05:43.903562+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:05:44 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/cdc/xsim_script.tcl\n# xsim {cdc} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/wrong-reset-expectation.txt -wdb {C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/wrong-reset-expectation.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl\n## log_wave /tb_cdc/clk /tb_cdc/run_clock /tb_cdc/arst /tb_cdc/rst /tb_cdc/data /tb_cdc/word_out /tb_cdc/wide_out /tb_cdc/bit_in /tb_cdc/bit_out\n## run all\nFatal: CDC_MISMATCH phase=post checked=0\nTime: 91 ns  Iteration: 0  Process: /tb_cdc/Initial22_5  Scope: tb_cdc  File: C:/RV32I_Edge_SoC/dv/cdc/tb_cdc.sv Line: 36\n$finish called at time : 91 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sat Nov  7 18:05:46 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.469,
+      "argument_file": {
+        "path": "build\\T029\\cdc-20261108T020534892960Z\\simulation\\wrong-reset-expectation.args",
+        "sha256": "4c7318b4b9074129385709eeeca6060053946e6b9db5cd19e7cde437320f4994",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/wrong-reset-expectation.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/wrong-reset-expectation.wdb\n",
+        "intended_argv": [
+          "cdc",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/wrong-reset-expectation.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/wrong-reset-expectation.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "cdc",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\simulation\\empty.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\simulation",
+      "started_utc": "2026-11-08T02:05:46.389119+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:05:47 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/cdc/xsim_script.tcl\n# xsim {cdc} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/empty.txt -wdb {C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/empty.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl\n## log_wave /tb_cdc/clk /tb_cdc/run_clock /tb_cdc/arst /tb_cdc/rst /tb_cdc/data /tb_cdc/word_out /tb_cdc/wide_out /tb_cdc/bit_in /tb_cdc/bit_out\n## run all\nFatal: CDC_EMPTY_VECTORS\nTime: 75200 ps  Iteration: 0  Process: /tb_cdc/Initial22_5  Scope: tb_cdc  File: C:/RV32I_Edge_SoC/dv/cdc/tb_cdc.sv Line: 39\n$finish called at time : 75200 ps\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sat Nov  7 18:05:48 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.484,
+      "argument_file": {
+        "path": "build\\T029\\cdc-20261108T020534892960Z\\simulation\\empty.args",
+        "sha256": "b98a6bc8028232690fa89054086e8f0cb749d24448b48c8510c683ca2cdcd98f",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/empty.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/empty.wdb\n",
+        "intended_argv": [
+          "cdc",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/empty.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/empty.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "cdc",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\simulation\\truncated.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\simulation",
+      "started_utc": "2026-11-08T02:05:48.895479+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:05:49 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/cdc/xsim_script.tcl\n# xsim {cdc} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/truncated.txt -wdb {C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/truncated.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl\n## log_wave /tb_cdc/clk /tb_cdc/run_clock /tb_cdc/arst /tb_cdc/rst /tb_cdc/data /tb_cdc/word_out /tb_cdc/wide_out /tb_cdc/bit_in /tb_cdc/bit_out\n## run all\nFatal: CDC_MALFORMED_VECTOR\nTime: 91 ns  Iteration: 0  Process: /tb_cdc/Initial22_5  Scope: tb_cdc  File: C:/RV32I_Edge_SoC/dv/cdc/tb_cdc.sv Line: 40\n$finish called at time : 91 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sat Nov  7 18:05:51 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.453,
+      "argument_file": {
+        "path": "build\\T029\\cdc-20261108T020534892960Z\\simulation\\truncated.args",
+        "sha256": "9ff8cd782f799fae55bfd455565746b6af637f0f911a27321dad8e8187ac138b",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/truncated.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/truncated.wdb\n",
+        "intended_argv": [
+          "cdc",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/truncated.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/truncated.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "work.tb_cdc_bad_width",
+        "--snapshot",
+        "badwidth",
+        "--timescale",
+        "1ns/1ps",
+        "--debug",
+        "typical"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\simulation",
+      "started_utc": "2026-11-08T02:05:51.372479+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nRunning: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_cdc_bad_width --snapshot badwidth --timescale 1ns/1ps --debug typical \nMulti-threading is on. Using 26 slave threads.\nStarting static elaboration\nPass Through NonSizing Optimizer\nCompleted static elaboration\nStarting simulation data flow analysis\nCompleted simulation data flow analysis\nTime Resolution for simulation is 1ps\nCompiling module work.input_sync(WIDTH=32'b0100001)\nCompiling module work.tb_cdc_bad_width\nBuilt simulation snapshot badwidth\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 1.234
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "badwidth",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\simulation\\bad-width.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\simulation",
+      "started_utc": "2026-11-08T02:05:52.608464+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:05:53 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/badwidth/xsim_script.tcl\n# xsim {badwidth} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/seed_1.txt -wdb {C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/bad-width.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/badwidth.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/badwidth.tcl\n## log_wave /tb_cdc_bad_width/result\n## run all\nFatal: INPUT_SYNC_WIDTH\nTime: 0 ps  Iteration: 0  Process: /tb_cdc_bad_width/bad/Initial10_0  Scope: tb_cdc_bad_width.bad  File: C:/RV32I_Edge_SoC/rtl/peripherals/input_sync.sv Line: 10\n$finish called at time : 0 fs\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sat Nov  7 18:05:54 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.438,
+      "argument_file": {
+        "path": "build\\T029\\cdc-20261108T020534892960Z\\simulation\\bad-width.args",
+        "sha256": "126017a3a35bde445c8f6f4ce8c9eeffac3ee09f3c5dd9be23decf62e8b00b07",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/badwidth.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/seed_1.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/bad-width.wdb\n",
+        "intended_argv": [
+          "badwidth",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/badwidth.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/seed_1.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/bad-width.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--sv",
+        "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\mutation-one-edge-release\\reset_sync.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\input_sync.sv",
+        "C:\\RV32I_Edge_SoC\\dv\\cdc\\tb_cdc.sv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\mutation-one-edge-release",
+      "started_utc": "2026-11-08T02:05:55.058702+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "INFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/mutation-one-edge-release/reset_sync.sv\" into library work\nINFO: [VRFC 10-311] analyzing module reset_sync\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/input_sync.sv\" into library work\nINFO: [VRFC 10-311] analyzing module input_sync\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/cdc/tb_cdc.sv\" into library work\nINFO: [VRFC 10-311] analyzing module tb_cdc\nINFO: [VRFC 10-311] analyzing module tb_cdc_bad_width\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.703
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "work.tb_cdc",
+        "--snapshot",
+        "cdc",
+        "--timescale",
+        "1ns/1ps",
+        "--debug",
+        "typical"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\mutation-one-edge-release",
+      "started_utc": "2026-11-08T02:05:55.759822+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nRunning: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_cdc --snapshot cdc --timescale 1ns/1ps --debug typical \nMulti-threading is on. Using 26 slave threads.\nStarting static elaboration\nPass Through NonSizing Optimizer\nCompleted static elaboration\nStarting simulation data flow analysis\nCompleted simulation data flow analysis\nTime Resolution for simulation is 1ps\nCompiling module work.reset_sync\nCompiling module work.input_sync(WIDTH=32'b01)\nCompiling module work.input_sync_default\nCompiling module work.input_sync(WIDTH=32'b0100000)\nCompiling module work.tb_cdc\nBuilt simulation snapshot cdc\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 1.312
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "cdc",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\mutation-one-edge-release\\one-edge-release.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\mutation-one-edge-release",
+      "started_utc": "2026-11-08T02:05:57.076839+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:05:57 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/cdc/xsim_script.tcl\n# xsim {cdc} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/mutation-one-edge-release/vectors.txt -wdb {C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/mutation-one-edge-release/one-edge-release.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl\n## log_wave /tb_cdc/clk /tb_cdc/run_clock /tb_cdc/arst /tb_cdc/rst /tb_cdc/data /tb_cdc/word_out /tb_cdc/wide_out /tb_cdc/bit_in /tb_cdc/bit_out\n## run all\nFatal: CDC_MISMATCH phase=post checked=1\nTime: 101 ns  Iteration: 0  Process: /tb_cdc/Initial22_5  Scope: tb_cdc  File: C:/RV32I_Edge_SoC/dv/cdc/tb_cdc.sv Line: 36\n$finish called at time : 101 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sat Nov  7 18:05:59 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.469,
+      "argument_file": {
+        "path": "build\\T029\\cdc-20261108T020534892960Z\\mutation-one-edge-release\\one-edge-release.args",
+        "sha256": "794d6de02020e6d75b77f24866849af4a08488ee0d6f374cb285bfd890e38562",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/mutation-one-edge-release/vectors.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/mutation-one-edge-release/one-edge-release.wdb\n",
+        "intended_argv": [
+          "cdc",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/mutation-one-edge-release/vectors.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/mutation-one-edge-release/one-edge-release.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--sv",
+        "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\mutation-missing-async-assert\\reset_sync.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\input_sync.sv",
+        "C:\\RV32I_Edge_SoC\\dv\\cdc\\tb_cdc.sv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\mutation-missing-async-assert",
+      "started_utc": "2026-11-08T02:05:59.568907+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "INFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/mutation-missing-async-assert/reset_sync.sv\" into library work\nINFO: [VRFC 10-311] analyzing module reset_sync\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/input_sync.sv\" into library work\nINFO: [VRFC 10-311] analyzing module input_sync\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/cdc/tb_cdc.sv\" into library work\nINFO: [VRFC 10-311] analyzing module tb_cdc\nINFO: [VRFC 10-311] analyzing module tb_cdc_bad_width\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.688
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "work.tb_cdc",
+        "--snapshot",
+        "cdc",
+        "--timescale",
+        "1ns/1ps",
+        "--debug",
+        "typical"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\mutation-missing-async-assert",
+      "started_utc": "2026-11-08T02:06:00.262686+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nRunning: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_cdc --snapshot cdc --timescale 1ns/1ps --debug typical \nMulti-threading is on. Using 26 slave threads.\nStarting static elaboration\nPass Through NonSizing Optimizer\nCompleted static elaboration\nStarting simulation data flow analysis\nCompleted simulation data flow analysis\nTime Resolution for simulation is 1ps\nCompiling module work.reset_sync\nCompiling module work.input_sync(WIDTH=32'b01)\nCompiling module work.input_sync_default\nCompiling module work.input_sync(WIDTH=32'b0100000)\nCompiling module work.tb_cdc\nBuilt simulation snapshot cdc\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 1.312
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "cdc",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\mutation-missing-async-assert\\missing-async-assert.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\mutation-missing-async-assert",
+      "started_utc": "2026-11-08T02:06:01.578246+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:06:02 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/cdc/xsim_script.tcl\n# xsim {cdc} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/mutation-missing-async-assert/vectors.txt -wdb {C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/mutation-missing-async-assert/missing-async-assert.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl\n## log_wave /tb_cdc/clk /tb_cdc/run_clock /tb_cdc/arst /tb_cdc/rst /tb_cdc/data /tb_cdc/word_out /tb_cdc/wide_out /tb_cdc/bit_in /tb_cdc/bit_out\n## run all\nFatal: CDC_ASYNC_ASSERT\nTime: 61200 ps  Iteration: 0  Process: /tb_cdc/Initial22_5  Scope: tb_cdc  File: C:/RV32I_Edge_SoC/dv/cdc/tb_cdc.sv Line: 26\n$finish called at time : 61200 ps\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sat Nov  7 18:06:04 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.5,
+      "argument_file": {
+        "path": "build\\T029\\cdc-20261108T020534892960Z\\mutation-missing-async-assert\\missing-async-assert.args",
+        "sha256": "645a881d5999a708e498ec5d3b605bd791bb1128e367ca44654b484f1a03a010",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/mutation-missing-async-assert/vectors.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/mutation-missing-async-assert/missing-async-assert.wdb\n",
+        "intended_argv": [
+          "cdc",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/mutation-missing-async-assert/vectors.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/mutation-missing-async-assert/missing-async-assert.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\reset_sync.sv",
+        "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\mutation-input-stage-bypass\\input_sync.sv",
+        "C:\\RV32I_Edge_SoC\\dv\\cdc\\tb_cdc.sv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\mutation-input-stage-bypass",
+      "started_utc": "2026-11-08T02:06:04.103802+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "INFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/reset_sync.sv\" into library work\nINFO: [VRFC 10-311] analyzing module reset_sync\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/mutation-input-stage-bypass/input_sync.sv\" into library work\nINFO: [VRFC 10-311] analyzing module input_sync\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/cdc/tb_cdc.sv\" into library work\nINFO: [VRFC 10-311] analyzing module tb_cdc\nINFO: [VRFC 10-311] analyzing module tb_cdc_bad_width\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.704
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "work.tb_cdc",
+        "--snapshot",
+        "cdc",
+        "--timescale",
+        "1ns/1ps",
+        "--debug",
+        "typical"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\mutation-input-stage-bypass",
+      "started_utc": "2026-11-08T02:06:04.817909+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nRunning: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_cdc --snapshot cdc --timescale 1ns/1ps --debug typical \nMulti-threading is on. Using 26 slave threads.\nStarting static elaboration\nPass Through NonSizing Optimizer\nCompleted static elaboration\nStarting simulation data flow analysis\nCompleted simulation data flow analysis\nTime Resolution for simulation is 1ps\nCompiling module work.reset_sync\nCompiling module work.input_sync(WIDTH=32'b01)\nCompiling module work.input_sync_default\nCompiling module work.input_sync(WIDTH=32'b0100000)\nCompiling module work.tb_cdc\nBuilt simulation snapshot cdc\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 1.313
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "cdc",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\mutation-input-stage-bypass\\input-stage-bypass.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\mutation-input-stage-bypass",
+      "started_utc": "2026-11-08T02:06:06.144077+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:06:06 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/cdc/xsim_script.tcl\n# xsim {cdc} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/mutation-input-stage-bypass/vectors.txt -wdb {C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/mutation-input-stage-bypass/input-stage-bypass.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl\n## log_wave /tb_cdc/clk /tb_cdc/run_clock /tb_cdc/arst /tb_cdc/rst /tb_cdc/data /tb_cdc/word_out /tb_cdc/wide_out /tb_cdc/bit_in /tb_cdc/bit_out\n## run all\nFatal: CDC_MISMATCH phase=post checked=3\nTime: 121 ns  Iteration: 0  Process: /tb_cdc/Initial22_5  Scope: tb_cdc  File: C:/RV32I_Edge_SoC/dv/cdc/tb_cdc.sv Line: 36\n$finish called at time : 121 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sat Nov  7 18:06:08 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.453,
+      "argument_file": {
+        "path": "build\\T029\\cdc-20261108T020534892960Z\\mutation-input-stage-bypass\\input-stage-bypass.args",
+        "sha256": "20546425de7e548ff41f4e2c94ab9dd50d91b7b956b117ab2c59c74f55f3d263",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/mutation-input-stage-bypass/vectors.txt\n--wdb\nC:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/mutation-input-stage-bypass/input-stage-bypass.wdb\n",
+        "intended_argv": [
+          "cdc",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/simulation/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/mutation-input-stage-bypass/vectors.txt",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/mutation-input-stage-bypass/input-stage-bypass.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat",
+        "-mode",
+        "batch",
+        "-nolog",
+        "-nojournal",
+        "-notrace",
+        "-source",
+        "C:\\RV32I_Edge_SoC\\scripts\\cdc_structure.tcl",
+        "-tclargs",
+        "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\structure-positive\\sources.txt"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\structure-positive",
+      "started_utc": "2026-11-08T02:06:08.628144+00:00",
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** Vivado v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:06:09 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource {C:\\RV32I_Edge_SoC\\scripts\\cdc_structure.tcl} -notrace\nCommand: synth_design -top cdc_registered_probe -part xc7a35tcpg236-1 -flatten_hierarchy none\nStarting synth_design\nAttempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'\nINFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'\nINFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.\nINFO: [Synth 8-7078] Launching helper process for spawning children vivado processes\nINFO: [Synth 8-7075] Helper process launched with PID 2784\n---------------------------------------------------------------------------------\nStarting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1081.023 ; gain = 535.992\n---------------------------------------------------------------------------------\nINFO: [Synth 8-6157] synthesizing module 'cdc_registered_probe' [C:/RV32I_Edge_SoC/dv/cdc/cdc_registered_probe.sv:4]\nINFO: [Synth 8-6157] synthesizing module 'cdc_probe' [C:/RV32I_Edge_SoC/dv/cdc/cdc_probe.sv:3]\nINFO: [Synth 8-6157] synthesizing module 'reset_sync' [C:/RV32I_Edge_SoC/rtl/peripherals/reset_sync.sv:3]\nINFO: [Synth 8-6155] done synthesizing module 'reset_sync' (0#1) [C:/RV32I_Edge_SoC/rtl/peripherals/reset_sync.sv:3]\nINFO: [Synth 8-6157] synthesizing module 'input_sync' [C:/RV32I_Edge_SoC/rtl/peripherals/input_sync.sv:3]\n\tParameter WIDTH bound to: 16 - type: integer \nINFO: [Synth 8-6155] done synthesizing module 'input_sync' (0#1) [C:/RV32I_Edge_SoC/rtl/peripherals/input_sync.sv:3]\nINFO: [Synth 8-6157] synthesizing module 'uart_rx' [C:/RV32I_Edge_SoC/rtl/peripherals/uart_rx.sv:3]\nINFO: [Synth 8-6155] done synthesizing module 'uart_rx' (0#1) [C:/RV32I_Edge_SoC/rtl/peripherals/uart_rx.sv:3]\nINFO: [Synth 8-6155] done synthesizing module 'cdc_probe' (0#1) [C:/RV32I_Edge_SoC/dv/cdc/cdc_probe.sv:3]\nINFO: [Synth 8-6155] done synthesizing module 'cdc_registered_probe' (0#1) [C:/RV32I_Edge_SoC/dv/cdc/cdc_registered_probe.sv:4]\n---------------------------------------------------------------------------------\nFinished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1200.270 ; gain = 655.238\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1200.270 ; gain = 655.238\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Loading Part and Timing Information\n---------------------------------------------------------------------------------\nLoading part: xc7a35tcpg236-1\nINFO: [Device 21-403] Loading part xc7a35tcpg236-1\n---------------------------------------------------------------------------------\nFinished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1200.270 ; gain = 655.238\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1200.270 ; gain = 655.238\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart RTL Component Statistics \n---------------------------------------------------------------------------------\nDetailed RTL Component Info : \n+---Adders : \n\t   2 Input   10 Bit       Adders := 1     \n\t   2 Input    3 Bit       Adders := 1     \n+---Registers : \n\t               16 Bit    Registers := 3     \n\t               10 Bit    Registers := 1     \n\t                8 Bit    Registers := 2     \n\t                3 Bit    Registers := 2     \n\t                2 Bit    Registers := 1     \n\t                1 Bit    Registers := 6     \n+---Muxes : \n\t   6 Input   10 Bit        Muxes := 1     \n\t   2 Input   10 Bit        Muxes := 1     \n\t   6 Input    8 Bit        Muxes := 1     \n\t   2 Input    8 Bit        Muxes := 1     \n\t   6 Input    3 Bit        Muxes := 2     \n\t   2 Input    2 Bit        Muxes := 1     \n\t   2 Input    1 Bit        Muxes := 5     \n\t   6 Input    1 Bit        Muxes := 5     \n---------------------------------------------------------------------------------\nFinished RTL Component Statistics \n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Part Resource Summary\n---------------------------------------------------------------------------------\nPart Resources:\nDSPs: 90 (col length:60)\nBRAMs: 100 (col length: RAMB18 60 RAMB36 30)\n---------------------------------------------------------------------------------\nFinished Part Resource Summary\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart Cross Boundary and Area Optimization\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1396.992 ; gain = 851.961\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart Timing Optimization\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Timing Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1396.992 ; gain = 851.961\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Technology Mapping\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Technology Mapping : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1396.992 ; gain = 851.961\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart IO Insertion\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Final Netlist Cleanup\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Final Netlist Cleanup\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1627.680 ; gain = 1082.648\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Renaming Generated Instances\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1627.680 ; gain = 1082.648\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Handling Custom Attributes\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1627.680 ; gain = 1082.648\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Writing Synthesis Report\n---------------------------------------------------------------------------------\n\nReport BlackBoxes: \n+-+--------------+----------+\n| |BlackBox name |Instances |\n+-+--------------+----------+\n+-+--------------+----------+\n\nReport Cell Usage: \n+------+-----+------+\n|      |Cell |Count |\n+------+-----+------+\n|1     |BUFG |     2|\n|2     |LUT2 |     2|\n|3     |LUT3 |    11|\n|4     |LUT4 |     3|\n|5     |LUT5 |    11|\n|6     |LUT6 |    20|\n|7     |FDPE |     2|\n|8     |FDRE |    84|\n|9     |FDSE |     2|\n|10    |IBUF |    20|\n|11    |OBUF |    28|\n+------+-----+------+\n\nReport Instance Areas: \n+------+-------------------+-----------+------+\n|      |Instance           |Module     |Cells |\n+------+-------------------+-----------+------+\n|1     |top                |           |   185|\n|2     |  boundary         |cdc_probe  |   117|\n|3     |    reset_boundary |reset_sync |     2|\n|4     |    switches       |input_sync |    32|\n|5     |    receiver       |uart_rx    |    83|\n+------+-------------------+-----------+------+\n---------------------------------------------------------------------------------\nFinished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1627.680 ; gain = 1082.648\n---------------------------------------------------------------------------------\nSynthesis finished with 0 errors, 0 critical warnings and 0 warnings.\nSynthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1627.680 ; gain = 1082.648\nSynthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1627.680 ; gain = 1082.648\nINFO: [Project 1-571] Translating synthesized netlist\nNetlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1641.781 ; gain = 0.000\nINFO: [Project 1-570] Preparing netlist for logic optimization\nINFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).\nNetlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1753.723 ; gain = 0.000\nINFO: [Project 1-111] Unisim Transformation Summary:\nNo Unisim elements were transformed.\n\nSynth Design complete | Checksum: c95b97b5\nINFO: [Common 17-83] Releasing license: Synthesis\n20 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.\nsynth_design completed successfully\nsynth_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1753.723 ; gain = 1213.613\nINFO: [Timing 38-35] Done setting XDC timing constraints.\nINFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.\nINFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs\nINFO: [Timing 38-314] The report_cdc command only analyzes and reports clock domain crossing paths where clocks have been defined on both source and destination sides. Ports with no input delay constraint are skipped. Please run check_timing to verify there are no missing clock definitions in your design, nor any unconstrained input port.\nCDC_STRUCTURE_PASS chains=18 stages=36 rules=3 retained_warning=CDC-6\nINFO: [Common 17-206] Exiting Vivado at Sat Nov  7 18:06:31 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 22.937
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat",
+        "-mode",
+        "batch",
+        "-nolog",
+        "-nojournal",
+        "-notrace",
+        "-source",
+        "C:\\RV32I_Edge_SoC\\scripts\\cdc_structure.tcl",
+        "-tclargs",
+        "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\structure-missing-rx-attribute\\sources.txt"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\structure-missing-rx-attribute",
+      "started_utc": "2026-11-08T02:06:31.592436+00:00",
+      "timeout_seconds": 60,
+      "exit_code": 1,
+      "status": "FAIL",
+      "stdout": "\n****** Vivado v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:06:32 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource {C:\\RV32I_Edge_SoC\\scripts\\cdc_structure.tcl} -notrace\nCommand: synth_design -top cdc_registered_probe -part xc7a35tcpg236-1 -flatten_hierarchy none\nStarting synth_design\nAttempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'\nINFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'\nINFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.\nINFO: [Synth 8-7078] Launching helper process for spawning children vivado processes\nINFO: [Synth 8-7075] Helper process launched with PID 18224\n---------------------------------------------------------------------------------\nStarting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1078.441 ; gain = 536.156\n---------------------------------------------------------------------------------\nINFO: [Synth 8-6157] synthesizing module 'cdc_registered_probe' [C:/RV32I_Edge_SoC/dv/cdc/cdc_registered_probe.sv:4]\nINFO: [Synth 8-6157] synthesizing module 'cdc_probe' [C:/RV32I_Edge_SoC/dv/cdc/cdc_probe.sv:3]\nINFO: [Synth 8-6157] synthesizing module 'reset_sync' [C:/RV32I_Edge_SoC/rtl/peripherals/reset_sync.sv:3]\nINFO: [Synth 8-6155] done synthesizing module 'reset_sync' (0#1) [C:/RV32I_Edge_SoC/rtl/peripherals/reset_sync.sv:3]\nINFO: [Synth 8-6157] synthesizing module 'input_sync' [C:/RV32I_Edge_SoC/rtl/peripherals/input_sync.sv:3]\n\tParameter WIDTH bound to: 16 - type: integer \nINFO: [Synth 8-6155] done synthesizing module 'input_sync' (0#1) [C:/RV32I_Edge_SoC/rtl/peripherals/input_sync.sv:3]\nINFO: [Synth 8-6157] synthesizing module 'uart_rx' [C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/structure-missing-rx-attribute/uart_rx.sv:3]\nINFO: [Synth 8-6155] done synthesizing module 'uart_rx' (0#1) [C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/structure-missing-rx-attribute/uart_rx.sv:3]\nINFO: [Synth 8-6155] done synthesizing module 'cdc_probe' (0#1) [C:/RV32I_Edge_SoC/dv/cdc/cdc_probe.sv:3]\nINFO: [Synth 8-6155] done synthesizing module 'cdc_registered_probe' (0#1) [C:/RV32I_Edge_SoC/dv/cdc/cdc_registered_probe.sv:4]\n---------------------------------------------------------------------------------\nFinished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1198.379 ; gain = 656.094\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1198.379 ; gain = 656.094\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Loading Part and Timing Information\n---------------------------------------------------------------------------------\nLoading part: xc7a35tcpg236-1\n---------------------------------------------------------------------------------\nINFO: [Device 21-403] Loading part xc7a35tcpg236-1\nFinished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1198.379 ; gain = 656.094\n---------------------------------------------------------------------------------\nINFO: [Synth 8-802] inferred FSM for state register 'state_q_reg' in module 'uart_rx'\n---------------------------------------------------------------------------------------------------\n                   State |                     New Encoding |                Previous Encoding \n---------------------------------------------------------------------------------------------------\n               WAIT_HIGH |                              000 |                              000\n                    IDLE |                              001 |                              001\n                   START |                              010 |                              010\n                    DATA |                              011 |                              011\n                    STOP |                              100 |                              100\n---------------------------------------------------------------------------------------------------\nINFO: [Synth 8-3354] encoded FSM with state register 'state_q_reg' using encoding 'sequential' in module 'uart_rx'\n---------------------------------------------------------------------------------\nFinished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1198.379 ; gain = 656.094\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart RTL Component Statistics \n---------------------------------------------------------------------------------\nDetailed RTL Component Info : \n+---Adders : \n\t   2 Input   10 Bit       Adders := 1     \n\t   2 Input    3 Bit       Adders := 1     \n+---Registers : \n\t               16 Bit    Registers := 3     \n\t               10 Bit    Registers := 1     \n\t                8 Bit    Registers := 2     \n\t                3 Bit    Registers := 1     \n\t                2 Bit    Registers := 1     \n\t                1 Bit    Registers := 6     \n+---Muxes : \n\t   2 Input   10 Bit        Muxes := 1     \n\t   5 Input   10 Bit        Muxes := 1     \n\t   2 Input    8 Bit        Muxes := 1     \n\t   5 Input    8 Bit        Muxes := 1     \n\t   5 Input    3 Bit        Muxes := 2     \n\t   2 Input    3 Bit        Muxes := 2     \n\t   2 Input    1 Bit        Muxes := 8     \n\t   5 Input    1 Bit        Muxes := 6     \n---------------------------------------------------------------------------------\nFinished RTL Component Statistics \n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Part Resource Summary\n---------------------------------------------------------------------------------\nPart Resources:\nDSPs: 90 (col length:60)\nBRAMs: 100 (col length: RAMB18 60 RAMB36 30)\n---------------------------------------------------------------------------------\nFinished Part Resource Summary\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart Cross Boundary and Area Optimization\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1395.445 ; gain = 853.160\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart Timing Optimization\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Timing Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1395.445 ; gain = 853.160\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Technology Mapping\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Technology Mapping : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1395.445 ; gain = 853.160\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart IO Insertion\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Final Netlist Cleanup\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Final Netlist Cleanup\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1626.453 ; gain = 1084.168\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Renaming Generated Instances\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1626.453 ; gain = 1084.168\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Handling Custom Attributes\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1626.453 ; gain = 1084.168\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Writing Synthesis Report\n---------------------------------------------------------------------------------\n\nReport BlackBoxes: \n+-+--------------+----------+\n| |BlackBox name |Instances |\n+-+--------------+----------+\n+-+--------------+----------+\n\nReport Cell Usage: \n+------+-----+------+\n|      |Cell |Count |\n+------+-----+------+\n|1     |BUFG |     2|\n|2     |LUT2 |     2|\n|3     |LUT3 |     4|\n|4     |LUT4 |     3|\n|5     |LUT5 |    18|\n|6     |LUT6 |    20|\n|7     |FDPE |     2|\n|8     |FDRE |    84|\n|9     |FDSE |     2|\n|10    |IBUF |    20|\n|11    |OBUF |    28|\n+------+-----+------+\n\nReport Instance Areas: \n+------+-------------------+-----------+------+\n|      |Instance           |Module     |Cells |\n+------+-------------------+-----------+------+\n|1     |top                |           |   185|\n|2     |  boundary         |cdc_probe  |   117|\n|3     |    reset_boundary |reset_sync |     2|\n|4     |    switches       |input_sync |    32|\n|5     |    receiver       |uart_rx    |    83|\n+------+-------------------+-----------+------+\n---------------------------------------------------------------------------------\nFinished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1626.453 ; gain = 1084.168\n---------------------------------------------------------------------------------\nSynthesis finished with 0 errors, 0 critical warnings and 0 warnings.\nSynthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1626.453 ; gain = 1084.168\nSynthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1626.453 ; gain = 1084.168\nINFO: [Project 1-571] Translating synthesized netlist\nNetlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1641.527 ; gain = 0.000\nINFO: [Project 1-570] Preparing netlist for logic optimization\nINFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).\nNetlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1752.414 ; gain = 0.000\nINFO: [Project 1-111] Unisim Transformation Summary:\nNo Unisim elements were transformed.\n\nSynth Design complete | Checksum: e1525630\nINFO: [Common 17-83] Releasing license: Synthesis\n22 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.\nsynth_design completed successfully\nsynth_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1752.414 ; gain = 1215.062\nINFO: [Timing 38-35] Done setting XDC timing constraints.\nINFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.\nINFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs\nINFO: [Timing 38-314] The report_cdc command only analyzes and reports clock domain crossing paths where clocks have been defined on both source and destination sides. Ports with no input delay constraint are skipped. Please run check_timing to verify there are no missing clock definitions in your design, nor any unconstrained input port.\nCDC_RULE_REJECTED unexpected=CDC-2\n    while executing\n\"error \"CDC_RULE_REJECTED unexpected=$rule\"\"\n    (\"foreach\" body line 3)\n    invoked from within\n\"foreach v $violations {\n    set rule [get_property CHECK $v]\n    if {![dict exists $seen $rule]} {error \"CDC_RULE_REJECTED unexpected=$rule\"}\n    dict...\"\n    (file \"C:\\RV32I_Edge_SoC\\scripts\\cdc_structure.tcl\" line 29)\nINFO: [Common 17-206] Exiting Vivado at Sat Nov  7 18:06:53 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 22.406
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat",
+        "-mode",
+        "batch",
+        "-nolog",
+        "-nojournal",
+        "-notrace",
+        "-source",
+        "C:\\RV32I_Edge_SoC\\scripts\\cdc_structure.tcl",
+        "-tclargs",
+        "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\structure-input-stage-bypass\\sources.txt"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T029\\cdc-20261108T020534892960Z\\structure-input-stage-bypass",
+      "started_utc": "2026-11-08T02:06:54.019231+00:00",
+      "timeout_seconds": 60,
+      "exit_code": 1,
+      "status": "FAIL",
+      "stdout": "\n****** Vivado v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sat Nov  7 18:06:54 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource {C:\\RV32I_Edge_SoC\\scripts\\cdc_structure.tcl} -notrace\nCommand: synth_design -top cdc_registered_probe -part xc7a35tcpg236-1 -flatten_hierarchy none\nStarting synth_design\nAttempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'\nINFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'\nINFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.\nINFO: [Synth 8-7078] Launching helper process for spawning children vivado processes\nINFO: [Synth 8-7075] Helper process launched with PID 7348\n---------------------------------------------------------------------------------\nStarting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1077.109 ; gain = 533.867\n---------------------------------------------------------------------------------\nINFO: [Synth 8-6157] synthesizing module 'cdc_registered_probe' [C:/RV32I_Edge_SoC/dv/cdc/cdc_registered_probe.sv:4]\nINFO: [Synth 8-6157] synthesizing module 'cdc_probe' [C:/RV32I_Edge_SoC/dv/cdc/cdc_probe.sv:3]\nINFO: [Synth 8-6157] synthesizing module 'reset_sync' [C:/RV32I_Edge_SoC/rtl/peripherals/reset_sync.sv:3]\nINFO: [Synth 8-6155] done synthesizing module 'reset_sync' (0#1) [C:/RV32I_Edge_SoC/rtl/peripherals/reset_sync.sv:3]\nINFO: [Synth 8-6157] synthesizing module 'input_sync' [C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/structure-input-stage-bypass/input_sync.sv:3]\n\tParameter WIDTH bound to: 16 - type: integer \nINFO: [Synth 8-6155] done synthesizing module 'input_sync' (0#1) [C:/RV32I_Edge_SoC/build/T029/cdc-20261108T020534892960Z/structure-input-stage-bypass/input_sync.sv:3]\nINFO: [Synth 8-6157] synthesizing module 'uart_rx' [C:/RV32I_Edge_SoC/rtl/peripherals/uart_rx.sv:3]\nINFO: [Synth 8-6155] done synthesizing module 'uart_rx' (0#1) [C:/RV32I_Edge_SoC/rtl/peripherals/uart_rx.sv:3]\nINFO: [Synth 8-6155] done synthesizing module 'cdc_probe' (0#1) [C:/RV32I_Edge_SoC/dv/cdc/cdc_probe.sv:3]\nINFO: [Synth 8-6155] done synthesizing module 'cdc_registered_probe' (0#1) [C:/RV32I_Edge_SoC/dv/cdc/cdc_registered_probe.sv:4]\n---------------------------------------------------------------------------------\nFinished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1197.398 ; gain = 654.156\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1197.398 ; gain = 654.156\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Loading Part and Timing Information\n---------------------------------------------------------------------------------\nLoading part: xc7a35tcpg236-1\n---------------------------------------------------------------------------------\nINFO: [Device 21-403] Loading part xc7a35tcpg236-1\nFinished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1197.398 ; gain = 654.156\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1197.398 ; gain = 654.156\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart RTL Component Statistics \n---------------------------------------------------------------------------------\nDetailed RTL Component Info : \n+---Adders : \n\t   2 Input   10 Bit       Adders := 1     \n\t   2 Input    3 Bit       Adders := 1     \n+---Registers : \n\t               16 Bit    Registers := 3     \n\t               10 Bit    Registers := 1     \n\t                8 Bit    Registers := 2     \n\t                3 Bit    Registers := 2     \n\t                2 Bit    Registers := 1     \n\t                1 Bit    Registers := 6     \n+---Muxes : \n\t   6 Input   10 Bit        Muxes := 1     \n\t   2 Input   10 Bit        Muxes := 1     \n\t   6 Input    8 Bit        Muxes := 1     \n\t   2 Input    8 Bit        Muxes := 1     \n\t   6 Input    3 Bit        Muxes := 2     \n\t   2 Input    2 Bit        Muxes := 1     \n\t   2 Input    1 Bit        Muxes := 5     \n\t   6 Input    1 Bit        Muxes := 5     \n---------------------------------------------------------------------------------\nFinished RTL Component Statistics \n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Part Resource Summary\n---------------------------------------------------------------------------------\nPart Resources:\nDSPs: 90 (col length:60)\nBRAMs: 100 (col length: RAMB18 60 RAMB36 30)\n---------------------------------------------------------------------------------\nFinished Part Resource Summary\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart Cross Boundary and Area Optimization\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1397.043 ; gain = 853.801\n---------------------------------------------------------------------------------\nNo constraint files found.\n---------------------------------------------------------------------------------\nStart Timing Optimization\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Timing Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1397.043 ; gain = 853.801\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Technology Mapping\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Technology Mapping : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1397.043 ; gain = 853.801\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart IO Insertion\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Final Netlist Cleanup\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Final Netlist Cleanup\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1627.953 ; gain = 1084.711\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Renaming Generated Instances\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1627.953 ; gain = 1084.711\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Handling Custom Attributes\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nFinished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1627.953 ; gain = 1084.711\n---------------------------------------------------------------------------------\n---------------------------------------------------------------------------------\nStart Writing Synthesis Report\n---------------------------------------------------------------------------------\n\nReport BlackBoxes: \n+-+--------------+----------+\n| |BlackBox name |Instances |\n+-+--------------+----------+\n+-+--------------+----------+\n\nReport Cell Usage: \n+------+-----+------+\n|      |Cell |Count |\n+------+-----+------+\n|1     |BUFG |     2|\n|2     |LUT2 |     2|\n|3     |LUT3 |    11|\n|4     |LUT4 |     3|\n|5     |LUT5 |    11|\n|6     |LUT6 |    20|\n|7     |FDPE |     2|\n|8     |FDRE |    84|\n|9     |FDSE |     2|\n|10    |IBUF |    20|\n|11    |OBUF |    28|\n+------+-----+------+\n\nReport Instance Areas: \n+------+-------------------+-----------+------+\n|      |Instance           |Module     |Cells |\n+------+-------------------+-----------+------+\n|1     |top                |           |   185|\n|2     |  boundary         |cdc_probe  |   117|\n|3     |    reset_boundary |reset_sync |     2|\n|4     |    switches       |input_sync |    32|\n|5     |    receiver       |uart_rx    |    83|\n+------+-------------------+-----------+------+\n---------------------------------------------------------------------------------\nFinished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1627.953 ; gain = 1084.711\n---------------------------------------------------------------------------------\nSynthesis finished with 0 errors, 0 critical warnings and 0 warnings.\nSynthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1627.953 ; gain = 1084.711\nSynthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1627.953 ; gain = 1084.711\nINFO: [Project 1-571] Translating synthesized netlist\nNetlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1642.992 ; gain = 0.000\nINFO: [Project 1-570] Preparing netlist for logic optimization\nINFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).\nNetlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1753.523 ; gain = 0.000\nINFO: [Project 1-111] Unisim Transformation Summary:\nNo Unisim elements were transformed.\n\nSynth Design complete | Checksum: 254d2b0a\nINFO: [Common 17-83] Releasing license: Synthesis\n20 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.\nsynth_design completed successfully\nsynth_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1753.523 ; gain = 1215.203\nINFO: [Timing 38-35] Done setting XDC timing constraints.\nINFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.\nINFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs\nINFO: [Timing 38-433] Consider using Xilinx recommended XPM_CDC modules to avoid Critical severities\nINFO: [Timing 38-314] The report_cdc command only analyzes and reports clock domain crossing paths where clocks have been defined on both source and destination sides. Ports with no input delay constraint are skipped. Please run check_timing to verify there are no missing clock definitions in your design, nor any unconstrained input port.\nCDC_RULE_REJECTED unexpected=CDC-4\n    while executing\n\"error \"CDC_RULE_REJECTED unexpected=$rule\"\"\n    (\"foreach\" body line 3)\n    invoked from within\n\"foreach v $violations {\n    set rule [get_property CHECK $v]\n    if {![dict exists $seen $rule]} {error \"CDC_RULE_REJECTED unexpected=$rule\"}\n    dict...\"\n    (file \"C:\\RV32I_Edge_SoC\\scripts\\cdc_structure.tcl\" line 29)\nINFO: [Common 17-206] Exiting Vivado at Sat Nov  7 18:07:16 2026...\n",
+      "stderr": "",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 22.5
+    }
+  ],
+  "checks": [
+    {
+      "name": "Pinned Python version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned tzdata version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned Git version",
+      "status": "PASS",
+      "command_index": 0
+    },
+    {
+      "name": "Pinned xvlog version",
+      "status": "PASS",
+      "command_index": 1
+    },
+    {
+      "name": "Pinned xelab version",
+      "status": "PASS",
+      "command_index": 2
+    },
+    {
+      "name": "Pinned xsim version",
+      "status": "PASS",
+      "command_index": 3
+    },
+    {
+      "name": "Actual reset/input SystemVerilog compile",
+      "status": "PASS",
+      "command_index": 4
+    },
+    {
+      "name": "Actual CDC digital elaboration",
+      "status": "PASS",
+      "command_index": 5
+    },
+    {
+      "name": "Counted reset/input phases/patterns/pulses",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Independent asynchronous reset/input native seed=1",
+      "status": "PASS",
+      "command_index": 6
+    },
+    {
+      "name": "Saved actual CDC digital waveform",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Counted reset/input phases/patterns/pulses",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Independent asynchronous reset/input native seed=20261106",
+      "status": "PASS",
+      "command_index": 7
+    },
+    {
+      "name": "Saved actual CDC digital waveform",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual CDC input negative wrong-reset-expectation",
+      "status": "PASS",
+      "command_index": 8
+    },
+    {
+      "name": "Saved negative waveform",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual CDC input negative empty",
+      "status": "PASS",
+      "command_index": 9
+    },
+    {
+      "name": "Saved negative waveform",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual CDC input negative truncated",
+      "status": "PASS",
+      "command_index": 10
+    },
+    {
+      "name": "Saved negative waveform",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Invalid-width test elaborates",
+      "status": "PASS",
+      "command_index": 11
+    },
+    {
+      "name": "Actual invalid WIDTH33 rejects",
+      "status": "PASS",
+      "command_index": 12
+    },
+    {
+      "name": "Unique digital mutation one-edge-release",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual digital mutant compile one-edge-release",
+      "status": "PASS",
+      "command_index": 13
+    },
+    {
+      "name": "Actual digital mutant elaborate one-edge-release",
+      "status": "PASS",
+      "command_index": 14
+    },
+    {
+      "name": "Digital fault detected one-edge-release",
+      "status": "PASS",
+      "command_index": 15
+    },
+    {
+      "name": "Saved digital mutant reset_sync.sv",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Saved digital mutant vectors.txt",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Saved digital mutant one-edge-release.wdb",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Unique digital mutation missing-async-assert",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual digital mutant compile missing-async-assert",
+      "status": "PASS",
+      "command_index": 16
+    },
+    {
+      "name": "Actual digital mutant elaborate missing-async-assert",
+      "status": "PASS",
+      "command_index": 17
+    },
+    {
+      "name": "Digital fault detected missing-async-assert",
+      "status": "PASS",
+      "command_index": 18
+    },
+    {
+      "name": "Saved digital mutant reset_sync.sv",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Saved digital mutant vectors.txt",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Saved digital mutant missing-async-assert.wdb",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Unique digital mutation input-stage-bypass",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual digital mutant compile input-stage-bypass",
+      "status": "PASS",
+      "command_index": 19
+    },
+    {
+      "name": "Actual digital mutant elaborate input-stage-bypass",
+      "status": "PASS",
+      "command_index": 20
+    },
+    {
+      "name": "Digital fault detected input-stage-bypass",
+      "status": "PASS",
+      "command_index": 21
+    },
+    {
+      "name": "Saved digital mutant input_sync.sv",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Saved digital mutant vectors.txt",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Saved digital mutant input-stage-bypass.wdb",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual18 chains/nonempty3-rule CDC, Warning retained",
+      "status": "PASS",
+      "command_index": 22
+    },
+    {
+      "name": "Analysis clocks/I/O constraints cover all endpoints",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Unique structure mutation missing-rx-attribute",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual unsafe/untagged CDC rejected missing-rx-attribute",
+      "status": "PASS",
+      "command_index": 23
+    },
+    {
+      "name": "Unique structure mutation input-stage-bypass",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual unsafe/untagged CDC rejected input-stage-bypass",
+      "status": "PASS",
+      "command_index": 24
+    },
+    {
+      "name": "CDC source bindings unchanged",
+      "status": "PASS",
+      "command_index": null
+    }
+  ],
+  "simulations": [
+    {
+      "seed": 1,
+      "checked_vectors": 1645,
+      "vector_path": "build/T029/cdc-20261108T020534892960Z/simulation/seed_1.txt",
+      "vector_sha256": "42d5d84dd08e37f530a0cd5f55cfd9f81ba64f0c426f4286d059367292086d02",
+      "waveform": "build/T029/cdc-20261108T020534892960Z/simulation/seed_1.wdb",
+      "waveform_sha256": "0117900685c59c601758616bfbff1e0725d07e14abd174b3d79943cfaba41f29"
+    },
+    {
+      "seed": 20261106,
+      "checked_vectors": 1645,
+      "vector_path": "build/T029/cdc-20261108T020534892960Z/simulation/seed_20261106.txt",
+      "vector_sha256": "f450e05ea7cd5eae31069f84ff02b675008501e30f11faeab5ce19e285d6d69b",
+      "waveform": "build/T029/cdc-20261108T020534892960Z/simulation/seed_20261106.wdb",
+      "waveform_sha256": "a694368544e695550b3a80a9c82da7095bacdef51a0450ba378e918aba2dd637"
+    }
+  ],
+  "excluded": [
+    "analog metastability/MTBF",
+    "atomic multibit transfer/pulse capture/debounce",
+    "complete SoC/routed CDC",
+    "formal",
+    "routed timing",
+    "hardware",
+    "ASIC"
+  ],
+  "source_sha256": {
+    "rtl/peripherals/reset_sync.sv": "26be9f30f22ce8abf0e0644e1ffa8622907ad680edde59c05614f05ee49b278a",
+    "rtl/peripherals/input_sync.sv": "75a1f76a6c5d736ca4a1ef88423174c08469a287ee973a48e1f3e910361b86dc",
+    "rtl/peripherals/uart_rx.sv": "d5c22f05450b70033746c8b762e5d4fb5fe974b496c822c400be8795fc344a4c",
+    "dv/cdc/cdc_probe.sv": "cb99086da260ea57f6c63a489b1c8e5ac4d6a39b8f4f8753348995427ea5b5ae",
+    "dv/cdc/cdc_registered_probe.sv": "14edee769e45d49bd66d3721b3d9551eba990d3a376e70a30173a76dac48c1ab",
+    "dv/cdc/tb_cdc.sv": "cc690e4f35578d5f3a7993095fdce2af275942fec64ea1e3791b3b2bc0beb693",
+    "dv/cdc/test_cdc.py": "3ca8b40d36568276013131453a30b499eea5796464b1a5a812777091579f119b",
+    "scripts/cdc_checks.py": "0a54b6e37badb98119ecfb3fe36a88bf567e754742bbe40b5b13f90d30ea106c",
+    "scripts/cdc_structure.tcl": "24c46dffb154e757b72f9df3a7e5c1d3e7565efc552a49cc7f709314eee1c172",
+    "scripts/rtl_checks.py": "f38cce3647f592f7c5ad915f56e65ec0782ace2faf75ce3cf549977bca6270e0",
+    "scripts/tool_runner.py": "2ffc6d2c8d4be6b21f5b836a033b6971f44f9172d22b18378ade58498ec4d5f7",
+    "scripts/tool_child.py": "8a61d7f13507a0d41b838aef00b1488e9ecc0b535ff9a08caca729b0551b62a8",
+    ".harness/checks.json": "66e7be7dbc460c283dd0d57d0fbb2106952428895509b103de5e4bed8e892d78",
+    "config/rtl_checks.json": "fffee851a3d91b7a9625bb4e21fe57850162eee16b289ba6897079584b459d40",
+    "docs/ARCH_CONTRACT.json": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03"
+  },
+  "pins": {
+    "schema_version": 1,
+    "python_version": "3.9.13",
+    "git_version": "2.48.1.windows.1",
+    "tzdata_version": "2026.2",
+    "vivado_version": "2025.2",
+    "vivado_sw_build": "6299465"
+  },
+  "seed_reports": [
+    {
+      "seed": 1,
+      "summary": "build/T029/cdc-20261108T020534892960Z/simulation/seed_1_summary.json"
+    },
+    {
+      "seed": 20261106,
+      "summary": "build/T029/cdc-20261108T020534892960Z/simulation/seed_20261106_summary.json"
+    }
+  ],
+  "structural_runs": [
+    {
+      "variant": "positive",
+      "command_index": 22,
+      "cwd": "build/T029/cdc-20261108T020534892960Z/structure-positive"
+    },
+    {
+      "variant": "missing-rx-attribute",
+      "command_index": 23,
+      "cwd": "build/T029/cdc-20261108T020534892960Z/structure-missing-rx-attribute"
+    },
+    {
+      "variant": "input-stage-bypass",
+      "command_index": 24,
+      "cwd": "build/T029/cdc-20261108T020534892960Z/structure-input-stage-bypass"
+    }
+  ],
+  "artifacts": {
+    "build/T029/cdc-20261108T020534892960Z/simulation/run.tcl": "34c0185d73cc9e8cf6a27968804c6324e35de97109b0f8ac4b423d2b63e23ad5",
+    "build/T029/cdc-20261108T020534892960Z/simulation/seed_1_summary.json": "492dd247b7a7b9be2c54dafc94c8634b0ea68427e8969b4afa1dbfd93b5e27bb",
+    "build/T029/cdc-20261108T020534892960Z/simulation/seed_20261106_summary.json": "492dd247b7a7b9be2c54dafc94c8634b0ea68427e8969b4afa1dbfd93b5e27bb",
+    "build/T029/cdc-20261108T020534892960Z/simulation/wrong-reset-expectation.txt": "e4d9b252e374f65f198e159b8caa8de0321452127c0844a2c211b0779cdcad93",
+    "build/T029/cdc-20261108T020534892960Z/simulation/wrong-reset-expectation.wdb": "745b54a2ac0202f2adbde5f3325b876a9248f2a82565d6a115e9c5e7e5fa3aca",
+    "build/T029/cdc-20261108T020534892960Z/simulation/empty.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build/T029/cdc-20261108T020534892960Z/simulation/empty.wdb": "095b80c0430a6064a9dc161952b71220649ef3abfba8fa59879b1514271dbf65",
+    "build/T029/cdc-20261108T020534892960Z/simulation/truncated.txt": "2b163fafeb1f41a11dffbba1b14f66762d824b614c184d8bcd8cec16b742b9cc",
+    "build/T029/cdc-20261108T020534892960Z/simulation/truncated.wdb": "bbba5d0ee45fb3c4c60be9ffdb442c8a198d6cfde384f0edf7a5a71b27950c42",
+    "build/T029/cdc-20261108T020534892960Z/simulation/badwidth.tcl": "6e6cb65621fab0655e3d5710f32d53083afcad3829ef215fa606488d821afc90",
+    "build/T029/cdc-20261108T020534892960Z/simulation/bad-width.wdb": "1f2a330030e78dfb8377eabd5846f5c620230306d2db2e2d07acef65867cd611",
+    "build/T029/cdc-20261108T020534892960Z/mutation-one-edge-release/reset_sync.sv": "dfd27ac2ddcc873624065433b6d66e52b4050703ada0771dae098fd0ea2837eb",
+    "build/T029/cdc-20261108T020534892960Z/mutation-one-edge-release/vectors.txt": "42d5d84dd08e37f530a0cd5f55cfd9f81ba64f0c426f4286d059367292086d02",
+    "build/T029/cdc-20261108T020534892960Z/mutation-one-edge-release/one-edge-release.wdb": "e7e7ce0819c980756f635da1ac2260dcaa1110253969c9c66ad0b28fc6e38706",
+    "build/T029/cdc-20261108T020534892960Z/mutation-missing-async-assert/reset_sync.sv": "872f59644101e4dd86f8acdf0934b053a7edeea0b1edd28e22878ac8d5b66a28",
+    "build/T029/cdc-20261108T020534892960Z/mutation-missing-async-assert/vectors.txt": "42d5d84dd08e37f530a0cd5f55cfd9f81ba64f0c426f4286d059367292086d02",
+    "build/T029/cdc-20261108T020534892960Z/mutation-missing-async-assert/missing-async-assert.wdb": "3e8f1cf6a14acb4f4585d4d6d8f2523102edd4332798789120e0d55494fb0a88",
+    "build/T029/cdc-20261108T020534892960Z/mutation-input-stage-bypass/input_sync.sv": "38f335e724d1225c4664d606a097775ff30630c865525634310d123c497383c9",
+    "build/T029/cdc-20261108T020534892960Z/mutation-input-stage-bypass/vectors.txt": "42d5d84dd08e37f530a0cd5f55cfd9f81ba64f0c426f4286d059367292086d02",
+    "build/T029/cdc-20261108T020534892960Z/mutation-input-stage-bypass/input-stage-bypass.wdb": "fff39512e24bd9ce31707da9f8bc17acc88409dea142d12cc406cb119100da55",
+    "build/T029/cdc-20261108T020534892960Z/structure-positive/cdc.rpt": "dcb3a29539f20b773814b1c2247c8b01ed5a18ea145302351aba06492420b86b",
+    "build/T029/cdc-20261108T020534892960Z/structure-positive/chains.tsv": "ca67bc3f63d7992d30794ecc4ccac1822448c89571325408ae4c4bdb73d3250a",
+    "build/T029/cdc-20261108T020534892960Z/structure-positive/dfx_runtime.txt": "6b79b19b9972a2cbc7e6bd149064451ea025b2910ec57e208083d307f94a741e",
+    "build/T029/cdc-20261108T020534892960Z/structure-positive/effective_analysis.xdc": "119f155eca5d72a261cf6e4e43f1a874794ee7852df97079dfb44837a10ce24d",
+    "build/T029/cdc-20261108T020534892960Z/structure-positive/inventory.tsv": "e2c60ef74c3ae76d64099bce083e0370bf8a72bc4800ea5d93549c574409d601",
+    "build/T029/cdc-20261108T020534892960Z/structure-positive/sources.txt": "137052547a074b4708e82ad41df0b872ed27843f2bba1d5f5ce64abc8cfb23bc",
+    "build/T029/cdc-20261108T020534892960Z/structure-positive/timing_checks.rpt": "3dd3ade9ffd6e6747f50cf14f52e1e77931d26ad16d83bb062227072370adedb",
+    "build/T029/cdc-20261108T020534892960Z/structure-missing-rx-attribute/uart_rx.sv": "03ed3e71e8661a2408c4cf4a114340b5fc98b4e12ad7daacb2c91f00b15a6280",
+    "build/T029/cdc-20261108T020534892960Z/structure-missing-rx-attribute/cdc.rpt": "53b39dd79c0dda0b4ce6250404abe1eb6ba379408bce982e5bdc748969519843",
+    "build/T029/cdc-20261108T020534892960Z/structure-missing-rx-attribute/dfx_runtime.txt": "6b79b19b9972a2cbc7e6bd149064451ea025b2910ec57e208083d307f94a741e",
+    "build/T029/cdc-20261108T020534892960Z/structure-missing-rx-attribute/effective_analysis.xdc": "119f155eca5d72a261cf6e4e43f1a874794ee7852df97079dfb44837a10ce24d",
+    "build/T029/cdc-20261108T020534892960Z/structure-missing-rx-attribute/inventory.tsv": "faa8d7e353cf3b8f7e3fcdf80e05f1436321ed6deed94c12d42ed25a2d18ca96",
+    "build/T029/cdc-20261108T020534892960Z/structure-missing-rx-attribute/sources.txt": "71de2bc7f90cf165e88bcee6476ddd2ee38b2d1be90d31ad01c8594be257daf6",
+    "build/T029/cdc-20261108T020534892960Z/structure-missing-rx-attribute/timing_checks.rpt": "dee7bb808654ba4c8e9744feae2895d0bfb89a534b571ebc955c35035c21d8e4",
+    "build/T029/cdc-20261108T020534892960Z/structure-input-stage-bypass/input_sync.sv": "38f335e724d1225c4664d606a097775ff30630c865525634310d123c497383c9",
+    "build/T029/cdc-20261108T020534892960Z/structure-input-stage-bypass/cdc.rpt": "dd1967e3457f658ea17ef0494089af42c2e8e81fcca767b84f634f5fe6000f95",
+    "build/T029/cdc-20261108T020534892960Z/structure-input-stage-bypass/dfx_runtime.txt": "6b79b19b9972a2cbc7e6bd149064451ea025b2910ec57e208083d307f94a741e",
+    "build/T029/cdc-20261108T020534892960Z/structure-input-stage-bypass/effective_analysis.xdc": "119f155eca5d72a261cf6e4e43f1a874794ee7852df97079dfb44837a10ce24d",
+    "build/T029/cdc-20261108T020534892960Z/structure-input-stage-bypass/inventory.tsv": "01b195ada3b5796c4dd5e620af4c17496a0af0b02751769b56c64a34a10de184",
+    "build/T029/cdc-20261108T020534892960Z/structure-input-stage-bypass/sources.txt": "badd8787affb0303dd248f2777b1ee03cc962d4d15475b9441a69f60df051dda",
+    "build/T029/cdc-20261108T020534892960Z/structure-input-stage-bypass/timing_checks.rpt": "edd10275e709ecdb1f84014d8c3de55e3534b239d4d472dd3ae3771364022110"
+  },
+  "finished_utc": "2026-11-08T02:07:16.545329+00:00"
+}

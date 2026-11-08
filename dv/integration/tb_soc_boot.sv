@@ -14,7 +14,7 @@ module tb_soc_boot #(parameter int unsigned DIVISOR=32'd8);
         .retire_valid_o(rv),.retire_order_o(order),.retire_pc_o(pc),.retire_next_pc_o(np),.retire_insn_o(insn),
         .retire_rd_write_o(rdw),.retire_rd_o(rd),.retire_rd_wdata_o(rddata),.retire_mem_valid_o(mv),.retire_mem_write_o(mw),
         .retire_mem_addr_o(ma),.retire_mem_be_o(be),.retire_mem_wdata_o(md),.retire_mem_rdata_o(mread),
-        .fault_valid_o(fv),.fault_pc_o(fpc),.fault_insn_o(fi),.fault_code_o(fc),.fault_tval_o(ftval));
+        .fault_valid_o(fv),.fault_pc_o(fpc),.fault_insn_o(fi),.fault_code_o(fc),.fault_tval_o(ftval),.trap_valid_o(),.trap_order_o(),.trap_pc_o(),.trap_insn_o(),.trap_cause_o(),.trap_tval_o(),.trap_target_o(),.retire_csr_valid_o(),.retire_csr_read_o(),.retire_csr_write_o(),.retire_csr_addr_o(),.retire_csr_rdata_o(),.retire_csr_wdata_o());
     always #5 clk=~clk;
     integer fd,seed,rows=0,phase,cycle;
     string trace_path;
