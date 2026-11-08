@@ -98,8 +98,11 @@ module pipeline_core #(parameter bit ENABLE_TRAPS=1'b0) (
     wire logic [1:0] source_a,source_b;
     wire logic blocked_a,blocked_b,wait_a,wait_b,dependency;
     wire logic alu_ok,branch_ok,taken,bad_target,lsu_ok,bad_address,lsu_write;
+    // For branch/jump operations, LSU/ECALL/EBREAK faults are mutually
+    // exclusive. Qualify redirects directly without the full fault encoder.
+    wire logic branch_clean=!e.fetch_error && !e.dec.illegal && !bad_target;
     wire logic [3:0] byte_enable;
-    wire logic wb_fault,gpr_write,mem_hold,front_hold,mem_complete;
+    wire logic wb_fault,wb_token_fault,gpr_write,mem_hold,front_hold,mem_complete;
     wire logic i_request,i_response,d_request,d_response,create_fetch;
     logic redirect;
     logic [31:0] next_fetch_pc_q;
@@ -137,10 +140,11 @@ module pipeline_core #(parameter bit ENABLE_TRAPS=1'b0) (
         endcase
     endfunction
     assign sync_cause=csr_error ? 32'd2 : mapped_cause(w.result.fault);
-    assign wb_fault=w_valid && ((w.result.fault!=4'd0) || (ENABLE_TRAPS && csr_error));
+    assign wb_token_fault=w_valid && (w.result.fault!=4'd0);
+    assign wb_fault=wb_token_fault || (w_valid && ENABLE_TRAPS && csr_error);
     generate if(ENABLE_TRAPS) begin : g_traps
         csr_file csrs(.clk_i(clk_i),.rst_i(rst_i),.irq_external_i(irq_external_i),
-            .addr_i(w.result.csr_addr),.op_i(w_valid ? w.result.csr_op : 3'd0),.operand_i(w.result.csr_operand),
+            .addr_i(w.result.csr_addr),.op_i(w.result.csr_op),.operand_i(w.result.csr_operand),
             .source_zero_i(w.result.csr_source_zero),.rd_zero_i(w.result.csr_rd_zero),.commit_i(successful_retire),
             .trap_i(trap_enter),.mret_i(mret_commit),.trap_pc_i(sync_trap ? w.result.pc[31:2] : irq_resume[31:2]),
             .trap_cause_i(sync_trap ? sync_cause : 32'h8000000b),.trap_tval_i(sync_trap ? (csr_error ? w.result.insn : w.result.tval) : 32'd0),
@@ -164,7 +168,11 @@ module pipeline_core #(parameter bit ENABLE_TRAPS=1'b0) (
         .uses_a_i(e.dec.uses_rs1),.uses_b_i(e.dec.uses_rs2),.rs_a_i(e.dec.rs1),.rs_b_i(e.dec.rs2),
         .captured_a_i(e.a),.captured_b_i(e.b),.ex_valid_i(m_valid),.ex_write_i(m.result.write),
         .ex_load_i(m.result.mem && !m.result.mwrite),.ex_rd_i(m.result.rd),.ex_value_i(m.result.value),
-        .wb_valid_i(w_valid && !wb_fault),.wb_write_i(w.result.write),.wb_rd_i(w.result.rd),.wb_value_i(wb_value),
+        // CSR/MRET serialize: no EX consumer exists while their WB is valid.
+        // Write CSR results through the GPR port; keep CSR read/error decode out
+        // of the same-cycle EX branch/address forwarding cone.
+        .wb_valid_i(w_valid && w.result.fault==4'd0 && (!ENABLE_TRAPS || w.result.csr_op==3'd0)),
+        .wb_write_i(w.result.write),.wb_rd_i(w.result.rd),.wb_value_i(w.result.value),
         .value_a_o(fa),.value_b_o(fb),.source_a_o(source_a),.source_b_o(source_b),
         .blocked_a_o(blocked_a),.blocked_b_o(blocked_b));
     hazard_unit hazards (.consumer_valid_i(e_valid && !e.fetch_error),
@@ -183,12 +191,15 @@ module pipeline_core #(parameter bit ENABLE_TRAPS=1'b0) (
         .read_word_i(dmem_rsp_rdata_i),.load_data_o(load_value),.store_word_o(),
         .byte_enable_o(),.write_o(),.misaligned_o(),.supported_o());
 
-    assign dmem_req_valid_o=!rst_i && !fault_valid_o && !wb_fault && m_valid && m.result.mem && !data_sent_q;
+    // CSR operations serialize, so no younger MEM request/response can exist
+    // during CSR WB validation. Token faults still suppress younger bus work;
+    // keep the unrelated CSR address/permission decoder out of this bus cone.
+    assign dmem_req_valid_o=!rst_i && !fault_valid_o && !wb_token_fault && m_valid && m.result.mem && !data_sent_q;
     assign dmem_req_addr_o=dmem_req_valid_o ? m.result.addr : 32'd0;
     assign dmem_req_write_o=dmem_req_valid_o && m.result.mwrite;
     assign dmem_req_be_o=dmem_req_valid_o ? m.result.be : 4'd0;
     assign dmem_req_wdata_o=dmem_req_valid_o ? m.result.wdata : 32'd0;
-    assign dmem_rsp_ready_o=!rst_i && !fault_valid_o && !wb_fault && m_valid && m.result.mem && data_sent_q;
+    assign dmem_rsp_ready_o=!rst_i && !fault_valid_o && !wb_token_fault && m_valid && m.result.mem && data_sent_q;
     assign d_request=dmem_req_valid_o && dmem_req_ready_i;
     assign d_response=dmem_rsp_valid_i && dmem_rsp_ready_o;
     assign mem_hold=m_valid && m.result.mem && !d_response;
@@ -205,6 +216,7 @@ module pipeline_core #(parameter bit ENABLE_TRAPS=1'b0) (
     assign i_request=imem_req_valid_o && imem_req_ready_i;
     assign i_response=imem_rsp_valid_i && imem_rsp_ready_o;
     assign create_fetch=!rst_i && !fault_valid_o && !wb_fault && !redirect && !control_redirect && !irq_block && !d_serial && !e_serial && !m_serial && !w_serial && !f_valid && queue_room;
+    wire logic queue_push=i_response && !fetch_killed_q && !redirect && !control_redirect && !irq_block && !wb_fault && !fault_valid_o;
 
     always_comb begin
         m_next='0;
@@ -256,7 +268,7 @@ module pipeline_core #(parameter bit ENABLE_TRAPS=1'b0) (
             m_next.result.rd=5'd0;
             m_next.result.mem=1'b0;
         end
-        redirect=e_valid && branch_ok && taken && (m_next.result.fault==4'd0) &&
+        redirect=e_valid && branch_ok && taken && branch_clean &&
             !mem_hold && !dependency && !blocked_a && !blocked_b &&
             !wb_fault && !fault_valid_o && !control_redirect && !(d_response && dmem_rsp_err_i) && !rst_i;
     end
@@ -267,13 +279,12 @@ module pipeline_core #(parameter bit ENABLE_TRAPS=1'b0) (
             queue_next[0]=fetch_queue[1];queue_next[1]=fetch_queue[2];queue_next[2]='0;
             queue_count_next=queue_count_q-2'd1;
         end
-        if (i_response && !fetch_killed_q && !redirect && !control_redirect && !irq_block && !wb_fault && !fault_valid_o) begin
-            case (queue_count_next)
-                2'd0: queue_next[0]=d_next;
-                2'd1: queue_next[1]=d_next;
-                2'd2: queue_next[2]=d_next;
-                default: begin end
-            endcase
+        if (queue_push) begin
+            // Select the append slot directly from the registered count and
+            // pop bit. Payload muxes need no subtract-then-decode carry path.
+            for (int unsigned index=32'd0;index<32'd3;index=index+32'd1)
+                if ((queue_pop && queue_count_q==2'(index+32'd1)) || (!queue_pop && queue_count_q==2'(index)))
+                    queue_next[index]=d_next;
             queue_count_next=queue_count_next+2'd1;
         end
         if (redirect || control_redirect || wb_fault || fault_valid_o) begin
@@ -308,23 +319,23 @@ module pipeline_core #(parameter bit ENABLE_TRAPS=1'b0) (
             end
         end
     end
-    rv32_pipeline_stage #(.WIDTH(32'd32)) if_stage (.clk_i(clk_i),.rst_i(rst_i),
+    rv32_pipeline_stage #(.WIDTH(32'd32),.MASK_PAYLOAD(1'b0),.PRELOAD_WHEN_EMPTY(1'b1)) if_stage (.clk_i(clk_i),.rst_i(rst_i),
         .clear_i(i_response),.hold_i(!create_fetch),.valid_i(1'b1),.payload_i(next_fetch_pc_q),
         .valid_o(f_valid),.payload_o(fetch_pc));
     // Responded words are FIFO buffers, not additional outstanding requests.
     for (genvar index=32'd0;index<32'd3;index=index+32'd1) begin : g_fetch_queue
-        rv32_pipeline_stage #(.WIDTH($bits(d_t))) storage (.clk_i(clk_i),.rst_i(rst_i),
+        rv32_pipeline_stage #(.WIDTH($bits(d_t)),.MASK_PAYLOAD(1'b0)) storage (.clk_i(clk_i),.rst_i(rst_i),
             .clear_i(wb_fault || fault_valid_o || redirect || control_redirect),.hold_i(1'b0),
             .valid_i(queue_count_next>index),.payload_i(queue_next[index]),
             .valid_o(queue_valid[index]),.payload_o(fetch_queue[index]));
     end
-    rv32_pipeline_stage #(.WIDTH($bits(e_t))) ex_stage (.clk_i(clk_i),.rst_i(rst_i),
+    rv32_pipeline_stage #(.WIDTH($bits(e_t)),.MASK_PAYLOAD(1'b0)) ex_stage (.clk_i(clk_i),.rst_i(rst_i),
         .clear_i(wb_fault || fault_valid_o || redirect || control_redirect),.hold_i(1'b0),
         .valid_i(front_hold ? e_valid : (d_valid && !serial_block)),.payload_i(e_next),.valid_o(e_valid),.payload_o(e));
-    rv32_pipeline_stage #(.WIDTH($bits(m_t))) mem_stage (.clk_i(clk_i),.rst_i(rst_i),
+    rv32_pipeline_stage #(.WIDTH($bits(m_t)),.MASK_PAYLOAD(1'b0)) mem_stage (.clk_i(clk_i),.rst_i(rst_i),
         .clear_i(wb_fault || fault_valid_o || control_redirect),.hold_i(mem_hold),.valid_i(e_valid && !dependency && !blocked_a && !blocked_b),
         .payload_i(m_next),.valid_o(m_valid),.payload_o(m));
-    rv32_pipeline_stage #(.WIDTH($bits(w_t))) wb_stage (.clk_i(clk_i),.rst_i(rst_i),
+    rv32_pipeline_stage #(.WIDTH($bits(w_t)),.MASK_PAYLOAD(1'b0)) wb_stage (.clk_i(clk_i),.rst_i(rst_i),
         .clear_i(wb_fault || fault_valid_o || control_redirect),.hold_i(1'b0),.valid_i(mem_complete),
         .payload_i(w_next),.valid_o(w_valid),.payload_o(w));
 

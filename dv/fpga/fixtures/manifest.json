@@ -1,0 +1,9 @@
+{
+  "scope": "Actual T043 synthesis-preparation reports, used as parser fixtures only; not task acceptance or routed evidence",
+  "source_commit": "7d8ef19",
+  "files": {
+    "synthesis_timing.rpt": "cf50082d187998c91c680259a5d8feb7c23122c4e2dbe4608f7a92b2145c6793",
+    "synthesis_utilization.rpt": "432bc69d8f8c66303ecfd25ac24af7a4232286f0eba3450c320d8b4ccceed009"
+  },
+  "zip_sha256": "9b094e7837b5e82ec0286488199ed2dd0ae983f0b5458c866b00e6bbb4fe2fa3"
+}

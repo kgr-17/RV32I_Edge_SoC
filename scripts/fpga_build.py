@@ -15,6 +15,7 @@ import harness
 import tool_runner
 
 CONFIG='config/fpga_build.json'
+STAGES=('synth','impl','all','opt','place','physopt','phys_fanout','phys_placement','phys_logic','phys_pin','route','reports')
 
 
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -58,7 +59,7 @@ def check_execution(config,state):
 
 def prepare_job(output,mode='plan',stage='all',config_name=CONFIG,checkpoint=None):
     c=load_config(config_name)
-    if mode not in ('plan','execute') or stage not in ('synth','impl','all'):raise ValueError('FPGA_MODE_STAGE')
+    if mode not in ('plan','execute') or stage not in STAGES:raise ValueError('FPGA_MODE_STAGE')
     if mode=='execute':
         _,state=harness.load();check_execution(c,state)
     jobdir=project_path(output);build=harness.inside('build')
@@ -69,7 +70,7 @@ def prepare_job(output,mode='plan',stage='all',config_name=CONFIG,checkpoint=Non
         checkpoint_path=project_path(checkpoint)
         if checkpoint_path.suffix!='.dcp' or not checkpoint_path.is_file():raise ValueError('FPGA_CHECKPOINT_FILE')
         if build not in checkpoint_path.parents:raise ValueError('FPGA_CHECKPOINT_OUTSIDE_BUILD')
-    if stage=='impl' and checkpoint_path is None:raise ValueError('FPGA_CHECKPOINT_REQUIRED')
+    if stage not in ('synth','all') and checkpoint_path is None:raise ValueError('FPGA_CHECKPOINT_REQUIRED')
     source_names=[config_name,'fpga/basys3/build.tcl','scripts/fpga_build.py','scripts/tool_runner.py','scripts/tool_child.py','docs/ARCH_CONTRACT.json']+c['rtl_sources']+c['constraints']+c['memory_files']
     inputs={project_path(n).relative_to(harness.ROOT).as_posix():sha(project_path(n)) for n in source_names}
     if checkpoint_path:inputs[checkpoint_path.relative_to(harness.ROOT).as_posix()]=sha(checkpoint_path)
@@ -99,12 +100,12 @@ def run_job(job,record,timeout=120):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('mode',choices=('plan','execute'));parser.add_argument('--stage',choices=('synth','impl','all'),default='all')
+    parser.add_argument('mode',choices=('plan','execute'));parser.add_argument('--stage',choices=STAGES,default='all')
     parser.add_argument('--output',required=True);parser.add_argument('--config',default=CONFIG);parser.add_argument('--checkpoint')
     args=parser.parse_args();job,record=prepare_job(args.output,args.mode,args.stage,args.config,args.checkpoint)
     result=run_job(job,record);output=result['command']['stdout']+result['command']['stderr']
     marker='FPGA_BUILD_PLAN_PASS' if args.mode=='plan' else 'FPGA_BUILD_EXECUTION_PASS'
-    ok=result['command']['status']=='PASS' and result['command']['exit_code']==0 and marker in output and result['inputs_unchanged'] and not re.search(r'(?im)^\s*(?:WARNING:|ERROR:|FATAL:)',output)
+    ok=result['command']['status']=='PASS' and result['command']['exit_code']==0 and marker in output and result['inputs_unchanged'] and not re.search(r'(?im)^\s*(?:CRITICAL WARNING:|WARNING:|ERROR:|FATAL:)',output)
     print(json.dumps({'status':'PASS' if ok else 'FAIL','mode':args.mode,'stage':args.stage,'result':str(job.parent.relative_to(harness.ROOT)/'result.json')}))
     return 0 if ok else 1
 

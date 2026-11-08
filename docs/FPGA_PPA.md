@@ -116,3 +116,50 @@ The13 Tcl-profile command records include one Python launcher; its inner actual
 Vivado record is retained in the positive result.json. All failures/SDKprovenance
 remain bound in evidence/t030-final-audit-2026-11-06.json. No full-target design
 command was executed. Earlier pending descriptions are preparation chronology.
+
+## T043 active execution (2026-11-07)
+
+Owner authorized in7d8ef19. Full synthesis passed; initial routed timing failed
+(-5.092ns) and async BRAM control DRC warnings remain retained. See
+evidence/daily/T043.md for exact source snapshots, repairs and running gates.
+No bitstream or physical programming is claimed. Final current-attempt gates
+and human review are still pending. Per-unit and simulation passes do not
+establish FPGA timing closure.
+
+## T043 preparation update (2026-11-08)
+
+Execution uses fresh project-local checkpoint stages to preserve the native120s
+limit: synth, opt, place, fanout, placement, logic, pin, route, reports. The actual
+acceptance gate binds every predecessor checkpoint and current-attempt source,
+job, result and artifact hash. The all-stage plan now lists24 commands, adding
+route status, effective XDC, physical inventory and explicit vectorless activity.
+The combined legacy execution mode remains available but may time out; use the
+harness gates for the bounded acceptance flow. No timeout or diagnostic is waived.
+
+Flattened/rebuilt synthesis permits cross-module optimization. Explicit
+retarget/propconst/sweep omits optional BRAM CE power lookahead that created
+asynchronous-control DRC findings. The DRC ruledeck,10ns clock, board part and
+XDC remain unchanged. Physical inventory requires18 exact synchronizer pairs,
+36 ASYNC_REG FFs,36 pins and fully clocked reset synchronizer cells. The canonical
+board synchronizes both button transitions then distributes reset through a
+clocked initialized FF; hold btnC at least4 cycles to guarantee a core reset edge.
+Generic reset/stage defaults preserve the previous unit interfaces. See the
+T043 technical handoff for implementation details and independent tests.
+
+Retained failed routed preparations improved setup WNS from-5.092ns to-1.657ns
+and-0.688ns; none establishes100MHz closure or permits bitstream generation.
+The latter two had zero DRC findings, positive hold and complete physical
+inventory. Native vectorless estimate for boundedA was0.095W, Low confidence,
+resets deasserted, no simulation activity file. It is not measured power.
+Source/report archives and raw native result locations are in evidence/daily/T043.md.
+
+Current data-bus/CSR serialization factoring passed interrupt preparation:
+interrupts-20261108T193336390320Z,139 checks/71 native commands. One earlier
+nonzero XSim exit after completion remains a failed receipt; isolated replay
+and the subsequent full suite passed, with root cause not established. Independent
+oracles, seeds1/20261107,9 positive boots, CSR queued-consumer witness and real RTL
+mutants remain required. The only subsequent RTL change before current synthesis
+was a comment clarification. Fresh synthesis passed (3742 LUTs,2544 FFs,32 BRAM,
+36 IOB); its-1.291ns unplaced setup estimate is not routed closure. Current physical
+preparation is still running. Final manifest remains NOT RUN until all current
+harness gates pass. Formal T023 stays skipped/NOT RUN; hardware and ASIC NOT RUN.

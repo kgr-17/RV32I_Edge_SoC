@@ -12,8 +12,13 @@ module basys3_top #(
     output logic        RsTx
 );
     // One oscillator clock; raw inputs enter existing UART/GPIO synchronizers.
-    logic rst_s;
-    reset_sync reset_boundary(.clk_i(clk),.arst_i(btnC),.rst_o(rst_s));
+    logic rst_s=1'b1;
+    logic reset_release;
+    reset_sync #(.ASYNC_ASSERT(1'b0)) reset_boundary(.clk_i(clk),.arst_i(btnC),.rst_o(reset_release));
+    // Both raw button transitions pass two fully clocked synchronizer stages.
+    // The distribution copy is fed by a synchronous signal, so an asynchronous
+    // assertion cannot metastabilize the high-fanout shared reset register.
+    always_ff @(posedge clk) rst_s<=reset_release;
     edge_soc #(.ENABLE_TRAPS(ENABLE_TRAPS),.ROM_INIT_FILE(ROM_INIT_FILE)) soc(.clk_i(clk),.rst_i(rst_s),.rx_i(RsRx),.switches_i(sw),.tx_o(RsTx),.leds_o(led),
         .retire_valid_o(),.retire_order_o(),.retire_pc_o(),.retire_next_pc_o(),.retire_insn_o(),
         .retire_rd_write_o(),.retire_rd_o(),.retire_rd_wdata_o(),.retire_mem_valid_o(),.retire_mem_write_o(),

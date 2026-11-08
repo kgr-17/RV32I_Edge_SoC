@@ -1,0 +1,20 @@
+{
+  "scope": "Byte-exact actual boundedA routed preparation reports, parser fixtures only. Setup failed -1.657ns; no bitstream and no acceptance PASS.",
+  "source_result": "build/T043/reports-boundedA-2026-11-08/result.json",
+  "source_result_sha256": "dfed1bbcb71d9f8aa2cf524a5be109b60c44a436290468a33b75a6ea10f14636",
+  "files": {
+    "routed_timing.rpt": "8fd1f77e6754b2e048960587b7491fb9debdb8639166aae099af1892c034adfb",
+    "routed_utilization.rpt": "3ce797162413f46d4632d60e57caabbecefb813a3c182e810db27bdd5728887d",
+    "routed_clocks.rpt": "1542e1aeb828e8a7c0475f96f4466294ffc20e743f1ae5f964f4b9f2451f03f9",
+    "routed_clock_interaction.rpt": "b4046c8eaa26e81be8ce48005e02fe4d7a51b2edb19c9d6466a732251038f92b",
+    "routed_cdc.rpt": "86414a0a70e67a10434d2a1c5a486b2f1fdfc5748208edb5853a6eb9c1b054f1",
+    "routed_drc.rpt": "06cfbba716d742a6fa0e5be508e8030df3805385bd7df0bf2fdf02110c834385",
+    "routed_route_status.rpt": "86a0e8da6b4bf31c1e21d5cd88e12095de401a6ea37da9b1da062ca41ac245f2",
+    "effective_constraints.xdc": "1bfbdad761bcf228f6353967c19d2225b9667969e62ebc5ba93c536641c7241d",
+    "physical_inventory.tsv": "babe49fadae1cfb28189b9b4981d9314a2bd389027b1b8c55f254db2268c228a",
+    "routed_power.rpt": "a979c6d0b0af5a0aa139726383b1988bc02d34eafb16e240a9d34fd1c6143a3b",
+    "routed_activity.rpt": "feecbb846c3ba33da0a4a2626c15a3d38df0327f2395f3fc29e4cc5bc7cef940",
+    "routed_checks.rpt": "557da9eac5b2a0e7575214bdaea1c81fda8f6ca1c93004f86458ea221237907d"
+  },
+  "zip_sha256": "9e6901b6bd1e52eb733213be14da9659510635df329adea484e053098b867dc2"
+}

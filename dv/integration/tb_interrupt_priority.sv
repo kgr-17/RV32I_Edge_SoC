@@ -45,6 +45,8 @@ module tb_interrupt_priority #(parameter int unsigned DIVISOR=32'd8);
     task automatic tick(input integer epoch,input logic button,input logic line);
         @(negedge clk);#1;arst=button;rx=line;#2;
         edge_reset=rst;edge_irq=dut.irq;
+        if(!edge_reset && dut.cpu.w_valid && (dut.cpu.w.result.csr_op!=3'd0 || dut.cpu.w.result.mret) &&
+            (dut.cpu.e_valid || dut.cpu.m_valid))$fatal(1,"IRQ_SERIALIZATION_INVARIANT");
         if(edge_reset)begin drop=1'b1;cancel_state=0;end
         else if(cancel_state==0 && dut.fabric_irq && dut.cpu.g_traps.csrs.mie_q && dut.cpu.g_traps.csrs.meie_q && dut.cpu.e_valid && dut.cpu.e.dec.illegal)begin drop=1'b0;cancel_state=1;end
         if(!edge_reset && dut.cpu.sync_trap && dut.cpu.irq_draining)canceled=canceled+1;

@@ -598,3 +598,109 @@ preserve any failed source/checkpoint inputs before repairs, do not mask warning
 or failed timing. Exactly these two Nov7 reports are appended. Runtime remains
 unrestricted/never; attended only. Formal T023 remains owner-skipped/NOT RUN,
 physical programming and ASIC remain unverified. Versions unchanged from T045.
+
+
+---
+
+<!-- entry:2f23f51e24319d5e71217e1331a126ee6fbf7e303094d241f4087b3e3d85875f -->
+
+## T043 synthesis succeeds; implementation split into bounded stages
+
+Synthesis preparation (existing reviewed Tcl, source baseline7d8ef19): actual
+Vivado2025.2 SW6299465 PASS, native exit0/no warnings,92.594s under120. Reports:
+4625 LUTs/20800,2548 FFs/41600,32 BRAM tiles/50,36 IOBs. Unplaced synthesis timing
+is negative WNS -5.559ns, TNS -4283.602ns; this is not routed closure. Zero
+unconstrained internal endpoints;18 inputs and17 outputs have no external delay
+contract, retained as a distinct off-chip timing limitation. No I/O delays or
+false paths were invented. Actual synthesis checkpoint saved project-locally.
+
+Original combined implementation preparation TIMEOUT at120s during routing,
+after opt/place/physopt. Native wrapper's recorded exit_code0 does not override
+status TIMEOUT: overall CLI exit1. No valid routed checkpoint/bitstream. Exact
+input archive in evidence/failed_sources/T043/implementation-timeout/; native
+synth/impl result copies in evidence/prepare/T043-*-preparation-2026-11-07.json.
+No finish attempt consumed. No timeout/severity/filter changed.
+
+Added optional checkpoint stages opt/place/physopt/route/reports to the launcher
+and Tcl, retaining original all-stage20-command plan. Each writes/loads a real
+checkpoint and retains target/clock/port checks plus latch/blackbox rejection.
+Six existing build-policy tests PASS. The old unauthorized-execution test used
+live state; T043 is now actually authorized, so the test now supplies explicit
+unauthorized fixture state instead of relying on project progress. It never
+writes a fake owner approval. Optimization and placement preparations PASS.
+Independent report parser tests retain real synthesized reports as fixtures.
+Initial header parser wrongly required a trailing bar and rejected actual
+positive fixtures; exact failing tests/input ZIP retained before correcting
+header line anchoring. Four report tests now PASS, including negative setup/
+hold/pulse slack, zero endpoints, scope/header/clock drift and resources/latches.
+
+Continue active T043 with physopt/route/report preparations and implement
+vivado-synth/vivado-impl/fpga-reports registry gates, current-attempt provenance,
+source/checkpoint/firmware/raw report hashes and final manifest. Fresh final
+synthesis must use final code; preparatory passes cannot substitute for it.
+Keep at most3 finish attempts (currently0), no concurrent primary task, no
+programming or self-approval. Formal remains owner-skipped/NOT RUN. Runtime
+unrestricted/never, attended only; exactly two Nov7 reports appended.
+
+
+---
+
+<!-- entry:e55ca3dbe324ecd7bd7e32401ffdad229f9edb80d3f3caf624cbc14f60c6c679 -->
+
+## T043 concrete timing/DRC repair and gate construction
+
+Split routing completed in94.656s, native exit0 but emitted Route35-328 timing
+warning, so CLI exit1/FAIL. Analysis-only report stage retained actual WNS
+-5.092ns (3241 setup failing endpoints), WHS0.062ns, and a routed checkpoint.
+Native bitstream guard failed; design.bit absent. DRC retained CHECK-3 and20
+reported REQP-1839 warnings (rule limit reached, not a claim of only20 actual
+issues): async reset-release FF drives BRAM control through reset-masked payloads.
+Native one-clock CDC says all paths safely timed; this does not cover off-chip
+asynchronous input metastability. Unspecified external delays remain18in/17out.
+Default power0.098W has Low confidence/no activity file and Power33-332 reset
+activity warning; it is not a measurement. Full pre-repair sources/checkpoint/
+reports archived in evidence/failed_sources/T043/routed-timing-and-drc/.
+
+Two implementation changes keep the reviewed ISA,5 stages,10ns clock, memorymap,
+bus effect/reset/flush priorities: CSR/MRET serialize, so their results need only
+GPR writeback and cannot have an EX consumer. EX forwarding now excludes CSR
+writeback and no longer carries the CSR read-data/error decode cone. Redundant
+CSR-op valid mux removed (invalid stage payload already zero). Canonical top
+adds a synchronous reset-distribution FF after the unchanged two ASYNC_REG stages,
+with INIT=1. Core sees clocked reset, release at least two edges as approved;
+raw button assertion propagates to the shared SoC reset at the next clock edge.
+No XDC edits/false paths or clock reduction. Board DV explicitly tests clocked
+reset and retains the last pre-reset edge in the preceding trace epoch. IRQ
+benches assert no E/M instruction while CSR/MRET WB is valid; two actual RTL
+mutation controls test broken serialization and asynchronous reset bypass.
+
+Initial reset-copy version without INIT left initial pre-edge TX/LED unknown;
+independent checker rejected the production trace after six core suites passed.
+Failure archived in clocked-reset-initial-state before INIT repair. A later
+preparation completed all9 positive runs/defect checks but failed final source
+immutability because the agent extended .harness/checks.json during its run.
+Exact original registry was recovered from7d8ef19 and all inputs archived in
+registry-drift. This is a real failed preparation, no PASS and no finish attempt.
+Inputs are now frozen during the next interrupt suite.
+
+Synthesis with first RTL repairs passed76.750s. Rebuilt hierarchy then passed
+78.187s:4034LUTs/2546FFs/32BRAM; unplaced estimate WNS-3.888ns, not closure.
+Rebuilt permits cross-module optimization and rebuilds hierarchy names; no state,
+clock/constraint or diagnostic waiver changes. Optimization preparation passed;
+placement/remaining stages underway. Build flow now plans24 commands (original20
+plus route status, effectiveXDC, physical inventory and explicit vectorless reset
+activity modeling). Native help confirms set_switching_activity -deassert_resets
+and report_switching_activity syntax. This only models operating assumptions,
+never measured/SAIF activity. All18 synchronizer chains/36 ASYNC_REG FFs, single
+clock,36 physical pins and clocked reset copy will be checked on the real netlist.
+
+Added scripts/fpga_checks.py/current-attempt native stage provenance, source and
+checkpoint chains; scripts/fpga_reports.py conservative report/binary decoders.
+Four report and five provenance policy tests PASS; six build policies PASS.
+Parser fixtures are byte-identical actual reports in ZIP, not routed evidence.
+Three new registry gates constructed; T043 verification commands are strengthened
+with existing lint,interrupts,and full28-target regression BEFORE the three FPGA
+gates because RTL changed. No existing gate removed,120native/600aggregate caps
+unchanged, at most3 final attempts(current0). New source/checkpoint/report parsers
+still require native preparation validation before finish. Final human review,
+physical FPGA programming, formal(owner-skipped) and ASIC evidence remain separate.

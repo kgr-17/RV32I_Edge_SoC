@@ -49,7 +49,7 @@ for {set bit 0} {$bit<16} {incr bit} {
     lappend chains [list [format {boundary/switches/meta_q_reg[%d]} $bit] [format {boundary/switches/sync_q_reg[%d]} $bit]]
 }
 lappend chains [list boundary/receiver/rx_meta_q_reg boundary/receiver/rx_sync_q_reg]
-lappend chains [list {boundary/reset_boundary/release_q_reg[0]} {boundary/reset_boundary/release_q_reg[1]}]
+lappend chains [list {boundary/reset_boundary/g_async.release_q_reg[0]} {boundary/reset_boundary/g_async.release_q_reg[1]}]
 set out [open chains.tsv w]
 puts $out "first\tsecond\tfirst_async\tsecond_async\tfanout\tclock"
 foreach chain $chains {

@@ -1,0 +1,9 @@
+{
+  "inputs": {
+    "scripts/fpga_reports.py": "d12c48494e28620517a9a5bbc57139421ebf690ffae9fe7c860ceb05d4f394d2",
+    "scripts/test_fpga_reports.py": "68259c77301228d9ebbd12808b32641cbde48a75d238ab4cdaa2653dae4e7432",
+    "dv/fpga/fixtures/synthesis_timing.rpt": "cf50082d187998c91c680259a5d8feb7c23122c4e2dbe4608f7a92b2145c6793",
+    "dv/fpga/fixtures/synthesis_utilization.rpt": "432bc69d8f8c66303ecfd25ac24af7a4232286f0eba3450c320d8b4ccceed009"
+  },
+  "diagnosis": "AMD report header rows have a leading bar but no trailing bar. Initial header regex incorrectly required a trailing bar; rejected actual positive report fixture. Keep exact values/version checks, correct line boundaries."
+}

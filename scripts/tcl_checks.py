@@ -29,8 +29,8 @@ def main():
         planned=[line.split('=',1)[1] for line in output.splitlines() if line.startswith('FPGA_PLANNED_COMMAND=')]
         expected=['read_verilog','synth_design','read_xdc','report_utilization','report_timing_summary','write_checkpoint',
             'opt_design','place_design','phys_opt_design','route_design','report_utilization','report_timing_summary','report_clocks','report_clock_interaction',
-            'report_cdc','check_timing','report_drc','report_power','write_checkpoint','write_bitstream']
-        c.require([line.split()[0] for line in planned]==expected and rtl_checks.successful(native,'FPGA_BUILD_PLAN_PASS stage=all top=basys3_top part=xc7a35tcpg236-1 period_ns=10.000 commands=20'),'Actual Tcl validates20 planned commands, executesnone')
+            'report_route_status','report_cdc','check_timing','report_drc','write_xdc','fpga_inventory','fpga_power_model','report_power','write_checkpoint','write_bitstream']
+        c.require([line.split()[0] for line in planned]==expected and rtl_checks.successful(native,'FPGA_BUILD_PLAN_PASS stage=all top=basys3_top part=xc7a35tcpg236-1 period_ns=10.000 commands=24'),'Actual Tcl validates24 planned commands, executesnone')
         collateral=harness.read(harness.inside('config/vivado_vendor_collateral.json'))
         found={p.relative_to(folder).as_posix():p for p in folder.rglob('*.dcp')}
         sdk=Path(harness.read(harness.inside('.harness/toolchain.json'))['tools']['vivado']).parent.parent/'data'

@@ -70,7 +70,7 @@ def main():
     code=1
     try:
         m=rtl_checks.load_manifest();rtl=soc_checks.sources(m)
-        benches=['dv/unit/tb_csr.sv','dv/integration/tb_timer_irq.sv','dv/integration/tb_interrupts.sv','dv/integration/tb_interrupt_waits.sv','dv/integration/tb_interrupt_aborts.sv','dv/integration/tb_interrupt_board.sv','dv/integration/tb_interrupt_priority.sv']
+        benches=['dv/unit/tb_csr.sv','dv/integration/tb_timer_irq.sv','dv/integration/tb_interrupts.sv','dv/integration/tb_interrupt_waits.sv','dv/integration/tb_interrupt_aborts.sv','dv/integration/tb_interrupt_board.sv','dv/integration/tb_interrupt_priority.sv','dv/integration/tb_interrupt_serialization.sv']
         extra=['fpga/basys3/top.sv','dv/integration/irq_wait_soc.sv']
         names=list(dict.fromkeys(rtl+benches+extra+['dv/unit/test_csr.py','dv/integration/test_interrupts.py','dv/integration/interrupt_model.py','dv/integration/soc_model.py','dv/integration/test_mmio.py','dv/unit/test_uart_rx.py','dv/reference/rv32_iss.py',
             'scripts/interrupt_checks.py','scripts/interrupt_firmware.py','scripts/soc_checks.py','scripts/firmware_image.py','scripts/firmware_build.py','scripts/rtl_checks.py','scripts/tool_runner.py','scripts/tool_child.py','scripts/verify.py','scripts/test_verify.py',
@@ -79,6 +79,10 @@ def main():
         raw,symbols=interrupt_firmware.build(c,c.base/'compiler');work=c.base/'simulation';work.mkdir();harness.atomic_text(work/'irq_boot.mem',words(raw))
         soc_checks.compile_design(c,work,rtl+extra,benches)
         for top,snapshot in [('tb_csr','csr'),('tb_timer_irq','timer'),('tb_interrupts','fast'),('tb_interrupt_waits','waits'),('tb_interrupt_aborts','aborts'),('tb_interrupt_board','board'),('tb_interrupt_priority','priority')]:soc_checks.elaborate(c,work,top,snapshot)
+        soc_checks.elaborate(c,work,'tb_interrupt_serialization','serial')
+        for seed in (1,20261107):
+            r=soc_checks.simulate(c,work,'serial','serialization-'+str(seed),['SEED='+str(seed)],'/tb_interrupt_serialization/clk /tb_interrupt_serialization/rst',30)
+            c.require(rtl_checks.successful(r,'CSR_SERIAL_PASS seed=%d retired=11 requests=1 replies=1'%seed),'Directed older-load/CSR/consumer serialization witness seed='+str(seed),r)
         for seed in (1,20261107):
             for snapshot,top,generator,marker in [('csr','tb_csr',test_csr.corpus,'CSR_SIM_PASS'),('timer','tb_timer_irq',test_interrupts.timer_corpus,'TIMER_IRQ_SIM_PASS')]:
                 text=generator(seed);vector_run(c,work,snapshot,top,snapshot+'-'+str(seed),text,seed,marker)
@@ -128,6 +132,26 @@ def main():
         try:interrupt_model.check_trace(trace.read_text(encoding='ascii'),raw,symbols,8)
         except ValueError as exc:c.require(str(exc).startswith('IRQ_TRAP_MISMATCH'),'Independent checker rejects actual wrong-resume core')
         else:raise RuntimeError('IRQ_BAD_CORE_ACCEPTED')
+        # Exercise the invariants used by the T043 timing/BRAM repair with real
+        # RTL defects. These are runtime assertions, not compile-error controls.
+        for label,name,before,after,top,marker in [
+            ('branch-bad-target','rtl/core/pipeline_cpu.sv','!e.fetch_error && !e.dec.illegal && !bad_target;',
+             '!e.fetch_error && !e.dec.illegal;','tb_interrupts','IRQ_BRANCH_FAULT_QUALIFICATION'),
+            ('missing-serialization','rtl/core/pipeline_cpu.sv',' || e_serial || m_serial || w_serial;',
+             ' || m_serial || w_serial;','tb_interrupt_serialization','IRQ_SERIALIZATION_INVARIANT'),
+            ('async-board-reset','fpga/basys3/top.sv','always_ff @(posedge clk) rst_s<=reset_release;',
+             'assign rst_s=reset_release;','tb_interrupt_board','IRQ_BOARD_RESET_MUST_BE_CLOCKED')]:
+            folder=c.base/label;folder.mkdir();original=harness.inside(name).read_text(encoding='utf-8')
+            c.require(original.count(before)==1,'Unique actual timing-repair mutation '+label)
+            changed_text=original.replace(before,after)
+            if label=='async-board-reset':
+                changed_text=changed_text.replace("logic rst_s=1'b1;","wire logic rst_s;").replace(".ASYNC_ASSERT(1'b0)",".ASYNC_ASSERT(1'b1)")
+            path=folder/Path(name).name;harness.atomic_text(path,changed_text);harness.atomic_text(folder/'irq_boot.mem',words(raw))
+            changed=[path.relative_to(harness.ROOT).as_posix() if n==name else n for n in rtl+extra]
+            bench='dv/integration/'+top+'.sv';soc_checks.compile_design(c,folder,changed,[bench]);soc_checks.elaborate(c,folder,top,'bad')
+            trace=folder/'mutant.trace';r=soc_checks.simulate(c,folder,'bad',label,
+                ['SEED=1','TRACE='+str(trace),'SIG=%x'%symbols['signature']],'/'+top+'/clk /'+top+'/rst',60)
+            rejected(c,r,marker,'CSR_SERIAL_PASS' if label=='missing-serialization' else 'IRQ_RUN_COMPLETE','Actual timing-repair invariant '+label)
         c.require(all(sha(harness.inside(n))==h for n,h in c.result['source_sha256'].items()),'All interrupt validation inputs unchanged')
         c.result['status']='PASS';code=0
     except (rtl_checks.NotRun,FileNotFoundError) as exc:c.result.update(status='NOT RUN',error=str(exc));code=125

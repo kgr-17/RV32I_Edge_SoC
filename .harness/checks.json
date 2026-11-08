@@ -280,7 +280,8 @@
       "scripts/check_interrupt_contract.py",
       "scripts/test_tool_runner.py",
       "scripts/test_rtl_checks.py",
-      "scripts/vivado_lint.tcl"
+      "scripts/vivado_lint.tcl",
+      "dv/integration/tb_interrupt_serialization.sv"
     ],
     "commands": [
       [
@@ -1523,7 +1524,8 @@
       "scripts/test_tool_runner.py",
       "scripts/tool_runner.py",
       "scripts/test_rtl_checks.py",
-      "scripts/vivado_lint.tcl"
+      "scripts/vivado_lint.tcl",
+      "dv/integration/tb_interrupt_serialization.sv"
     ],
     "commands": [
       [
@@ -1567,5 +1569,195 @@
         "scripts/interrupt_checks.py"
       ]
     ]
+  },
+  "vivado-synth": {
+    "inputs": [
+      "scripts/fpga_build.py",
+      "scripts/fpga_reports.py",
+      "scripts/fpga_checks.py",
+      "scripts/test_fpga_build.py",
+      "scripts/test_fpga_reports.py",
+      "fpga/basys3/build.tcl",
+      "config/fpga_build.json",
+      "config/basys3_pins.json",
+      "config/vivado_vendor_collateral.json",
+      "dv/fpga/fixtures/reports.zip",
+      "dv/fpga/fixtures/manifest.json",
+      "evidence/owner_reviews/T043-2026-11-07-authorization.json",
+      "rtl/core/rv32_pkg.sv",
+      "rtl/core/decoder.sv",
+      "rtl/core/alu.sv",
+      "rtl/core/regfile.sv",
+      "rtl/core/branch_unit.sv",
+      "rtl/core/lsu.sv",
+      "rtl/core/pipeline_core.sv",
+      "rtl/core/forwarding_unit.sv",
+      "rtl/core/hazard_unit.sv",
+      "rtl/core/csr_file.sv",
+      "rtl/core/trap_control.sv",
+      "rtl/core/pipeline_cpu.sv",
+      "rtl/memory/boot_rom.sv",
+      "rtl/memory/data_ram.sv",
+      "rtl/peripherals/uart_tx.sv",
+      "rtl/peripherals/uart_rx.sv",
+      "rtl/peripherals/uart_mmio.sv",
+      "rtl/peripherals/input_sync.sv",
+      "rtl/peripherals/gpio.sv",
+      "rtl/peripherals/timer.sv",
+      "rtl/peripherals/reset_sync.sv",
+      "rtl/soc/soc_fabric.sv",
+      "rtl/soc/edge_soc.sv",
+      "fpga/basys3/top.sv",
+      "fpga/basys3/basys3.xdc",
+      "fpga/basys3/soc_boot.mem",
+      "fpga/basys3/irq_boot.mem",
+      "scripts/test_fpga_checks.py",
+      "dv/fpga/fixtures/routed_manifest.json",
+      "dv/fpga/fixtures/routed_reports.zip"
+    ],
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "scripts/test_fpga_build.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/test_fpga_reports.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/test_execution_budgets.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/test_tool_runner.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/fpga_checks.py",
+        "synth"
+      ]
+    ],
+    "timeout_seconds": 300
+  },
+  "vivado-impl": {
+    "inputs": [
+      "scripts/fpga_build.py",
+      "scripts/fpga_reports.py",
+      "scripts/fpga_checks.py",
+      "scripts/test_fpga_build.py",
+      "scripts/test_fpga_reports.py",
+      "fpga/basys3/build.tcl",
+      "config/fpga_build.json",
+      "config/basys3_pins.json",
+      "config/vivado_vendor_collateral.json",
+      "dv/fpga/fixtures/reports.zip",
+      "dv/fpga/fixtures/manifest.json",
+      "evidence/owner_reviews/T043-2026-11-07-authorization.json",
+      "rtl/core/rv32_pkg.sv",
+      "rtl/core/decoder.sv",
+      "rtl/core/alu.sv",
+      "rtl/core/regfile.sv",
+      "rtl/core/branch_unit.sv",
+      "rtl/core/lsu.sv",
+      "rtl/core/pipeline_core.sv",
+      "rtl/core/forwarding_unit.sv",
+      "rtl/core/hazard_unit.sv",
+      "rtl/core/csr_file.sv",
+      "rtl/core/trap_control.sv",
+      "rtl/core/pipeline_cpu.sv",
+      "rtl/memory/boot_rom.sv",
+      "rtl/memory/data_ram.sv",
+      "rtl/peripherals/uart_tx.sv",
+      "rtl/peripherals/uart_rx.sv",
+      "rtl/peripherals/uart_mmio.sv",
+      "rtl/peripherals/input_sync.sv",
+      "rtl/peripherals/gpio.sv",
+      "rtl/peripherals/timer.sv",
+      "rtl/peripherals/reset_sync.sv",
+      "rtl/soc/soc_fabric.sv",
+      "rtl/soc/edge_soc.sv",
+      "fpga/basys3/top.sv",
+      "fpga/basys3/basys3.xdc",
+      "fpga/basys3/soc_boot.mem",
+      "fpga/basys3/irq_boot.mem",
+      "scripts/test_fpga_checks.py",
+      "dv/fpga/fixtures/routed_manifest.json",
+      "dv/fpga/fixtures/routed_reports.zip"
+    ],
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "scripts/fpga_checks.py",
+        "impl"
+      ]
+    ],
+    "timeout_seconds": 600
+  },
+  "fpga-reports": {
+    "inputs": [
+      "scripts/fpga_build.py",
+      "scripts/fpga_reports.py",
+      "scripts/fpga_checks.py",
+      "scripts/test_fpga_build.py",
+      "scripts/test_fpga_reports.py",
+      "fpga/basys3/build.tcl",
+      "config/fpga_build.json",
+      "config/basys3_pins.json",
+      "config/vivado_vendor_collateral.json",
+      "dv/fpga/fixtures/reports.zip",
+      "dv/fpga/fixtures/manifest.json",
+      "evidence/owner_reviews/T043-2026-11-07-authorization.json",
+      "rtl/core/rv32_pkg.sv",
+      "rtl/core/decoder.sv",
+      "rtl/core/alu.sv",
+      "rtl/core/regfile.sv",
+      "rtl/core/branch_unit.sv",
+      "rtl/core/lsu.sv",
+      "rtl/core/pipeline_core.sv",
+      "rtl/core/forwarding_unit.sv",
+      "rtl/core/hazard_unit.sv",
+      "rtl/core/csr_file.sv",
+      "rtl/core/trap_control.sv",
+      "rtl/core/pipeline_cpu.sv",
+      "rtl/memory/boot_rom.sv",
+      "rtl/memory/data_ram.sv",
+      "rtl/peripherals/uart_tx.sv",
+      "rtl/peripherals/uart_rx.sv",
+      "rtl/peripherals/uart_mmio.sv",
+      "rtl/peripherals/input_sync.sv",
+      "rtl/peripherals/gpio.sv",
+      "rtl/peripherals/timer.sv",
+      "rtl/peripherals/reset_sync.sv",
+      "rtl/soc/soc_fabric.sv",
+      "rtl/soc/edge_soc.sv",
+      "fpga/basys3/top.sv",
+      "fpga/basys3/basys3.xdc",
+      "fpga/basys3/soc_boot.mem",
+      "fpga/basys3/irq_boot.mem",
+      "scripts/test_fpga_checks.py",
+      "dv/fpga/fixtures/routed_manifest.json",
+      "dv/fpga/fixtures/routed_reports.zip"
+    ],
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "scripts/test_fpga_checks.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/fpga_checks.py",
+        "reports"
+      ]
+    ],
+    "timeout_seconds": 300
   }
 }

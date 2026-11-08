@@ -40,8 +40,11 @@ class FpgaBuildTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'OUTPUT_EXISTS'):fpga_build.prepare_job(existing)
         self.assertEqual(sentinel.read_bytes(),b'retain exactly\n');self.assertFalse(harness.inside('docs/T030-never-create').exists())
     def test_implementation_checkpoint_required_and_no_fake_artifact(self):
-        with self.assertRaisesRegex(ValueError,'CHECKPOINT_REQUIRED'):fpga_build.prepare_job(self.base/'no-checkpoint',stage='impl')
-        self.assertFalse((self.base/'no-checkpoint').exists())
+        for stage in fpga_build.STAGES:
+            if stage in ('synth','all'):continue
+            output=self.base/('no-checkpoint-'+stage)
+            with self.assertRaisesRegex(ValueError,'CHECKPOINT_REQUIRED'):fpga_build.prepare_job(output,stage=stage)
+            self.assertFalse(output.exists())
     def test_owner_policy_in_memory_only_and_real_execution_rejected(self):
         config=fpga_build.load_config();config['design_scope']='diagnostic_shell_before_T031';state={'active':'T043','start_approvals':{'T043':{}},'task_states':{k:'completed' for k in ('T031','T044','T045')},'owner_reviews':{'T044':{}}}
         with self.assertRaises(harness.Stop):fpga_build.check_execution(config,state)
@@ -50,7 +53,10 @@ class FpgaBuildTests(unittest.TestCase):
             bad=copy.deepcopy(state);bad[key]=None if key=='active' else {}
             with self.assertRaises(harness.Stop):fpga_build.check_execution(config,bad)
         output=self.base/'unauthorized'
-        with self.assertRaisesRegex(harness.Stop,'OWNER_AUTH_REQUIRED'):fpga_build.prepare_job(output,mode='execute')
+        # Actual task state may now be owner-authorized T043. The guard must be
+        # challenged with explicit unauthorized fixture state, never live writes.
+        with mock.patch.object(harness,'load',return_value=({},{})):
+            with self.assertRaisesRegex(harness.Stop,'OWNER_AUTH_REQUIRED'):fpga_build.prepare_job(output,mode='execute')
         self.assertFalse(output.exists())
 
 

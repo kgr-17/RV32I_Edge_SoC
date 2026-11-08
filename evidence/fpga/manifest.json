@@ -1,0 +1,7 @@
+{
+  "task": "T043",
+  "status": "NOT RUN",
+  "scope": "Required evidence placeholder only; actual final current-attempt report gate must replace this after all checks pass. No full FPGA pass claimed.",
+  "formal": "T023 owner-skipped/NOT RUN",
+  "physical_programming": "NOT RUN"
+}

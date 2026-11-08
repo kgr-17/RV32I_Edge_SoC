@@ -1921,6 +1921,24 @@
           "{python}",
           "-B",
           "scripts/verify.py",
+          "lint"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "test-interrupts"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
+          "regress"
+        ],
+        [
+          "{python}",
+          "-B",
+          "scripts/verify.py",
           "vivado-synth"
         ],
         [
@@ -1937,7 +1955,7 @@
         ]
       ],
       "priority": 315,
-      "status": "pending",
+      "status": "in_progress",
       "human_approval_required": true,
       "start_approval_required": true,
       "optional": false,

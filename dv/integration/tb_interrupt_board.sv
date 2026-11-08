@@ -68,14 +68,17 @@ module tb_interrupt_board;
         end
     endfunction
     task automatic tick(input integer epoch,input logic button,input logic line);
-        @(negedge clk);#1;arst=button;rx=line;#2;
+        @(negedge clk);#1;edge_reset=rst;arst=button;rx=line;#2;
+        if(rst!==edge_reset)$fatal(1,"IRQ_BOARD_RESET_MUST_BE_CLOCKED");
         edge_reset=rst;edge_irq=board.soc.irq;
+        if(!edge_reset && board.soc.cpu.w_valid && (board.soc.cpu.w.result.csr_op!=3'd0 || board.soc.cpu.w.result.mret) &&
+            (board.soc.cpu.e_valid || board.soc.cpu.m_valid))$fatal(1,"IRQ_SERIALIZATION_INVARIANT");
         if(!edge_reset && iwait && (!board.soc.iv || board.soc.ia !== held_i))$fatal(1,"IRQ_I_PRODUCER_HOLD");
         if(!edge_reset && dwait && (!board.soc.dv || {board.soc.da,board.soc.dw,board.soc.dd,board.soc.db} !== held_d))$fatal(1,"IRQ_D_PRODUCER_HOLD");
         next_iwait=board.soc.iv && !board.soc.ir && !edge_reset;next_dwait=board.soc.dv && !board.soc.dr && !edge_reset;
         held_i=board.soc.ia;held_d={board.soc.da,board.soc.dw,board.soc.dd,board.soc.db};
         $fwrite(fd,"%h %h %h %h %h %h %h %h %h %h %h %h %h %h %h %h %h %h %h %h %h %h %h %h ",
-            epoch,rows,edge_reset,rx,switches,board.soc.iv,board.soc.ir,board.soc.ia,board.soc.is,board.soc.irdy,board.soc.idata,board.soc.ie,
+            (button && !edge_reset && epoch>0) ? epoch-1 : epoch,rows,edge_reset,rx,switches,board.soc.iv,board.soc.ir,board.soc.ia,board.soc.is,board.soc.irdy,board.soc.idata,board.soc.ie,
             board.soc.dv,board.soc.dr,board.soc.da,board.soc.dw,board.soc.dd,board.soc.db,board.soc.ds,board.soc.dsr,board.soc.ddata,board.soc.de,tx,leds);
         @(posedge clk);#1;
         if(edge_reset && (rv || fv))$fatal(1,"IRQ_RESET_VISIBLE_EFFECT");

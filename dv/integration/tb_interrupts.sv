@@ -40,6 +40,11 @@ module tb_interrupts #(parameter int unsigned DIVISOR=32'd8);
     task automatic tick(input integer epoch,input logic button,input logic line);
         @(negedge clk);#1;arst=button;rx=line;#2;
         edge_reset=rst;edge_irq=dut.irq;
+        if(!edge_reset && dut.cpu.e_valid && dut.cpu.branch_ok &&
+            (dut.cpu.branch_clean !== (dut.cpu.m_next.result.fault==4'd0)))
+            $fatal(1,"IRQ_BRANCH_FAULT_QUALIFICATION");
+        if(!edge_reset && dut.cpu.w_valid && (dut.cpu.w.result.csr_op!=3'd0 || dut.cpu.w.result.mret) &&
+            (dut.cpu.e_valid || dut.cpu.m_valid))$fatal(1,"IRQ_SERIALIZATION_INVARIANT");
         if(!edge_reset && iwait && (!dut.iv || dut.ia !== held_i))$fatal(1,"IRQ_I_PRODUCER_HOLD");
         if(!edge_reset && dwait && (!dut.dv || {dut.da,dut.dw,dut.dd,dut.db} !== held_d))$fatal(1,"IRQ_D_PRODUCER_HOLD");
         next_iwait=dut.iv && !dut.ir && !edge_reset;next_dwait=dut.dv && !dut.dr && !edge_reset;
