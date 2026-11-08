@@ -163,7 +163,11 @@
       "receipt": "evidence/runs/T044/attempt-1-20261107T211422904365Z.json"
     }
   },
-  "start_approvals": {},
+  "start_approvals": {
+    "T043": {
+      "date": "2026-11-07"
+    }
+  },
   "enabled_optional_ids": [],
   "bootstrap_note": "Owner explicitly authorized bootstrap; reserved before replacement harness became executable.",
   "daily_exceptions": {

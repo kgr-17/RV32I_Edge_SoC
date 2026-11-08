@@ -573,3 +573,28 @@ packaging only; T045 sources and all plan input hashes remain unchanged. Rerun
 both whitespace checks and inspect exact indexed bytes before the review-package
 commit. T043 remains pending/unauthorized; its final human review and physical
 programming remain separately gated.
+
+
+---
+
+<!-- entry:7786b5a4786149bc583eac91a7e480b9d00ea59e305ec61837f2aadd69a386e7 -->
+
+## T043 execution explicitly authorized
+
+Owner response to question call_75c30f28522746ffb8ef509c1cbefc2a: "Authorize T043
+and that command". Exact task-specific authorization and reviewed document hash
+are retained in evidence/owner_reviews/T043-2026-11-07-authorization.json. Ran
+python -B scripts/harness.py authorize T043 --confirm-owner-review, exit0,
+AUTHORIZE. This permits attended local synthesis, place/route, report checking
+and conditional bitstream generation, not physical FPGA programming or final
+T043 human approval. Read the required startup documents/state/backlog/latest
+handoff; daily --supervised exited0, no active task, clean Git baseline121a607.
+
+Next: commit this explicit authority/report update, begin T043, preserve the
+baseline and execute synthesis preparation with the reviewed Tcl in a fresh
+project-local output. Implement the three missing gates and strict completeness/
+source/checkpoint/firmware/report checks. Keep native120/aggregate600 caps;
+preserve any failed source/checkpoint inputs before repairs, do not mask warnings
+or failed timing. Exactly these two Nov7 reports are appended. Runtime remains
+unrestricted/never; attended only. Formal T023 remains owner-skipped/NOT RUN,
+physical programming and ASIC remain unverified. Versions unchanged from T045.

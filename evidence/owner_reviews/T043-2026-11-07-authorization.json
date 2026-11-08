@@ -1,0 +1,18 @@
+{
+  "task": "T043",
+  "question_item_id": "[\"request_user_input_async\",\"call_75c30f28522746ffb8ef509c1cbefc2a\",0]",
+  "owner_answer": "Authorize T043 and that command",
+  "question": "Please review C:/RV32I_Edge_SoC/docs/FPGA_EXECUTION_REVIEW.md (commit 121a607). Do you authorize T043’s local synthesis, placement/routing, report checking and conditional bitstream generation, and explicitly authorize `python -B scripts/harness.py authorize T043 --confirm-owner-review`? BACKLOG.json requires start approval, and AGENTS.md reserves owner commands to you. Physical FPGA programming remains separately gated.",
+  "review_commit": "121a607",
+  "review_document_sha256": "cba4acb161acdd982c24732488d260b314cd4b1ba1ab17402623b1271618ccbd",
+  "authorized_command": [
+    "python",
+    "-B",
+    "scripts/harness.py",
+    "authorize",
+    "T043",
+    "--confirm-owner-review"
+  ],
+  "physical_programming_authorized": false,
+  "date": "2026-11-07"
+}
