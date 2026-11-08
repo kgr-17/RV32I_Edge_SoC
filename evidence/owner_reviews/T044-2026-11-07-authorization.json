@@ -1,0 +1,20 @@
+{
+  "task": "T044",
+  "owner_response": "Approve v0.3 and authorize that command",
+  "authorized_command": [
+    "python",
+    "-B",
+    "scripts/harness.py",
+    "approve",
+    "T044",
+    "--confirm-owner-review"
+  ],
+  "exit_code": 0,
+  "proposal_commit": "80bd35e",
+  "proposal_sha256": "86dca0ef075734c57029be58c8a4f75a63540ef18384017489db3e2a4626c17d",
+  "state_review": {
+    "date": "2026-11-07",
+    "receipt": "evidence/runs/T044/attempt-1-20261107T211422904365Z.json"
+  },
+  "authorization_scope": "Specific explicit owner response to the committed v0.3 review question; no other owner action or FPGA programming authorized."
+}

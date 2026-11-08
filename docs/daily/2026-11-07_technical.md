@@ -242,3 +242,23 @@ record only that authorized acknowledgment, commit the resulting review state,
 then query next and begin T045 from clean Git. Otherwise keep the review hold;
 no daily quota or technical-failure claim is involved. The report-only commit
 records these known package IDs; it changes no proposal or verified source.
+
+
+---
+
+<!-- entry:d4f42fabc077ce1044ded72b6a1a9346130e2c48a23e9a3cfd69e9077ab85ff8 -->
+
+## T044 owner approval recorded; proceed to T045
+
+Owner explicitly replied "Approve v0.3 and authorize that command" to review of
+package80bd35e. Verified unchanged proposal SHA25686dca0ef075734c57029be58c8a4f75a63540ef18384017489db3e2a4626c17d,
+then executed exactly python -B scripts/harness.py approve T044 --confirm-owner-review,
+exit0. T044 completed and its owner review is recorded. Supplemental exact owner
+authorization: evidence/owner_reviews/T044-2026-11-07-authorization.json.
+daily --supervised exit0 saved .tmp/2026-11-07-t045-daily.txt; Git was clean at
+b741095. Read latest handoff/AGENTS/boundary/ARCH/verification/backlog/state/loop
+and the approved interrupt proposal. Runtime remains unrestricted/never, attended
+only; no scheduling/install/global changes/programming. This grants T045 scope,
+not T043 or T032 execution permission. Commit acknowledgment, then query/begin
+T045 from clean Git and establish baseline before RTL edits.33mandatory completed
+plus1owner-skip/41; new feature functionality still NOT RUN; formal T023 retained.

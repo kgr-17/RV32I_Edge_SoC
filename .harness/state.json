@@ -52,7 +52,7 @@
     "T041": "completed",
     "T042": "completed",
     "T043": "pending",
-    "T044": "awaiting_review",
+    "T044": "completed",
     "T045": "pending"
   },
   "attempts": {
@@ -155,6 +155,10 @@
       "acknowledged_skipped_tasks": [
         "T023"
       ]
+    },
+    "T044": {
+      "date": "2026-11-07",
+      "receipt": "evidence/runs/T044/attempt-1-20261107T211422904365Z.json"
     }
   },
   "start_approvals": {},
