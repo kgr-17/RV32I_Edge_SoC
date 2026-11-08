@@ -63,6 +63,9 @@ module tb_interrupt_serialization;
     logic [4:0] expected_rd;
     logic [31:0] expected_value;
     always @(posedge clk) begin
+        if(!rst && !(dut.redirect || dut.control_redirect || dut.wb_fault || dut.fault_valid_o) &&
+            dut.queue_flow_count !== (dut.queue_count_q-{1'b0,dut.queue_pop}+{1'b0,dut.queue_push}))
+            $fatal(1,"IRQ_QUEUE_FLOW_EQUIVALENCE");
         if(!rst && dut.e_valid && dut.e.insn==32'h34009173 && dut.d_valid && dut.d.insn==32'h00110193)
             queued_consumer_witness=1'b1;
         if(!rst && dut.w_valid && (dut.w.result.csr_op!=3'd0 || dut.w.result.mret) &&

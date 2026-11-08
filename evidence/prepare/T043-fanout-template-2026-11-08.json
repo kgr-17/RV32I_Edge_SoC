@@ -1,0 +1,6 @@
+{
+  "source": "C:\\AMDDesignTools\\2025.2\\Vivado\\data\\parts\\xilinx\\templates\\vivado\\verilog.xml",
+  "sha256": "018619a970d84ae7587e90c39843acffc0c8ba5f5c0f1ade4b479fb04a4a9dbe",
+  "template": "(* max_fanout=&lt;number&gt; *)",
+  "scope": "Installed pinned Vivado RTL attribute syntax, read only. Not a timing exception or performance result."
+}

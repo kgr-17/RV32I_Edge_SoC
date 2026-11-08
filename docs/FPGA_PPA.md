@@ -194,3 +194,25 @@ The preceding IRQ receipt predates this last fabric edit; final gates must
 revalidate all current sources. Fresh synthesis passed warning-free(3314 LUTs,
 2544 FFs,32BRAM,36IOB), but unplaced-0.844ns and running ramI physical preparation
 are not closure. No MAX_FANOUT property or timing exception was applied.
+
+## First routed preparation closure (2026-11-08)
+
+flowK is a coherent native preparation chain with detailed setup+0.123ns,
+hold+0.013ns, pulse+4.500ns, zero failing endpoints and zero DRC findings at the
+unchanged100MHz/10ns target. All5892 routable nets routed,0 route errors. Actual
+18 synchronizer pairs/36 ASYNC_REG FFs and36 pins passed;11 synchronous reset
+distribution copies were observed. Routed resources:3291 LUTs,2554 FFs,32BRAM,
+36IOB. Vectorless power estimate0.084W(0.014dynamic/0.070static), Low confidence,
+resets deasserted, no SAIF/VCD or measured activity.18 input and17 output delays
+remain unspecified for asynchronous/non-synchronous ports; no off-chip timing
+closure or metastability proof is claimed. No MAX_FANOUT attribute was applied.
+
+Native conditional bitstream generation passed after setup/hold/DRC guards;
+its binary header and2192012-byte payload decode as7a35tcpg236. Preparation image
+SHA256 be9b968ad59353f77daac29c7db382f85b2cbe9efb2b0b18c3f15bd449f68745.
+Exact chain/report/image audit: evidence/prepare/T043-flowK-audit-2026-11-08.json.
+This does not complete T043: all current-attempt lint,IRQ,28-target regression,
+fresh synthesis/implementation and report gates must still pass through finish.
+The final manifest remains NOT RUN until those gates bind newly generated
+artifacts. Owner final review, physical programming, formal skip and ASIC status
+remain separate. Physical board and ASIC NOT RUN; T023 skipped/NOT RUN.

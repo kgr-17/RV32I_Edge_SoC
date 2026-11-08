@@ -85,7 +85,9 @@ module soc_fabric #(
         .b_en_i(dq_accept && decoded==ROM),.b_addr_i(d_req_addr_i[15:2]),
         .a_valid_o(),.b_valid_o(),.a_data_o(rom_i_data),.b_data_o(rom_d_data));
     data_ram ram(.clk_i(clk_i),.rst_i(rst_i),.en_i(ram_read || ram_write),
-        .addr_i(ram_read ? d_req_addr_i[15:2] : pending_addr_q),
+        // Reads occur only with an empty slot; writes only with a pending
+        // transaction. Outside an enabled access the address is unobserved.
+        .addr_i(d_pending_q ? pending_addr_q : d_req_addr_i[15:2]),
         .write_be_i(ram_write ? pending_be_q : 4'b0000),.write_data_i(pending_data_q),.read_valid_o(),.read_data_o(ram_data));
     uart_mmio #(.CLKS_PER_BIT(UART_CLKS_PER_BIT)) uart(.clk_i(clk_i),.rst_i(rst_i),.rx_i(rx_i),
         .req_valid_i(!rst_i && !d_pending_q && d_req_valid_i && decoded==UART),.req_write_i(d_req_write_i),

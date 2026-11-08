@@ -135,6 +135,8 @@ def main():
         # Exercise the invariants used by the T043 timing/BRAM repair with real
         # RTL defects. These are runtime assertions, not compile-error controls.
         for label,name,before,after,top,marker in [
+            ('queue-serial-pop','rtl/core/pipeline_cpu.sv','d_valid && !front_hold && !serial_block;',
+             'd_valid && !front_hold;','tb_interrupt_serialization','IRQ_QUEUE_FLOW_EQUIVALENCE'),
             ('branch-bad-target','rtl/core/pipeline_cpu.sv',"!e.fetch_error && !e.dec.illegal && (target[1:0]==2'b00);",
              '!e.fetch_error && !e.dec.illegal;','tb_interrupts','IRQ_BRANCH_FAULT_QUALIFICATION'),
             ('missing-serialization','rtl/core/pipeline_cpu.sv',' || e_serial || m_serial || w_serial;',
@@ -151,7 +153,7 @@ def main():
             bench='dv/integration/'+top+'.sv';soc_checks.compile_design(c,folder,changed,[bench]);soc_checks.elaborate(c,folder,top,'bad')
             trace=folder/'mutant.trace';r=soc_checks.simulate(c,folder,'bad',label,
                 ['SEED=1','TRACE='+str(trace),'SIG=%x'%symbols['signature']],'/'+top+'/clk /'+top+'/rst',60)
-            rejected(c,r,marker,'CSR_SERIAL_PASS' if label=='missing-serialization' else 'IRQ_RUN_COMPLETE','Actual timing-repair invariant '+label)
+            rejected(c,r,marker,'CSR_SERIAL_PASS' if top=='tb_interrupt_serialization' else 'IRQ_RUN_COMPLETE','Actual timing-repair invariant '+label)
         c.require(all(sha(harness.inside(n))==h for n,h in c.result['source_sha256'].items()),'All interrupt validation inputs unchanged')
         c.result['status']='PASS';code=0
     except (rtl_checks.NotRun,FileNotFoundError) as exc:c.result.update(status='NOT RUN',error=str(exc));code=125

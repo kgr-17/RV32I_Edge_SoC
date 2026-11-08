@@ -224,6 +224,9 @@ module pipeline_core #(parameter bit ENABLE_TRAPS=1'b0) (
     // now-invalid slot has no effect and need not wait for branch comparison.
     wire logic queue_payload_pop=d_valid && !front_hold && !serial_block;
     wire logic queue_payload_push=f_valid && fetch_sent_q && imem_rsp_valid_i;
+    wire logic queue_flow_push=queue_payload_push && !fetch_killed_q && !irq_block &&
+        ((queue_count_q<2'd3) || queue_payload_pop);
+    wire logic [1:0] queue_flow_count=queue_count_q-{1'b0,queue_payload_pop}+{1'b0,queue_flow_push};
     // Speculatively prepare PC+4 without feeding the branch decision through
     // fetch admission first. A redirect overrides this value on the same edge.
     // Without a redirect this predicate equals create_fetch exactly.
@@ -288,12 +291,14 @@ module pipeline_core #(parameter bit ENABLE_TRAPS=1'b0) (
             !wb_fault && !fault_valid_o && !control_redirect && !(d_response && dmem_rsp_err_i) && !rst_i;
     end
     always_comb begin
-        queue_count_next=queue_count_q;
+        // Without a flush, flow pop/push equals accepted pop/push. During a
+        // flush the direct clear_i wins, so valid bits need not wait for the
+        // branch decision to traverse count encoding and threshold decoding.
+        queue_count_next=queue_flow_count;
         for (int unsigned index=32'd0;index<32'd3;index=index+32'd1) queue_next[index]=fetch_queue[index];
         if (queue_payload_pop) begin
             queue_next[0]=fetch_queue[1];queue_next[1]=fetch_queue[2];queue_next[2]='0;
         end
-        if (queue_pop) queue_count_next=queue_count_q-2'd1;
         if (queue_payload_push) begin
             // Select the append slot directly from the registered count and
             // pop bit. Payload muxes need no subtract-then-decode carry path.
@@ -301,7 +306,6 @@ module pipeline_core #(parameter bit ENABLE_TRAPS=1'b0) (
                 if ((queue_payload_pop && queue_count_q==2'(index+32'd1)) || (!queue_payload_pop && queue_count_q==2'(index)))
                     queue_next[index]=d_next;
         end
-        if (queue_push) queue_count_next=queue_count_next+2'd1;
         if (redirect || control_redirect || wb_fault || fault_valid_o) begin
             queue_count_next=2'd0;
         end
@@ -340,7 +344,7 @@ module pipeline_core #(parameter bit ENABLE_TRAPS=1'b0) (
     for (genvar index=32'd0;index<32'd3;index=index+32'd1) begin : g_fetch_queue
         rv32_pipeline_stage #(.WIDTH($bits(d_t)),.MASK_PAYLOAD(1'b0),.CLEAR_INVALID_PAYLOAD(1'b0)) storage (.clk_i(clk_i),.rst_i(rst_i),
             .clear_i(wb_fault || fault_valid_o || redirect || control_redirect),.hold_i(1'b0),
-            .valid_i(queue_count_next>index),.payload_i(queue_next[index]),
+            .valid_i(queue_flow_count>index),.payload_i(queue_next[index]),
             .valid_o(queue_valid[index]),.payload_o(fetch_queue[index]));
     end
     rv32_pipeline_stage #(.WIDTH($bits(e_t)),.MASK_PAYLOAD(1'b0),.CLEAR_INVALID_PAYLOAD(1'b0)) ex_stage (.clk_i(clk_i),.rst_i(rst_i),

@@ -1,0 +1,18 @@
+{
+  "scope": "Nine independent IRQ boot summaries preserved across RAM address and flow-count refactors; not formal or FPGA timing.",
+  "receipt_sha256": {
+    "evidence/toolchain_runs/interrupts-20261108T201958699390Z.json": "92f1af1afa2e4f9b9b25cd467bc76938a690ac2bd3c20c442c438f844bb49ce5",
+    "evidence/toolchain_runs/interrupts-20261108T205504233342Z.json": "4b05e5b61d704b9dcdce4d1148d208b2eaae942dd923d3c9d7f960db53a174e2"
+  },
+  "identical_boot_summaries": [
+    "fast-1",
+    "waits-1",
+    "aborts-1",
+    "fast-20261107",
+    "waits-20261107",
+    "aborts-20261107",
+    "production",
+    "priority-1",
+    "priority-20261107"
+  ]
+}

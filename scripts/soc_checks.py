@@ -111,7 +111,9 @@ def main():
         # A real early-store mutant must corrupt RAM even though reset cancels reply.
         mutant=c.base/'early-store';mutant.mkdir();harness.atomic_text(mutant/'fabric_pattern.mem',words(pattern_rom()))
         original=harness.inside('rtl/soc/soc_fabric.sv').read_text();changed=original.replace('wire logic ram_write=!rst_i && d_pending_q', 'wire logic early_write=!rst_i && dq_accept && decoded==RAM && d_req_write_i;\n    wire logic ram_write=!rst_i && d_pending_q')
-        changed=changed.replace('.en_i(ram_read || ram_write)', '.en_i(ram_read || ram_write || early_write)').replace('.addr_i(ram_read ? d_req_addr_i[15:2] : pending_addr_q)', '.addr_i((ram_read || early_write) ? d_req_addr_i[15:2] : pending_addr_q)').replace('.write_be_i(ram_write ? pending_be_q : 4\'b0000),.write_data_i(pending_data_q)', '.write_be_i(early_write ? d_req_be_i : (ram_write ? pending_be_q : 4\'b0000)),.write_data_i(early_write ? d_req_wdata_i : pending_data_q)')
+        address_site='.addr_i(d_pending_q ? pending_addr_q : d_req_addr_i[15:2])'
+        c.require(original.count(address_site)==1,'Unique pending-state RAM address mutation site')
+        changed=changed.replace('.en_i(ram_read || ram_write)', '.en_i(ram_read || ram_write || early_write)').replace(address_site, '.addr_i(early_write ? d_req_addr_i[15:2] : (d_pending_q ? pending_addr_q : d_req_addr_i[15:2]))').replace('.write_be_i(ram_write ? pending_be_q : 4\'b0000),.write_data_i(pending_data_q)', '.write_be_i(early_write ? d_req_be_i : (ram_write ? pending_be_q : 4\'b0000)),.write_data_i(early_write ? d_req_wdata_i : pending_data_q)')
         c.require(changed!=original and 'early_write ? d_req_be_i' in changed,'Complete coherent early-write RTL mutation')
         path=mutant/'soc_fabric.sv';harness.atomic_text(path,changed)
         mutation_rtl=[path.relative_to(harness.ROOT).as_posix() if n=='rtl/soc/soc_fabric.sv' else n for n in rtl]
