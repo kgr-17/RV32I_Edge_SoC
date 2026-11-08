@@ -3,7 +3,8 @@
 module rv32_pipeline_stage #(
     parameter int unsigned WIDTH = 32'd32,
     parameter bit MASK_PAYLOAD = 1'b1,
-    parameter bit PRELOAD_WHEN_EMPTY = 1'b0
+    parameter bit PRELOAD_WHEN_EMPTY = 1'b0,
+    parameter bit CLEAR_INVALID_PAYLOAD = 1'b1
 ) (
     input wire logic clk_i, rst_i,
     input wire logic clear_i, hold_i, valid_i,
@@ -25,6 +26,10 @@ module rv32_pipeline_stage #(
             // Fetch PC cache: prepare the next address only while inactive.
             // Active request payload stays fixed through all backpressure.
             if (!valid_q) payload_q <= payload_i;
+        end else if (!CLEAR_INVALID_PAYLOAD) begin
+            // Internal payload is meaningful only with valid_q. Let invalid
+            // storage change without routing flush/reset through every bit.
+            if (!hold_i) payload_q <= payload_i;
         end else if (rst_i || clear_i) payload_q <= '0;
         else if (!hold_i) payload_q <= valid_i ? payload_i : '0;
     end
@@ -32,7 +37,8 @@ module rv32_pipeline_stage #(
     assign valid_o = !rst_i && valid_q;
     // Generic observation ports keep their immediate reset/invalid mask. The
     // integrated core may read the raw internal register. Default payload
-    // clearing is retained; IF preload treats inactive payload as a cache.
+    // clearing is retained; internal users may keep invalid data unspecified.
+    // IF preload treats inactive payload as a cache.
     // The controller independently qualifies every architectural effect.
     assign payload_o = MASK_PAYLOAD ? ((!rst_i && valid_q) ? payload_q : '0) : payload_q;
 endmodule

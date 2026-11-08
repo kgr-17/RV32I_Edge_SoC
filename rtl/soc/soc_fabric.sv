@@ -39,8 +39,12 @@ module soc_fabric #(
     wire logic uart_reply_ready=!rst_i && d_pending_q && target_q==UART && d_rsp_ready_i;
     wire logic gpio_reply_ready=!rst_i && d_pending_q && target_q==GPIO && d_rsp_ready_i;
     wire logic timer_reply_ready=!rst_i && d_pending_q && target_q==TIMER && d_rsp_ready_i;
-    wire logic ram_write=!rst_i && d_pending_q && target_q==RAM && pending_write_q && d_rsp_valid_o && d_rsp_ready_i && !d_rsp_err_o;
-    wire logic ram_read=dq_accept && decoded==RAM && !d_req_write_i;
+    // A pending RAM target always has a valid, error-free local response;
+    // a new RAM request is always ready when the transaction slot is empty.
+    // Factor those RAM-specific cases directly instead of traversing the
+    // unrelated UART/GPIO/timer handshake muxes before the BRAM enable pins.
+    wire logic ram_write=!rst_i && d_pending_q && target_q==RAM && pending_write_q && d_rsp_ready_i;
+    wire logic ram_read=!rst_i && !d_pending_q && d_req_valid_i && decoded==RAM && !d_req_write_i;
     function automatic logic legal_lanes(input logic [1:0] offset,input logic [3:0] lanes);
         case(lanes)
             4'b0001:legal_lanes=(offset==2'd0);

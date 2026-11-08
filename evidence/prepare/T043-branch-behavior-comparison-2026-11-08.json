@@ -1,0 +1,18 @@
+{
+  "scope": "Scoped behavior preservation across PC factoring and parallel branch target/alignment on nine independently checked boots, not formal or FPGA timing.",
+  "receipt_sha256": {
+    "evidence/toolchain_runs/interrupts-20261108T200018192696Z.json": "56211809d3812b7dd790ecac104ee647762e0d938909b2a06256677756271ec4",
+    "evidence/toolchain_runs/interrupts-20261108T201055453969Z.json": "a9cbdb2ed4fd1c5ce1b38768381d19e64fffaddaae6fb959f325d8a015e086a7"
+  },
+  "identical_boot_summaries": [
+    "fast-1",
+    "waits-1",
+    "aborts-1",
+    "fast-20261107",
+    "waits-20261107",
+    "aborts-20261107",
+    "production",
+    "priority-1",
+    "priority-20261107"
+  ]
+}

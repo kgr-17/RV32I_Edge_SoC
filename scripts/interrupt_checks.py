@@ -135,7 +135,7 @@ def main():
         # Exercise the invariants used by the T043 timing/BRAM repair with real
         # RTL defects. These are runtime assertions, not compile-error controls.
         for label,name,before,after,top,marker in [
-            ('branch-bad-target','rtl/core/pipeline_cpu.sv','!e.fetch_error && !e.dec.illegal && !bad_target;',
+            ('branch-bad-target','rtl/core/pipeline_cpu.sv',"!e.fetch_error && !e.dec.illegal && (target[1:0]==2'b00);",
              '!e.fetch_error && !e.dec.illegal;','tb_interrupts','IRQ_BRANCH_FAULT_QUALIFICATION'),
             ('missing-serialization','rtl/core/pipeline_cpu.sv',' || e_serial || m_serial || w_serial;',
              ' || m_serial || w_serial;','tb_interrupt_serialization','IRQ_SERIALIZATION_INVARIANT'),

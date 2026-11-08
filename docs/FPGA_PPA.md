@@ -163,3 +163,34 @@ was a comment clarification. Fresh synthesis passed (3742 LUTs,2544 FFs,32 BRAM,
 36 IOB); its-1.291ns unplaced setup estimate is not routed closure. Current physical
 preparation is still running. Final manifest remains NOT RUN until all current
 harness gates pass. Formal T023 stays skipped/NOT RUN; hardware and ASIC NOT RUN.
+
+Further preparation kept valid/count reset/flush priority while removing invalid
+internal payload from the branch control cone (CLEAR_INVALID_PAYLOAD defaults1,
+integrated stages choose0). PC preparation now bypasses redirect qualification
+before the final control-target/branch-target/PC+4 selection; actual fetch
+admission stays unchanged. Branch target/alignment evaluates in parallel with
+taken (MASK_UNTAKEN_TARGET defaults1, integrated core chooses0). Not-taken
+misalignment still creates no fault. Existing qualification assertion retained,
+additional redirect assertion and actual missing-alignment mutant added.
+
+Best retained failed setup result is-0.154ns (payloadD); Explore placement was
+worse at-0.212ns and default placement restored. pcF still failed-0.305ns.
+An internal-target trimming warning in branchG was rejected and archived;
+continuous-wire form repairs the warning without changing the computed value.
+Current wireH synthesis passes warning-free in40.25s,3343 LUTs/2544 FFs/32BRAM/
+36IOB; unplaced-0.844ns is only an estimate. Physical preparation is running.
+Current source matches interrupts-20261108T201958699390Z PASS139checks/71commands
+and branch-20261108T201747730160Z PASS17checks/253936 vectors(seeds1,20261025),
+plus6 Python branch-oracle tests. Nine independently checked boot summaries are
+identical across PC/target/wire refactors. All native failures/sources are retained
+in evidence/failed_sources/T043/; these scoped passes never replace final gates.
+
+wireH eventually failed routed setup(-0.401ns) at RAM enable. Current preparation
+factors RAM request/readiness and response validity/error predicates directly
+from the RAM target, preserving the successful response effect edge. SoC
+receipt soc-20261108T202947391169Z passed60checks/32commands after this fabric
+edit, including whole-RAM/reset/error oracles and actual early-store mutation.
+The preceding IRQ receipt predates this last fabric edit; final gates must
+revalidate all current sources. Fresh synthesis passed warning-free(3314 LUTs,
+2544 FFs,32BRAM,36IOB), but unplaced-0.844ns and running ramI physical preparation
+are not closure. No MAX_FANOUT property or timing exception was applied.

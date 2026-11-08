@@ -1,0 +1,337 @@
+{
+  "scope": "Actual report decoding, retains negative timing. These preparations FAIL timing and cannot pass validate_complete. No bitstream.",
+  "reports": {
+    "dataC": {
+      "timing": {
+        "setup": {
+          "worst_slack_ns": -1.438,
+          "total_negative_slack_ns": -400.712,
+          "failing_endpoints": 715,
+          "endpoints": 8361
+        },
+        "hold": {
+          "worst_slack_ns": 0.046,
+          "total_negative_slack_ns": 0.0,
+          "failing_endpoints": 0,
+          "endpoints": 8361
+        },
+        "pulse_width": {
+          "worst_slack_ns": 4.5,
+          "total_negative_slack_ns": 0.0,
+          "failing_endpoints": 0,
+          "endpoints": 2632
+        },
+        "checks": {
+          "no_clock": 0,
+          "constant_clock": 0,
+          "pulse_width_clock": 0,
+          "unconstrained_internal_endpoints": 0,
+          "no_input_delay": 18,
+          "no_output_delay": 17,
+          "multiple_clock": 0,
+          "generated_clocks": 0,
+          "loops": 0,
+          "partial_input_delay": 0,
+          "partial_output_delay": 0,
+          "latch_loops": 0
+        },
+        "clock_period_ns": 10.0,
+        "external_io_delays": "UNSPECIFIED:18 async inputs/17 non-synchronous outputs; no off-chip timing closure claim"
+      },
+      "utilization": {
+        "Slice LUTs": {
+          "used": 3810.0,
+          "available": 20800,
+          "percent": 18.32
+        },
+        "Slice Registers": {
+          "used": 2567.0,
+          "available": 41600,
+          "percent": 6.17
+        },
+        "Block RAM Tile": {
+          "used": 32.0,
+          "available": 50,
+          "percent": 64.0
+        },
+        "Bonded IOB": {
+          "used": 36.0,
+          "available": 106,
+          "percent": 33.96
+        }
+      },
+      "route_status": {
+        "logical nets": 8094,
+        "nets not needing routing": 1892,
+        "internally routed nets": 1892,
+        "routable nets": 6202,
+        "fully routed nets": 6202,
+        "nets with routing errors": 0
+      },
+      "physical_inventory": {
+        "ports": 36,
+        "clock_period_ns": 10,
+        "async_chains": 18,
+        "async_registers": 36,
+        "clocked_reset_copies": 14
+      },
+      "power": {
+        "total_w": 0.094,
+        "dynamic_w": 0.024,
+        "static_w": 0.07,
+        "confidence": "Low",
+        "activity": "Vectorless, resets deasserted; defaults for unspecified switching; no simulation activity file or measurement"
+      },
+      "cdc_scope": "One-clock native CDC report plus18 structural synchronizer chains; no metastability proof or off-chip clock/timing specification"
+    },
+    "payloadD": {
+      "timing": {
+        "setup": {
+          "worst_slack_ns": -0.154,
+          "total_negative_slack_ns": -0.381,
+          "failing_endpoints": 4,
+          "endpoints": 7694
+        },
+        "hold": {
+          "worst_slack_ns": 0.013,
+          "total_negative_slack_ns": 0.0,
+          "failing_endpoints": 0,
+          "endpoints": 7694
+        },
+        "pulse_width": {
+          "worst_slack_ns": 4.5,
+          "total_negative_slack_ns": 0.0,
+          "failing_endpoints": 0,
+          "endpoints": 2623
+        },
+        "checks": {
+          "no_clock": 0,
+          "constant_clock": 0,
+          "pulse_width_clock": 0,
+          "unconstrained_internal_endpoints": 0,
+          "no_input_delay": 18,
+          "no_output_delay": 17,
+          "multiple_clock": 0,
+          "generated_clocks": 0,
+          "loops": 0,
+          "partial_input_delay": 0,
+          "partial_output_delay": 0,
+          "latch_loops": 0
+        },
+        "clock_period_ns": 10.0,
+        "external_io_delays": "UNSPECIFIED:18 async inputs/17 non-synchronous outputs; no off-chip timing closure claim"
+      },
+      "utilization": {
+        "Slice LUTs": {
+          "used": 3398.0,
+          "available": 20800,
+          "percent": 16.34
+        },
+        "Slice Registers": {
+          "used": 2558.0,
+          "available": 41600,
+          "percent": 6.15
+        },
+        "Block RAM Tile": {
+          "used": 32.0,
+          "available": 50,
+          "percent": 64.0
+        },
+        "Bonded IOB": {
+          "used": 36.0,
+          "available": 106,
+          "percent": 33.96
+        }
+      },
+      "route_status": {
+        "logical nets": 7506,
+        "nets not needing routing": 1576,
+        "internally routed nets": 1576,
+        "routable nets": 5930,
+        "fully routed nets": 5930,
+        "nets with routing errors": 0
+      },
+      "physical_inventory": {
+        "ports": 36,
+        "clock_period_ns": 10,
+        "async_chains": 18,
+        "async_registers": 36,
+        "clocked_reset_copies": 14
+      },
+      "power": {
+        "total_w": 0.084,
+        "dynamic_w": 0.015,
+        "static_w": 0.07,
+        "confidence": "Low",
+        "activity": "Vectorless, resets deasserted; defaults for unspecified switching; no simulation activity file or measurement"
+      },
+      "cdc_scope": "One-clock native CDC report plus18 structural synchronizer chains; no metastability proof or off-chip clock/timing specification"
+    },
+    "exploreE": {
+      "timing": {
+        "setup": {
+          "worst_slack_ns": -0.212,
+          "total_negative_slack_ns": -0.642,
+          "failing_endpoints": 5,
+          "endpoints": 7692
+        },
+        "hold": {
+          "worst_slack_ns": 0.032,
+          "total_negative_slack_ns": 0.0,
+          "failing_endpoints": 0,
+          "endpoints": 7692
+        },
+        "pulse_width": {
+          "worst_slack_ns": 4.5,
+          "total_negative_slack_ns": 0.0,
+          "failing_endpoints": 0,
+          "endpoints": 2622
+        },
+        "checks": {
+          "no_clock": 0,
+          "constant_clock": 0,
+          "pulse_width_clock": 0,
+          "unconstrained_internal_endpoints": 0,
+          "no_input_delay": 18,
+          "no_output_delay": 17,
+          "multiple_clock": 0,
+          "generated_clocks": 0,
+          "loops": 0,
+          "partial_input_delay": 0,
+          "partial_output_delay": 0,
+          "latch_loops": 0
+        },
+        "clock_period_ns": 10.0,
+        "external_io_delays": "UNSPECIFIED:18 async inputs/17 non-synchronous outputs; no off-chip timing closure claim"
+      },
+      "utilization": {
+        "Slice LUTs": {
+          "used": 3402.0,
+          "available": 20800,
+          "percent": 16.36
+        },
+        "Slice Registers": {
+          "used": 2557.0,
+          "available": 41600,
+          "percent": 6.15
+        },
+        "Block RAM Tile": {
+          "used": 32.0,
+          "available": 50,
+          "percent": 64.0
+        },
+        "Bonded IOB": {
+          "used": 36.0,
+          "available": 106,
+          "percent": 33.96
+        }
+      },
+      "route_status": {
+        "logical nets": 7508,
+        "nets not needing routing": 1575,
+        "internally routed nets": 1575,
+        "routable nets": 5933,
+        "fully routed nets": 5933,
+        "nets with routing errors": 0
+      },
+      "physical_inventory": {
+        "ports": 36,
+        "clock_period_ns": 10,
+        "async_chains": 18,
+        "async_registers": 36,
+        "clocked_reset_copies": 14
+      },
+      "power": {
+        "total_w": 0.087,
+        "dynamic_w": 0.018,
+        "static_w": 0.07,
+        "confidence": "Low",
+        "activity": "Vectorless, resets deasserted; defaults for unspecified switching; no simulation activity file or measurement"
+      },
+      "cdc_scope": "One-clock native CDC report plus18 structural synchronizer chains; no metastability proof or off-chip clock/timing specification"
+    },
+    "pcF": {
+      "timing": {
+        "setup": {
+          "worst_slack_ns": -0.305,
+          "total_negative_slack_ns": -5.988,
+          "failing_endpoints": 54,
+          "endpoints": 7681
+        },
+        "hold": {
+          "worst_slack_ns": 0.024,
+          "total_negative_slack_ns": 0.0,
+          "failing_endpoints": 0,
+          "endpoints": 7681
+        },
+        "pulse_width": {
+          "worst_slack_ns": 4.5,
+          "total_negative_slack_ns": 0.0,
+          "failing_endpoints": 0,
+          "endpoints": 2611
+        },
+        "checks": {
+          "no_clock": 0,
+          "constant_clock": 0,
+          "pulse_width_clock": 0,
+          "unconstrained_internal_endpoints": 0,
+          "no_input_delay": 18,
+          "no_output_delay": 17,
+          "multiple_clock": 0,
+          "generated_clocks": 0,
+          "loops": 0,
+          "partial_input_delay": 0,
+          "partial_output_delay": 0,
+          "latch_loops": 0
+        },
+        "clock_period_ns": 10.0,
+        "external_io_delays": "UNSPECIFIED:18 async inputs/17 non-synchronous outputs; no off-chip timing closure claim"
+      },
+      "utilization": {
+        "Slice LUTs": {
+          "used": 3349.0,
+          "available": 20800,
+          "percent": 16.1
+        },
+        "Slice Registers": {
+          "used": 2546.0,
+          "available": 41600,
+          "percent": 6.12
+        },
+        "Block RAM Tile": {
+          "used": 32.0,
+          "available": 50,
+          "percent": 64.0
+        },
+        "Bonded IOB": {
+          "used": 36.0,
+          "available": 106,
+          "percent": 33.96
+        }
+      },
+      "route_status": {
+        "logical nets": 7453,
+        "nets not needing routing": 1577,
+        "internally routed nets": 1577,
+        "routable nets": 5876,
+        "fully routed nets": 5876,
+        "nets with routing errors": 0
+      },
+      "physical_inventory": {
+        "ports": 36,
+        "clock_period_ns": 10,
+        "async_chains": 18,
+        "async_registers": 36,
+        "clocked_reset_copies": 3
+      },
+      "power": {
+        "total_w": 0.089,
+        "dynamic_w": 0.019,
+        "static_w": 0.07,
+        "confidence": "Low",
+        "activity": "Vectorless, resets deasserted; defaults for unspecified switching; no simulation activity file or measurement"
+      },
+      "cdc_scope": "One-clock native CDC report plus18 structural synchronizer chains; no metastability proof or off-chip clock/timing specification"
+    }
+  }
+}

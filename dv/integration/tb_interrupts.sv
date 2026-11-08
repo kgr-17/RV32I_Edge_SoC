@@ -43,6 +43,9 @@ module tb_interrupts #(parameter int unsigned DIVISOR=32'd8);
         if(!edge_reset && dut.cpu.e_valid && dut.cpu.branch_ok &&
             (dut.cpu.branch_clean !== (dut.cpu.m_next.result.fault==4'd0)))
             $fatal(1,"IRQ_BRANCH_FAULT_QUALIFICATION");
+        if(!edge_reset && dut.cpu.e_valid && dut.cpu.branch_ok && dut.cpu.taken &&
+            (dut.cpu.branch_redirect_clean !== (dut.cpu.m_next.result.fault==4'd0)))
+            $fatal(1,"IRQ_BRANCH_FAULT_QUALIFICATION");
         if(!edge_reset && dut.cpu.w_valid && (dut.cpu.w.result.csr_op!=3'd0 || dut.cpu.w.result.mret) &&
             (dut.cpu.e_valid || dut.cpu.m_valid))$fatal(1,"IRQ_SERIALIZATION_INVARIANT");
         if(!edge_reset && iwait && (!dut.iv || dut.ia !== held_i))$fatal(1,"IRQ_I_PRODUCER_HOLD");

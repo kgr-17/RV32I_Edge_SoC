@@ -87,3 +87,76 @@ Next: inspect running IRQ preparation, then fresh synthesis and bounded physical
 Interrupt rerun PASS: evidence/toolchain_runs/interrupts-20261108T193336390320Z.json,139 checks/71 commands, all9 positive boot cases and actual defect controls, source immutability preserved. verify test-interrupts exit0; individual contract4? command is check_interrupt_contract, plus CSR4/oracle7/dispatch2/budgets5/harness43/runner8 policy tests all passed. Only subsequent RTL edit clarified a pipeline-stage comment, no netlist behavior change. New source synthesis build/T043/synth-data-qualification-2026-11-08/result.json nativePASS:3742 LUTs,2544 FFs,32BRAM,36IOB, setup estimate-1.291ns (not routed). dataC bounded physical preparation is active; no bitstream/acceptance claim.
 
 Inspected diffs in core/stage/reset/top, bench epoch/reset changes, build/CDC/Tcl policies and new report/provenance controllers. validate and git diff --check exit0. Confirmed32 protected baseline files (original kit, firmware, XPR/XDC and contracts) unchanged and all28 original regression commands retained. CRC and every manifest input SHA validated across13 retained failure archives. Report8/build6/provenance6 policy tests PASS. A local progress commit will preserve these reviewed preparation changes; task stays in_progress with zero final attempts. This is recoverability, not completion. Next inspect dataC route/reports and then use the full fresh6+2 gate finish flow described above.
+
+
+---
+
+<!-- entry:91ee8d4cf35074da776fbdfd818d9f328ae13a52e7f28bf9a8f2d3e5a5eefb38 -->
+
+# T043 invalid-payload isolation
+
+Progress commit2494c66 saved87 reviewed files with staged-byte equality and cached whitespace checks; task remains in_progress, zero final attempts. Clarification to the preceding checkpoint wording: check_interrupt_contract is one exit0 command; no4-test count is attributed to it. The independent CSR oracle has4 tests.
+
+DataC preparation completed routing but failed setup: detailed WNS-1.438ns, branch compare through queue control to invalidated FIFO payload D pins. The prior data-gate cut removed the CSR/RAM critical path but changed mapping did not close timing. Native reports/terminal route DCP/input hashes retained in evidence/failed_sources/T043/dataC-routed-timing/; earlier stage checkpoints stay in build. No failure waived or bitstream generated.
+
+Current change is limited to rtl/core/pipeline_core.sv and pipeline_cpu.sv. rv32_pipeline_stage adds CLEAR_INVALID_PAYLOAD bit default1; generic default reset/clear/hold and masked observation contract is preserved. Integrated FIFO/EX/MEM/WB choose0 with existing MASK_PAYLOAD0; invalid internal payload is unspecified and may update, while valid_q reset/clear/hold priorities remain identical. IF retains its inactive-cache mode. Queue payload uses queue_payload_pop=d_valid&&!front_hold&&!serial_block and queue_payload_push=f_valid&&fetch_sent_q&&imem_rsp_valid_i; original accepted pop/push still controls count, and original flush clears count/valid last. A speculative append cannot alter a live slot: it writes the free slot after any pop, or no slot when full. Flush kills validity regardless of data. No external metadata, bus, ISA, memory map,5-stage structure,3-slot capacity or architectural effect priority changes.
+
+Fresh independent interrupt preparation PASS139checks/71commands: evidence/toolchain_runs/interrupts-20261108T194347414560Z.json, verify test-interrupts exit0, both seeds and all9 independent boot cases plus real mutants. This receipt matches the current RTL bytes. Fresh synthesis is running at build/T043/synth-invalid-payload-2026-11-08/ (session27455); wait for completion, then use .tmp/t043_physical_preparation.py payloadD-2026-11-08 build/T043/synth-invalid-payload-2026-11-08/artifacts/synthesis.dcp. If route warns/fails timing, run reports separately only for diagnosis and retain FAIL. Do not change registered inputs while native jobs run. Current changes after2494c66 are not yet committed. Next use full fresh6+2 gates once routed closure and native report parsing pass.
+
+
+---
+
+<!-- entry:bd3cc70d7a502841032ee3230f5de7d56409a0796b14dfd7d9b617a98337e4db -->
+
+# T043 PC update factoring
+
+Current best failed preparation payloadD: detailed setup WNS-0.154ns after invalid-payload isolation, versus-1.438ns before. More expensive Explore placement was tested with identical RTL and payloadD optimized checkpoint, completed82.282s but routed WNS-0.212ns, so default placement is restored. Native place_design help/read receipt retained in evidence/prepare/T043-place-help.json. Both failures retain exact sources/reports/terminal checkpoints under evidence/failed_sources/T043/{payloadD,exploreE}-routed-timing/. No timing pass or bitstream. This mixed-script preparation was a placement experiment only; final acceptance still requires a coherent fresh current-attempt chain.
+
+Current RTL now factors next_fetch_pc update. pc_prepare has the original fetch-admission guards without redirect qualification, using count<3||queue_payload_pop. Without branch/control redirect and with its !wb_fault/!fault guards, queue_payload_pop equals queue_pop, so pc_prepare equals create_fetch. When a redirect exists, its target overrides preparation on the same edge. pc_update=pc_prepare||redirect||control_redirect; prepared_pc selects control target before branch target before PC+4. Original create_fetch is unchanged, preserving IF admission. The synchronous reset remains highest priority. This removes the path through admission before the PC increment/hold mux without changing visible address cycles, bus traffic or architectural priority.
+
+Fresh complete IRQ preparation PASS139checks/71commands: evidence/toolchain_runs/interrupts-20261108T200018192696Z.json, verify test-interrupts exit0; all9 independent boot scenarios and actual RTL mutants, current source bytes. Fresh synthesis running in build/T043/synth-pc-preparation-2026-11-08/ (session18052). After successful completion run .tmp/t043_physical_preparation.py pcF-2026-11-08 build/T043/synth-pc-preparation-2026-11-08/artifacts/synthesis.dcp. Inspect native result/checkpoint existence before launching; fresh output dirs only. If root token budget ends, wait/terminate bounded jobs before leaving; no unrestricted unattended execution.
+
+Task remains active with0 final finish attempts. Head2494c66 is the prior recoverable checkpoint; current payload/PC changes, report appendices and new archives are not yet committed. Both daily reports continue to be the only Nov8 pair. Full6+2 current-attempt gates, owner final review, formal skip disclosure, and physical/ASIC separation remain required.
+
+
+---
+
+<!-- entry:3f3ecef640a16127a231798de82d4487bcbfa51dd9207298d1e1dafc739d9823 -->
+
+# T043 parallel branch target/alignment preparation
+
+PC factoring candidate pcF still FAIL: detailed routed setup WNS-0.305ns/TNS-5.988ns,54 failing/7681 endpoints; worst forwarded operand through branch comparison to next-PC CE. Its initial positive placed estimate was not routed closure. Source/report/terminal DCP retained in evidence/failed_sources/T043/pcF-routed-timing/. Decoded actual negative reports (dataC,payloadD,exploreE,pcF) with strict routed_reports; all timing failures remain negative in evidence/prepare/T043-negative-routed-reports-2026-11-08.json. No bitstream.
+
+Current branch_unit adds MASK_UNTAKEN_TARGET bit default1; default output behavior/ports unchanged. Candidate target arithmetic runs independently; integrated pipeline selects0 so target is available without waiting for taken. Misaligned_o remains gated by taken, preserving not-taken/no-fault behavior. Original branch_clean and its full-branch runtime check remain intact. New branch_redirect_clean uses raw target alignment independently of taken; redirect still requires taken and all original hold/fault/reset guards. Added a second qualification assertion for taken branches. The actual missing-alignment mutant now removes the guard from this used redirect predicate; it still fails with the exact qualification diagnostic. No check/oracle weakened, no architecture/priority/clock change.
+
+Complete current IRQ preparation PASS139checks/71commands: interrupts-20261108T201055453969Z.json, verify test-interrupts exit0. All9 summaries exactly equal the prior independently checked PC-factoring summaries (including cycles/state/effects), bound in T043-branch-behavior-comparison-2026-11-08.json. Default branch interface independently rechecked: verify test-branch exit0,6 Python oracle tests plus native receipt branch-20261108T201337454547Z.json PASS17checks,126968 vectors per seed/253936 total, including JALR masking, not-taken misalignment and unsupported metadata.
+
+Fresh synthesis currently running at build/T043/synth-parallel-branch-2026-11-08/ (session88396). On successful completion run .tmp/t043_physical_preparation.py branchG-2026-11-08 build/T043/synth-parallel-branch-2026-11-08/artifacts/synthesis.dcp. Native sources must stay unchanged during jobs. Review actual routed timing/DRC/inventory/power; any route warning remains FAIL and reports may run separately only for diagnosis. Current HEAD2494c66; source changes after it and new archives/reports/receipts remain uncommitted until inspected checkpoint. T043 stays in_progress/0 final attempts; full6+2 fresh gates and owner final review still pending.
+
+
+---
+
+<!-- entry:9d5c499503ded669f94fbd3125b51d2fbb557589b8db409a1f92a6cdcde76994 -->
+
+# T043 warning repair and RAM handshake factoring
+
+branchG native synthesis completed but strict CLI rejected Synth8-3936: internal candidate_target_reg trimmed32 to2 bits. Original source/native output/checkpoint retained in evidence/failed_sources/T043/branch-target-trimming-warning/. Changed candidate_target from an always_comb variable to a continuous wire expression, without changing value. Native synthesis then PASS warning-free40.25s (3343 LUTs,2544 FFs,32BRAM,36IOB, unplacedWNS-0.844ns). Current default branch interface PASS253936 vectors/17checks, seeds1 and20261025 (branch-20261108T201747730160Z) plus6 oracle tests. Complete IRQ rerun after wire repair PASS139checks/71commands (interrupts-20261108T201958699390Z), all9 summaries identical to prior version.
+
+wireH routing still FAIL: detailed setupWNS-0.401ns, worst MEM payload through address/ready/decode logic to RAM enable (8 LUTs,84percent net delay). Archived exact sources/reports/terminal checkpoint in evidence/failed_sources/T043/wireH-routed-timing/. Positive placed estimates never imply routed closure; no bitstream generated.
+
+Current RTL additionally factors two RAM predicates in rtl/soc/soc_fabric.sv. With decoded==RAM, d_req_ready_o is exactly !rst&&!d_pending, so ram_read now uses those terms directly rather than dq_accept's unrelated peripheral-ready mux. With target_q==RAM and pending, response valid is guaranteed and computed response error is0, so ram_write remains !rst&&pending&&RAM&&pending_write&&response_ready. Same successful response edge, no early write; no map, latency, bus, reset or error behavior change. No constraints/clock change or fanout attribute applied. Installed Vivado MAX_FANOUT templates were read only during diagnosis.
+
+verify test-soc exit0 after this edit: soc-20261108T202947391169Z PASS60checks/32commands, both seeded fabric cases,3 boot cases, independent bus/ISA/wholeRAM/UART/reset/error checks and actual early-store mutation. Supporting top-20261108T202845169783Z also PASS. The prior IRQ receipt predates the fabric edit; fresh IRQ and full28-target regression remain required in final gates. Fresh synthesis running at build/T043/synth-ram-handshake-2026-11-08/ (session14907). After PASS run .tmp/t043_physical_preparation.py ramI-2026-11-08 build/T043/synth-ram-handshake-2026-11-08/artifacts/synthesis.dcp. Inspect outputs and preserve any failure.
+
+All work remains attended/project-local. Task0 final attempts, activeT043, head2494c66; preparing another inspected local checkpoint for subsequent source/report changes. Before finish require exact current-source6+2 gates, clean byte staging and local commit. Final human approval, physical programming, formal skip and ASIC evidence remain separate.
+
+
+---
+
+<!-- entry:b063b2584958b51ac299bd0f8672a4db39136e5f49c955b51d430c2153e092df -->
+
+# T043 second recoverable preparation checkpoint
+
+Current fabric refactor synthesis PASS at build/T043/synth-ram-handshake-2026-11-08/result.json:3314LUTs/2544FFs/32BRAM/36IOB; unplaced setupWNS-0.844ns/TNS-23.824ns,79 failing/7675 endpoints. Native warnings none, but no routed closure claim. Bounded ramI physical stages active(session76591), opt and place have passed. Inspect build/T043/*-ramI-2026-11-08/result.json; if route fails, reports may run only for diagnosis. Root .tmp helper is preparation; final coherent chain must be regenerated by harness finish.
+
+Reviewed current diff in branch/stage/CPU/fabric and assertion/mutant changes. New6 failure archives CRC/SHA audit PASS511 input files; prior13 archives already validated/committed. validate and whitespace checks exit0. Preparing a local checkpoint commit of inspected changes and evidence, not task completion. State remains activeT043/in_progress,0 final attempts; no .xpr/.xdc/firmware/kit/clock/architecture modification. Full current-source lint,IRQ,28-target regression and3 FPGA gates plus2 whitespace checks remain mandatory. Next wait for ramI, inspect actual detailed timing and report completeness, then freeze/pass all gates and request owner final review only after a concrete package exists.

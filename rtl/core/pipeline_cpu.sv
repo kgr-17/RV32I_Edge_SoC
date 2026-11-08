@@ -101,6 +101,9 @@ module pipeline_core #(parameter bit ENABLE_TRAPS=1'b0) (
     // For branch/jump operations, LSU/ECALL/EBREAK faults are mutually
     // exclusive. Qualify redirects directly without the full fault encoder.
     wire logic branch_clean=!e.fetch_error && !e.dec.illegal && !bad_target;
+    // Alignment is independent of taken for redirect qualification. The token
+    // above retains the not-taken/no-fault semantics for verification.
+    wire logic branch_redirect_clean=!e.fetch_error && !e.dec.illegal && (target[1:0]==2'b00);
     wire logic [3:0] byte_enable;
     wire logic wb_fault,wb_token_fault,gpr_write,mem_hold,front_hold,mem_complete;
     wire logic i_request,i_response,d_request,d_response,create_fetch;
@@ -182,7 +185,7 @@ module pipeline_core #(parameter bit ENABLE_TRAPS=1'b0) (
     assign alu_b=((e.dec.op>=OP_ADDI)&&(e.dec.op<=OP_SRAI)) ? e.dec.imm : fb;
     assign address=fa+e.dec.imm;
     alu arithmetic (.op_i(e.dec.op),.a_i(fa),.b_i(alu_b),.result_o(alu_value),.supported_o(alu_ok));
-    branch_unit branch (.op_i(e.dec.op),.pc_i(e.pc),.rs1_i(fa),.rs2_i(fb),.imm_i(e.dec.imm),
+    branch_unit #(.MASK_UNTAKEN_TARGET(1'b0)) branch (.op_i(e.dec.op),.pc_i(e.pc),.rs1_i(fa),.rs2_i(fb),.imm_i(e.dec.imm),
         .target_o(target),.taken_o(taken),.misaligned_o(bad_target),.supported_o(branch_ok));
     lsu ex_format (.op_i(e.dec.op),.byte_offset_i(address[1:0]),.store_data_i(fb),.read_word_i(32'd0),
         .load_data_o(),.store_word_o(store_word),.byte_enable_o(byte_enable),
@@ -217,6 +220,18 @@ module pipeline_core #(parameter bit ENABLE_TRAPS=1'b0) (
     assign i_response=imem_rsp_valid_i && imem_rsp_ready_o;
     assign create_fetch=!rst_i && !fault_valid_o && !wb_fault && !redirect && !control_redirect && !irq_block && !d_serial && !e_serial && !m_serial && !w_serial && !f_valid && queue_room;
     wire logic queue_push=i_response && !fetch_killed_q && !redirect && !control_redirect && !irq_block && !wb_fault && !fault_valid_o;
+    // Flush qualifies valid/count only. Speculative payload movement into a
+    // now-invalid slot has no effect and need not wait for branch comparison.
+    wire logic queue_payload_pop=d_valid && !front_hold && !serial_block;
+    wire logic queue_payload_push=f_valid && fetch_sent_q && imem_rsp_valid_i;
+    // Speculatively prepare PC+4 without feeding the branch decision through
+    // fetch admission first. A redirect overrides this value on the same edge.
+    // Without a redirect this predicate equals create_fetch exactly.
+    wire logic pc_prepare=!rst_i && !fault_valid_o && !wb_fault && !irq_block &&
+        !d_serial && !e_serial && !m_serial && !w_serial && !f_valid &&
+        ((queue_count_q<2'd3) || queue_payload_pop);
+    wire logic pc_update=pc_prepare || redirect || control_redirect;
+    wire logic [31:0] prepared_pc=control_redirect ? control_target : redirect ? target : next_fetch_pc_q+32'd4;
 
     always_comb begin
         m_next='0;
@@ -268,28 +283,27 @@ module pipeline_core #(parameter bit ENABLE_TRAPS=1'b0) (
             m_next.result.rd=5'd0;
             m_next.result.mem=1'b0;
         end
-        redirect=e_valid && branch_ok && taken && branch_clean &&
+        redirect=e_valid && branch_ok && taken && branch_redirect_clean &&
             !mem_hold && !dependency && !blocked_a && !blocked_b &&
             !wb_fault && !fault_valid_o && !control_redirect && !(d_response && dmem_rsp_err_i) && !rst_i;
     end
     always_comb begin
         queue_count_next=queue_count_q;
         for (int unsigned index=32'd0;index<32'd3;index=index+32'd1) queue_next[index]=fetch_queue[index];
-        if (queue_pop) begin
+        if (queue_payload_pop) begin
             queue_next[0]=fetch_queue[1];queue_next[1]=fetch_queue[2];queue_next[2]='0;
-            queue_count_next=queue_count_q-2'd1;
         end
-        if (queue_push) begin
+        if (queue_pop) queue_count_next=queue_count_q-2'd1;
+        if (queue_payload_push) begin
             // Select the append slot directly from the registered count and
             // pop bit. Payload muxes need no subtract-then-decode carry path.
             for (int unsigned index=32'd0;index<32'd3;index=index+32'd1)
-                if ((queue_pop && queue_count_q==2'(index+32'd1)) || (!queue_pop && queue_count_q==2'(index)))
+                if ((queue_payload_pop && queue_count_q==2'(index+32'd1)) || (!queue_payload_pop && queue_count_q==2'(index)))
                     queue_next[index]=d_next;
-            queue_count_next=queue_count_next+2'd1;
         end
+        if (queue_push) queue_count_next=queue_count_next+2'd1;
         if (redirect || control_redirect || wb_fault || fault_valid_o) begin
             queue_count_next=2'd0;
-            for (int unsigned index=32'd0;index<32'd3;index=index+32'd1) queue_next[index]='0;
         end
     end
     always_comb begin
@@ -324,18 +338,18 @@ module pipeline_core #(parameter bit ENABLE_TRAPS=1'b0) (
         .valid_o(f_valid),.payload_o(fetch_pc));
     // Responded words are FIFO buffers, not additional outstanding requests.
     for (genvar index=32'd0;index<32'd3;index=index+32'd1) begin : g_fetch_queue
-        rv32_pipeline_stage #(.WIDTH($bits(d_t)),.MASK_PAYLOAD(1'b0)) storage (.clk_i(clk_i),.rst_i(rst_i),
+        rv32_pipeline_stage #(.WIDTH($bits(d_t)),.MASK_PAYLOAD(1'b0),.CLEAR_INVALID_PAYLOAD(1'b0)) storage (.clk_i(clk_i),.rst_i(rst_i),
             .clear_i(wb_fault || fault_valid_o || redirect || control_redirect),.hold_i(1'b0),
             .valid_i(queue_count_next>index),.payload_i(queue_next[index]),
             .valid_o(queue_valid[index]),.payload_o(fetch_queue[index]));
     end
-    rv32_pipeline_stage #(.WIDTH($bits(e_t)),.MASK_PAYLOAD(1'b0)) ex_stage (.clk_i(clk_i),.rst_i(rst_i),
+    rv32_pipeline_stage #(.WIDTH($bits(e_t)),.MASK_PAYLOAD(1'b0),.CLEAR_INVALID_PAYLOAD(1'b0)) ex_stage (.clk_i(clk_i),.rst_i(rst_i),
         .clear_i(wb_fault || fault_valid_o || redirect || control_redirect),.hold_i(1'b0),
         .valid_i(front_hold ? e_valid : (d_valid && !serial_block)),.payload_i(e_next),.valid_o(e_valid),.payload_o(e));
-    rv32_pipeline_stage #(.WIDTH($bits(m_t)),.MASK_PAYLOAD(1'b0)) mem_stage (.clk_i(clk_i),.rst_i(rst_i),
+    rv32_pipeline_stage #(.WIDTH($bits(m_t)),.MASK_PAYLOAD(1'b0),.CLEAR_INVALID_PAYLOAD(1'b0)) mem_stage (.clk_i(clk_i),.rst_i(rst_i),
         .clear_i(wb_fault || fault_valid_o || control_redirect),.hold_i(mem_hold),.valid_i(e_valid && !dependency && !blocked_a && !blocked_b),
         .payload_i(m_next),.valid_o(m_valid),.payload_o(m));
-    rv32_pipeline_stage #(.WIDTH($bits(w_t)),.MASK_PAYLOAD(1'b0)) wb_stage (.clk_i(clk_i),.rst_i(rst_i),
+    rv32_pipeline_stage #(.WIDTH($bits(w_t)),.MASK_PAYLOAD(1'b0),.CLEAR_INVALID_PAYLOAD(1'b0)) wb_stage (.clk_i(clk_i),.rst_i(rst_i),
         .clear_i(wb_fault || fault_valid_o || control_redirect),.hold_i(1'b0),.valid_i(mem_complete),
         .payload_i(w_next),.valid_o(w_valid),.payload_o(w));
 
@@ -347,9 +361,7 @@ module pipeline_core #(parameter bit ENABLE_TRAPS=1'b0) (
             queue_count_q<=queue_count_next;
             if (i_request) fetch_sent_q<=1'b1;
             if (i_response) begin fetch_sent_q<=1'b0;fetch_killed_q<=1'b0;end
-            if (create_fetch) next_fetch_pc_q<=next_fetch_pc_q+32'd4;
-            if (redirect) next_fetch_pc_q<=target;
-            if (control_redirect) next_fetch_pc_q<=control_target;
+            if (pc_update) next_fetch_pc_q<=prepared_pc;
             if ((redirect || control_redirect || irq_block || wb_fault || fault_valid_o) && f_valid && !i_response) fetch_killed_q<=1'b1;
             if (!mem_hold || wb_fault || fault_valid_o) data_sent_q<=1'b0;
             else if (d_request) data_sent_q<=1'b1;

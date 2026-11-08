@@ -1,0 +1,18 @@
+{
+  "scope": "Nine independently checked boot summaries identical before/after continuous target wire repair. Not formal or FPGA timing.",
+  "receipt_sha256": {
+    "evidence/toolchain_runs/interrupts-20261108T201055453969Z.json": "a9cbdb2ed4fd1c5ce1b38768381d19e64fffaddaae6fb959f325d8a015e086a7",
+    "evidence/toolchain_runs/interrupts-20261108T201958699390Z.json": "92f1af1afa2e4f9b9b25cd467bc76938a690ac2bd3c20c442c438f844bb49ce5"
+  },
+  "identical_boot_summaries": [
+    "fast-1",
+    "waits-1",
+    "aborts-1",
+    "fast-20261107",
+    "waits-20261107",
+    "aborts-20261107",
+    "production",
+    "priority-1",
+    "priority-20261107"
+  ]
+}

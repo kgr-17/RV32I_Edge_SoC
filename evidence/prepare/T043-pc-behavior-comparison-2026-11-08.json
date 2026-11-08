@@ -1,0 +1,18 @@
+{
+  "scope": "Scoped behavior preservation comparison on nine independently checked IRQ boots, payload isolation versus PC factoring. Not formal or FPGA timing evidence.",
+  "receipt_sha256": {
+    "evidence/toolchain_runs/interrupts-20261108T194347414560Z.json": "d88b3abc8367ed5fbba0d69c508c648e0a259bac834403cf75cbaaa045dec6ce",
+    "evidence/toolchain_runs/interrupts-20261108T200018192696Z.json": "56211809d3812b7dd790ecac104ee647762e0d938909b2a06256677756271ec4"
+  },
+  "identical_boot_summaries": [
+    "fast-1",
+    "waits-1",
+    "aborts-1",
+    "fast-20261107",
+    "waits-20261107",
+    "aborts-20261107",
+    "production",
+    "priority-1",
+    "priority-20261107"
+  ]
+}

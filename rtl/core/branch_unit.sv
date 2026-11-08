@@ -1,11 +1,13 @@
 `default_nettype none
-module branch_unit (
+module branch_unit #(parameter bit MASK_UNTAKEN_TARGET=1'b1) (
     input wire rv32_pkg::op_t op_i,
     input wire logic [31:0] pc_i, rs1_i, rs2_i, imm_i,
     output logic [31:0] target_o,
     output logic taken_o, misaligned_o, supported_o
 );
     import rv32_pkg::*;
+    wire logic [31:0] candidate_target=(op_i==OP_JALR) ?
+        ((rs1_i+imm_i) & 32'hffff_fffe) : (pc_i+imm_i);
     always_comb begin
         target_o = 32'h0000_0000;
         taken_o = 1'b0;
@@ -22,10 +24,12 @@ module branch_unit (
             default: supported_o = 1'b0;
         endcase
         if (taken_o) begin
-            if (op_i == OP_JALR) target_o = (rs1_i + imm_i) & 32'hffff_fffe;
-            else target_o = pc_i + imm_i;
-            misaligned_o = (target_o[1:0] != 2'b00);
+            target_o = candidate_target;
+            misaligned_o = (candidate_target[1:0] != 2'b00);
         end
+        // Internal consumers may qualify target use separately, allowing target
+        // arithmetic/alignment and branch comparison to evaluate in parallel.
+        if (!MASK_UNTAKEN_TARGET) target_o = candidate_target;
     end
 endmodule
 `default_nettype wire
