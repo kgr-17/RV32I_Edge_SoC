@@ -508,3 +508,68 @@ physical FPGA on the owner's behalf. Runtime remains unrestricted/never and is
 not a sandbox; no unattended runs, downloads, installs, global edits or scheduling.
 Versions unchanged: Python 3.9.13, Git 2.48.1.windows.1, tzdata 2026.2 and
 Vivado/XSim 2025.2 SW 6299465, with pinned actual GNU compiler components.
+
+
+---
+
+<!-- entry:132011f6a3e230d19811c0c7c9c9efec4b636b962879c07e06e7832459251f13 -->
+
+## Shutdown/resume point: T045 committed; T043 plan ready for owner authorization
+
+Local commit 92e3363 contains the approved v0.3 implementation, 213 inspected
+files (35,915,282 bytes including retained raw evidence/archives), both reports,
+and all current acceptance receipts. All 170 audited source hashes matched the
+Git index exactly; git diff --cached --check passed. No unstaged edit remained
+at commit. The final audit binds 42 tool receipts, 170 sources, 2063 artifacts,
+and 1220 unchanged baseline files. Its helper preparation corrected two metadata
+assumptions: the unchanged T026 compiler discovery reference is historical config
+provenance, and lint includes register_fixture as well as negative_latch. The
+helper before correction is archived; no native check or acceptance changed.
+
+After the clean commit, ran plan-only command (exit0):
+python -B scripts/fpga_build.py plan --output build/T043/preauthorization-2026-11-07-92e3363
+Actual Vivado returned FPGA_BUILD_PLAN_PASS for20 commands/33 input hashes;
+all inputs stayed unchanged, target artifacts directory absent. Five DCPs are
+exact previously pinned SDK examples, not synthesized target outputs. Job,
+raw result and a separate audit are preserved in
+evidence/prepare/T043-preauthorization-2026-11-07/. Review package:
+docs/FPGA_EXECUTION_REVIEW.md. No target source/synth/place/route/report/bitstream
+command in the plan was executed. No hardware connection/programming occurred.
+
+harness next/status exit0: active null, next null/planning_only true, completed34,
+pending10 (including4 optional), skipped1, no failed/blocked/review task. T043 is
+the next engineering milestone but start authorization is absent. Its three
+required verify entries vivado-synth/vivado-impl/fpga-reports are unregistered;
+implement them under active T043 after owner authorization, preserving report
+completeness, source bindings and failures. Do not claim this plan passed those
+checks. Installed board-catalog warning failures and GPIO CDC-6 history remain.
+Keep native120/aggregate600 caps and no diagnostic waivers. Formal remains NOT RUN.
+
+Owner must explicitly authorize T043 execution and the exact command
+python -B scripts/harness.py authorize T043 --confirm-owner-review
+before the agent may record it. No owner command was called for T043. Once an
+explicit response arrives, save its exact evidence, record authorization, run
+daily --supervised, inspect clean Git and begin T043. Proceed attended; capture
+actual synthesis/implementation/timing/CDC/power/DRC/bitstream evidence and finish
+with at most3 attempts. Final T043 human approval is separate. T032 physical
+programming is separately gated. Do not rerun T045 or reset its two attempts.
+Both Nov7 reports append this handoff; no other dated report was created.
+
+
+---
+
+<!-- entry:60034199d1fc73392cfd7a064233c2e92808b906109d83d5564fd71cb1e31446 -->
+
+## T043 review packaging correction
+
+The initial git diff --cached --check returned exit 2 on job.tsv: its required
+empty checkpoint field is represented by a trailing tab. Exact command/output
+are retained in evidence/prepare/T043-preauthorization-2026-11-07/whitespace-preparation-failure.json.
+The native job was not edited. Its byte-identical review copy is now inside
+native-job.zip with member and archive hashes in audit.json; the loose review
+copy was moved to the original project-local build folder. The native original
+also remains. No whitespace rule or parser was relaxed. This concerns evidence
+packaging only; T045 sources and all plan input hashes remain unchanged. Rerun
+both whitespace checks and inspect exact indexed bytes before the review-package
+commit. T043 remains pending/unauthorized; its final human review and physical
+programming remain separately gated.
