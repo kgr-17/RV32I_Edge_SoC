@@ -126,3 +126,16 @@ physical hardware/ASIC NOT RUN. Directed ISA tests are not external certificatio
 
 Local package commit and final validation are recorded by the appended delivery
 entry below. Preserve all earlier-day reports and failure evidence.
+
+
+---
+
+<!-- entry:4f137e3dee54491b0685063c28d886954767fc9a49936e1389c58f52ea3851f8 -->
+
+# T043 committed review package and final session checks
+
+Package commit54a00a8 (`Package passing T043 FPGA implementation for owner review`) contains62 inspected files, including all final receipts, unchanged PASS manifest,176-member archive, review and November15 bilingual reports. Precommit byte audit confirmed every staged blob equals its working file, exact changed-path allowlist, zero changed acceptance-source paths, archive/member hashes and exactly two November15 reports. `git diff --check` and cached check exit0; `git commit` exit0; immediate status clean; postcommit `python -B scripts/harness.py validate` exit0. Prior November8 daily reports unchanged.
+
+`status`/`next` exit0:34 completed,1 awaiting_review(T043),1 owner-skipped(T023),9 pending,active=null,next=null,project in_progress. T043 remains attempt1. Formal NOT RUN; physical programming and ASIC NOT RUN. No owner approval command run. This appended delivery entry is committed separately without changing implementation evidence.
+
+STOP at required owner review. Ask owner to review docs/FPGA_PPA.md at54a00a8 and explicitly approve/authorize `python -B scripts/harness.py approve T043 --confirm-owner-review`. AGENTS.md: "Never call approve, reopen, or enable on the owner's behalf" (original command names formatted as code); BACKLOG T043 has human_approval_required=true. Existing T043 start authorization does not satisfy final review. After actual reply authorizes this exact command, record approval, re-evaluate next task, and prepare T032 for separate start/physical programming authorization. Do not run approve from this report alone. Current runtime unrestricted; no unattended automation.
