@@ -139,3 +139,79 @@ Package commit54a00a8 (`Package passing T043 FPGA implementation for owner revie
 `status`/`next` exit0:34 completed,1 awaiting_review(T043),1 owner-skipped(T023),9 pending,active=null,next=null,project in_progress. T043 remains attempt1. Formal NOT RUN; physical programming and ASIC NOT RUN. No owner approval command run. This appended delivery entry is committed separately without changing implementation evidence.
 
 STOP at required owner review. Ask owner to review docs/FPGA_PPA.md at54a00a8 and explicitly approve/authorize `python -B scripts/harness.py approve T043 --confirm-owner-review`. AGENTS.md: "Never call approve, reopen, or enable on the owner's behalf" (original command names formatted as code); BACKLOG T043 has human_approval_required=true. Existing T043 start authorization does not satisfy final review. After actual reply authorizes this exact command, record approval, re-evaluate next task, and prepare T032 for separate start/physical programming authorization. Do not run approve from this report alone. Current runtime unrestricted; no unattended automation.
+
+
+---
+
+<!-- entry:c164c6453156fab50cc7bed28f8519b04f2721c1114b3a1f939bb24bae5031da -->
+
+# T043 owner approval recorded; T032 preauthorization handoff
+
+This entry supersedes earlier same-day awaiting-review instructions. The owner
+answered "Approve T043 and authorize that command" to question
+call_2da4e221a94248f99f69a6b75b019422. Ran the exact authorized
+`python -B scripts/harness.py approve T043 --confirm-owner-review` via the selected
+Python executable: APPROVE / exit0. Authority, question/answer, reviewed commit54a00a8,
+document/attempt/package hashes and formal exception disclosure are preserved in
+evidence/owner_reviews/T043-2026-11-15-review.json. Exact command/stdout/exit is in
+T043-2026-11-15-command.json. No other owner command was run.
+
+State: T043 completed/attempt1,active=null,T032 pending/attempt0/start permission
+absent,project in_progress. There are35 completed tasks,1 owner-skipped(T023) and
+9 pending;4 pending are disabled optionals,5 mandatory tasks remain. `validate`
+exit0; `next` exit0/next=null because T032 lacks execution authorization and
+later mandatory tasks depend on it. Start permission is separate from final
+review. The T043 finish journal, manifest, source, bitstream and archive are
+unchanged; manifest/image hashes rechecked. Baseline before owner action52329be.
+
+Modified docs/FPGA_PPA.md only to record accepted status and the new receipts.
+Its reviewed bytes remain at54a00a8 and match the approval receipt's hash; the
+current doc includes this later administrative status update. The frozen audit
+helper intentionally requires the old awaiting-review snapshot and must not be
+weakened/re-executed against completed state. Saved audit JSON/ZIP remain intact.
+Appended the T043 evidence summary and both November15 reports; earlier entries
+and prior-day reports retained. Runtime remains danger-full-access/never;
+attended-only, no scheduler, downloads/installations or system changes.
+
+Prepared evidence/hardware/README.md as a concrete T032 preauthorization proposal,
+not an active task or implementation. It pins the final image/ROM/source hashes,
+volatile SRAM-only JTAG scope, board/target/COM identity guards, programming log,
+UART115200/8N1 capture and two owner-operated btnC reset epochs. Current IRQ image
+needs no host input and prints exact IRQ PASS CRLF after timer/MRET/save-register
+checks. It does not perform legacy ASCII-A receive/GPIO tests; LEDs are not a
+success oracle. Do not infer internal retirements/counter values from serial text.
+Missing, ambiguous or wrong target/driver stops work; no automatic first-device
+selection or tool installation. No hardware server/serial port opened/programmed.
+
+Registry inspection found hardware-evidence unimplemented. Actual read-only
+`python -B scripts/verify.py hardware-evidence` returned125/NOT RUN with its exact
+missing-check diagnostic. Saved evidence/hardware/preauthorization-check-2026-11-15.json;
+this is not a failed finish or a physical test. No T032 attempt was consumed.
+After start permission, implement independently checked physical evidence capture
+and register it before finish; keep existing lint/test-soc gates. Do not substitute
+simulator output or programming completion for hardware PASS.
+
+Read-only official docs were fetched under the existing owner authorization:
+Digilent Basys3 revC manual sections2.1/5,
+https://digilent.com/reference/_media/reference/programmable-logic/basys-3/basys3_rm.pdf;
+AMD UG8352025.2 program_hw_devices,
+https://docs.amd.com/r/2025.2-English/ug835-vivado-tcl-commands/program_hw_devices.
+Access dateLA2026-11-15; sources are linked beside proposal facts. Search also
+returned newer2026.2 pages, but the proposed command reference uses installed2025.2.
+No package/IP/tool download or installation. Initial metadata rg calls named
+nonexistent guessed paths; corrected using rg --files and actual sw/interrupt_smoke.S,
+fpga/basys3/top.sv. These were read errors, not acceptance attempts or hidden PASS.
+
+Next session: read this latest entry/all startup files, inspect Git, run daily
+--supervised/validate/status/next. Do not approve T043 again; it is completed.
+Ask owner to review evidence/hardware/README.md and explicitly authorize its local
+supervised volatile programming/UART scope plus
+`python -B scripts/harness.py authorize T032 --confirm-owner-review`.
+AGENTS.md prohibits unapproved FPGA programming; BACKLOG.T032.start_approval_required
+is true. Only after actual owner authorization record the exact reply, run that
+command, inspect next and begin T032 from a clean Git baseline. Then establish
+physical board availability/identity before connecting/programming. If the board
+is absent, preserve pending work and state NOT RUN; never waive another milestone.
+Physical hardware and ASIC remain NOT RUN; formal T023 remains skipped/NOT RUN.
+Final review must disclose the formal gap. Commit inspected approval/proposal
+files, whitespace/state checks and appended report entries locally; no push.

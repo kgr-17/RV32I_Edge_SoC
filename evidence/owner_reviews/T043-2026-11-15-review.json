@@ -1,0 +1,27 @@
+{
+  "task": "T043",
+  "date": "2026-11-15",
+  "question_item_id": "[\"request_user_input_async\",\"call_2da4e221a94248f99f69a6b75b019422\",0]",
+  "question": "T043 passed all six gates and both whitespace checks. Please review C:/RV32I_Edge_SoC/docs/FPGA_PPA.md (package commit 54a00a8), including the small timing margins and missing formal evidence. Do you approve T043 and explicitly authorize `python -B scripts/harness.py approve T043 --confirm-owner-review`? Physical FPGA programming remains separately gated.",
+  "answer": "Approve T043 and authorize that command",
+  "authorization_scope": "Final T043 implementation evidence review and exact approval command; physical programming remains separately gated",
+  "command": [
+    "python",
+    "-B",
+    "scripts/harness.py",
+    "approve",
+    "T043",
+    "--confirm-owner-review"
+  ],
+  "review_commit": "54a00a8a94b3eb433b0ea2f25e41bb41998d7647",
+  "review_document": "docs/FPGA_PPA.md",
+  "review_sha256": "65de440c29887db7e18e8d82beb8da663fc3e11165f2ce2b96d87d5349042701",
+  "verification_receipt": "evidence/runs/T043/attempt-1-20261108T210906188089Z.json",
+  "verification_receipt_sha256": "183eba7e80a667626cc93c94ce33ca552fefbfe59fb3b53b5b55e1b4ed14c60a",
+  "package_receipt_sha256": "4c7e3d962e2417b1dbac6a01e0726e364594c51fbe0253ebfdefdb3404dde017",
+  "acknowledged_owner_skipped_tasks": [
+    "T023"
+  ],
+  "formal_verification_status": "NOT RUN",
+  "physical_programming_authorized": false
+}

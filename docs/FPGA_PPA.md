@@ -2,8 +2,10 @@
 
 T043 passed all six registered verification gates and both whitespace checks on
 2026-11-08, attempt 1. On 2026-11-15 the saved results were recovered, independently
-audited and packaged. The task is **awaiting owner review**, with no active task.
-This review supersedes earlier preparation status in this document's Git history.
+audited and packaged. The owner approved the package at commit `54a00a8` and
+explicitly authorized the approval command on 2026-11-15. The command returned
+APPROVE / exit 0; **T043 is completed**, with no active task. The reviewed snapshot
+remains recoverable at that commit; this update records its accepted status.
 No physical FPGA connection or programming has occurred.
 
 ## Final implementation
@@ -130,7 +132,10 @@ python -B evidence/fpga/final-audit-2026-11-15.py
 reports, 189 sources (181 matched exact source-commit bytes), 2,644 artifact
 hashes and 32 protected baseline files. It checks the native checkpoint chain
 and independently parses the final reports. Its workflow preconditions are
-specific to this awaiting-review, first-attempt snapshot.
+specific to the earlier awaiting-review, first-attempt snapshot. Following owner
+approval, its awaiting-review assertion intentionally refuses the completed state;
+the saved audit JSON and archive remain the immutable result. Do not weaken that
+assertion or rewrite the archived audit just to replay it after approval.
 
 `evidence/fpga/T043-implementation-2026-11-15.zip` preserves 176 members, including
 all 71 final implementation artifacts, 52 source files, linked receipts, the
@@ -163,8 +168,10 @@ not establish successful physical board operation or overall project completion.
 
 T043 start execution was authorized in
 `evidence/owner_reviews/T043-2026-11-07-authorization.json`. Final T043 owner review
-is still required by `AGENTS.md` and `docs/BACKLOG.json`. After explicit approval
-and exact command authorization, record that approval through the harness. T032
-physical programming remains separately gated and must not start from this
-implementation authorization alone. No unattended work is authorized under the
-current unrestricted runtime.
+was explicitly granted on 2026-11-15 in reply to question
+`call_2da4e221a94248f99f69a6b75b019422`. The answer, reviewed document hash and
+accepted attempt are recorded in `evidence/owner_reviews/T043-2026-11-15-review.json`;
+`T043-2026-11-15-command.json` records the exact approval command / exit 0.
+T032 physical programming remains separately gated. Its proposed supervised scope
+is in `evidence/hardware/README.md`; T043 approval grants no T032 authorization.
+No unattended work is authorized under the current unrestricted runtime.

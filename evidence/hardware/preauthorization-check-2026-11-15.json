@@ -1,0 +1,24 @@
+{
+  "status": "NOT RUN",
+  "scope": "Read-only registry preflight; no hardware connection or task verification attempt",
+  "date_la": "2026-11-15",
+  "argv": [
+    "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "-B",
+    "scripts/verify.py",
+    "hardware-evidence"
+  ],
+  "started_utc": "2026-11-16T03:56:44.323344+00:00",
+  "cwd": "C:\\RV32I_Edge_SoC",
+  "exit_code": 125,
+  "stdout": "NOT RUN: no implemented check with explicit inputs: hardware-evidence\n",
+  "stderr": "",
+  "timeout_seconds": 30,
+  "hardware_connection": "NOT RUN",
+  "physical_programming": "NOT RUN",
+  "T032_status": "pending",
+  "T032_attempts": 0,
+  "proposal": "evidence/hardware/README.md",
+  "proposal_sha256": "64ae0e402ed5c7874b5f8f6cd4bb81744639ce48197d749f2266301d136eb44c",
+  "required_next_work": "After owner start authorization, begin T032 and implement/validate hardware evidence capture/checker before any finish attempt"
+}
