@@ -215,3 +215,14 @@ is absent, preserve pending work and state NOT RUN; never waive another mileston
 Physical hardware and ASIC remain NOT RUN; formal T023 remains skipped/NOT RUN.
 Final review must disclose the formal gap. Commit inspected approval/proposal
 files, whitespace/state checks and appended report entries locally; no push.
+
+
+---
+
+<!-- entry:4cb710b90f8519b187fb6cd5427d5ed2ed4c6787d3f9f70be9abde156fe5120f -->
+
+# T043 approval and T032 proposal committed
+
+Commit a85f71c records the exact owner-authorized T043 approval, immutable approval receipts, accepted-status PPA update and supervised T032 proposal. All11 inspected staged files matched working bytes; exact changed-path checks, git diff --check and cached check passed/exit0. State/backlog audit confirmed only T043 completion and its owner-review entry changed; all189 accepted source hashes, manifest and archive still match. Postcommit Git status clean and harness status/validate exit0:35 completed,1 skipped,9 pending,active=null. No T032 authorization/begin/finish/programming/serial connection.
+
+Next owner decision: review evidence/hardware/README.md at a85f71c and authorize its supervised local volatile-SRAM programming/UART scope plus `python -B scripts/harness.py authorize T032 --confirm-owner-review`. Do not execute that command from this report alone. After actual explicit reply, save provenance and exact command result, inspect next, begin T032 from clean Git and implement the missing hardware-evidence checker with independent capture validation. Missing board/identity/check remains NOT RUN, not a pass. The read-only preflight125 and T032 attempt0 remain retained. Current handoff/report pair updated append-only; no RTL changes or acceptance reruns today.
