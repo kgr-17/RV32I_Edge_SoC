@@ -1,0 +1,655 @@
+{
+  "profile": "tcl",
+  "status": "PASS",
+  "started_utc": "20261108T211858412536Z",
+  "base_commit": "a7bf63dbba10f983aa670ba8959b8feeaa0e69b6",
+  "scope": "Actual Vivado nonproject Tcl plan/input/output/owner-ack guards only; target synth/place/route/bitstream NOT RUN",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261108T211858412536Z\\versions",
+      "started_utc": "2026-11-08T21:18:58.522158+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "git version 2.48.1.windows.1\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-dvd08kv4",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.11
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261108T211858412536Z\\versions\\xvlog",
+      "started_utc": "2026-11-08T21:18:58.642567+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-rvl6u4pa",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.61
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261108T211858412536Z\\versions\\xelab",
+      "started_utc": "2026-11-08T21:18:59.268590+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-3oj44g0j",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.61
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261108T211858412536Z\\versions\\xsim",
+      "started_utc": "2026-11-08T21:18:59.885824+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2025 Xilinx, Inc. All Rights Reserved.\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-veco13tj",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.484
+    },
+    {
+      "argv": [
+        "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+        "-B",
+        "C:\\RV32I_Edge_SoC\\scripts\\fpga_build.py",
+        "plan",
+        "--output",
+        "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261108T211858412536Z\\positive"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261108T211858412536Z\\launcher",
+      "started_utc": "2026-11-08T21:19:00.383110+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "{\"status\": \"PASS\", \"mode\": \"plan\", \"stage\": \"all\", \"result\": \"build\\\\T030\\\\tcl-20261108T211858412536Z\\\\positive\\\\result.json\"}\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-zc3h23dg",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.984
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat",
+        "-mode",
+        "batch",
+        "-nolog",
+        "-nojournal",
+        "-notrace",
+        "-source",
+        "C:\\RV32I_Edge_SoC\\fpga\\basys3\\build.tcl",
+        "-tclargs",
+        "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261108T211858412536Z\\wrong-part\\job.tsv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261108T211858412536Z\\wrong-part\\tool",
+      "started_utc": "2026-11-08T21:19:03.405997+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 1,
+      "status": "FAIL",
+      "stdout": "\n****** Vivado v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Nov  8 13:19:04 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource {C:\\RV32I_Edge_SoC\\fpga\\basys3\\build.tcl} -notrace\nFPGA_BUILD_FAIL: FPGA_TARGET_CONTRACT\nINFO: [Common 17-206] Exiting Vivado at Sun Nov  8 13:19:05 2026...\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-2_u6c_w4",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.641
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat",
+        "-mode",
+        "batch",
+        "-nolog",
+        "-nojournal",
+        "-notrace",
+        "-source",
+        "C:\\RV32I_Edge_SoC\\fpga\\basys3\\build.tcl",
+        "-tclargs",
+        "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261108T211858412536Z\\wrong-clock\\job.tsv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261108T211858412536Z\\wrong-clock\\tool",
+      "started_utc": "2026-11-08T21:19:06.052307+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 1,
+      "status": "FAIL",
+      "stdout": "\n****** Vivado v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Nov  8 13:19:06 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource {C:\\RV32I_Edge_SoC\\fpga\\basys3\\build.tcl} -notrace\nFPGA_BUILD_FAIL: FPGA_TARGET_CONTRACT\nINFO: [Common 17-206] Exiting Vivado at Sun Nov  8 13:19:08 2026...\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-m10_6dun",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.765
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat",
+        "-mode",
+        "batch",
+        "-nolog",
+        "-nojournal",
+        "-notrace",
+        "-source",
+        "C:\\RV32I_Edge_SoC\\fpga\\basys3\\build.tcl",
+        "-tclargs",
+        "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261108T211858412536Z\\missing-source\\job.tsv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261108T211858412536Z\\missing-source\\tool",
+      "started_utc": "2026-11-08T21:19:08.842921+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 1,
+      "status": "FAIL",
+      "stdout": "\n****** Vivado v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Nov  8 13:19:09 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource {C:\\RV32I_Edge_SoC\\fpga\\basys3\\build.tcl} -notrace\nFPGA_BUILD_FAIL: FPGA_INPUT_REJECTED C:/RV32I_Edge_SoC/build/T030/tcl-20261108T211858412536Z/absent.sv\nINFO: [Common 17-206] Exiting Vivado at Sun Nov  8 13:19:11 2026...\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-mqmvdst5",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.75
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat",
+        "-mode",
+        "batch",
+        "-nolog",
+        "-nojournal",
+        "-notrace",
+        "-source",
+        "C:\\RV32I_Edge_SoC\\fpga\\basys3\\build.tcl",
+        "-tclargs",
+        "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261108T211858412536Z\\outside-source\\job.tsv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261108T211858412536Z\\outside-source\\tool",
+      "started_utc": "2026-11-08T21:19:11.601821+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 1,
+      "status": "FAIL",
+      "stdout": "\n****** Vivado v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Nov  8 13:19:12 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource {C:\\RV32I_Edge_SoC\\fpga\\basys3\\build.tcl} -notrace\nFPGA_BUILD_FAIL: FPGA_INPUT_REJECTED C:/RV32I_Edge_SoC_escape/never.sv\nINFO: [Common 17-206] Exiting Vivado at Sun Nov  8 13:19:14 2026...\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-nh4jfyd3",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.719
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat",
+        "-mode",
+        "batch",
+        "-nolog",
+        "-nojournal",
+        "-notrace",
+        "-source",
+        "C:\\RV32I_Edge_SoC\\fpga\\basys3\\build.tcl",
+        "-tclargs",
+        "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261108T211858412536Z\\unknown-mode\\job.tsv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261108T211858412536Z\\unknown-mode\\tool",
+      "started_utc": "2026-11-08T21:19:14.336241+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 1,
+      "status": "FAIL",
+      "stdout": "\n****** Vivado v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Nov  8 13:19:15 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource {C:\\RV32I_Edge_SoC\\fpga\\basys3\\build.tcl} -notrace\nFPGA_BUILD_FAIL: FPGA_MODE_STAGE\nINFO: [Common 17-206] Exiting Vivado at Sun Nov  8 13:19:17 2026...\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-033tp1qz",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.75
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat",
+        "-mode",
+        "batch",
+        "-nolog",
+        "-nojournal",
+        "-notrace",
+        "-source",
+        "C:\\RV32I_Edge_SoC\\fpga\\basys3\\build.tcl",
+        "-tclargs",
+        "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261108T211858412536Z\\unauthorized-execution\\job.tsv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261108T211858412536Z\\unauthorized-execution\\tool",
+      "started_utc": "2026-11-08T21:19:17.113361+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 1,
+      "status": "FAIL",
+      "stdout": "\n****** Vivado v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Nov  8 13:19:17 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource {C:\\RV32I_Edge_SoC\\fpga\\basys3\\build.tcl} -notrace\nFPGA_BUILD_FAIL: FPGA_OWNER_AUTH_REQUIRED\nINFO: [Common 17-206] Exiting Vivado at Sun Nov  8 13:19:19 2026...\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-fjhq1dya",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.766
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat",
+        "-mode",
+        "batch",
+        "-nolog",
+        "-nojournal",
+        "-notrace",
+        "-source",
+        "C:\\RV32I_Edge_SoC\\fpga\\basys3\\build.tcl",
+        "-tclargs",
+        "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261108T211858412536Z\\outside-output\\job.tsv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261108T211858412536Z\\outside-output\\tool",
+      "started_utc": "2026-11-08T21:19:19.893597+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 1,
+      "status": "FAIL",
+      "stdout": "\n****** Vivado v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Nov  8 13:19:20 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource {C:\\RV32I_Edge_SoC\\fpga\\basys3\\build.tcl} -notrace\nFPGA_BUILD_FAIL: FPGA_OUTPUT_REJECTED\nINFO: [Common 17-206] Exiting Vivado at Sun Nov  8 13:19:22 2026...\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-9l9fxefb",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.688
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/vivado.bat",
+        "-mode",
+        "batch",
+        "-nolog",
+        "-nojournal",
+        "-notrace",
+        "-source",
+        "C:\\RV32I_Edge_SoC\\fpga\\basys3\\build.tcl",
+        "-tclargs",
+        "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261108T211858412536Z\\existing-output\\job.tsv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T030\\tcl-20261108T211858412536Z\\existing-output\\tool",
+      "started_utc": "2026-11-08T21:19:22.611228+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 1,
+      "status": "FAIL",
+      "stdout": "\n****** Vivado v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Nov  8 13:19:23 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource {C:\\RV32I_Edge_SoC\\fpga\\basys3\\build.tcl} -notrace\nFPGA_BUILD_FAIL: FPGA_OUTPUT_REJECTED\nINFO: [Common 17-206] Exiting Vivado at Sun Nov  8 13:19:25 2026...\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-p2067zur",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.797
+    }
+  ],
+  "checks": [
+    {
+      "name": "Pinned Python version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned tzdata version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned Git version",
+      "status": "PASS",
+      "command_index": 0
+    },
+    {
+      "name": "Pinned xvlog version",
+      "status": "PASS",
+      "command_index": 1
+    },
+    {
+      "name": "Pinned xelab version",
+      "status": "PASS",
+      "command_index": 2
+    },
+    {
+      "name": "Pinned xsim version",
+      "status": "PASS",
+      "command_index": 3
+    },
+    {
+      "name": "Actual CLI plan launch",
+      "status": "PASS",
+      "command_index": 4
+    },
+    {
+      "name": "Actual Tcl validates24 planned commands, executesnone",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Only five exact installed SDK example checkpoints copied by startup",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Plan creates no target build artifacts",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Unique job mutation wrong-part",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual Tcl rejects wrong-part",
+      "status": "PASS",
+      "command_index": 5
+    },
+    {
+      "name": "No build output from rejected wrong-part",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Unique job mutation wrong-clock",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual Tcl rejects wrong-clock",
+      "status": "PASS",
+      "command_index": 6
+    },
+    {
+      "name": "No build output from rejected wrong-clock",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Unique job mutation missing-source",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual Tcl rejects missing-source",
+      "status": "PASS",
+      "command_index": 7
+    },
+    {
+      "name": "No build output from rejected missing-source",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Unique job mutation outside-source",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual Tcl rejects outside-source",
+      "status": "PASS",
+      "command_index": 8
+    },
+    {
+      "name": "No build output from rejected outside-source",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Unique job mutation unknown-mode",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual Tcl rejects unknown-mode",
+      "status": "PASS",
+      "command_index": 9
+    },
+    {
+      "name": "No build output from rejected unknown-mode",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Unique job mutation unauthorized-execution",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual Tcl rejects unauthorized-execution",
+      "status": "PASS",
+      "command_index": 10
+    },
+    {
+      "name": "No build output from rejected unauthorized-execution",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual Tcl rejects outside-output",
+      "status": "PASS",
+      "command_index": 11
+    },
+    {
+      "name": "Rejected output preserves existing work outside-output",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual Tcl rejects existing-output",
+      "status": "PASS",
+      "command_index": 12
+    },
+    {
+      "name": "Rejected output preserves existing work existing-output",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Tcl/config/source bindings unchanged",
+      "status": "PASS",
+      "command_index": null
+    }
+  ],
+  "simulations": [],
+  "excluded": [
+    "full-target synthesis",
+    "placement/routing",
+    "timing/power closure",
+    "bitstream generation",
+    "FPGA programming",
+    "SoC/ASIC signoff"
+  ],
+  "pins": {
+    "schema_version": 1,
+    "python_version": "3.9.13",
+    "git_version": "2.48.1.windows.1",
+    "tzdata_version": "2026.2",
+    "vivado_version": "2025.2",
+    "vivado_sw_build": "6299465"
+  },
+  "source_sha256": {
+    "config/fpga_build.json": "b607fb7649b2c37ec1e7d91d899f090b49814237c91149b0708fcc06375624cc",
+    "config/vivado_vendor_collateral.json": "8bf736bb57b82110d153bea7f5acf24db9af100951f04bd6f8cb789ddcf07e8d",
+    "fpga/basys3/build.tcl": "88d1f19fc9fe0012366d1441fc68b95930480476a8c0018a80aaae34cda74b7c",
+    "scripts/fpga_build.py": "106a84dff374eb3f097385d3200331e09e23062185c82474ebb726db5b54e4d0",
+    "scripts/test_fpga_build.py": "c372247b14f9569d392afd0353c48dca1f9d029c5944ccfb9ebae2d476ad59bd",
+    "scripts/tcl_checks.py": "5a8e6c3388b3ee49098aecc1e1e17637cf2efa05b22f0d1cfb6c957a9e40544c",
+    "scripts/harness.py": "451407093ded94e04641e39a773779ba3948d5a7db9971f1c2690111af1c47f1",
+    "scripts/tool_runner.py": "3852a10dc400404743869e799378115b121d25657ebfac65457b39403d11198d",
+    "scripts/tool_child.py": "8a61d7f13507a0d41b838aef00b1488e9ecc0b535ff9a08caca729b0551b62a8",
+    "scripts/rtl_checks.py": "bce64e8b85819113f9309956bf3ac754b1b00c0770eab438bc6a7327bdbc63d1",
+    ".harness/checks.json": "cf50ac11c6d3c53edf80af5d76b6ca8f15d49111e7ec99fce71609a47f333452",
+    "docs/ARCH_CONTRACT.json": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03",
+    "fpga/basys3/top.sv": "e3aa4712c81ca21405929e9ef47083f4b4e0709363d9ce0aec6f89422e143278",
+    "fpga/basys3/basys3.xdc": "13152309c5afd879353cf45a1f8e860f4adb24c3e0258d979c21d69e39613584"
+  },
+  "vendor_collateral": {
+    "tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/test/src/convert_muxfx_to_luts/convert_muxfx_to_luts_0001.dcp": {
+      "sha256": "f5523a0472be907ca017c370da7d916b88bb7a4ca257c9e22c15c88f760cb74c",
+      "installed_source": "C:/AMDDesignTools/2025.2/data/XilinxTclStore/tclapp/xilinx/designutils/test/src/convert_muxfx_to_luts/convert_muxfx_to_luts_0001.dcp",
+      "prior_readonly_copy": "build/T029/cdc-options-20261106T222834395131Z/options/2025.2/XilinxTclStore/tclapp/xilinx/designutils/test/src/convert_muxfx_to_luts/convert_muxfx_to_luts_0001.dcp",
+      "observed_sha256": "f5523a0472be907ca017c370da7d916b88bb7a4ca257c9e22c15c88f760cb74c"
+    },
+    "tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/test/src/timing_report_to_verilog/timing_report_to_verilog_0001.dcp": {
+      "sha256": "41c29412fd0f982fa0f8f1b33071e6ede477f6ad571547a300a8790f82a9eb9d",
+      "installed_source": "C:/AMDDesignTools/2025.2/data/XilinxTclStore/tclapp/xilinx/designutils/test/src/timing_report_to_verilog/timing_report_to_verilog_0001.dcp",
+      "prior_readonly_copy": "build/T029/cdc-options-20261106T222834395131Z/options/2025.2/XilinxTclStore/tclapp/xilinx/designutils/test/src/timing_report_to_verilog/timing_report_to_verilog_0001.dcp",
+      "observed_sha256": "41c29412fd0f982fa0f8f1b33071e6ede477f6ad571547a300a8790f82a9eb9d"
+    },
+    "tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/test/src/timing_report_to_verilog/timing_report_to_verilog_0002.dcp": {
+      "sha256": "cb44ccf1f91900621b6d9e2d791dc6184281981b2a6cbb6df7b9aa810e2ac884",
+      "installed_source": "C:/AMDDesignTools/2025.2/data/XilinxTclStore/tclapp/xilinx/designutils/test/src/timing_report_to_verilog/timing_report_to_verilog_0002.dcp",
+      "prior_readonly_copy": "build/T029/cdc-options-20261106T222834395131Z/options/2025.2/XilinxTclStore/tclapp/xilinx/designutils/test/src/timing_report_to_verilog/timing_report_to_verilog_0002.dcp",
+      "observed_sha256": "cb44ccf1f91900621b6d9e2d791dc6184281981b2a6cbb6df7b9aa810e2ac884"
+    },
+    "tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/test/src/write_loc_constraints/write_loc_constraints_0001.dcp": {
+      "sha256": "2bacd70e8c0eff8897d57ce36a40963722b005d93fd5deb6e0bb5c82dff58c7b",
+      "installed_source": "C:/AMDDesignTools/2025.2/data/XilinxTclStore/tclapp/xilinx/designutils/test/src/write_loc_constraints/write_loc_constraints_0001.dcp",
+      "prior_readonly_copy": "build/T029/cdc-options-20261106T222834395131Z/options/2025.2/XilinxTclStore/tclapp/xilinx/designutils/test/src/write_loc_constraints/write_loc_constraints_0001.dcp",
+      "observed_sha256": "2bacd70e8c0eff8897d57ce36a40963722b005d93fd5deb6e0bb5c82dff58c7b"
+    },
+    "tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/test/src/write_slr_pblock_xdc/write_slr_pblock_xdc_0001.dcp": {
+      "sha256": "41c29412fd0f982fa0f8f1b33071e6ede477f6ad571547a300a8790f82a9eb9d",
+      "installed_source": "C:/AMDDesignTools/2025.2/data/XilinxTclStore/tclapp/xilinx/designutils/test/src/write_slr_pblock_xdc/write_slr_pblock_xdc_0001.dcp",
+      "prior_readonly_copy": "build/T029/cdc-options-20261106T222834395131Z/options/2025.2/XilinxTclStore/tclapp/xilinx/designutils/test/src/write_slr_pblock_xdc/write_slr_pblock_xdc_0001.dcp",
+      "observed_sha256": "41c29412fd0f982fa0f8f1b33071e6ede477f6ad571547a300a8790f82a9eb9d"
+    }
+  },
+  "planned_commands": [
+    "read_verilog -sv {C:/RV32I_Edge_SoC/rtl/core/rv32_pkg.sv C:/RV32I_Edge_SoC/rtl/core/decoder.sv C:/RV32I_Edge_SoC/rtl/core/alu.sv C:/RV32I_Edge_SoC/rtl/core/regfile.sv C:/RV32I_Edge_SoC/rtl/core/branch_unit.sv C:/RV32I_Edge_SoC/rtl/core/lsu.sv C:/RV32I_Edge_SoC/rtl/core/pipeline_core.sv C:/RV32I_Edge_SoC/rtl/core/forwarding_unit.sv C:/RV32I_Edge_SoC/rtl/core/hazard_unit.sv C:/RV32I_Edge_SoC/rtl/core/csr_file.sv C:/RV32I_Edge_SoC/rtl/core/trap_control.sv C:/RV32I_Edge_SoC/rtl/core/pipeline_cpu.sv C:/RV32I_Edge_SoC/rtl/memory/boot_rom.sv C:/RV32I_Edge_SoC/rtl/memory/data_ram.sv C:/RV32I_Edge_SoC/rtl/peripherals/uart_tx.sv C:/RV32I_Edge_SoC/rtl/peripherals/uart_rx.sv C:/RV32I_Edge_SoC/rtl/peripherals/uart_mmio.sv C:/RV32I_Edge_SoC/rtl/peripherals/input_sync.sv C:/RV32I_Edge_SoC/rtl/peripherals/gpio.sv C:/RV32I_Edge_SoC/rtl/peripherals/timer.sv C:/RV32I_Edge_SoC/rtl/peripherals/reset_sync.sv C:/RV32I_Edge_SoC/rtl/soc/soc_fabric.sv C:/RV32I_Edge_SoC/rtl/soc/edge_soc.sv C:/RV32I_Edge_SoC/fpga/basys3/top.sv}",
+    "synth_design -top basys3_top -part xc7a35tcpg236-1 -flatten_hierarchy rebuilt",
+    "read_xdc C:/RV32I_Edge_SoC/fpga/basys3/basys3.xdc",
+    "report_utilization -file synthesis_utilization.rpt",
+    "report_timing_summary -delay_type min_max -report_unconstrained -file synthesis_timing.rpt",
+    "write_checkpoint synthesis.dcp",
+    "opt_design -retarget -propconst -sweep",
+    "place_design",
+    "phys_opt_design",
+    "route_design",
+    "report_utilization -file routed_utilization.rpt",
+    "report_timing_summary -delay_type min_max -report_unconstrained -file routed_timing.rpt",
+    "report_clocks -file routed_clocks.rpt",
+    "report_clock_interaction -file routed_clock_interaction.rpt",
+    "report_route_status -file routed_route_status.rpt",
+    "report_cdc -details -all_checks_per_endpoint -no_waiver -file routed_cdc.rpt",
+    "check_timing -verbose -file routed_checks.rpt",
+    "report_drc -file routed_drc.rpt",
+    "write_xdc effective_constraints.xdc",
+    "fpga_inventory",
+    "fpga_power_model",
+    "report_power -file routed_power.rpt",
+    "write_checkpoint routed.dcp",
+    "write_bitstream design.bit"
+  ],
+  "plan_result": "build/T030/tcl-20261108T211858412536Z/positive/result.json",
+  "artifacts": {
+    "build/T030/tcl-20261108T211858412536Z/existing-output/job.tsv": "98412a6cbbb297e7f9c5c62e6478d5d0225850ca54e4e129b27acbf3e4cfd551",
+    "build/T030/tcl-20261108T211858412536Z/missing-source/job.tsv": "8bb809b95ce0e0a193f0e7dab40baa3c0d8ff48a82c497b17ad0c7542b95cab4",
+    "build/T030/tcl-20261108T211858412536Z/outside-output/job.tsv": "67591a95a0738228ca46f53c15af65870d709dd5bc06222aacf936ff282627b1",
+    "build/T030/tcl-20261108T211858412536Z/outside-source/job.tsv": "1c5e53cd2dd9a7503ea009a4ab56544925152e2f629ec04d27b88512b11fd92e",
+    "build/T030/tcl-20261108T211858412536Z/positive/job.tsv": "af4fa35ddc52c608182a2dc4263fc7d83c821c2ff3bc9e790c48d7b7c6cda681",
+    "build/T030/tcl-20261108T211858412536Z/unauthorized-execution/job.tsv": "e8b95ec59e460aa50a234bbdd58d3863198f980ed79fcddccf8e2c571dda986e",
+    "build/T030/tcl-20261108T211858412536Z/unknown-mode/job.tsv": "b6de0c39a4ce5ad2ea1e3af29aecdd6c17a125ca8e3c54c11acf4f745d5e7764",
+    "build/T030/tcl-20261108T211858412536Z/wrong-clock/job.tsv": "6174c87dfe2a4c52f95bf74afef3b67d0dc6c12d38ce29a5b663395e5df1b49a",
+    "build/T030/tcl-20261108T211858412536Z/wrong-part/job.tsv": "84c80241c02edaa586f73871ccc3beae52db6ff3e4afcfc3ca433e36170f5d16",
+    "build/T030/tcl-20261108T211858412536Z/positive/inputs.json": "89fdff114d3c57f2741f094b090eec3fdef856bff12f9d13c9b54f8c506b7b70",
+    "build/T030/tcl-20261108T211858412536Z/positive/result.json": "d5d1fe823f62c531872f36cb1af2154f33539fbd76bf58795ca18762c14be10d",
+    "build/T030/tcl-20261108T211858412536Z/existing-output/artifacts/owner.txt": "44e6896d7e1569f87f38ebab8d3ff103ddcecc8a830c552aa9716165db83fc99",
+    "build/T030/tcl-20261108T211858412536Z/existing-output/tool/dfx_runtime.txt": "9f9e707b5dd8a3df414166959494ed073a85615ebc19d2cc41f05e2e53e2f286",
+    "build/T030/tcl-20261108T211858412536Z/existing-output/tool/2025.2/XilinxTclStore/catalog/2025.2/xilinx/designutils/revision_history.txt": "6d287604e389983a64a43a431913cb5824532fcc81d877b908365f43ad0a0dcb",
+    "build/T030/tcl-20261108T211858412536Z/existing-output/tool/2025.2/XilinxTclStore/catalog/2025.2/xilinx/projutils/revision_history.txt": "7a7236d5fcecf9c2a85442164b4f2faed0b310dea92db022a5e25a69e2e627a0",
+    "build/T030/tcl-20261108T211858412536Z/existing-output/tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/revision_history.txt": "6d287604e389983a64a43a431913cb5824532fcc81d877b908365f43ad0a0dcb",
+    "build/T030/tcl-20261108T211858412536Z/existing-output/tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/doc/legal.txt": "9435a219161649d1b751a1663fa06959f3d217bce93a077f7ad3bc3ec7ac60a7",
+    "build/T030/tcl-20261108T211858412536Z/existing-output/tool/2025.2/XilinxTclStore/tclapp/xilinx/projutils/revision_history.txt": "7a7236d5fcecf9c2a85442164b4f2faed0b310dea92db022a5e25a69e2e627a0",
+    "build/T030/tcl-20261108T211858412536Z/existing-output/tool/2025.2/XilinxTclStore/tclapp/xilinx/projutils/doc/legal.txt": "84ecf1cd86e75b410638c6c99a5a59478cdac5fbb7c974d958c1338ffdb89829",
+    "build/T030/tcl-20261108T211858412536Z/missing-source/tool/dfx_runtime.txt": "398361591b57b6e989320060693b33c7a147d7ab7114c847cf421c46acb8987e",
+    "build/T030/tcl-20261108T211858412536Z/missing-source/tool/2025.2/XilinxTclStore/catalog/2025.2/xilinx/designutils/revision_history.txt": "6d287604e389983a64a43a431913cb5824532fcc81d877b908365f43ad0a0dcb",
+    "build/T030/tcl-20261108T211858412536Z/missing-source/tool/2025.2/XilinxTclStore/catalog/2025.2/xilinx/projutils/revision_history.txt": "7a7236d5fcecf9c2a85442164b4f2faed0b310dea92db022a5e25a69e2e627a0",
+    "build/T030/tcl-20261108T211858412536Z/missing-source/tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/revision_history.txt": "6d287604e389983a64a43a431913cb5824532fcc81d877b908365f43ad0a0dcb",
+    "build/T030/tcl-20261108T211858412536Z/missing-source/tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/doc/legal.txt": "9435a219161649d1b751a1663fa06959f3d217bce93a077f7ad3bc3ec7ac60a7",
+    "build/T030/tcl-20261108T211858412536Z/missing-source/tool/2025.2/XilinxTclStore/tclapp/xilinx/projutils/revision_history.txt": "7a7236d5fcecf9c2a85442164b4f2faed0b310dea92db022a5e25a69e2e627a0",
+    "build/T030/tcl-20261108T211858412536Z/missing-source/tool/2025.2/XilinxTclStore/tclapp/xilinx/projutils/doc/legal.txt": "84ecf1cd86e75b410638c6c99a5a59478cdac5fbb7c974d958c1338ffdb89829",
+    "build/T030/tcl-20261108T211858412536Z/outside-output/tool/dfx_runtime.txt": "398361591b57b6e989320060693b33c7a147d7ab7114c847cf421c46acb8987e",
+    "build/T030/tcl-20261108T211858412536Z/outside-output/tool/2025.2/XilinxTclStore/catalog/2025.2/xilinx/designutils/revision_history.txt": "6d287604e389983a64a43a431913cb5824532fcc81d877b908365f43ad0a0dcb",
+    "build/T030/tcl-20261108T211858412536Z/outside-output/tool/2025.2/XilinxTclStore/catalog/2025.2/xilinx/projutils/revision_history.txt": "7a7236d5fcecf9c2a85442164b4f2faed0b310dea92db022a5e25a69e2e627a0",
+    "build/T030/tcl-20261108T211858412536Z/outside-output/tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/revision_history.txt": "6d287604e389983a64a43a431913cb5824532fcc81d877b908365f43ad0a0dcb",
+    "build/T030/tcl-20261108T211858412536Z/outside-output/tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/doc/legal.txt": "9435a219161649d1b751a1663fa06959f3d217bce93a077f7ad3bc3ec7ac60a7",
+    "build/T030/tcl-20261108T211858412536Z/outside-output/tool/2025.2/XilinxTclStore/tclapp/xilinx/projutils/revision_history.txt": "7a7236d5fcecf9c2a85442164b4f2faed0b310dea92db022a5e25a69e2e627a0",
+    "build/T030/tcl-20261108T211858412536Z/outside-output/tool/2025.2/XilinxTclStore/tclapp/xilinx/projutils/doc/legal.txt": "84ecf1cd86e75b410638c6c99a5a59478cdac5fbb7c974d958c1338ffdb89829",
+    "build/T030/tcl-20261108T211858412536Z/outside-source/tool/dfx_runtime.txt": "398361591b57b6e989320060693b33c7a147d7ab7114c847cf421c46acb8987e",
+    "build/T030/tcl-20261108T211858412536Z/outside-source/tool/2025.2/XilinxTclStore/catalog/2025.2/xilinx/designutils/revision_history.txt": "6d287604e389983a64a43a431913cb5824532fcc81d877b908365f43ad0a0dcb",
+    "build/T030/tcl-20261108T211858412536Z/outside-source/tool/2025.2/XilinxTclStore/catalog/2025.2/xilinx/projutils/revision_history.txt": "7a7236d5fcecf9c2a85442164b4f2faed0b310dea92db022a5e25a69e2e627a0",
+    "build/T030/tcl-20261108T211858412536Z/outside-source/tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/revision_history.txt": "6d287604e389983a64a43a431913cb5824532fcc81d877b908365f43ad0a0dcb",
+    "build/T030/tcl-20261108T211858412536Z/outside-source/tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/doc/legal.txt": "9435a219161649d1b751a1663fa06959f3d217bce93a077f7ad3bc3ec7ac60a7",
+    "build/T030/tcl-20261108T211858412536Z/outside-source/tool/2025.2/XilinxTclStore/tclapp/xilinx/projutils/revision_history.txt": "7a7236d5fcecf9c2a85442164b4f2faed0b310dea92db022a5e25a69e2e627a0",
+    "build/T030/tcl-20261108T211858412536Z/outside-source/tool/2025.2/XilinxTclStore/tclapp/xilinx/projutils/doc/legal.txt": "84ecf1cd86e75b410638c6c99a5a59478cdac5fbb7c974d958c1338ffdb89829",
+    "build/T030/tcl-20261108T211858412536Z/positive/tool/dfx_runtime.txt": "398361591b57b6e989320060693b33c7a147d7ab7114c847cf421c46acb8987e",
+    "build/T030/tcl-20261108T211858412536Z/positive/tool/2025.2/XilinxTclStore/catalog/2025.2/xilinx/designutils/revision_history.txt": "6d287604e389983a64a43a431913cb5824532fcc81d877b908365f43ad0a0dcb",
+    "build/T030/tcl-20261108T211858412536Z/positive/tool/2025.2/XilinxTclStore/catalog/2025.2/xilinx/projutils/revision_history.txt": "7a7236d5fcecf9c2a85442164b4f2faed0b310dea92db022a5e25a69e2e627a0",
+    "build/T030/tcl-20261108T211858412536Z/positive/tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/revision_history.txt": "6d287604e389983a64a43a431913cb5824532fcc81d877b908365f43ad0a0dcb",
+    "build/T030/tcl-20261108T211858412536Z/positive/tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/doc/legal.txt": "9435a219161649d1b751a1663fa06959f3d217bce93a077f7ad3bc3ec7ac60a7",
+    "build/T030/tcl-20261108T211858412536Z/positive/tool/2025.2/XilinxTclStore/tclapp/xilinx/projutils/revision_history.txt": "7a7236d5fcecf9c2a85442164b4f2faed0b310dea92db022a5e25a69e2e627a0",
+    "build/T030/tcl-20261108T211858412536Z/positive/tool/2025.2/XilinxTclStore/tclapp/xilinx/projutils/doc/legal.txt": "84ecf1cd86e75b410638c6c99a5a59478cdac5fbb7c974d958c1338ffdb89829",
+    "build/T030/tcl-20261108T211858412536Z/unauthorized-execution/tool/dfx_runtime.txt": "398361591b57b6e989320060693b33c7a147d7ab7114c847cf421c46acb8987e",
+    "build/T030/tcl-20261108T211858412536Z/unauthorized-execution/tool/2025.2/XilinxTclStore/catalog/2025.2/xilinx/designutils/revision_history.txt": "6d287604e389983a64a43a431913cb5824532fcc81d877b908365f43ad0a0dcb",
+    "build/T030/tcl-20261108T211858412536Z/unauthorized-execution/tool/2025.2/XilinxTclStore/catalog/2025.2/xilinx/projutils/revision_history.txt": "7a7236d5fcecf9c2a85442164b4f2faed0b310dea92db022a5e25a69e2e627a0",
+    "build/T030/tcl-20261108T211858412536Z/unauthorized-execution/tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/revision_history.txt": "6d287604e389983a64a43a431913cb5824532fcc81d877b908365f43ad0a0dcb",
+    "build/T030/tcl-20261108T211858412536Z/unauthorized-execution/tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/doc/legal.txt": "9435a219161649d1b751a1663fa06959f3d217bce93a077f7ad3bc3ec7ac60a7",
+    "build/T030/tcl-20261108T211858412536Z/unauthorized-execution/tool/2025.2/XilinxTclStore/tclapp/xilinx/projutils/revision_history.txt": "7a7236d5fcecf9c2a85442164b4f2faed0b310dea92db022a5e25a69e2e627a0",
+    "build/T030/tcl-20261108T211858412536Z/unauthorized-execution/tool/2025.2/XilinxTclStore/tclapp/xilinx/projutils/doc/legal.txt": "84ecf1cd86e75b410638c6c99a5a59478cdac5fbb7c974d958c1338ffdb89829",
+    "build/T030/tcl-20261108T211858412536Z/unknown-mode/tool/dfx_runtime.txt": "398361591b57b6e989320060693b33c7a147d7ab7114c847cf421c46acb8987e",
+    "build/T030/tcl-20261108T211858412536Z/unknown-mode/tool/2025.2/XilinxTclStore/catalog/2025.2/xilinx/designutils/revision_history.txt": "6d287604e389983a64a43a431913cb5824532fcc81d877b908365f43ad0a0dcb",
+    "build/T030/tcl-20261108T211858412536Z/unknown-mode/tool/2025.2/XilinxTclStore/catalog/2025.2/xilinx/projutils/revision_history.txt": "7a7236d5fcecf9c2a85442164b4f2faed0b310dea92db022a5e25a69e2e627a0",
+    "build/T030/tcl-20261108T211858412536Z/unknown-mode/tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/revision_history.txt": "6d287604e389983a64a43a431913cb5824532fcc81d877b908365f43ad0a0dcb",
+    "build/T030/tcl-20261108T211858412536Z/unknown-mode/tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/doc/legal.txt": "9435a219161649d1b751a1663fa06959f3d217bce93a077f7ad3bc3ec7ac60a7",
+    "build/T030/tcl-20261108T211858412536Z/unknown-mode/tool/2025.2/XilinxTclStore/tclapp/xilinx/projutils/revision_history.txt": "7a7236d5fcecf9c2a85442164b4f2faed0b310dea92db022a5e25a69e2e627a0",
+    "build/T030/tcl-20261108T211858412536Z/unknown-mode/tool/2025.2/XilinxTclStore/tclapp/xilinx/projutils/doc/legal.txt": "84ecf1cd86e75b410638c6c99a5a59478cdac5fbb7c974d958c1338ffdb89829",
+    "build/T030/tcl-20261108T211858412536Z/wrong-clock/tool/dfx_runtime.txt": "398361591b57b6e989320060693b33c7a147d7ab7114c847cf421c46acb8987e",
+    "build/T030/tcl-20261108T211858412536Z/wrong-clock/tool/2025.2/XilinxTclStore/catalog/2025.2/xilinx/designutils/revision_history.txt": "6d287604e389983a64a43a431913cb5824532fcc81d877b908365f43ad0a0dcb",
+    "build/T030/tcl-20261108T211858412536Z/wrong-clock/tool/2025.2/XilinxTclStore/catalog/2025.2/xilinx/projutils/revision_history.txt": "7a7236d5fcecf9c2a85442164b4f2faed0b310dea92db022a5e25a69e2e627a0",
+    "build/T030/tcl-20261108T211858412536Z/wrong-clock/tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/revision_history.txt": "6d287604e389983a64a43a431913cb5824532fcc81d877b908365f43ad0a0dcb",
+    "build/T030/tcl-20261108T211858412536Z/wrong-clock/tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/doc/legal.txt": "9435a219161649d1b751a1663fa06959f3d217bce93a077f7ad3bc3ec7ac60a7",
+    "build/T030/tcl-20261108T211858412536Z/wrong-clock/tool/2025.2/XilinxTclStore/tclapp/xilinx/projutils/revision_history.txt": "7a7236d5fcecf9c2a85442164b4f2faed0b310dea92db022a5e25a69e2e627a0",
+    "build/T030/tcl-20261108T211858412536Z/wrong-clock/tool/2025.2/XilinxTclStore/tclapp/xilinx/projutils/doc/legal.txt": "84ecf1cd86e75b410638c6c99a5a59478cdac5fbb7c974d958c1338ffdb89829",
+    "build/T030/tcl-20261108T211858412536Z/wrong-part/tool/dfx_runtime.txt": "398361591b57b6e989320060693b33c7a147d7ab7114c847cf421c46acb8987e",
+    "build/T030/tcl-20261108T211858412536Z/wrong-part/tool/2025.2/XilinxTclStore/catalog/2025.2/xilinx/designutils/revision_history.txt": "6d287604e389983a64a43a431913cb5824532fcc81d877b908365f43ad0a0dcb",
+    "build/T030/tcl-20261108T211858412536Z/wrong-part/tool/2025.2/XilinxTclStore/catalog/2025.2/xilinx/projutils/revision_history.txt": "7a7236d5fcecf9c2a85442164b4f2faed0b310dea92db022a5e25a69e2e627a0",
+    "build/T030/tcl-20261108T211858412536Z/wrong-part/tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/revision_history.txt": "6d287604e389983a64a43a431913cb5824532fcc81d877b908365f43ad0a0dcb",
+    "build/T030/tcl-20261108T211858412536Z/wrong-part/tool/2025.2/XilinxTclStore/tclapp/xilinx/designutils/doc/legal.txt": "9435a219161649d1b751a1663fa06959f3d217bce93a077f7ad3bc3ec7ac60a7",
+    "build/T030/tcl-20261108T211858412536Z/wrong-part/tool/2025.2/XilinxTclStore/tclapp/xilinx/projutils/revision_history.txt": "7a7236d5fcecf9c2a85442164b4f2faed0b310dea92db022a5e25a69e2e627a0",
+    "build/T030/tcl-20261108T211858412536Z/wrong-part/tool/2025.2/XilinxTclStore/tclapp/xilinx/projutils/doc/legal.txt": "84ecf1cd86e75b410638c6c99a5a59478cdac5fbb7c974d958c1338ffdb89829"
+  },
+  "finished_utc": "2026-11-08T21:19:25.520272+00:00"
+}

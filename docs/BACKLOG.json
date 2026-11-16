@@ -1955,7 +1955,7 @@
         ]
       ],
       "priority": 315,
-      "status": "in_progress",
+      "status": "awaiting_review",
       "human_approval_required": true,
       "start_approval_required": true,
       "optional": false,

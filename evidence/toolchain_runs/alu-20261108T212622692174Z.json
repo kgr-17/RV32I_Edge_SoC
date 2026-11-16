@@ -1,0 +1,510 @@
+{
+  "profile": "alu",
+  "status": "PASS",
+  "started_utc": "20261108T212622692174Z",
+  "base_commit": "a7bf63dbba10f983aa670ba8959b8feeaa0e69b6",
+  "scope": "alu unit simulation only; no full CPU or hardware",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\alu-20261108T212622692174Z\\versions",
+      "started_utc": "2026-11-08T21:26:22.787283+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "git version 2.48.1.windows.1\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-4ut_yzb5",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.109
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\alu-20261108T212622692174Z\\versions\\xvlog",
+      "started_utc": "2026-11-08T21:26:22.897291+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-5rg_shv8",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.594
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\alu-20261108T212622692174Z\\versions\\xelab",
+      "started_utc": "2026-11-08T21:26:23.511168+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-o4uy2dmd",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.578
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\alu-20261108T212622692174Z\\versions\\xsim",
+      "started_utc": "2026-11-08T21:26:24.109702+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2025 Xilinx, Inc. All Rights Reserved.\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-uah4uk7r",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.5
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\rv32_pkg.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\alu.sv",
+        "C:\\RV32I_Edge_SoC\\dv\\unit\\tb_alu.sv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\alu-20261108T212622692174Z\\sim_alu",
+      "started_utc": "2026-11-08T21:26:24.633034+00:00",
+      "timeout_seconds": 15,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "INFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/rv32_pkg.sv\" into library work\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/alu.sv\" into library work\nINFO: [VRFC 10-311] analyzing module alu\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/unit/tb_alu.sv\" into library work\nINFO: [VRFC 10-311] analyzing module tb_alu\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-rifxrfv2",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.703
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "work.tb_alu",
+        "--snapshot",
+        "unit_snapshot",
+        "--timescale",
+        "1ns/1ps",
+        "--debug",
+        "typical"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\alu-20261108T212622692174Z\\sim_alu",
+      "started_utc": "2026-11-08T21:26:25.345540+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nRunning: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_alu --snapshot unit_snapshot --timescale 1ns/1ps --debug typical \nMulti-threading is on. Using 26 slave threads.\nStarting static elaboration\nPass Through NonSizing Optimizer\nCompleted static elaboration\nStarting simulation data flow analysis\nCompleted simulation data flow analysis\nTime Resolution for simulation is 1ps\nCompiling package work.rv32_pkg\nCompiling module work.alu\nCompiling module work.tb_alu\nBuilt simulation snapshot unit_snapshot\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-ue6y6ixp",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 1.235
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "unit_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\units\\alu-20261108T212622692174Z\\sim_alu\\seed_1.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\alu-20261108T212622692174Z\\sim_alu",
+      "started_utc": "2026-11-08T21:26:26.747242+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Nov  8 13:26:27 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/unit_snapshot/xsim_script.tcl\n# xsim {unit_snapshot} -testplusarg SEED=1 -testplusarg COUNT=117402 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/vectors_1.txt -wdb {C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/seed_1.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/run.tcl} -onfinish quit -onerror quit -sv_seed 1\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/run.tcl\n## log_wave /tb_alu/op /tb_alu/a /tb_alu/b /tb_alu/result /tb_alu/supported /tb_alu/expected\n## run all\nALU_SIM_PASS seed=1 checked=117402\n$finish called at time : 117402 ns : File \"C:/RV32I_Edge_SoC/dv/unit/tb_alu.sv\" Line 39\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sun Nov  8 13:26:29 2026...\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-8n37u194",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.734,
+      "argument_file": {
+        "path": "build\\units\\alu-20261108T212622692174Z\\sim_alu\\seed_1.args",
+        "sha256": "6174fdc495804a33710435fff29ec9856f9056d88acd1d55e8605ae2dc850c24",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n1\n--testplusarg\nSEED=1\n--testplusarg\nCOUNT=117402\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/vectors_1.txt\n--log\nseed_1.log\n--wdb\nC:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/seed_1.wdb\n",
+        "intended_argv": [
+          "unit_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "1",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "COUNT=117402",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/vectors_1.txt",
+          "--log",
+          "seed_1.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/seed_1.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "unit_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\units\\alu-20261108T212622692174Z\\sim_alu\\seed_20261025.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\alu-20261108T212622692174Z\\sim_alu",
+      "started_utc": "2026-11-08T21:26:29.653123+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Nov  8 13:26:30 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/unit_snapshot/xsim_script.tcl\n# xsim {unit_snapshot} -testplusarg SEED=20261025 -testplusarg COUNT=117402 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/vectors_20261025.txt -wdb {C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/seed_20261025.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/run.tcl} -onfinish quit -onerror quit -sv_seed 20261025\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/run.tcl\n## log_wave /tb_alu/op /tb_alu/a /tb_alu/b /tb_alu/result /tb_alu/supported /tb_alu/expected\n## run all\nALU_SIM_PASS seed=20261025 checked=117402\n$finish called at time : 117402 ns : File \"C:/RV32I_Edge_SoC/dv/unit/tb_alu.sv\" Line 39\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sun Nov  8 13:26:32 2026...\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-e21x7oef",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.688,
+      "argument_file": {
+        "path": "build\\units\\alu-20261108T212622692174Z\\sim_alu\\seed_20261025.args",
+        "sha256": "9c2b0aab0e355a41239d63cd5322bd7300d8f6425433167f2c78238188d36f1c",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n20261025\n--testplusarg\nSEED=20261025\n--testplusarg\nCOUNT=117402\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/vectors_20261025.txt\n--log\nseed_20261025.log\n--wdb\nC:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/seed_20261025.wdb\n",
+        "intended_argv": [
+          "unit_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "20261025",
+          "--testplusarg",
+          "SEED=20261025",
+          "--testplusarg",
+          "COUNT=117402",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/vectors_20261025.txt",
+          "--log",
+          "seed_20261025.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/seed_20261025.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "unit_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\units\\alu-20261108T212622692174Z\\sim_alu\\corrupt_expected.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\alu-20261108T212622692174Z\\sim_alu",
+      "started_utc": "2026-11-08T21:26:32.366412+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Nov  8 13:26:32 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/unit_snapshot/xsim_script.tcl\n# xsim {unit_snapshot} -testplusarg SEED=20261025 -testplusarg COUNT=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/corrupt_expected.txt -wdb {C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/corrupt_expected.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/run.tcl} -onfinish quit -onerror quit -sv_seed 20261025\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/run.tcl\n## log_wave /tb_alu/op /tb_alu/a /tb_alu/b /tb_alu/result /tb_alu/supported /tb_alu/expected\n## run all\nFatal: ALU_MISMATCH seed=20261025 row=0 op=24 a=a8d22842 b=ec82f656 actual=ecd2fe56/1 expected=ecd2fe56/0\nTime: 1 ns  Iteration: 0  Process: /tb_alu/Initial19_1  Scope: tb_alu  File: C:/RV32I_Edge_SoC/dv/unit/tb_alu.sv Line: 31\n$finish called at time : 1 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sun Nov  8 13:26:34 2026...\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-a9qu4q40",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.469,
+      "argument_file": {
+        "path": "build\\units\\alu-20261108T212622692174Z\\sim_alu\\corrupt_expected.args",
+        "sha256": "dbd423e2a2921c4c4efe864e78f44df3eca356625d970b1411ff6b1e51883fe7",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n20261025\n--testplusarg\nSEED=20261025\n--testplusarg\nCOUNT=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/corrupt_expected.txt\n--log\ncorrupt_expected.log\n--wdb\nC:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/corrupt_expected.wdb\n",
+        "intended_argv": [
+          "unit_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "20261025",
+          "--testplusarg",
+          "SEED=20261025",
+          "--testplusarg",
+          "COUNT=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/corrupt_expected.txt",
+          "--log",
+          "corrupt_expected.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/corrupt_expected.wdb"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "unit_snapshot",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\units\\alu-20261108T212622692174Z\\sim_alu\\empty_vectors.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\units\\alu-20261108T212622692174Z\\sim_alu",
+      "started_utc": "2026-11-08T21:26:34.860102+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Nov  8 13:26:35 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/unit_snapshot/xsim_script.tcl\n# xsim {unit_snapshot} -testplusarg SEED=20261025 -testplusarg COUNT=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/empty_vectors.txt -wdb {C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/empty_vectors.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/run.tcl} -onfinish quit -onerror quit -sv_seed 20261025\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/run.tcl\n## log_wave /tb_alu/op /tb_alu/a /tb_alu/b /tb_alu/result /tb_alu/supported /tb_alu/expected\n## run all\nFatal: Wrong count 0 != 1\nTime: 0 ps  Iteration: 0  Process: /tb_alu/Initial19_1  Scope: tb_alu  File: C:/RV32I_Edge_SoC/dv/unit/tb_alu.sv Line: 37\n$finish called at time : 0 fs\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sun Nov  8 13:26:37 2026...\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-y1xpku65",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.453,
+      "argument_file": {
+        "path": "build\\units\\alu-20261108T212622692174Z\\sim_alu\\empty_vectors.args",
+        "sha256": "96d7206d1655c648651c8f331b7c51ba6885439872025ac8ad9e30628285db63",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/run.tcl\n--onerror\nquit\n--onfinish\nquit\n--sv_seed\n20261025\n--testplusarg\nSEED=20261025\n--testplusarg\nCOUNT=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/empty_vectors.txt\n--log\nempty_vectors.log\n--wdb\nC:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/empty_vectors.wdb\n",
+        "intended_argv": [
+          "unit_snapshot",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/run.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--sv_seed",
+          "20261025",
+          "--testplusarg",
+          "SEED=20261025",
+          "--testplusarg",
+          "COUNT=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/empty_vectors.txt",
+          "--log",
+          "empty_vectors.log",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/units/alu-20261108T212622692174Z/sim_alu/empty_vectors.wdb"
+        ]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "Pinned Python version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned tzdata version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned Git version",
+      "status": "PASS",
+      "command_index": 0
+    },
+    {
+      "name": "Pinned xvlog version",
+      "status": "PASS",
+      "command_index": 1
+    },
+    {
+      "name": "Pinned xelab version",
+      "status": "PASS",
+      "command_index": 2
+    },
+    {
+      "name": "Pinned xsim version",
+      "status": "PASS",
+      "command_index": 3
+    },
+    {
+      "name": "alu compile",
+      "status": "PASS",
+      "command_index": 4
+    },
+    {
+      "name": "alu elaboration",
+      "status": "PASS",
+      "command_index": 5
+    },
+    {
+      "name": "alu coverage bins seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "alu independent comparison seed=1",
+      "status": "PASS",
+      "command_index": 6
+    },
+    {
+      "name": "alu waveform seed=1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "alu coverage bins seed=20261025",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "alu independent comparison seed=20261025",
+      "status": "PASS",
+      "command_index": 7
+    },
+    {
+      "name": "alu waveform seed=20261025",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "alu rejects corrupt expected bit",
+      "status": "PASS",
+      "command_index": 8
+    },
+    {
+      "name": "alu rejects empty vectors",
+      "status": "PASS",
+      "command_index": 9
+    },
+    {
+      "name": "alu sources unchanged during verification",
+      "status": "PASS",
+      "command_index": null
+    }
+  ],
+  "simulations": [
+    {
+      "design": "alu",
+      "seed": 1,
+      "checked_vectors": 117402,
+      "vector_path": "build/units/alu-20261108T212622692174Z/sim_alu/vectors_1.txt",
+      "vector_sha256": "4766366232958480ee43911f7ba48678cacf11688290935f7ea8315b090bd2e0",
+      "waveform": "build/units/alu-20261108T212622692174Z/sim_alu/seed_1.wdb",
+      "waveform_sha256": "cdf644b44244c733f181eb449ec8c863981e4309308b99027abcfa2d9cc61d22",
+      "coverage": {
+        "group:edge-cross": 5491,
+        "group:exhaustive-small": 77824,
+        "group:random-legal": 19456,
+        "group:shift-mask": 13056,
+        "group:unsupported-directed": 135,
+        "group:unsupported-random": 1440,
+        "op:19": 5409,
+        "op:20": 5409,
+        "op:21": 5409,
+        "op:22": 5409,
+        "op:23": 5409,
+        "op:24": 5409,
+        "op:25": 7585,
+        "op:26": 7585,
+        "op:27": 7585,
+        "op:28": 5409,
+        "op:29": 5409,
+        "op:30": 7585,
+        "op:31": 5409,
+        "op:32": 5409,
+        "op:33": 5409,
+        "op:34": 7585,
+        "op:35": 7585,
+        "op:36": 5409,
+        "op:37": 5409,
+        "unsupported": 1575
+      }
+    },
+    {
+      "design": "alu",
+      "seed": 20261025,
+      "checked_vectors": 117402,
+      "vector_path": "build/units/alu-20261108T212622692174Z/sim_alu/vectors_20261025.txt",
+      "vector_sha256": "c239cd940f8041c0bf8cd13f33efb2698d57e64d9f9d1f62b51418fd2459e884",
+      "waveform": "build/units/alu-20261108T212622692174Z/sim_alu/seed_20261025.wdb",
+      "waveform_sha256": "25d20f8f499c984ebec3101d65d3df0adf876f70f39bd1e04f5af09aab51ff51",
+      "coverage": {
+        "group:edge-cross": 5491,
+        "group:exhaustive-small": 77824,
+        "group:random-legal": 19456,
+        "group:shift-mask": 13056,
+        "group:unsupported-directed": 135,
+        "group:unsupported-random": 1440,
+        "op:19": 5409,
+        "op:20": 5409,
+        "op:21": 5409,
+        "op:22": 5409,
+        "op:23": 5409,
+        "op:24": 5409,
+        "op:25": 7585,
+        "op:26": 7585,
+        "op:27": 7585,
+        "op:28": 5409,
+        "op:29": 5409,
+        "op:30": 7585,
+        "op:31": 5409,
+        "op:32": 5409,
+        "op:33": 5409,
+        "op:34": 7585,
+        "op:35": 7585,
+        "op:36": 5409,
+        "op:37": 5409,
+        "unsupported": 1575
+      }
+    }
+  ],
+  "excluded": [
+    "full CPU execution/retirement",
+    "formal",
+    "timing closure",
+    "physical hardware",
+    "ASIC"
+  ],
+  "task": "T005",
+  "source_sha256": {
+    "rtl/core/rv32_pkg.sv": "cfbcc3bcc93f7dd66dca05422cb968a0c6bd421fe29b898e4775968b93f7831f",
+    "rtl/core/alu.sv": "bff51163e8c202d806a9a3343d82df0d46f4ae34717f48711595a91b72a93b99",
+    "dv/unit/tb_alu.sv": "88f55270787444e1e1f43686947169abcc851559a7bfa7897c7f35d9504236ad",
+    "dv/unit/test_alu.py": "0e24c2f7606b7985f405cd3d991aba23f67dd0a0de5ceb1cfbe5172719620942",
+    "config/rtl_checks.json": "ab57164c78a52d738dcf5d365c60ff3aae940b85acb070d2471923a777faaf25",
+    "scripts/unit_checks.py": "dec178db4844dce3ffde1b159d0df82a843ec74737c7e5cd3f0a8f6c57b30849",
+    "scripts/rtl_checks.py": "bce64e8b85819113f9309956bf3ac754b1b00c0770eab438bc6a7327bdbc63d1"
+  },
+  "pins": {
+    "schema_version": 1,
+    "python_version": "3.9.13",
+    "git_version": "2.48.1.windows.1",
+    "tzdata_version": "2026.2",
+    "vivado_version": "2025.2",
+    "vivado_sw_build": "6299465"
+  },
+  "tcl": {
+    "path": "build/units/alu-20261108T212622692174Z/sim_alu/run.tcl",
+    "sha256": "338148ac32c36d4701bb7708cf9ac860395fa125a26b4999b076385dc8f33133"
+  },
+  "finished_utc": "2026-11-08T21:26:37.331562+00:00"
+}

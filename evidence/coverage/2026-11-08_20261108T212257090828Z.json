@@ -1,0 +1,1303 @@
+{
+  "task": "T021",
+  "scope": "Finite matched-ISA families and actual simultaneous EX-stage hazard/backpressure crosses",
+  "seeds": [
+    1,
+    7,
+    101,
+    20261102,
+    314159,
+    271828
+  ],
+  "aggregate": {
+    "isa_hits": {
+      "op:LUI": 2354,
+      "op:AUIPC": 196,
+      "op:JAL": 354,
+      "op:JALR": 324,
+      "op:BEQ": 137,
+      "op:BNE": 845,
+      "op:BLT": 121,
+      "op:BGE": 128,
+      "op:BLTU": 118,
+      "op:BGEU": 111,
+      "op:LB": 236,
+      "op:LH": 181,
+      "op:LW": 644,
+      "op:LBU": 144,
+      "op:LHU": 121,
+      "op:SB": 248,
+      "op:SH": 194,
+      "op:SW": 734,
+      "op:ADDI": 4462,
+      "op:SLTI": 94,
+      "op:SLTIU": 98,
+      "op:XORI": 85,
+      "op:ORI": 89,
+      "op:ANDI": 97,
+      "op:SLLI": 91,
+      "op:SRLI": 93,
+      "op:SRAI": 89,
+      "op:ADD": 789,
+      "op:SUB": 87,
+      "op:SLL": 84,
+      "op:SLT": 100,
+      "op:SLTU": 89,
+      "op:XOR": 380,
+      "op:SRL": 92,
+      "op:SRA": 84,
+      "op:OR": 84,
+      "op:AND": 83,
+      "op:FENCE": 300,
+      "op:ECALL": 156,
+      "op:EBREAK": 42,
+      "fault:1": 24,
+      "fault:2": 24,
+      "fault:3": 12,
+      "fault:4": 12,
+      "fault:5": 12,
+      "fault:6": 12,
+      "fault:7": 12,
+      "fault:8": 156,
+      "fault:9": 42
+    },
+    "matrix": [
+      {
+        "group": "alu_upper",
+        "feature": "ex_sample",
+        "hits": 17209,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "alu_upper",
+        "feature": "ex_forward",
+        "hits": 323,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "alu_upper",
+        "feature": "wb_forward",
+        "hits": 453,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "alu_upper",
+        "feature": "load_blocked",
+        "hits": 6481,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "alu_upper",
+        "feature": "mem_hold",
+        "hits": 7231,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "alu_upper",
+        "feature": "i_offer_stall",
+        "hits": 5545,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "alu_upper",
+        "feature": "d_offer_stall",
+        "hits": 604,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "alu_upper",
+        "feature": "deferred_redirect",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "Only branch/JAL/JALR generate a legal redirect."
+      },
+      {
+        "group": "load",
+        "feature": "ex_sample",
+        "hits": 15382,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "load",
+        "feature": "ex_forward",
+        "hits": 0,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "load",
+        "feature": "wb_forward",
+        "hits": 0,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "load",
+        "feature": "load_blocked",
+        "hits": 0,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "load",
+        "feature": "mem_hold",
+        "hits": 14056,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "load",
+        "feature": "i_offer_stall",
+        "hits": 1093,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "load",
+        "feature": "d_offer_stall",
+        "hits": 1186,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "load",
+        "feature": "deferred_redirect",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "Only branch/JAL/JALR generate a legal redirect."
+      },
+      {
+        "group": "store",
+        "feature": "ex_sample",
+        "hits": 4377,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "store",
+        "feature": "ex_forward",
+        "hits": 133,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "store",
+        "feature": "wb_forward",
+        "hits": 59,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "store",
+        "feature": "load_blocked",
+        "hits": 161,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "store",
+        "feature": "mem_hold",
+        "hits": 3177,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "store",
+        "feature": "i_offer_stall",
+        "hits": 721,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "store",
+        "feature": "d_offer_stall",
+        "hits": 288,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "store",
+        "feature": "deferred_redirect",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "Only branch/JAL/JALR generate a legal redirect."
+      },
+      {
+        "group": "branch",
+        "feature": "ex_sample",
+        "hits": 2697,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "branch",
+        "feature": "ex_forward",
+        "hits": 13,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "branch",
+        "feature": "wb_forward",
+        "hits": 14,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "branch",
+        "feature": "load_blocked",
+        "hits": 27,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "branch",
+        "feature": "mem_hold",
+        "hits": 1235,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "branch",
+        "feature": "i_offer_stall",
+        "hits": 866,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "branch",
+        "feature": "d_offer_stall",
+        "hits": 114,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "branch",
+        "feature": "deferred_redirect",
+        "hits": 375,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "jump",
+        "feature": "ex_sample",
+        "hits": 1139,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "jump",
+        "feature": "ex_forward",
+        "hits": 59,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "jump",
+        "feature": "wb_forward",
+        "hits": 12,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "jump",
+        "feature": "load_blocked",
+        "hits": 174,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "jump",
+        "feature": "mem_hold",
+        "hits": 449,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "jump",
+        "feature": "i_offer_stall",
+        "hits": 328,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "jump",
+        "feature": "d_offer_stall",
+        "hits": 19,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "jump",
+        "feature": "deferred_redirect",
+        "hits": 287,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "fence",
+        "feature": "ex_sample",
+        "hits": 422,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "fence",
+        "feature": "ex_forward",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "FENCE/SYSTEM/illegal tokens have no enabled register operands in the reviewed decoder."
+      },
+      {
+        "group": "fence",
+        "feature": "wb_forward",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "FENCE/SYSTEM/illegal tokens have no enabled register operands in the reviewed decoder."
+      },
+      {
+        "group": "fence",
+        "feature": "load_blocked",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "FENCE/SYSTEM/illegal tokens have no enabled register operands in the reviewed decoder."
+      },
+      {
+        "group": "fence",
+        "feature": "mem_hold",
+        "hits": 122,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "fence",
+        "feature": "i_offer_stall",
+        "hits": 152,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "fence",
+        "feature": "d_offer_stall",
+        "hits": 2,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "fence",
+        "feature": "deferred_redirect",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "Only branch/JAL/JALR generate a legal redirect."
+      },
+      {
+        "group": "system",
+        "feature": "ex_sample",
+        "hits": 862,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "system",
+        "feature": "ex_forward",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "FENCE/SYSTEM/illegal tokens have no enabled register operands in the reviewed decoder."
+      },
+      {
+        "group": "system",
+        "feature": "wb_forward",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "FENCE/SYSTEM/illegal tokens have no enabled register operands in the reviewed decoder."
+      },
+      {
+        "group": "system",
+        "feature": "load_blocked",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "FENCE/SYSTEM/illegal tokens have no enabled register operands in the reviewed decoder."
+      },
+      {
+        "group": "system",
+        "feature": "mem_hold",
+        "hits": 664,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "system",
+        "feature": "i_offer_stall",
+        "hits": 72,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "system",
+        "feature": "d_offer_stall",
+        "hits": 60,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "system",
+        "feature": "deferred_redirect",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "Only branch/JAL/JALR generate a legal redirect."
+      },
+      {
+        "group": "illegal_fetch_fault",
+        "feature": "ex_sample",
+        "hits": 221,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "illegal_fetch_fault",
+        "feature": "ex_forward",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "FENCE/SYSTEM/illegal tokens have no enabled register operands in the reviewed decoder."
+      },
+      {
+        "group": "illegal_fetch_fault",
+        "feature": "wb_forward",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "FENCE/SYSTEM/illegal tokens have no enabled register operands in the reviewed decoder."
+      },
+      {
+        "group": "illegal_fetch_fault",
+        "feature": "load_blocked",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "FENCE/SYSTEM/illegal tokens have no enabled register operands in the reviewed decoder."
+      },
+      {
+        "group": "illegal_fetch_fault",
+        "feature": "mem_hold",
+        "hits": 0,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "illegal_fetch_fault",
+        "feature": "i_offer_stall",
+        "hits": 46,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "illegal_fetch_fault",
+        "feature": "d_offer_stall",
+        "hits": 0,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "illegal_fetch_fault",
+        "feature": "deferred_redirect",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "Only branch/JAL/JALR generate a legal redirect."
+      }
+    ],
+    "uncovered_isa": [],
+    "uncovered_crosses": [
+      {
+        "group": "load",
+        "feature": "ex_forward",
+        "hits": 0,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "load",
+        "feature": "wb_forward",
+        "hits": 0,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "load",
+        "feature": "load_blocked",
+        "hits": 0,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "illegal_fetch_fault",
+        "feature": "mem_hold",
+        "hits": 0,
+        "reachable": true,
+        "exclusion": null
+      },
+      {
+        "group": "illegal_fetch_fault",
+        "feature": "d_offer_stall",
+        "hits": 0,
+        "reachable": true,
+        "exclusion": null
+      }
+    ],
+    "excluded_crosses": [
+      {
+        "group": "alu_upper",
+        "feature": "deferred_redirect",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "Only branch/JAL/JALR generate a legal redirect."
+      },
+      {
+        "group": "load",
+        "feature": "deferred_redirect",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "Only branch/JAL/JALR generate a legal redirect."
+      },
+      {
+        "group": "store",
+        "feature": "deferred_redirect",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "Only branch/JAL/JALR generate a legal redirect."
+      },
+      {
+        "group": "fence",
+        "feature": "ex_forward",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "FENCE/SYSTEM/illegal tokens have no enabled register operands in the reviewed decoder."
+      },
+      {
+        "group": "fence",
+        "feature": "wb_forward",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "FENCE/SYSTEM/illegal tokens have no enabled register operands in the reviewed decoder."
+      },
+      {
+        "group": "fence",
+        "feature": "load_blocked",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "FENCE/SYSTEM/illegal tokens have no enabled register operands in the reviewed decoder."
+      },
+      {
+        "group": "fence",
+        "feature": "deferred_redirect",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "Only branch/JAL/JALR generate a legal redirect."
+      },
+      {
+        "group": "system",
+        "feature": "ex_forward",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "FENCE/SYSTEM/illegal tokens have no enabled register operands in the reviewed decoder."
+      },
+      {
+        "group": "system",
+        "feature": "wb_forward",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "FENCE/SYSTEM/illegal tokens have no enabled register operands in the reviewed decoder."
+      },
+      {
+        "group": "system",
+        "feature": "load_blocked",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "FENCE/SYSTEM/illegal tokens have no enabled register operands in the reviewed decoder."
+      },
+      {
+        "group": "system",
+        "feature": "deferred_redirect",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "Only branch/JAL/JALR generate a legal redirect."
+      },
+      {
+        "group": "illegal_fetch_fault",
+        "feature": "ex_forward",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "FENCE/SYSTEM/illegal tokens have no enabled register operands in the reviewed decoder."
+      },
+      {
+        "group": "illegal_fetch_fault",
+        "feature": "wb_forward",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "FENCE/SYSTEM/illegal tokens have no enabled register operands in the reviewed decoder."
+      },
+      {
+        "group": "illegal_fetch_fault",
+        "feature": "load_blocked",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "FENCE/SYSTEM/illegal tokens have no enabled register operands in the reviewed decoder."
+      },
+      {
+        "group": "illegal_fetch_fault",
+        "feature": "deferred_redirect",
+        "hits": 0,
+        "reachable": false,
+        "exclusion": "Only branch/JAL/JALR generate a legal redirect."
+      }
+    ],
+    "counts": {
+      "matrix": 64,
+      "reachable": 49,
+      "hit": 44,
+      "uncovered": 5,
+      "excluded": 15
+    }
+  },
+  "seed_reports": [
+    {
+      "seed": 1,
+      "events": 5677,
+      "retirements": 2413,
+      "faults": 51,
+      "counts": {
+        "matrix": 64,
+        "reachable": 49,
+        "hit": 41,
+        "uncovered": 8,
+        "excluded": 15
+      },
+      "uncovered_crosses": [
+        {
+          "group": "load",
+          "feature": "ex_forward",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "load",
+          "feature": "wb_forward",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "load",
+          "feature": "load_blocked",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "branch",
+          "feature": "load_blocked",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "jump",
+          "feature": "d_offer_stall",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "fence",
+          "feature": "d_offer_stall",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "illegal_fetch_fault",
+          "feature": "mem_hold",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "illegal_fetch_fault",
+          "feature": "d_offer_stall",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        }
+      ],
+      "assertion_witnesses": {
+        "resets": 153,
+        "x0_a": 12272,
+        "x0_b": 16859,
+        "retires": 2413,
+        "i_holds": 3459,
+        "d_holds": 595,
+        "faults": 363,
+        "i_requests": 2851,
+        "d_requests": 413
+      },
+      "reset_witnesses": [],
+      "negative_rejections": [
+        {
+          "case": "missing_bin",
+          "diagnostic": "incomplete coverage matrix"
+        },
+        {
+          "case": "hidden_excluded_hit",
+          "diagnostic": "hit a structurally excluded bin: fence/ex_forward"
+        },
+        {
+          "case": "missing_required_feature",
+          "diagnostic": "required coverage absent: ['any/ex_forward']"
+        },
+        {
+          "case": "missing_required_opcode",
+          "diagnostic": "required coverage absent: ['op:LUI']"
+        }
+      ],
+      "artifacts": {
+        "build/T021/coverage-report-20261108T212257090828Z/observed_1.json": "5f77a073016c7fa397387adddcf4030739f2ed431ba459024799fb99ddff7fb3",
+        "build/T021/coverage-report-20261108T212257090828Z/expected_1.json": "5f77a073016c7fa397387adddcf4030739f2ed431ba459024799fb99ddff7fb3",
+        "build/T021/coverage-report-20261108T212257090828Z/coverage_1.json": "806eb1742cb8e0a2854ab05e39c6ef6ad4a2a8e06d49cf1e017785c9a7fa43b8"
+      }
+    },
+    {
+      "seed": 7,
+      "events": 5671,
+      "retirements": 2407,
+      "faults": 51,
+      "counts": {
+        "matrix": 64,
+        "reachable": 49,
+        "hit": 41,
+        "uncovered": 8,
+        "excluded": 15
+      },
+      "uncovered_crosses": [
+        {
+          "group": "load",
+          "feature": "ex_forward",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "load",
+          "feature": "wb_forward",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "load",
+          "feature": "load_blocked",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "branch",
+          "feature": "load_blocked",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "fence",
+          "feature": "mem_hold",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "fence",
+          "feature": "d_offer_stall",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "illegal_fetch_fault",
+          "feature": "mem_hold",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "illegal_fetch_fault",
+          "feature": "d_offer_stall",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        }
+      ],
+      "assertion_witnesses": {
+        "resets": 153,
+        "x0_a": 12457,
+        "x0_b": 16992,
+        "retires": 2407,
+        "i_holds": 3578,
+        "d_holds": 549,
+        "faults": 359,
+        "i_requests": 2849,
+        "d_requests": 412
+      },
+      "reset_witnesses": [],
+      "negative_rejections": [
+        {
+          "case": "missing_bin",
+          "diagnostic": "incomplete coverage matrix"
+        },
+        {
+          "case": "hidden_excluded_hit",
+          "diagnostic": "hit a structurally excluded bin: fence/ex_forward"
+        },
+        {
+          "case": "missing_required_feature",
+          "diagnostic": "required coverage absent: ['any/ex_forward']"
+        },
+        {
+          "case": "missing_required_opcode",
+          "diagnostic": "required coverage absent: ['op:LUI']"
+        }
+      ],
+      "artifacts": {
+        "build/T021/coverage-report-20261108T212257090828Z/observed_7.json": "62a781bea5912f57d5c600c1d018fabb4236602813faa90cdc5e72d42e636ac2",
+        "build/T021/coverage-report-20261108T212257090828Z/expected_7.json": "62a781bea5912f57d5c600c1d018fabb4236602813faa90cdc5e72d42e636ac2",
+        "build/T021/coverage-report-20261108T212257090828Z/coverage_7.json": "161f3a0b4f1fb912d2389dd8aba61efc481bde8940fc4dc1bd67c25198023e4a"
+      }
+    },
+    {
+      "seed": 101,
+      "events": 5697,
+      "retirements": 2433,
+      "faults": 51,
+      "counts": {
+        "matrix": 64,
+        "reachable": 49,
+        "hit": 44,
+        "uncovered": 5,
+        "excluded": 15
+      },
+      "uncovered_crosses": [
+        {
+          "group": "load",
+          "feature": "ex_forward",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "load",
+          "feature": "wb_forward",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "load",
+          "feature": "load_blocked",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "illegal_fetch_fault",
+          "feature": "mem_hold",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "illegal_fetch_fault",
+          "feature": "d_offer_stall",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        }
+      ],
+      "assertion_witnesses": {
+        "resets": 153,
+        "x0_a": 12657,
+        "x0_b": 17272,
+        "retires": 2433,
+        "i_holds": 3600,
+        "d_holds": 550,
+        "faults": 368,
+        "i_requests": 2894,
+        "d_requests": 416
+      },
+      "reset_witnesses": [],
+      "negative_rejections": [
+        {
+          "case": "missing_bin",
+          "diagnostic": "incomplete coverage matrix"
+        },
+        {
+          "case": "hidden_excluded_hit",
+          "diagnostic": "hit a structurally excluded bin: fence/ex_forward"
+        },
+        {
+          "case": "missing_required_feature",
+          "diagnostic": "required coverage absent: ['any/ex_forward']"
+        },
+        {
+          "case": "missing_required_opcode",
+          "diagnostic": "required coverage absent: ['op:LUI']"
+        }
+      ],
+      "artifacts": {
+        "build/T021/coverage-report-20261108T212257090828Z/observed_101.json": "2fbe40cd6cb6cd3c30c140b8e9f0c741499fb930c8265939cdbb005250a46d80",
+        "build/T021/coverage-report-20261108T212257090828Z/expected_101.json": "2fbe40cd6cb6cd3c30c140b8e9f0c741499fb930c8265939cdbb005250a46d80",
+        "build/T021/coverage-report-20261108T212257090828Z/coverage_101.json": "e3a9059e8bdd7810f7603400e077159e5d086425081a0032f9e27c41a52ce23e"
+      }
+    },
+    {
+      "seed": 20261102,
+      "events": 5659,
+      "retirements": 2395,
+      "faults": 51,
+      "counts": {
+        "matrix": 64,
+        "reachable": 49,
+        "hit": 42,
+        "uncovered": 7,
+        "excluded": 15
+      },
+      "uncovered_crosses": [
+        {
+          "group": "load",
+          "feature": "ex_forward",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "load",
+          "feature": "wb_forward",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "load",
+          "feature": "load_blocked",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "branch",
+          "feature": "load_blocked",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "fence",
+          "feature": "d_offer_stall",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "illegal_fetch_fault",
+          "feature": "mem_hold",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "illegal_fetch_fault",
+          "feature": "d_offer_stall",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        }
+      ],
+      "assertion_witnesses": {
+        "resets": 153,
+        "x0_a": 12623,
+        "x0_b": 17079,
+        "retires": 2395,
+        "i_holds": 3784,
+        "d_holds": 628,
+        "faults": 388,
+        "i_requests": 2849,
+        "d_requests": 412
+      },
+      "reset_witnesses": [],
+      "negative_rejections": [
+        {
+          "case": "missing_bin",
+          "diagnostic": "incomplete coverage matrix"
+        },
+        {
+          "case": "hidden_excluded_hit",
+          "diagnostic": "hit a structurally excluded bin: fence/ex_forward"
+        },
+        {
+          "case": "missing_required_feature",
+          "diagnostic": "required coverage absent: ['any/ex_forward']"
+        },
+        {
+          "case": "missing_required_opcode",
+          "diagnostic": "required coverage absent: ['op:LUI']"
+        }
+      ],
+      "artifacts": {
+        "build/T021/coverage-report-20261108T212257090828Z/observed_20261102.json": "fb5fccbfd619438fc5fa3d644bc9daa9e9875041d7c45464ad8f721155222ddf",
+        "build/T021/coverage-report-20261108T212257090828Z/expected_20261102.json": "fb5fccbfd619438fc5fa3d644bc9daa9e9875041d7c45464ad8f721155222ddf",
+        "build/T021/coverage-report-20261108T212257090828Z/coverage_20261102.json": "c22152188bfada4d7a5c5d16ef73a9cfa2c87854d2803e87b6b3d62097272a98"
+      }
+    },
+    {
+      "seed": 314159,
+      "events": 5683,
+      "retirements": 2419,
+      "faults": 51,
+      "counts": {
+        "matrix": 64,
+        "reachable": 49,
+        "hit": 44,
+        "uncovered": 5,
+        "excluded": 15
+      },
+      "uncovered_crosses": [
+        {
+          "group": "load",
+          "feature": "ex_forward",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "load",
+          "feature": "wb_forward",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "load",
+          "feature": "load_blocked",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "illegal_fetch_fault",
+          "feature": "mem_hold",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "illegal_fetch_fault",
+          "feature": "d_offer_stall",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        }
+      ],
+      "assertion_witnesses": {
+        "resets": 153,
+        "x0_a": 12437,
+        "x0_b": 16888,
+        "retires": 2419,
+        "i_holds": 3646,
+        "d_holds": 643,
+        "faults": 361,
+        "i_requests": 2873,
+        "d_requests": 415
+      },
+      "reset_witnesses": [],
+      "negative_rejections": [
+        {
+          "case": "missing_bin",
+          "diagnostic": "incomplete coverage matrix"
+        },
+        {
+          "case": "hidden_excluded_hit",
+          "diagnostic": "hit a structurally excluded bin: fence/ex_forward"
+        },
+        {
+          "case": "missing_required_feature",
+          "diagnostic": "required coverage absent: ['any/ex_forward']"
+        },
+        {
+          "case": "missing_required_opcode",
+          "diagnostic": "required coverage absent: ['op:LUI']"
+        }
+      ],
+      "artifacts": {
+        "build/T021/coverage-report-20261108T212257090828Z/observed_314159.json": "b9b3d20ee154bd07e594b199e17494a9769514497553345759f6e436cf458dae",
+        "build/T021/coverage-report-20261108T212257090828Z/expected_314159.json": "b9b3d20ee154bd07e594b199e17494a9769514497553345759f6e436cf458dae",
+        "build/T021/coverage-report-20261108T212257090828Z/coverage_314159.json": "e6d64eadb8ab12f13a114d3bdfe2597217d3933735c4ab4adf967b61ac77827e"
+      }
+    },
+    {
+      "seed": 271828,
+      "events": 5685,
+      "retirements": 2421,
+      "faults": 51,
+      "counts": {
+        "matrix": 64,
+        "reachable": 49,
+        "hit": 40,
+        "uncovered": 9,
+        "excluded": 15
+      },
+      "uncovered_crosses": [
+        {
+          "group": "load",
+          "feature": "ex_forward",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "load",
+          "feature": "wb_forward",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "load",
+          "feature": "load_blocked",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "branch",
+          "feature": "wb_forward",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "branch",
+          "feature": "load_blocked",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "fence",
+          "feature": "mem_hold",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "fence",
+          "feature": "d_offer_stall",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "illegal_fetch_fault",
+          "feature": "mem_hold",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        },
+        {
+          "group": "illegal_fetch_fault",
+          "feature": "d_offer_stall",
+          "hits": 0,
+          "reachable": true,
+          "exclusion": null
+        }
+      ],
+      "assertion_witnesses": {
+        "resets": 153,
+        "x0_a": 12542,
+        "x0_b": 17194,
+        "retires": 2421,
+        "i_holds": 3739,
+        "d_holds": 594,
+        "faults": 362,
+        "i_requests": 2880,
+        "d_requests": 410
+      },
+      "reset_witnesses": [],
+      "negative_rejections": [
+        {
+          "case": "missing_bin",
+          "diagnostic": "incomplete coverage matrix"
+        },
+        {
+          "case": "hidden_excluded_hit",
+          "diagnostic": "hit a structurally excluded bin: fence/ex_forward"
+        },
+        {
+          "case": "missing_required_feature",
+          "diagnostic": "required coverage absent: ['any/ex_forward']"
+        },
+        {
+          "case": "missing_required_opcode",
+          "diagnostic": "required coverage absent: ['op:LUI']"
+        }
+      ],
+      "artifacts": {
+        "build/T021/coverage-report-20261108T212257090828Z/observed_271828.json": "e51e9ba39cf1ebe033b367f6ec557e0fea02a40b3b138069b3330e9430aa9847",
+        "build/T021/coverage-report-20261108T212257090828Z/expected_271828.json": "e51e9ba39cf1ebe033b367f6ec557e0fea02a40b3b138069b3330e9430aa9847",
+        "build/T021/coverage-report-20261108T212257090828Z/coverage_271828.json": "7a6dfa0bbf1b8ae2437aa5711e6a8cc865c133db6521b235c9754b9901528175"
+      }
+    }
+  ],
+  "backend": {
+    "path": "evidence/toolchain_runs/coverage-20261108T212259294665Z.json",
+    "sha256": "688f413217b378e3bcfc30ca1e8fdd8b009078a806bf34d8fb53ba96e00b0c30"
+  },
+  "source_sha256": {
+    "rtl/core/rv32_pkg.sv": "cfbcc3bcc93f7dd66dca05422cb968a0c6bd421fe29b898e4775968b93f7831f",
+    "rtl/core/decoder.sv": "36a5b877e0e585969750f4446e2bb3cb3b3fe5829786118864de516e70e3842c",
+    "rtl/core/alu.sv": "bff51163e8c202d806a9a3343d82df0d46f4ae34717f48711595a91b72a93b99",
+    "rtl/core/regfile.sv": "b237b622b105509dfeefefe6add04e12dd9fc5b878e6e1133e5fe0a3e3ad2bec",
+    "rtl/core/branch_unit.sv": "b8cc48b0e787f85767666dd2d0f70a5f5b9db39738f6fbfc76c7ee20a9cac9f1",
+    "rtl/core/lsu.sv": "3aec50b3fb07044048da457f3ca59a01a21a256a817c806497d04585f69609e6",
+    "rtl/core/pipeline_core.sv": "1676096598a363479a3b40f2a8095f95ba87e73cfa2e39f7544f8872b0d13f38",
+    "rtl/core/forwarding_unit.sv": "443c38de8fe17239e8e19d30a52250f2741b90f6e84813e5e4165c360cf5dd99",
+    "rtl/core/hazard_unit.sv": "d3306b8c4292833febee1d31da7d4b500025385ba93c50879df3e34972eb8fc6",
+    "rtl/core/csr_file.sv": "a68a1be9c0b9e776e9fc511cbfd3e3732d157270a5abaed07177348259862fd5",
+    "rtl/core/trap_control.sv": "92068d33a9a38567159259661fb611666241b513d3aa8354ad79ff4a95f2b1de",
+    "rtl/core/pipeline_cpu.sv": "0200e56f44582e3f3bee286219ad41c56ebb45e1d20877eabba52d0f42d82064",
+    "dv/assertions/core_properties.sv": "5e3a254d5e8a715c6904718a4a302c6228ddb01e8fe65083d8a917ba129919a8",
+    "dv/integration/test_core_smoke.py": "e7e81581805d64d2c9a9264b750bb8116c7efca6848522622f83504564ef343d",
+    "dv/integration/test_load_use.py": "017480522fc6f851ea0b2621b49efd0ef191354014af9f0a8ef5f7cc37b61930",
+    "dv/integration/test_flush.py": "5099e12f54faa89526c90b9590ae1c7f5465bd78fdd372d84dd3ec69b71ae34d",
+    "dv/integration/test_backpressure.py": "91e6673cbeaba42987138f1a2138c0c8144a2891888ca66dbfef602627acc9e3",
+    "dv/reference/rv32_iss.py": "3bea09d666445514edbff6a4d433bdc2e18eec0b416b6780e617efcc91ab856c",
+    "dv/random/test_random_programs.py": "81e0d33eacb64d63082ec6d3472d94a5ebbd1a8053cbd4da98293655cb59ba70",
+    "dv/assertions/tb_property_negative.sv": "293a5f6be1cdc424ab2d04aa87c7f285c66cdf16d7e8c9ef94bcad73638b033b",
+    "scripts/assertion_checks.py": "285c28327377b8bdb627c64a0524aca493dd043562a2874f8f4e53641a47eb71",
+    "dv/coverage/coverage_report.py": "e6211239fbefde342dd3f0c3c83186a7ce97a24f1b835635fb250abd0b95f656",
+    "dv/coverage/tb_coverage.sv": "2bab9eb3b227baa3f5774c23db1e0db8e11ebad144a579dde8af4e84fcf98ab6",
+    "dv/coverage/test_coverage.py": "3ad6e391c884853c7339c251f56213982557ff03717104b4196d11561ebf7eeb",
+    "dv/reference/retire.py": "184ad394f3bb58043381d485768836bb139776056e5820c3e1dd8d7851f8f503",
+    "scripts/coverage_checks.py": "e12a10004aa95ccea5c9d304f2f1abe136139ba56bf32d17d270f927103b92e4",
+    "scripts/unit_checks.py": "dec178db4844dce3ffde1b159d0df82a843ec74737c7e5cd3f0a8f6c57b30849",
+    "scripts/rtl_checks.py": "bce64e8b85819113f9309956bf3ac754b1b00c0770eab438bc6a7327bdbc63d1",
+    "scripts/tool_runner.py": "3852a10dc400404743869e799378115b121d25657ebfac65457b39403d11198d",
+    "scripts/tool_child.py": "8a61d7f13507a0d41b838aef00b1488e9ecc0b535ff9a08caca729b0551b62a8",
+    "config/rtl_checks.json": "ab57164c78a52d738dcf5d365c60ff3aae940b85acb070d2471923a777faaf25",
+    ".harness/checks.json": "cf50ac11c6d3c53edf80af5d76b6ca8f15d49111e7ec99fce71609a47f333452",
+    "docs/ARCH_CONTRACT.json": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03"
+  },
+  "interpretation": "EX counters count simultaneous sampled edges, including held/killed work. ISA bins require exact whole-trace ISS equality. Remaining reachable crosses are coverage gaps, never exclusions or proof."
+}

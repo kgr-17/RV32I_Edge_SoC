@@ -1,0 +1,1754 @@
+{
+  "profile": "soc",
+  "status": "PASS",
+  "started_utc": "20261108T211807285722Z",
+  "base_commit": "a7bf63dbba10f983aa670ba8959b8feeaa0e69b6",
+  "scope": "Actual compiled RV32I CPU/memory/peripheral simulation, independent architectural/bus/serial checks; fabric unit DV",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\versions",
+      "started_utc": "2026-11-08T21:18:07.404510+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "git version 2.48.1.windows.1\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-5kaiwibo",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.125
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\versions\\xvlog",
+      "started_utc": "2026-11-08T21:18:07.519054+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-2u_2k2za",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.625
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\versions\\xelab",
+      "started_utc": "2026-11-08T21:18:08.156985+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-e4o132vb",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.609
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\versions\\xsim",
+      "started_utc": "2026-11-08T21:18:08.786813+00:00",
+      "timeout_seconds": 10,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2025 Xilinx, Inc. All Rights Reserved.\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-6nk9qb8j",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.484
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-gcc.exe",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\compiler",
+      "started_utc": "2026-11-08T21:18:09.306332+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "riscv32-xilinx-elf-gcc.exe (GCC) 13.4.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-f8j0hxdp",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.109
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-ld.exe",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\compiler",
+      "started_utc": "2026-11-08T21:18:09.427882+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "GNU ld (GNU Binutils) 2.43.1.20241111\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) a later version.\nThis program has absolutely no warranty.\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-nip85k02",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.125
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-objcopy.exe",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\compiler",
+      "started_utc": "2026-11-08T21:18:09.556660+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "GNU objcopy (GNU Binutils) 2.39.0.20220819\nCopyright (C) 2022 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) any later version.\nThis program has absolutely no warranty.\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-u1p9f_73",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.109
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-readelf.exe",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\compiler",
+      "started_utc": "2026-11-08T21:18:09.671090+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "GNU readelf (GNU Binutils) 2.39.0.20220819\nCopyright (C) 2022 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) any later version.\nThis program has absolutely no warranty.\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-i_iq3rc9",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.109
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-objdump.exe",
+        "--version"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\compiler",
+      "started_utc": "2026-11-08T21:18:09.776699+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "GNU objdump (GNU Binutils) 2.39.0.20220819\nCopyright (C) 2022 Free Software Foundation, Inc.\nThis program is free software; you may redistribute it under the terms of\nthe GNU General Public License version 3 or (at your option) any later version.\nThis program has absolutely no warranty.\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-7aio1ls4",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.094
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-gcc.exe",
+        "-dumpmachine"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\compiler",
+      "started_utc": "2026-11-08T21:18:09.882880+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "riscv32-xilinx-elf\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-b8jblg2m",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.109
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-gcc.exe",
+        "-march=rv32i",
+        "-mabi=ilp32",
+        "-misa-spec=20191213",
+        "-mno-relax",
+        "-Wa,--fatal-warnings",
+        "-c",
+        "C:\\RV32I_Edge_SoC\\sw\\boot.S",
+        "-o",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\compiler\\boot.o"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\compiler",
+      "started_utc": "2026-11-08T21:18:10.000136+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-5jkncpt0",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.156
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-gcc.exe",
+        "-march=rv32i",
+        "-mabi=ilp32",
+        "-misa-spec=20191213",
+        "-mno-relax",
+        "-Wa,--fatal-warnings",
+        "-c",
+        "C:\\RV32I_Edge_SoC\\sw\\soc_smoke.S",
+        "-o",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\compiler\\soc_smoke.o"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\compiler",
+      "started_utc": "2026-11-08T21:18:10.152362+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-1qf6eqfv",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.157
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-ld.exe",
+        "-m",
+        "elf32lriscv",
+        "--no-relax",
+        "--fatal-warnings",
+        "-T",
+        "C:\\RV32I_Edge_SoC\\sw\\linker.ld",
+        "-Map",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\compiler\\soc.map",
+        "-o",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\compiler\\soc.elf",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\compiler\\boot.o",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\compiler\\soc_smoke.o"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\compiler",
+      "started_utc": "2026-11-08T21:18:10.311820+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-aar6pkzu",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.14
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-objcopy.exe",
+        "-O",
+        "binary",
+        "--gap-fill",
+        "0",
+        "--pad-to",
+        "0x10000",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\compiler\\soc.elf",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\compiler\\soc.bin"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\compiler",
+      "started_utc": "2026-11-08T21:18:10.447175+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-ay1fs5ht",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.094
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-readelf.exe",
+        "-h",
+        "-lW",
+        "-sW",
+        "-A",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\compiler\\soc.elf"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\compiler",
+      "started_utc": "2026-11-08T21:18:10.552362+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "ELF Header:\n  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 \n  Class:                             ELF32\n  Data:                              2's complement, little endian\n  Version:                           1 (current)\n  OS/ABI:                            UNIX - System V\n  ABI Version:                       0\n  Type:                              EXEC (Executable file)\n  Machine:                           RISC-V\n  Version:                           0x1\n  Entry point address:               0x0\n  Start of program headers:          52 (bytes into file)\n  Start of section headers:          8996 (bytes into file)\n  Flags:                             0x0\n  Size of this header:               52 (bytes)\n  Size of program headers:           32 (bytes)\n  Number of program headers:         3\n  Size of section headers:           40 (bytes)\n  Number of section headers:         9\n  Section header string table index: 8\n\nProgram Headers:\n  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align\n  RISCV_ATTRIBUT 0x002008 0x00000000 0x00000000 0x0001a 0x00000 R   0x1\n  LOAD           0x001000 0x00000000 0x00000000 0x00214 0x00214 R E 0x1000\n  LOAD           0x002000 0x00010000 0x00000214 0x00008 0x00014 RW  0x1000\n\n Section to Segment mapping:\n  Segment Sections...\n   00     .riscv.attributes \n   01     .text .rodata \n   02     .data .bss \n\nSymbol table '.symtab' contains 29 entries:\n   Num:    Value  Size Type    Bind   Vis      Ndx Name\n     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND \n     1: 00000000     0 SECTION LOCAL  DEFAULT    1 .text\n     2: 00000204     0 SECTION LOCAL  DEFAULT    2 .rodata\n     3: 00010000     0 SECTION LOCAL  DEFAULT    3 .data\n     4: 00010008     0 SECTION LOCAL  DEFAULT    4 .bss\n     5: 00000000     0 SECTION LOCAL  DEFAULT    5 .riscv.attributes\n     6: 00000000     0 FILE    LOCAL  DEFAULT  ABS boot.o\n     7: 00000000     0 NOTYPE  LOCAL  DEFAULT    1 $xrv32i2p1\n     8: 00000000     0 FILE    LOCAL  DEFAULT  ABS soc_smoke.o\n     9: 00000064     0 NOTYPE  LOCAL  DEFAULT    1 $xrv32i2p1\n    10: 000001c0     0 NOTYPE  LOCAL  DEFAULT    1 failed\n    11: 00000204     0 NOTYPE  LOCAL  DEFAULT    2 pass_message\n    12: 000001dc     0 NOTYPE  LOCAL  DEFAULT    1 put_string\n    13: 000001d0     0 NOTYPE  LOCAL  DEFAULT    1 finished\n    14: 0000020b     0 NOTYPE  LOCAL  DEFAULT    2 fail_message\n    15: 00000214     0 NOTYPE  GLOBAL DEFAULT  ABS __data_load\n    16: 00010008     0 NOTYPE  GLOBAL DEFAULT    4 zero_area\n    17: 00010014     0 NOTYPE  GLOBAL DEFAULT    4 __bss_end\n    18: 00010010     0 NOTYPE  GLOBAL DEFAULT    4 signature\n    19: 0000005c     0 NOTYPE  GLOBAL DEFAULT    1 halt_ecall\n    20: 0000021c     0 NOTYPE  GLOBAL DEFAULT  ABS __rom_image_end\n    21: 00020000     0 NOTYPE  GLOBAL DEFAULT    4 __stack_top\n    22: 00000000   100 FUNC    GLOBAL DEFAULT    1 _start\n    23: 00010008     0 NOTYPE  GLOBAL DEFAULT    3 __data_end\n    24: 00010000     0 NOTYPE  GLOBAL DEFAULT    3 initial_data\n    25: 00010008     0 NOTYPE  GLOBAL DEFAULT    4 __bss_start\n    26: 00000064     0 NOTYPE  GLOBAL DEFAULT    1 main\n    27: 0001f000     0 NOTYPE  GLOBAL DEFAULT  ABS __stack_bottom\n    28: 00010000     0 NOTYPE  GLOBAL DEFAULT    3 __data_start\nAttribute Section: riscv\nFile Attributes\n  Tag_RISCV_arch: \"rv32i2p1\"\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-yg9y49x1",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.093
+    },
+    {
+      "argv": [
+        "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-objdump.exe",
+        "-d",
+        "-M",
+        "no-aliases",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\compiler\\soc.elf"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\compiler",
+      "started_utc": "2026-11-08T21:18:10.652268+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\nC:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\compiler\\soc.elf:     file format elf32-littleriscv\n\n\nDisassembly of section .text:\n\n00000000 <_start>:\n   0:\t00020117          \tauipc\tsp,0x20\n   4:\t00010113          \taddi\tsp,sp,0 # 20000 <__stack_top>\n   8:\t00000297          \tauipc\tt0,0x0\n   c:\t20c28293          \taddi\tt0,t0,524 # 214 <__data_load>\n  10:\t00010317          \tauipc\tt1,0x10\n  14:\tff030313          \taddi\tt1,t1,-16 # 10000 <__data_start>\n  18:\t00010397          \tauipc\tt2,0x10\n  1c:\tff038393          \taddi\tt2,t2,-16 # 10008 <__bss_start>\n  20:\t00737c63          \tbgeu\tt1,t2,38 <_start+0x38>\n  24:\t0002ae03          \tlw\tt3,0(t0)\n  28:\t01c32023          \tsw\tt3,0(t1)\n  2c:\t00428293          \taddi\tt0,t0,4\n  30:\t00430313          \taddi\tt1,t1,4\n  34:\tfedff06f          \tjal\tzero,20 <_start+0x20>\n  38:\t00010297          \tauipc\tt0,0x10\n  3c:\tfd028293          \taddi\tt0,t0,-48 # 10008 <__bss_start>\n  40:\t00010317          \tauipc\tt1,0x10\n  44:\tfd430313          \taddi\tt1,t1,-44 # 10014 <__bss_end>\n  48:\t0062f863          \tbgeu\tt0,t1,58 <_start+0x58>\n  4c:\t0002a023          \tsw\tzero,0(t0)\n  50:\t00428293          \taddi\tt0,t0,4\n  54:\tff5ff06f          \tjal\tzero,48 <_start+0x48>\n  58:\t00c000ef          \tjal\tra,64 <main>\n\n0000005c <halt_ecall>:\n  5c:\t00000073          \tecall\n  60:\t0000006f          \tjal\tzero,60 <halt_ecall+0x4>\n\n00000064 <main>:\n  64:\tff010113          \taddi\tsp,sp,-16\n  68:\t00112623          \tsw\tra,12(sp)\n  6c:\t00010297          \tauipc\tt0,0x10\n  70:\tf9428293          \taddi\tt0,t0,-108 # 10000 <__data_start>\n  74:\t0002a303          \tlw\tt1,0(t0)\n  78:\tcafec3b7          \tlui\tt2,0xcafec\n  7c:\tabe38393          \taddi\tt2,t2,-1346 # cafebabe <__stack_top+0xcafcbabe>\n  80:\t14731063          \tbne\tt1,t2,1c0 <failed>\n  84:\t0042a303          \tlw\tt1,4(t0)\n  88:\t1357a3b7          \tlui\tt2,0x1357a\n  8c:\tbdf38393          \taddi\tt2,t2,-1057 # 13579bdf <__stack_top+0x13559bdf>\n  90:\t12731863          \tbne\tt1,t2,1c0 <failed>\n  94:\t00010297          \tauipc\tt0,0x10\n  98:\tf7428293          \taddi\tt0,t0,-140 # 10008 <__bss_start>\n  9c:\t0002a303          \tlw\tt1,0(t0)\n  a0:\t0042a383          \tlw\tt2,4(t0)\n  a4:\t00736333          \tor\tt1,t1,t2\n  a8:\t10031c63          \tbne\tt1,zero,1c0 <failed>\n  ac:\t80ff8337          \tlui\tt1,0x80ff8\n  b0:\tf0130313          \taddi\tt1,t1,-255 # 80ff7f01 <__stack_top+0x80fd7f01>\n  b4:\t0062a023          \tsw\tt1,0(t0)\n  b8:\t00328383          \tlb\tt2,3(t0)\n  bc:\tf8000e13          \taddi\tt3,zero,-128\n  c0:\t11c39063          \tbne\tt2,t3,1c0 <failed>\n  c4:\t0032c383          \tlbu\tt2,3(t0)\n  c8:\t08000e13          \taddi\tt3,zero,128\n  cc:\t0fc39a63          \tbne\tt2,t3,1c0 <failed>\n  d0:\t00001337          \tlui\tt1,0x1\n  d4:\t23430313          \taddi\tt1,t1,564 # 1234 <__rom_image_end+0x1018>\n  d8:\t00629123          \tsh\tt1,2(t0)\n  dc:\t0022d383          \tlhu\tt2,2(t0)\n  e0:\t0e639063          \tbne\tt2,t1,1c0 <failed>\n  e4:\t05500313          \taddi\tt1,zero,85\n  e8:\t006280a3          \tsb\tt1,1(t0)\n  ec:\t0002a383          \tlw\tt2,0(t0)\n  f0:\t12345e37          \tlui\tt3,0x12345\n  f4:\t501e0e13          \taddi\tt3,t3,1281 # 12345501 <__stack_top+0x12325501>\n  f8:\t0dc39463          \tbne\tt2,t3,1c0 <failed>\n  fc:\t0001e2b7          \tlui\tt0,0x1e\n 100:\t0002a303          \tlw\tt1,0(t0) # 1e000 <__bss_end+0xdfec>\n 104:\t00130313          \taddi\tt1,t1,1\n 108:\t0062a023          \tsw\tt1,0(t0)\n 10c:\t100002b7          \tlui\tt0,0x10000\n 110:\t02028293          \taddi\tt0,t0,32 # 10000020 <__stack_top+0xffe0020>\n 114:\t0042a303          \tlw\tt1,4(t0)\n 118:\t0062a023          \tsw\tt1,0(t0)\n 11c:\t0f000393          \taddi\tt2,zero,240\n 120:\t00728423          \tsb\tt2,8(t0)\n 124:\t00f00393          \taddi\tt2,zero,15\n 128:\t00728623          \tsb\tt2,12(t0)\n 12c:\t0f036313          \tori\tt1,t1,240\n 130:\tff037313          \tandi\tt1,t1,-16\n 134:\t0002a383          \tlw\tt2,0(t0)\n 138:\t08731463          \tbne\tt1,t2,1c0 <failed>\n 13c:\t100002b7          \tlui\tt0,0x10000\n 140:\t10028293          \taddi\tt0,t0,256 # 10000100 <__stack_top+0xffe0100>\n 144:\t0002a423          \tsw\tzero,8(t0)\n 148:\tffc00313          \taddi\tt1,zero,-4\n 14c:\t0062a023          \tsw\tt1,0(t0)\n 150:\t0002a223          \tsw\tzero,4(t0)\n 154:\t00100313          \taddi\tt1,zero,1\n 158:\t0062a423          \tsw\tt1,8(t0)\n 15c:\t00c2a383          \tlw\tt2,12(t0)\n 160:\t0013f393          \tandi\tt2,t2,1\n 164:\tfe038ce3          \tbeq\tt2,zero,15c <main+0xf8>\n 168:\t0062a623          \tsw\tt1,12(t0)\n 16c:\t0002a423          \tsw\tzero,8(t0)\n 170:\t00c2a383          \tlw\tt2,12(t0)\n 174:\t04039663          \tbne\tt2,zero,1c0 <failed>\n 178:\t100002b7          \tlui\tt0,0x10000\n 17c:\t0042a303          \tlw\tt1,4(t0) # 10000004 <__stack_top+0xffe0004>\n 180:\t00237313          \tandi\tt1,t1,2\n 184:\tfe030ce3          \tbeq\tt1,zero,17c <main+0x118>\n 188:\t0082c303          \tlbu\tt1,8(t0)\n 18c:\t04100393          \taddi\tt2,zero,65\n 190:\t02731863          \tbne\tt1,t2,1c0 <failed>\n 194:\t0ff0000f          \tfence\tiorw,iorw\n 198:\t00000597          \tauipc\ta1,0x0\n 19c:\t06c58593          \taddi\ta1,a1,108 # 204 <pass_message>\n 1a0:\t03c000ef          \tjal\tra,1dc <put_string>\n 1a4:\t00010297          \tauipc\tt0,0x10\n 1a8:\te6c28293          \taddi\tt0,t0,-404 # 10010 <signature>\n 1ac:\t600d6337          \tlui\tt1,0x600d6\n 1b0:\t00d30313          \taddi\tt1,t1,13 # 600d600d <__stack_top+0x600b600d>\n 1b4:\t0062a023          \tsw\tt1,0(t0)\n 1b8:\t00000513          \taddi\ta0,zero,0\n 1bc:\t0140006f          \tjal\tzero,1d0 <finished>\n\n000001c0 <failed>:\n 1c0:\t00000597          \tauipc\ta1,0x0\n 1c4:\t04b58593          \taddi\ta1,a1,75 # 20b <fail_message>\n 1c8:\t014000ef          \tjal\tra,1dc <put_string>\n 1cc:\t00100513          \taddi\ta0,zero,1\n\n000001d0 <finished>:\n 1d0:\t00c12083          \tlw\tra,12(sp)\n 1d4:\t01010113          \taddi\tsp,sp,16\n 1d8:\t00008067          \tjalr\tzero,0(ra)\n\n000001dc <put_string>:\n 1dc:\t10000e37          \tlui\tt3,0x10000\n 1e0:\t0005c283          \tlbu\tt0,0(a1)\n 1e4:\t00028863          \tbeq\tt0,zero,1f4 <put_string+0x18>\n 1e8:\t005e0023          \tsb\tt0,0(t3) # 10000000 <__stack_top+0xffe0000>\n 1ec:\t00158593          \taddi\ta1,a1,1\n 1f0:\tff1ff06f          \tjal\tzero,1e0 <put_string+0x4>\n 1f4:\t004e2283          \tlw\tt0,4(t3)\n 1f8:\t0012f293          \tandi\tt0,t0,1\n 1fc:\tfe028ce3          \tbeq\tt0,zero,1f4 <put_string+0x18>\n 200:\t00008067          \tjalr\tzero,0(ra)\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-xobhe81p",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.11
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\rv32_pkg.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\decoder.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\alu.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\regfile.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\branch_unit.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\lsu.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\pipeline_core.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\forwarding_unit.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\hazard_unit.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\csr_file.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\trap_control.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\pipeline_cpu.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\memory\\boot_rom.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\memory\\data_ram.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\uart_tx.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\uart_rx.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\uart_mmio.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\input_sync.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\gpio.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\timer.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\reset_sync.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\soc\\soc_fabric.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\soc\\edge_soc.sv",
+        "C:\\RV32I_Edge_SoC\\fpga\\basys3\\top.sv",
+        "C:\\RV32I_Edge_SoC\\dv\\integration\\tb_soc_boot.sv",
+        "C:\\RV32I_Edge_SoC\\dv\\integration\\tb_soc_board.sv",
+        "C:\\RV32I_Edge_SoC\\dv\\integration\\tb_soc_fabric.sv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\simulation",
+      "started_utc": "2026-11-08T21:18:10.799677+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "INFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/rv32_pkg.sv\" into library work\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/decoder.sv\" into library work\nINFO: [VRFC 10-311] analyzing module decoder\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/alu.sv\" into library work\nINFO: [VRFC 10-311] analyzing module alu\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/regfile.sv\" into library work\nINFO: [VRFC 10-311] analyzing module regfile\nINFO: [VRFC 10-311] analyzing module rv32_regfile_word\nINFO: [VRFC 10-311] analyzing module rv32_regfile_read\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/branch_unit.sv\" into library work\nINFO: [VRFC 10-311] analyzing module branch_unit\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/lsu.sv\" into library work\nINFO: [VRFC 10-311] analyzing module lsu\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/pipeline_core.sv\" into library work\nINFO: [VRFC 10-311] analyzing module rv32_pipeline_stage\nINFO: [VRFC 10-311] analyzing module pipeline_registers\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/forwarding_unit.sv\" into library work\nINFO: [VRFC 10-311] analyzing module forwarding_unit\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/hazard_unit.sv\" into library work\nINFO: [VRFC 10-311] analyzing module hazard_unit\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/csr_file.sv\" into library work\nINFO: [VRFC 10-311] analyzing module csr_file\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/trap_control.sv\" into library work\nINFO: [VRFC 10-311] analyzing module trap_control\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/pipeline_cpu.sv\" into library work\nINFO: [VRFC 10-311] analyzing module pipeline_core\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/memory/boot_rom.sv\" into library work\nINFO: [VRFC 10-311] analyzing module boot_rom\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/memory/data_ram.sv\" into library work\nINFO: [VRFC 10-311] analyzing module data_ram\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/uart_tx.sv\" into library work\nINFO: [VRFC 10-311] analyzing module uart_tx\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/uart_rx.sv\" into library work\nINFO: [VRFC 10-311] analyzing module uart_rx\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/uart_mmio.sv\" into library work\nINFO: [VRFC 10-311] analyzing module uart_mmio\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/input_sync.sv\" into library work\nINFO: [VRFC 10-311] analyzing module input_sync\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/gpio.sv\" into library work\nINFO: [VRFC 10-311] analyzing module gpio\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/timer.sv\" into library work\nINFO: [VRFC 10-311] analyzing module timer\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/reset_sync.sv\" into library work\nINFO: [VRFC 10-311] analyzing module reset_sync\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/soc/soc_fabric.sv\" into library work\nINFO: [VRFC 10-311] analyzing module soc_fabric\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/soc/edge_soc.sv\" into library work\nINFO: [VRFC 10-311] analyzing module edge_soc\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/fpga/basys3/top.sv\" into library work\nINFO: [VRFC 10-311] analyzing module basys3_top\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/integration/tb_soc_boot.sv\" into library work\nINFO: [VRFC 10-311] analyzing module tb_soc_boot\nINFO: [VRFC 10-311] analyzing module tb_soc_boot_default\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/integration/tb_soc_board.sv\" into library work\nINFO: [VRFC 10-311] analyzing module tb_soc_board\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/integration/tb_soc_fabric.sv\" into library work\nINFO: [VRFC 10-311] analyzing module tb_soc_fabric\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-8i92j2uf",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.812
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "work.tb_soc_boot",
+        "--snapshot",
+        "soc_fast",
+        "--timescale",
+        "1ns/1ps",
+        "--debug",
+        "typical"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\simulation",
+      "started_utc": "2026-11-08T21:18:11.622495+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nRunning: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_soc_boot --snapshot soc_fast --timescale 1ns/1ps --debug typical \nMulti-threading is on. Using 26 slave threads.\nStarting static elaboration\nPass Through NonSizing Optimizer\nCompleted static elaboration\nStarting simulation data flow analysis\nCompleted simulation data flow analysis\nTime Resolution for simulation is 1ps\nCompiling package work.rv32_pkg\nCompiling module work.reset_sync_default\nCompiling module work.decoder\nCompiling module work.rv32_regfile_word\nCompiling module work.rv32_regfile_read\nCompiling module work.regfile_default\nCompiling module work.forwarding_unit\nCompiling module work.hazard_unit\nCompiling module work.alu\nCompiling module work.branch_unit(MASK_UNTAKEN_TARGET=...\nCompiling module work.lsu\nCompiling module work.rv32_pipeline_stage(PRELOAD_WHEN...\nCompiling module work.rv32_pipeline_stage(WIDTH=32'b01...\nCompiling module work.rv32_pipeline_stage(WIDTH=32'b01...\nCompiling module work.rv32_pipeline_stage(WIDTH=32'b01...\nCompiling module work.rv32_pipeline_stage(WIDTH=32'b01...\nCompiling module work.pipeline_core_default\nCompiling module work.boot_rom(INIT_FILE=\"soc_boot.mem...\nCompiling module work.data_ram\nCompiling module work.uart_tx(CLKS_PER_BIT=32'b01000)\nCompiling module work.uart_rx(CLKS_PER_BIT=32'b01000)\nCompiling module work.uart_mmio(CLKS_PER_BIT=32'b01000...\nCompiling module work.input_sync_default\nCompiling module work.gpio\nCompiling module work.timer\nCompiling module work.soc_fabric(UART_CLKS_PER_BIT=32'...\nCompiling module work.edge_soc(UART_CLKS_PER_BIT=32'b0...\nCompiling module work.tb_soc_boot\nBuilt simulation snapshot soc_fast\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-dncx162o",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 3.516
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "work.tb_soc_board",
+        "--snapshot",
+        "soc_default",
+        "--timescale",
+        "1ns/1ps",
+        "--debug",
+        "typical"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\simulation",
+      "started_utc": "2026-11-08T21:18:15.142814+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nRunning: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_soc_board --snapshot soc_default --timescale 1ns/1ps --debug typical \nMulti-threading is on. Using 26 slave threads.\nStarting static elaboration\nPass Through NonSizing Optimizer\nCompleted static elaboration\nStarting simulation data flow analysis\nCompleted simulation data flow analysis\nTime Resolution for simulation is 1ps\nCompiling package work.rv32_pkg\nCompiling module work.reset_sync(ASYNC_ASSERT=1'b0)\nCompiling module work.decoder\nCompiling module work.rv32_regfile_word\nCompiling module work.rv32_regfile_read\nCompiling module work.regfile_default\nCompiling module work.forwarding_unit\nCompiling module work.hazard_unit\nCompiling module work.alu\nCompiling module work.branch_unit(MASK_UNTAKEN_TARGET=...\nCompiling module work.lsu\nCompiling module work.rv32_pipeline_stage(PRELOAD_WHEN...\nCompiling module work.rv32_pipeline_stage(WIDTH=32'b01...\nCompiling module work.rv32_pipeline_stage(WIDTH=32'b01...\nCompiling module work.rv32_pipeline_stage(WIDTH=32'b01...\nCompiling module work.rv32_pipeline_stage(WIDTH=32'b01...\nCompiling module work.pipeline_core_default\nCompiling module work.boot_rom(INIT_FILE=\"soc_boot.mem...\nCompiling module work.data_ram\nCompiling module work.uart_tx_default\nCompiling module work.uart_rx_default\nCompiling module work.uart_mmio\nCompiling module work.input_sync_default\nCompiling module work.gpio\nCompiling module work.timer\nCompiling module work.soc_fabric\nCompiling module work.edge_soc\nCompiling module work.basys3_top(ENABLE_TRAPS=1'b0,ROM...\nCompiling module work.tb_soc_board\nBuilt simulation snapshot soc_default\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-nsb1vrfl",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 3.532
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "work.tb_soc_fabric",
+        "--snapshot",
+        "fabric",
+        "--timescale",
+        "1ns/1ps",
+        "--debug",
+        "typical"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\simulation",
+      "started_utc": "2026-11-08T21:18:18.688026+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nRunning: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_soc_fabric --snapshot fabric --timescale 1ns/1ps --debug typical \nMulti-threading is on. Using 26 slave threads.\nStarting static elaboration\nPass Through NonSizing Optimizer\nCompleted static elaboration\nStarting simulation data flow analysis\nCompleted simulation data flow analysis\nTime Resolution for simulation is 1ps\nCompiling module work.boot_rom(INIT_FILE=\"fabric_patte...\nCompiling module work.data_ram\nCompiling module work.uart_tx(CLKS_PER_BIT=32'b01000)\nCompiling module work.uart_rx(CLKS_PER_BIT=32'b01000)\nCompiling module work.uart_mmio(CLKS_PER_BIT=32'b01000...\nCompiling module work.input_sync_default\nCompiling module work.gpio\nCompiling module work.timer\nCompiling module work.soc_fabric(ROM_INIT_FILE=\"fabric...\nCompiling module work.tb_soc_fabric\nBuilt simulation snapshot fabric\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-hkm45ci8",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.11
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "fabric",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\simulation\\fabric-1.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\simulation",
+      "started_utc": "2026-11-08T21:18:20.893784+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Nov  8 13:18:21 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/fabric/xsim_script.tcl\n# xsim {fabric} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-1.txt -wdb {C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-1.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-1.tcl} -onfinish quit -onerror quit\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-1.tcl\n## log_wave /tb_soc_fabric/clk /tb_soc_fabric/rst /tb_soc_fabric/ir /tb_soc_fabric/is /tb_soc_fabric/dr /tb_soc_fabric/ds /tb_soc_fabric/leds\n## run all\nFABRIC_SIM_PASS seed=1 checked=4006\n$finish called at time : 40066 ns : File \"C:/RV32I_Edge_SoC/dv/integration/tb_soc_fabric.sv\" Line 52\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sun Nov  8 13:18:23 2026...\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-91l7ge3w",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.594,
+      "argument_file": {
+        "path": "build\\T031\\soc-20261108T211807285722Z\\simulation\\fabric-1.args",
+        "sha256": "c810d7ea595829c1f024b2de1b5a3c77c8aa9d4c702840fb6a5821602962e277",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-1.tcl\n--onerror\nquit\n--onfinish\nquit\n--wdb\nC:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-1.wdb\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-1.txt\n",
+        "intended_argv": [
+          "fabric",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-1.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-1.wdb",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-1.txt"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "fabric",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\simulation\\fabric-20261107.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\simulation",
+      "started_utc": "2026-11-08T21:18:23.585557+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Nov  8 13:18:24 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/fabric/xsim_script.tcl\n# xsim {fabric} -testplusarg SEED=20261107 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-20261107.txt -wdb {C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-20261107.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-20261107.tcl} -onfinish quit -onerror quit\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-20261107.tcl\n## log_wave /tb_soc_fabric/clk /tb_soc_fabric/rst /tb_soc_fabric/ir /tb_soc_fabric/is /tb_soc_fabric/dr /tb_soc_fabric/ds /tb_soc_fabric/leds\n## run all\nFABRIC_SIM_PASS seed=20261107 checked=3970\n$finish called at time : 39706 ns : File \"C:/RV32I_Edge_SoC/dv/integration/tb_soc_fabric.sv\" Line 52\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sun Nov  8 13:18:26 2026...\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-akgnuvsz",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.531,
+      "argument_file": {
+        "path": "build\\T031\\soc-20261108T211807285722Z\\simulation\\fabric-20261107.args",
+        "sha256": "1e6e5a1652d6be1f28160623d27efdb5d3ed9bc102dc1af03d0f92f0458f2c5d",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-20261107.tcl\n--onerror\nquit\n--onfinish\nquit\n--wdb\nC:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-20261107.wdb\n--testplusarg\nSEED=20261107\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-20261107.txt\n",
+        "intended_argv": [
+          "fabric",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-20261107.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-20261107.wdb",
+          "--testplusarg",
+          "SEED=20261107",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-20261107.txt"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "fabric",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\simulation\\fabric-wrong-expected.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\simulation",
+      "started_utc": "2026-11-08T21:18:26.212832+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Nov  8 13:18:26 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/fabric/xsim_script.tcl\n# xsim {fabric} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-wrong-expected.txt -wdb {C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-wrong-expected.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-wrong-expected.tcl} -onfinish quit -onerror quit\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-wrong-expected.tcl\n## log_wave /tb_soc_fabric/clk /tb_soc_fabric/rst\n## run all\nFatal: FABRIC_MISMATCH phase=pre checked=0\nTime: 14 ns  Iteration: 0  Process: /tb_soc_fabric/Initial34_18  Scope: tb_soc_fabric  File: C:/RV32I_Edge_SoC/dv/integration/tb_soc_fabric.sv Line: 41\n$finish called at time : 14 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sun Nov  8 13:18:28 2026...\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-mnqtkgzb",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.453,
+      "argument_file": {
+        "path": "build\\T031\\soc-20261108T211807285722Z\\simulation\\fabric-wrong-expected.args",
+        "sha256": "5f3c5d8c542d5a0a5cf232ea8c69e9b0f1665bcdabb7e2d747b7b1cbe72fdbb5",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-wrong-expected.tcl\n--onerror\nquit\n--onfinish\nquit\n--wdb\nC:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-wrong-expected.wdb\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-wrong-expected.txt\n",
+        "intended_argv": [
+          "fabric",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-wrong-expected.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-wrong-expected.wdb",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-wrong-expected.txt"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "fabric",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\simulation\\fabric-empty.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\simulation",
+      "started_utc": "2026-11-08T21:18:28.684295+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Nov  8 13:18:29 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/fabric/xsim_script.tcl\n# xsim {fabric} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-empty.txt -wdb {C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-empty.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-empty.tcl} -onfinish quit -onerror quit\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-empty.tcl\n## log_wave /tb_soc_fabric/clk /tb_soc_fabric/rst\n## run all\nFatal: FABRIC_EMPTY_VECTORS\nTime: 0 ps  Iteration: 0  Process: /tb_soc_fabric/Initial34_18  Scope: tb_soc_fabric  File: C:/RV32I_Edge_SoC/dv/integration/tb_soc_fabric.sv Line: 50\n$finish called at time : 0 fs\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sun Nov  8 13:18:31 2026...\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-kly0khs2",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.484,
+      "argument_file": {
+        "path": "build\\T031\\soc-20261108T211807285722Z\\simulation\\fabric-empty.args",
+        "sha256": "91209b16903c5843ab1d7800c87695bc090496150f6fbdda44aae5e4689ecc8f",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-empty.tcl\n--onerror\nquit\n--onfinish\nquit\n--wdb\nC:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-empty.wdb\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-empty.txt\n",
+        "intended_argv": [
+          "fabric",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-empty.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-empty.wdb",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-empty.txt"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "fabric",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\simulation\\fabric-truncated.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\simulation",
+      "started_utc": "2026-11-08T21:18:31.183270+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Nov  8 13:18:31 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/fabric/xsim_script.tcl\n# xsim {fabric} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-truncated.txt -wdb {C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-truncated.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-truncated.tcl} -onfinish quit -onerror quit\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-truncated.tcl\n## log_wave /tb_soc_fabric/clk /tb_soc_fabric/rst\n## run all\nFatal: FABRIC_MALFORMED_VECTOR\nTime: 16 ns  Iteration: 0  Process: /tb_soc_fabric/Initial34_18  Scope: tb_soc_fabric  File: C:/RV32I_Edge_SoC/dv/integration/tb_soc_fabric.sv Line: 51\n$finish called at time : 16 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sun Nov  8 13:18:33 2026...\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-pyzz44p_",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.453,
+      "argument_file": {
+        "path": "build\\T031\\soc-20261108T211807285722Z\\simulation\\fabric-truncated.args",
+        "sha256": "1b1f3e1161d7a9a37d9945ae6d78dcbe27a40d50574e4e90406320ab7856b85f",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-truncated.tcl\n--onerror\nquit\n--onfinish\nquit\n--wdb\nC:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-truncated.wdb\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-truncated.txt\n",
+        "intended_argv": [
+          "fabric",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-truncated.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-truncated.wdb",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fabric-truncated.txt"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "soc_fast",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\simulation\\fast-1.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\simulation",
+      "started_utc": "2026-11-08T21:18:33.650967+00:00",
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Nov  8 13:18:34 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/soc_fast/xsim_script.tcl\n# xsim {soc_fast} -testplusarg SEED=1 -testplusarg TRACE=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fast-1.trace -wdb {C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fast-1.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fast-1.tcl} -onfinish quit -onerror quit\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fast-1.tcl\n## log_wave /tb_soc_boot/clk /tb_soc_boot/rst /tb_soc_boot/rx /tb_soc_boot/tx /tb_soc_boot/leds /tb_soc_boot/rv /tb_soc_boot/pc /tb_soc_boot/fv\n## run all\nSOC_RUN_COMPLETE seed=1 divisor=8 rows=1970 phases=2\n$finish called at time : 19706 ns : File \"C:/RV32I_Edge_SoC/dv/integration/tb_soc_boot.sv\" Line 63\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sun Nov  8 13:18:36 2026...\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-elule6oz",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.594,
+      "argument_file": {
+        "path": "build\\T031\\soc-20261108T211807285722Z\\simulation\\fast-1.args",
+        "sha256": "bab12089721859b435bfba13b5be0810d9bdacfd0d6534483d6a2185180af710",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fast-1.tcl\n--onerror\nquit\n--onfinish\nquit\n--wdb\nC:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fast-1.wdb\n--testplusarg\nSEED=1\n--testplusarg\nTRACE=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fast-1.trace\n",
+        "intended_argv": [
+          "soc_fast",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fast-1.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fast-1.wdb",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "TRACE=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fast-1.trace"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "soc_fast",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\simulation\\fast-20261107.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\simulation",
+      "started_utc": "2026-11-08T21:18:36.407392+00:00",
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Nov  8 13:18:37 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/soc_fast/xsim_script.tcl\n# xsim {soc_fast} -testplusarg SEED=20261107 -testplusarg TRACE=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fast-20261107.trace -wdb {C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fast-20261107.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fast-20261107.tcl} -onfinish quit -onerror quit\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fast-20261107.tcl\n## log_wave /tb_soc_boot/clk /tb_soc_boot/rst /tb_soc_boot/rx /tb_soc_boot/tx /tb_soc_boot/leds /tb_soc_boot/rv /tb_soc_boot/pc /tb_soc_boot/fv\n## run all\nSOC_RUN_COMPLETE seed=20261107 divisor=8 rows=1970 phases=2\n$finish called at time : 19706 ns : File \"C:/RV32I_Edge_SoC/dv/integration/tb_soc_boot.sv\" Line 63\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sun Nov  8 13:18:38 2026...\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-ivzuays7",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.578,
+      "argument_file": {
+        "path": "build\\T031\\soc-20261108T211807285722Z\\simulation\\fast-20261107.args",
+        "sha256": "5fd1ea86ba7c7f883c54581fa48baf6235d7909931b79bda6c8da07553c553c7",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fast-20261107.tcl\n--onerror\nquit\n--onfinish\nquit\n--wdb\nC:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fast-20261107.wdb\n--testplusarg\nSEED=20261107\n--testplusarg\nTRACE=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fast-20261107.trace\n",
+        "intended_argv": [
+          "soc_fast",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fast-20261107.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fast-20261107.wdb",
+          "--testplusarg",
+          "SEED=20261107",
+          "--testplusarg",
+          "TRACE=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/fast-20261107.trace"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "soc_default",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\simulation\\production.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\simulation",
+      "started_utc": "2026-11-08T21:18:39.160711+00:00",
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Nov  8 13:18:39 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/soc_default/xsim_script.tcl\n# xsim {soc_default} -testplusarg SEED=1 -testplusarg TRACE=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/production.trace -wdb {C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/production.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/production.tcl} -onfinish quit -onerror quit\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/production.tcl\n## log_wave /tb_soc_board/clk /tb_soc_board/rst /tb_soc_board/rx /tb_soc_board/tx /tb_soc_board/leds /tb_soc_board/rv /tb_soc_board/pc /tb_soc_board/fv\n## run all\nSOC_RUN_COMPLETE seed=1 divisor=868 rows=121332 phases=2\n$finish called at time : 1213326 ns : File \"C:/RV32I_Edge_SoC/dv/integration/tb_soc_board.sv\" Line 81\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sun Nov  8 13:18:45 2026...\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-ewim911v",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 6.687,
+      "argument_file": {
+        "path": "build\\T031\\soc-20261108T211807285722Z\\simulation\\production.args",
+        "sha256": "9f01c783f79099b4476a2005b6a5b852e955967251ecd032c5d21908e0c12b6e",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/production.tcl\n--onerror\nquit\n--onfinish\nquit\n--wdb\nC:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/production.wdb\n--testplusarg\nSEED=1\n--testplusarg\nTRACE=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/production.trace\n",
+        "intended_argv": [
+          "soc_default",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/production.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/production.wdb",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "TRACE=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/production.trace"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "soc_fast",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\simulation\\corrupt-rom.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\simulation",
+      "started_utc": "2026-11-08T21:18:49.610563+00:00",
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Nov  8 13:18:50 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/soc_fast/xsim_script.tcl\n# xsim {soc_fast} -testplusarg SEED=1 -testplusarg TRACE=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/corrupt-rom.trace -wdb {C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/corrupt-rom.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/corrupt-rom.tcl} -onfinish quit -onerror quit\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/corrupt-rom.tcl\n## log_wave /tb_soc_boot/clk /tb_soc_boot/rst /tb_soc_boot/rx /tb_soc_boot/tx /tb_soc_boot/leds /tb_soc_boot/rv /tb_soc_boot/pc /tb_soc_boot/fv\n## run all\nSOC_RUN_COMPLETE seed=1 divisor=8 rows=1496 phases=2\n$finish called at time : 14966 ns : File \"C:/RV32I_Edge_SoC/dv/integration/tb_soc_boot.sv\" Line 63\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sun Nov  8 13:18:52 2026...\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-pdbphvot",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.469,
+      "argument_file": {
+        "path": "build\\T031\\soc-20261108T211807285722Z\\simulation\\corrupt-rom.args",
+        "sha256": "fa46424f386947a6acbe6a178b5476904c2d113a2a9d49d7c728172a1f9fb641",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/corrupt-rom.tcl\n--onerror\nquit\n--onfinish\nquit\n--wdb\nC:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/corrupt-rom.wdb\n--testplusarg\nSEED=1\n--testplusarg\nTRACE=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/corrupt-rom.trace\n",
+        "intended_argv": [
+          "soc_fast",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/corrupt-rom.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/corrupt-rom.wdb",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "TRACE=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/simulation/corrupt-rom.trace"
+        ]
+      }
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xvlog.bat",
+        "--sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\rv32_pkg.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\decoder.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\alu.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\regfile.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\branch_unit.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\lsu.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\pipeline_core.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\forwarding_unit.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\hazard_unit.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\csr_file.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\trap_control.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\core\\pipeline_cpu.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\memory\\boot_rom.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\memory\\data_ram.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\uart_tx.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\uart_rx.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\uart_mmio.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\input_sync.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\gpio.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\timer.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\peripherals\\reset_sync.sv",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\early-store\\soc_fabric.sv",
+        "C:\\RV32I_Edge_SoC\\rtl\\soc\\edge_soc.sv",
+        "C:\\RV32I_Edge_SoC\\dv\\integration\\tb_soc_fabric.sv"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\early-store",
+      "started_utc": "2026-11-08T21:18:52.158078+00:00",
+      "timeout_seconds": 30,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "INFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/rv32_pkg.sv\" into library work\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/decoder.sv\" into library work\nINFO: [VRFC 10-311] analyzing module decoder\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/alu.sv\" into library work\nINFO: [VRFC 10-311] analyzing module alu\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/regfile.sv\" into library work\nINFO: [VRFC 10-311] analyzing module regfile\nINFO: [VRFC 10-311] analyzing module rv32_regfile_word\nINFO: [VRFC 10-311] analyzing module rv32_regfile_read\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/branch_unit.sv\" into library work\nINFO: [VRFC 10-311] analyzing module branch_unit\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/lsu.sv\" into library work\nINFO: [VRFC 10-311] analyzing module lsu\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/pipeline_core.sv\" into library work\nINFO: [VRFC 10-311] analyzing module rv32_pipeline_stage\nINFO: [VRFC 10-311] analyzing module pipeline_registers\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/forwarding_unit.sv\" into library work\nINFO: [VRFC 10-311] analyzing module forwarding_unit\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/hazard_unit.sv\" into library work\nINFO: [VRFC 10-311] analyzing module hazard_unit\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/csr_file.sv\" into library work\nINFO: [VRFC 10-311] analyzing module csr_file\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/trap_control.sv\" into library work\nINFO: [VRFC 10-311] analyzing module trap_control\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/core/pipeline_cpu.sv\" into library work\nINFO: [VRFC 10-311] analyzing module pipeline_core\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/memory/boot_rom.sv\" into library work\nINFO: [VRFC 10-311] analyzing module boot_rom\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/memory/data_ram.sv\" into library work\nINFO: [VRFC 10-311] analyzing module data_ram\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/uart_tx.sv\" into library work\nINFO: [VRFC 10-311] analyzing module uart_tx\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/uart_rx.sv\" into library work\nINFO: [VRFC 10-311] analyzing module uart_rx\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/uart_mmio.sv\" into library work\nINFO: [VRFC 10-311] analyzing module uart_mmio\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/input_sync.sv\" into library work\nINFO: [VRFC 10-311] analyzing module input_sync\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/gpio.sv\" into library work\nINFO: [VRFC 10-311] analyzing module gpio\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/timer.sv\" into library work\nINFO: [VRFC 10-311] analyzing module timer\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/peripherals/reset_sync.sv\" into library work\nINFO: [VRFC 10-311] analyzing module reset_sync\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/early-store/soc_fabric.sv\" into library work\nINFO: [VRFC 10-311] analyzing module soc_fabric\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/rtl/soc/edge_soc.sv\" into library work\nINFO: [VRFC 10-311] analyzing module edge_soc\nINFO: [VRFC 10-2263] Analyzing SystemVerilog file \"C:/RV32I_Edge_SoC/dv/integration/tb_soc_fabric.sv\" into library work\nINFO: [VRFC 10-311] analyzing module tb_soc_fabric\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-6lamq27l",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 0.766
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xelab.bat",
+        "work.tb_soc_fabric",
+        "--snapshot",
+        "early_store",
+        "--timescale",
+        "1ns/1ps",
+        "--debug",
+        "typical"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\early-store",
+      "started_utc": "2026-11-08T21:18:52.951576+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "Vivado Simulator v2025.2\nCopyright 1986-2022 Xilinx, Inc. All Rights Reserved.\nCopyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\nRunning: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_soc_fabric --snapshot early_store --timescale 1ns/1ps --debug typical \nMulti-threading is on. Using 26 slave threads.\nStarting static elaboration\nPass Through NonSizing Optimizer\nCompleted static elaboration\nStarting simulation data flow analysis\nCompleted simulation data flow analysis\nTime Resolution for simulation is 1ps\nCompiling module work.boot_rom(INIT_FILE=\"fabric_patte...\nCompiling module work.data_ram\nCompiling module work.uart_tx(CLKS_PER_BIT=32'b01000)\nCompiling module work.uart_rx(CLKS_PER_BIT=32'b01000)\nCompiling module work.uart_mmio(CLKS_PER_BIT=32'b01000...\nCompiling module work.input_sync_default\nCompiling module work.gpio\nCompiling module work.timer\nCompiling module work.soc_fabric(ROM_INIT_FILE=\"fabric...\nCompiling module work.tb_soc_fabric\nBuilt simulation snapshot early_store\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-k88pxvn1",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.078
+    },
+    {
+      "argv": [
+        "cmd.exe",
+        "/d",
+        "/c",
+        "C:/AMDDesignTools/2025.2/Vivado/bin/xsim.bat",
+        "early_store",
+        "--file",
+        "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\early-store\\early-store.args"
+      ],
+      "cwd": "C:\\RV32I_Edge_SoC\\build\\T031\\soc-20261108T211807285722Z\\early-store",
+      "started_utc": "2026-11-08T21:18:55.039489+00:00",
+      "timeout_seconds": 45,
+      "exit_code": 0,
+      "status": "PASS",
+      "stdout": "\n****** xsim v2025.2 (64-bit)\n  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025\n  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025\n  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025\n  **** Start of session at: Sun Nov  8 13:18:55 2026\n    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.\n    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.\n\nsource xsim.dir/early_store/xsim_script.tcl\n# xsim {early_store} -testplusarg SEED=1 -testplusarg VECTORS=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/early-store/vectors.txt -wdb {C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/early-store/early-store.wdb} -autoloadwcfg -tclbatch {C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/early-store/early-store.tcl} -onfinish quit -onerror quit\nTime resolution is 1 ps\nsource C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/early-store/early-store.tcl\n## log_wave /tb_soc_fabric/clk /tb_soc_fabric/rst\n## run all\nFatal: FABRIC_MISMATCH phase=post checked=7\nTime: 86 ns  Iteration: 0  Process: /tb_soc_fabric/Initial34_18  Scope: tb_soc_fabric  File: C:/RV32I_Edge_SoC/dv/integration/tb_soc_fabric.sv Line: 47\n$finish called at time : 86 ns\nexit 0\nINFO: [Common 17-206] Exiting xsim at Sun Nov  8 13:18:57 2026...\n",
+      "stderr": "",
+      "temporary_directory": "C:\\RV32I_Edge_SoC\\build\\tmp\\eda-9wan_dzh",
+      "cleanup": "Windows Job Object",
+      "duration_seconds": 2.422,
+      "argument_file": {
+        "path": "build\\T031\\soc-20261108T211807285722Z\\early-store\\early-store.args",
+        "sha256": "21fdc2aecd12bfb22062564e9bbd7e8c64c04f24fc59262a5744afb12886388c",
+        "content": "--tclbatch\nC:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/early-store/early-store.tcl\n--onerror\nquit\n--onfinish\nquit\n--wdb\nC:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/early-store/early-store.wdb\n--testplusarg\nSEED=1\n--testplusarg\nVECTORS=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/early-store/vectors.txt\n",
+        "intended_argv": [
+          "early_store",
+          "--tclbatch",
+          "C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/early-store/early-store.tcl",
+          "--onerror",
+          "quit",
+          "--onfinish",
+          "quit",
+          "--wdb",
+          "C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/early-store/early-store.wdb",
+          "--testplusarg",
+          "SEED=1",
+          "--testplusarg",
+          "VECTORS=C:/RV32I_Edge_SoC/build/T031/soc-20261108T211807285722Z/early-store/vectors.txt"
+        ]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "Pinned Python version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned tzdata version",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Pinned Git version",
+      "status": "PASS",
+      "command_index": 0
+    },
+    {
+      "name": "Pinned xvlog version",
+      "status": "PASS",
+      "command_index": 1
+    },
+    {
+      "name": "Pinned xelab version",
+      "status": "PASS",
+      "command_index": 2
+    },
+    {
+      "name": "Pinned xsim version",
+      "status": "PASS",
+      "command_index": 3
+    },
+    {
+      "name": "Pinned software tool gcc",
+      "status": "PASS",
+      "command_index": 4
+    },
+    {
+      "name": "Pinned software tool ld",
+      "status": "PASS",
+      "command_index": 5
+    },
+    {
+      "name": "Pinned software tool objcopy",
+      "status": "PASS",
+      "command_index": 6
+    },
+    {
+      "name": "Pinned software tool readelf",
+      "status": "PASS",
+      "command_index": 7
+    },
+    {
+      "name": "Pinned software tool objdump",
+      "status": "PASS",
+      "command_index": 8
+    },
+    {
+      "name": "Actual RV32 compiler target",
+      "status": "PASS",
+      "command_index": 9
+    },
+    {
+      "name": "Actual SoC assembly boot",
+      "status": "PASS",
+      "command_index": 10
+    },
+    {
+      "name": "Actual SoC assembly soc_smoke",
+      "status": "PASS",
+      "command_index": 11
+    },
+    {
+      "name": "Actual SoC approved-map link",
+      "status": "PASS",
+      "command_index": 12
+    },
+    {
+      "name": "Independent SoC ELF LMA image equals objcopy64KiB",
+      "status": "PASS",
+      "command_index": 13
+    },
+    {
+      "name": "Actual SoC readelf",
+      "status": "PASS",
+      "command_index": 14
+    },
+    {
+      "name": "Actual SoC objdump",
+      "status": "PASS",
+      "command_index": 15
+    },
+    {
+      "name": "Committed separate SoC image matches fresh actual build",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual SoC/fabric compile simulation",
+      "status": "PASS",
+      "command_index": 16
+    },
+    {
+      "name": "Actual elaboration tb_soc_boot",
+      "status": "PASS",
+      "command_index": 17
+    },
+    {
+      "name": "Actual elaboration tb_soc_board",
+      "status": "PASS",
+      "command_index": 18
+    },
+    {
+      "name": "Actual elaboration tb_soc_fabric",
+      "status": "PASS",
+      "command_index": 19
+    },
+    {
+      "name": "Waveform retained fabric-1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Independent fabric vectors 1",
+      "status": "PASS",
+      "command_index": 20
+    },
+    {
+      "name": "Waveform retained fabric-20261107",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Independent fabric vectors 20261107",
+      "status": "PASS",
+      "command_index": 21
+    },
+    {
+      "name": "Waveform retained fabric-wrong-expected",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual fabric negative wrong-expected",
+      "status": "PASS",
+      "command_index": 22
+    },
+    {
+      "name": "Waveform retained fabric-empty",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual fabric negative empty",
+      "status": "PASS",
+      "command_index": 23
+    },
+    {
+      "name": "Waveform retained fabric-truncated",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual fabric negative truncated",
+      "status": "PASS",
+      "command_index": 24
+    },
+    {
+      "name": "Waveform retained fast-1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Native boot completed fast-1",
+      "status": "PASS",
+      "command_index": 25
+    },
+    {
+      "name": "Independent bus/ISA/RAM/UART cold+warm boot fast-1",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Trace checker rejects fast-1 wrong-retirement",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Trace checker rejects fast-1 truncated",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Trace checker rejects fast-1 empty",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Waveform retained fast-20261107",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Native boot completed fast-20261107",
+      "status": "PASS",
+      "command_index": 26
+    },
+    {
+      "name": "Independent bus/ISA/RAM/UART cold+warm boot fast-20261107",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Trace checker rejects fast-20261107 wrong-retirement",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Trace checker rejects fast-20261107 truncated",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Trace checker rejects fast-20261107 empty",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Waveform retained production",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Native boot completed production",
+      "status": "PASS",
+      "command_index": 27
+    },
+    {
+      "name": "Independent bus/ISA/RAM/UART cold+warm boot production",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Trace checker rejects production wrong-retirement",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Trace checker rejects production truncated",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Trace checker rejects production empty",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Waveform retained corrupt-rom",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Native boot completed corrupt-rom",
+      "status": "PASS",
+      "command_index": 28
+    },
+    {
+      "name": "Actual corrupt-ROM rejected by bus oracle",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Unique pending-state RAM address mutation site",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Complete coherent early-write RTL mutation",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual SoC/fabric compile early-store",
+      "status": "PASS",
+      "command_index": 29
+    },
+    {
+      "name": "Actual elaboration tb_soc_fabric",
+      "status": "PASS",
+      "command_index": 30
+    },
+    {
+      "name": "Waveform retained early-store",
+      "status": "PASS",
+      "command_index": null
+    },
+    {
+      "name": "Actual early-store/reset-cancellation RTL defect rejected",
+      "status": "PASS",
+      "command_index": 31
+    },
+    {
+      "name": "All SoC inputs unchanged through validation",
+      "status": "PASS",
+      "command_index": null
+    }
+  ],
+  "simulations": [],
+  "excluded": [
+    "formal (T023 owner-skipped)",
+    "full FPGA synthesis/implementation/timing/power/bitstream",
+    "physical hardware",
+    "ASIC"
+  ],
+  "source_sha256": {
+    "rtl/core/rv32_pkg.sv": "cfbcc3bcc93f7dd66dca05422cb968a0c6bd421fe29b898e4775968b93f7831f",
+    "rtl/core/decoder.sv": "36a5b877e0e585969750f4446e2bb3cb3b3fe5829786118864de516e70e3842c",
+    "rtl/core/alu.sv": "bff51163e8c202d806a9a3343d82df0d46f4ae34717f48711595a91b72a93b99",
+    "rtl/core/regfile.sv": "b237b622b105509dfeefefe6add04e12dd9fc5b878e6e1133e5fe0a3e3ad2bec",
+    "rtl/core/branch_unit.sv": "b8cc48b0e787f85767666dd2d0f70a5f5b9db39738f6fbfc76c7ee20a9cac9f1",
+    "rtl/core/lsu.sv": "3aec50b3fb07044048da457f3ca59a01a21a256a817c806497d04585f69609e6",
+    "rtl/core/pipeline_core.sv": "1676096598a363479a3b40f2a8095f95ba87e73cfa2e39f7544f8872b0d13f38",
+    "rtl/core/forwarding_unit.sv": "443c38de8fe17239e8e19d30a52250f2741b90f6e84813e5e4165c360cf5dd99",
+    "rtl/core/hazard_unit.sv": "d3306b8c4292833febee1d31da7d4b500025385ba93c50879df3e34972eb8fc6",
+    "rtl/core/csr_file.sv": "a68a1be9c0b9e776e9fc511cbfd3e3732d157270a5abaed07177348259862fd5",
+    "rtl/core/trap_control.sv": "92068d33a9a38567159259661fb611666241b513d3aa8354ad79ff4a95f2b1de",
+    "rtl/core/pipeline_cpu.sv": "0200e56f44582e3f3bee286219ad41c56ebb45e1d20877eabba52d0f42d82064",
+    "rtl/memory/boot_rom.sv": "8eccb9eec2644e978488bc5e87a3b8a703fd5c1ce73c3dfb4b3a10c979ab6049",
+    "rtl/memory/data_ram.sv": "41d68829e41df43d62274c708c9b6e996d757d5f676ddccb1773301956e35b7c",
+    "rtl/peripherals/uart_tx.sv": "3418eb069158da20b88ab7e490cf903f6a174b7c69fce5de8c40ef367c75d719",
+    "rtl/peripherals/uart_rx.sv": "d5c22f05450b70033746c8b762e5d4fb5fe974b496c822c400be8795fc344a4c",
+    "rtl/peripherals/uart_mmio.sv": "d73efd7e3a8535e642e5fde766eabffb8fe8d499672367f1b20d28c408f875a1",
+    "rtl/peripherals/input_sync.sv": "75a1f76a6c5d736ca4a1ef88423174c08469a287ee973a48e1f3e910361b86dc",
+    "rtl/peripherals/gpio.sv": "35bc4643d638962f99ff0c9fe199743c70ace4bd32544419c91e31af5495c5fd",
+    "rtl/peripherals/timer.sv": "9464dae35856f8eafb8c98250aa9e42b77804d573d115e912bda05dc094a7128",
+    "rtl/peripherals/reset_sync.sv": "c0a9c88c9e47952a16fdfc9d608d4374e1f68818bb3ced0d2ffb26c94bfc5ea6",
+    "rtl/soc/soc_fabric.sv": "10b0d3b398f2575d816c8ff9cfa158f9b352c54c994ebb3431b52e4bd947512a",
+    "rtl/soc/edge_soc.sv": "b12bf8376548f58cd2086f0d2fbd631cfd65421cd4ef3e01b17e89a0f93deb65",
+    "dv/integration/tb_soc_boot.sv": "79d6f29accfd246dd0ea7d6fc0495c2a0eeb7e7d251ffda3f5faf4c9803cc565",
+    "dv/integration/tb_soc_board.sv": "c12939fb70e5a44136aa73abef7651b2c01033ddba897dab939d78c270f34def",
+    "dv/integration/tb_soc_fabric.sv": "169e988f0dc98b65b8083d2695454b7855cc3565261d1c5002c64f5abfb26c3c",
+    "dv/integration/test_soc_boot.py": "ea3d8fe69ca2261a648d80d363415131871d74325fb14529e5675f02b0199e28",
+    "dv/integration/soc_model.py": "cc1ad7783b47c22847752b1a48451f05b3064c6c2eae62e39434f86f06dddd09",
+    "dv/unit/test_uart_rx.py": "88d161c6325a4210dd945616aafb3b91b3d0d6f45fe8b531e4f7a69891382424",
+    "dv/integration/test_mmio.py": "d4235a1bd283b3ed527e5b81f23f86cc7d2bb15f5972f3025d800b31a29ac373",
+    "dv/firmware/memory_model.py": "6b768a7e0408d16ad0f23a6727702509160dc1ab705a25a2e5f8be7fef137b49",
+    "dv/reference/rv32_iss.py": "3bea09d666445514edbff6a4d433bdc2e18eec0b416b6780e617efcc91ab856c",
+    "scripts/soc_checks.py": "d408d9da2cdcbbcce38fc2c00426837b3f8af9418ffbdeeb0c218909c23fa805",
+    "scripts/soc_firmware.py": "e0d658ee6a44a229de85b3a3d8ec7e64502e5b447392072b81bb16d01c73ad7a",
+    "scripts/firmware_image.py": "34c512388117bdf1d5d9056376193928202b1c38376d09769d1d565f61b14ba7",
+    "scripts/firmware_build.py": "a43fa16a53655b549f8fa8452b29ffa532ed70bc87f690191100d3b4de09923d",
+    "scripts/rtl_checks.py": "bce64e8b85819113f9309956bf3ac754b1b00c0770eab438bc6a7327bdbc63d1",
+    "scripts/tool_runner.py": "3852a10dc400404743869e799378115b121d25657ebfac65457b39403d11198d",
+    "scripts/tool_child.py": "8a61d7f13507a0d41b838aef00b1488e9ecc0b535ff9a08caca729b0551b62a8",
+    "sw/boot.S": "f509b77f6d35d4ac2c7bffb8604f5296a546000fed1fc09656c974482447bfa5",
+    "sw/linker.ld": "7540b8577e60351280a22c3094728b82f70ed2dd5529eb6aa7f9dfdee5d04146",
+    "sw/soc_smoke.S": "ce95b6d3118665f24078d623ca7d00c7c632ed465acacd55f70b0e982539fc88",
+    "fpga/basys3/soc_boot.mem": "be3c3acb1418e03cd32c17737280c35b49b2fd555952aa6a05623d8fd7599109",
+    "config/rtl_checks.json": "ab57164c78a52d738dcf5d365c60ff3aae940b85acb070d2471923a777faaf25",
+    "config/fpga_build.json": "b607fb7649b2c37ec1e7d91d899f090b49814237c91149b0708fcc06375624cc",
+    "fpga/basys3/top.sv": "e3aa4712c81ca21405929e9ef47083f4b4e0709363d9ce0aec6f89422e143278",
+    "RV32I_Edge_SoC.xpr": "0ea9b0c55759466204afec3a819650468b13e3c1fd014c865da5e03feb8a1bdc",
+    "docs/ARCH_CONTRACT.json": "403c527d73aeb22de5dee40c2b0a0dbb7175f9f7197a1a35d48f2ff15c10da03",
+    ".harness/software_toolchain.json": "89488260ea006d5c21b99c101014aa8008f204e64bcfd48f53c9ff39e8eb91ce"
+  },
+  "pins": {
+    "schema_version": 1,
+    "python_version": "3.9.13",
+    "git_version": "2.48.1.windows.1",
+    "tzdata_version": "2026.2",
+    "vivado_version": "2025.2",
+    "vivado_sw_build": "6299465"
+  },
+  "software_toolchain": {
+    "tools": {
+      "gcc": {
+        "command": [
+          "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-gcc.exe"
+        ],
+        "sha256": "90927f7c3c61d85284403b6fc63a5dbc31feb73e295fa68ef376e7378f048bc4",
+        "version_line": "riscv32-xilinx-elf-gcc.exe (GCC) 13.4.0"
+      },
+      "ld": {
+        "command": [
+          "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-ld.exe"
+        ],
+        "sha256": "84af5d6d526368f541845614f26da112e15cd03b86121dccfe3d97f0afdd8d93",
+        "version_line": "GNU ld (GNU Binutils) 2.43.1.20241111"
+      },
+      "objcopy": {
+        "command": [
+          "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-objcopy.exe"
+        ],
+        "sha256": "64ae2a0f875d741947b4a0ff651709cf51a2db3dc62eee05fcfdec3e553ea9c3",
+        "version_line": "GNU objcopy (GNU Binutils) 2.39.0.20220819"
+      },
+      "readelf": {
+        "command": [
+          "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-readelf.exe"
+        ],
+        "sha256": "074756bb1c9c1b986b2b3354db89ef9140d8eb56590e519958b195f059d23ecd",
+        "version_line": "GNU readelf (GNU Binutils) 2.39.0.20220819"
+      },
+      "objdump": {
+        "command": [
+          "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\bin\\riscv64-unknown-elf-objdump.exe"
+        ],
+        "sha256": "fc83c86b64aa2e07246fd6d41f3e4c055020d2854162d0b8b293f35827f27986",
+        "version_line": "GNU objdump (GNU Binutils) 2.39.0.20220819"
+      }
+    },
+    "target": "riscv32-xilinx-elf",
+    "march": "rv32i",
+    "mabi": "ilp32",
+    "scope": "Observed installed AMD tools, process-local absolute commands; no global PATH or installation changes",
+    "evidence": "evidence/t026-compiler-probes-2026-11-04.json",
+    "components_sha256": {
+      "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\x86_64-w64-mingw32\\usr\\libexec\\riscv32-xilinx-elf\\gcc\\riscv32-xilinx-elf\\13.4.0\\cc1.exe": "af63512f18d48199da85b011d566cc211ab8a3fd62b5cc8e34e52f8c88c206c9",
+      "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\x86_64-w64-mingw32\\usr\\bin\\riscv32-xilinx-elf\\riscv32-xilinx-elf-as.exe": "13392e4e81eacf737aeed6cc4d493162aa96184c4ba55e5762dce23d5271cba8",
+      "C:\\AMDDesignTools\\2025.2\\gnu\\riscv\\nt\\x86_64-w64-mingw32\\usr\\bin\\riscv32-xilinx-elf\\riscv32-xilinx-elf-ld.exe": "3ff18605eb4184f05e3bbabc2476f9fd61d2ffebdb4a1f7869bffd2802972a5c"
+    }
+  },
+  "symbols": {
+    "boot.o": 0,
+    "$xrv32i2p1": 100,
+    "soc_smoke.o": 0,
+    "failed": 448,
+    "pass_message": 516,
+    "put_string": 476,
+    "finished": 464,
+    "fail_message": 523,
+    "__data_load": 532,
+    "zero_area": 65544,
+    "__bss_end": 65556,
+    "signature": 65552,
+    "halt_ecall": 92,
+    "__rom_image_end": 540,
+    "__stack_top": 131072,
+    "_start": 0,
+    "__data_end": 65544,
+    "initial_data": 65536,
+    "__bss_start": 65544,
+    "main": 100,
+    "__stack_bottom": 126976,
+    "__data_start": 65536
+  },
+  "segments": [
+    {
+      "vma": 0,
+      "lma": 0,
+      "size": 532,
+      "memsize": 532,
+      "flags": 5
+    },
+    {
+      "vma": 65536,
+      "lma": 532,
+      "size": 8,
+      "memsize": 20,
+      "flags": 6
+    }
+  ],
+  "artifacts": {
+    "build/T031/soc-20261108T211807285722Z/compiler/boot.o": "65d7c12bb63c267c4d8bd9ad950aad25a040af8683f8d3bcbdd6577f9365dc85",
+    "build/T031/soc-20261108T211807285722Z/compiler/disassembly.txt": "6b6b3762af4b4f41950780d6b5b3e76f60ebadc173909f2cc8d14ed83d539cc8",
+    "build/T031/soc-20261108T211807285722Z/compiler/readelf.txt": "b62c4cffd30921356021995809031adcef720b93f38e02bf14d0a7de9d6d3284",
+    "build/T031/soc-20261108T211807285722Z/compiler/soc.bin": "6c0731cc2182539aff4b35d19ef7b11a4075f6210880c7b19886b69128387ae0",
+    "build/T031/soc-20261108T211807285722Z/compiler/soc.elf": "a3ffeec6e855a7f9fc646ecf6c2e7d9ddb61b41f4b3f83c069db0c55efa19534",
+    "build/T031/soc-20261108T211807285722Z/compiler/soc.map": "17dd045ae341da0edc91be3bfa292acb114180e377d822b757db72f1a6ebc922",
+    "build/T031/soc-20261108T211807285722Z/compiler/soc_boot.mem": "be3c3acb1418e03cd32c17737280c35b49b2fd555952aa6a05623d8fd7599109",
+    "build/T031/soc-20261108T211807285722Z/compiler/soc_smoke.o": "62b58ebd5c7644b2c74df42ebc2fd9e660b8a09acaa82f186bca351b4cd2e85f",
+    "build/T031/soc-20261108T211807285722Z/early-store/early-store.args": "21fdc2aecd12bfb22062564e9bbd7e8c64c04f24fc59262a5744afb12886388c",
+    "build/T031/soc-20261108T211807285722Z/early-store/early-store.tcl": "07df97c2e496bed56f9910421848563a3c787d76da23d69523d5e1867c097097",
+    "build/T031/soc-20261108T211807285722Z/early-store/early-store.wdb": "51af60275b87f4950f1c4c76e589fd9a7941c83c6963b57639b1754fdabb602d",
+    "build/T031/soc-20261108T211807285722Z/early-store/fabric_pattern.mem": "63ee29069b262f7542855dde930675780bbd5508b18d9722fdca8fb0674ef8e0",
+    "build/T031/soc-20261108T211807285722Z/early-store/soc_fabric.sv": "242494f9df93780a9e8a31eac0ac158fe79fc4db4e0bb5285f39570dce500681",
+    "build/T031/soc-20261108T211807285722Z/early-store/vectors.txt": "14bd545615e941b7c8a7b4ed9522b9791dba799c972f35281e66dde3daeaa78c",
+    "build/T031/soc-20261108T211807285722Z/early-store/xelab.log": "500ef6854b55b39dc4e2ace7521f8404a80f6f26d84eb2a587b7af1d425871b2",
+    "build/T031/soc-20261108T211807285722Z/early-store/xelab.pb": "2e060e0bd6d945f009744df6b36d41d215585173ca7332709317282f8c5ac963",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.jou": "874248c1f53e39ef68a9257df13d8b0723e0975febdd9aadec26c3aa60ecbe80",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.log": "d3ac79e3e3fd20c6fffa9c66c956c29c6a166e8c1b60b4d63201231791b581ac",
+    "build/T031/soc-20261108T211807285722Z/early-store/xvlog.log": "58eb281b12aa8b39fc863ed3d1c5b6747d38ed5024cd838acf35215078ce776a",
+    "build/T031/soc-20261108T211807285722Z/early-store/xvlog.pb": "cf8594c9ebb061250aeea691437c20917261dac20de5c74390cf9a108c046933",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/xsim.version": "a15b42b7cedfdc50b6ac3c608a1a64d31d64690c57ccdd42e81a93c1c12b9468",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/early_store/Compile_Options.txt": "a99624349121d6912612af965cf949892e73a2aa395b535134cf412458ce782d",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/early_store/TempBreakPointFile.txt": "89bd34ab9b7056058ec7acc5470f6ec95f1ef47b9aeb329d53e24d38b9607451",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/early_store/xsim.dbg": "ab053cf0eae7a70e6aeb20fa467f138d03291fd41ae633eb5b7b2df9f1e6396f",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/early_store/xsim.mem": "190b6939483c86a08278eab8683ccfd87516f6a13e8bfbe3a5cca3ae6ca2796b",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/early_store/xsim.reloc": "fa8ce341c6bde2d490664c9e46492532513a45373a76abda739274bbf8420042",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/early_store/xsim.rtti": "5bcc9ae9fbdeb04d7b940fa07b2bf024b0e41e68d37a5524d3af94649826b5d7",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/early_store/xsim.svtype": "91dc2d31987f9c2855b74538e87fabe326b94dc07148382c9a8c75de07bb15a6",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/early_store/xsim.type": "cf1c5a4aa3dd8007f3756f2f3d607d67751cd98e99c8f5038c3f8b9fd06aa8c8",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/early_store/xsim.version": "a15b42b7cedfdc50b6ac3c608a1a64d31d64690c57ccdd42e81a93c1c12b9468",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/early_store/xsim.xdbg": "f64ca27896d4722c613c816a44967996bd4ce07e292fde271c35d7d7b7621eb1",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/early_store/xsimcrash.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/early_store/xsimk.exe": "a1e8668109bfa337f66e07b789c4ab0841f0b5770d83d85c0dbf310c84de7cd0",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/early_store/xsimkernel.log": "980a4ad80b49f9425b14f911b19bc578129ea269df2eaf0b1eadb8b100b1732b",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/early_store/xsimSettings.ini": "6f47533a07ebbf72f3c32b29b213d1da67d65ff8b6112092e92f40a94e624c44",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/early_store/xsim_script.tcl": "9b270a7974d9096209f9826eff7317887582e8a21a92c800f4d9e13d3197d1d4",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/alu.sdb": "1edc3265d77769829bdd4b7f392bff0a9b80df8e3b4dee982e0dd102d1628d46",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/boot_rom.sdb": "0f9ce6298bb3945197b112dc93fe8c16d08e2e241d7c5399c05888867465f649",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/branch_unit.sdb": "48eb2c9d04c869b1bbbdd4d6c393c6be88c477d91b9f2273be144135b66cba49",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/csr_file.sdb": "e64cb1b86612a3f69987f2d0467a58ef92e2b28bab89945c95f79769db6f7115",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/data_ram.sdb": "7b8fdb9923fa2c6e9758976a43b034b832a76fadb4d96dd753a868e768ce378a",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/decoder.sdb": "4da2c9817d24edc48780dd22aea96c0c12417399421a26cb19a8fdf99b3ec293",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/edge_soc.sdb": "f34d4251079f4ccbaaa92a23dccde5d5d2fea54025b1957cd75eb9b1411c7528",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/forwarding_unit.sdb": "a5c9836d162382abe2569da3e32e138e22a34293978d070282732d0a742b8f3a",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/gpio.sdb": "d7c7d1fd09b6621234d2721bed3599b8b4ee7820d2bffee352299e5960b98169",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/hazard_unit.sdb": "9bbdee43ce3110667824e5aa0f33e449d562bb8003afe617dcd4311b86673271",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/input_sync.sdb": "e9c062a8ab963df183059515aa2512745c40ad4361dbc6030d2f6564a2243d82",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/lsu.sdb": "8c1fc49f629c84f763cd2dd58ffda00dd7fd2a4be088c4407835dd2128ed73f0",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/pipeline_core.sdb": "aca8f45f120bdc32c1b37a53f05861a03bd8329122fb8706b7b634b11fffc79f",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/pipeline_registers.sdb": "1176630366c800f71bbef71bca59625a69239a983e1be5cbb81321cb1336ec40",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/regfile.sdb": "edeea9c9dbbd25ee3bd38294a58b2fe05d234af80607a95b04a75971acd1a5bf",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/reset_sync.sdb": "b99bc24bf1cb7787244d608d9a4fef0f23a8d55e7381133b68dbbcd79e02a40e",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/rv32_pipeline_stage.sdb": "e2d6a083f549344285ef478ab9cf8c15c1245228dc1e9379ec0032b40a2e780b",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/rv32_pkg.psdb": "1d4e26785bebaf037470859839ce402e09e6178699fc3bb2e32d30b929362876",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/rv32_regfile_read.sdb": "fcf2cff9410ce7b7f4e06112a47b9856ef625e1dc425c5a5816c83bfb21c8f3d",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/rv32_regfile_word.sdb": "1856ed9c0568fe0914c8c9ec28b0f751d83808608035197274abd3e226d673b3",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/soc_fabric.sdb": "83db29a0b6154bdbc348d9efc202ec6dfb1d5729cdc1b5e72368b0d2b45b76ce",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/tb_soc_fabric.sdb": "633d17688f47a2bcf8ddc9a4ca7fa6d2781ad64f44f751c27c85d746a70f3248",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/timer.sdb": "718a2df850bb22f61c2d8e374a1d0726713aa2541922594e6a825ec392100327",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/trap_control.sdb": "60e6e24e894bb30f4a094fe5212532273db5a4fddc94bef933a7bb50b99c5132",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/uart_mmio.sdb": "c36822ed9a7a57d9e7b1bbaab54a0c663b9e89efb50bcb9db126c79ba094e2d4",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/uart_rx.sdb": "a5d006f81ccf7dedf704f283445a56c76c3d4b648ccfbfe0efc92021740d24d6",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/uart_tx.sdb": "572f5e7e6618b6e4944b3a524f1cff22a6f9f70af17fe64ad7648d85cab678e0",
+    "build/T031/soc-20261108T211807285722Z/early-store/xsim.dir/work/work.rlx": "ed24a7c0c6ee6ead3fb11aceeb2ef363b2e1fabc5b35c6c27b76daa2624e860b",
+    "build/T031/soc-20261108T211807285722Z/simulation/corrupt-rom.args": "fa46424f386947a6acbe6a178b5476904c2d113a2a9d49d7c728172a1f9fb641",
+    "build/T031/soc-20261108T211807285722Z/simulation/corrupt-rom.tcl": "250f1f79606aca4ff73869804ef81c7fa62cb48ae6a020b4e01338416fc18b9d",
+    "build/T031/soc-20261108T211807285722Z/simulation/corrupt-rom.trace": "bbbbdbed76fcecf9c3f82aa431bcb968caf883deec06b33b8de29773114d24a9",
+    "build/T031/soc-20261108T211807285722Z/simulation/corrupt-rom.wdb": "cce1be905fcecdace6728a92da2a7570de0d0f789b6c257e13b9e2f087ec7b1f",
+    "build/T031/soc-20261108T211807285722Z/simulation/fabric-1.args": "c810d7ea595829c1f024b2de1b5a3c77c8aa9d4c702840fb6a5821602962e277",
+    "build/T031/soc-20261108T211807285722Z/simulation/fabric-1.tcl": "4f98e9261d70e9c86efeb326cfc405692a0733d903c36a15efe537c546d48457",
+    "build/T031/soc-20261108T211807285722Z/simulation/fabric-1.txt": "14bd545615e941b7c8a7b4ed9522b9791dba799c972f35281e66dde3daeaa78c",
+    "build/T031/soc-20261108T211807285722Z/simulation/fabric-1.wdb": "3dc154d9548dc3b595a4fe489eab75960f55204a27d0ebf89edb79bc3ffe41fb",
+    "build/T031/soc-20261108T211807285722Z/simulation/fabric-20261107.args": "1e6e5a1652d6be1f28160623d27efdb5d3ed9bc102dc1af03d0f92f0458f2c5d",
+    "build/T031/soc-20261108T211807285722Z/simulation/fabric-20261107.tcl": "4f98e9261d70e9c86efeb326cfc405692a0733d903c36a15efe537c546d48457",
+    "build/T031/soc-20261108T211807285722Z/simulation/fabric-20261107.txt": "6827fd25dae6d298f448983b8ce346a6810147290f7ffa44067d012330fd0962",
+    "build/T031/soc-20261108T211807285722Z/simulation/fabric-20261107.wdb": "0342a5353459da28ea3d4e6d83176725f7ff6ea95e79933508adc0b967f45642",
+    "build/T031/soc-20261108T211807285722Z/simulation/fabric-empty.args": "91209b16903c5843ab1d7800c87695bc090496150f6fbdda44aae5e4689ecc8f",
+    "build/T031/soc-20261108T211807285722Z/simulation/fabric-empty.tcl": "07df97c2e496bed56f9910421848563a3c787d76da23d69523d5e1867c097097",
+    "build/T031/soc-20261108T211807285722Z/simulation/fabric-empty.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build/T031/soc-20261108T211807285722Z/simulation/fabric-empty.wdb": "f6ef04a51385e7511eb159c0ec2a33e3b45c7487aadb67a9cfd3681be2cb8680",
+    "build/T031/soc-20261108T211807285722Z/simulation/fabric-truncated.args": "1b1f3e1161d7a9a37d9945ae6d78dcbe27a40d50574e4e90406320ab7856b85f",
+    "build/T031/soc-20261108T211807285722Z/simulation/fabric-truncated.tcl": "07df97c2e496bed56f9910421848563a3c787d76da23d69523d5e1867c097097",
+    "build/T031/soc-20261108T211807285722Z/simulation/fabric-truncated.txt": "f005bbf7bd77fe10a0695a66a0f5b6fdad2e2bb4df85f3f07ceb6a347781f0c7",
+    "build/T031/soc-20261108T211807285722Z/simulation/fabric-truncated.wdb": "4e5f63c09c2e62cfd4b092b232a7d375e5916d80809e1e08cbeefd7935d5d5d3",
+    "build/T031/soc-20261108T211807285722Z/simulation/fabric-wrong-expected.args": "5f3c5d8c542d5a0a5cf232ea8c69e9b0f1665bcdabb7e2d747b7b1cbe72fdbb5",
+    "build/T031/soc-20261108T211807285722Z/simulation/fabric-wrong-expected.tcl": "07df97c2e496bed56f9910421848563a3c787d76da23d69523d5e1867c097097",
+    "build/T031/soc-20261108T211807285722Z/simulation/fabric-wrong-expected.txt": "d7c7e83bb80543685cc0d749815a7bb26a5215be6021fc37b43aa6904e8a8712",
+    "build/T031/soc-20261108T211807285722Z/simulation/fabric-wrong-expected.wdb": "5ece3eb079f9ed566c0b83122a005541fa026a71371d6272c7b9b49525a646bf",
+    "build/T031/soc-20261108T211807285722Z/simulation/fabric_pattern.mem": "63ee29069b262f7542855dde930675780bbd5508b18d9722fdca8fb0674ef8e0",
+    "build/T031/soc-20261108T211807285722Z/simulation/fast-1-empty.trace": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build/T031/soc-20261108T211807285722Z/simulation/fast-1-truncated.trace": "c5f1ffc960882b68b077aeb43ea79ea9cf1fa33c977a40555434628b5e5ecf19",
+    "build/T031/soc-20261108T211807285722Z/simulation/fast-1-wrong-retirement.trace": "7cd656ae888ec18ca091f084aae79a09b70776eceb342f13f29d018555142afd",
+    "build/T031/soc-20261108T211807285722Z/simulation/fast-1.args": "bab12089721859b435bfba13b5be0810d9bdacfd0d6534483d6a2185180af710",
+    "build/T031/soc-20261108T211807285722Z/simulation/fast-1.summary.json": "38801e8b22f764740a60ac5b1539ceb562091d8dc6ff1196cd625d80c566ab5b",
+    "build/T031/soc-20261108T211807285722Z/simulation/fast-1.tcl": "250f1f79606aca4ff73869804ef81c7fa62cb48ae6a020b4e01338416fc18b9d",
+    "build/T031/soc-20261108T211807285722Z/simulation/fast-1.trace": "23c8297a12013972efd967ea777b6cca7ebf591e108b08d97b5baead87b717f3",
+    "build/T031/soc-20261108T211807285722Z/simulation/fast-1.wdb": "03fc2efca10b8bbc2876a66fee32ed43a827f2b1e12d29291d123ad79a4cc45c",
+    "build/T031/soc-20261108T211807285722Z/simulation/fast-20261107-empty.trace": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build/T031/soc-20261108T211807285722Z/simulation/fast-20261107-truncated.trace": "9dcf7c8a4efbd0f1d3720e4ee2c3ad98bc5583d10e76883baf788ea5bdc3f1e9",
+    "build/T031/soc-20261108T211807285722Z/simulation/fast-20261107-wrong-retirement.trace": "e2e43c94c6e41f65711c582ff0a4e67290bde5c322a30cf6ec0f98ed63e76302",
+    "build/T031/soc-20261108T211807285722Z/simulation/fast-20261107.args": "5fd1ea86ba7c7f883c54581fa48baf6235d7909931b79bda6c8da07553c553c7",
+    "build/T031/soc-20261108T211807285722Z/simulation/fast-20261107.summary.json": "38801e8b22f764740a60ac5b1539ceb562091d8dc6ff1196cd625d80c566ab5b",
+    "build/T031/soc-20261108T211807285722Z/simulation/fast-20261107.tcl": "250f1f79606aca4ff73869804ef81c7fa62cb48ae6a020b4e01338416fc18b9d",
+    "build/T031/soc-20261108T211807285722Z/simulation/fast-20261107.trace": "a13bf6c242d9ca73e43079a15215a80343558e7d664ff2df3d05df2cb055def1",
+    "build/T031/soc-20261108T211807285722Z/simulation/fast-20261107.wdb": "b3cf3d76cf757ed2b7b022f07f6820b47d72f87a885afeb375a88589fb2ba60c",
+    "build/T031/soc-20261108T211807285722Z/simulation/production-empty.trace": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build/T031/soc-20261108T211807285722Z/simulation/production-truncated.trace": "d43e93e87b6e8db8225c702d7686beae516b3b15821052aba8ff1fddf3edd620",
+    "build/T031/soc-20261108T211807285722Z/simulation/production-wrong-retirement.trace": "0692cbaad7ce077d2f4564684c8769a453b6a3ed5f3f1748811e2dc4614ebd06",
+    "build/T031/soc-20261108T211807285722Z/simulation/production.args": "9f01c783f79099b4476a2005b6a5b852e955967251ecd032c5d21908e0c12b6e",
+    "build/T031/soc-20261108T211807285722Z/simulation/production.summary.json": "078d34174dd5a25d490d8bac63a00f7f4b1e97dcc1a2173459bf325319805233",
+    "build/T031/soc-20261108T211807285722Z/simulation/production.tcl": "8e33b0cbe4d60f5593e05575778644508b21907545e740954d2cf0877178ac58",
+    "build/T031/soc-20261108T211807285722Z/simulation/production.trace": "7f565e9db2164350d83b56fa7fafea85da841811a817eeed4d8531ef02dcae13",
+    "build/T031/soc-20261108T211807285722Z/simulation/production.wdb": "e1cf5c10dc8bb41b7662ff82f3a3c75eb9413b762724a39dffc2a7c631876920",
+    "build/T031/soc-20261108T211807285722Z/simulation/soc_boot-corrupt.mem": "ff82e0ebbb5c98ddaa23b492a6ffe0252ef39239da6e4316f7a3fcfdaf509675",
+    "build/T031/soc-20261108T211807285722Z/simulation/soc_boot.mem": "be3c3acb1418e03cd32c17737280c35b49b2fd555952aa6a05623d8fd7599109",
+    "build/T031/soc-20261108T211807285722Z/simulation/xelab.log": "5402bb9c8f7fd6ffe9a1236288efb8bc9d633e77fb3570382e5d38ec9c99516b",
+    "build/T031/soc-20261108T211807285722Z/simulation/xelab.pb": "d8c389e81006ed1044168e0ab6796b70ab72e603a587b567473aee69e7f3e43e",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.jou": "42ac37526f6ac15d04ba590678edbdcff4ef4b9daa3df037e53a9e5625d7caec",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.log": "b4f12035444e42573d0a68bd70a540213614a46c49d4821d47154032dc3c04f1",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim_12124.backup.jou": "310ca256f9a1e9a2feb54ec7c1c5699aa16657b03331b39c72cfacaeb2f3227c",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim_12124.backup.log": "5332ff4802430642e737aec065efc9167751be846edbc45be82429abc79a1d43",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim_25232.backup.jou": "e9ea7225faf066d29293318e6b8fa72a6ff6120273116a3760429bbc8fae9a66",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim_25232.backup.log": "189fa3758d13585c30d36fa4158f4bfa2194bda83474ec307e8a9ea53047a19e",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim_27308.backup.jou": "c65cab2da56cb6f60f5039284355324e5592d6576936263cc78bd0d511566da4",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim_27308.backup.log": "7fc41e6a395d50d3e4f0090495532afb7f95fb3498acc53aff6aa3e98d591f4e",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim_8820.backup.jou": "b41e0cd27bce64b70206b7af7797afbf3a43465201e70ad808910ad7e24450e8",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim_8820.backup.log": "b93ac6af120563d107ff49335c4708ba11372e3355fc2e7791eaad3e088385fa",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim_9504.backup.jou": "4b338c5b0bdee144b3a469c210ba88785b93664244b4aaa6ce49fa7cb9e45d61",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim_9504.backup.log": "d99f9bdf837d569d650953ecb2573225ccf45534f41eb5047587882bd34e4d45",
+    "build/T031/soc-20261108T211807285722Z/simulation/xvlog.log": "32cfb0f4f4f904b59028dbe02092c26dbb4f4ec5c1d21ebb1adde392c833e6a6",
+    "build/T031/soc-20261108T211807285722Z/simulation/xvlog.pb": "abf8836ca25968914b0edbdcaefc323ad9490db93b1e7cb30787ba3e1c20fccb",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/xsim.version": "a15b42b7cedfdc50b6ac3c608a1a64d31d64690c57ccdd42e81a93c1c12b9468",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/fabric/Compile_Options.txt": "68de7b936adb0a90fdd93c1bd57760bf4aae725f547e7612a43f2e6c22c4b165",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/fabric/TempBreakPointFile.txt": "89bd34ab9b7056058ec7acc5470f6ec95f1ef47b9aeb329d53e24d38b9607451",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/fabric/xsim.dbg": "e337b63aae4b598dfbee7c786302a992b27a2e3be19cc53aaa6dcaaac30f67ea",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/fabric/xsim.mem": "400b00159fb92222662db3b0176c107d9c4ccc486947786a8e6e1d3b627d9fb8",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/fabric/xsim.reloc": "99a9f559d26fc249bdd95fab938869a4bc92f887647fa1002ecfccaf8ed1a0fc",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/fabric/xsim.rtti": "dcc3634820e6c13948ede1ee1031377bfc98f4bc152f657be04cab39a8529f59",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/fabric/xsim.svtype": "91dc2d31987f9c2855b74538e87fabe326b94dc07148382c9a8c75de07bb15a6",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/fabric/xsim.type": "cf1c5a4aa3dd8007f3756f2f3d607d67751cd98e99c8f5038c3f8b9fd06aa8c8",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/fabric/xsim.version": "a15b42b7cedfdc50b6ac3c608a1a64d31d64690c57ccdd42e81a93c1c12b9468",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/fabric/xsim.xdbg": "8443078259004294d5f9803a084fe682217eada9cc4c590f47d6eb74e66c032a",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/fabric/xsimcrash.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/fabric/xsimk.exe": "2f2ea252f1af238c8d613e7f2cca88b4c2c87493dd32155687a90f527e86d8d5",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/fabric/xsimkernel.log": "e12b4f2253b567741af586e255b249a642a828db518bb401d7ed7cd247051732",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/fabric/xsimSettings.ini": "6f47533a07ebbf72f3c32b29b213d1da67d65ff8b6112092e92f40a94e624c44",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/fabric/xsim_script.tcl": "8041ee9ed63c2d5ca30a322f7f550f2f2cd3c6361cba279c643bec179c56924b",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_default/Compile_Options.txt": "de8f9fa6d2532592de39922a5876881f8fcfde514f9cda7080eaa6101770054a",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_default/TempBreakPointFile.txt": "89bd34ab9b7056058ec7acc5470f6ec95f1ef47b9aeb329d53e24d38b9607451",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_default/xsim.dbg": "1f897b7643da5950000a51aa41f14b685be632a66209525734dd092af88e05b4",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_default/xsim.mem": "e0a22168bb2fde0373437be5f5a6fe911018e07759a3fdcf886e4de3dd0f54f5",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_default/xsim.reloc": "08ed8154d50e17a925002eb7d55af8f2510f7cb8b5a4444d3784c5a862c84999",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_default/xsim.rtti": "475bd30d686f187e84b035cccf8bf649a2c59942446008c79a4976fcb64c944c",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_default/xsim.svtype": "91c84933f4ef296e7e388e7fa084b0933c20df6b7839d91c650e783d971e48ae",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_default/xsim.type": "cf1c5a4aa3dd8007f3756f2f3d607d67751cd98e99c8f5038c3f8b9fd06aa8c8",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_default/xsim.version": "a15b42b7cedfdc50b6ac3c608a1a64d31d64690c57ccdd42e81a93c1c12b9468",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_default/xsim.xdbg": "374dea5d26682ca28de365056c24f13254a4618c93c28e1e2b908edc50b8c640",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_default/xsimcrash.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_default/xsimk.exe": "f9c1db4376cafdbc2ff225b704d973d8a4c029460b502da3f0a278728d7d50a9",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_default/xsimkernel.log": "cf9c01a4b0f250f612a5fde7f6ce6aacc086a6a3ef6d5558c4bb816f93ed9943",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_default/xsimSettings.ini": "6f47533a07ebbf72f3c32b29b213d1da67d65ff8b6112092e92f40a94e624c44",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_default/xsim_script.tcl": "558dfcb9f74ee3b9185d7a171498dc09474cc26bfd8c72201b5c0e53aa935429",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_fast/Compile_Options.txt": "64cb6504debb06c36dfa0f5cebd83ef1c284336d5ced8a74cae123686a029ad6",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_fast/TempBreakPointFile.txt": "89bd34ab9b7056058ec7acc5470f6ec95f1ef47b9aeb329d53e24d38b9607451",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_fast/xsim.dbg": "d8d87e3acb5110ce18a649a2568db62dfa41b05ff435dcb18f08ac2f63729317",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_fast/xsim.mem": "7212cf4fa6b0364a569e110de8330efe6d423f68bcf15982a844139fdb93c6fd",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_fast/xsim.reloc": "d714016092b73125eb5454352234496d4ded75c1f975fe814fbffc02efd06daf",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_fast/xsim.rtti": "54749becbafc7e759d9817eabae4948e257d4e0e070fd8091e03bc36750e4070",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_fast/xsim.svtype": "91c84933f4ef296e7e388e7fa084b0933c20df6b7839d91c650e783d971e48ae",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_fast/xsim.type": "cf1c5a4aa3dd8007f3756f2f3d607d67751cd98e99c8f5038c3f8b9fd06aa8c8",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_fast/xsim.version": "a15b42b7cedfdc50b6ac3c608a1a64d31d64690c57ccdd42e81a93c1c12b9468",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_fast/xsim.xdbg": "49f417118e80b4d8b3d2bdb99aca1857a2b0048aa7a3593e44697102e4114bdf",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_fast/xsimcrash.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_fast/xsimk.exe": "eafea1e04c3beaf0ddf259e4b5e0c550c52fb7946330c3ce0859827151eee29c",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_fast/xsimkernel.log": "d355cb36e3d2609ff2a2121bec207aeabe6e3988b65d259a59bd4f62ec6c7de5",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_fast/xsimSettings.ini": "6f47533a07ebbf72f3c32b29b213d1da67d65ff8b6112092e92f40a94e624c44",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/soc_fast/xsim_script.tcl": "8b7f1040dee9cae7baa5fa8f879be5b5858e496910a8c2785c7e09a37867449d",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/alu.sdb": "2096a1178e160e489ea3f3336935c0cfd8034518cd2e901018438a31019dc248",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/basys3_top.sdb": "03cc8a5a3b576c1c75113cbd7acb85f900ef3b79f150273d7a771e0dc22005c0",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/boot_rom.sdb": "9f1c3a84b2b18e34ce91cb10c096230d04bb8e4f1af723f183993721626c74a5",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/branch_unit.sdb": "a8454bd05e6667ed776254f09265abb852ca9d0eeb1300b7c30a7c95508127b2",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/csr_file.sdb": "9e3d8c56cbc6195d64f7bfef34f5f87ce70d726394c602674f33ea3738e0713b",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/data_ram.sdb": "b7e993f0bd74277b1396a901b46ca6b9ea6fd067b2d6a5333029a7761dda3766",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/decoder.sdb": "a0aabcb1a248ebda06f0a87b47cf6b2684199a1b3c647652936fad94682f4ec2",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/edge_soc.sdb": "f924ce70b5589f8bbb7a27420e5c514b8d80c869e6c5b4cd3eea7ac44f0771e6",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/forwarding_unit.sdb": "235ea1ae92d50a5fe15579d58067bcfcc84506b3b12ba60164e9941f12e3ab8b",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/gpio.sdb": "762e7db8125a37bfa6ffec6838fe8077d76782e57bae1299aaf6874a6296d20e",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/hazard_unit.sdb": "41d135a6efd04f3ed1a7da4130f3c234ee2083110f9b0ced1532383f47ef0951",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/input_sync.sdb": "89db426cb68ab3950d3816f08ebeedb27bd82ae5c9fe0ecf51e7a1e4006c8128",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/lsu.sdb": "f61868a794992e3dafbcf6354c8a369d7d2620d51b52d1851bc350bf09192e3c",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/pipeline_core.sdb": "04e2dfbd3e769479548a6a25377a12853b070e02f6bdd855f768611222ad2b2d",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/pipeline_registers.sdb": "2f3818b1153276e20b776f806fecdda8efc334eab1c5dcb1a524d0511c269bb2",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/regfile.sdb": "82bbb44e00d3747281eaeb75524c0219262eb142a94d3d1d09d955f45906a54d",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/reset_sync.sdb": "0b0bfbe1759bf11dec27f4b3edda760fb14d872a5de6cec65b445927e2e7f842",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/rv32_pipeline_stage.sdb": "53044576813f6d6660360ac5fdc46fa285ec1d0ad87e7f530cdfa8fb38a30b5b",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/rv32_pkg.psdb": "f2f416d999d645012fdb3e7f2ecd6da34e940e71f863313216d491332027551f",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/rv32_regfile_read.sdb": "0150584180901bc5a5b89e28b08ef12380c4aaa0270bf6b72b66f214a36dbb7c",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/rv32_regfile_word.sdb": "7b13fba43cf693ccf9da13df8964d5289081bcb629156c943e41b9fb1de50ffa",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/soc_fabric.sdb": "9f34c4848fda2dbb48f25c2df80a30118afcddec84166aa0646f8c217847ad1b",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/tb_soc_board.sdb": "95ed00bdebd7e79903d613d69ec57fd2e41c8ee8e15be0f2f28cdcdd030fb956",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/tb_soc_boot.sdb": "725d9ad4a1fa3f543559878f41acf32e975a50e48c2204aae657e1b62a6a13a4",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/tb_soc_boot_default.sdb": "e683042eb4f42cc78d740ae45290b814cd23dff72376dd58c3b7aff6b06aa938",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/tb_soc_fabric.sdb": "6ca6a707abdb7753ffbdd1d45fbfe68d92d42b8b3ea79f798676693fa046af1b",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/timer.sdb": "50935c1f7667cb0c9ded1e5e221d14c0c339fe9f6f938a60c8ab4018a700e746",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/trap_control.sdb": "7431d81a413bdc239d91bee90264cea3d3d78d8278113ea68e431c7256266e25",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/uart_mmio.sdb": "76885836c27c786b89c5a5c3d1278520748c18da1f03f5e41fdff20448a4d647",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/uart_rx.sdb": "57256b7dc933ef80faf48733145a8cf9bd610e2e7576e10c403503175fe555b3",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/uart_tx.sdb": "6e3a3d020a238db0aea0cb2da3fe3b9b6eda832b8fe0707d53438bdc303f8df2",
+    "build/T031/soc-20261108T211807285722Z/simulation/xsim.dir/work/work.rlx": "5fa373d005fcbcea33be5c7cde39f788da640de9b27c723bfbda2a15d48a3356",
+    "build/T031/soc-20261108T211807285722Z/versions/xelab/xelab.pb": "1413d29e3075deed248563d8a39c969981a0d61fcc5977150fa52074b16dd1c1",
+    "build/T031/soc-20261108T211807285722Z/versions/xvlog/xvlog.pb": "1413d29e3075deed248563d8a39c969981a0d61fcc5977150fa52074b16dd1c1"
+  },
+  "fabric_runs": [
+    {
+      "cycles": 4006,
+      "requests": [
+        1161,
+        1162
+      ],
+      "replies": [
+        1160,
+        1160
+      ],
+      "canceled": [
+        1,
+        2
+      ],
+      "ram_write_effects": 272,
+      "ram_words": 268,
+      "seed": 1
+    },
+    {
+      "cycles": 3970,
+      "requests": [
+        1170,
+        1171
+      ],
+      "replies": [
+        1169,
+        1169
+      ],
+      "canceled": [
+        1,
+        2
+      ],
+      "ram_write_effects": 275,
+      "ram_words": 271,
+      "seed": 20261107
+    }
+  ],
+  "boots": [
+    {
+      "label": "fast-1",
+      "seed": 1,
+      "divider": 8,
+      "trace": "build/T031/soc-20261108T211807285722Z/simulation/fast-1.trace",
+      "summary": {
+        "cycles": 1970,
+        "epochs": [
+          {
+            "epoch": 0,
+            "retirements": 187,
+            "uart": "PASS\r\n",
+            "persistent_counter": 1
+          },
+          {
+            "epoch": 1,
+            "retirements": 187,
+            "uart": "PASS\r\n",
+            "persistent_counter": 2
+          }
+        ],
+        "requests": [
+          440,
+          118
+        ],
+        "replies": [
+          440,
+          118
+        ],
+        "canceled": [
+          0,
+          0
+        ],
+        "request_wait_cycles": [
+          0,
+          664
+        ],
+        "ram_write_effects": 22,
+        "uart_bytes": 12
+      }
+    },
+    {
+      "label": "fast-20261107",
+      "seed": 20261107,
+      "divider": 8,
+      "trace": "build/T031/soc-20261108T211807285722Z/simulation/fast-20261107.trace",
+      "summary": {
+        "cycles": 1970,
+        "epochs": [
+          {
+            "epoch": 0,
+            "retirements": 187,
+            "uart": "PASS\r\n",
+            "persistent_counter": 1
+          },
+          {
+            "epoch": 1,
+            "retirements": 187,
+            "uart": "PASS\r\n",
+            "persistent_counter": 2
+          }
+        ],
+        "requests": [
+          440,
+          118
+        ],
+        "replies": [
+          440,
+          118
+        ],
+        "canceled": [
+          0,
+          0
+        ],
+        "request_wait_cycles": [
+          0,
+          664
+        ],
+        "ram_write_effects": 22,
+        "uart_bytes": 12
+      }
+    },
+    {
+      "label": "production",
+      "seed": 1,
+      "divider": 868,
+      "trace": "build/T031/soc-20261108T211807285722Z/simulation/production.trace",
+      "summary": {
+        "cycles": 121332,
+        "epochs": [
+          {
+            "epoch": 0,
+            "retirements": 4357,
+            "uart": "PASS\r\n",
+            "persistent_counter": 1
+          },
+          {
+            "epoch": 1,
+            "retirements": 4357,
+            "uart": "PASS\r\n",
+            "persistent_counter": 2
+          }
+        ],
+        "requests": [
+          11560,
+          2898
+        ],
+        "replies": [
+          11560,
+          2898
+        ],
+        "canceled": [
+          0,
+          0
+        ],
+        "request_wait_cycles": [
+          0,
+          86664
+        ],
+        "ram_write_effects": 22,
+        "uart_bytes": 12
+      }
+    }
+  ],
+  "corrupt_rom_diagnostic": "SOC_DMEM_RESPONSE cycle=39 actual=(1, 0, 0, 0, 0, 1, 3405691583, 0, 1, 0) expected=(1, 0, 0, 0, 0, 1, 3405691582, 0, 1, 0)",
+  "finished_utc": "2026-11-08T21:18:57.568612+00:00"
+}
