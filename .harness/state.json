@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "project_status": "in_progress",
-  "active": null,
+  "active": "T032",
   "daily_claims": {
     "2026-10-14": "T001",
     "2026-10-16": "T002",
@@ -40,7 +40,7 @@
     "T029": "completed",
     "T030": "completed",
     "T031": "completed",
-    "T032": "pending",
+    "T032": "in_progress",
     "T033": "pending",
     "T034": "pending",
     "T035": "pending",
@@ -91,7 +91,8 @@
     "T031": 1,
     "T044": 1,
     "T045": 2,
-    "T043": 1
+    "T043": 1,
+    "T032": 0
   },
   "blocked_reasons": {},
   "receipts": {
@@ -253,6 +254,9 @@
     ],
     "2026-11-15": [
       "T043"
+    ],
+    "2026-11-21": [
+      "T032"
     ]
   },
   "owner_skips": {

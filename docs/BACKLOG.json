@@ -1448,7 +1448,7 @@
         ]
       ],
       "priority": 320,
-      "status": "pending",
+      "status": "in_progress",
       "human_approval_required": true,
       "start_approval_required": true,
       "optional": false,

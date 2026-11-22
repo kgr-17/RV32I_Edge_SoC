@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "-B",
+    "scripts/test_hardware.py"
+  ],
+  "started_utc": "2026-11-22T01:55:04.640662+00:00",
+  "cwd": "C:\\RV32I_Edge_SoC",
+  "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+  "status": "FAIL",
+  "exit_code": 1,
+  "stdout": "HARDWARE_GUARD_PASS\nHARDWARE_INVENTORY_COMPLETE\nHARDWARE_GUARD_PASS\nHARDWARE_GUARD_PASS\nHARDWARE_PROGRAM_PASS\nHARDWARE_INVENTORY_COMPLETE\nHARDWARE_GUARD_PASS\nHARDWARE_GUARD_PASS\n",
+  "stderr": ".....F..\n======================================================================\nFAIL: test_physical_uart_requires_exact_frame_and_matching_timestamped_events (__main__.HardwarePolicyTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\RV32I_Edge_SoC\\scripts\\test_hardware.py\", line 50, in test_physical_uart_requires_exact_frame_and_matching_timestamped_events\n    with self.assertRaises(ValueError):hardware_evidence.validate_uart(b'IRQ PASS\\r\\n',events,60)\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 8 tests in 0.030s\n\nFAILED (failures=1)\n",
+  "timeout_seconds": 300
+}
