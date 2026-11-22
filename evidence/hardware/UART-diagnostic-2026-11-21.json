@@ -1,0 +1,43 @@
+{
+  "date_la": "2026-11-21",
+  "status": "FAIL",
+  "scope": "Real IRQ output observed; full physical acceptance captures rejected, no gate weakened",
+  "captures": [
+    {
+      "receipt": "evidence/hardware/capture-20261122T020310763351Z.json",
+      "receipt_sha256": "d23ab03613a2e3115e0f0f380a3a7f0a61b706ff3c7b8e0761fe061cb2fdf93f",
+      "status": "FAIL",
+      "bytes": 67,
+      "complete_IRQ_PASS_messages": 4,
+      "native_exit_code": 1,
+      "error": "HARDWARE_NATIVE_CAPTURE_FAILED",
+      "reason": null
+    },
+    {
+      "receipt": "evidence/hardware/capture-20261122T020417297858Z.json",
+      "receipt_sha256": "9028b4a8de683d270236447f8ddefc0e4bef5cf316e51221b868a85f43557a67",
+      "status": "FAIL",
+      "bytes": 33,
+      "complete_IRQ_PASS_messages": 3,
+      "native_exit_code": 0,
+      "error": null,
+      "reason": "Missing or unexpected physical bytes; retained"
+    }
+  ],
+  "archive": "evidence/hardware/T032-rejected-UART-captures-2026-11-21.zip",
+  "archive_sha256": "77e932235b9c706f5f9c682b62395af294afe239daeb6f2edb3aa839320a3793",
+  "owner_replies": [
+    {
+      "question_item_id": "[\"request_user_input_async\",\"call_c4bdd27223014df7908ec6371933332f\",0]",
+      "answer": "I am unsure which LED is DONE"
+    },
+    {
+      "question_item_id": "[\"request_user_input_async\",\"call_4b7c26429f474c21bd336051fa83a369\",0]",
+      "answer": "yes, after i press it few second. the Rx LD17flash"
+    }
+  ],
+  "done_led": "NOT OBSERVED",
+  "reset_epoch_acceptance": "NOT PASSED",
+  "inference": "Reset transitions/repeated manual activations may account for partial frames; cause not established",
+  "next": "Owner hold BTNC before capture; only release once after UART ready; unchanged exact-byte/error checks"
+}

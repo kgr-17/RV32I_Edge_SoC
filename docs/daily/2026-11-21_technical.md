@@ -158,3 +158,44 @@ Waiting only for owner's readiness to operate btnC during a fresh capture. The f
 Owner replied to call_b930ecb459514c53a831393eeff00057: "I could not perform the reset", and to call_3b2b725ce9a249a089e7a245ea98933e: "I need help finding btnC". This confirms the empty capture is not a successful reset observation. DONE remains unobserved. No new capture/programming or finish attempt was run. ActiveT032/in_progress, attempts0; authorization persists. Baseline ef31a3d.
 
 Read official Digilent Basys3 manual (board callouts and general-purpose IO) and official Digilent Master XDC: BTNC is the center user button, U18, matching this project's btnC pin. Give the owner a simple five-button cross diagram (BTNU above; BTNL/BTNC/BTNR across; BTND below). Leave the separate PROG configuration control alone. No capture is currently active. Wait until owner identifies BTNC and says Ready, then start a new60s epoch1 capture and request press/release during that window; later epoch2 and truthful DONE/reset observations remain mandatory. Do not spend another empty timed window before readiness or infer a button press/DONE light from these replies. No RTL/tooling change; no new simulation/formal/hardware functional PASS. Same-day reports appended, prior entries retained. Source: https://digilent.com/reference/_media/reference/programmable-logic/basys-3/basys3_rm.pdf and https://github.com/Digilent/Basys3/blob/master/Resources/XDC/Basys3_Master.xdc .
+
+
+---
+
+<!-- entry:856549d47e08fcc3d2e3f96388cb1395cda771784d7ec0019bccde143eaf4a5f -->
+
+# T032 real IRQ PASS observed; rejected noisy captures retained
+
+User reported LED7 flash then clarified RX LD17 flashes after button presses.
+Owner explicitly remains unsure of DONE; do not mark DONE observed. This is
+UART activity, not final physical acceptance. Reply IDs and exact answers in
+evidence/hardware/UART-diagnostic-2026-11-21.json. COM3 was rechecked as present,
+same FTDIBUS VID0403/PID6010/210183B03B59B before further capture.
+
+Actual capture020310763351Z:67bytes/four complete IRQ PASS CRLF messages plus
+partial/corrupt data; native exit1 after21.969s with serial_error8. Microsoft
+ClearCommError defines0x0008 as CE_FRAME (framing error). Next capture020417297858Z:
+native exit0 after60.515s, three complete IRQ PASS messages with unwanted prefix
+bytes; entire raw stream rejected by unchanged exact-byte rule. Both FAILs and
+all raw/events/jobs/receipts archived with SHA in T032-rejected-UART-captures-
+2026-11-21.zip. These are physical UART observations, not simulator strings.
+They show the approved image reached its IRQ software success path, but neither
+capture meets the complete scoped acceptance criteria. No errors/bytes removed,
+no finish attempt spent. ActiveT032/in_progress/attempt0; no reprogramming.
+
+Multiple output bursts occurred at distinct elapsed times; mechanical reset
+bounce/repeated manual activations are possible causes, not established. Do not
+change reset RTL/firmware, filter bytes or lower the oracle based on this alone.
+Next coordinate a held-reset test: owner presses/keeps middle BTNC held BEFORE
+capture; after owner confirms holding, start fresh epoch1 capture, then tell
+owner to release once and leave buttons untouched. Preserve all bytes. Capture
+is currently stopped; first obtain owner holding confirmation. Original exact
+byte, serial-error, two-epoch and truthful DONE-observation gates remain.
+
+Official references read under existing doc authorization: Digilent board manual
+section5 (LD17 receive activity and separate DONE), revD public schematic LD19,
+and Microsoft https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-clearcommerror .
+No code/architecture/RTL/constraint or policy changes. Both same-day reports
+append; source baseline d0853e9. Keep all gate statuses separate and no final
+T032 approval request before clean evidence. User-facing next action is holding
+BTNC until told to release; do not run a window before that confirmation.
