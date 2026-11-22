@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "-B",
+    "scripts/harness.py",
+    "authorize",
+    "T032",
+    "--confirm-owner-review"
+  ],
+  "cwd": "C:\\RV32I_Edge_SoC",
+  "started_utc": "2026-11-16T05:54:31.057500+00:00",
+  "status": "PASS",
+  "exit_code": 0,
+  "stdout": "{\n  \"action\": \"AUTHORIZE\",\n  \"task\": \"T032\"\n}\n",
+  "stderr": "",
+  "timeout_seconds": 300
+}

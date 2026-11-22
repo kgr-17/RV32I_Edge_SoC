@@ -1,0 +1,24 @@
+{
+  "task": "T032",
+  "date": "2026-11-15",
+  "question_item_id": "[\"request_user_input_async\",\"call_9053eb495dcb4c1f9a981401711da49e\",0]",
+  "question": "Please review C:/RV32I_Edge_SoC/evidence/hardware/README.md (commit a85f71c). Do you authorize T032’s supervised local Basys 3 identification, programming the verified T043 bitstream into volatile FPGA SRAM (replacing the running configuration), and UART capture, and explicitly authorize `python -B scripts/harness.py authorize T032 --confirm-owner-review`?",
+  "answer": "Authorize T032 and that command",
+  "authorized_command": [
+    "python",
+    "-B",
+    "scripts/harness.py",
+    "authorize",
+    "T032",
+    "--confirm-owner-review"
+  ],
+  "review_commit": "a85f71c0c80983e8ece25b6dc27145d1275060e5",
+  "review_document": "evidence/hardware/README.md",
+  "review_document_sha256": "64ae0e402ed5c7874b5f8f6cd4bb81744639ce48197d749f2266301d136eb44c",
+  "bitstream_sha256": "13f3639d2b01feded384a1316207a0ddb02fb5d4036bc399901fc87fd2aacbd9",
+  "scope": "Supervised local Basys 3 identification, approved image into volatile FPGA SRAM and UART capture",
+  "physical_programming_authorized": true,
+  "spi_flash_programming_authorized": false,
+  "remote_targets_authorized": false,
+  "tool_driver_installation_authorized": false
+}

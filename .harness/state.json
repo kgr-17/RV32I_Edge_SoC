@@ -172,6 +172,9 @@
   "start_approvals": {
     "T043": {
       "date": "2026-11-07"
+    },
+    "T032": {
+      "date": "2026-11-15"
     }
   },
   "enabled_optional_ids": [],
