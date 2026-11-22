@@ -1759,5 +1759,31 @@
       ]
     ],
     "timeout_seconds": 300
+  },
+  "hardware-evidence": {
+    "commands": [
+      [
+        "{python}",
+        "-B",
+        "scripts/test_hardware.py"
+      ],
+      [
+        "{python}",
+        "-B",
+        "scripts/hardware_evidence.py"
+      ]
+    ],
+    "inputs": [
+      "scripts/hardware.py",
+      "scripts/hardware.tcl",
+      "scripts/hardware_serial.py",
+      "scripts/hardware_evidence.py",
+      "scripts/test_hardware.py",
+      "config/fpga_build.json",
+      "evidence/fpga/manifest.json",
+      "evidence/owner_reviews/T032-2026-11-15-authorization.json",
+      "evidence/hardware/session.json"
+    ],
+    "timeout_seconds": 120
   }
 }

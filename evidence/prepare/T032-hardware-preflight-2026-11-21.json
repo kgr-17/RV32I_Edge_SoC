@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "-B",
+    "scripts/verify.py",
+    "hardware-evidence"
+  ],
+  "started_utc": "2026-11-22T01:58:41.349195+00:00",
+  "cwd": "C:\\RV32I_Edge_SoC",
+  "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+  "status": "NOT RUN",
+  "exit_code": 125,
+  "stdout": "NOT RUN: missing check inputs: hardware-evidence\n",
+  "stderr": "",
+  "timeout_seconds": 120
+}

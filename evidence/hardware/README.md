@@ -1,9 +1,12 @@
-# T032 supervised Basys 3 bring-up proposal
+# T032 supervised Basys 3 bring-up
 
-Prepared 2026-11-15 after owner approval of T043. **T032 is pending; execution
-authorization, physical connection, programming and UART capture are NOT RUN.**
-This document prepares a reviewable next action. It does not start T032 or grant
-permission. No hardware server or serial port has been opened by this session.
+Proposal prepared 2026-11-15 after owner approval of T043. The owner explicitly
+authorized it in question `call_9053eb495dcb4c1f9a981401711da49e`; authorization
+and command receipts are in `evidence/owner_reviews/T032-2026-11-15-*.json`.
+The original approved proposal remains at commit `a85f71c` with its pinned hash.
+On 2026-11-21 T032 began, identified the local board, and successfully loaded the
+approved image into volatile FPGA SRAM. **Physical UART/reset validation and
+T032 acceptance are pending.** Do not request the same authorization again.
 
 ## Exact proposed image and scope
 
@@ -109,11 +112,37 @@ small routed margins (+0.123 ns setup / +0.013 ns hold), unspecified external I/
 delays and low-confidence vectorless power remain the T043 limitations.
 Hardware validation and ASIC evidence remain separate.
 
-## Handoff at this proposal
+## Execution tooling and current handoff (2026-11-21)
 
-T043 is completed after the owner's exact approval-command authorization.
-T032 is dependency-ready but lacks start permission; harness `next` is null
-because it excludes unauthorized tasks. Do not call `authorize`, `begin`, program
-or open hardware from this document alone. The next owner decision is whether to
-authorize the scope above and the exact T032 authorize command. Physical board
-availability and identity must then be established before programming.
+`scripts/hardware.py` supports inventory, explicit target/device/COM programming,
+and bounded capture (5-60 seconds per epoch). Its Tcl rechecks live job/authority
+before connect and programming. `hardware_serial.py` uses Win32 UART APIs without
+external packages. PowerShell is used only for native read-only PnP enumeration;
+no execution policy is changed. T032's new registry entry runs independent
+policy tests then `hardware_evidence.py`; it never performs device operations.
+Without the completed physical session input, it returns NOT RUN.
+
+Actual board: `localhost:3121/xilinx_tcf/Digilent/210183B03B59A`, `xc7a35t_0`,
+part `xc7a35t`, IDCODE `00000011011000101101000010010011`. The common observed USB
+parent `210183B03B59` joins JTAG interface A and UART interface B / COM3. Actual
+inventory receipt: `inventory-20261122T015411030005Z.json`. Programming receipt:
+`program-20261122T015603204700Z.json`, exit0/PASS without native diagnostics.
+The captured receipts retain actual Vivado2025.2 SW6299465/hw_server2025.2 output.
+
+Do not reprogram blindly after an interruption. Inspect those receipts and
+existing captures first. Programming success is separate from UART evidence.
+Capture requires an owner-operated btnC reset with capture already listening:
+
+```powershell
+python -B scripts/hardware.py capture --program evidence/hardware/program-20261122T015603204700Z.json --epoch 1 --seconds 60
+```
+
+Use epoch2 for a second warm reset without reprogramming. Preserve raw uart.bin,
+timestamped events, exact commands, process errors, and all empty/failed captures.
+Owner DONE/reset observations must identify the actual reply, not be inferred
+from a PASS marker. Bind the programming receipt, two successful captures and
+owner observations by SHA-256 in `evidence/hardware/session.json`. The checker
+requires ordered, distinct epochs, exact IRQ PASS CRLF bytes and matching events.
+Never manufacture a missing physical observation or use policy fixtures as data.
+Then run the unchanged required T032 lint/test-soc/hardware-evidence finish gates.
+Final T032 owner review is still required; no approval command is authorized yet.

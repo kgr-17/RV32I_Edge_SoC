@@ -51,10 +51,63 @@ class HardwarePolicyTests(unittest.TestCase):
     def test_missing_session_never_passes(self):
         with mock.patch.object(hardware,'context',return_value=(None,{})),self.assertRaises(FileNotFoundError):
             hardware_evidence.validate('build/T032/does-not-exist-session.json')
+    def test_session_requires_two_ordered_captures_and_owner_observations(self):
+        base=harness.inside('build/T032/policy-tests');base.mkdir(parents=True,exist_ok=True)
+        with tempfile.TemporaryDirectory(dir=base) as tmp,mock.patch.object(harness,'ROOT',Path(tmp)),mock.patch.object(hardware,'context',return_value=(None,{})):
+            root=Path(tmp);(root/'evidence/hardware').mkdir(parents=True)
+            records={'inventory':self.inv,'program':{'inventory':'inventory','target':self.target,'device':'xc7a35t_0','com':'COM3',
+                'source_sha256':{},'bitstream_sha256':hardware.IMAGE_SHA,'targets':self.inv['targets'],'devices':self.inv['devices'],
+                'commands':[{'status':'PASS','exit_code':0,'stdout':'HARDWARE_PROGRAM_PASS\n','stderr':''}],
+                'finished_utc':'2026-11-22T01:00:00+00:00'}}
+            for epoch in (1,2):
+                name='capture'+str(epoch);folder=root/name;folder.mkdir()
+                (folder/'uart.bin').write_bytes(b'IRQ PASS\r\n')
+                (folder/'events.jsonl').write_text('{"elapsed_ms":5,"utc":"2026-11-22T01:0'+str(epoch)+':01+00:00","hex":"49525120504153530d0a"}\n',encoding='utf-8')
+                (folder/'capture.json').write_text('{"seconds":5}',encoding='utf-8')
+                records[name]={'program':'program','epoch':epoch,'com':'COM3','source_sha256':{},'output':name,
+                    'commands':[{'status':'PASS','exit_code':0,'stdout':'HARDWARE_UART_CAPTURE_COMPLETE\n','stderr':''}],
+                    'started_utc':'2026-11-22T01:0'+str(epoch)+':00+00:00','finished_utc':'2026-11-22T01:0'+str(epoch)+':06+00:00'}
+            observations={'board':'Digilent Basys 3','done_led':True,'reset_epochs':[1,2],
+                'owner_reply':'TEST FIXTURE, NOT PHYSICAL','question_item_id':'FIXTURE'}
+            def save_obs():
+                import json
+                (root/'observations').write_text(json.dumps(observations),encoding='utf-8')
+            save_obs()
+            # Input bindings need real files; no fixtures enter evidence in real root.
+            for n in ('program','capture1','capture2'):(root/n if n=='program' else root/n/'receipt').write_bytes(b'fixture')
+            session={'schema_version':1,'kind':'physical_basys3','program':'program','captures':['capture1','capture2'],
+                'observations':'observations','inputs_sha256':{'program':hardware.sha(root/'program'),'observations':hardware.sha(root/'observations')}}
+            # Receipt names here are virtual; put hash-bound copies at root paths.
+            session['captures']=['c1','c2'];records['c1']=records['capture1'];records['c2']=records['capture2']
+            for n in ('c1','c2'):(root/n).write_bytes(b'fixture');session['inputs_sha256'][n]=hardware.sha(root/n)
+            import json
+            def verify():
+                (root/'evidence/hardware/session.json').write_text(json.dumps(session),encoding='utf-8')
+                with mock.patch.object(hardware,'bound_receipt',side_effect=lambda n,mode:records[n]):return hardware_evidence.validate()
+            self.assertEqual(verify()['status'],'PASS')
+            session['captures']=['c1','c1']
+            with self.assertRaises(ValueError):verify()
+            session['captures']=['c1','c2'];observations['done_led']=False;save_obs();session['inputs_sha256']['observations']=hardware.sha(root/'observations')
+            with self.assertRaises(ValueError):verify()
+            observations['done_led']=True;save_obs();session['inputs_sha256']['observations']=hardware.sha(root/'observations')
+            records['c2']['epoch']=1
+            with self.assertRaises(ValueError):verify()
     def test_live_authority_is_required_before_io(self):
         for state in ({'active':None,'task_states':{'T032':'pending'}},
                       {'active':'T032','task_states':{'T032':'in_progress','T043':'completed'},'start_approvals':{}}):
             with mock.patch.object(harness,'load',return_value=({},state)),self.assertRaises(ValueError):hardware.context()
+    def test_saved_receipts_reject_missing_wrong_or_changed_artifacts(self):
+        base=harness.inside('build/T032/policy-tests');base.mkdir(parents=True,exist_ok=True)
+        with tempfile.TemporaryDirectory(dir=base) as tmp,mock.patch.object(harness,'ROOT',Path(tmp)):
+            root=Path(tmp);(root/'evidence/hardware').mkdir(parents=True)
+            (root/'source').write_bytes(b'original source');(root/'artifact').write_bytes(b'original output')
+            r={'status':'PASS','mode':'inventory','source_sha256':{'source':hardware.sha(root/'source')},'artifacts':{'artifact':hardware.sha(root/'artifact')}}
+            import json
+            (root/'evidence/hardware/proof.json').write_text(json.dumps(r),encoding='utf-8')
+            hardware.bound_receipt('evidence/hardware/proof.json','inventory')
+            (root/'artifact').write_bytes(b'changed output')
+            with self.assertRaises(ValueError):hardware.bound_receipt('evidence/hardware/proof.json','inventory')
+            with self.assertRaises(ValueError):hardware.bound_receipt('evidence/hardware/proof.json','program')
     def test_tcl_guard_and_part_selection_precede_programming(self):
         # Real Tcl interpreter, mocked hardware commands. No hardware or subprocess.
         base=harness.inside('build/T032/policy-tests');base.mkdir(parents=True,exist_ok=True)

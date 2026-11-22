@@ -6,7 +6,10 @@ audited and packaged. The owner approved the package at commit `54a00a8` and
 explicitly authorized the approval command on 2026-11-15. The command returned
 APPROVE / exit 0; **T043 is completed**, with no active task. The reviewed snapshot
 remains recoverable at that commit; this update records its accepted status.
-No physical FPGA connection or programming has occurred.
+T032 subsequently identified the owner's local board and successfully loaded this
+approved image into volatile FPGA SRAM on 2026-11-21. Physical UART/reset
+validation is pending; programming success is separate from functional acceptance.
+See `evidence/hardware/README.md` and the T032 programming/capture receipts.
 
 ## Final implementation
 
@@ -162,7 +165,10 @@ remain unspecified for 18 asynchronous inputs and 17 non-synchronous outputs:
 there is no off-chip timing closure claim. One-clock native CDC and structural
 synchronizer checks provide no metastability proof.
 
-**Formal: T023 owner-skipped / NOT RUN. Physical hardware: NOT RUN. ASIC: NOT RUN.**
+**Formal: T023 owner-skipped / NOT RUN. Functional board validation: pending. ASIC: NOT RUN.**
+The authorized T032 SRAM programming succeeded on November21; its first timed
+UART capture was empty and remains NOT RUN. Two physical reset/UART observations
+and final T032 acceptance are still required.
 Directed ISA testing is not external certification. Passing static timing does
 not establish successful physical board operation or overall project completion.
 

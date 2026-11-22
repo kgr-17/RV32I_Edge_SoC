@@ -59,3 +59,80 @@ formal skipped/NOT RUN, ASIC NOT RUN. Next program approved image then capture
 two owner-operated btnC resets and actual DONE observation, register/check the
 physical evidence gate, freeze source and run required finish gates. If interrupted,
 inspect existing programming/capture receipts before repeating any device action.
+
+
+---
+
+<!-- entry:1e120ed55606325fcaf3f63aac126dcf62c0e74893bb26f1cb4fd16b7e34c1ea -->
+
+# T032 actual programming saved; waiting for physical reset observation
+
+Checkpoint8b57b5e saved tooling/tests/preparatory failures. Authorized actual
+programming PASS/exit0 on November21, receipt
+evidence/hardware/program-20261122T015603204700Z.json. Vivado2025.2/SW6299465 and
+hw_server2025.2 targeted localhost:3121/xilinx_tcf/Digilent/210183B03B59A,
+xc7a35t_0/xc7a35t, observed IDCODE00000011011000101101000010010011. Shared USB
+parent210183B03B59 associates JTAG-A and UART-B/COM3; no first-device guessing.
+Programmed only approved volatile image SHA256
+13f3639d2b01feded384a1316207a0ddb02fb5d4036bc399901fc87fd2aacbd9. No flash,
+driver/install/global policy/RTL/XPR/XDC/clock/firmware changes. Approval remains
+valid; do not ask again or repeat authorize. Python3.9.13/Git2.48.1 unchanged.
+
+First real UART capture: evidence/hardware/capture-20261122T015621336421Z.json,
+60.516seconds, command exit0 with READY and COMPLETE markers, raw0bytes/events0.
+Physical success observation NOT RUN, retained without manufacture or weakened
+oracle. Owner reset/DONE reply has not arrived. No formal task finish attempted,
+budget still0/3. Active T032/in_progress; human reset is the outstanding dependency.
+Do not repeat programming simply to get serial data: firmware is one-shot and
+needs btnC reset with capture listening. No generic LED success inference.
+
+Added hardware-evidence registry entry (only addition; full28 regression unchanged):
+policy tests then read-only physical-session validator.10 policy tests PASS/exit0,
+receipt evidence/prepare/T032-policy-2026-11-21.json. Cover real Tcl sequencing with
+mock hardware, authority/target/part/interface rejection, error diagnostics,
+timestamp/raw-byte framing, source/artifact drift, distinct ordered epochs and
+owner observations. Mock fixtures never enter physical evidence. Actual
+verify hardware-evidence preflight returned125/NOT RUN because session.json is
+missing; receipt evidence/prepare/T032-hardware-preflight-2026-11-21.json. Missing
+physical inputs must not pass. Required T032 lint/test-soc final gates have NOT
+RUN this task yet; do not spend a finish attempt before complete physical proof.
+
+No execution policy was changed: blocked PS file prototypes remain in initial
+failed-source archive; current serial capture uses Win32 Python ctypes. Direct
+read-only PnP cmdlets enumerate relevant FTDI devices; no blocked script is
+evaluated. Tcl removes vendor PYTHONHOME/PYTHONPATH only in its process around
+the selected child interpreter and restores them. Native caps120s unchanged.
+Initial native failures, the independent negative-time test FAIL, and empty
+capture all retained. Actual capture opened successfully without serial errors.
+
+Audit evidence/hardware/audit-2026-11-21.json PASS checks program/source/image
+and capture artifacts, exact source equality and unchanged regression registry.
+T032-program-and-empty-capture-2026-11-21.zip preserves all program inputs,
+native job/report/copy and raw capture/job/event artifacts plus receipts. CRC
+and member SHA passed. This archive proves integrity, NOT functional board PASS.
+Tooling code is in Git; programming/capture evidence is added to the delivery
+commit. T043 approved hardware/manifest remain unchanged; new T032 workflow
+registry/checker files are intentionally separate from its frozen source snapshot.
+
+Next session: read this latest handoff/startup files, inspect Git, daily --supervised,
+recover activeT032 with begin T032 (no approval repeat). First inspect existing
+program and captures. Wait for owner's "Ready for another capture now" reply;
+the first timed window has ended. Start a fresh epoch1 capture for60s using
+`python -B scripts/hardware.py capture --program evidence/hardware/program-20261122T015603204700Z.json --epoch 1 --seconds 60`,
+then immediately prompt owner to press/release btnC once and confirm DONE lit.
+Repeat epoch2 as a warm reset without reprogramming; preserve all unsuccessful
+captures. If owner confirms reset but no UART arrives, diagnose actual serial/
+board behavior; do not fabricate printouts or change approved image implicitly.
+If power cycled, establish current board state before deciding whether reloading
+the already-authorized image is needed. Authority covers this exact volatile
+scope; other images/flash/driver changes remain unauthorized.
+
+After two exact physical IRQ PASS CRLF captures, save truthful owner DONE/reset
+observations with actual question/reply IDs. Bind program, two distinct successful
+captures and observations via SHA256 in evidence/hardware/session.json (schema1,
+kind physical_basys3, program, captures, observations, inputs_sha256). Validate
+read-only checker and freeze all tooling; run finish T032 --evidence
+evidence/daily/T032.md for lint/test-soc/hardware-evidence+whitespace gates.
+Never self-approve final T032. Formal T023 skipped/NOT RUN; ASIC NOT RUN; board
+programming PASS is distinct from still-pending physical functional acceptance.
+Today's two reports append findings; no prior-day report edits or scheduling.

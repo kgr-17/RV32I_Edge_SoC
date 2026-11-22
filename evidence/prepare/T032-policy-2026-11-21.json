@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "-B",
+    "scripts/test_hardware.py"
+  ],
+  "started_utc": "2026-11-22T01:58:23.554522+00:00",
+  "cwd": "C:\\RV32I_Edge_SoC",
+  "executable": "C:\\Users\\Yixu\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+  "status": "PASS",
+  "exit_code": 0,
+  "stdout": "HARDWARE_GUARD_PASS\nHARDWARE_INVENTORY_COMPLETE\nHARDWARE_GUARD_PASS\nHARDWARE_GUARD_PASS\nHARDWARE_PROGRAM_PASS\nHARDWARE_INVENTORY_COMPLETE\nHARDWARE_GUARD_PASS\nHARDWARE_GUARD_PASS\n",
+  "stderr": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.051s\n\nOK\n",
+  "timeout_seconds": 300
+}

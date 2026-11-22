@@ -54,6 +54,10 @@ def validate(name='evidence/hardware/session.json'):
         folder=harness.inside(c['output']);job=harness.read(folder/'capture.json')
         events=[json.loads(line) for line in (folder/'events.jsonl').read_text(encoding='utf-8').splitlines()]
         validate_uart((folder/'uart.bin').read_bytes(),events,job['seconds'])
+        for event in events:
+            event_time=dt.datetime.fromisoformat(event['utc'])
+            if not dt.datetime.fromisoformat(c['started_utc'])<=event_time<=previous:
+                raise ValueError('HARDWARE_UART_EVENT_OUTSIDE_CAPTURE')
         if n not in session['inputs_sha256']:raise ValueError('HARDWARE_UNBOUND_CAPTURE')
     observations=harness.read(harness.inside(session['observations']))
     if (observations.get('board')!='Digilent Basys 3' or observations.get('done_led') is not True or
@@ -63,6 +67,9 @@ def validate(name='evidence/hardware/session.json'):
         raise ValueError('HARDWARE_UNBOUND_SESSION_INPUT')
     return {'status':'PASS','scope':'Physical Basys3 approved image, two warm-reset IRQ PASS UART observations only',
         'program':session['program'],'captures':captures,'bitstream_sha256':hw.IMAGE_SHA,
+        'session_sha256':hw.sha(path),'inputs_sha256':session['inputs_sha256'],
+        'source_sha256':dict(sources,**{n:hw.sha(harness.inside(n)) for n in
+            ('scripts/hardware_evidence.py','scripts/test_hardware.py','.harness/checks.json') if harness.inside(n).is_file()}),
         'formal':'T023 skipped / NOT RUN','asic':'NOT RUN'}
 
 
