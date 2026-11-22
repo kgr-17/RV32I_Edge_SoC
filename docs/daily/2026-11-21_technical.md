@@ -136,3 +136,14 @@ evidence/daily/T032.md for lint/test-soc/hardware-evidence+whitespace gates.
 Never self-approve final T032. Formal T023 skipped/NOT RUN; ASIC NOT RUN; board
 programming PASS is distinct from still-pending physical functional acceptance.
 Today's two reports append findings; no prior-day report edits or scheduling.
+
+
+---
+
+<!-- entry:42c54be9cc604d70de95c5f3e3fa8db6d54674af0272a072b9c24883d1841e5a -->
+
+# T032 delivery checkpoint
+
+Committed c7ced03: actual programming receipt, empty capture, 51-member integrity archive, physical evidence gate, policy tests and current bilingual reports. All15 staged files matched working bytes; git diff --check/cached check, Python syntax and harness validate passed/exit0; postcommit status clean. Earlier recovery58ccbe5 and tooling8b57b5e remain.10 policy tests PASS; hardware-evidence preflight125/NOT RUN; no finish attempts spent. ActiveT032/in_progress, attempts0, owner authorization already valid. Both dated reports preserved and earlier-day reports unchanged.
+
+Waiting only for owner's readiness to operate btnC during a fresh capture. The first60s capture has ended; do not call it active or accept a late reset reply as captured data. Do not reprogram/reauthorize blindly. Resume a fresh epoch1, then epoch2, truthful DONE/reset observations, session hashing and full required gates. No physical functional PASS, no final T032 review request yet, no later task begun. Git saved locally; no push/scheduling or system changes.
