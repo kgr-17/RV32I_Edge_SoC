@@ -147,3 +147,14 @@ Today's two reports append findings; no prior-day report edits or scheduling.
 Committed c7ced03: actual programming receipt, empty capture, 51-member integrity archive, physical evidence gate, policy tests and current bilingual reports. All15 staged files matched working bytes; git diff --check/cached check, Python syntax and harness validate passed/exit0; postcommit status clean. Earlier recovery58ccbe5 and tooling8b57b5e remain.10 policy tests PASS; hardware-evidence preflight125/NOT RUN; no finish attempts spent. ActiveT032/in_progress, attempts0, owner authorization already valid. Both dated reports preserved and earlier-day reports unchanged.
 
 Waiting only for owner's readiness to operate btnC during a fresh capture. The first60s capture has ended; do not call it active or accept a late reset reply as captured data. Do not reprogram/reauthorize blindly. Resume a fresh epoch1, then epoch2, truthful DONE/reset observations, session hashing and full required gates. No physical functional PASS, no final T032 review request yet, no later task begun. Git saved locally; no push/scheduling or system changes.
+
+
+---
+
+<!-- entry:af0932b551ad40da97ee4398e6391697bd30679abe2cd2e35520cba2d9fba947 -->
+
+# T032 owner needs button-location help
+
+Owner replied to call_b930ecb459514c53a831393eeff00057: "I could not perform the reset", and to call_3b2b725ce9a249a089e7a245ea98933e: "I need help finding btnC". This confirms the empty capture is not a successful reset observation. DONE remains unobserved. No new capture/programming or finish attempt was run. ActiveT032/in_progress, attempts0; authorization persists. Baseline ef31a3d.
+
+Read official Digilent Basys3 manual (board callouts and general-purpose IO) and official Digilent Master XDC: BTNC is the center user button, U18, matching this project's btnC pin. Give the owner a simple five-button cross diagram (BTNU above; BTNL/BTNC/BTNR across; BTND below). Leave the separate PROG configuration control alone. No capture is currently active. Wait until owner identifies BTNC and says Ready, then start a new60s epoch1 capture and request press/release during that window; later epoch2 and truthful DONE/reset observations remain mandatory. Do not spend another empty timed window before readiness or infer a button press/DONE light from these replies. No RTL/tooling change; no new simulation/formal/hardware functional PASS. Same-day reports appended, prior entries retained. Source: https://digilent.com/reference/_media/reference/programmable-logic/basys-3/basys3_rm.pdf and https://github.com/Digilent/Basys3/blob/master/Resources/XDC/Basys3_Master.xdc .
