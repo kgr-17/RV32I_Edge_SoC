@@ -199,3 +199,16 @@ No code/architecture/RTL/constraint or policy changes. Both same-day reports
 append; source baseline d0853e9. Keep all gate statuses separate and no final
 T032 approval request before clean evidence. User-facing next action is holding
 BTNC until told to release; do not run a window before that confirmation.
+
+
+---
+
+<!-- entry:b059c6d8959dfa32305ac6cbf9af47053e48efd6a0363cda4e19fce821821973 -->
+
+# T032 held-reset diagnostic and operator clarification
+
+Owner held BTNC (call_b478309b4f2541db959374e9dce22178), then reported "Released once; DONE is lit" (call_49059b94569041c1be074eebed38b88f). Held-reset capture evidence/hardware/capture-20261122T020903755459Z.json received77bytes/seven complete IRQ PASS CRLF messages plus extra bytes: native exit0, overall FAIL under unchanged exact-byte gate. DONE now has an actual owner observation; no seven-reset acceptance is inferred.
+
+Thirty-second passive diagnostic capture-20261122T021022968131Z.json received0bytes, native exit0, capture status NOT RUN. Diagnostic interpretation: quiet during the untouched interval; not a reset-success epoch. Firmware source shows completed_loop self-JAL and reset_sync has two clocked stages; inspected without changing code. Spontaneous restart or mechanical reset bounce was considered but not established.
+
+Owner clarified in call_36842d47270e4e6caff573256b9fac2e: "Yes, I pressed again while checking". This explains repeated manual activations; do not label the repeated messages an RTL defect. Latest raw receipts retain all bytes/errors. No gate weakened or finish attempt used; activeT032/attempt0. Baseline140eb01. Next obtain owner holding confirmation, start fresh epoch1, tell owner release once and keep hands away until completion. Then similarly epoch2, truthful owner observations/session hashing/full gates. Existing programming authority remains valid; no reprogramming or source modification needed. Current capture is stopped.
