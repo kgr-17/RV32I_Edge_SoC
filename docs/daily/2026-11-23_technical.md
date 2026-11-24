@@ -137,3 +137,52 @@ current physical capture FAIL. No new-image programming authorized by publicatio
 Formal owner-skipped/NOT RUN, ASIC NOT RUN. Exactly two same-day daily reports
 append; earlier findings retained. Repo history baseline f1fd9bb; original pending
 diagnosis was saved in37aba2a before this publication work.
+
+
+---
+
+<!-- entry:fdf74afab3c17a670c3cf71e70cd63e2e6a328d541e643a568a3b3546412a3f0 -->
+
+# Publication attempt failed HTTP403; all presentation work committed
+
+Local commit79e7d4f contains the refreshed154-line README,2582-word quantified
+STAR summary.md, preserved prior README, user-requested no-AI-attribution rule,
+secret ignore patterns, authorization and scan/check reports. All12 staged files
+matched inspected working bytes; cached/working whitespace and harness validation
+passed. Commit author/committer is verified owner Yixu Liu (Winson), GitHub
+ID109614978+kgr-17 noreply address. No AI/bot identities or coauthor trailers,
+no historic author rewrite. Credentials are DPAPI encrypted in local Git metadata,
+not in files staged/pushed; never reproduce their values in handoffs.
+
+Authenticated non-force git push --set-upstream origin HEAD:main was REJECTED:
+"Permission to kgr-17/RV32I_Edge_SoC.git denied to kgr-17", HTTP403. Outer tool
+exit1; first helper did not persist underlying git exit separately. Subsequent
+authenticated ls-remote --heads exit0 returned no heads, so remote is still empty
+and upload is NOT COMPLETE. See evidence/publication-result-2026-11-23.json.
+Optional About-setting API PATCH also403; no metadata update succeeded. This is
+GitHub token authorization, not sandbox/automatic approval rejection. No attempt
+to bypass by dropping workflow/history, using other credentials or force-pushing.
+
+Genuine blocker: owner must edit the existing fine-grained token's repository
+access to include kgr-17/RV32I_Edge_SoC and grant Contents read/write plus Workflows
+read/write (existing .github/workflows/rtl.yml). User already authorized publication;
+do not ask again for push permission or ask them to repost token. After owner
+saves the existing token's permissions, retry using local encrypted credential:
+python -B .tmp/github_publish.py refs, then push. Verify remote main SHA equals
+local HEAD and API README/summary bytes and human author before claiming success.
+Do not assume permission changed based on elapsed time. If token is replaced,
+use hidden secure input/local DPAPI rather than committing plaintext. The helper
+contains no credential literal and lives in ignored .tmp; secret lives in .git.
+
+Official GitHub PAT-management and repository-contents docs confirm per-repository
+access/Contents write and Workflows write requirements. No need for broader
+Administration permission just to publish files. Root license remains unspecified;
+do not add a license or change visibility without a user choice. Target is already
+public; current README describes remaining hardware FAIL/formal skip/ASIC NOT RUN.
+
+Next recover activeT032 as usual; no reset-contract implementation/new-image
+programming from publication scope. T032 attempt0 unchanged. Exactly two November23
+reports appended. Commit this failed-push receipt and handoff locally using owner
+identity; final local HEAD will be newer than79e7d4f, and that HEAD is what the
+eventual successful push should contain. Stop at the concrete credential-access
+block after showing the user the finished local artifacts and required change.

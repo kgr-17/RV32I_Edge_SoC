@@ -1,0 +1,29 @@
+{
+  "date_la": "2026-11-23",
+  "observed_at_utc": "2026-11-24T00:27:16.251678+00:00",
+  "repository": "https://github.com/kgr-17/RV32I_Edge_SoC",
+  "local_commit": "79e7d4f2e5824093d82697496db5caf5ae9c93bb",
+  "status": "FAILED",
+  "command": [
+    "git",
+    "push",
+    "--set-upstream",
+    "origin",
+    "HEAD:main"
+  ],
+  "outer_tool_exit_code": 1,
+  "git_process_exit_code": "not separately persisted by first helper invocation",
+  "observed_stderr": "remote: Permission to kgr-17/RV32I_Edge_SoC.git denied to kgr-17.\nfatal: unable to access the repository URL: The requested URL returned error: 403",
+  "remote_heads_after_failure": [],
+  "remote_main_verified": false,
+  "diagnosis": "Credential authenticates user but repository access and/or token write scopes do not authorize this push",
+  "owner_action": [
+    "Edit the existing fine-grained PAT repository access to include kgr-17/RV32I_Edge_SoC",
+    "Grant Contents read/write and Workflows read/write for the existing workflow file",
+    "Save permissions; retry using the locally encrypted token; no token repost required"
+  ],
+  "optional_metadata_update": "HTTP403; skipped without bypass",
+  "credential_published": false,
+  "history_rewritten": false,
+  "physical_task_changed": false
+}
