@@ -1,5 +1,69 @@
 # RV32I Edge SoC
 
+## Current status — 2026-11-23
+
+**Work in progress: verified CPU/SoC simulation and routed FPGA implementation;
+physical reset/UART acceptance remains open.** This repository is an engineering
+prototype with preserved passing evidence and failure history, not a completed
+hardware release or an ISA certification claim.
+
+The five-stage RV32I pipeline connects to 64 KiB ROM, 64 KiB RAM, UART, GPIO and
+timer peripherals. The reviewed v0.3 configuration adds a scoped CSR/trap/MRET
+implementation and timer delivery through the machine-external interrupt class.
+The canonical target is Digilent Basys 3 / `xc7a35tcpg236-1`, one 100 MHz clock.
+
+| Evidence | Current result |
+|---|---|
+| RTL and integration verification | Directed, seeded random, independent retirement/reference checks, assertions and 28-target regression passed at the recorded T043 source snapshot |
+| FPGA implementation | T043 passed and owner-approved: routed setup +0.123 ns, hold +0.013 ns, zero DRC findings |
+| Routed resources | 3,291 LUTs, 2,554 FFs, 32 BRAM tiles, 36 IOBs |
+| Physical board | Approved image programmed; real `IRQ PASS` received; complete T032 acceptance **not passed** |
+| Open hardware issue | Controlled single-release capture contains `ff 49 f2` before `IRQ PASS` CRLF; raw capture is retained as FAIL |
+| Formal | T023 explicitly owner-skipped / NOT RUN |
+| ASIC | NOT RUN |
+
+The proposed [20 ms board reset-release qualification](docs/RESET_RELEASE_REVIEW.md)
+has not been approved or implemented. Representative reset chatter reproduces a
+framing failure in simulation, but the physical contact waveform is unmeasured
+and the cause is not conclusively established. No UART bytes are filtered to
+make the physical test pass. See [FPGA evidence](docs/FPGA_PPA.md),
+[hardware procedure/results](evidence/hardware/README.md) and the
+[latest handoff](docs/daily/2026-11-23_technical.md).
+
+The backlog records 35 completed mandatory milestones, one owner-skipped formal
+milestone and five unfinished mandatory milestones (including active T032), plus
+four disabled optional tasks. The project is not complete.
+
+### Reproduction and repository scope
+
+Run from the existing project using the pinned local Python 3.9.13 and
+Vivado/XSim 2025.2 tools; this is not a zero-install cloud build:
+
+```powershell
+python -B scripts/harness.py status
+python -B scripts/harness.py validate
+python -B scripts/verify.py regress
+```
+
+The attended engineering entry point is `python -B scripts/harness.py daily --supervised`.
+Read the latest technical handoff before implementation. Physical operations,
+new architecture changes, execution gates and final reviews have explicit owner
+authorization boundaries. The GitHub Actions file is a prepared manual workflow
+for a configured self-hosted Windows runner; no successful GitHub CI run is claimed.
+
+RTL lives in `rtl/`, independent verification in `dv/`, automation in `scripts/`,
+board integration in `fpga/basys3/`, specifications/reports in `docs/`, and immutable
+receipts/recovery archives in `evidence/`. Generated working outputs remain in
+ignored `build/` paths. Archives and logs include local paths and hardware
+identifiers; review distribution scope before public publication. No root open
+source license has been selected yet. Original kit contents remain untouched.
+
+## Historical milestone log
+
+The entries below preserve earlier development stages. Their pending/not-run
+statements describe those historical checkpoints; the current summary above and
+dated evidence take precedence.
+
 Status: T002 architecture v0.2 approved by the owner; T003 toolchain gates passed
 on October 23 after the authorized reopen. The argument-file repair passed:
 61 Python tests, two seeded fixture simulations (268 vector checks), fixture

@@ -1,0 +1,33 @@
+{
+  "date_la": "2026-11-23",
+  "scope": "Local GitHub readiness assessment; no publication/remote/network mutation",
+  "recommendation": "Suitable for private backup or clearly marked WIP; public distribution review incomplete; not a completed release",
+  "base_commit": "9cf97a0eb55ad2e6b602d29403fe52b855c3322a",
+  "remotes": [],
+  "completed_tasks": 35,
+  "owner_skipped_tasks": [
+    "T023"
+  ],
+  "active": "T032",
+  "T032_attempts": 0,
+  "physical_capture": "FAIL: ff49f2 before IRQ PASS CRLF",
+  "reset_release_proposal": "NOT APPROVED / NOT IMPLEMENTED",
+  "largest_reachable_blob": [
+    48468255,
+    "evidence/failed_sources/T043/boundedA-routed-timing/inputs-and-native-evidence.zip"
+  ],
+  "reachable_blobs_over_100MiB": 0,
+  "credential_pattern_check": {
+    "exit_code": 1,
+    "matching_file_names": [],
+    "limits": "Limited common patterns in tracked text, excludes original kit, all history and ZIP contents; not a comprehensive secrets audit"
+  },
+  "root_license_file": false,
+  "public_metadata_review": "PENDING: local paths, hardware IDs, owner review conversations, archive distribution rights",
+  "github_ci": "Prepared manual self-hosted workflow; no successful remote CI run verified",
+  "diagnostic_artifact_integrity": "PASS, both simulation outcomes and physical FAIL retained",
+  "physical_programming_today": "NOT RUN",
+  "push_today": "NOT RUN",
+  "formal": "owner skipped / NOT RUN",
+  "asic": "NOT RUN"
+}
