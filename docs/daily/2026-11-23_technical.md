@@ -186,3 +186,12 @@ reports appended. Commit this failed-push receipt and handoff locally using owne
 identity; final local HEAD will be newer than79e7d4f, and that HEAD is what the
 eventual successful push should contain. Stop at the concrete credential-access
 block after showing the user the finished local artifacts and required change.
+
+
+---
+
+<!-- entry:d1082bf6d1f51ec5a8f9484cca701efbbafa55819f1eda4509d397b7cb67c2f8 -->
+
+# GitHub push retry still rejected
+
+Owner said yes, push it. Retried the already-authorized non-force push from8fdd301 using the same locally encrypted credential; authenticated account kgr-17 is valid but GitHub returned HTTP403: Permission to target repository denied. Subsequent ls-remote heads remains empty. No upload success or permission change inferred. No alternate credentials, force push, workflow deletion, architecture change, board action or finish attempt. User action remains updating existing token repository selection plus Contents/Workflows read/write; no new token should be posted in chat. Presentation commit79e7d4f and retry handoff8fdd301 are intact. Append same-day reports, commit failure observation locally under verified owner identity; retry only after explicit confirmation that GitHub permissions were saved. This is a GitHub access rejection, not automatic local approval review.
