@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "scope": "Presentation files, quantitative snapshot cross-checks, preserved history, local-only credential boundary and attribution rule",
+  "local_links_checked": 43,
+  "metrics_source": "evidence/fpga/manifest.json",
+  "regression_targets": 28,
+  "prior_readme_preserved_byte_exactly": true,
+  "existing_ai_authors_or_coauthor_trailers": false,
+  "credential_tracked": false,
+  "remote_contains_credential": false,
+  "documents_sha256": {
+    "README.md": "0044406330840fb070aa901b6c628251446b6fae7a08c7306179e9b904f3dd83",
+    "summary.md": "3b62cd3096bde6824fc3e69377a8acae87cef99b9b289173570ae0d3ece46ef8",
+    "AGENTS.md": "8397dc48c43f7d5e04ca233acc59e649ca807e68147e8397da05173df8b4f8b2",
+    "docs/DEVELOPMENT_HISTORY.md": "4ccaa03e4c9388166dce3b53b0f6fb600b544778e14caa654cf36b81070bfdd1"
+  }
+}

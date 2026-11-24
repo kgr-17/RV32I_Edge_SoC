@@ -23,3 +23,9 @@ obj_dir/
 sim_build/
 .harness/lockfile
 .harness/.state-*
+.secrets/
+.local/
+.env
+.env.*
+!.env.example
+*.dpapi

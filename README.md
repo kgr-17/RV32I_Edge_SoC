@@ -1,43 +1,96 @@
 # RV32I Edge SoC
 
-## Current status — 2026-11-23
+A five-stage, 32-bit RISC-V CPU and bare-metal SoC in SystemVerilog, with an
+independent architectural reference model, reproducible verification and a routed
+100 MHz implementation on the Digilent Basys 3.
 
-**Work in progress: verified CPU/SoC simulation and routed FPGA implementation;
-physical reset/UART acceptance remains open.** This repository is an engineering
-prototype with preserved passing evidence and failure history, not a completed
-hardware release or an ISA certification claim.
+**Status: work in progress.** RTL simulation and FPGA implementation have passed
+their recorded gates. The board runs the interrupt firmware, but physical
+reset/UART acceptance remains open because a controlled capture contains three
+unexpected bytes before `IRQ PASS`. Formal proof was owner-skipped; ASIC work has
+not run. [Current engineering status](docs/FPGA_PPA.md)
 
-The five-stage RV32I pipeline connects to 64 KiB ROM, 64 KiB RAM, UART, GPIO and
-timer peripherals. The reviewed v0.3 configuration adds a scoped CSR/trap/MRET
-implementation and timer delivery through the machine-external interrupt class.
-The canonical target is Digilent Basys 3 / `xc7a35tcpg236-1`, one 100 MHz clock.
+[Resume / STAR summary](summary.md) · [Verification report](docs/DV_CLOSURE.md) ·
+[FPGA results](docs/FPGA_PPA.md) · [Board bring-up](evidence/hardware/README.md) ·
+[Open reset proposal](docs/RESET_RELEASE_REVIEW.md)
 
-| Evidence | Current result |
+## Highlights
+
+- **Five-stage pipeline:** IF → ID → EX → MEM → WB, forwarding, load-use stalls,
+  age-ordered exceptions, wrong-path flush and ready/valid memory backpressure.
+- **Complete project RV32I base scope:** 40 base mnemonics, an explicit execution
+  environment, and separately reviewed CSR/trap/MRET/timer-interrupt support.
+- **Integrated SoC:** 64 KiB ROM, 64 KiB RAM, UART TX/RX, synchronized GPIO and timer.
+- **Independent verification:** retired-state comparison, deterministic seeds,
+  whole-memory checks, executable invariants and deliberate faulty RTL/trace tests.
+- **Reproducible evidence:** native tool receipts, source/artifact hashes, bounded
+  checkpoint builds, retained failures and versioned engineering handoffs.
+
+## Measured results
+
+| Metric | Recorded result | Evidence |
+|---|---|---|
+| FPGA / clock | Artix-7 `xc7a35tcpg236-1`, 100 MHz / 10 ns | [FPGA report](docs/FPGA_PPA.md) |
+| Routed setup closure | WNS **−5.092 → +0.123 ns**, a **5.215 ns** slack improvement | [Repair history](evidence/daily/T043.md) |
+| Final hold / DRC | **+0.013 ns** hold slack; **0** DRC violations | [Manifest](evidence/fpga/manifest.json) |
+| Resources | **3,291 LUTs** (15.82%), **2,554 FFs** (6.14%), **32/50 BRAM** tiles (64%) | [Manifest](evidence/fpga/manifest.json) |
+| Routing | **5,892/5,892** routable nets completed, 0 routing errors | [Manifest](evidence/fpga/manifest.json) |
+| Regression inventory | **16 → 28** registered targets: **12 added / 75% growth** | [T019](evidence/daily/T019.md), [T043](evidence/daily/T043.md) |
+| Directed ISA matrix | **6,364 retirements / 632 scenario runs**, 40 instruction families and 9 project fault classes | [ISA matrix](docs/ISA_COMPLIANCE_MATRIX.md) |
+| Random architectural comparison | **14,458 retirements / 300 scenarios / 6 seeds** | [Random DV](docs/RANDOM_VERIFICATION.md) |
+
+Target-count growth measures regression breadth, not a coverage percentage.
+Setup slack improvement is a timing-closure result, not a measured CPU speedup.
+Results belong to the source snapshots and scopes named in their reports.
+
+## Architecture
+
+```mermaid
+flowchart LR
+  subgraph CPU[Five-stage RV32I pipeline]
+    IF[IF: fetch] --> ID[ID: decode / GPR read]
+    ID --> EX[EX: ALU / branch]
+    EX --> MEM[MEM: load / store]
+    MEM --> WB[WB: retire / GPR write]
+    WB -. forwarding .-> EX
+    EX -. redirect / flush .-> IF
+  end
+  IF <-->|instruction request / response| BUS[Local memory fabric]
+  MEM <-->|data request / response| BUS
+  BUS <--> ROM[64 KiB boot ROM]
+  BUS <--> RAM[64 KiB RAM]
+  BUS <--> UART[UART TX / RX]
+  BUS <--> GPIO[GPIO]
+  BUS <--> TIMER[Timer]
+  TIMER -. machine-external IRQ .-> CPU
+  UART <--> USB[Board USB-UART]
+```
+
+The design uses one clock domain, clock enables for peripheral timing and
+separate instruction/data ready-valid interfaces. Each bus permits one accepted
+unanswered transaction. Memory and peripheral effects commit at successful
+response acceptance; retirement and precise traps are checked separately.
+
+| Region | Address range |
 |---|---|
-| RTL and integration verification | Directed, seeded random, independent retirement/reference checks, assertions and 28-target regression passed at the recorded T043 source snapshot |
-| FPGA implementation | T043 passed and owner-approved: routed setup +0.123 ns, hold +0.013 ns, zero DRC findings |
-| Routed resources | 3,291 LUTs, 2,554 FFs, 32 BRAM tiles, 36 IOBs |
-| Physical board | Approved image programmed; real `IRQ PASS` received; complete T032 acceptance **not passed** |
-| Open hardware issue | Controlled single-release capture contains `ff 49 f2` before `IRQ PASS` CRLF; raw capture is retained as FAIL |
-| Formal | T023 explicitly owner-skipped / NOT RUN |
-| ASIC | NOT RUN |
+| Boot ROM | `0x00000000–0x0000FFFF` |
+| RAM | `0x00010000–0x0001FFFF` |
+| UART | `0x10000000–0x1000001F` |
+| GPIO | `0x10000020–0x1000003F` |
+| Timer | `0x10000100–0x1000010F` |
 
-The proposed [20 ms board reset-release qualification](docs/RESET_RELEASE_REVIEW.md)
-has not been approved or implemented. Representative reset chatter reproduces a
-framing failure in simulation, but the physical contact waveform is unmeasured
-and the cause is not conclusively established. No UART bytes are filtered to
-make the physical test pass. See [FPGA evidence](docs/FPGA_PPA.md),
-[hardware procedure/results](evidence/hardware/README.md) and the
-[latest handoff](docs/daily/2026-11-23_technical.md).
+See the [base architecture](docs/ARCH_SPEC.md),
+[interrupt revision](docs/INTERRUPT_SPEC.md),
+[pipeline review](docs/PIPELINE_REVIEW.md) and
+[integration evidence](docs/INTERRUPT_REPORT.md) for precise contracts and limits.
 
-The backlog records 35 completed mandatory milestones, one owner-skipped formal
-milestone and five unfinished mandatory milestones (including active T032), plus
-four disabled optional tasks. The project is not complete.
+## Verification and reproduction
 
-### Reproduction and repository scope
-
-Run from the existing project using the pinned local Python 3.9.13 and
-Vivado/XSim 2025.2 tools; this is not a zero-install cloud build:
+The recorded environment is Windows, Python **3.9.13**, Vivado/XSim **2025.2**
+(SW build **6299465**) and the pinned local GNU RISC-V toolchain. Full checks
+require those installed tools; inspect `.harness/toolchain.json` and the software
+toolchain configuration for local paths before reproducing on another machine.
+No third-party CPU core is required.
 
 ```powershell
 python -B scripts/harness.py status
@@ -45,162 +98,57 @@ python -B scripts/harness.py validate
 python -B scripts/verify.py regress
 ```
 
-The attended engineering entry point is `python -B scripts/harness.py daily --supervised`.
-Read the latest technical handoff before implementation. Physical operations,
-new architecture changes, execution gates and final reviews have explicit owner
-authorization boundaries. The GitHub Actions file is a prepared manual workflow
-for a configured self-hosted Windows runner; no successful GitHub CI run is claimed.
+Useful scoped targets include `test-isa-complete`, `test-random`, `test-soc` and
+`test-interrupts`. Their exact source snapshots, seeds and native command receipts
+are preserved in `evidence/`. The [verification plan](docs/VERIFICATION_PLAN.md)
+separates directed/random simulation, assertions, formal, routed implementation,
+physical board observations and ASIC evidence.
 
-RTL lives in `rtl/`, independent verification in `dv/`, automation in `scripts/`,
-board integration in `fpga/basys3/`, specifications/reports in `docs/`, and immutable
-receipts/recovery archives in `evidence/`. Generated working outputs remain in
-ignored `build/` paths. Archives and logs include local paths and hardware
-identifiers; review distribution scope before public publication. No root open
-source license has been selected yet. Original kit contents remain untouched.
+The GitHub Actions workflow is **manual, self-hosted Windows tooling**. A successful
+GitHub-hosted full RTL run is not claimed. Hardware tools never run automatically
+on a push. Device operations and new FPGA images require explicit authorization.
 
-## Historical milestone log
+## Board result and open work
 
-The entries below preserve earlier development stages. Their pending/not-run
-statements describe those historical checkpoints; the current summary above and
-dated evidence take precedence.
+The approved bitstream was programmed into volatile FPGA SRAM, and physical
+UART captures contain `IRQ PASS`. DONE was observed lit. A controlled single
+release also produced the prefix `ff 49 f2`, so the strict physical gate remains
+**FAIL**; neither partial messages nor filtered suffixes are counted as a pass.
 
-Status: T002 architecture v0.2 approved by the owner; T003 toolchain gates passed
-on October 23 after the authorized reopen. The argument-file repair passed:
-61 Python tests, two seeded fixture simulations (268 vector checks), fixture
-synthesis/structural lint and all five injected failure checks. Exact evidence is
-in evidence/daily/T003.md. T004 decoder/package also passed on October 23 under
-an explicit one-time owner exception: all 40 mnemonics, 287,618 vector checks
-across two seeds, independent oracle tests and real decoder synthesis lint.
-See [decoder interface and reproduction](docs/DECODER.md) and evidence/daily/T004.md.
-T005 ALU passed on October 25 with 234,804 vector checks. T006 register-file
-automation passed on attempt 2 and was explicitly approved by the owner:
-[interface and review checklist](docs/REGFILE.md). Expanded unit regression passed
-1,185,178 vectors across fixture, decoder, ALU, register file, branch, LSU,
-stage storage, forwarding and hazard detection.
-T007 branch/jump unit passed 253,936 vectors; T008 load/store formatting passed 89,744.
-T009 memory behavior models passed 49,276 seeded edges and 11 tests;
-T010 nonpipelined reference CPU passed 324 directed retirements in 22 scenarios.
-T011 independent ISA comparison matched those retirements and terminal GPR/RAM
-samples. T012's [L1 baseline report](docs/VERIFICATION_REPORT.md) was explicitly
-approved by the owner on November 2. T013 stage storage passed 79,022 clocked
-vectors at widths 1/32/129; T014 forwarding passed 144,424 comparisons.
-T015 pipeline dependency integration matched 128 retirements; T016 control matched
-502 retirements across 42 scenarios. T017 randomized bus waits passed four seeds,
-2,008 retirements across 168 scenarios, with IF/data request stalls and 32-edge
-data waits observed. The first attempt's native Vivado exit crash is retained;
-the identical second attempt passed. T018's independent pipeline ISS comparison
-and all six gates passed on attempt1; the [pipeline review](docs/PIPELINE_REVIEW.md)
-was explicitly approved by the owner on November2. Across four seeds,12,760 ordered retirement/fault/
-GPR/RAM sample events matched, including2,008 successful retirements. Random
-instruction/reset/formal and final core DV closure, FPGA implementation, hardware
-and ASIC results remain future milestones. T041's [directed ISA/EEI matrix](docs/ISA_COMPLIANCE_MATRIX.md)
-passed all five gates on attempt2 and was owner-approved November2:6,364 retirements/632
-scenario runs, all40 families/nine fault classes, explicit FENCE and bus-error
-evidence. The first nonvacuity failure and strengthened stimulus are preserved.
-T019 random programs and the streaming scoreboard completed November4 on
-attempt3: all five gates passed unchanged, including full16-target regression.
-Six seeds matched14,458 retirements/300 scenarios, with11,446 random-only
-retirements and36 streaming defect rejections. The native exit failure and
-owner-requested shutdown interruption remain preserved. T020's executable
-assertions completed on attempt2: all17 regression targets passed, six seeds
-exercised real pipeline invariants and all16 isolated violations were detected.
-The first regression's XSim native launch failure is preserved. See
-[assertion scope and evidence](docs/ASSERTION_PLAN.md). T021 coverage completed
-on attempt2 with all18 regression targets passing. A directed JAL/MEM case
-filled a mandatory collision gap;44 of49 reachable crosses were observed,
-five remain explicitly uncovered, and15 structural exclusions are documented.
-See [coverage inventory and gaps](docs/COVERAGE_PLAN.md). T022 completed on its
-first attempt with all19 regression targets passing:9,840 main retirements,
-52 pre-reset retirements and28 selected shared-reset windows checked. Added
-stress programs hit the five prior gaps (49/49 in the finite cross inventory),
-and the injected retention leak was rejected. See [stress scope](docs/STRESS_VERIFICATION.md).
-T023 selected formal verification was explicitly owner-skipped on November4;
-its original NOT RUN125 record and zero executed formal tasks remain preserved.
-See [formal limits and owner exception](docs/FORMAL_LIMITS.md). Progress is31
-completed mandatory milestones plus1 owner-skipped, out of41. T024 simulation
-DV review passed all seven gates on attempt2, including the full19-target
-regression, and was explicitly owner-approved November4, acknowledging missing
-formal proof. See [DV review package](docs/DV_CLOSURE.md). T025 board shell/XDC
-completed on attempt2:962 vectors, exact negative checks and actual36-port/10ns
-constraint/DRC inspection. See [board scope and limits](docs/BOARD_CONSTRAINTS.md).
-T026 completed November6 on attempt3: real RV32I/ILP32 boot image, four independent
-72-retirement model boots,66,250 primitive-memory RTL vectors and actual16ROM+16RAM
-BRAM inference. See [firmware and memory evidence](docs/FIRMWARE_MEMORY.md). The
-first mapping warnings and later native Vivado exit crash remain preserved.
-Compiled CPU/SoC execution is pending T031.
-T027 completed November6 on attempt2: UART TX and sending-side MMIO passed
-247,940 native simulation rows, three negative controls and warning-free
-synthesis lint. See [UART TX scope and evidence](docs/UART_TX.md).
-T042 completed on attempt1:752306 RX edge rows plus the unchanged247940 TX replay,
-three negative controls, two collision mutations and actual two-stage synchronizer
-inspection. See [combined UART evidence](docs/UART_RX.md). Board execution remains pending.
-T028 completed on attempt1: synchronized GPIO and timer MMIO, 9295
-native edge rows, three input negatives and three actual RTL fault detections.
-See [GPIO/timer contracts and evidence](docs/GPIO_TIMER.md).
-T029 completed on attempt1:3290reset/input rows and scoped synthesized CDC for
-18chains/36stages. GPIO CDC-6Warning remains unwaived; fullSoC/routedCDC is pending.
-See [CDC scope and limits](docs/CDC_REPORT.md).
-T030 completed on attempt1: reproducible nonproject Tcl plan,20command validation
-and eight actual rejection cases. Full-target execution remains owner-controlled
-T043; see [FPGA build/PPA status](docs/FPGA_PPA.md).
+An ideal-release simulation passes; representative reset chatter reproduces a
+framing error. The switch waveform is unmeasured, so this is supporting evidence
+for a [proposed 20 ms release qualification](docs/RESET_RELEASE_REVIEW.md), not a
+conclusive root-cause measurement. That change is **not approved or implemented**.
+Any new image needs fresh implementation evidence and separate programming review.
 
-The existing `RV32I_Edge_SoC.xpr` is the active Vivado project. Its configured part
-is `xc7a35tcpg236-1`. The owner confirmed a Digilent Basys 3. The XPR now selects
-`basys3_top` with the T025 diagnostic shell and selected board constraints. CPU/SoC
-wiring is pending T031; this shell only demonstrates synchronized board I/O. Core
-units are verified with reproducible non-project scripts. Vivado 2025.2 was located and its batch
-startup/target-part catalog verified; local paths are in `.harness/toolchain.json`.
+Other limits:
 
-From PowerShell in `C:\RV32I_Edge_SoC`:
+- Finite ISA/reference testing is not external RISC-V certification.
+- Formal T023 is explicitly skipped / NOT RUN; ASIC flow is NOT RUN.
+- External asynchronous I/O delays are unspecified; no off-chip timing or analog
+  metastability proof is claimed.
+- The 0.084 W vectorless power estimate has low confidence and is not measured
+  board power. No CPI, IPC, workload speedup or measured maximum frequency is claimed.
 
-```powershell
-python -B scripts/preflight.py
-python -B scripts/test_harness.py
-python -B scripts/harness.py status
-python -B scripts/harness.py daily --supervised
-```
+The backlog has 35 completed mandatory milestones, one owner-skipped milestone,
+five unfinished mandatory milestones and four disabled optional tasks.
 
-The last command prepares an attended Codex session. Read the returned handoff
-and `prompts/DAILY_RUN.md`, then work through ready tasks sequentially. The owner
-removed the one-task-per-day cap on October 23. Verify, report and commit each
-task before the next; keep one active task and honor all review gates. It does not
-start a model, run an infinite loop, install a scheduler, or run RTL by itself.
-`scripts/daily.ps1` is a PowerShell convenience entrypoint with the same purpose.
-Python is the supported native Windows interface; Make targets are optional
-aliases and were not executed because Make is not on PATH.
+## Repository map
 
-Read `docs/ENVIRONMENT_BOUNDARY.md`, `docs/CODEX_LOOP.md`, the latest technical
-handoff under `docs/daily/`, and `docs/BACKLOG.json`. The v0.2 architecture proposal
-and explicit decisions are in `docs/ARCH_SPEC.md` and `docs/ARCH_REVIEW.md`; the
-companion `docs/ARCH_CONTRACT.json` has consistency/mutation checks. Their proposal
-fields are preserved as the reviewed submission; owner acceptance is recorded in
-`.harness/state.json` and `evidence/owner_reviews/T002-2026-10-17.json`.
-The backlog has 45 tasks: 41 mandatory, 4 optional,
-including the required later interrupt architecture and verification milestones.
+| Path | Purpose |
+|---|---|
+| `rtl/` | CPU, memories, bus fabric and peripherals |
+| `dv/` | Independent models, scoreboards, generators and self-checking benches |
+| `sw/` | Bare-metal startup, linker script and smoke/interrupt firmware |
+| `fpga/basys3/` | Top, constraints, memory images and reproducible Tcl |
+| `scripts/` | Verification, native process control and engineering harness |
+| `docs/` | Specifications, review packages and bilingual handoffs |
+| `evidence/` | Receipts, metrics, raw captures and recoverable failure archives |
+| `summary.md` | Detailed STAR stories and evidence-backed resume bullets |
 
-Original work is recoverable from baseline Git commit
-`8f16054b24a9d50021f8a805f7f0d78435206daa` and a local hash-verified backup
-documented in `docs/PROJECT_BASELINE.json`. The original engineering kit remains
-unchanged in `riscv_edge_soc_codex_kit/`; root-level files are the active versions.
+Build/cache output is kept in ignored project-local paths. Historical engineering
+notes are preserved in [the development history](docs/DEVELOPMENT_HISTORY.md).
+The untouched original kit remains in `riscv_edge_soc_codex_kit/`.
 
-This bootstrap session has unrestricted filesystem access. Unattended execution
-is disabled pending actual sandbox/approval configuration. No tools, packages or
-IP were downloaded/installed and no FPGA was programmed. Previously authorized
-official documentation reads are recorded in evidence/t002_sources.json.
-
-T031 connects the actual pipeline, ROM/RAM and UART/GPIO/timer in the existing
-Vivado project. See [SoC boot evidence](docs/SOC_BOOT.md). The canonical Basys 3
-top has passed compiled firmware simulation at the production UART divider;
-the original diagnostic remains in fpga/basys3/diagnostic_top.sv. Run
-`python -B scripts/verify.py test-soc` to reproduce. Full FPGA implementation,
-timing, bitstream and physical programming remain separate approval milestones.
-
-The owner approved interrupt architecture v0.3 at T044. T045 adds CSR operations,
-precise traps/MRET and the existing timer's IRQ at CTRL bit2, preserving bit1
-auto-reload. Core/SoC default to the legacy mode; the canonical physical top
-selects the interrupt mode and separate irq_boot.mem. See
-[interrupt evidence](docs/INTERRUPT_REPORT.md) and the
-[runtime contract](docs/INTERRUPT_CONTRACT.json). Reproduce with
-`python -B scripts/verify.py test-interrupts`. T045 acceptance passed on attempt 2:
-strict lint, interrupt tests and the full 28-target regression passed. Formal
-T023 remains owner-skipped/NOT RUN. Full FPGA execution awaits T043 authorization.
+Maintainer: [kgr-17](https://github.com/kgr-17). A project license has not yet been
+selected; third-party materials retain their existing notices.

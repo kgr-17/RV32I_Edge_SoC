@@ -1,0 +1,19 @@
+{
+  "date_la": "2026-11-23",
+  "source": "Explicit owner message in this conversation; credential value intentionally omitted",
+  "repository": "https://github.com/kgr-17/RV32I_Edge_SoC",
+  "publication_authorized": true,
+  "requested_work": [
+    "Push project to specified GitHub repository",
+    "Store supplied credential local only",
+    "Create detailed quantified STAR summary.md",
+    "Add no-AI-contributor rule",
+    "Improve repository presentation"
+  ],
+  "credential_storage": "Windows DPAPI encrypted under local Git metadata; no plaintext working-tree file",
+  "history_rewrite_authorized": false,
+  "reset_contract_approval": false,
+  "new_fpga_programming_authorized": false,
+  "verified_account": "kgr-17",
+  "new_commit_identity": "Yixu Liu (Winson) <109614978+kgr-17@users.noreply.github.com>"
+}

@@ -52,3 +52,16 @@ and all prior attempts/receipts. Only a task-specific hashed owner skip receipt
 may satisfy dependencies this way. No other task or review gate is waived.
 T024 and final review must disclose/acknowledge the missing formal evidence.
 Do not call `skip` without an explicit owner instruction for that exact task.
+
+Owner publication and attribution policy revision 2026-11-23:
+- The owner explicitly authorized presentation improvements and non-force Git
+  publication to `https://github.com/kgr-17/RV32I_Edge_SoC`. Preserve existing
+  history and inspect remote state before pushing. This does not approve the
+  pending reset architecture change or a different physical FPGA image.
+- Do not add AI assistants or bots as Git authors/committers, Co-authored-by
+  trailers, contributor lists, badges or acknowledgments. Use the verified human
+  owner identity for new publication commits. Do not fabricate human contributors
+  or rewrite existing authorship without explicit owner authorization.
+- Keep the GitHub credential local only, encrypted in Git metadata or an OS
+  credential store. Never place it in tracked files, examples, reports, commit
+  messages, remote URLs or command-line arguments. Never publish credentials.
