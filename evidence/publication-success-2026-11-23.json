@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "date_la": "2026-11-23",
+  "verified_at_utc": "2026-11-24T01:42:23.465354+00:00",
+  "repository": "https://github.com/kgr-17/RV32I_Edge_SoC",
+  "verified_remote_commit": "92649465a1b508c98210124e809287fad0e743bf",
+  "default_branch": "main",
+  "private": false,
+  "push_result": {
+    "argv": [
+      "git",
+      "push",
+      "--set-upstream",
+      "origin",
+      "HEAD:main"
+    ],
+    "started_utc": "2026-11-24T01:40:34.051756+00:00",
+    "exit_code": 0,
+    "stdout": "branch 'engineering/bootstrap' set up to track 'origin/main'.\n",
+    "stderr": "To https://github.com/kgr-17/RV32I_Edge_SoC.git\n * [new branch]      HEAD -> main\n",
+    "credential_in_url_or_arguments": false,
+    "authentication": "Ephemeral process environment; encrypted local credential"
+  },
+  "verified_files": {
+    "README.md": {
+      "sha256": "0044406330840fb070aa901b6c628251446b6fae7a08c7306179e9b904f3dd83",
+      "html_url": "https://github.com/kgr-17/RV32I_Edge_SoC/blob/main/README.md"
+    },
+    "summary.md": {
+      "sha256": "3b62cd3096bde6824fc3e69377a8acae87cef99b9b289173570ae0d3ece46ef8",
+      "html_url": "https://github.com/kgr-17/RV32I_Edge_SoC/blob/main/summary.md"
+    },
+    "AGENTS.md": {
+      "sha256": "8397dc48c43f7d5e04ca233acc59e649ca807e68147e8397da05173df8b4f8b2",
+      "html_url": "https://github.com/kgr-17/RV32I_Edge_SoC/blob/main/AGENTS.md"
+    }
+  },
+  "github_author": "kgr-17",
+  "contributor_accounts": [
+    "kgr-17"
+  ],
+  "description": "Five-stage RV32I SoC in SystemVerilog with independent architectural verification and a 100 MHz Basys 3 implementation. Physical reset/UART validation in progress.",
+  "topics": [
+    "bare-metal",
+    "basys3",
+    "computer-architecture",
+    "design-verification",
+    "fpga",
+    "risc-v",
+    "rv32i",
+    "soc",
+    "systemverilog",
+    "uart",
+    "vivado"
+  ],
+  "credential_storage": "Replacement credential encrypted with Windows DPAPI in local .git metadata; never tracked or uploaded",
+  "historical_failures": "Prior HTTP403 receipts retained; this success supersedes their current-blocker status",
+  "final_handoff_commit": "This verification precedes the final handoff commit, which will also be pushed and independently checked"
+}

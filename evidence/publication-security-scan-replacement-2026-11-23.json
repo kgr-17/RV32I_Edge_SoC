@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "scope": "Reachable Git blob contents, current tracked/unignored files and nested ZIP content; exact supplied token and selected secret patterns",
+  "stats": {
+    "unique_contents": 3873,
+    "archives": 127,
+    "expanded_bytes": 727221770,
+    "history_blobs": 2215,
+    "current_files": 1679
+  },
+  "findings": [],
+  "scan_gaps": [],
+  "limitations": "Pattern scanning cannot establish every form of secret, ownership or license permission. No scan of unrelated filesystem/credential stores.",
+  "credential_storage": "Windows DPAPI protected, local .git metadata only; not a tracked working-tree file"
+}

@@ -195,3 +195,48 @@ block after showing the user the finished local artifacts and required change.
 # GitHub push retry still rejected
 
 Owner said yes, push it. Retried the already-authorized non-force push from8fdd301 using the same locally encrypted credential; authenticated account kgr-17 is valid but GitHub returned HTTP403: Permission to target repository denied. Subsequent ls-remote heads remains empty. No upload success or permission change inferred. No alternate credentials, force push, workflow deletion, architecture change, board action or finish attempt. User action remains updating existing token repository selection plus Contents/Workflows read/write; no new token should be posted in chat. Presentation commit79e7d4f and retry handoff8fdd301 are intact. Append same-day reports, commit failure observation locally under verified owner identity; retry only after explicit confirmation that GitHub permissions were saved. This is a GitHub access rejection, not automatic local approval review.
+
+
+---
+
+<!-- entry:50c8a3f5951f43000995fefd3bbd809edeb4c7acb16f55aee34075eb0c663788 -->
+
+# GitHub publication succeeded with replacement credential
+
+Owner explicitly supplied a replacement credential and requested updating the
+local saved credential. Replaced DPAPI ciphertext atomically via hidden input,
+without a plaintext working-tree file or token in args/URL/report. Same account
+kgr-17 authenticated. No unrelated credential store, global settings or history
+rewrite. All previous HTTP403 attempts remain historical; blocker resolved.
+
+Non-force push HEAD:main succeeded/exit0, created remote main and upstream
+origin/main for engineering/bootstrap. Verified via GitHub API that remote commit
+92649465a1b508c98210124e809287fad0e743bf equals local HEAD at that check.
+README.md, summary.md and AGENTS.md bytes match GitHub content; author resolves
+to kgr-17. Contributors API lists only kgr-17; no AI/bot accounts or coauthor
+trailers added. Detailed verified file hashes and actual push command/return are
+in evidence/publication-success-2026-11-23.json. The final handoff commit will
+also be pushed and SHA-checked; do not rewrite this initial verification identity.
+
+With the replacement scope, repository About description and11 project topics
+were successfully updated. Public visibility/default main unchanged. README
+keeps hardware open issue and formal/ASIC limits explicit. Detailed STAR summary
+is available at https://github.com/kgr-17/RV32I_Edge_SoC/blob/main/summary.md .
+No new license selected. Current repo and existing author history preserved.
+
+Replacement credential scan PASS:2215 reachable history blobs,1679 current
+files,3873 unique contents/127 archives/~727MB checked; no exact replacement-token
+or selected credential/private-key-pattern matches, no gaps. Scan report retained
+as publication-security-scan-replacement-2026-11-23.json. Pattern scans do not
+certify all possible secrets or third-party rights. Native RTL not rerun for this
+publication-only change; harness validate and whitespace exit0. No hardware action
+or reset-contract change. T032 active/in_progress/attempt0; proposal still pending.
+
+Append this same-day bilingual handoff, stage only receipt/scan/report files,
+commit as verified human owner and non-force push final HEAD. Verify main SHA
+equals final local HEAD plus clean status. No extra approval needed: destination
+and publication are explicitly authorized. Next engineering work remains owner
+review of docs/RESET_RELEASE_REVIEW.md before implementing a new board reset
+contract/local FPGA flow; publication does not authorize a new physical image.
+Credential remains local .git metadata; helpers live ignored .tmp. Never repeat
+credential values in future turns or reports. Exactly two November23 reports.
