@@ -212,3 +212,71 @@ Owner held BTNC (call_b478309b4f2541db959374e9dce22178), then reported "Released
 Thirty-second passive diagnostic capture-20261122T021022968131Z.json received0bytes, native exit0, capture status NOT RUN. Diagnostic interpretation: quiet during the untouched interval; not a reset-success epoch. Firmware source shows completed_loop self-JAL and reset_sync has two clocked stages; inspected without changing code. Spontaneous restart or mechanical reset bounce was considered but not established.
 
 Owner clarified in call_36842d47270e4e6caff573256b9fac2e: "Yes, I pressed again while checking". This explains repeated manual activations; do not label the repeated messages an RTL defect. Latest raw receipts retain all bytes/errors. No gate weakened or finish attempt used; activeT032/attempt0. Baseline140eb01. Next obtain owner holding confirmation, start fresh epoch1, tell owner release once and keep hands away until completion. Then similarly epoch2, truthful owner observations/session hashing/full gates. Existing programming authority remains valid; no reprogramming or source modification needed. Current capture is stopped.
+
+
+---
+
+<!-- entry:ac8aa021c46a2bafd5d80e3c8e4274d58883db46d511d1641636fcc063860bc5 -->
+
+# T032 single-release failure isolated; reset-release review required
+
+Owner held BTNC in call_5509ba30ed8945378c65a482b15aabd4 then explicitly replied
+"Released once; leaving buttons untouched" in call_eebee3a8bcf14f599a6c8167f062cf25.
+The entire60s capture021244489932Z has exactly one burst: ff49f2 followed by
+49525120504153530d0a (IRQ PASS CRLF),13bytes. Native capture exit0, strict full
+stream FAIL. No later output during the window. DONE-lit observation already
+recorded in call_49059b94569041c1be074eebed38b88f. This controlled result is distinct
+from earlier multi-press captures; user clarified extra presses in those earlier
+windows. Do not blame this controlled capture on undisclosed repeated presses.
+No new board action is pending; capture is stopped and owner told to relax.
+
+Implemented verification-only tb_reset_uart_diagnostic.sv and
+scripts/reset_uart_diagnostic.py. Both use unchanged actual top/IRQ ROM,100MHz,
+divisor868 and existing independent strict soc_model.decode_uart. Ideal mode0
+180100rows -> exact IRQ PASS CRLF. Representative chatter mode1 196170rows ->
+whole trace SOC_UART_FRAMING, final stable-reset suffix exact IRQ PASS. The suffix
+is diagnostic only; NO physical bytes are discarded and no gate is relaxed.
+This supports reset-release qualification as a plausible next target, not a
+measured physical switch waveform or conclusive sole-cause attribution.
+
+Initial simulation receipt reset-uart-diagnostic-20261122T021511524302Z remains
+FAIL: mode1 XSim returned4294967295 after the completion/exit0 text. Mode0 passed.
+Full identical-source replay reset-uart-diagnostic-20261122T021545951186Z PASS/exit0.
+No exit status ignored; no runner changes; native transient cause unknown.
+Versions remain Python3.9.13/Git2.48.1/Vivado-XSim2025.2 SW6299465. All source,
+trace,wave,job,command/artifact hashes of failed/pass simulations and physical
+capture validated and archived in T032-reset-release-diagnosis-2026-11-21.zip.
+Audit reset-release-diagnosis-2026-11-21.json includes owner replies and proposal
+SHA. Integrity audit PASS is not physical acceptance. Existing main UART gate
+and approved hardware/helper sources unchanged. No RTL/XPR/XDC/firmware edit,
+no reprogramming, no finish attempt (T032 still active/in_progress/0).
+
+Prepared docs/RESET_RELEASE_REVIEW.md, PROPOSED/not implemented: keep two clocked
+button synchronizers/current assertion latency, core reset priority and generic
+defaults; add21-bit release counter requiring2000000 consecutive synchronized
+low samples (20ms/100MHz), high restarts it. Count saturates at1999999. Board
+reset initialized asserted; assertion/four-edge hold unchanged. All effects,
+ISA/IRQ/RAM policy/pins/clock remain. Production timing and shortened diagnostic
+parameters both tested after approval; existing boot watchdogs must accommodate
+reviewed latency without dropping any oracle. No new fit/timing claim.
+
+Owner decision needed BEFORE implementing reset contract: approve proposal plus
+RTL/tests/workflow support and fresh local FPGA verification. Current T032
+programming scope is only old exact image. New image programming requires a
+separate concrete hash review after local gates; do not program it from local
+design approval. Proposal explicitly requires extending FPGA workflow with a
+task-specific hashed T032 local-build receipt and separate new manifest/jobs,
+not faking activeT043 or replacing its completed evidence. Retain old T032 gates,
+strengthen with full lint/IRQ/regression/reset+new implementation evidence.
+
+Next session read this latest entry/startup files, inspect Git/daily --supervised,
+recover activeT032. Read proposed review document and exact owner reply if any.
+Do not implement before actual approval, do not call approve/reopen/enable,
+do not discard extra bytes or create completed session.json. After explicit
+proposal/local-build approval, record reviewed SHA and scope; implement/test the
+board qualification, rerun all required current-source gates and fresh bounded
+FPGA flow. Preserve failures. Only then request new-image programming permission.
+If owner declines, retain unresolved hardware FAIL; no milestone waived.
+FormalT023 skipped/NOT RUN, ASIC NOT RUN; whole project incomplete. Both same-day
+reports appended, earlier dates untouched. Baseline9cf97a0; commit this reviewed
+diagnostic/proposal package locally and stop for review, not arbitrary task quota.
